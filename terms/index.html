@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="color-scheme" content="dark" />
+  <title>Terms of Use — Finrival</title>
+  <meta name="description" content="Finrival Terms of Use, financial disclaimer, subscription terms, AI limitations, simulation terms and acceptable-use rules." />
+  <link rel="canonical" href="https://finrival.com/terms/" />
+  <style>
+:root {
+  --bg:#000000;
+  --surface:#0b0b0c;
+  --card:#121212;
+  --text:#ffffff;
+  --muted:#98a2b3;
+  --muted2:#667085;
+  --border:#262626;
+  --border2:#1b1b1c;
+  --cyan:#00e5ff;
+  --cyanSoft:rgba(0,229,255,.08);
+  --cyanBorder:rgba(0,229,255,.22);
+  --gold:#f59e0b;
+  --goldSoft:rgba(245,158,11,.08);
+  --goldBorder:rgba(245,158,11,.22);
+  --green:#34c759;
+  --red:#ff453a;
+  --max:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{
+  min-height:100vh;color:var(--text);
+  background:
+    radial-gradient(circle at 16% 4%,rgba(0,229,255,.075),transparent 24%),
+    radial-gradient(circle at 88% 8%,rgba(245,158,11,.025),transparent 22%),
+    var(--bg);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(var(--max),calc(100% - 40px));margin:0 auto}
+.nav-shell{
+  position:sticky;top:0;z-index:100;background:rgba(0,0,0,.76);
+  border-bottom:1px solid rgba(255,255,255,.055);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)
+}
+nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand-logo{width:122px;height:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:11px;font-weight:760}
+.nav-links a:hover{color:var(--text)}
+.home-link{
+  min-height:39px;display:inline-flex;align-items:center;padding:0 14px;
+  color:var(--cyan)!important;border:1px solid var(--cyanBorder);
+  border-radius:12px;background:rgba(0,229,255,.05)
+}
+.hero{padding:88px 0 52px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;padding:7px 10px;margin-bottom:18px;
+  color:var(--cyan);border:1px solid var(--cyanBorder);border-radius:999px;
+  background:var(--cyanSoft);font-size:9px;font-weight:900;letter-spacing:1.1px;text-transform:uppercase
+}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan)}
+h1{max-width:800px;font-size:clamp(42px,7vw,66px);line-height:1.02;letter-spacing:-2.8px;font-weight:930}
+.hero-copy{max-width:740px;margin-top:18px;color:var(--muted);font-size:15px;line-height:1.75}
+.meta-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+.meta-chip{
+  padding:7px 10px;color:#c7ccd4;border:1px solid var(--border);border-radius:999px;
+  background:var(--card);font-size:9px;font-weight:800
+}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:26px;padding-bottom:100px}
+.toc{
+  position:sticky;top:92px;align-self:start;padding:16px;border:1px solid var(--border);
+  border-radius:18px;background:rgba(18,18,18,.88);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)
+}
+.toc-title{margin-bottom:10px;color:var(--cyan);font-size:8px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.toc-links{display:grid;gap:4px}
+.toc-links a{padding:8px 9px;color:var(--muted);border-radius:9px;font-size:9px;line-height:1.4;font-weight:720}
+.toc-links a:hover{color:var(--text);background:rgba(255,255,255,.035)}
+.content-card,.policy-section{
+  scroll-margin-top:94px;margin-bottom:14px;padding:24px;border:1px solid var(--border);
+  border-radius:20px;background:linear-gradient(180deg,rgba(18,18,18,.96),rgba(10,10,11,.96))
+}
+.summary-card{
+  margin-bottom:18px;padding:22px;border:1px solid var(--cyanBorder);border-radius:20px;
+  background:linear-gradient(135deg,rgba(0,229,255,.06),rgba(18,18,18,.96) 48%)
+}
+.summary-title{font-size:16px;font-weight:900;letter-spacing:-.3px}
+.summary-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:15px}
+.summary-item{padding:12px;border:1px solid var(--border);border-radius:12px;background:rgba(0,0,0,.22)}
+.summary-item strong{display:block;color:#e7e9ed;font-size:9px;font-weight:900}
+.summary-item span{display:block;margin-top:3px;color:var(--muted);font-size:8px;line-height:1.5}
+.section-index{color:var(--cyan);font-size:8px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.policy-section h2,.content-card h2{margin-top:5px;font-size:22px;line-height:1.15;letter-spacing:-.55px;font-weight:900}
+.policy-section h3,.content-card h3{margin-top:18px;color:#e7e9ed;font-size:13px;line-height:1.4;font-weight:880}
+.policy-section p,.content-card p{margin-top:10px;color:var(--muted);font-size:12px;line-height:1.78;font-weight:500}
+.policy-section ul,.content-card ul{margin:10px 0 0 18px;color:var(--muted)}
+.policy-section li,.content-card li{margin:5px 0;padding-left:3px;font-size:12px;line-height:1.65}
+.inline-link{color:var(--cyan);text-decoration:underline;text-decoration-color:rgba(0,229,255,.45);text-underline-offset:3px}
+.notice{
+  margin-top:14px;padding:13px 14px;color:var(--muted);border:1px solid var(--border);
+  border-radius:12px;background:rgba(255,255,255,.015);font-size:10px;line-height:1.65
+}
+.notice.gold{border-color:var(--goldBorder);background:var(--goldSoft)}
+.controller-card{
+  margin-top:14px;padding:15px;border:1px solid var(--border);border-radius:13px;background:#0c0c0d
+}
+.controller-card strong{display:block;color:var(--text);font-size:11px;font-weight:900}
+.controller-card span{display:block;margin-top:3px;color:var(--muted);font-size:10px}
+.action-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
+.action-card{
+  padding:16px;border:1px solid var(--border);border-radius:14px;background:#0d0d0e
+}
+.action-card strong{display:block;font-size:11px;font-weight:900}
+.action-card span{display:block;margin-top:4px;color:var(--muted);font-size:9px;line-height:1.55}
+.button-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.button{
+  min-height:46px;display:inline-flex;align-items:center;justify-content:center;padding:0 17px;
+  border-radius:13px;border:1px solid transparent;font-size:11px;font-weight:900
+}
+.button.primary{color:#071013;background:var(--cyan)}
+.button.secondary{color:var(--text);background:var(--card);border-color:var(--border)}
+.steps{display:grid;gap:10px;margin-top:16px}
+.step{
+  display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;
+  padding:14px;border:1px solid var(--border);border-radius:13px;background:#0d0d0e
+}
+.step-index{
+  width:34px;height:34px;display:grid;place-items:center;color:var(--cyan);
+  border:1px solid var(--cyanBorder);border-radius:10px;background:var(--cyanSoft);
+  font-size:9px;font-weight:900
+}
+.step strong{display:block;font-size:11px;font-weight:900}
+.step span{display:block;margin-top:3px;color:var(--muted);font-size:9px;line-height:1.55}
+footer{padding:44px 0 32px;border-top:1px solid var(--border2)}
+.footer-top{display:flex;justify-content:space-between;gap:30px;align-items:flex-start}
+.footer-logo{width:118px;height:auto}
+.footer-copy{max-width:450px}
+.footer-copy p{margin-top:10px;color:var(--muted);font-size:10px;line-height:1.7}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:18px;color:var(--muted);font-size:10px;font-weight:750}
+.footer-links a:hover{color:var(--text)}
+.footer-bottom{
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;margin-top:30px;padding-top:18px;
+  color:var(--muted2);border-top:1px solid #171718;font-size:9px
+}
+@media(max-width:860px){
+  .layout{grid-template-columns:1fr}
+  .toc{position:static}
+  .toc-links{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:620px){
+  .container{width:min(var(--max),calc(100% - 28px))}
+  .nav-links a:not(.home-link){display:none}
+  .hero{padding-top:68px}
+  h1{letter-spacing:-1.8px}
+  .summary-grid,.toc-links,.action-grid{grid-template-columns:1fr}
+  .policy-section,.content-card{padding:19px}
+  .footer-top{flex-direction:column}
+  .footer-links{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+  <div class="nav-shell">
+    <div class="container">
+      <nav>
+        <a href="../" aria-label="Back to Finrival home">
+          <img class="brand-logo" src="../logo.png" alt="Finrival" />
+        </a>
+        <div class="nav-links">
+          <a href="../privacy/">Privacy</a>
+          <a href="../terms/">Terms</a>
+          <a href="../delete-account/">Delete Account</a>
+          <a href="../support/">Support</a>
+          <a class="home-link" href="../">Back to Finrival</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow"><span class="eyebrow-dot"></span>Legal & Terms</div>
+        <h1>Terms of Use</h1>
+        <p class="hero-copy">These Terms explain the rules, financial-information boundaries, subscription terms and user responsibilities that apply when you use Finrival.</p>
+        <div class="meta-row"><div class="meta-chip">Effective: 17 August 2026</div>
+<div class="meta-chip">Last updated: 17 August 2026</div>
+<div class="meta-chip">Operator: İlkim Alatan</div>
+<div class="meta-chip">Kraków, Poland</div></div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="layout">
+        <aside class="toc">
+          <div class="toc-title">On this page</div>
+          <div class="toc-links"><a href="#acceptance">01. Acceptance of these Terms</a>
+<a href="#what-finrival-is">02. What Finrival is</a>
+<a href="#no-advice">03. No financial, investment, tax or legal advice</a>
+<a href="#market-data">04. Market data, prices and timeliness</a>
+<a href="#ai">05. Finrival AI</a>
+<a href="#rival">06. Rival / simulation features</a>
+<a href="#alerts">07. Watchlists and price alerts</a>
+<a href="#accounts">08. User accounts</a>
+<a href="#pro">09. Finrival PRO — auto-renewable subscriptions</a>
+<a href="#third-parties">10. Third-party services and content</a>
+<a href="#ip">11. Intellectual property and trademarks</a>
+<a href="#acceptable-use">12. Acceptable use</a>
+<a href="#availability">13. Availability and changes</a>
+<a href="#warranties">14. Disclaimer of warranties</a>
+<a href="#liability">15. Limitation of liability</a>
+<a href="#termination">16. Account termination and deletion</a>
+<a href="#apple">17. Apple-specific terms</a>
+<a href="#google">18. Google Play-specific terms</a>
+<a href="#language">19. Language</a>
+<a href="#local-law">20. Governing rights and local law</a>
+<a href="#changes">21. Changes to these Terms</a>
+<a href="#contact">22. Contact</a></div>
+        </aside>
+        <div>
+<div class="summary-card">
+  <div class="summary-title">Terms at a glance</div>
+  <div class="summary-grid">
+    <div class="summary-item"><strong>Not a brokerage</strong><span>Finrival does not execute real-money securities or crypto orders.</span></div>
+    <div class="summary-item"><strong>No personalized advice</strong><span>Market, AI and simulation outputs are informational and educational.</span></div>
+    <div class="summary-item"><strong>Market data may be delayed</strong><span>Prices and alerts may use cached or reference data.</span></div>
+    <div class="summary-item"><strong>Rival Credits are fictional</strong><span>They have no cash value and cannot be withdrawn or redeemed.</span></div>
+  </div>
+</div>
+
+<section class="policy-section" id="acceptance">
+  <div class="section-index">01</div>
+  <h2>Acceptance of these Terms</h2>
+  
+<p>By downloading, accessing or using Finrival, you agree to these Terms of Use and the Privacy Policy.</p>
+<p>If you do not agree, do not use Finrival.</p>
+<p>These Terms are subject to mandatory rights that cannot legally be excluded, including applicable consumer-protection rights.</p>
+
+</section>
+
+<section class="policy-section" id="what-finrival-is">
+  <div class="section-index">02</div>
+  <h2>What Finrival is</h2>
+  
+<p>Finrival is an informational and analytical software application that may provide:</p>
+<ul>
+<li>Market-data displays and cached or reference market information.</li>
+<li>Financial-news content and summaries.</li>
+<li>Watchlists and price alerts.</li>
+<li>Historical comparisons.</li>
+<li>Scenario and simulation tools.</li>
+<li>Finrival AI.</li>
+<li>Fictional practice and simulation features.</li>
+<li>Optional premium features through Finrival PRO.</li>
+</ul>
+<p>Finrival is not a securities exchange, broker-dealer, investment adviser, portfolio manager, bank, custodian, fiduciary, tax adviser, accounting firm or law firm.</p>
+<p>Finrival does not execute real-money securities or crypto orders and does not hold user investment funds.</p>
+
+</section>
+
+<section class="policy-section" id="no-advice">
+  <div class="section-index">03</div>
+  <h2>No financial, investment, tax or legal advice</h2>
+  
+<p>All information provided through Finrival, including market data, AI-generated content, comparisons, rankings, alerts, news analysis, macro scenarios, simulations and other outputs, is for general informational, educational and simulation purposes only.</p>
+<p>Nothing in Finrival constitutes:</p>
+<ul>
+<li>Financial or investment advice.</li>
+<li>A personalized investment recommendation.</li>
+<li>A solicitation or offer to buy or sell a security, cryptocurrency or other financial instrument.</li>
+<li>Tax, accounting or legal advice.</li>
+<li>A guarantee of any investment result.</li>
+</ul>
+<p>You are solely responsible for evaluating information and for your own financial decisions. Before making a real financial decision, consider obtaining advice from an appropriately qualified professional who can assess your personal circumstances.</p>
+
+</section>
+
+<section class="policy-section" id="market-data">
+  <div class="section-index">04</div>
+  <h2>Market data, prices and timeliness</h2>
+  
+<p>Financial markets change rapidly. Finrival market information may be delayed, cached, based on scheduled server refreshes, stale, incomplete, unavailable, incorrect or affected by third-party provider errors, exchange delays, outages or symbol-mapping issues.</p>
+<p>A price displayed in Finrival should not be treated as an executable trading quote.</p>
+<p>Do not rely on Finrival as the sole source for time-sensitive trading or investment decisions.</p>
+<p>Finrival does not guarantee the accuracy, completeness, availability or timeliness of market prices, percentage changes, rankings, charts, news or other financial information.</p>
+
+</section>
+
+<section class="policy-section" id="ai">
+  <div class="section-index">05</div>
+  <h2>Finrival AI</h2>
+  
+<p>Finrival AI uses automated artificial-intelligence systems and may generate incorrect, incomplete, outdated, inconsistent or misleading output.</p>
+<ul>
+<li>AI-generated content is not verified professional advice.</li>
+<li>AI may make mistakes or misunderstand a prompt.</li>
+<li>AI may rely on incomplete context or fail to reflect the latest market event.</li>
+<li>AI output should be independently checked before being relied upon.</li>
+</ul>
+<p>Finrival AI is not a substitute for a licensed financial professional or other qualified adviser.</p>
+<div class="notice">Usage limits, rate limits and anti-abuse controls may apply even where a plan is described as providing “unlimited” AI access. “Unlimited” means that the ordinary Free-plan daily allowance is removed for an eligible PRO user; reasonable security, availability and anti-abuse limits may still apply.</div>
+
+</section>
+
+<section class="policy-section" id="rival">
+  <div class="section-index">06</div>
+  <h2>Rival / simulation features</h2>
+  
+<p>Any Rival, Rival Credits, simulated buying, simulated portfolio, practice balance or similar feature in Finrival is fictional and intended only for simulation, education or entertainment.</p>
+<ul>
+<li>Rival Credits are not real money.</li>
+<li>Rival Credits are not cryptocurrency or securities.</li>
+<li>Rival Credits have no cash value.</li>
+<li>Rival Credits cannot be withdrawn, redeemed for money or transferred for real-world value.</li>
+<li>Rival Credits do not represent ownership of a real financial asset.</li>
+</ul>
+<p>Simulated performance does not predict real-world investment performance.</p>
+
+</section>
+
+<section class="policy-section" id="alerts">
+  <div class="section-index">07</div>
+  <h2>Watchlists and price alerts</h2>
+  
+<p>Watchlists and price alerts are convenience features only.</p>
+<p>Alerts may be generated from cached or reference market data rather than live tick-by-tick prices.</p>
+<p>An alert may be delayed, missed, duplicated or delivered after a market price has changed. Delivery can also depend on operating-system notification settings, network connectivity, third-party push infrastructure and backend availability.</p>
+<p>Do not rely on Finrival price alerts as the sole monitoring mechanism for a financial position or time-sensitive transaction.</p>
+
+</section>
+
+<section class="policy-section" id="accounts">
+  <div class="section-index">08</div>
+  <h2>User accounts</h2>
+  
+<p>Some Finrival features may require an account and verified email address.</p>
+<p>You are responsible for:</p>
+<ul>
+<li>Providing accurate account information.</li>
+<li>Protecting your login credentials.</li>
+<li>Keeping control of devices used to access your account.</li>
+<li>Promptly notifying us if you believe your account has been compromised.</li>
+</ul>
+<p>You may not use Finrival to abuse, attack, overload, reverse engineer where prohibited, circumvent usage limits, interfere with security controls or access another user's account without authorization.</p>
+<p>We may restrict or suspend abusive activity where reasonably necessary to protect Finrival, its users, providers or infrastructure.</p>
+
+</section>
+
+<section class="policy-section" id="pro">
+  <div class="section-index">09</div>
+  <h2>Finrival PRO — auto-renewable subscriptions</h2>
+  
+<p>Finrival may offer premium features through auto-renewable subscriptions known as “Finrival PRO.” The exact products, durations, prices, introductory offers and features shown to you at purchase time are controlled by the applicable App Store or Google Play storefront and the Finrival purchase screen.</p>
+<h3>Payment</h3>
+<p>Payment is charged by Apple App Store or Google Play to the payment method associated with your store account when the purchase is confirmed. Finrival does not directly process your full payment-card details.</p>
+<h3>Auto-renewal</h3>
+<p>An auto-renewable subscription renews automatically unless you cancel or disable auto-renewal through the applicable store before the renewal takes effect, subject to the store's rules.</p>
+<h3>Storefront pricing</h3>
+<p>Subscription prices may vary by country, region, tax rules, currency and storefront. The localized price displayed by Apple App Store or Google Play at the time of purchase is the authoritative purchase price.</p>
+<h3>Introductory offers and free trials</h3>
+<p>If a free trial or introductory offer is available, eligibility, duration and renewal terms are determined by the applicable store and will be disclosed in the purchase interface. At the end of an eligible trial or introductory period, the subscription may convert to the applicable paid subscription unless canceled in accordance with the store's rules.</p>
+<h3>Cancellation</h3>
+<p>You can manage or cancel your subscription through your Apple App Store or Google Play account settings. Deleting the Finrival app or deleting a Finrival account does not necessarily cancel an active store subscription.</p>
+<h3>Restore Purchases</h3>
+<p>Where supported, eligible purchases can be restored through the applicable store and Finrival's Restore Purchases functionality.</p>
+<h3>Refunds</h3>
+<p>Refund eligibility and refund processing are handled by Apple App Store or Google Play under the applicable store policies and applicable law. Finrival does not promise or deny a refund where the applicable store or law determines otherwise.</p>
+<h3>PRO access</h3>
+<p>PRO features are available only while Finrival recognizes a valid entitlement. Store outages, billing failures, refund events, expiration, revocation or verification failures may affect entitlement status.</p>
+
+</section>
+
+<section class="policy-section" id="third-parties">
+  <div class="section-index">10</div>
+  <h2>Third-party services and content</h2>
+  
+<p>Finrival may display or rely on content, infrastructure or services supplied by third parties, including market-data providers, crypto-data providers, news sources, Firebase/Google services, AI providers, Apple services, Google Play services, push-notification services, advertising providers and logo or brand-data providers.</p>
+<p>Third-party services may be modified, interrupted, limited or discontinued without Finrival's control.</p>
+<p>Links or references to a third party do not constitute endorsement unless expressly stated.</p>
+
+</section>
+
+<section class="policy-section" id="ip">
+  <div class="section-index">11</div>
+  <h2>Intellectual property and trademarks</h2>
+  
+<p>Finrival's original software, design, branding, text and other proprietary materials are protected by applicable intellectual-property law.</p>
+<p>Third-party company names, ticker symbols, trademarks, logos and brand elements remain the property of their respective owners. Their appearance in Finrival is for identification, informational or reference purposes and does not imply sponsorship, endorsement, partnership or affiliation with Finrival unless expressly stated.</p>
+<p>Logo data may be provided or facilitated through third-party services. Any third-party provider's terms may apply separately. Where required by the applicable logo provider: Logos by Quikturn.</p>
+
+</section>
+
+<section class="policy-section" id="acceptable-use">
+  <div class="section-index">12</div>
+  <h2>Acceptable use</h2>
+  
+<p>You may not:</p>
+<ul>
+<li>Use Finrival for unlawful activity.</li>
+<li>Attempt unauthorized access to accounts, servers, APIs or databases.</li>
+<li>Circumvent subscription, quota, authentication, advertising or security controls.</li>
+<li>Use automated methods to overload or scrape Finrival in violation of applicable restrictions.</li>
+<li>Interfere with the operation or security of Finrival.</li>
+<li>Misrepresent Finrival content as professional financial advice issued by Finrival.</li>
+<li>Use Finrival to distribute malware or harmful code.</li>
+</ul>
+
+</section>
+
+<section class="policy-section" id="availability">
+  <div class="section-index">13</div>
+  <h2>Availability and changes</h2>
+  
+<p>We may add, modify, suspend or discontinue features where reasonably necessary, subject to applicable consumer law and any obligations owed to active subscribers.</p>
+<p>Finrival may occasionally be unavailable because of maintenance, provider outages, network failure, market-data failure, cloud-service failure, store-service failure, security incidents or events outside our reasonable control.</p>
+
+</section>
+
+<section class="policy-section" id="warranties">
+  <div class="section-index">14</div>
+  <h2>Disclaimer of warranties</h2>
+  
+<p>To the maximum extent permitted by applicable law, Finrival is provided on an “as is” and “as available” basis.</p>
+<p>We do not guarantee that Finrival will always be available or error-free; that market or news data will always be accurate or current; that AI output will be correct; that alerts will always be delivered; that simulated performance will match real-world results; or that any particular financial outcome will occur.</p>
+<p>Nothing in these Terms excludes warranties or consumer rights that cannot lawfully be excluded.</p>
+
+</section>
+
+<section class="policy-section" id="liability">
+  <div class="section-index">15</div>
+  <h2>Limitation of liability</h2>
+  
+<p>To the maximum extent permitted by applicable law, Finrival and its operator will not be liable for losses resulting solely from reliance on informational, simulated, delayed, cached or AI-generated content where such exclusion or limitation is legally permitted.</p>
+<p>This may include, to the extent legally permitted, investment losses, trading losses, lost opportunities, losses caused by delayed or inaccurate market information, losses caused by missed or delayed alerts, reliance on AI output and service interruptions caused by third-party systems.</p>
+<p>Nothing in these Terms excludes or limits liability that cannot legally be excluded or limited, including liability arising from fraud, intentional misconduct, gross negligence where applicable, or mandatory consumer-protection law.</p>
+
+</section>
+
+<section class="policy-section" id="termination">
+  <div class="section-index">16</div>
+  <h2>Account termination and deletion</h2>
+  
+<p>You may delete your account as described in the Privacy Policy and on the <a class="inline-link" href="../delete-account/">Delete Account</a> page.</p>
+<p>We may suspend or restrict access where reasonably necessary because of security risk, fraud or abuse, material violation of these Terms, legal requirement or threats to the service or other users.</p>
+<p>Where applicable law requires notice, explanation or appeal rights, we will provide them as required.</p>
+
+</section>
+
+<section class="policy-section" id="apple">
+  <div class="section-index">17</div>
+  <h2>Apple-specific terms</h2>
+  
+<p>If you obtain Finrival through Apple's App Store, your use of the app is also subject to Apple's applicable App Store terms.</p>
+<p>Where Apple's Standard End User License Agreement applies, it is available at <a class="inline-link" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple's Standard EULA</a>.</p>
+<p>If there is a conflict between these Terms and mandatory Apple platform terms that apply to your use of the app, the applicable mandatory platform terms control to the extent of that conflict.</p>
+
+</section>
+
+<section class="policy-section" id="google">
+  <div class="section-index">18</div>
+  <h2>Google Play-specific terms</h2>
+  
+<p>If you obtain Finrival through Google Play, your purchase and use may also be subject to the applicable Google Play terms, billing rules and policies.</p>
+<p>If there is a conflict between these Terms and mandatory Google Play terms that apply to your use of the app, the applicable mandatory platform terms control to the extent of that conflict.</p>
+
+</section>
+
+<section class="policy-section" id="language">
+  <div class="section-index">19</div>
+  <h2>Language</h2>
+  
+<p>Finrival may provide translations of legal or product text for convenience.</p>
+<p>The English version is the primary version used to interpret these Terms, to the extent permitted by applicable law.</p>
+<p>Nothing in this language clause removes mandatory rights that apply under local law.</p>
+
+</section>
+
+<section class="policy-section" id="local-law">
+  <div class="section-index">20</div>
+  <h2>Governing rights and local law</h2>
+  
+<p>These Terms do not remove rights that you are entitled to under mandatory law in your country or region.</p>
+<p>Any governing-law, jurisdiction or dispute rule that may apply must be interpreted consistently with mandatory consumer and data-protection rights.</p>
+<p>Where mandatory law gives you the right to bring a claim or complaint before a local court, consumer body or supervisory authority, these Terms do not remove that right.</p>
+
+</section>
+
+<section class="policy-section" id="changes">
+  <div class="section-index">21</div>
+  <h2>Changes to these Terms</h2>
+  
+<p>We may update these Terms when Finrival, our business model, platform requirements or applicable law changes.</p>
+<p>For material changes, we may provide additional notice where appropriate or legally required.</p>
+<p>Changes do not retroactively remove rights already accrued under mandatory law.</p>
+
+</section>
+
+<section class="policy-section" id="contact">
+  <div class="section-index">22</div>
+  <h2>Contact</h2>
+  
+<p>Questions regarding Finrival, these Terms or the Privacy Policy may be sent to:</p>
+<div class="controller-card">
+<strong>İlkim Alatan — Finrival</strong>
+<span>Contact location: Kraków, 31-216, Poland</span>
+<span>Email: finrivals@gmail.com</span>
+<span>Website: https://finrival.com</span>
+</div>
+
+</section>
+</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-copy">
+          <img class="footer-logo" src="../logo.png" alt="Finrival" />
+          <p>Finrival is an informational, educational and simulation-focused market-research application.</p>
+        </div>
+        <div class="footer-links">
+          <a href="../">Home</a>
+          <a href="../privacy/">Privacy</a>
+          <a href="../terms/">Terms</a>
+          <a href="../delete-account/">Delete Account</a>
+          <a href="../support/">Support</a>
+          <a href="mailto:finrivals@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Finrival. All rights reserved.</span>
+        <span>Support: finrivals@gmail.com</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
