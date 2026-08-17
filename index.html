@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Finrival — market intelligence, comparisons, watchlists and AI-assisted research in one focused workspace." />
+  <title>Finrival — Market Intelligence, Reframed.</title>
+
+  <style>
+    :root {
+      --bg: #000000;
+      --card: #121212;
+      --card-2: #171717;
+      --text: #ffffff;
+      --muted: #98a2b3;
+      --border: #262626;
+      --cyan: #00e5ff;
+      --gold: #f59e0b;
+      --green: #34c759;
+      --red: #ff453a;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 50% -10%, rgba(0,229,255,.12), transparent 36%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(0,0,0,.72);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(0,229,255,.35);
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      background: rgba(0,229,255,.08);
+      box-shadow: 0 0 24px rgba(0,229,255,.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::before {
+      content: "";
+      width: 17px;
+      height: 17px;
+      border: 2px solid var(--cyan);
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+      transform: rotate(-20deg);
+      border-radius: 4px;
+    }
+
+    .brand-mark::after {
+      content: "";
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+      position: absolute;
+      right: 6px;
+      bottom: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      padding: 10px 15px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,229,255,.32);
+      color: var(--cyan) !important;
+      background: rgba(0,229,255,.06);
+    }
+
+    .hero {
+      padding: 110px 0 78px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.025);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .9px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 12px rgba(0,229,255,.7);
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: clamp(48px, 8vw, 88px);
+      line-height: .99;
+      letter-spacing: -4.2px;
+      font-weight: 900;
+    }
+
+    .gradient-text {
+      background: linear-gradient(100deg, #fff 10%, #b9f8ff 60%, #00e5ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      margin: 26px auto 0;
+      color: var(--muted);
+      font-size: clamp(16px, 2vw, 19px);
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      margin-top: 34px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      height: 50px;
+      padding: 0 20px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .2px;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      color: #071013;
+      background: var(--cyan);
+      box-shadow: 0 8px 32px rgba(0,229,255,.15);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: var(--card);
+      border-color: var(--border);
+    }
+
+    .hero-note {
+      margin-top: 16px;
+      color: #667085;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .product-window {
+      margin: 70px auto 0;
+      width: min(980px, 100%);
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(18,18,18,.98), rgba(7,7,7,.98));
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .window-bar {
+      height: 46px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+    }
+
+    .dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .dots span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #353535;
+    }
+
+    .window-title {
+      font-size: 10px;
+      color: #667085;
+      font-weight: 800;
+      letter-spacing: .8px;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 14px;
+      padding: 16px;
+    }
+
+    .dash-card {
+      border: 1px solid var(--border);
+      background: #0d0d0d;
+      border-radius: 18px;
+      padding: 18px;
+      min-height: 172px;
+    }
+
+    .dash-label {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .price {
+      margin-top: 12px;
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .change {
+      margin-top: 2px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .chart {
+      height: 58px;
+      margin-top: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .chart-line {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(170deg, transparent 0 18%, rgba(0,229,255,.85) 19% 21%, transparent 22% 35%, rgba(0,229,255,.85) 36% 38%, transparent 39% 48%, rgba(0,229,255,.85) 49% 51%, transparent 52% 67%, rgba(0,229,255,.85) 68% 70%, transparent 71%);
+      opacity: .9;
+      transform: skewY(-5deg);
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .mini-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #1f1f1f;
+    }
+
+    .mini-row:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .mini-name {
+      font-weight: 800;
+    }
+
+    .mini-meta {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .mini-value {
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-head {
+      max-width: 680px;
+      margin-bottom: 38px;
+    }
+
+    .section-kicker {
+      color: var(--cyan);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.06;
+      letter-spacing: -2px;
+      font-weight: 900;
+    }
+
+    .section-copy {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 620px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .feature-card {
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(18,18,18,.95), rgba(10,10,10,.95));
+      border-radius: 20px;
+      padding: 22px;
+      min-height: 232px;
+      transition: .2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-3px);
+      border-color: #343434;
+    }
+
+    .feature-card.gold {
+      border-color: rgba(245,158,11,.25);
+    }
+
+    .icon-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(0,229,255,.08);
+      border: 1px solid rgba(0,229,255,.18);
+      color: var(--cyan);
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 24px;
+    }
+
+    .gold .icon-box {
+      color: var(--gold);
+      background: rgba(245,158,11,.08);
+      border-color: rgba(245,158,11,.2);
+    }
+
+    .feature-title {
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: -.4px;
+      margin-bottom: 8px;
+    }
+
+    .feature-copy {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .trust {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.012), rgba(255,255,255,.025));
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .trust-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .trust-row {
+      display: flex;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .tick {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1px solid rgba(52,199,89,.24);
+      background: rgba(52,199,89,.08);
+      color: var(--green);
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .legal-card {
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 20px;
+      padding: 24px;
+    }
+
+    .legal-card strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .legal-card p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.75;
+    }
+
+    .pro-section {
+      text-align: center;
+    }
+
+    .pro-card {
+      max-width: 820px;
+      margin: 0 auto;
+      border: 1px solid rgba(245,158,11,.28);
+      background:
+        radial-gradient(circle at 50% 0, rgba(245,158,11,.12), transparent 42%),
+        #0c0c0c;
+      border-radius: 28px;
+      padding: 42px 26px;
+      box-shadow: 0 24px 70px rgba(0,0,0,.4);
+    }
+
+    .pro-badge {
+      display: inline-flex;
+      gap: 7px;
+      align-items: center;
+      color: var(--gold);
+      border: 1px solid rgba(245,158,11,.24);
+      background: rgba(245,158,11,.07);
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+    }
+
+    .pro-card h3 {
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -1.8px;
+      font-weight: 900;
+    }
+
+    .pro-card p {
+      color: var(--muted);
+      max-width: 570px;
+      margin: 14px auto 0;
+      font-size: 14px;
+    }
+
+    .pro-points {
+      margin: 26px auto 0;
+      max-width: 660px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      text-align: left;
+    }
+
+    .pro-point {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.02);
+      border-radius: 14px;
+      padding: 13px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #d0d5dd;
+    }
+
+    .coming-soon {
+      margin-top: 26px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    footer {
+      padding: 44px 0 34px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-copy {
+      max-width: 460px;
+    }
+
+    .footer-copy p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    .footer-bottom {
+      margin-top: 34px;
+      padding-top: 20px;
+      border-top: 1px solid #171717;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #667085;
+      font-size: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links a:not(.nav-cta) {
+        display: none;
+      }
+
+      .dashboard,
+      .trust-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      h1 {
+        letter-spacing: -2.8px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      nav {
+        height: 64px;
+      }
+
+      .hero {
+        padding-top: 78px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .feature-grid,
+      .pro-points {
+        grid-template-columns: 1fr;
+      }
+
+      .product-window {
+        border-radius: 20px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav-wrap">
+    <div class="container">
+      <nav>
+        <a class="brand" href="#top" aria-label="Finrival home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Finrival</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#pro">PRO</a>
+          <a href="#trust">About</a>
+          <a href="mailto:finrivals@gmail.com">Support</a>
+          <a class="nav-cta" href="#download">Coming Soon</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Market intelligence, in one workspace
+        </div>
+
+        <h1>
+          Understand markets.
+          <span class="gradient-text">Compare smarter.</span>
+        </h1>
+
+        <p class="hero-copy">
+          Finrival brings market data, asset comparisons, watchlists, financial news,
+          simulation tools and AI-assisted research into one focused experience.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#features">Explore Finrival</a>
+          <a class="btn btn-secondary" href="mailto:finrivals@gmail.com">Contact Support</a>
+        </div>
+
+        <div class="hero-note">
+          Informational and simulation-focused. Not a broker or investment adviser.
+        </div>
+
+        <div class="product-window" aria-label="Finrival product preview">
+          <div class="window-bar">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="window-title">FINRIVAL MARKET</div>
+            <div style="width:28px"></div>
+          </div>
+
+          <div class="dashboard">
+            <div class="dash-card">
+              <div class="dash-label">Market Snapshot</div>
+              <div class="price">19,842.38</div>
+              <div class="change">+1.24% today</div>
+              <div class="chart"><div class="chart-line"></div></div>
+            </div>
+
+            <div class="dash-card">
+              <div class="dash-label">Watchlist</div>
+              <div class="mini-list">
+                <div class="mini-row">
+                  <div>
+                    <div class="mini-name">NVDA</div>
+                    <div class="mini-meta">NVIDIA</div>
+                  </div>
+                  <div class="mini-value">+2.81%</div>
+                </div>
+
+                <div class="mini-row">
+                  <div>
+                    <div class="mini-name">BTC</div>
+                    <div class="mini-meta">Bitcoin</div>
+                  </div>
+                  <div class="mini-value">+1.12%</div>
+                </div>
+
+                <div class="mini-row">
+                  <div>
+                    <div class="mini-name">AAPL</div>
+                    <div class="mini-meta">Apple</div>
+                  </div>
+                  <div class="mini-value">-0.46%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Finrival Workspace</div>
+          <h2>More context. Less noise.</h2>
+          <p class="section-copy">
+            Built around the tools investors and market followers actually use:
+            discovery, comparison, monitoring, research and simulation.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="icon-box">↗</div>
+            <div class="feature-title">Market</div>
+            <div class="feature-copy">
+              Follow stocks and crypto through a clean market view using cached and
+              reference market data, rankings and visual performance signals.
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="icon-box">≍</div>
+            <div class="feature-title">Compare</div>
+            <div class="feature-copy">
+              Put assets side by side across performance, momentum, risk and
+              scenario-based views designed to make differences easier to understand.
+            </div>
+          </article>
+
+          <article class="feature-card gold">
+            <div class="icon-box">◆</div>
+            <div class="feature-title">Finrival AI</div>
+            <div class="feature-copy">
+              Ask questions about assets, comparisons and supported financial news.
+              AI output is informational and may contain errors.
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="icon-box">◎</div>
+            <div class="feature-title">Watchlist & Alerts</div>
+            <div class="feature-copy">
+              Save the assets you care about and configure reference-price alerts
+              without turning the experience into a noisy trading terminal.
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="icon-box">▤</div>
+            <div class="feature-title">News Intelligence</div>
+            <div class="feature-copy">
+              Browse financial headlines and open supported stories in Finrival AI
+              for additional context and structured analysis.
+            </div>
+          </article>
+
+          <article class="feature-card gold">
+            <div class="icon-box">R</div>
+            <div class="feature-title">Rival Simulation</div>
+            <div class="feature-copy">
+              Practice with fictional Rival Credits and simulated transactions.
+              Rival Credits have no cash value and are not real financial assets.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section trust" id="trust">
+      <div class="container">
+        <div class="trust-grid">
+          <div>
+            <div class="section-kicker">Built with clear boundaries</div>
+            <h2>Research software, not a brokerage.</h2>
+            <p class="section-copy">
+              Finrival is designed for informational, educational and simulation use.
+              It does not execute real-money securities or crypto orders and does not
+              hold customer investment funds.
+            </p>
+          </div>
+
+          <div class="trust-list">
+            <div class="trust-row">
+              <div class="tick">✓</div>
+              <div>Market information may be delayed, cached, stale, incomplete or inaccurate.</div>
+            </div>
+            <div class="trust-row">
+              <div class="tick">✓</div>
+              <div>AI-generated content is not financial, investment, tax or legal advice.</div>
+            </div>
+            <div class="trust-row">
+              <div class="tick">✓</div>
+              <div>Rival Credits are fictional and have no real-world monetary value.</div>
+            </div>
+            <div class="trust-row">
+              <div class="tick">✓</div>
+              <div>Users remain responsible for independently verifying financial information.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="legal-card" style="margin-top:34px;">
+          <strong>Financial information disclaimer</strong>
+          <p>
+            Finrival is not a broker, investment adviser, bank, exchange or fiduciary.
+            Nothing displayed in Finrival constitutes a personalized recommendation or
+            an offer to buy or sell a financial instrument. Information and AI output
+            should be independently verified before making a financial decision.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pro-section" id="pro">
+      <div class="container">
+        <div class="pro-card">
+          <div class="pro-badge">◆ FINRIVAL PRO</div>
+          <h3>Go deeper when you need more.</h3>
+          <p>
+            Finrival PRO is being prepared with advanced comparison models,
+            expanded AI access, an unlimited Watchlist experience and an ad-free workspace.
+          </p>
+
+          <div class="pro-points">
+            <div class="pro-point">Unlimited Finrival AI*</div>
+            <div class="pro-point">Advanced Compare models</div>
+            <div class="pro-point">Unlimited Watchlist</div>
+            <div class="pro-point">Ad-free eligible screens</div>
+          </div>
+
+          <div class="coming-soon" id="download">App Store & Google Play — Coming Soon</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-copy">
+          <a class="brand" href="#top">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>Finrival</span>
+          </a>
+          <p>
+            Market intelligence, comparison, simulation and AI-assisted research.
+            Built independently in Kraków, Poland.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+          <a href="/delete-account">Delete Account</a>
+          <a href="/support">Support</a>
+          <a href="mailto:finrivals@gmail.com">Email</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Finrival. All rights reserved.</span>
+        <span>Logos by Quikturn.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
