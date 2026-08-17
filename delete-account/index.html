@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="color-scheme" content="dark" />
+  <title>Delete Your Account — Finrival</title>
+  <meta name="description" content="Request permanent deletion of your Finrival account and associated account-linked data." />
+  <link rel="canonical" href="https://finrival.com/delete-account/" />
+  <style>
+:root {
+  --bg:#000000;
+  --surface:#0b0b0c;
+  --card:#121212;
+  --text:#ffffff;
+  --muted:#98a2b3;
+  --muted2:#667085;
+  --border:#262626;
+  --border2:#1b1b1c;
+  --cyan:#00e5ff;
+  --cyanSoft:rgba(0,229,255,.08);
+  --cyanBorder:rgba(0,229,255,.22);
+  --gold:#f59e0b;
+  --goldSoft:rgba(245,158,11,.08);
+  --goldBorder:rgba(245,158,11,.22);
+  --green:#34c759;
+  --red:#ff453a;
+  --max:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{
+  min-height:100vh;color:var(--text);
+  background:
+    radial-gradient(circle at 16% 4%,rgba(0,229,255,.075),transparent 24%),
+    radial-gradient(circle at 88% 8%,rgba(245,158,11,.025),transparent 22%),
+    var(--bg);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(var(--max),calc(100% - 40px));margin:0 auto}
+.nav-shell{
+  position:sticky;top:0;z-index:100;background:rgba(0,0,0,.76);
+  border-bottom:1px solid rgba(255,255,255,.055);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)
+}
+nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand-logo{width:122px;height:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:11px;font-weight:760}
+.nav-links a:hover{color:var(--text)}
+.home-link{
+  min-height:39px;display:inline-flex;align-items:center;padding:0 14px;
+  color:var(--cyan)!important;border:1px solid var(--cyanBorder);
+  border-radius:12px;background:rgba(0,229,255,.05)
+}
+.hero{padding:88px 0 52px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;padding:7px 10px;margin-bottom:18px;
+  color:var(--cyan);border:1px solid var(--cyanBorder);border-radius:999px;
+  background:var(--cyanSoft);font-size:9px;font-weight:900;letter-spacing:1.1px;text-transform:uppercase
+}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan)}
+h1{max-width:800px;font-size:clamp(42px,7vw,66px);line-height:1.02;letter-spacing:-2.8px;font-weight:930}
+.hero-copy{max-width:740px;margin-top:18px;color:var(--muted);font-size:15px;line-height:1.75}
+.meta-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+.meta-chip{
+  padding:7px 10px;color:#c7ccd4;border:1px solid var(--border);border-radius:999px;
+  background:var(--card);font-size:9px;font-weight:800
+}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:26px;padding-bottom:100px}
+.toc{
+  position:sticky;top:92px;align-self:start;padding:16px;border:1px solid var(--border);
+  border-radius:18px;background:rgba(18,18,18,.88);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)
+}
+.toc-title{margin-bottom:10px;color:var(--cyan);font-size:8px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.toc-links{display:grid;gap:4px}
+.toc-links a{padding:8px 9px;color:var(--muted);border-radius:9px;font-size:9px;line-height:1.4;font-weight:720}
+.toc-links a:hover{color:var(--text);background:rgba(255,255,255,.035)}
+.content-card,.policy-section{
+  scroll-margin-top:94px;margin-bottom:14px;padding:24px;border:1px solid var(--border);
+  border-radius:20px;background:linear-gradient(180deg,rgba(18,18,18,.96),rgba(10,10,11,.96))
+}
+.summary-card{
+  margin-bottom:18px;padding:22px;border:1px solid var(--cyanBorder);border-radius:20px;
+  background:linear-gradient(135deg,rgba(0,229,255,.06),rgba(18,18,18,.96) 48%)
+}
+.summary-title{font-size:16px;font-weight:900;letter-spacing:-.3px}
+.summary-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:15px}
+.summary-item{padding:12px;border:1px solid var(--border);border-radius:12px;background:rgba(0,0,0,.22)}
+.summary-item strong{display:block;color:#e7e9ed;font-size:9px;font-weight:900}
+.summary-item span{display:block;margin-top:3px;color:var(--muted);font-size:8px;line-height:1.5}
+.section-index{color:var(--cyan);font-size:8px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.policy-section h2,.content-card h2{margin-top:5px;font-size:22px;line-height:1.15;letter-spacing:-.55px;font-weight:900}
+.policy-section h3,.content-card h3{margin-top:18px;color:#e7e9ed;font-size:13px;line-height:1.4;font-weight:880}
+.policy-section p,.content-card p{margin-top:10px;color:var(--muted);font-size:12px;line-height:1.78;font-weight:500}
+.policy-section ul,.content-card ul{margin:10px 0 0 18px;color:var(--muted)}
+.policy-section li,.content-card li{margin:5px 0;padding-left:3px;font-size:12px;line-height:1.65}
+.inline-link{color:var(--cyan);text-decoration:underline;text-decoration-color:rgba(0,229,255,.45);text-underline-offset:3px}
+.notice{
+  margin-top:14px;padding:13px 14px;color:var(--muted);border:1px solid var(--border);
+  border-radius:12px;background:rgba(255,255,255,.015);font-size:10px;line-height:1.65
+}
+.notice.gold{border-color:var(--goldBorder);background:var(--goldSoft)}
+.controller-card{
+  margin-top:14px;padding:15px;border:1px solid var(--border);border-radius:13px;background:#0c0c0d
+}
+.controller-card strong{display:block;color:var(--text);font-size:11px;font-weight:900}
+.controller-card span{display:block;margin-top:3px;color:var(--muted);font-size:10px}
+.action-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
+.action-card{
+  padding:16px;border:1px solid var(--border);border-radius:14px;background:#0d0d0e
+}
+.action-card strong{display:block;font-size:11px;font-weight:900}
+.action-card span{display:block;margin-top:4px;color:var(--muted);font-size:9px;line-height:1.55}
+.button-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.button{
+  min-height:46px;display:inline-flex;align-items:center;justify-content:center;padding:0 17px;
+  border-radius:13px;border:1px solid transparent;font-size:11px;font-weight:900
+}
+.button.primary{color:#071013;background:var(--cyan)}
+.button.secondary{color:var(--text);background:var(--card);border-color:var(--border)}
+.steps{display:grid;gap:10px;margin-top:16px}
+.step{
+  display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;
+  padding:14px;border:1px solid var(--border);border-radius:13px;background:#0d0d0e
+}
+.step-index{
+  width:34px;height:34px;display:grid;place-items:center;color:var(--cyan);
+  border:1px solid var(--cyanBorder);border-radius:10px;background:var(--cyanSoft);
+  font-size:9px;font-weight:900
+}
+.step strong{display:block;font-size:11px;font-weight:900}
+.step span{display:block;margin-top:3px;color:var(--muted);font-size:9px;line-height:1.55}
+footer{padding:44px 0 32px;border-top:1px solid var(--border2)}
+.footer-top{display:flex;justify-content:space-between;gap:30px;align-items:flex-start}
+.footer-logo{width:118px;height:auto}
+.footer-copy{max-width:450px}
+.footer-copy p{margin-top:10px;color:var(--muted);font-size:10px;line-height:1.7}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:18px;color:var(--muted);font-size:10px;font-weight:750}
+.footer-links a:hover{color:var(--text)}
+.footer-bottom{
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;margin-top:30px;padding-top:18px;
+  color:var(--muted2);border-top:1px solid #171718;font-size:9px
+}
+@media(max-width:860px){
+  .layout{grid-template-columns:1fr}
+  .toc{position:static}
+  .toc-links{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:620px){
+  .container{width:min(var(--max),calc(100% - 28px))}
+  .nav-links a:not(.home-link){display:none}
+  .hero{padding-top:68px}
+  h1{letter-spacing:-1.8px}
+  .summary-grid,.toc-links,.action-grid{grid-template-columns:1fr}
+  .policy-section,.content-card{padding:19px}
+  .footer-top{flex-direction:column}
+  .footer-links{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+  <div class="nav-shell">
+    <div class="container">
+      <nav>
+        <a href="../" aria-label="Back to Finrival home">
+          <img class="brand-logo" src="../logo.png" alt="Finrival" />
+        </a>
+        <div class="nav-links">
+          <a href="../privacy/">Privacy</a>
+          <a href="../terms/">Terms</a>
+          <a href="../delete-account/">Delete Account</a>
+          <a href="../support/">Support</a>
+          <a class="home-link" href="../">Back to Finrival</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow"><span class="eyebrow-dot"></span>Account & Data Control</div>
+        <h1>Delete your Finrival account</h1>
+        <p class="hero-copy">Finrival provides an in-app deletion path and this external web resource so you can request permanent account deletion even if you no longer have access to the app.</p>
+        <div class="meta-row"><div class="meta-chip">Finrival account deletion</div>
+<div class="meta-chip">External deletion resource</div>
+<div class="meta-chip">Support: finrivals@gmail.com</div></div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="layout">
+        <aside class="toc">
+          <div class="toc-title">On this page</div>
+          <div class="toc-links"><a href="#inside-app">1. Delete inside the app</a>
+<a href="#web-request">2. Request from the web</a>
+<a href="#deleted-data">3. What is deleted</a>
+<a href="#retained-data">4. What may be retained</a>
+<a href="#subscriptions">5. Subscriptions</a>
+<a href="#contact">6. Contact</a></div>
+        </aside>
+        <div>
+<div class="summary-card">
+  <div class="summary-title">Delete your Finrival account</div>
+  <p style="margin-top:9px;color:var(--muted);font-size:11px;line-height:1.7">
+    You can delete your account inside the app, or request deletion from this web resource if you no longer have access to the app.
+  </p>
+  <div class="button-row">
+    <a class="button primary" href="mailto:finrivals@gmail.com?subject=Finrival%20Account%20Deletion%20Request">
+      Email deletion request
+    </a>
+    <a class="button secondary" href="../privacy/#deletion">
+      Read privacy details
+    </a>
+  </div>
+</div>
+
+<section class="policy-section" id="inside-app">
+  <div class="section-index">01</div>
+  <h2>Delete inside the app</h2>
+  <p>If you can access your Finrival account, use the in-app deletion flow:</p>
+  <div class="steps">
+    <div class="step"><div class="step-index">01</div><div><strong>Open Control Center</strong><span>Open Finrival and go to the Control Center.</span></div></div>
+    <div class="step"><div class="step-index">02</div><div><strong>Open Account / Security</strong><span>Navigate to the account and security controls.</span></div></div>
+    <div class="step"><div class="step-index">03</div><div><strong>Choose Delete Account</strong><span>Follow the verification and permanent-deletion confirmation steps shown in the app.</span></div></div>
+  </div>
+  <div class="notice">For account-security reasons, Finrival may require re-authentication or reasonable verification before completing deletion.</div>
+</section>
+
+<section class="policy-section" id="web-request">
+  <div class="section-index">02</div>
+  <h2>Request deletion from the web</h2>
+  <p>If you no longer have the app installed or cannot access your account, you can initiate deletion through this external resource by emailing:</p>
+  <div class="controller-card">
+    <strong>finrivals@gmail.com</strong>
+    <span>Subject: Finrival Account Deletion Request</span>
+  </div>
+  <p>Where possible, send the request from the email address associated with your Finrival account. We may ask for reasonable verification before processing the request.</p>
+  <div class="button-row">
+    <a class="button primary" href="mailto:finrivals@gmail.com?subject=Finrival%20Account%20Deletion%20Request">
+      Start deletion request
+    </a>
+  </div>
+</section>
+
+<section class="policy-section" id="deleted-data">
+  <div class="section-index">03</div>
+  <h2>What is deleted</h2>
+  <p>Subject to legal and technical requirements, account deletion is intended to remove:</p>
+  <ul>
+    <li>Your Firebase Authentication account.</li>
+    <li>Account-linked Finrival user records.</li>
+    <li>Account-linked Watchlist or related stored account data, where applicable.</li>
+    <li>Account-linked price alerts.</li>
+    <li>Registered push-notification tokens.</li>
+    <li>Account-linked AI quota or rate-control records where applicable.</li>
+    <li>Other account-linked data that Finrival is not legally required or otherwise permitted to retain.</li>
+  </ul>
+</section>
+
+<section class="policy-section" id="retained-data">
+  <div class="section-index">04</div>
+  <h2>What may be retained</h2>
+  <p>Limited data may be retained where reasonably necessary for:</p>
+  <ul>
+    <li>Legal compliance.</li>
+    <li>Security.</li>
+    <li>Fraud or abuse prevention.</li>
+    <li>Resolving billing or entitlement disputes.</li>
+    <li>Enforcing legal rights.</li>
+    <li>Technical backups for a limited period.</li>
+  </ul>
+  <p>Any retained data will be limited to what is necessary for the relevant purpose. For more detail, see the <a class="inline-link" href="../privacy/#retention">Data Retention</a> section of the Privacy Policy.</p>
+</section>
+
+<section class="policy-section" id="subscriptions">
+  <div class="section-index">05</div>
+  <h2>Subscriptions are separate</h2>
+  <div class="notice gold">
+    Deleting your Finrival account does not automatically cancel an Apple App Store or Google Play subscription.
+  </div>
+  <p>You must manage or cancel an active subscription through the applicable store account. Deleting your account may cause loss of access to account-linked Finrival data and features.</p>
+</section>
+
+<section class="policy-section" id="contact">
+  <div class="section-index">06</div>
+  <h2>Account deletion contact</h2>
+  <div class="controller-card">
+    <strong>Finrival</strong>
+    <span>Operator: İlkim Alatan</span>
+    <span>Contact location: Kraków, 31-216, Poland</span>
+    <span>Email: finrivals@gmail.com</span>
+  </div>
+</section>
+</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-copy">
+          <img class="footer-logo" src="../logo.png" alt="Finrival" />
+          <p>Finrival is an informational, educational and simulation-focused market-research application.</p>
+        </div>
+        <div class="footer-links">
+          <a href="../">Home</a>
+          <a href="../privacy/">Privacy</a>
+          <a href="../terms/">Terms</a>
+          <a href="../delete-account/">Delete Account</a>
+          <a href="../support/">Support</a>
+          <a href="mailto:finrivals@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Finrival. All rights reserved.</span>
+        <span>Account deletion: finrivals@gmail.com</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
