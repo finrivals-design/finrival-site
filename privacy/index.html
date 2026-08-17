@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="color-scheme" content="dark" />
+
+  <title>Privacy Policy — Finrival</title>
+
+  <meta
+    name="description"
+    content="Finrival Privacy Policy — how account, AI, watchlist, notification, subscription, advertising and technical data may be processed."
+  />
+
+  <link rel="canonical" href="https://finrival.com/privacy/" />
+
+  <style>
+    :root {
+      --bg: #000000;
+      --surface: #0b0b0c;
+      --card: #121212;
+      --text: #ffffff;
+      --muted: #98a2b3;
+      --muted-2: #667085;
+      --border: #262626;
+      --border-soft: #1b1b1c;
+      --cyan: #00e5ff;
+      --cyan-soft: rgba(0, 229, 255, 0.08);
+      --cyan-border: rgba(0, 229, 255, 0.22);
+      --gold: #f59e0b;
+      --green: #34c759;
+      --max: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(
+          circle at 16% 4%,
+          rgba(0, 229, 255, 0.075),
+          transparent 24%
+        ),
+        var(--bg);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Inter,
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav-shell {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: rgba(0, 0, 0, 0.76);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    nav {
+      min-height: 70px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand-logo {
+      width: 122px;
+      height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+
+      color: var(--muted);
+
+      font-size: 11px;
+      font-weight: 760;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .home-link {
+      min-height: 39px;
+
+      display: inline-flex;
+      align-items: center;
+
+      padding: 0 14px;
+
+      color: var(--cyan) !important;
+      border: 1px solid var(--cyan-border);
+      border-radius: 12px;
+
+      background: rgba(0, 229, 255, 0.05);
+    }
+
+    .hero {
+      padding: 88px 0 52px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 7px 10px;
+      margin-bottom: 18px;
+
+      color: var(--cyan);
+      border: 1px solid var(--cyan-border);
+      border-radius: 999px;
+
+      background: var(--cyan-soft);
+
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+      background: var(--cyan);
+    }
+
+    h1 {
+      max-width: 770px;
+
+      font-size: clamp(42px, 7vw, 66px);
+      line-height: 1.02;
+      letter-spacing: -2.8px;
+      font-weight: 930;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+
+      margin-top: 18px;
+
+      color: var(--muted);
+
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+
+      margin-top: 24px;
+    }
+
+    .meta-chip {
+      padding: 7px 10px;
+
+      color: #c7ccd4;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+
+      background: var(--card);
+
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 26px;
+
+      padding-bottom: 100px;
+    }
+
+    .toc {
+      position: sticky;
+      top: 92px;
+      align-self: start;
+
+      padding: 16px;
+
+      border: 1px solid var(--border);
+      border-radius: 18px;
+
+      background: rgba(18, 18, 18, 0.88);
+
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .toc-title {
+      margin-bottom: 10px;
+
+      color: var(--cyan);
+
+      font-size: 8px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .toc-links {
+      display: grid;
+      gap: 4px;
+    }
+
+    .toc-links a {
+      padding: 8px 9px;
+
+      color: var(--muted);
+
+      border-radius: 9px;
+
+      font-size: 9px;
+      line-height: 1.4;
+      font-weight: 720;
+    }
+
+    .toc-links a:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .summary-card {
+      margin-bottom: 18px;
+      padding: 22px;
+
+      border: 1px solid var(--cyan-border);
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(0, 229, 255, 0.06),
+          rgba(18, 18, 18, 0.96) 48%
+        );
+    }
+
+    .summary-title {
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: -0.3px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+
+      margin-top: 15px;
+    }
+
+    .summary-item {
+      padding: 12px;
+
+      border: 1px solid var(--border);
+      border-radius: 12px;
+
+      background: rgba(0, 0, 0, 0.22);
+    }
+
+    .summary-item strong {
+      display: block;
+
+      color: #e7e9ed;
+
+      font-size: 9px;
+      font-weight: 900;
+    }
+
+    .summary-item span {
+      display: block;
+
+      margin-top: 3px;
+
+      color: var(--muted);
+
+      font-size: 8px;
+      line-height: 1.5;
+    }
+
+    .policy-section {
+      scroll-margin-top: 94px;
+
+      margin-bottom: 14px;
+      padding: 24px;
+
+      border: 1px solid var(--border);
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(18, 18, 18, 0.96),
+          rgba(10, 10, 11, 0.96)
+        );
+    }
+
+    .section-index {
+      color: var(--cyan);
+
+      font-size: 8px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .policy-section h2 {
+      margin-top: 5px;
+
+      font-size: 22px;
+      line-height: 1.15;
+      letter-spacing: -0.55px;
+      font-weight: 900;
+    }
+
+    .policy-section h3 {
+      margin-top: 18px;
+
+      color: #e7e9ed;
+
+      font-size: 13px;
+      line-height: 1.4;
+      font-weight: 880;
+    }
+
+    .policy-section p {
+      margin-top: 10px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+      line-height: 1.78;
+      font-weight: 500;
+    }
+
+    .policy-section ul {
+      margin: 10px 0 0 18px;
+
+      color: var(--muted);
+    }
+
+    .policy-section li {
+      margin: 5px 0;
+
+      padding-left: 3px;
+
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .inline-link {
+      color: var(--cyan);
+      text-decoration: underline;
+      text-decoration-color: rgba(0, 229, 255, 0.45);
+      text-underline-offset: 3px;
+    }
+
+    .notice {
+      margin-top: 14px;
+      padding: 13px 14px;
+
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+
+      background: rgba(255, 255, 255, 0.015);
+
+      font-size: 10px;
+      line-height: 1.65;
+    }
+
+    .controller-card {
+      margin-top: 14px;
+      padding: 15px;
+
+      border: 1px solid var(--border);
+      border-radius: 13px;
+
+      background: #0c0c0d;
+    }
+
+    .controller-card strong {
+      display: block;
+
+      color: var(--text);
+
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .controller-card span {
+      display: block;
+
+      margin-top: 3px;
+
+      color: var(--muted);
+
+      font-size: 10px;
+    }
+
+    footer {
+      padding: 44px 0 32px;
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .footer-logo {
+      width: 118px;
+      height: auto;
+    }
+
+    .footer-copy {
+      max-width: 450px;
+    }
+
+    .footer-copy p {
+      margin-top: 10px;
+
+      color: var(--muted);
+
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
+
+      color: var(--muted);
+
+      font-size: 10px;
+      font-weight: 750;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+
+      margin-top: 30px;
+      padding-top: 18px;
+
+      color: var(--muted-2);
+      border-top: 1px solid #171718;
+
+      font-size: 9px;
+    }
+
+    @media (max-width: 860px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+      }
+
+      .toc-links {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .nav-links a:not(.home-link) {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 68px;
+      }
+
+      h1 {
+        letter-spacing: -1.8px;
+      }
+
+      .summary-grid,
+      .toc-links {
+        grid-template-columns: 1fr;
+      }
+
+      .policy-section {
+        padding: 19px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav-shell">
+    <div class="container">
+      <nav>
+        <a href="../" aria-label="Back to Finrival home">
+          <img
+            class="brand-logo"
+            src="../logo.png"
+            alt="Finrival"
+          />
+        </a>
+
+        <div class="nav-links">
+          <a href="../terms/">
+            Terms
+          </a>
+
+          <a href="../delete-account/">
+            Delete Account
+          </a>
+
+          <a href="../support/">
+            Support
+          </a>
+
+          <a
+            class="home-link"
+            href="../"
+          >
+            Back to Finrival
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Legal & Privacy
+        </div>
+
+        <h1>
+          Privacy Policy
+        </h1>
+
+        <p class="hero-copy">
+          This Privacy Policy explains how Finrival may collect,
+          use, store, disclose and protect information when you
+          use the Finrival application, website and related services.
+        </p>
+
+        <div class="meta-row">
+          <div class="meta-chip">
+            Effective: 17 August 2026
+          </div>
+
+          <div class="meta-chip">
+            Last updated: 17 August 2026
+          </div>
+
+          <div class="meta-chip">
+            Controller: İlkim Alatan
+          </div>
+
+          <div class="meta-chip">
+            Kraków, Poland
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="layout">
+        <aside class="toc">
+          <div class="toc-title">
+            On this page
+          </div>
+
+          <div class="toc-links">
+            <a href="#who-we-are">1. Who we are</a>
+            <a href="#scope">2. Scope</a>
+            <a href="#information">3. Information we may collect</a>
+            <a href="#use">4. How we use information</a>
+            <a href="#legal-bases">5. Legal bases</a>
+            <a href="#providers">6. Third-party providers</a>
+            <a href="#advertising">7. Advertising & tracking</a>
+            <a href="#ai">8. Finrival AI privacy</a>
+            <a href="#retention">9. Data retention</a>
+            <a href="#deletion">10. Account deletion</a>
+            <a href="#rights">11. Your privacy rights</a>
+            <a href="#transfers">12. International transfers</a>
+            <a href="#security">13. Security</a>
+            <a href="#children">14. Children</a>
+            <a href="#sale">15. Sale of personal data</a>
+            <a href="#changes">16. Changes</a>
+            <a href="#contact">17. Privacy contact</a>
+          </div>
+        </aside>
+
+        <div>
+          <div class="summary-card">
+            <div class="summary-title">
+              Privacy at a glance
+            </div>
+
+            <div class="summary-grid">
+              <div class="summary-item">
+                <strong>
+                  We do not sell personal data
+                </strong>
+
+                <span>
+                  Finrival does not sell personal data to data brokers.
+                </span>
+              </div>
+
+              <div class="summary-item">
+                <strong>
+                  AI prompts are processed to answer you
+                </strong>
+
+                <span>
+                  Relevant prompts and context may be sent through
+                  Finrival's backend to an AI service provider.
+                </span>
+              </div>
+
+              <div class="summary-item">
+                <strong>
+                  Account-linked features use account data
+                </strong>
+
+                <span>
+                  Email, Watchlist, price alerts, push tokens and
+                  entitlement status may be processed where applicable.
+                </span>
+              </div>
+
+              <div class="summary-item">
+                <strong>
+                  You can delete your account
+                </strong>
+
+                <span>
+                  Delete in the app or use the external account-deletion route.
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <section
+            class="policy-section"
+            id="who-we-are"
+          >
+            <div class="section-index">
+              01
+            </div>
+
+            <h2>
+              Who we are
+            </h2>
+
+            <p>
+              Finrival ("Finrival", "we", "us", or "our") is a
+              market-information, financial-analysis, simulation,
+              watchlist, news and AI-assisted research application.
+            </p>
+
+            <div class="controller-card">
+              <strong>
+                Data Controller: İlkim Alatan
+              </strong>
+
+              <span>
+                Operating the Finrival application
+              </span>
+
+              <span>
+                Contact location: Kraków, 31-216, Poland
+              </span>
+
+              <span>
+                Privacy contact: finrivals@gmail.com
+              </span>
+            </div>
+
+            <p>
+              For purposes of applicable data-protection law,
+              including the General Data Protection Regulation ("GDPR")
+              where applicable, İlkim Alatan is the controller of personal
+              data processed by Finrival, except where a third-party provider
+              acts as an independent controller under its own terms and privacy policy.
+            </p>
+          </section>
+
+          <section
+            class="policy-section"
+            id="scope"
+          >
+            <div class="section-index">
+              02
+            </div>
+
+            <h2>
+              Scope of this Privacy Policy
+            </h2>
+
+            <p>
+              This Privacy Policy explains how Finrival may collect,
+              use, store, disclose and protect information when you
+              use the Finrival mobile application, related web pages,
+              account features, Finrival AI, market-data features,
+              Watchlists, alerts, PRO features and other services we make available.
+            </p>
+
+            <p>
+              This Privacy Policy does not replace the privacy terms of
+              Apple, Google or other independent third-party services that you choose to use.
+            </p>
+          </section>
+
+          <section
+            class="policy-section"
+            id="information"
+          >
+            <div class="section-index">
+              03
+            </div>
+
+            <h2>
+              Information we may collect
+            </h2>
+
+            <p>
+              Depending on how you use Finrival, we may process the following categories of information.
+            </p>
+
+            <h3>
+              A. Account and authentication information
+            </h3>
+
+            <ul>
+              <li>Email address.</li>
+              <li>Firebase authentication identifier and account status.</li>
+              <li>Email-verification status.</li>
+              <li>
+                Authentication and security information necessary to sign in,
+                maintain a session, protect an account and process account deletion.
+              </li>
+              <li>Information you voluntarily provide when contacting support.</li>
+            </ul>
+
+            <h3>
+              B. Watchlist, alert and app-preference information
+            </h3>
+
+            <ul>
+              <li>Assets you add to your Watchlist.</li>
+              <li>
+                Price-alert settings, including selected asset,
+                alert direction and target reference price.
+              </li>
+              <li>App preferences and locally stored settings.</li>
+              <li>Language and interface preferences.</li>
+              <li>PRO entitlement or subscription status after store billing is enabled.</li>
+            </ul>
+
+            <h3>
+              C. Finrival AI information
+            </h3>
+
+            <p>
+              When you use Finrival AI, we may process:
+            </p>
+
+            <ul>
+              <li>The text you submit to Finrival AI.</li>
+              <li>
+                The financial asset, market, comparison or news context
+                associated with your request.
+              </li>
+              <li>
+                AI conversation or session information necessary to provide the requested feature.
+              </li>
+              <li>
+                Technical metadata needed for authentication, quota enforcement,
+                abuse prevention, reliability and security.
+              </li>
+            </ul>
+
+            <div class="notice">
+              Do not submit highly sensitive personal information,
+              passwords, payment-card details, private keys, seed phrases,
+              confidential business secrets, medical information or other
+              information that is not necessary for your Finrival AI request.
+            </div>
+
+            <h3>
+              D. Push-notification information
+            </h3>
+
+            <p>
+              If you enable notifications, we may process:
+            </p>
+
+            <ul>
+              <li>Device push-notification tokens.</li>
+              <li>Platform and technical information needed to deliver alerts.</li>
+              <li>Price-alert configuration associated with your account.</li>
+            </ul>
+
+            <p>
+              You can control notification permission through your device settings.
+            </p>
+
+            <h3>
+              E. Technical, diagnostic and security information
+            </h3>
+
+            <ul>
+              <li>Device or operating-system information.</li>
+              <li>App version.</li>
+              <li>
+                IP address and approximate network information where automatically
+                processed by hosting, security, advertising or service providers.
+              </li>
+              <li>Request timestamps.</li>
+              <li>Error, security and abuse-prevention information.</li>
+              <li>Server logs necessary to operate, protect and troubleshoot Finrival.</li>
+            </ul>
+
+            <p>
+              We do not intentionally collect precise GPS location unless a future
+              feature clearly requests it and you grant the required permission.
+            </p>
+
+            <h3>
+              F. Advertising and advertising-consent information
+            </h3>
+
+            <p>
+              If advertisements are enabled for Free users, advertising providers
+              such as Google AdMob may process information such as:
+            </p>
+
+            <ul>
+              <li>Advertising identifiers where permitted.</li>
+              <li>IP address.</li>
+              <li>Device and app information.</li>
+              <li>Ad interaction and measurement information.</li>
+              <li>Consent choices.</li>
+              <li>
+                Coarse location or other signals derived by the advertising provider
+                where permitted by law and platform rules.
+              </li>
+            </ul>
+
+            <p>
+              The exact data processed by an advertising provider depends on your
+              region, device settings, consent choices, platform permissions and
+              the provider's own policies.
+            </p>
+
+            <h3>
+              G. Purchase and subscription information
+            </h3>
+
+            <p>
+              Finrival does not directly collect or store your full payment-card details.
+            </p>
+
+            <p>
+              If you purchase Finrival PRO, Apple App Store or Google Play processes
+              the transaction. Finrival may receive limited purchase or entitlement
+              information needed to determine whether your PRO access is active, such as:
+            </p>
+
+            <ul>
+              <li>Product or subscription identifier.</li>
+              <li>Transaction or purchase-token information.</li>
+              <li>Entitlement status.</li>
+              <li>
+                Subscription status and expiration information where provided by the store.
+              </li>
+            </ul>
+          </section>
+
+          <section
+            class="policy-section"
+            id="use"
+          >
+            <div class="section-index">
+              04
+            </div>
+
+            <h2>
+              How we use information
+            </h2>
+
+            <p>
+              We may use information for the following purposes:
+            </p>
+
+            <ul>
+              <li>Create, authenticate and maintain user accounts.</li>
+              <li>Verify email addresses and protect account access.</li>
+              <li>Provide Watchlists, price alerts and account-linked features.</li>
+              <li>Provide Finrival AI responses and related context.</li>
+              <li>Enforce Free-plan quotas and PRO entitlements.</li>
+              <li>Deliver push notifications requested by the user.</li>
+              <li>Provide market, news, comparison and simulation features.</li>
+              <li>Process and restore subscription entitlements.</li>
+              <li>Maintain app functionality, security, fraud prevention and abuse prevention.</li>
+              <li>Diagnose errors and improve reliability.</li>
+              <li>Respond to support, privacy and account-deletion requests.</li>
+              <li>Comply with legal obligations.</li>
+              <li>
+                Display, measure and manage advertising where advertising is enabled
+                and legally permitted.
+              </li>
+              <li>Obtain and store consent choices where consent is required.</li>
+            </ul>
+
+            <p>
+              We do not use Finrival to execute real-money securities trades
+              or hold customer investment funds.
+            </p>
+          </section>
+
+          <section
+            class="policy-section"
+            id="legal-bases"
+          >
+            <div class="section-index">
+              05
+            </div>
+
+            <h2>
+              Legal bases for processing
+            </h2>
+
+            <p>
+              Where GDPR or similar law applies, we process personal data only
+              where a valid legal basis is available. Depending on the context,
+              those bases may include:
+            </p>
+
+            <h3>
+              Performance of a contract or requested pre-contract steps
+            </h3>
+
+            <ul>
+              <li>Create and maintain your Finrival account.</li>
+              <li>Provide account-linked features.</li>
+              <li>Provide requested Finrival AI functionality.</li>
+              <li>Provide Watchlist, alert and PRO functionality.</li>
+              <li>Recognize an active subscription or purchase.</li>
+            </ul>
+
+            <h3>
+              Legitimate interests
+            </h3>
+
+            <p>
+              Where permitted by law, limited processing may be based on legitimate
+              interests such as security, fraud prevention, service reliability,
+              troubleshooting, anti-abuse controls and basic service performance,
+              where those interests do not override your rights and interests.
+            </p>
+
+            <h3>
+              Consent
+            </h3>
+
+            <p>
+              We rely on consent where required, including for certain advertising
+              or personalization activities, certain device identifiers, tracking
+              permission, optional notifications and other processing for which law requires consent.
+            </p>
+
+            <p>
+              You may withdraw consent where applicable. Withdrawal does not affect
+              the lawfulness of processing performed before withdrawal.
+            </p>
+
+            <h3>
+              Legal obligation
+            </h3>
+
+            <p>
+              We may process or retain limited information where necessary to comply
+              with a legal obligation, valid legal process, regulatory requirement,
+              tax or accounting obligation, or lawful request.
+            </p>
+          </section>
+
+          <section
+            class="policy-section"
+            id="providers"
+          >
+            <div class="section-index">
+              06
+            </div>
+
+            <h2>
+              Third-party service providers
+            </h2>
+
+            <p>
+              Finrival relies on third-party services to operate certain features.
+              Depending on the feature and release version, these may include:
+            </p>
+
+            <h3>
+              Google Firebase
+            </h3>
+
+            <p>
+              Firebase-related services may be used for authentication, backend
+              infrastructure, database functionality, server-side operations,
+              security and account-linked features.
+            </p>
+
+            <h3>
+              AI service providers
+            </h3>
+
+            <p>
+              Finrival uses server-side AI services to generate Finrival AI responses.
+              Information submitted to Finrival AI, together with relevant asset,
+              comparison or news context, may be transmitted to the AI provider as needed
+              to generate a response.
+            </p>
+
+            <h3>
+              Market-data and news providers
+            </h3>
+
+            <p>
+              Finrival uses external market-data, crypto-data, news and related
+              information providers. Requests may be routed through Finrival's backend
+              and shared caches. These providers may have their own privacy practices.
+            </p>
+
+            <h3>
+              Apple and Google
+            </h3>
+
+            <p>
+              Apple App Store and Google Play may process purchases, subscriptions,
+              app distribution, device-level permissions and other platform services
+              under their own terms and privacy policies.
+            </p>
+
+            <h3>
+              Push-notification infrastructure
+            </h3>
+
+            <p>
+              Apple Push Notification service, Firebase/Google messaging infrastructure
+              or similar platform services may process technical information needed
+              to deliver notifications.
+            </p>
+
+            <h3>
+              Google AdMob / Google Mobile Ads
+            </h3>
+
+            <p>
+              If advertising is enabled, Google and participating advertising partners
+              may process information for ad delivery, fraud prevention, frequency capping,
+              measurement and, where you have provided any legally required consent, personalization.
+            </p>
+
+            <p>
+              Finrival does not sell your personal data to data brokers.
+            </p>
+
+            <p>
+              We may disclose personal data to service providers only to the extent
+              reasonably necessary to provide, secure, support or improve Finrival,
+              or where disclosure is required by law.
+            </p>
+          </section>
+
+          <section
+            class="policy-section"
+            id="advertising"
+          >
+            <div class="section-index">
+              07
+            </div>
+
+            <h2>
+              Advertising, consent and tracking
+            </h2>
+
+            <p>
+              Free versions of Finrival may contain advertising. PRO may include
+              an ad-free experience as described in the applicable purchase screen.
+            </p>
+
+            <p>
+              Where required by law, Finrival will request an appropriate consent
+              choice before using data for personalized advertising or before using
+              advertising identifiers or similar technologies for purposes requiring consent.
+            </p>
+
+            <p>
+              For users in the European Economic Area, the United Kingdom, Switzerland
+              or other regions with consent requirements, advertising choices may be
+              presented through an in-app consent-management interface.
+            </p>
+
+            <p>
+              Where Apple App Tracking Transparency applies, Finrival will request
+              the applicable system permission before engaging in tracking that requires
+              that permission.
+            </p>
+
+            <p>
+              Declining personalized-ad consent does not necessarily mean that no ads
+              will be displayed. Non-personalized or limited ads may still use limited
+              technical information for purposes such as fraud prevention, frequency
+              capping and aggregated measurement where permitted.
+            </p>
+          </section>
+
+          <section
+            class="policy-section"
+            id="ai"
+          >
+            <div class="section-index">
+              08
+            </div>
+
+            <h2>
+              Finrival AI privacy
+            </h2>
+
+            <p>
+              Finrival AI is an automated AI-assisted information feature.
+            </p>
+
+            <p>
+              When you submit a prompt:
+            </p>
+
+            <ul>
+              <li>
+                Your prompt may be sent through Finrival's backend to an AI service provider.
+              </li>
+              <li>
+                Relevant market, comparison, asset or news context may be included.
+              </li>
+              <li>
+                Authentication and quota information may be processed to protect
+                the service and enforce usage limits.
+              </li>
+              <li>
+                AI output may be inaccurate, incomplete or outdated.
+              </li>
+            </ul>
+
+            <p>
+              You should not include information in an AI prompt that you do not want
+              processed for the purpose of generating a response.
+            </p>
+
+            <p>
+              Finrival does not represent that AI output is confidential professional advice.
+            </p>
+          </section>
+
+          <section
+            class="policy-section"
+            id="retention"
+          >
+            <div class="section-index">
+              09
+            </div>
+
+            <h2>
+              Data retention
+            </h2>
+
+            <p>
+              We retain personal data only for as long as reasonably necessary for
+              the purposes described in this Privacy Policy, subject to legal,
+              security and technical requirements.
+            </p>
+
+            <ul>
+              <li>Account-linked data may be retained while your account remains active.</li>
+              <li>
+                Watchlist and alert data may be retained while the relevant feature
+                or account remains active.
+              </li>
+              <li>
+                Push tokens may be retained while needed to provide notifications and
+                may be removed when no longer valid or when the related account is deleted.
+              </li>
+              <li>
+                Security and server logs may be retained for a limited period where
+                reasonably necessary for security, fraud prevention, troubleshooting
+                and legal compliance.
+              </li>
+              <li>
+                Purchase or entitlement records may be retained as necessary to recognize
+                purchased access, resolve billing issues, prevent fraud or comply with legal obligations.
+              </li>
+              <li>
+                Data legally required to be retained may be kept for the required period.
+              </li>
+            </ul>
+
+            <p>
+              When an account-deletion request is completed, Finrival deletes or
+              disassociates account-linked personal data that we are not legally
+              required or otherwise permitted to retain.
+            </p>
+
+            <p>
+              Backups, logs or distributed systems may require a limited period before
+              deleted information is fully removed from all technical copies.
+            </p>
+          </section>
+
+          <section
+            class="policy-section"
+            id="deletion"
+          >
+            <div class="section-index">
+              10
+            </div>
+
+            <h2>
+              Account and data deletion
+            </h2>
+
+            <p>
+              You may permanently delete your Finrival account from within the application.
+            </p>
+
+            <p>
+              In-app deletion path:
+              <strong> Control Center → Account / Security → Delete Account</strong>.
+            </p>
+
+            <p>
+              The app may require re-authentication or other reasonable security
+              verification before deletion to prevent unauthorized account removal.
+            </p>
+
+            <p>
+              You may also request account deletion without reinstalling the app by using:
+              <a
+                class="inline-link"
+                href="../delete-account/"
+              >
+                finrival.com/delete-account
+              </a>.
+            </p>
+
+            <p>
+              You may alternatively send a deletion request to
+              <a
+                class="inline-link"
+                href="mailto:finrivals@gmail.com?subject=Finrival%20Account%20Deletion%20Request"
+              >
+                finrivals@gmail.com
+              </a>
+              with the subject "Finrival Account Deletion Request".
+            </p>
+
+            <p>
+              Please send the request from the email address associated with your
+              Finrival account where possible. We may ask for reasonable verification
+              before deleting an account.
+            </p>
+
+            <div class="notice">
+              Account deletion does not automatically cancel an Apple App Store
+              or Google Play subscription. Subscriptions must be managed through
+              the applicable store account.
+            </div>
+          </section>
+
+          <section
+            class="policy-section"
+            id="rights"
+          >
+            <div class="section-index">
+              11
+            </div>
+
+            <h2>
+              Your privacy rights
+            </h2>
+
+            <p>
+              Depending on where you live, you may have privacy rights including the right to:
+            </p>
+
+            <ul>
+              <li>Request access to personal data we hold about you.</li>
+              <li>Request correction of inaccurate personal data.</li>
+              <li>Request deletion of personal data.</li>
+              <li>Request restriction of certain processing.</li>
+              <li>Object to certain processing based on legitimate interests.</li>
+              <li>Withdraw consent where processing relies on consent.</li>
+              <li>Request portability of certain data where applicable.</li>
+              <li>Lodge a complaint with an applicable data-protection authority.</li>
+            </ul>
+
+            <p>
+              These rights may be subject to legal conditions, exceptions and
+              verification requirements.
+            </p>
+
+            <p>
+              To exercise a privacy right, contact
+              <a
+                class="inline-link"
+                href="mailto:finrivals@gmail.com"
+              >
+                finrivals@gmail.com
+              </a>.
+            </p>
+
+            <p>
+              If GDPR applies to you, you may also lodge a complaint with the
+              supervisory authority in the EU/EEA country of your habitual residence,
+              place of work or place of the alleged infringement.
+            </p>
+          </section>
+
+          <section
+            class="policy-section"
+            id="transfers"
+          >
+            <div class="section-index">
+              12
+            </div>
+
+            <h2>
+              International data transfers
+            </h2>
+
+            <p>
+              Finrival and its service providers may process information in countries
+              other than the country in which you live.
+            </p>
+
+            <p>
+              Where applicable law requires safeguards for international transfers,
+              Finrival and/or its providers may rely on mechanisms recognized by
+              applicable law, such as adequacy decisions, standard contractual clauses
+              or other approved safeguards.
+            </p>
+
+            <p>
+              Information about a specific provider's transfer safeguards may also
+              be available in that provider's privacy documentation.
+            </p>
+          </section>
+
+          <section
+            class="policy-section"
+            id="security"
+          >
+            <div class="section-index">
+              13
+            </div>
+
+            <h2>
+              Security
+            </h2>
+
+            <p>
+              We use reasonable technical and organizational safeguards designed
+              to protect personal data against unauthorized access, alteration,
+              disclosure or destruction.
+            </p>
+
+            <p>
+              These measures may include encrypted network connections, authentication
+              controls, access restrictions, backend security controls and service-provider
+              security features where appropriate.
+            </p>
+
+            <p>
+              However, no internet transmission, software system or storage method
+              can be guaranteed to be completely secure. Finrival therefore cannot
+              promise absolute security.
+            </p>
+          </section>
+
+          <section
+            class="policy-section"
+            id="children"
+          >
+            <div class="section-index">
+              14
+            </div>
+
+            <h2>
+              Children
+            </h2>
+
+            <p>
+              Finrival is not directed to children under 13.
+            </p>
+
+            <p>
+              If local law requires a higher minimum age for independent consent to
+              data processing, users below that age should use Finrival only where
+              permitted by applicable law and with any required parental or guardian involvement.
+            </p>
+
+            <p>
+              We do not knowingly seek to collect personal data from children in
+              violation of applicable law. If you believe a child has provided personal
+              data unlawfully, contact finrivals@gmail.com.
+            </p>
+          </section>
+
+          <section
+            class="policy-section"
+            id="sale"
+          >
+            <div class="section-index">
+              15
+            </div>
+
+            <h2>
+              Sale of personal data
+            </h2>
+
+            <p>
+              Finrival does not sell personal data to data brokers.
+            </p>
+
+            <p>
+              Advertising providers may process data as described in this Privacy Policy
+              and according to your consent choices, platform settings and their own policies.
+              Where applicable law treats certain advertising disclosures as a "sale",
+              "sharing" or similar regulated activity, we will provide any legally required
+              choice or opt-out mechanism.
+            </p>
+          </section>
+
+          <section
+            class="policy-section"
+            id="changes"
+          >
+            <div class="section-index">
+              16
+            </div>
+
+            <h2>
+              Changes to this Privacy Policy
+            </h2>
+
+            <p>
+              We may update this Privacy Policy when Finrival, our providers,
+              applicable law or platform requirements change.
+            </p>
+
+            <p>
+              When we make a material update, we will update the "Last Updated" date
+              and may provide additional notice where appropriate or legally required.
+            </p>
+
+            <p>
+              Your continued use of Finrival after an update is subject to applicable law.
+              Where fresh consent is legally required, we will request it rather than
+              relying solely on continued use.
+            </p>
+          </section>
+
+          <section
+            class="policy-section"
+            id="contact"
+          >
+            <div class="section-index">
+              17
+            </div>
+
+            <h2>
+              Privacy contact
+            </h2>
+
+            <p>
+              For privacy questions, account-deletion requests or data-rights requests:
+            </p>
+
+            <div class="controller-card">
+              <strong>
+                İlkim Alatan — Finrival
+              </strong>
+
+              <span>
+                Contact location: Kraków, 31-216, Poland
+              </span>
+
+              <span>
+                Email: finrivals@gmail.com
+              </span>
+
+              <span>
+                Website: https://finrival.com
+              </span>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-copy">
+          <img
+            class="footer-logo"
+            src="../logo.png"
+            alt="Finrival"
+          />
+
+          <p>
+            Finrival is an informational, educational and simulation-focused
+            market-research application.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="../">
+            Home
+          </a>
+
+          <a href="../terms/">
+            Terms
+          </a>
+
+          <a href="../delete-account/">
+            Delete Account
+          </a>
+
+          <a href="../support/">
+            Support
+          </a>
+
+          <a href="mailto:finrivals@gmail.com">
+            Email
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>
+          © 2026 Finrival. All rights reserved.
+        </span>
+
+        <span>
+          Privacy contact: finrivals@gmail.com
+        </span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
