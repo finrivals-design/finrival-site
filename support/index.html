@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="color-scheme" content="dark" />
+  <title>Support — Finrival</title>
+  <meta name="description" content="Finrival support for account access, privacy, account deletion, technical issues, Finrival PRO and general product questions." />
+  <link rel="canonical" href="https://finrival.com/support/" />
+  <style>
+:root {
+  --bg:#000000;
+  --surface:#0b0b0c;
+  --card:#121212;
+  --text:#ffffff;
+  --muted:#98a2b3;
+  --muted2:#667085;
+  --border:#262626;
+  --border2:#1b1b1c;
+  --cyan:#00e5ff;
+  --cyanSoft:rgba(0,229,255,.08);
+  --cyanBorder:rgba(0,229,255,.22);
+  --gold:#f59e0b;
+  --goldSoft:rgba(245,158,11,.08);
+  --goldBorder:rgba(245,158,11,.22);
+  --green:#34c759;
+  --red:#ff453a;
+  --max:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{
+  min-height:100vh;color:var(--text);
+  background:
+    radial-gradient(circle at 16% 4%,rgba(0,229,255,.075),transparent 24%),
+    radial-gradient(circle at 88% 8%,rgba(245,158,11,.025),transparent 22%),
+    var(--bg);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(var(--max),calc(100% - 40px));margin:0 auto}
+.nav-shell{
+  position:sticky;top:0;z-index:100;background:rgba(0,0,0,.76);
+  border-bottom:1px solid rgba(255,255,255,.055);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)
+}
+nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand-logo{width:122px;height:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:11px;font-weight:760}
+.nav-links a:hover{color:var(--text)}
+.home-link{
+  min-height:39px;display:inline-flex;align-items:center;padding:0 14px;
+  color:var(--cyan)!important;border:1px solid var(--cyanBorder);
+  border-radius:12px;background:rgba(0,229,255,.05)
+}
+.hero{padding:88px 0 52px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;padding:7px 10px;margin-bottom:18px;
+  color:var(--cyan);border:1px solid var(--cyanBorder);border-radius:999px;
+  background:var(--cyanSoft);font-size:9px;font-weight:900;letter-spacing:1.1px;text-transform:uppercase
+}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan)}
+h1{max-width:800px;font-size:clamp(42px,7vw,66px);line-height:1.02;letter-spacing:-2.8px;font-weight:930}
+.hero-copy{max-width:740px;margin-top:18px;color:var(--muted);font-size:15px;line-height:1.75}
+.meta-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+.meta-chip{
+  padding:7px 10px;color:#c7ccd4;border:1px solid var(--border);border-radius:999px;
+  background:var(--card);font-size:9px;font-weight:800
+}
+.layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:26px;padding-bottom:100px}
+.toc{
+  position:sticky;top:92px;align-self:start;padding:16px;border:1px solid var(--border);
+  border-radius:18px;background:rgba(18,18,18,.88);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)
+}
+.toc-title{margin-bottom:10px;color:var(--cyan);font-size:8px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.toc-links{display:grid;gap:4px}
+.toc-links a{padding:8px 9px;color:var(--muted);border-radius:9px;font-size:9px;line-height:1.4;font-weight:720}
+.toc-links a:hover{color:var(--text);background:rgba(255,255,255,.035)}
+.content-card,.policy-section{
+  scroll-margin-top:94px;margin-bottom:14px;padding:24px;border:1px solid var(--border);
+  border-radius:20px;background:linear-gradient(180deg,rgba(18,18,18,.96),rgba(10,10,11,.96))
+}
+.summary-card{
+  margin-bottom:18px;padding:22px;border:1px solid var(--cyanBorder);border-radius:20px;
+  background:linear-gradient(135deg,rgba(0,229,255,.06),rgba(18,18,18,.96) 48%)
+}
+.summary-title{font-size:16px;font-weight:900;letter-spacing:-.3px}
+.summary-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:15px}
+.summary-item{padding:12px;border:1px solid var(--border);border-radius:12px;background:rgba(0,0,0,.22)}
+.summary-item strong{display:block;color:#e7e9ed;font-size:9px;font-weight:900}
+.summary-item span{display:block;margin-top:3px;color:var(--muted);font-size:8px;line-height:1.5}
+.section-index{color:var(--cyan);font-size:8px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.policy-section h2,.content-card h2{margin-top:5px;font-size:22px;line-height:1.15;letter-spacing:-.55px;font-weight:900}
+.policy-section h3,.content-card h3{margin-top:18px;color:#e7e9ed;font-size:13px;line-height:1.4;font-weight:880}
+.policy-section p,.content-card p{margin-top:10px;color:var(--muted);font-size:12px;line-height:1.78;font-weight:500}
+.policy-section ul,.content-card ul{margin:10px 0 0 18px;color:var(--muted)}
+.policy-section li,.content-card li{margin:5px 0;padding-left:3px;font-size:12px;line-height:1.65}
+.inline-link{color:var(--cyan);text-decoration:underline;text-decoration-color:rgba(0,229,255,.45);text-underline-offset:3px}
+.notice{
+  margin-top:14px;padding:13px 14px;color:var(--muted);border:1px solid var(--border);
+  border-radius:12px;background:rgba(255,255,255,.015);font-size:10px;line-height:1.65
+}
+.notice.gold{border-color:var(--goldBorder);background:var(--goldSoft)}
+.controller-card{
+  margin-top:14px;padding:15px;border:1px solid var(--border);border-radius:13px;background:#0c0c0d
+}
+.controller-card strong{display:block;color:var(--text);font-size:11px;font-weight:900}
+.controller-card span{display:block;margin-top:3px;color:var(--muted);font-size:10px}
+.action-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
+.action-card{
+  padding:16px;border:1px solid var(--border);border-radius:14px;background:#0d0d0e
+}
+.action-card strong{display:block;font-size:11px;font-weight:900}
+.action-card span{display:block;margin-top:4px;color:var(--muted);font-size:9px;line-height:1.55}
+.button-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.button{
+  min-height:46px;display:inline-flex;align-items:center;justify-content:center;padding:0 17px;
+  border-radius:13px;border:1px solid transparent;font-size:11px;font-weight:900
+}
+.button.primary{color:#071013;background:var(--cyan)}
+.button.secondary{color:var(--text);background:var(--card);border-color:var(--border)}
+.steps{display:grid;gap:10px;margin-top:16px}
+.step{
+  display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;
+  padding:14px;border:1px solid var(--border);border-radius:13px;background:#0d0d0e
+}
+.step-index{
+  width:34px;height:34px;display:grid;place-items:center;color:var(--cyan);
+  border:1px solid var(--cyanBorder);border-radius:10px;background:var(--cyanSoft);
+  font-size:9px;font-weight:900
+}
+.step strong{display:block;font-size:11px;font-weight:900}
+.step span{display:block;margin-top:3px;color:var(--muted);font-size:9px;line-height:1.55}
+footer{padding:44px 0 32px;border-top:1px solid var(--border2)}
+.footer-top{display:flex;justify-content:space-between;gap:30px;align-items:flex-start}
+.footer-logo{width:118px;height:auto}
+.footer-copy{max-width:450px}
+.footer-copy p{margin-top:10px;color:var(--muted);font-size:10px;line-height:1.7}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:18px;color:var(--muted);font-size:10px;font-weight:750}
+.footer-links a:hover{color:var(--text)}
+.footer-bottom{
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;margin-top:30px;padding-top:18px;
+  color:var(--muted2);border-top:1px solid #171718;font-size:9px
+}
+@media(max-width:860px){
+  .layout{grid-template-columns:1fr}
+  .toc{position:static}
+  .toc-links{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:620px){
+  .container{width:min(var(--max),calc(100% - 28px))}
+  .nav-links a:not(.home-link){display:none}
+  .hero{padding-top:68px}
+  h1{letter-spacing:-1.8px}
+  .summary-grid,.toc-links,.action-grid{grid-template-columns:1fr}
+  .policy-section,.content-card{padding:19px}
+  .footer-top{flex-direction:column}
+  .footer-links{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+  <div class="nav-shell">
+    <div class="container">
+      <nav>
+        <a href="../" aria-label="Back to Finrival home">
+          <img class="brand-logo" src="../logo.png" alt="Finrival" />
+        </a>
+        <div class="nav-links">
+          <a href="../privacy/">Privacy</a>
+          <a href="../terms/">Terms</a>
+          <a href="../delete-account/">Delete Account</a>
+          <a href="../support/">Support</a>
+          <a class="home-link" href="../">Back to Finrival</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow"><span class="eyebrow-dot"></span>Finrival Help</div>
+        <h1>Support</h1>
+        <p class="hero-copy">Need help with Finrival? Use this page for account, privacy, deletion, technical, subscription and general product support information.</p>
+        <div class="meta-row"><div class="meta-chip">Support email: finrivals@gmail.com</div>
+<div class="meta-chip">Operator: İlkim Alatan</div>
+<div class="meta-chip">Kraków, Poland</div></div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="layout">
+        <aside class="toc">
+          <div class="toc-title">On this page</div>
+          <div class="toc-links"><a href="#contact">1. Contact support</a>
+<a href="#help">2. What we can help with</a>
+<a href="#account">3. Account & security</a>
+<a href="#privacy">4. Privacy & data rights</a>
+<a href="#subscriptions">5. Subscriptions & purchases</a>
+<a href="#market-data">6. Market data & alerts</a>
+<a href="#ai">7. Finrival AI</a>
+<a href="#links">8. Useful links</a></div>
+        </aside>
+        <div>
+<div class="summary-card">
+  <div class="summary-title">Finrival Support</div>
+  <p style="margin-top:9px;color:var(--muted);font-size:11px;line-height:1.7">
+    For account access, privacy, deletion, technical issues or general product questions, contact the Finrival support inbox.
+  </p>
+  <div class="button-row">
+    <a class="button primary" href="mailto:finrivals@gmail.com">Email Support</a>
+    <a class="button secondary" href="../delete-account/">Delete Account</a>
+  </div>
+</div>
+
+<section class="policy-section" id="contact">
+  <div class="section-index">01</div>
+  <h2>Contact support</h2>
+  <div class="controller-card">
+    <strong>Finrival Support</strong>
+    <span>Email: finrivals@gmail.com</span>
+    <span>Operator: İlkim Alatan</span>
+    <span>Contact location: Kraków, 31-216, Poland</span>
+    <span>Website: https://finrival.com</span>
+  </div>
+  <p>When contacting support, describe the issue clearly and include only information that is necessary for us to understand the problem.</p>
+  <div class="notice">Do not send passwords, payment-card details, private keys, seed phrases or other highly sensitive secrets by email.</div>
+</section>
+
+<section class="policy-section" id="help">
+  <div class="section-index">02</div>
+  <h2>What we can help with</h2>
+  <div class="action-grid">
+    <div class="action-card"><strong>Account & sign-in</strong><span>Email verification, access problems and account-related questions.</span></div>
+    <div class="action-card"><strong>Privacy</strong><span>Privacy questions, data-rights requests and information about how Finrival handles data.</span></div>
+    <div class="action-card"><strong>Account deletion</strong><span>External deletion requests if you cannot use the in-app deletion flow.</span></div>
+    <div class="action-card"><strong>Technical issues</strong><span>Unexpected app behavior, missing content, notification issues or general troubleshooting.</span></div>
+    <div class="action-card"><strong>Finrival PRO</strong><span>General questions about PRO features, entitlement recognition or store purchase flows.</span></div>
+    <div class="action-card"><strong>Product questions</strong><span>Questions about Market, Compare, Rival, Watchlist, News or Finrival AI.</span></div>
+  </div>
+</section>
+
+<section class="policy-section" id="account">
+  <div class="section-index">03</div>
+  <h2>Account & security</h2>
+  <p>If you believe your account has been accessed without authorization, contact us as soon as reasonably possible at <a class="inline-link" href="mailto:finrivals@gmail.com">finrivals@gmail.com</a>.</p>
+  <p>Finrival may ask for reasonable verification before making sensitive account changes or processing an external deletion request.</p>
+</section>
+
+<section class="policy-section" id="privacy">
+  <div class="section-index">04</div>
+  <h2>Privacy & data rights</h2>
+  <p>For privacy questions or data-rights requests, use the same support email and review the <a class="inline-link" href="../privacy/">Finrival Privacy Policy</a>.</p>
+  <p>Account deletion requests can be initiated through the <a class="inline-link" href="../delete-account/">Delete Account</a> page.</p>
+</section>
+
+<section class="policy-section" id="subscriptions">
+  <div class="section-index">05</div>
+  <h2>Subscriptions & purchases</h2>
+  <p>Finrival does not directly process your full payment-card details. App Store and Google Play purchases are handled by the applicable store.</p>
+  <p>Subscription cancellation, store billing and refund eligibility are generally handled through Apple App Store or Google Play under their applicable rules and policies.</p>
+  <div class="notice">Deleting the Finrival app or deleting your Finrival account does not necessarily cancel an active store subscription.</div>
+</section>
+
+<section class="policy-section" id="market-data">
+  <div class="section-index">06</div>
+  <h2>Market data & alerts</h2>
+  <p>Market information displayed in Finrival may be delayed, cached, stale, incomplete or inaccurate. Price alerts are convenience features and may be delayed, missed or affected by device, network or backend availability.</p>
+  <p>Do not use Finrival as the sole source for a time-sensitive trading or investment decision.</p>
+</section>
+
+<section class="policy-section" id="ai">
+  <div class="section-index">07</div>
+  <h2>Finrival AI</h2>
+  <p>Finrival AI may generate incorrect, incomplete, outdated or inconsistent output. AI content is informational and is not personalized financial, investment, tax or legal advice.</p>
+  <p>If you report an AI issue, avoid including unnecessary personal or highly sensitive information in your support email.</p>
+</section>
+
+<section class="policy-section" id="links">
+  <div class="section-index">08</div>
+  <h2>Useful links</h2>
+  <div class="action-grid">
+    <a class="action-card" href="../privacy/"><strong>Privacy Policy</strong><span>How Finrival may process personal data.</span></a>
+    <a class="action-card" href="../terms/"><strong>Terms of Use</strong><span>Product boundaries, subscriptions and user responsibilities.</span></a>
+    <a class="action-card" href="../delete-account/"><strong>Delete Account</strong><span>In-app and external deletion options.</span></a>
+    <a class="action-card" href="../"><strong>Finrival Home</strong><span>Return to the main product website.</span></a>
+  </div>
+</section>
+</div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-copy">
+          <img class="footer-logo" src="../logo.png" alt="Finrival" />
+          <p>Finrival is an informational, educational and simulation-focused market-research application.</p>
+        </div>
+        <div class="footer-links">
+          <a href="../">Home</a>
+          <a href="../privacy/">Privacy</a>
+          <a href="../terms/">Terms</a>
+          <a href="../delete-account/">Delete Account</a>
+          <a href="../support/">Support</a>
+          <a href="mailto:finrivals@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Finrival. All rights reserved.</span>
+        <span>Support: finrivals@gmail.com</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
