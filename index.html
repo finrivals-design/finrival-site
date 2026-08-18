@@ -763,6 +763,547 @@ footer{padding:46px 0 34px;border-top:1px solid var(--border2)}
   .footerTop{flex-direction:column}
   .footerLinks{justify-content:flex-start}
 }
+
+/* =========================================================
+   V7 — FINAL READABILITY & SENIOR POLISH
+   Website typography is deliberately larger than the phone UI.
+   The phone UI keeps its native proportions and is enlarged as a unit.
+========================================================= */
+
+.section{
+  padding:92px 0;
+}
+
+.navlinks{
+  font-size:13px;
+  gap:28px;
+}
+
+.navcta{
+  padding:10px 16px;
+}
+
+.pill{
+  font-size:11px;
+  letter-spacing:1.05px;
+}
+
+.hero{
+  padding:78px 0 90px;
+}
+
+.heroText{
+  font-size:clamp(16px,1.55vw,19px);
+  line-height:1.72;
+  color:#AAB2BF;
+}
+
+.btn{
+  min-height:52px;
+  padding:0 21px;
+  font-size:13px;
+}
+
+.store{
+  min-height:58px;
+}
+
+.store small{
+  font-size:9.5px;
+  color:#AAB2BF;
+}
+
+.store strong{
+  font-size:13.5px;
+}
+
+.boundary{
+  margin-top:16px;
+  font-size:11.5px;
+  line-height:1.65;
+  color:#7F8998;
+}
+
+/* Slightly enlarge the hero phone as a complete device.
+   Internal React-Native-style proportions remain untouched. */
+.nativeStage{
+  min-height:790px;
+}
+
+.nativeStage > .device{
+  transform:scale(1.055);
+  transform-origin:center center;
+}
+
+.previewSelector{
+  bottom:-18px;
+}
+
+.previewSelector button{
+  min-height:40px;
+  font-size:8px;
+}
+
+.previewNote{
+  width:195px;
+}
+
+.previewNote strong{
+  font-size:7.3px;
+}
+
+.previewNote span{
+  font-size:7.2px;
+  line-height:1.55;
+}
+
+/* Main website hierarchy */
+.sectionHead{
+  max-width:760px;
+  margin-bottom:42px;
+}
+
+.sectionKicker{
+  margin-bottom:11px;
+  font-size:11px;
+  letter-spacing:1.45px;
+}
+
+h2{
+  font-size:clamp(36px,4.8vw,55px);
+  line-height:1.06;
+}
+
+.sectionCopy{
+  max-width:700px;
+  margin-top:15px;
+  color:#AAB2BF;
+  font-size:16px;
+  line-height:1.72;
+}
+
+/* How it works */
+.how article{
+  min-height:210px;
+  padding:25px;
+}
+
+.how small{
+  font-size:10px;
+}
+
+.how h3{
+  margin-top:29px;
+  font-size:19px;
+  line-height:1.25;
+}
+
+.how p{
+  margin-top:9px;
+  color:#AAB2BF;
+  font-size:14px;
+  line-height:1.65;
+}
+
+/* Product tour — larger replica, larger explanation typography */
+.tourVisual{
+  min-height:650px;
+}
+
+.tourReplicaMount{
+  transform:translate(-50%,-50%) scale(.86);
+}
+
+.tourReplicaMount .page{
+  transition:
+    opacity .32s ease,
+    transform .36s cubic-bezier(.2,.8,.2,1);
+}
+
+.tourItem{
+  padding:27px;
+  border-radius:22px;
+}
+
+.tourItem small{
+  font-size:10px;
+  letter-spacing:1.05px;
+}
+
+.tourItem h3{
+  margin-top:13px;
+  font-size:23px;
+  line-height:1.22;
+}
+
+.tourItem p{
+  margin-top:9px;
+  color:#AAB2BF;
+  font-size:14px;
+  line-height:1.68;
+}
+
+/* Feature cards */
+.feature{
+  min-height:282px;
+  padding:24px;
+  border-radius:22px;
+}
+
+.featureIcon{
+  width:46px;
+  height:46px;
+  margin-bottom:25px;
+}
+
+.feature h3{
+  font-size:20px;
+  line-height:1.25;
+}
+
+.feature p{
+  margin-top:9px;
+  color:#AAB2BF;
+  font-size:14px;
+  line-height:1.68;
+}
+
+.featureFooter{
+  left:24px;
+  right:24px;
+  bottom:21px;
+}
+
+.tag{
+  padding:6px 9px;
+  font-size:10px;
+}
+
+.open{
+  font-size:11px;
+}
+
+/* AI showcase */
+.aiShowCopy{
+  padding:48px;
+}
+
+.aiBadge{
+  font-size:10px;
+}
+
+.aiShowCopy p{
+  color:#AAB2BF;
+  font-size:15px;
+  line-height:1.72;
+}
+
+.aiUse{
+  padding:14px;
+}
+
+.aiUse strong{
+  font-size:12px;
+}
+
+.aiUse span{
+  margin-top:4px;
+  color:#AAB2BF;
+  font-size:10px;
+  line-height:1.55;
+}
+
+.aiWindowTitle{
+  font-size:13px;
+}
+
+.aiWindowSub{
+  font-size:8px;
+}
+
+.aiWindowBubble{
+  font-size:10px;
+  line-height:1.58;
+}
+
+/* Trust */
+.trustRow{
+  color:#AAB2BF;
+  font-size:14px;
+  line-height:1.65;
+}
+
+.boundaryCard{
+  padding:25px;
+}
+
+.boundaryCard strong{
+  font-size:15px;
+}
+
+.boundaryCard p{
+  color:#AAB2BF;
+  font-size:13px;
+  line-height:1.72;
+}
+
+/* PRO */
+.pro{
+  padding:48px 30px;
+}
+
+.proBadge{
+  font-size:10px;
+}
+
+.pro p{
+  color:#AAB2BF;
+  font-size:15px;
+  line-height:1.7;
+}
+
+.proPoint{
+  padding:14px 15px;
+  font-size:13px;
+}
+
+/* Support CTA */
+.cta{
+  padding:34px;
+}
+
+.cta h3{
+  font-size:27px;
+}
+
+.cta p{
+  margin-top:7px;
+  color:#AAB2BF;
+  font-size:14px;
+  line-height:1.6;
+}
+
+/* Footer */
+.footerCopy p{
+  color:#AAB2BF;
+  font-size:12.5px;
+  line-height:1.7;
+}
+
+.footerLinks{
+  font-size:12.5px;
+}
+
+.footerBottom{
+  font-size:10.5px;
+  line-height:1.6;
+}
+
+/* Feature explainer modal */
+.modalInner{
+  padding:36px;
+}
+
+.modalKicker{
+  font-size:10.5px;
+}
+
+.modalCopy{
+  color:#AAB2BF;
+  font-size:14px;
+  line-height:1.72;
+}
+
+.point{
+  padding:14px;
+}
+
+.point strong{
+  font-size:11.5px;
+}
+
+.point span{
+  color:#AAB2BF;
+  font-size:10px;
+  line-height:1.55;
+}
+
+.modalDisclosure{
+  font-size:9.5px;
+  line-height:1.6;
+}
+
+/* Desktop: give the product tour a more deliberate editorial rhythm. */
+@media(min-width:861px){
+  .tourGrid{
+    gap:58px;
+  }
+
+  .tourItems{
+    gap:16px;
+  }
+
+  .featureGrid{
+    gap:16px;
+  }
+}
+
+/* Tablet */
+@media(max-width:1080px){
+  .nativeStage{
+    min-height:780px;
+  }
+
+  .nativeStage > .device{
+    transform:scale(1.035);
+  }
+
+  .tourVisual{
+    min-height:635px;
+  }
+
+  .tourReplicaMount{
+    transform:translate(-50%,-50%) scale(.83);
+  }
+}
+
+/* Small tablet */
+@media(max-width:860px){
+  .section{
+    padding:86px 0;
+  }
+
+  .tourVisual{
+    min-height:620px;
+  }
+
+  .tourReplicaMount{
+    transform:translate(-50%,-50%) scale(.80);
+  }
+}
+
+/* Mobile */
+@media(max-width:680px){
+  .section{
+    padding:74px 0;
+  }
+
+  .hero{
+    padding:62px 0 86px;
+  }
+
+  .pill{
+    font-size:9.5px;
+  }
+
+  .heroText{
+    font-size:16px;
+  }
+
+  .btn{
+    font-size:12px;
+  }
+
+  .boundary{
+    font-size:10.5px;
+  }
+
+  .nativeStage{
+    min-height:690px;
+  }
+
+  .nativeStage > .device{
+    transform:scale(1);
+  }
+
+  .previewSelector{
+    bottom:-34px;
+  }
+
+  .sectionKicker{
+    font-size:10px;
+  }
+
+  .sectionCopy{
+    font-size:15px;
+  }
+
+  .how h3{
+    font-size:18px;
+  }
+
+  .how p{
+    font-size:13.5px;
+  }
+
+  .tourVisual{
+    min-height:570px;
+  }
+
+  .tourReplicaMount{
+    transform:translate(-50%,-50%) scale(.73);
+  }
+
+  .tourItem{
+    padding:22px;
+  }
+
+  .tourItem h3{
+    font-size:21px;
+  }
+
+  .tourItem p{
+    font-size:13.5px;
+  }
+
+  .feature{
+    min-height:268px;
+    padding:22px;
+  }
+
+  .feature h3{
+    font-size:19px;
+  }
+
+  .feature p{
+    font-size:13.5px;
+  }
+
+  .featureFooter{
+    left:22px;
+    right:22px;
+  }
+
+  .aiShowCopy{
+    padding:32px 22px;
+  }
+
+  .aiShowCopy p{
+    font-size:14px;
+  }
+
+  .trustRow{
+    font-size:13.5px;
+  }
+
+  .pro p{
+    font-size:14px;
+  }
+
+  .cta h3{
+    font-size:24px;
+  }
+
+  .cta p{
+    font-size:13.5px;
+  }
+
+  .footerCopy p,
+  .footerLinks{
+    font-size:12px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1284,7 +1825,7 @@ footer{padding:46px 0 34px;border-top:1px solid var(--border2)}
     <div class="sectionHead">
       <div class="sectionKicker">Product tour</div>
       <h2>Five core tabs. One source-matched AI layer.</h2>
-      <p class="sectionCopy">The phone on the left is now a second instance of the same code-driven mobile replica used in the hero. Selecting an explanation changes that exact replica to Home, News, Compare, Rival, Watchlist or the global Finrival AI modal.</p>
+      <p class="sectionCopy">The phone on the left is a second instance of the same code-driven mobile replica used in the hero. Select any explanation to switch that exact replica to Home, News, Compare, Rival, Watchlist or the global Finrival AI modal. The replica is intentionally larger here so the interface remains readable without changing its native proportions.</p>
     </div>
 
     <div class="tourGrid">
@@ -1481,6 +2022,13 @@ function setReplicaPage(key){
 
   pages.forEach(p=>p.classList.toggle('active',p.dataset.nativePage===key));
   buttons.forEach(b=>b.classList.toggle('active',b.dataset.nativeTarget===key));
+
+  const activePage=tourReplicaDevice.querySelector('[data-native-page].active');
+  const activeScroll=activePage ? activePage.querySelector('.pageScroll') : null;
+
+  if(activeScroll){
+    activeScroll.scrollTop=0;
+  }
 }
 
 function initTourReplica(){
