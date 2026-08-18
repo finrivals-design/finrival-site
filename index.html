@@ -1304,6 +1304,76 @@ h2{
   }
 }
 
+
+/* =========================================================
+   V8 — QUIKTURN ATTRIBUTION + MOBILE BROWSER POLISH
+========================================================= */
+.footerCredits{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:7px}
+.creditDivider{color:#475467}
+.quikturnCredit{color:#8F98A7;text-decoration:none;font-weight:760;transition:color .16s ease}
+.quikturnCredit:hover{color:var(--cyan)}
+
+@media(max-width:680px){
+  body{overflow-x:hidden}
+  .container{width:min(var(--max),calc(100% - 24px))}
+  nav{height:62px}
+  .logo{width:110px}
+  .hero{padding:56px 0 82px}
+  .heroGrid{gap:48px}
+  h1{font-size:clamp(42px,12.2vw,50px);line-height:1.01;letter-spacing:-2.35px}
+  .heroText{max-width:560px;font-size:15.5px;line-height:1.68}
+  .actions{gap:9px}
+  .actions .btn{flex:1 1 150px}
+  .stores{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .store{min-width:0;width:100%;padding:8px 11px}
+  .storeIcon{width:29px;height:29px}
+  .store small{font-size:8.5px}
+  .store strong{font-size:12px}
+  .boundary{font-size:10.5px;line-height:1.6}
+  .nativeStage{min-height:660px}
+  .nativeStage > .device{width:292px;height:604px;transform:none}
+  .deviceScreen{border-radius:35px}
+  .nativeHalo{width:390px;height:390px}
+  .previewSelector{width:min(360px,100%);bottom:-32px;padding:5px;gap:3px}
+  .previewSelector button{min-height:37px;padding:0 2px;font-size:7px}
+  .sectionHead{margin-bottom:32px}
+  h2{font-size:clamp(32px,9.5vw,42px);letter-spacing:-1.45px}
+  .sectionCopy{font-size:15px;line-height:1.68}
+  .how article{min-height:auto;padding:22px}
+  .tourVisual{min-height:548px}
+  .tourReplicaMount{transform:translate(-50%,-50%) scale(.70)}
+  .tourItem{padding:21px}
+  .feature{min-height:260px}
+  .aiShowVisual{padding:22px 14px 26px}
+  .aiWindow{padding:15px}
+  .trustGrid{gap:30px}
+  .pro{padding:38px 20px}
+  .cta{padding:25px 21px}
+  .footerTop{gap:26px}
+  .footerLinks{gap:14px 18px}
+  .footerBottom{display:grid;grid-template-columns:1fr;gap:8px}
+  .footerCredits{justify-content:flex-start}
+}
+@media(max-width:420px){
+  .container{width:calc(100% - 20px)}
+  .pill{max-width:100%;padding:7px 10px;font-size:8.8px}
+  h1{font-size:clamp(39px,11.8vw,46px)}
+  .heroText{font-size:15px}
+  .actions{display:grid;grid-template-columns:1fr}
+  .actions .btn{width:100%}
+  .stores{grid-template-columns:1fr}
+  .store{min-height:55px}
+  .nativeStage{min-height:625px}
+  .nativeStage > .device{width:278px;height:575px}
+  .previewSelector{width:100%}
+  .previewSelector button{font-size:6.6px}
+  .tourVisual{min-height:520px}
+  .tourReplicaMount{transform:translate(-50%,-50%) scale(.66)}
+  .footerCredits{display:block}
+  .creditDivider{display:none}
+  .quikturnCredit{display:block;margin-top:4px;width:max-content}
+}
+
 </style>
 </head>
 <body>
@@ -1951,7 +2021,14 @@ h2{
       <div class="footerCopy"><img class="footerLogo" src="logo.png" alt="Finrival"/><p>Market research, comparison, watchlists, simulation and AI-assisted context in one focused workspace.</p></div>
       <div class="footerLinks"><a href="./privacy/">Privacy</a><a href="./terms/">Terms</a><a href="./delete-account/">Delete Account</a><a href="./support/">Support</a><a href="mailto:finrivals@gmail.com">Email</a></div>
     </div>
-    <div class="footerBottom"><span>© 2026 Finrival. All rights reserved.</span><span>Informational, educational and simulation-focused.</span></div>
+    <div class="footerBottom">
+  <span>© 2026 Finrival. All rights reserved.</span>
+  <span class="footerCredits">
+    Informational, educational and simulation-focused.
+    <span class="creditDivider">•</span>
+    <a class="quikturnCredit" href="https://getquikturn.io?ref=finrival.com">Logos by Quikturn</a>
+  </span>
+</div>
   </div>
 </footer>
 
