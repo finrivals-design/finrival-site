@@ -558,6 +558,33 @@ h2{font-size:clamp(34px,4.8vw,53px);line-height:1.05;letter-spacing:-2px;font-we
   display:flex;align-items:center;justify-content:center;
   border:1px solid var(--border);border-radius:28px;background:radial-gradient(circle at 50% 10%,rgba(0,229,255,.05),transparent 38%),#080809
 }
+.tourVisual{
+  overflow:hidden;
+}
+.tourReplicaMount{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:350px;
+  height:720px;
+  transform:translate(-50%,-50%) scale(.755);
+  transform-origin:center center;
+}
+.tourReplicaMount .device{
+  position:relative;
+  inset:auto;
+  width:350px;
+  height:720px;
+  box-shadow:
+    0 34px 90px rgba(0,0,0,.68),
+    0 0 44px rgba(0,229,255,.035),
+    inset 0 1px 0 rgba(255,255,255,.12);
+}
+.tourReplicaMount .deviceScreen{
+  width:100%;
+  height:100%;
+}
+
 .tourShell{
   width:270px;height:520px;padding:8px;border:1px solid #343438;border-radius:42px;
   background:linear-gradient(145deg,#242427,#070708 52%,#1b1b1e);box-shadow:0 28px 76px rgba(0,0,0,.6)
@@ -708,6 +735,7 @@ footer{padding:46px 0 34px;border-top:1px solid var(--border2)}
   .navlinks{display:none}
   .tourGrid{grid-template-columns:1fr}
   .tourVisual{position:static}
+  .tourReplicaMount{transform:translate(-50%,-50%) scale(.74)}
   .trustGrid,.aiShowGrid{grid-template-columns:1fr}
   .aiShowVisual{border-left:0;border-top:1px solid var(--border)}
   .modalGrid{grid-template-columns:1fr}
@@ -729,7 +757,8 @@ footer{padding:46px 0 34px;border-top:1px solid var(--border2)}
   .how article{border-right:0;border-bottom:1px solid var(--border)}
   .how article:nth-child(2){border-bottom:1px solid var(--border)}
   .how article:last-child{border-bottom:0}
-  .tourVisual{min-height:520px}
+  .tourVisual{min-height:540px}
+  .tourReplicaMount{transform:translate(-50%,-50%) scale(.67)}
   .cta{grid-template-columns:1fr}
   .footerTop{flex-direction:column}
   .footerLinks{justify-content:flex-start}
@@ -907,38 +936,62 @@ footer{padding:46px 0 34px;border-top:1px solid var(--border2)}
 
               <!-- NEWS -->
               <section class="page" data-native-page="news">
-                <div class="pageScroll">
+                <div class="pageScroll" style="padding-top:95px">
                   <div class="newsTop">
-                    <div class="newsChip active">All</div>
-                    <div class="newsChip">Markets</div>
-                    <div class="newsChip">Crypto</div>
-                    <div class="newsChip">Macro</div>
+                    <div class="newsChip active">◉ All News</div>
+                    <div class="newsChip">⇅ Most Traded</div>
+                    <div class="newsChip">! Whale Alerts</div>
+                    <div class="newsChip">↗ NASDAQ</div>
                   </div>
 
-                  <div class="newsHero">
-                    <div class="newsArt"></div>
-                    <div class="newsCopy">
-                      <div class="newsMeta"><span>Illustrative source</span><span>12m • 2 min read</span></div>
-                      <div class="newsTitle">Illustrative market story showing the Finrival News layout.</div>
-                      <div class="newsSummary">Source and time context remain visible, with supported stories available for Finrival AI follow-up.</div>
+                  <div style="display:flex;gap:8px;margin-top:10px;overflow:hidden">
+                    <div style="position:relative;flex:0 0 72%;height:150px;overflow:hidden;border:1px solid var(--border);border-radius:18px;background:radial-gradient(circle at 75% 20%,rgba(0,229,255,.19),transparent 30%),linear-gradient(135deg,#1c1f26,#08090b)">
+                      <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(0,0,0,.86))"></div>
+                      <div style="position:absolute;left:11px;right:11px;top:10px;display:flex;justify-content:space-between">
+                        <span style="padding:3px 5px;border-radius:6px;background:rgba(0,0,0,.55);color:var(--cyan);font-size:4.7px;font-weight:900">TOP STORY</span>
+                        <span style="width:22px;height:22px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.12);border-radius:50%;background:rgba(0,0,0,.55);font-size:7px">↗</span>
+                      </div>
+                      <div style="position:absolute;left:11px;right:11px;bottom:11px">
+                        <div style="font-size:7.5px;line-height:1.35;font-weight:900">Illustrative financial headline in the current premium top-card layout.</div>
+                        <div style="display:flex;justify-content:space-between;margin-top:7px;color:#ccc;font-size:4.8px;font-weight:700"><span>Illustrative source</span><span>12m</span></div>
+                      </div>
+                    </div>
+
+                    <div style="position:relative;flex:0 0 58%;height:150px;overflow:hidden;border:1px solid var(--border);border-radius:18px;background:radial-gradient(circle at 35% 25%,rgba(245,158,11,.13),transparent 32%),#111217">
+                      <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(0,0,0,.88))"></div>
+                      <div style="position:absolute;left:10px;right:10px;bottom:11px">
+                        <div style="font-size:7px;line-height:1.35;font-weight:900">Second story card continues horizontally.</div>
+                        <div style="margin-top:7px;color:#ccc;font-size:4.8px;font-weight:700">28m</div>
+                      </div>
                     </div>
                   </div>
+
+                  <div class="divider" style="margin:14px 0"><i></i></div>
 
                   <div class="timeline">
                     <div class="story">
                       <div class="storyTop"><span>MARKET DESK</span><span>28m</span></div>
                       <div class="storyTitle">Example macro story displayed in Finrival's timeline-style feed.</div>
-                      <span class="sentiment">BULLISH</span>
+                      <div style="display:flex;align-items:center;justify-content:space-between;margin-top:6px">
+                        <span class="sentiment">BULLISH</span>
+                        <span style="color:var(--cyan);font-size:4.8px;font-weight:900">⚡ AI Insight</span>
+                      </div>
                     </div>
                     <div class="story">
                       <div class="storyTop"><span>FINANCE</span><span>46m</span></div>
                       <div class="storyTitle">Example company headline with source, time and compact sentiment context.</div>
-                      <span class="sentiment" style="color:var(--muted);background:#111112">NEUTRAL</span>
+                      <div style="display:flex;align-items:center;justify-content:space-between;margin-top:6px">
+                        <span class="sentiment" style="color:var(--muted);background:#111112">NEUTRAL</span>
+                        <span style="color:var(--cyan);font-size:4.8px;font-weight:900">⚡ AI Insight</span>
+                      </div>
                     </div>
                     <div class="story">
                       <div class="storyTop"><span>DIGITAL ASSETS</span><span>1h</span></div>
-                      <div class="storyTitle">Example crypto story ready to continue into Finrival AI.</div>
-                      <span class="sentiment">AI CONTEXT</span>
+                      <div class="storyTitle">Example digital-asset story ready for contextual follow-up.</div>
+                      <div style="display:flex;align-items:center;justify-content:space-between;margin-top:6px">
+                        <span class="sentiment">CONTEXT</span>
+                        <span style="color:var(--cyan);font-size:4.8px;font-weight:900">⚡ AI Insight</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -947,9 +1000,13 @@ footer{padding:46px 0 34px;border-top:1px solid var(--border2)}
               <!-- COMPARE -->
               <section class="page" data-native-page="compare">
                 <div class="pageScroll">
-                  <div class="compareBack">‹ Back to Markets</div>
-                  <div style="margin-top:7px;font-size:17px;font-weight:930;letter-spacing:-.4px">Compare Assets</div>
-                  <div class="compareIntro">Side-by-side historical performance, momentum and risk context.</div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:3px;border:1px solid var(--border);border-radius:11px;background:var(--card)">
+                    <div style="height:30px;display:flex;align-items:center;justify-content:center;gap:5px;border-radius:8px;background:var(--cyan);color:#000;font-size:5.5px;font-weight:900">◫ RIVAL VIEW</div>
+                    <div style="height:30px;display:flex;align-items:center;justify-content:center;gap:5px;border-radius:8px;color:var(--muted);font-size:5.5px;font-weight:900">◷ WEALTH SIMULATOR</div>
+                  </div>
+
+                  <div style="margin-top:14px;font-size:17px;font-weight:930;letter-spacing:-.4px">Global Rivalry</div>
+                  <div class="compareIntro">Institutional level cross-asset analysis.</div>
 
                   <div class="duel">
                     <div class="sideCard">
@@ -958,6 +1015,7 @@ footer{padding:46px 0 34px;border-top:1px solid var(--border2)}
                       <div class="sideName">illustrative</div>
                       <div class="sidePrice">Reference</div>
                       <div class="sideChange">Positive</div>
+                      <div style="margin-top:5px;color:var(--muted);font-size:4.6px">◫ Updated reference</div>
                     </div>
                     <div class="duelVs">VS</div>
                     <div class="sideCard">
@@ -966,19 +1024,26 @@ footer{padding:46px 0 34px;border-top:1px solid var(--border2)}
                       <div class="sideName">illustrative</div>
                       <div class="sidePrice">Reference</div>
                       <div class="sideChange red">Negative</div>
+                      <div style="margin-top:5px;color:var(--muted);font-size:4.6px">◫ Updated reference</div>
                     </div>
                   </div>
 
-                  <div class="chartPanel">
+                  <div style="height:32px;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--cyanB);border-radius:11px;background:rgba(0,229,255,.045);color:var(--cyan);font-size:6px;font-weight:900">⚡ AI Battle Report</div>
+
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-top:14px">
+                    <div style="font-size:8px;font-weight:900">Price Momentum</div>
+                    <div style="padding:4px 6px;border:1px solid var(--cyanB);border-radius:8px;background:rgba(0,229,255,.05);color:var(--cyan);font-size:4.8px;font-weight:900">🔗 SYNC ON</div>
+                  </div>
+
+                  <div class="chartPanel" style="margin-top:7px">
                     <div class="chartHead">
-                      <div class="chartTitle">Performance</div>
+                      <div class="chartTitle">Asset A • Line</div>
                       <div class="chartTabs"><span class="chartTab">1M</span><span class="chartTab">3M</span><span class="chartTab active">1Y</span></div>
                     </div>
                     <div class="chartArea">
                       <svg viewBox="0 0 280 88" preserveAspectRatio="none">
                         <path d="M0,67 C30,62 42,67 64,52 C83,41 100,50 120,38 C140,28 159,38 179,26 C201,15 223,24 246,13 C260,8 270,12 280,6" fill="none" stroke="rgba(0,229,255,.16)" stroke-width="7" stroke-linecap="round"/>
                         <path d="M0,67 C30,62 42,67 64,52 C83,41 100,50 120,38 C140,28 159,38 179,26 C201,15 223,24 246,13 C260,8 270,12 280,6" fill="none" stroke="#00E5FF" stroke-width="2.2" stroke-linecap="round"/>
-                        <path d="M0,58 C27,56 42,43 64,46 C85,49 101,37 121,41 C144,45 161,30 183,34 C205,38 224,26 246,29 C259,31 270,22 280,24" fill="none" stroke="#F59E0B" stroke-width="1.8" stroke-linecap="round"/>
                       </svg>
                     </div>
                     <div class="rsiPanel">
@@ -997,34 +1062,71 @@ footer{padding:46px 0 34px;border-top:1px solid var(--border2)}
               <!-- RIVAL -->
               <section class="page" data-native-page="rival">
                 <div class="pageScroll">
-                  <div style="font-size:17px;font-weight:930;letter-spacing:-.4px">Rival</div>
-                  <div style="margin-top:3px;color:var(--muted);font-size:5.7px">Practice with fictional Rival Credits. No real-money orders are placed.</div>
-
-                  <div class="rivalHero">
-                    <div class="rivalLabel">Simulation balance</div>
-                    <div class="rivalBalance">10,000 RC</div>
-                    <div class="rivalSub">Rival Credits · fictional · no cash value</div>
-                  </div>
-
-                  <div class="rivalBtns">
-                    <div class="rivalBtn primary">Simulate Buy</div>
-                    <div class="rivalBtn">Activity</div>
-                  </div>
-
-                  <div class="positionTitle">Simulated positions</div>
-                  <div style="margin-top:6px;padding:0 10px;border:1px solid var(--border);border-radius:15px;background:var(--card)">
-                    <div class="position">
-                      <div class="assetLeft"><div class="assetLogo">A</div><div><div class="assetSymbol">Sample Asset A</div><div class="assetName">fictional position</div></div></div>
-                      <div style="text-align:right"><div class="rc">2,500 RC</div><div class="assetChange">Simulated</div></div>
-                    </div>
-                    <div class="position">
-                      <div class="assetLeft"><div class="assetLogo">B</div><div><div class="assetSymbol">Sample Asset B</div><div class="assetName">fictional position</div></div></div>
-                      <div style="text-align:right"><div class="rc">1,750 RC</div><div class="assetChange" style="color:var(--red)">Simulated</div></div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+                    <div style="font-size:17px;font-weight:930;letter-spacing:-.4px">V-Trade Simulator</div>
+                    <div style="display:flex;gap:5px">
+                      <div style="width:28px;height:28px;display:grid;place-items:center;border:1px solid var(--border);border-radius:9px;background:var(--card);color:var(--cyan);font-size:8px">↻</div>
+                      <div style="width:28px;height:28px;display:grid;place-items:center;border:1px solid var(--border);border-radius:9px;background:var(--card);color:var(--cyan);font-size:8px">ⓘ</div>
                     </div>
                   </div>
 
-                  <div style="margin-top:12px;padding:10px;border:1px solid rgba(245,158,11,.16);border-radius:14px;background:rgba(245,158,11,.035);color:var(--muted);font-size:5.5px;line-height:1.5">
-                    Rival Credits cannot be withdrawn, redeemed or transferred for real-world value.
+                  <div style="display:inline-flex;align-items:center;gap:5px;margin-top:7px;padding:4px 7px;border:1px solid rgba(0,229,255,.27);border-radius:9px;background:rgba(0,229,255,.06);color:var(--cyan);font-size:5.3px;font-weight:900;letter-spacing:.35px">
+                    ⚗ SIMULATION • NO REAL MONEY
+                  </div>
+
+                  <div class="rivalHero" style="margin-top:10px;background:radial-gradient(circle at 18% 0%,rgba(0,229,255,.15),transparent 38%),radial-gradient(circle at 90% 100%,rgba(0,85,255,.12),transparent 42%),#0b0f19;border-color:var(--border)">
+                    <div style="display:flex;align-items:flex-start;justify-content:space-between">
+                      <div>
+                        <div class="rivalLabel">SIMULATED BALANCE</div>
+                        <div class="rivalBalance">RC 100,000</div>
+                      </div>
+                      <div style="width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.05);color:rgba(255,255,255,.65);font-size:8px">◉</div>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px;padding-top:12px;border-top:1px solid rgba(255,255,255,.10)">
+                      <div>
+                        <div style="color:rgba(255,255,255,.5);font-size:5px;font-weight:700">Rival Credits</div>
+                        <div style="margin-top:2px;color:var(--cyan);font-size:8px;font-weight:900">RC 100,000</div>
+                      </div>
+                      <div style="text-align:right">
+                        <div style="color:rgba(255,255,255,.5);font-size:5px;font-weight:700">Total P&amp;L</div>
+                        <div style="margin-top:2px;color:var(--green);font-size:8px;font-weight:900">+RC 0.00 (0.00%)</div>
+                      </div>
+                    </div>
+
+                    <div style="height:4px;margin-top:11px;border-radius:999px;background:rgba(255,255,255,.10);overflow:hidden">
+                      <div style="width:100%;height:100%;background:#fff"></div>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;margin-top:5px;color:rgba(255,255,255,.5);font-size:4.8px;font-weight:750">
+                      <span>CASH 100%</span><span style="color:var(--cyan)">INVESTED 0%</span>
+                    </div>
+                  </div>
+
+                  <div class="divider" style="margin:16px 0"><i></i></div>
+
+                  <div style="padding:15px 12px;border:1px solid var(--border);border-radius:16px;background:var(--card);text-align:center">
+                    <div style="font-size:18px;opacity:.55">◫</div>
+                    <div style="margin-top:5px;color:var(--muted);font-size:6.2px;font-weight:800">Your practice portfolio is empty.</div>
+                    <div style="margin-top:3px;color:var(--muted2);font-size:5.2px;line-height:1.45">Search for assets below to start practicing with simulated credits.</div>
+                    <div style="display:inline-flex;margin-top:9px;padding:6px 10px;border-radius:9px;background:var(--cyan);color:#000;font-size:5.5px;font-weight:900">Discover Assets</div>
+                  </div>
+
+                  <div style="margin-top:12px">
+                    <div style="font-size:10px;font-weight:900">All Assets</div>
+                    <div style="margin-top:2px;color:var(--muted);font-size:5.3px">Search and add assets to your practice portfolio.</div>
+                  </div>
+
+                  <div style="margin-top:7px;padding:8px 9px;border:1px solid var(--border);border-radius:11px;background:var(--card);display:flex;align-items:center;justify-content:space-between">
+                    <div>
+                      <div style="font-size:5.5px;font-weight:900;letter-spacing:.3px">CACHED MARKET DATA</div>
+                      <div style="margin-top:2px;color:var(--muted);font-size:4.8px">Updated reference snapshot • illustrative</div>
+                    </div>
+                    <div style="width:25px;height:25px;display:grid;place-items:center;border:1px solid var(--border);border-radius:8px;color:var(--cyan);font-size:7px">↻</div>
+                  </div>
+
+                  <div class="toolbar">
+                    <div class="toolBtn">⌕ Quick Search</div>
+                    <div class="toolBtn accent"><b>≡</b> All Assets <span style="margin-left:auto;color:var(--muted)">⌄</span></div>
                   </div>
                 </div>
               </section>
@@ -1032,36 +1134,55 @@ footer{padding:46px 0 34px;border-top:1px solid var(--border2)}
               <!-- WATCHLIST -->
               <section class="page" data-native-page="watchlist">
                 <div class="pageScroll">
-                  <div style="font-size:17px;font-weight:930;letter-spacing:-.4px">Watchlist</div>
-                  <div style="margin-top:3px;color:var(--muted);font-size:5.7px">Keep your saved assets and reference-price alerts organized.</div>
-
-                  <div class="watchInfo">
-                    <div class="watchInfoTitle"><span style="color:var(--cyan)">◷</span> Price alerts</div>
-                    <div class="watchInfoCopy">Tap the bell on a saved asset. Alerts are one-time and use Finrival shared cached reference prices — not broker execution quotes.</div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+                    <div>
+                      <div style="font-size:17px;font-weight:930;letter-spacing:-.4px">Watchlist</div>
+                      <div style="margin-top:2px;color:var(--muted);font-size:5.2px">Shared cached market data</div>
+                    </div>
+                    <div style="width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--border);border-radius:12px;background:var(--card);color:var(--cyan);font-size:8px;font-weight:900">F</div>
                   </div>
 
-                  <div class="watchSearch"><span>⌕ Search stocks & crypto to add...</span><span>›</span></div>
+                  <div class="watchInfo" style="margin-top:10px">
+                    <div style="display:flex;align-items:flex-start;gap:9px">
+                      <div style="width:30px;height:30px;display:grid;place-items:center;flex:0 0 auto;border-radius:10px;background:rgba(0,229,255,.07);color:var(--cyan);font-size:9px">◷</div>
+                      <div>
+                        <div class="watchInfoTitle">User-specific Price Alerts</div>
+                        <div class="watchInfoCopy">Tap the bell on a saved asset. Alerts are one-time and use Finrival shared cached reference prices — not broker execution quotes.</div>
+                      </div>
+                    </div>
+                  </div>
 
-                  <div style="margin-top:12px;font-size:8px;font-weight:900">Saved assets</div>
-                  <div style="margin-top:6px;padding:0 10px;border:1px solid var(--border);border-radius:15px;background:var(--card)">
-                    <div class="watchRow">
-                      <div class="assetLogo">A</div>
-                      <div><div class="assetSymbol">Saved Asset A</div><div class="assetName">reference market context</div></div>
-                      <div class="squareAction">◔</div>
-                      <div class="squareAction ai">◆</div>
+                  <div class="watchSearch"><span>⌕ Search stocks &amp; crypto to add...</span><span>›</span></div>
+
+                  <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px">
+                    <div>
+                      <div style="font-size:9px;font-weight:900">Saved Assets</div>
+                      <div style="margin-top:2px;color:var(--muted);font-size:5px">2/5 free slots used</div>
                     </div>
-                    <div class="watchRow">
-                      <div class="assetLogo">B</div>
-                      <div><div class="assetSymbol">Saved Asset B</div><div class="assetName">reference market context</div></div>
-                      <div class="squareAction">◔</div>
-                      <div class="squareAction ai">◆</div>
+                  </div>
+
+                  <div style="margin-top:6px;display:grid;gap:7px">
+                    <div style="padding:10px;border:1px solid var(--border);border-radius:15px;background:var(--card)">
+                      <div class="watchRow" style="padding:0;border-bottom:0">
+                        <div class="assetLogo">A</div>
+                        <div><div class="assetSymbol">Saved Asset A</div><div class="assetName">reference market context</div></div>
+                        <div class="squareAction">◔</div>
+                        <div class="squareAction ai">◆</div>
+                      </div>
                     </div>
-                    <div class="watchRow">
-                      <div class="assetLogo">C</div>
-                      <div><div class="assetSymbol">Saved Asset C</div><div class="assetName">reference market context</div></div>
-                      <div class="squareAction">◔</div>
-                      <div class="squareAction ai">◆</div>
+
+                    <div style="padding:10px;border:1px solid var(--border);border-radius:15px;background:var(--card)">
+                      <div class="watchRow" style="padding:0;border-bottom:0">
+                        <div class="assetLogo">B</div>
+                        <div><div class="assetSymbol">Saved Asset B</div><div class="assetName">reference market context</div></div>
+                        <div class="squareAction">◔</div>
+                        <div class="squareAction ai">◆</div>
+                      </div>
                     </div>
+
+                    <div style="height:42px;display:flex;align-items:center;justify-content:center;gap:6px;border:1px dashed #303033;border-radius:14px;color:var(--muted);font-size:5.6px;font-weight:750">＋ Add another asset</div>
+                    <div style="height:42px;display:flex;align-items:center;justify-content:center;gap:6px;border:1px dashed #303033;border-radius:14px;color:var(--muted);font-size:5.6px;font-weight:750">＋ Add another asset</div>
+                    <div style="height:42px;display:flex;align-items:center;justify-content:center;gap:6px;border:1px dashed #303033;border-radius:14px;color:var(--muted);font-size:5.6px;font-weight:750">＋ Add another asset</div>
                   </div>
                 </div>
               </section>
@@ -1098,12 +1219,26 @@ footer{padding:46px 0 34px;border-top:1px solid var(--border2)}
                     </div>
                     <button class="aiClose" id="closePhoneAI" type="button">×</button>
                   </div>
+
+                  <div style="display:flex;gap:7px;padding:8px 11px;border-bottom:1px solid rgba(150,150,150,.10);background:rgba(0,0,0,.20);color:var(--muted);font-size:5.2px;line-height:1.45">
+                    <span style="margin-top:1px">⚠</span>
+                    <span>AI output may be incorrect, incomplete or outdated. Informational only. <b style="color:var(--cyan)">Privacy</b></span>
+                  </div>
+
+                  <div style="height:37px;display:flex;align-items:center;gap:5px;padding:0 10px;border-bottom:1px solid rgba(150,150,150,.10);overflow:hidden">
+                    <div style="display:flex;align-items:center;gap:4px;padding:5px 7px;border:1px solid rgba(150,150,150,.18);border-radius:9px;background:rgba(255,255,255,.05);color:#fff;font-size:5px;font-weight:800">◌ Market Research ×</div>
+                    <div style="display:flex;align-items:center;gap:4px;padding:5px 7px;border-radius:9px;color:var(--cyan);font-size:5px;font-weight:850">＋ New</div>
+                  </div>
+
                   <div class="aiChat">
+                    <div style="margin-bottom:9px;color:var(--muted2);font-size:4.7px;text-align:center">✓ Secure session</div>
                     <div class="aiBubble user">Compare the momentum and risk context of these two assets.</div>
                     <div class="aiBubble"><strong>Finrival AI</strong>I can summarize supported historical, momentum and risk context. The output is informational and should be independently verified.</div>
                     <div class="aiBubble user">What should I verify next?</div>
                     <div class="aiBubble"><strong>Finrival AI</strong>Check the underlying data, selected timeframe, recent news and whether the comparison matches your research question.</div>
                   </div>
+
+                  <div style="padding:0 14px 5px;color:var(--muted);font-size:4.8px;font-weight:800;letter-spacing:.25px">FREE AI • 5 DAILY REQUESTS</div>
                   <div class="aiComposer"><div class="aiPlaceholder">Ask Finrival AI...</div><div class="aiSend">↑</div></div>
                 </div>
               </div>
@@ -1148,27 +1283,17 @@ footer{padding:46px 0 34px;border-top:1px solid var(--border2)}
   <div class="container">
     <div class="sectionHead">
       <div class="sectionKicker">Product tour</div>
-      <h2>Five core tabs. One global AI layer.</h2>
-      <p class="sectionCopy">The mobile structure follows the current app architecture: Home, News, Compare, Rival and Watchlist, with Finrival AI available globally as a separate assistant.</p>
+      <h2>Five core tabs. One source-matched AI layer.</h2>
+      <p class="sectionCopy">The phone on the left is now a second instance of the same code-driven mobile replica used in the hero. Selecting an explanation changes that exact replica to Home, News, Compare, Rival, Watchlist or the global Finrival AI modal.</p>
     </div>
 
     <div class="tourGrid">
       <div class="tourVisual">
-        <div class="tourShell">
-          <div class="tourInner">
-            <img src="logo.png" alt="Finrival" />
-            <h3 id="tourVisualTitle">Home / Market</h3>
-            <p id="tourVisualCopy">Top Gainer / Top Dip, Daily Liquidity, anomaly context, market sessions and the asset list.</p>
-            <div class="tourMini">
-              <strong id="tourMiniTitle">Current mobile structure</strong>
-              <span id="tourMiniText">The website preview now follows the actual shared app header and five-tab bottom navigation.</span>
-            </div>
-            <div class="tourMini gold">
-              <strong>Finrival AI</strong>
-              <span>AI remains a global floating action rather than a sixth navigation tab.</span>
-            </div>
-          </div>
-        </div>
+        <div
+          class="tourReplicaMount"
+          id="tourReplicaMount"
+          aria-label="Source-accurate Finrival mobile app replica"
+        ></div>
       </div>
 
       <div class="tourItems">
@@ -1328,30 +1453,78 @@ const phoneAIOverlay=document.getElementById('phoneAIOverlay');
 document.getElementById('openPhoneAI').addEventListener('click',()=>phoneAIOverlay.classList.add('open'));
 document.getElementById('closePhoneAI').addEventListener('click',()=>phoneAIOverlay.classList.remove('open'));
 
-const tourData={
-  home:['Home / Market','Top Gainer / Top Dip, Daily Liquidity, anomaly context, market sessions and the asset list.','Current mobile structure','Home is the first tab and uses the shared app header above MarketScreen.'],
-  news:['News','Timeline-style financial stories, source/time context and supported AI follow-up.','News tab','News is the second bottom-navigation destination.'],
-  compare:['Compare','The raised cyan center action opens side-by-side historical, chart and RSI-style research.','Raised center action','Compare is visually emphasized in the actual bottom navigation.'],
-  rival:['Rival','Gold-accented fictional Rival Credits and simulated activity.','Simulation layer','Rival is the fourth tab and uses a distinct gold treatment.'],
-  watchlist:['Watchlist','Saved assets, one-time reference-price alerts and AI shortcuts.','Monitoring tab','Watchlist is the fifth mobile navigation destination.'],
-  ai:['Finrival AI','A global floating AI assistant above the bottom navigation, not a sixth tab.','Global assistant','The floating Finrival AI pill opens a blurred full-screen modal experience.']
-};
 const tourItems=[...document.querySelectorAll('[data-tour-key]')];
-const tvTitle=document.getElementById('tourVisualTitle');
-const tvCopy=document.getElementById('tourVisualCopy');
-const tmTitle=document.getElementById('tourMiniTitle');
-const tmText=document.getElementById('tourMiniText');
-function setTour(key){
-  const d=tourData[key]; if(!d)return;
-  tourItems.forEach(x=>x.classList.toggle('active',x.dataset.tourKey===key));
-  tvTitle.textContent=d[0]; tvCopy.textContent=d[1]; tmTitle.textContent=d[2]; tmText.textContent=d[3];
+const tourReplicaMount=document.getElementById('tourReplicaMount');
+const sourceDevice=document.querySelector('.nativeStage .device');
+let tourReplicaDevice=null;
+
+function removeReplicaIds(root){
+  if(root.hasAttribute && root.hasAttribute('id')) root.removeAttribute('id');
+  root.querySelectorAll('[id]').forEach(node=>node.removeAttribute('id'));
 }
+
+function setReplicaPage(key){
+  if(!tourReplicaDevice)return;
+
+  const overlay=tourReplicaDevice.querySelector('.aiOverlay');
+  const pages=[...tourReplicaDevice.querySelectorAll('[data-native-page]')];
+  const buttons=[...tourReplicaDevice.querySelectorAll('[data-native-target]')];
+
+  if(key==='ai'){
+    pages.forEach(p=>p.classList.toggle('active',p.dataset.nativePage==='home'));
+    buttons.forEach(b=>b.classList.toggle('active',b.dataset.nativeTarget==='home'));
+    if(overlay) overlay.classList.add('open');
+    return;
+  }
+
+  if(overlay) overlay.classList.remove('open');
+
+  pages.forEach(p=>p.classList.toggle('active',p.dataset.nativePage===key));
+  buttons.forEach(b=>b.classList.toggle('active',b.dataset.nativeTarget===key));
+}
+
+function initTourReplica(){
+  if(!tourReplicaMount || !sourceDevice)return;
+
+  tourReplicaDevice=sourceDevice.cloneNode(true);
+  removeReplicaIds(tourReplicaDevice);
+  tourReplicaDevice.classList.add('tourReplicaDevice');
+
+  tourReplicaMount.innerHTML='';
+  tourReplicaMount.appendChild(tourReplicaDevice);
+
+  tourReplicaDevice.querySelectorAll('[data-native-target]').forEach(btn=>{
+    btn.addEventListener('click',()=>setReplicaPage(btn.dataset.nativeTarget));
+  });
+
+  const aiPill=tourReplicaDevice.querySelector('.aiPill');
+  const aiClose=tourReplicaDevice.querySelector('.aiClose');
+  const aiOverlay=tourReplicaDevice.querySelector('.aiOverlay');
+
+  if(aiPill && aiOverlay){
+    aiPill.addEventListener('click',()=>aiOverlay.classList.add('open'));
+  }
+
+  if(aiClose && aiOverlay){
+    aiClose.addEventListener('click',()=>aiOverlay.classList.remove('open'));
+  }
+
+  setReplicaPage('home');
+}
+
+function setTour(key){
+  tourItems.forEach(x=>x.classList.toggle('active',x.dataset.tourKey===key));
+  setReplicaPage(key);
+}
+
 tourItems.forEach(x=>{
   const k=x.dataset.tourKey;
   x.addEventListener('mouseenter',()=>setTour(k));
   x.addEventListener('focus',()=>setTour(k));
   x.addEventListener('click',()=>setTour(k));
 });
+
+initTourReplica();
 
 const data={
 market:{
@@ -1402,7 +1575,7 @@ rival:{
   c:'Rival is the fourth tab and uses gold emphasis. It is designed around fictional Rival Credits, simulated buy flows and simulated positions.',
   vt:'Rival',
   vc:'Fictional credits and simulated activity.',
-  vb:'<div class="uiCard gold"><small>10,000 RC</small><strong>Fictional balance</strong><div class="uiLines"><div class="uiLine gold"></div><div class="uiLine"></div></div></div>',
+  vb:'<div class="uiCard gold"><small>100,000 RC</small><strong>Fictional balance</strong><div class="uiLines"><div class="uiLine gold"></div><div class="uiLine"></div></div></div>',
   p:[
     ['Fictional balance','Rival Credits are not real money, crypto, securities or transferable assets.'],
     ['Simulated activity','Buy/sell interactions do not transmit real orders to a broker or exchange.'],
