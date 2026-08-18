@@ -161,6 +161,298 @@ footer{padding:44px 0 32px;border-top:1px solid var(--border2)}
   .footer-top{flex-direction:column}
   .footer-links{justify-content:flex-start}
 }
+
+/* =========================================================
+   FINAL LEGAL / SUPPORT READABILITY PASS
+   Website text is intentionally larger and more readable.
+========================================================= */
+
+.nav-links{
+  font-size:13px !important;
+  gap:24px;
+}
+
+.home-link{
+  min-height:42px !important;
+  padding:0 15px !important;
+}
+
+.eyebrow{
+  font-size:10.5px !important;
+}
+
+.hero-copy{
+  font-size:16px !important;
+  line-height:1.72 !important;
+  color:#AAB2BF !important;
+}
+
+.meta-chip{
+  font-size:10.5px !important;
+}
+
+.layout{
+  grid-template-columns:280px minmax(0,1fr) !important;
+  gap:30px !important;
+}
+
+.toc{
+  padding:18px !important;
+}
+
+.toc-title{
+  font-size:10px !important;
+}
+
+.toc-links{
+  gap:5px !important;
+}
+
+.toc-links a{
+  padding:9px 10px !important;
+  font-size:12px !important;
+  line-height:1.45 !important;
+}
+
+.summary-card{
+  padding:24px !important;
+}
+
+.summary-title{
+  font-size:19px !important;
+}
+
+.summary-item{
+  padding:14px !important;
+}
+
+.summary-item strong{
+  font-size:12px !important;
+  line-height:1.4 !important;
+}
+
+.summary-item span{
+  margin-top:5px !important;
+  font-size:11.5px !important;
+  line-height:1.58 !important;
+  color:#AAB2BF !important;
+}
+
+.summary-card > p{
+  font-size:15px !important;
+  line-height:1.68 !important;
+  color:#AAB2BF !important;
+}
+
+.content-card,
+.policy-section{
+  margin-bottom:16px !important;
+  padding:28px !important;
+  border-radius:22px !important;
+}
+
+.section-index{
+  font-size:10px !important;
+}
+
+.policy-section h2,
+.content-card h2{
+  margin-top:6px !important;
+  font-size:26px !important;
+  line-height:1.18 !important;
+}
+
+.policy-section h3,
+.content-card h3{
+  margin-top:22px !important;
+  font-size:16px !important;
+  line-height:1.4 !important;
+}
+
+.policy-section p,
+.content-card p{
+  margin-top:12px !important;
+  font-size:15px !important;
+  line-height:1.72 !important;
+  color:#AAB2BF !important;
+}
+
+.policy-section ul,
+.content-card ul{
+  margin-top:12px !important;
+  color:#AAB2BF !important;
+}
+
+.policy-section li,
+.content-card li{
+  margin:7px 0 !important;
+  font-size:15px !important;
+  line-height:1.68 !important;
+}
+
+.notice{
+  padding:15px 16px !important;
+  font-size:13px !important;
+  line-height:1.62 !important;
+  color:#AAB2BF !important;
+}
+
+.controller-card{
+  margin-top:16px !important;
+  padding:16px !important;
+}
+
+.controller-card strong{
+  font-size:12.5px !important;
+  line-height:1.4 !important;
+}
+
+.controller-card span{
+  margin-top:4px !important;
+  font-size:11.5px !important;
+  line-height:1.5 !important;
+  color:#8F98A7 !important;
+}
+
+.action-grid{
+  gap:12px !important;
+}
+
+.action-card{
+  padding:18px !important;
+}
+
+.action-card strong{
+  font-size:13px !important;
+}
+
+.action-card span{
+  margin-top:5px !important;
+  font-size:11.5px !important;
+  line-height:1.58 !important;
+  color:#AAB2BF !important;
+}
+
+.button{
+  min-height:49px !important;
+  padding:0 19px !important;
+  font-size:12.5px !important;
+}
+
+.step{
+  padding:16px !important;
+}
+
+.step-index{
+  font-size:10px !important;
+}
+
+.step strong{
+  font-size:13px !important;
+}
+
+.step span{
+  font-size:11.5px !important;
+  line-height:1.58 !important;
+  color:#AAB2BF !important;
+}
+
+.footer-copy p{
+  font-size:12px !important;
+  line-height:1.68 !important;
+  color:#AAB2BF !important;
+}
+
+.footer-links{
+  font-size:12px !important;
+}
+
+.footer-bottom{
+  font-size:10.5px !important;
+  line-height:1.6 !important;
+}
+
+/* Personal legal identity stays available, but visually subordinate. */
+.legal-operator{
+  margin-top:18px;
+  padding:13px 14px;
+  border:1px solid #232326;
+  border-radius:12px;
+  background:rgba(255,255,255,.012);
+}
+
+.legal-operator .legal-label{
+  color:#747E8D;
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.7px;
+  text-transform:uppercase;
+}
+
+.legal-operator .legal-name{
+  margin-top:6px;
+  color:#B7BEC8;
+  font-size:12.5px;
+  font-weight:800;
+}
+
+.legal-operator .legal-detail{
+  margin-top:3px;
+  color:#7F8998;
+  font-size:11.5px;
+  line-height:1.5;
+}
+
+@media(max-width:860px){
+  .layout{
+    grid-template-columns:1fr !important;
+  }
+
+  .toc-links{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+}
+
+@media(max-width:620px){
+  .hero{
+    padding-top:72px !important;
+  }
+
+  .hero-copy{
+    font-size:15px !important;
+  }
+
+  .layout{
+    padding-bottom:76px !important;
+  }
+
+  .toc-links{
+    grid-template-columns:1fr !important;
+  }
+
+  .content-card,
+  .policy-section{
+    padding:22px !important;
+  }
+
+  .policy-section h2,
+  .content-card h2{
+    font-size:23px !important;
+  }
+
+  .policy-section p,
+  .content-card p,
+  .policy-section li,
+  .content-card li{
+    font-size:14.5px !important;
+  }
+
+  .summary-grid,
+  .action-grid{
+    grid-template-columns:1fr !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -188,8 +480,7 @@ footer{padding:44px 0 32px;border-top:1px solid var(--border2)}
         <h1>Support</h1>
         <p class="hero-copy">Need help with Finrival? Use this page for account, privacy, deletion, technical, subscription and general product support information.</p>
         <div class="meta-row"><div class="meta-chip">Support email: finrivals@gmail.com</div>
-<div class="meta-chip">Operator: İlkim Alatan</div>
-<div class="meta-chip">Kraków, Poland</div></div>
+</div>
       </div>
     </section>
 
@@ -224,8 +515,6 @@ footer{padding:44px 0 32px;border-top:1px solid var(--border2)}
   <div class="controller-card">
     <strong>Finrival Support</strong>
     <span>Email: finrivals@gmail.com</span>
-    <span>Operator: İlkim Alatan</span>
-    <span>Contact location: Kraków, 31-216, Poland</span>
     <span>Website: https://finrival.com</span>
   </div>
   <p>When contacting support, describe the issue clearly and include only information that is necessary for us to understand the problem.</p>
