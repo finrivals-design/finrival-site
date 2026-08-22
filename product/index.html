@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- FINRIVAL PRODUCT V2 — INTERACTIVE MOBILE EXPERIENCE — 2026-08-22 -->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -41,6 +42,989 @@
     rel="stylesheet"
     href="../assets/css/finrival.css"
   />
+
+  <!-- ======================================================
+       FINRIVAL PRODUCT V2 — INTERACTIVE PRODUCT EXPERIENCE
+       Scoped styles. These sit on top of ../assets/css/finrival.css
+       without changing the shared site stylesheet.
+  ======================================================= -->
+  <style>
+    /* ---------- Product experience shell ---------- */
+    .productExperienceSection{
+      position:relative;
+      overflow:hidden;
+      padding:96px 0 108px;
+      border-top:1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,.06);
+      background:
+        radial-gradient(circle at 22% 12%,rgba(0,229,255,.075),transparent 30%),
+        radial-gradient(circle at 82% 58%,rgba(245,158,11,.035),transparent 26%),
+        #06080c;
+    }
+
+    .productExperienceGrid{
+      display:grid;
+      grid-template-columns:minmax(0,.88fr) minmax(420px,1.12fr);
+      gap:72px;
+      align-items:center;
+    }
+
+    .productExperienceCopy{
+      min-width:0;
+    }
+
+    .productExperienceCopy h2{
+      max-width:610px;
+      margin-top:10px;
+    }
+
+    .productExperienceLead{
+      max-width:590px;
+      margin-top:18px;
+      color:#9BA5B4;
+      font-size:15px;
+      line-height:1.78;
+    }
+
+    .productSlideMeta{
+      margin-top:30px;
+      padding:18px;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;
+      background:rgba(255,255,255,.025);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
+    }
+
+    .productSlideEyebrow{
+      color:#00E5FF;
+      font-size:9px;
+      font-weight:900;
+      letter-spacing:1.1px;
+      text-transform:uppercase;
+    }
+
+    .productSlideTitle{
+      margin-top:8px;
+      color:#fff;
+      font-size:23px;
+      line-height:1.22;
+      letter-spacing:-.45px;
+      font-weight:880;
+    }
+
+    .productSlideCopy{
+      max-width:510px;
+      margin-top:8px;
+      color:#919BAA;
+      font-size:13px;
+      line-height:1.65;
+    }
+
+    .productCarouselControls{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .productArrow{
+      width:44px;
+      height:44px;
+      display:grid;
+      place-items:center;
+      flex:0 0 auto;
+      border:1px solid rgba(255,255,255,.11);
+      border-radius:14px;
+      background:#10141A;
+      color:#fff;
+      cursor:pointer;
+      transition:transform .18s ease,border-color .18s ease,background .18s ease;
+    }
+
+    .productArrow:hover,
+    .productArrow:focus-visible{
+      transform:translateY(-1px);
+      border-color:rgba(0,229,255,.34);
+      background:rgba(0,229,255,.055);
+      outline:none;
+    }
+
+    .productDots{
+      display:flex;
+      align-items:center;
+      gap:7px;
+      min-width:0;
+      flex:1;
+      padding:0 5px;
+    }
+
+    .productDot{
+      width:8px;
+      height:8px;
+      flex:0 0 auto;
+      padding:0;
+      border:0;
+      border-radius:999px;
+      background:#343B45;
+      cursor:pointer;
+      transition:width .24s ease,background .24s ease,box-shadow .24s ease;
+    }
+
+    .productDot.active{
+      width:28px;
+      background:#00E5FF;
+      box-shadow:0 0 18px rgba(0,229,255,.35);
+    }
+
+    .productCounter{
+      min-width:42px;
+      color:#697484;
+      font-size:10px;
+      font-weight:800;
+      text-align:right;
+      font-variant-numeric:tabular-nums;
+    }
+
+    /* ---------- Device stage ---------- */
+    .productDeviceStage{
+      position:relative;
+      min-width:0;
+      min-height:720px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      isolation:isolate;
+    }
+
+    .productDeviceStage::before{
+      content:"";
+      position:absolute;
+      width:520px;
+      height:520px;
+      max-width:92vw;
+      border-radius:50%;
+      border:1px solid rgba(0,229,255,.06);
+      box-shadow:
+        0 0 0 46px rgba(0,229,255,.012),
+        0 0 0 92px rgba(0,229,255,.006);
+      z-index:-2;
+    }
+
+    .productDeviceStage::after{
+      content:"";
+      position:absolute;
+      width:390px;
+      height:610px;
+      max-width:78vw;
+      border-radius:50%;
+      background:radial-gradient(ellipse,rgba(0,229,255,.085),transparent 67%);
+      filter:blur(18px);
+      z-index:-1;
+    }
+
+    .productDevice{
+      position:relative;
+      width:336px;
+      height:688px;
+      max-width:calc(100vw - 46px);
+      padding:9px;
+      border:1px solid #363A42;
+      border-radius:50px;
+      background:linear-gradient(145deg,#2B3038,#090B0F 48%,#1A1E25);
+      box-shadow:
+        0 42px 108px rgba(0,0,0,.68),
+        0 0 54px rgba(0,229,255,.045),
+        inset 0 1px 0 rgba(255,255,255,.12);
+      touch-action:pan-y;
+      user-select:none;
+    }
+
+    .productDevice::before{
+      content:"";
+      position:absolute;
+      top:17px;
+      left:50%;
+      width:100px;
+      height:27px;
+      transform:translateX(-50%);
+      z-index:30;
+      border-radius:999px;
+      background:#000;
+      box-shadow:0 0 0 1px rgba(255,255,255,.025);
+    }
+
+    .productDeviceScreen{
+      position:relative;
+      width:100%;
+      height:100%;
+      overflow:hidden;
+      border-radius:41px;
+      background:#05070A;
+    }
+
+    .productStatusBar{
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      z-index:28;
+      height:36px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 18px;
+      color:#DCE3EC;
+      font-size:8px;
+      font-weight:850;
+      pointer-events:none;
+    }
+
+    .productStatusRight{
+      display:flex;
+      align-items:center;
+      gap:5px;
+      color:#AAB3C0;
+    }
+
+    .productAppHeader{
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      z-index:24;
+      height:82px;
+      display:grid;
+      grid-template-columns:40px 1fr 40px;
+      align-items:center;
+      padding:32px 14px 10px;
+      border-bottom:1px solid rgba(255,255,255,.04);
+      background:linear-gradient(180deg,rgba(4,6,9,.98),rgba(4,6,9,.9));
+      backdrop-filter:blur(18px);
+    }
+
+    .productAppBrand{
+      text-align:center;
+      font-size:11px;
+      font-weight:950;
+      letter-spacing:-.2px;
+    }
+
+    .productAppBrand b{
+      color:#00E5FF;
+    }
+
+    .productMenuFake{
+      width:31px;
+      height:31px;
+      display:grid;
+      place-items:center;
+      justify-self:end;
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:10px;
+      color:#C7CED8;
+      background:#11151B;
+      font-size:11px;
+    }
+
+    .productSlides{
+      position:absolute;
+      inset:0;
+    }
+
+    .productSlide{
+      position:absolute;
+      inset:0;
+      opacity:0;
+      transform:translateX(16px) scale(.995);
+      pointer-events:none;
+      transition:
+        opacity .34s ease,
+        transform .4s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .productSlide.active{
+      opacity:1;
+      transform:none;
+      pointer-events:auto;
+    }
+
+    .productSlideScroll{
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      overflow:hidden;
+      padding:96px 15px 103px;
+    }
+
+    .phoneKicker{
+      color:#6E7887;
+      font-size:6px;
+      font-weight:900;
+      letter-spacing:.7px;
+      text-transform:uppercase;
+    }
+
+    .phoneTitle{
+      margin-top:4px;
+      color:#F8FAFC;
+      font-size:15px;
+      line-height:1.1;
+      letter-spacing:-.35px;
+      font-weight:950;
+    }
+
+    .phoneMuted{
+      color:#788394;
+    }
+
+    .phoneCard{
+      margin-top:10px;
+      padding:11px;
+      border:1px solid rgba(255,255,255,.085);
+      border-radius:15px;
+      background:#10141A;
+    }
+
+    .phoneCard.cyan{
+      border-color:rgba(0,229,255,.18);
+      background:linear-gradient(145deg,rgba(0,229,255,.055),rgba(16,20,26,.94));
+    }
+
+    .phoneCard.gold{
+      border-color:rgba(245,158,11,.19);
+      background:linear-gradient(145deg,rgba(245,158,11,.055),rgba(16,20,26,.94));
+    }
+
+    .phoneRow{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+    }
+
+    .phoneAsset{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      min-width:0;
+    }
+
+    .phoneLogo{
+      width:30px;
+      height:30px;
+      display:grid;
+      place-items:center;
+      flex:0 0 auto;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:10px;
+      background:#080B0F;
+      color:#fff;
+      font-size:7px;
+      font-weight:950;
+    }
+
+    .phoneSymbol{
+      color:#fff;
+      font-size:7.5px;
+      font-weight:900;
+    }
+
+    .phoneName{
+      margin-top:1px;
+      color:#707B8B;
+      font-size:5px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .phonePrice{
+      color:#fff;
+      font-size:7px;
+      font-weight:850;
+      text-align:right;
+    }
+
+    .phoneChange{
+      margin-top:2px;
+      color:#34C759;
+      font-size:5px;
+      font-weight:850;
+      text-align:right;
+    }
+
+    .phoneChange.red{color:#FF453A}
+    .phoneChange.gold{color:#F59E0B}
+
+    .phoneLabelRow{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+      margin-bottom:8px;
+    }
+
+    .phoneLabel{
+      color:#AEB7C4;
+      font-size:6px;
+      font-weight:850;
+      letter-spacing:.35px;
+      text-transform:uppercase;
+    }
+
+    .phoneMiniBadge{
+      padding:3px 5px;
+      border:1px solid rgba(0,229,255,.17);
+      border-radius:6px;
+      color:#00E5FF;
+      background:rgba(0,229,255,.05);
+      font-size:4.6px;
+      font-weight:900;
+    }
+
+    .phoneMiniBadge.gold{
+      border-color:rgba(245,158,11,.19);
+      color:#F59E0B;
+      background:rgba(245,158,11,.05);
+    }
+
+    .phoneBar{
+      height:5px;
+      overflow:hidden;
+      border-radius:99px;
+      background:#202631;
+    }
+
+    .phoneBar > span{
+      display:block;
+      height:100%;
+      border-radius:inherit;
+      background:linear-gradient(90deg,#00E5FF,#4F8DFF);
+    }
+
+    .phoneChart{
+      position:relative;
+      height:104px;
+      margin-top:9px;
+      overflow:hidden;
+      border-radius:12px;
+      background:
+        linear-gradient(to bottom,transparent 32%,rgba(255,255,255,.035) 33%,transparent 34%,transparent 65%,rgba(255,255,255,.035) 66%,transparent 67%),
+        #090C11;
+    }
+
+    .phoneChart svg{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+    }
+
+    .compareTiles{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:7px;
+      margin-top:10px;
+    }
+
+    .compareTile{
+      padding:10px;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:13px;
+      background:#10141A;
+      text-align:center;
+    }
+
+    .compareTile .phoneLogo{margin:auto}
+    .compareTile .phonePrice{margin-top:6px;text-align:center}
+
+    .aiChatMini{
+      margin-top:10px;
+    }
+
+    .aiMiniBubble{
+      max-width:88%;
+      margin-bottom:7px;
+      padding:9px 10px;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:12px;
+      background:#10141A;
+      color:#C6CFDA;
+      font-size:5.6px;
+      line-height:1.5;
+    }
+
+    .aiMiniBubble.user{
+      margin-left:auto;
+      border-color:rgba(0,229,255,.19);
+      background:rgba(0,229,255,.055);
+    }
+
+    .aiMiniBubble strong{
+      display:block;
+      margin-bottom:3px;
+      color:#00E5FF;
+      font-size:5px;
+      letter-spacing:.35px;
+      text-transform:uppercase;
+    }
+
+    .newsMiniStory{
+      display:grid;
+      grid-template-columns:58px 1fr;
+      gap:9px;
+      align-items:center;
+      padding:9px 0;
+      border-bottom:1px solid rgba(255,255,255,.055);
+    }
+
+    .newsMiniStory:last-child{border-bottom:0}
+
+    .newsThumb{
+      height:44px;
+      border-radius:9px;
+      background:
+        radial-gradient(circle at 80% 20%,rgba(0,229,255,.18),transparent 30%),
+        linear-gradient(135deg,#1D2430,#0A0D12);
+    }
+
+    .newsSource{
+      color:#00E5FF;
+      font-size:4.6px;
+      font-weight:900;
+      text-transform:uppercase;
+    }
+
+    .newsHeadline{
+      margin-top:3px;
+      color:#E9EDF3;
+      font-size:5.8px;
+      line-height:1.35;
+      font-weight:780;
+    }
+
+    .rivalBalance{
+      margin-top:5px;
+      color:#fff;
+      font-size:27px;
+      line-height:1;
+      letter-spacing:-.9px;
+      font-weight:950;
+    }
+
+    .rivalCredits{
+      margin-top:4px;
+      color:#F59E0B;
+      font-size:5.4px;
+      font-weight:850;
+    }
+
+    .rivalButtons{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:7px;
+      margin-top:10px;
+    }
+
+    .rivalButton{
+      height:31px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:9px;
+      background:#0A0D12;
+      color:#C5CDD8;
+      font-size:5.4px;
+      font-weight:850;
+    }
+
+    .rivalButton.primary{
+      border-color:#F59E0B;
+      background:#F59E0B;
+      color:#171006;
+    }
+
+    .watchSearchMini{
+      height:36px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 10px;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:11px;
+      background:#10141A;
+      color:#717C8B;
+      font-size:5.5px;
+    }
+
+    .watchAction{
+      width:25px;
+      height:25px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(0,229,255,.17);
+      border-radius:8px;
+      color:#00E5FF;
+      background:rgba(0,229,255,.05);
+      font-size:7px;
+    }
+
+    .productBottomNav{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:25;
+      height:73px;
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      align-items:center;
+      padding:7px 3px 8px;
+      border-top:1px solid rgba(255,255,255,.06);
+      background:#05070A;
+    }
+
+    .productBottomItem{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:3px;
+      color:#707A89;
+      font-size:5px;
+      font-weight:750;
+    }
+
+    .productBottomIcon{
+      height:18px;
+      display:grid;
+      place-items:center;
+      font-size:9px;
+    }
+
+    .productBottomItem.active{color:#00E5FF}
+    .productBottomItem.rival{color:#F59E0B}
+
+    .productBottomItem.compare{
+      position:relative;
+      top:-12px;
+      color:#00E5FF;
+    }
+
+    .productCompareButton{
+      width:40px;
+      height:40px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:#00E5FF;
+      color:#020708;
+      font-size:13px;
+      font-weight:950;
+      box-shadow:0 5px 14px rgba(0,0,0,.4);
+    }
+
+    .productSwipeHint{
+      position:absolute;
+      right:-8px;
+      bottom:116px;
+      z-index:8;
+      padding:9px 11px;
+      border:1px solid rgba(0,229,255,.16);
+      border-radius:11px;
+      background:rgba(8,11,15,.92);
+      color:#758091;
+      font-size:7px;
+      font-weight:750;
+      backdrop-filter:blur(12px);
+    }
+
+    .productSwipeHint b{color:#00E5FF}
+
+    /* ---------- Existing Product page responsive safety ---------- */
+    @media (max-width:980px){
+      .productExperienceGrid{
+        grid-template-columns:1fr;
+        gap:48px;
+      }
+
+      .productExperienceCopy{
+        max-width:720px;
+        margin:0 auto;
+        text-align:center;
+      }
+
+      .productExperienceLead{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .productSlideMeta{
+        max-width:620px;
+        margin-left:auto;
+        margin-right:auto;
+        text-align:left;
+      }
+
+      .productCarouselControls{
+        max-width:620px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .productDeviceStage{
+        min-height:720px;
+      }
+
+      .productSwipeHint{
+        display:none;
+      }
+    }
+
+    @media (max-width:760px){
+      html,body{
+        max-width:100%;
+        overflow-x:hidden;
+      }
+
+      .productExperienceSection{
+        padding:72px 0 78px;
+      }
+
+      .productExperienceGrid{
+        gap:34px;
+      }
+
+      .productExperienceCopy{
+        text-align:left;
+      }
+
+      .productExperienceLead{
+        margin-left:0;
+        margin-right:0;
+        font-size:14px;
+        line-height:1.7;
+      }
+
+      .productSlideMeta{
+        margin-top:22px;
+        padding:15px;
+        border-radius:16px;
+      }
+
+      .productSlideTitle{
+        font-size:20px;
+      }
+
+      .productSlideCopy{
+        font-size:12px;
+      }
+
+      .productCarouselControls{
+        margin-left:0;
+        margin-right:0;
+      }
+
+      .productArrow{
+        width:42px;
+        height:42px;
+        border-radius:13px;
+      }
+
+      .productDeviceStage{
+        min-height:650px;
+      }
+
+      .productDeviceStage::before{
+        width:400px;
+        height:400px;
+      }
+
+      .productDeviceStage::after{
+        width:300px;
+        height:500px;
+      }
+
+      .productDevice{
+        width:min(310px,calc(100vw - 40px));
+        height:635px;
+        border-radius:45px;
+      }
+
+      .productDeviceScreen{
+        border-radius:36px;
+      }
+
+      /* Shared-site mobile safety: prevent the page layouts from colliding. */
+      .splitIntro,
+      .differenceGrid,
+      .boundaryPanel,
+      .availabilityPanel{
+        grid-template-columns:1fr !important;
+        gap:28px !important;
+      }
+
+      .workflowGrid,
+      .moduleGrid{
+        grid-template-columns:1fr !important;
+      }
+
+      .moduleCardLarge{
+        grid-column:auto !important;
+      }
+
+      .heroActions,
+      .heroMeta,
+      .storeButtons{
+        flex-wrap:wrap !important;
+      }
+
+      .pageHero,
+      .contentSection,
+      .availabilitySection{
+        overflow:hidden;
+      }
+
+      .pageHeroInner,
+      .sectionHeading,
+      .splitIntro > *,
+      .differenceGrid > *,
+      .boundaryPanel > *,
+      .availabilityPanel > *{
+        min-width:0;
+      }
+
+      .desktopNav{
+        display:none !important;
+      }
+
+      .siteNav{
+        gap:12px !important;
+      }
+
+      .brand img{
+        max-width:116px;
+        height:auto;
+      }
+
+      .navCta{
+        white-space:nowrap;
+        padding-left:12px !important;
+        padding-right:12px !important;
+      }
+
+      .footerMain{
+        gap:34px !important;
+      }
+
+      .footerColumns{
+        gap:24px !important;
+        flex-wrap:wrap !important;
+      }
+    }
+
+    @media (max-width:430px){
+      .productExperienceSection{
+        padding:62px 0 68px;
+      }
+
+      .productDeviceStage{
+        min-height:600px;
+      }
+
+      .productDevice{
+        width:min(286px,calc(100vw - 34px));
+        height:586px;
+        padding:8px;
+        border-radius:42px;
+      }
+
+      .productDevice::before{
+        top:15px;
+        width:88px;
+        height:24px;
+      }
+
+      .productDeviceScreen{
+        border-radius:34px;
+      }
+
+      .productSlideScroll{
+        padding:91px 13px 98px;
+      }
+
+      .productAppHeader{
+        height:78px;
+        padding:30px 12px 9px;
+      }
+
+      .phoneTitle{
+        font-size:13px;
+      }
+
+      .phoneCard{
+        padding:9px;
+      }
+
+      .phoneChart{
+        height:86px;
+      }
+
+      .rivalBalance{
+        font-size:23px;
+      }
+
+      .productBottomNav{
+        height:68px;
+      }
+
+      .productDots{
+        gap:5px;
+      }
+
+      .productDot{
+        width:7px;
+        height:7px;
+      }
+
+      .productDot.active{
+        width:22px;
+      }
+
+      .productCounter{
+        min-width:36px;
+        font-size:9px;
+      }
+
+      .productSlideTitle{
+        font-size:18px;
+      }
+
+      .productSlideCopy{
+        font-size:11.5px;
+      }
+
+      .siteContainer{
+        width:min(100% - 28px,1180px) !important;
+      }
+
+      .footerColumns{
+        display:grid !important;
+        grid-template-columns:1fr 1fr !important;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      .productSlide,
+      .productArrow,
+      .productDot{
+        transition:none !important;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -176,6 +1160,540 @@
 
         </div>
 
+      </div>
+    </section>
+
+
+
+    <!-- ======================================================
+         INTERACTIVE PRODUCT EXPERIENCE
+    ======================================================= -->
+    <section class="productExperienceSection" aria-labelledby="productExperienceTitle">
+      <div class="siteContainer">
+        <div class="productExperienceGrid">
+
+          <div class="productExperienceCopy">
+            <div class="sectionEyebrow">
+              INTERACTIVE PRODUCT TOUR
+            </div>
+
+            <h2 id="productExperienceTitle">
+              Move through Finrival
+              <br />
+              like it is already in your hand.
+            </h2>
+
+            <p class="productExperienceLead">
+              Explore the core research surfaces inside one continuous mobile workflow.
+              Use the arrows, dots or swipe directly on the phone preview.
+            </p>
+
+            <div class="productSlideMeta" aria-live="polite">
+              <div class="productSlideEyebrow" id="productSlideEyebrow">
+                MARKET
+              </div>
+
+              <div class="productSlideTitle" id="productSlideTitle">
+                Discover what deserves attention.
+              </div>
+
+              <p class="productSlideCopy" id="productSlideCopy">
+                Scan supported assets, movers, sessions and market context before going deeper.
+              </p>
+            </div>
+
+            <div class="productCarouselControls">
+              <button
+                class="productArrow"
+                id="productPrev"
+                type="button"
+                aria-label="Previous Finrival screen"
+              >
+                ←
+              </button>
+
+              <div
+                class="productDots"
+                id="productDots"
+                aria-label="Finrival product screens"
+              ></div>
+
+              <div class="productCounter" id="productCounter">
+                01 / 06
+              </div>
+
+              <button
+                class="productArrow"
+                id="productNext"
+                type="button"
+                aria-label="Next Finrival screen"
+              >
+                →
+              </button>
+            </div>
+          </div>
+
+
+          <div class="productDeviceStage">
+
+            <div
+              class="productDevice"
+              id="productDevice"
+              aria-label="Interactive Finrival mobile interface preview"
+            >
+              <div class="productDeviceScreen">
+
+                <div class="productStatusBar">
+                  <span>9:41</span>
+                  <div class="productStatusRight">
+                    <span>●●●</span>
+                    <span>Wi‑Fi</span>
+                    <span>▰</span>
+                  </div>
+                </div>
+
+                <div class="productAppHeader">
+                  <div></div>
+                  <div class="productAppBrand">
+                    finrival<b>.</b>
+                  </div>
+                  <div class="productMenuFake">☰</div>
+                </div>
+
+                <div class="productSlides" id="productSlides">
+
+                  <!-- MARKET -->
+                  <div class="productSlide active" data-product-slide="0">
+                    <div class="productSlideScroll">
+                      <div class="phoneKicker">MARKET SIGNAL</div>
+                      <div class="phoneTitle">Today at a glance.</div>
+
+                      <div class="compareTiles">
+                        <div class="phoneCard" style="margin-top:0;border-color:rgba(52,199,89,.18)">
+                          <div class="phoneLabelRow">
+                            <span class="phoneLabel">Top gainer</span>
+                            <span class="phoneChange">+6.42%</span>
+                          </div>
+                          <div class="phoneAsset">
+                            <div class="phoneLogo">NVDA</div>
+                            <div>
+                              <div class="phoneSymbol">NVDA</div>
+                              <div class="phoneName">NVIDIA</div>
+                            </div>
+                          </div>
+                          <div class="phonePrice" style="margin-top:9px;text-align:left">$182.40</div>
+                        </div>
+
+                        <div class="phoneCard" style="margin-top:0;border-color:rgba(255,69,58,.18)">
+                          <div class="phoneLabelRow">
+                            <span class="phoneLabel">Top dip</span>
+                            <span class="phoneChange red">−4.18%</span>
+                          </div>
+                          <div class="phoneAsset">
+                            <div class="phoneLogo">TSLA</div>
+                            <div>
+                              <div class="phoneSymbol">TSLA</div>
+                              <div class="phoneName">Tesla</div>
+                            </div>
+                          </div>
+                          <div class="phonePrice" style="margin-top:9px;text-align:left">$318.16</div>
+                        </div>
+                      </div>
+
+                      <div class="phoneCard cyan">
+                        <div class="phoneLabelRow">
+                          <span class="phoneLabel">Market activity</span>
+                          <span class="phoneMiniBadge">LIVE CONTEXT</span>
+                        </div>
+                        <div class="phoneBar"><span style="width:68%"></span></div>
+                        <div class="phoneRow" style="margin-top:8px">
+                          <span class="phoneName">US session · supported universe</span>
+                          <span class="phoneSymbol">68%</span>
+                        </div>
+                      </div>
+
+                      <div class="phoneCard">
+                        <div class="phoneLabelRow">
+                          <span class="phoneLabel">All markets</span>
+                          <span class="phoneName">Search & filter</span>
+                        </div>
+
+                        <div class="phoneRow" style="padding:7px 0">
+                          <div class="phoneAsset">
+                            <div class="phoneLogo">AAPL</div>
+                            <div>
+                              <div class="phoneSymbol">AAPL</div>
+                              <div class="phoneName">Apple Inc.</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="phonePrice">$226.18</div>
+                            <div class="phoneChange">+1.24%</div>
+                          </div>
+                        </div>
+
+                        <div class="phoneRow" style="padding:7px 0;border-top:1px solid rgba(255,255,255,.05)">
+                          <div class="phoneAsset">
+                            <div class="phoneLogo">BTC</div>
+                            <div>
+                              <div class="phoneSymbol">BTC</div>
+                              <div class="phoneName">Bitcoin</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="phonePrice">$68,920</div>
+                            <div class="phoneChange">+2.06%</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <!-- COMPARE -->
+                  <div class="productSlide" data-product-slide="1">
+                    <div class="productSlideScroll">
+                      <div class="phoneKicker">COMPARE</div>
+                      <div class="phoneTitle">Put context side by side.</div>
+
+                      <div class="compareTiles">
+                        <div class="compareTile">
+                          <div class="phoneLogo">AAPL</div>
+                          <div class="phoneSymbol" style="margin-top:6px">AAPL</div>
+                          <div class="phoneName">Apple Inc.</div>
+                          <div class="phonePrice">$226.18</div>
+                          <div class="phoneChange">+1.24%</div>
+                        </div>
+
+                        <div class="compareTile">
+                          <div class="phoneLogo" style="color:#00E5FF">MSFT</div>
+                          <div class="phoneSymbol" style="margin-top:6px">MSFT</div>
+                          <div class="phoneName">Microsoft</div>
+                          <div class="phonePrice">$514.72</div>
+                          <div class="phoneChange red">−0.31%</div>
+                        </div>
+                      </div>
+
+                      <div class="phoneCard">
+                        <div class="phoneLabelRow">
+                          <span class="phoneLabel">Performance</span>
+                          <span class="phoneMiniBadge">1Y</span>
+                        </div>
+
+                        <div class="phoneChart">
+                          <svg viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
+                            <path d="M0 76 C24 67 36 70 58 54 S99 55 121 39 S162 50 188 29 S224 34 247 22 S278 25 300 14"
+                              fill="none" stroke="#00E5FF" stroke-width="2.2"/>
+                            <path d="M0 68 C28 75 49 57 71 62 S116 43 142 52 S185 38 209 45 S252 31 300 36"
+                              fill="none" stroke="#F59E0B" stroke-width="2.1"/>
+                          </svg>
+                        </div>
+
+                        <div class="phoneRow" style="margin-top:9px">
+                          <span class="phoneName">Historical return</span>
+                          <span class="phoneChange">AAPL +18.7%</span>
+                        </div>
+                      </div>
+
+                      <div class="phoneCard cyan">
+                        <div class="phoneLabelRow">
+                          <span class="phoneLabel">Momentum & risk</span>
+                          <span class="phoneMiniBadge">PRO VIEW</span>
+                        </div>
+                        <div class="phoneRow">
+                          <span class="phoneName">RSI 14</span>
+                          <span class="phoneSymbol">61.4</span>
+                        </div>
+                        <div class="phoneRow" style="margin-top:7px">
+                          <span class="phoneName">Historical volatility</span>
+                          <span class="phoneSymbol">22.8%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <!-- AI -->
+                  <div class="productSlide" data-product-slide="2">
+                    <div class="productSlideScroll">
+                      <div class="phoneKicker">FINRIVAL AI</div>
+                      <div class="phoneTitle">Continue the research.</div>
+
+                      <div class="phoneCard cyan">
+                        <div class="phoneLabelRow">
+                          <span class="phoneLabel">Asset context</span>
+                          <span class="phoneMiniBadge">AAPL</span>
+                        </div>
+                        <div class="phoneRow">
+                          <div class="phoneAsset">
+                            <div class="phoneLogo">AAPL</div>
+                            <div>
+                              <div class="phoneSymbol">Apple Inc.</div>
+                              <div class="phoneName">$226.18 · +1.24%</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="aiChatMini">
+                        <div class="aiMiniBubble user">
+                          Compare today’s move with the broader momentum picture.
+                        </div>
+
+                        <div class="aiMiniBubble">
+                          <strong>FINRIVAL AI</strong>
+                          Price action is positive in this snapshot, while the broader view should be read together with recent range, volume and historical momentum rather than as a standalone signal.
+                        </div>
+
+                        <div class="aiMiniBubble user">
+                          What should I check next?
+                        </div>
+
+                        <div class="aiMiniBubble">
+                          <strong>FINRIVAL AI</strong>
+                          Review the selected comparison period, recent volatility and any material market or company context before drawing a conclusion.
+                        </div>
+                      </div>
+
+                      <div class="phoneCard">
+                        <div class="phoneRow">
+                          <span class="phoneName">Ask a market research question…</span>
+                          <span class="phoneMiniBadge">↑</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <!-- NEWS -->
+                  <div class="productSlide" data-product-slide="3">
+                    <div class="productSlideScroll">
+                      <div class="phoneKicker">MARKET NEWS</div>
+                      <div class="phoneTitle">Follow the story, not the noise.</div>
+
+                      <div class="phoneCard cyan">
+                        <div class="phoneLabelRow">
+                          <span class="phoneLabel">Featured context</span>
+                          <span class="phoneMiniBadge">LATEST</span>
+                        </div>
+                        <div class="newsThumb" style="height:72px"></div>
+                        <div class="newsSource" style="margin-top:8px">MARKET UPDATE</div>
+                        <div class="newsHeadline" style="font-size:7px">
+                          Key market themes and supported financial headlines in one focused feed.
+                        </div>
+                      </div>
+
+                      <div class="phoneCard">
+                        <div class="newsMiniStory">
+                          <div class="newsThumb"></div>
+                          <div>
+                            <div class="newsSource">MACRO · 18 MIN</div>
+                            <div class="newsHeadline">Rates, inflation and market expectations remain in focus.</div>
+                          </div>
+                        </div>
+
+                        <div class="newsMiniStory">
+                          <div class="newsThumb"></div>
+                          <div>
+                            <div class="newsSource">TECH · 41 MIN</div>
+                            <div class="newsHeadline">Large-cap technology names shape the session narrative.</div>
+                          </div>
+                        </div>
+
+                        <div class="newsMiniStory">
+                          <div class="newsThumb"></div>
+                          <div>
+                            <div class="newsSource">DIGITAL ASSETS · 1H</div>
+                            <div class="newsHeadline">Crypto markets move alongside broader risk sentiment.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <!-- RIVAL -->
+                  <div class="productSlide" data-product-slide="4">
+                    <div class="productSlideScroll">
+                      <div class="phoneKicker" style="color:#F59E0B">RIVAL</div>
+                      <div class="phoneTitle">Practice without real money.</div>
+
+                      <div class="phoneCard gold">
+                        <div class="phoneLabel">Practice portfolio</div>
+                        <div class="rivalBalance">100,000</div>
+                        <div class="rivalCredits">Rival Credits · fictional simulation balance</div>
+
+                        <div class="rivalButtons">
+                          <div class="rivalButton primary">Explore market</div>
+                          <div class="rivalButton">Portfolio</div>
+                        </div>
+                      </div>
+
+                      <div class="phoneCard">
+                        <div class="phoneLabelRow">
+                          <span class="phoneLabel">Positions</span>
+                          <span class="phoneMiniBadge gold">SIMULATION</span>
+                        </div>
+
+                        <div class="phoneRow" style="padding:7px 0">
+                          <div class="phoneAsset">
+                            <div class="phoneLogo">NVDA</div>
+                            <div>
+                              <div class="phoneSymbol">NVDA</div>
+                              <div class="phoneName">20 shares · simulated</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="phonePrice">RC 3,648</div>
+                            <div class="phoneChange">+4.7%</div>
+                          </div>
+                        </div>
+
+                        <div class="phoneRow" style="padding:7px 0;border-top:1px solid rgba(255,255,255,.05)">
+                          <div class="phoneAsset">
+                            <div class="phoneLogo">BTC</div>
+                            <div>
+                              <div class="phoneSymbol">BTC</div>
+                              <div class="phoneName">0.04 · simulated</div>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="phonePrice">RC 2,756</div>
+                            <div class="phoneChange gold">+1.9%</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="phoneCard gold">
+                        <div class="phoneName">
+                          Rival Credits have no real-world monetary value and cannot be withdrawn.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <!-- WATCHLIST -->
+                  <div class="productSlide" data-product-slide="5">
+                    <div class="productSlideScroll">
+                      <div class="phoneKicker">WATCHLIST</div>
+                      <div class="phoneTitle">Keep important assets close.</div>
+
+                      <div class="watchSearchMini">
+                        <span>Search saved assets</span>
+                        <span>⌕</span>
+                      </div>
+
+                      <div class="phoneCard">
+                        <div class="phoneLabelRow">
+                          <span class="phoneLabel">Saved assets</span>
+                          <span class="phoneMiniBadge">ALERTS</span>
+                        </div>
+
+                        <div class="phoneRow" style="padding:8px 0">
+                          <div class="phoneAsset">
+                            <div class="phoneLogo">AAPL</div>
+                            <div>
+                              <div class="phoneSymbol">AAPL</div>
+                              <div class="phoneName">Apple Inc.</div>
+                            </div>
+                          </div>
+                          <div style="display:flex;align-items:center;gap:7px">
+                            <div>
+                              <div class="phonePrice">$226.18</div>
+                              <div class="phoneChange">+1.24%</div>
+                            </div>
+                            <div class="watchAction">◎</div>
+                          </div>
+                        </div>
+
+                        <div class="phoneRow" style="padding:8px 0;border-top:1px solid rgba(255,255,255,.05)">
+                          <div class="phoneAsset">
+                            <div class="phoneLogo">BTC</div>
+                            <div>
+                              <div class="phoneSymbol">BTC</div>
+                              <div class="phoneName">Bitcoin</div>
+                            </div>
+                          </div>
+                          <div style="display:flex;align-items:center;gap:7px">
+                            <div>
+                              <div class="phonePrice">$68,920</div>
+                              <div class="phoneChange">+2.06%</div>
+                            </div>
+                            <div class="watchAction">✦</div>
+                          </div>
+                        </div>
+
+                        <div class="phoneRow" style="padding:8px 0;border-top:1px solid rgba(255,255,255,.05)">
+                          <div class="phoneAsset">
+                            <div class="phoneLogo">SAP</div>
+                            <div>
+                              <div class="phoneSymbol">SAP.DE</div>
+                              <div class="phoneName">SAP SE</div>
+                            </div>
+                          </div>
+                          <div style="display:flex;align-items:center;gap:7px">
+                            <div>
+                              <div class="phonePrice">On demand</div>
+                              <div class="phoneName">Saved</div>
+                            </div>
+                            <div class="watchAction">◎</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="phoneCard cyan">
+                        <div class="phoneLabelRow">
+                          <span class="phoneLabel">Reference-price alert</span>
+                          <span class="phoneMiniBadge">AAPL</span>
+                        </div>
+                        <div class="phoneRow">
+                          <span class="phoneName">Notify above</span>
+                          <span class="phoneSymbol">$230.00</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="productBottomNav" aria-hidden="true">
+                  <div class="productBottomItem active" data-product-nav="0">
+                    <div class="productBottomIcon">⌁</div>
+                    <span>Market</span>
+                  </div>
+
+                  <div class="productBottomItem" data-product-nav="3">
+                    <div class="productBottomIcon">▤</div>
+                    <span>News</span>
+                  </div>
+
+                  <div class="productBottomItem compare" data-product-nav="1">
+                    <div class="productCompareButton">⇄</div>
+                    <span>Compare</span>
+                  </div>
+
+                  <div class="productBottomItem rival" data-product-nav="4">
+                    <div class="productBottomIcon">R</div>
+                    <span>Rival</span>
+                  </div>
+
+                  <div class="productBottomItem" data-product-nav="5">
+                    <div class="productBottomIcon">◎</div>
+                    <span>Watchlist</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="productSwipeHint">
+              <b>Swipe</b> the phone to explore
+            </div>
+
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -971,6 +2489,256 @@
     </div>
 
   </footer>
+
+
+
+  <script>
+    (() => {
+      const slides = Array.from(
+        document.querySelectorAll('[data-product-slide]')
+      );
+
+      const prevButton = document.getElementById('productPrev');
+      const nextButton = document.getElementById('productNext');
+      const dotsWrap = document.getElementById('productDots');
+      const counter = document.getElementById('productCounter');
+      const device = document.getElementById('productDevice');
+
+      const eyebrow = document.getElementById('productSlideEyebrow');
+      const title = document.getElementById('productSlideTitle');
+      const copy = document.getElementById('productSlideCopy');
+
+      if (
+        !slides.length ||
+        !prevButton ||
+        !nextButton ||
+        !dotsWrap ||
+        !counter ||
+        !device
+      ) {
+        return;
+      }
+
+      const slideContent = [
+        {
+          eyebrow: 'MARKET',
+          title: 'Discover what deserves attention.',
+          copy: 'Scan supported assets, movers, sessions and market context before going deeper.'
+        },
+        {
+          eyebrow: 'COMPARE',
+          title: 'Put context side by side.',
+          copy: 'Compare supported assets across historical performance, momentum and analytical context.'
+        },
+        {
+          eyebrow: 'FINRIVAL AI',
+          title: 'Continue the research.',
+          copy: 'Carry supported asset context into structured AI-assisted research without leaving the workspace.'
+        },
+        {
+          eyebrow: 'NEWS',
+          title: 'Follow the story, not the noise.',
+          copy: 'Move from market headlines into relevant context and continue research from the same workflow.'
+        },
+        {
+          eyebrow: 'RIVAL',
+          title: 'Practice without real money.',
+          copy: 'Explore simulated portfolio activity with fictional Rival Credits that have no real-world monetary value.'
+        },
+        {
+          eyebrow: 'WATCHLIST',
+          title: 'Keep important assets close.',
+          copy: 'Save supported assets and create convenient reference-price alerts from one organized view.'
+        }
+      ];
+
+      const navItems = Array.from(
+        document.querySelectorAll('[data-product-nav]')
+      );
+
+      let activeIndex = 0;
+      let autoTimer = null;
+      let pointerStartX = null;
+      let pointerStartY = null;
+
+      const prefersReducedMotion =
+        window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      slideContent.forEach((item, index) => {
+        const dot = document.createElement('button');
+        dot.className = 'productDot' + (index === 0 ? ' active' : '');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', `Show ${item.eyebrow} screen`);
+        dot.addEventListener('click', () => {
+          showSlide(index, true);
+        });
+        dotsWrap.appendChild(dot);
+      });
+
+      const dots = Array.from(
+        dotsWrap.querySelectorAll('.productDot')
+      );
+
+      function setNavState(index) {
+        navItems.forEach((item) => {
+          const targetIndex = Number(item.dataset.productNav);
+          item.classList.toggle('active', targetIndex === index);
+        });
+      }
+
+      function showSlide(index, restartAuto = false) {
+        const nextIndex =
+          (index + slides.length) % slides.length;
+
+        activeIndex = nextIndex;
+
+        slides.forEach((slide, slideIndex) => {
+          slide.classList.toggle(
+            'active',
+            slideIndex === activeIndex
+          );
+        });
+
+        dots.forEach((dot, dotIndex) => {
+          dot.classList.toggle(
+            'active',
+            dotIndex === activeIndex
+          );
+          dot.setAttribute(
+            'aria-current',
+            dotIndex === activeIndex ? 'true' : 'false'
+          );
+        });
+
+        const content = slideContent[activeIndex];
+
+        if (content) {
+          eyebrow.textContent = content.eyebrow;
+          title.textContent = content.title;
+          copy.textContent = content.copy;
+        }
+
+        counter.textContent =
+          `${String(activeIndex + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+
+        setNavState(activeIndex);
+
+        if (restartAuto) {
+          startAuto();
+        }
+      }
+
+      function nextSlide(restartAuto = false) {
+        showSlide(activeIndex + 1, restartAuto);
+      }
+
+      function prevSlide(restartAuto = false) {
+        showSlide(activeIndex - 1, restartAuto);
+      }
+
+      function stopAuto() {
+        if (autoTimer) {
+          window.clearInterval(autoTimer);
+          autoTimer = null;
+        }
+      }
+
+      function startAuto() {
+        stopAuto();
+
+        if (prefersReducedMotion) {
+          return;
+        }
+
+        autoTimer = window.setInterval(() => {
+          nextSlide(false);
+        }, 5600);
+      }
+
+      prevButton.addEventListener('click', () => {
+        prevSlide(true);
+      });
+
+      nextButton.addEventListener('click', () => {
+        nextSlide(true);
+      });
+
+      device.addEventListener('pointerdown', (event) => {
+        pointerStartX = event.clientX;
+        pointerStartY = event.clientY;
+      });
+
+      device.addEventListener('pointerup', (event) => {
+        if (
+          pointerStartX === null ||
+          pointerStartY === null
+        ) {
+          return;
+        }
+
+        const deltaX = event.clientX - pointerStartX;
+        const deltaY = event.clientY - pointerStartY;
+
+        pointerStartX = null;
+        pointerStartY = null;
+
+        if (
+          Math.abs(deltaX) < 42 ||
+          Math.abs(deltaX) <= Math.abs(deltaY)
+        ) {
+          return;
+        }
+
+        if (deltaX < 0) {
+          nextSlide(true);
+        } else {
+          prevSlide(true);
+        }
+      });
+
+      device.addEventListener('pointercancel', () => {
+        pointerStartX = null;
+        pointerStartY = null;
+      });
+
+      device.addEventListener('mouseenter', stopAuto);
+      device.addEventListener('mouseleave', startAuto);
+      device.addEventListener('focusin', stopAuto);
+      device.addEventListener('focusout', startAuto);
+
+      document.addEventListener('keydown', (event) => {
+        const tag = document.activeElement?.tagName?.toLowerCase();
+
+        if (
+          tag === 'input' ||
+          tag === 'textarea' ||
+          tag === 'select'
+        ) {
+          return;
+        }
+
+        if (event.key === 'ArrowRight') {
+          nextSlide(true);
+        }
+
+        if (event.key === 'ArrowLeft') {
+          prevSlide(true);
+        }
+      });
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          stopAuto();
+        } else {
+          startAuto();
+        }
+      });
+
+      showSlide(0, false);
+      startAuto();
+    })();
+  </script>
 
 
   <script src="../assets/js/finrival.js"></script>

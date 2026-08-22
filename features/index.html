@@ -1,276 +1,514 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="theme-color" content="#000000" />
-<meta name="color-scheme" content="dark" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#05070a">
+<meta name="color-scheme" content="dark">
 <title>Finrival Features — Market, Compare, AI, Watchlist and Rival</title>
-<meta name="description" content="Explore Finrival features including market discovery, financial news, Compare, Watchlist, Rival simulation and Finrival AI." />
-<link rel="canonical" href="https://finrival.com/features/" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Finrival Features — Market, Compare, AI, Watchlist and Rival" />
-<meta property="og:description" content="Explore Finrival features including market discovery, financial news, Compare, Watchlist, Rival simulation and Finrival AI." />
-<meta property="og:url" content="https://finrival.com/features/" />
-<meta property="og:site_name" content="Finrival" />
+<meta name="description" content="Explore Finrival features including market discovery, financial news, Compare, Watchlist, Rival simulation and Finrival AI.">
+<link rel="canonical" href="https://finrival.com/features/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Finrival Features — Market, Compare, AI, Watchlist and Rival">
+<meta property="og:description" content="Six connected research surfaces inside one focused Finrival workflow.">
+<meta property="og:url" content="https://finrival.com/features/">
+<meta property="og:site_name" content="Finrival">
 <style>
-
 :root{
-  --bg:#000;
-  --card:#111214;
-  --card2:#16181c;
-  --text:#fff;
-  --muted:#98a2b3;
-  --muted2:#667085;
-  --line:#24262a;
+  --bg:#05070a;
+  --bg2:#080b10;
+  --card:#0f141b;
+  --card2:#131a23;
+  --text:#f7f9fc;
+  --muted:#96a0ae;
+  --muted2:#687382;
+  --line:rgba(255,255,255,.085);
+  --line2:rgba(255,255,255,.05);
   --cyan:#00e5ff;
-  --cyan-soft:rgba(0,229,255,.08);
-  --cyan-border:rgba(0,229,255,.22);
-  --gold:#f5c15d;
-  --gold-soft:rgba(245,193,93,.08);
-  --gold-border:rgba(245,193,93,.22);
+  --cyanSoft:rgba(0,229,255,.075);
+  --cyanBorder:rgba(0,229,255,.22);
+  --gold:#f4b942;
+  --goldSoft:rgba(244,185,66,.075);
+  --goldBorder:rgba(244,185,66,.22);
   --green:#34c759;
   --red:#ff453a;
-  --max:1160px;
+  --max:1180px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;background:#000}
+html{scroll-behavior:smooth;background:var(--bg)}
 body{
   min-height:100vh;
   overflow-x:hidden;
   color:var(--text);
   background:
-    radial-gradient(circle at 12% 2%,rgba(0,229,255,.08),transparent 24%),
-    radial-gradient(circle at 90% 7%,rgba(245,193,93,.035),transparent 20%),
-    #000;
+    radial-gradient(circle at 10% 0%,rgba(0,229,255,.08),transparent 23%),
+    radial-gradient(circle at 90% 4%,rgba(244,185,66,.03),transparent 20%),
+    linear-gradient(180deg,#05070a,#030507 46%,#05070a);
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
 a{color:inherit;text-decoration:none}
 button{font:inherit}
-.container{width:min(var(--max),calc(100% - 40px));margin:auto}
-.nav{
+.siteContainer{width:min(var(--max),calc(100% - 40px));margin:auto}
+.siteHeader{
   position:sticky;top:0;z-index:100;
-  background:rgba(0,0,0,.78);
-  border-bottom:1px solid rgba(255,255,255,.055);
-  backdrop-filter:blur(20px)
+  background:rgba(5,7,10,.76);
+  border-bottom:1px solid var(--line2);
+  backdrop-filter:blur(20px);
 }
-nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.logo{width:128px;display:block}
-.navlinks{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:12px;font-weight:760}
-.navlinks a:hover,.navlinks a.active{color:#fff}
-.navcta{padding:10px 14px;border:1px solid var(--cyan-border);border-radius:12px;color:var(--cyan)!important;background:rgba(0,229,255,.05)}
-.hero{position:relative;overflow:hidden;padding:92px 0 82px}
-.hero:before{
-  content:"";position:absolute;top:-270px;left:50%;width:1000px;height:700px;
+.siteNav{
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.brand{display:inline-flex;align-items:center;min-width:120px}
+.brand img{width:128px;display:block}
+.brandText{display:none;font-size:21px;font-weight:950;letter-spacing:-.8px}
+.brandText b{color:var(--cyan)}
+.desktopNav{display:flex;align-items:center;gap:24px;color:var(--muted);font-size:12px;font-weight:780}
+.desktopNav a{transition:color .16s ease}
+.desktopNav a:hover,.desktopNav a.active{color:#fff}
+.navCta{
+  min-height:40px;
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:0 14px;
+  border:1px solid var(--cyanBorder);
+  border-radius:12px;
+  background:var(--cyanSoft);
+  color:var(--cyan);
+  font-size:11px;font-weight:900;
+  white-space:nowrap;
+}
+.pageHero{
+  position:relative;
+  overflow:hidden;
+  padding:92px 0 88px;
+}
+.pageHero:before{
+  content:"";
+  position:absolute;
+  top:-250px;left:50%;
+  width:980px;height:690px;
   transform:translateX(-50%);
-  background:radial-gradient(ellipse,rgba(0,229,255,.09),transparent 66%);
-  pointer-events:none
+  background:radial-gradient(ellipse,rgba(0,229,255,.095),transparent 66%);
+  pointer-events:none;
 }
-.heroGrid{position:relative;z-index:1;display:grid;grid-template-columns:.96fr 1.04fr;gap:70px;align-items:center}
-.pill{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:8px 12px;margin-bottom:20px;
-  border:1px solid var(--line);border-radius:999px;
-  background:rgba(255,255,255,.025);
-  color:#bac1cc;font-size:10px;font-weight:850;letter-spacing:1px;text-transform:uppercase
+.heroGrid{
+  position:relative;z-index:1;
+  display:grid;
+  grid-template-columns:minmax(0,.94fr) minmax(420px,1.06fr);
+  gap:70px;
+  align-items:center;
 }
-.dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 16px rgba(0,229,255,.68)}
-h1{font-size:clamp(48px,6vw,78px);line-height:1;letter-spacing:-3.6px;font-weight:930}
-h2{font-size:clamp(34px,4.2vw,56px);line-height:1.05;letter-spacing:-2.2px;font-weight:900}
-h3{font-size:22px;line-height:1.2;letter-spacing:-.7px}
-.gradient{
-  background:linear-gradient(105deg,#fff 0%,#fff 16%,#d5fbff 50%,#63edf9 76%,var(--cyan));
-  -webkit-background-clip:text;background-clip:text;color:transparent
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:18px;
+  color:#bac3cf;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1.15px;
+  text-transform:uppercase;
 }
-.lead{max-width:660px;margin-top:24px;color:var(--muted);font-size:17px;line-height:1.75}
-.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-.btn{min-height:50px;display:inline-flex;align-items:center;justify-content:center;padding:0 20px;border-radius:14px;border:1px solid transparent;font-size:12px;font-weight:900}
-.primary{background:var(--cyan);color:#071013}
-.secondary{background:var(--card);border-color:var(--line)}
-.section{padding:96px 0;border-top:1px solid rgba(255,255,255,.045)}
-.sectionHead{max-width:760px;margin-bottom:38px}
-.kicker{color:var(--cyan);font-size:10px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:12px}
-.kicker.gold{color:var(--gold)}
-.sectionHead p{margin-top:16px;color:var(--muted);font-size:16px;line-height:1.75}
-.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.eyebrow:before{
+  content:"";
+  width:7px;height:7px;border-radius:50%;
+  background:var(--cyan);
+  box-shadow:0 0 15px rgba(0,229,255,.55);
+}
+.eyebrow.gold:before{background:var(--gold);box-shadow:0 0 15px rgba(244,185,66,.42)}
+h1{
+  font-size:clamp(48px,6vw,78px);
+  line-height:1;
+  letter-spacing:-3.4px;
+  font-weight:950;
+}
+.textGradient{
+  background:linear-gradient(105deg,#fff 0%,#eafcff 36%,#6aefff 75%,var(--cyan));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.goldGradient{
+  background:linear-gradient(105deg,#fff 0%,#fff0c7 44%,#f8cb70 76%,var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.heroLead{
+  max-width:650px;
+  margin-top:23px;
+  color:#a5afbc;
+  font-size:17px;
+  line-height:1.76;
+}
+.heroActions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.button{
+  min-height:50px;
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:8px;
+  padding:0 20px;
+  border:1px solid transparent;
+  border-radius:14px;
+  font-size:12px;font-weight:900;
+}
+.buttonPrimary{background:var(--cyan);color:#071013}
+.buttonGold{background:var(--gold);color:#171006}
+.buttonSecondary{background:var(--card);border-color:var(--line);color:#fff}
+.heroMeta{display:flex;flex-wrap:wrap;gap:14px 22px;margin-top:20px;color:var(--muted2);font-size:10px;font-weight:750}
+.statusDot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:6px;background:var(--green)}
+.contentSection{padding:92px 0;border-top:1px solid var(--line2)}
+.sectionMuted{background:linear-gradient(180deg,rgba(255,255,255,.012),rgba(255,255,255,.022))}
+.sectionHeading{max-width:780px;margin-bottom:38px}
+.sectionEyebrow{color:var(--cyan);font-size:10px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:11px}
+.sectionEyebrow.gold{color:var(--gold)}
+h2{font-size:clamp(34px,4.7vw,54px);line-height:1.06;letter-spacing:-2px;font-weight:930}
+h3{font-size:20px;line-height:1.2;letter-spacing:-.45px}
+.sectionHeading p{max-width:690px;margin-top:14px;color:#9ca6b4;font-size:15px;line-height:1.75}
 .card{
-  position:relative;overflow:hidden;
-  padding:26px;
+  position:relative;
+  overflow:hidden;
+  padding:25px;
   border:1px solid var(--line);
-  border-radius:24px;
-  background:linear-gradient(180deg,rgba(255,255,255,.032),rgba(255,255,255,.014));
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.035)
+  border-radius:22px;
+  background:linear-gradient(180deg,rgba(18,24,32,.94),rgba(9,13,18,.96));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
 }
-.card.cyan{border-color:var(--cyan-border);background:linear-gradient(180deg,rgba(0,229,255,.065),rgba(255,255,255,.012))}
-.card.gold{border-color:var(--gold-border);background:linear-gradient(180deg,rgba(245,193,93,.055),rgba(255,255,255,.012))}
-.card p{margin-top:10px;color:var(--muted);font-size:14px;line-height:1.7}
+.card.cyan{border-color:var(--cyanBorder);background:linear-gradient(180deg,rgba(0,229,255,.055),rgba(9,13,18,.96))}
+.card.gold{border-color:var(--goldBorder);background:linear-gradient(180deg,rgba(244,185,66,.055),rgba(9,13,18,.96))}
+.card p{margin-top:9px;color:#97a1af;font-size:13px;line-height:1.7}
 .icon{
-  width:48px;height:48px;margin-bottom:18px;
-  display:grid;place-items:center;border-radius:15px;
-  border:1px solid var(--cyan-border);background:var(--cyan-soft);
-  color:var(--cyan);font-weight:900;font-size:18px
+  width:46px;height:46px;
+  display:grid;place-items:center;
+  margin-bottom:22px;
+  border:1px solid var(--cyanBorder);
+  border-radius:14px;
+  background:var(--cyanSoft);
+  color:var(--cyan);
+  font-size:17px;font-weight:950;
 }
-.icon.gold{border-color:var(--gold-border);background:var(--gold-soft);color:var(--gold)}
-.metricRow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
-.metric{padding:18px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.02)}
-.metric strong{display:block;font-size:20px;letter-spacing:-.5px}
-.metric span{display:block;margin-top:6px;color:var(--muted);font-size:11px}
-.visual{
-  min-height:500px;padding:18px;border:1px solid var(--cyan-border);border-radius:32px;
-  background:linear-gradient(180deg,rgba(0,229,255,.055),rgba(255,255,255,.012));
-  box-shadow:0 36px 100px rgba(0,0,0,.6)
+.icon.gold{border-color:var(--goldBorder);background:var(--goldSoft);color:var(--gold)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.visualPanel{
+  min-height:520px;
+  padding:18px;
+  border:1px solid var(--cyanBorder);
+  border-radius:30px;
+  background:
+    radial-gradient(circle at 80% 0%,rgba(0,229,255,.075),transparent 32%),
+    linear-gradient(180deg,#0d1218,#070a0e);
+  box-shadow:0 34px 90px rgba(0,0,0,.5);
 }
-.screen{height:100%;min-height:462px;padding:20px;border:1px solid rgba(255,255,255,.06);border-radius:24px;background:#08090b}
-.screenTop{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
-.screenLabel{color:#d6dde7;font-size:12px;font-weight:900}
-.badge{padding:6px 10px;border:1px solid var(--cyan-border);border-radius:999px;background:var(--cyan-soft);color:var(--cyan);font-size:9px;font-weight:900}
-.mockBlock{padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--card);margin-top:12px}
-.mockBlock strong{display:block;font-size:16px}
-.mockBlock span{display:block;margin-top:6px;color:var(--muted);font-size:11px}
-.mockRow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.bar{height:7px;margin-top:15px;border-radius:999px;overflow:hidden;background:#202226}
-.bar i{display:block;height:100%;width:72%;background:linear-gradient(90deg,var(--cyan),#8af2ff)}
-.list{display:grid;gap:12px;margin-top:24px}
-.item{display:flex;gap:12px;align-items:flex-start;padding:15px 16px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.018)}
-.itemDot{width:9px;height:9px;margin-top:7px;flex:0 0 auto;border-radius:50%;background:var(--cyan);box-shadow:0 0 15px rgba(0,229,255,.5)}
-.item strong{display:block;font-size:13px}
-.item span{display:block;margin-top:3px;color:var(--muted);font-size:12px}
+.visualInner{
+  min-height:482px;
+  padding:20px;
+  border:1px solid var(--line);
+  border-radius:23px;
+  background:#080b0f;
+}
+.visualHead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+.visualTitle{font-size:12px;font-weight:900}
+.badge{
+  padding:6px 9px;
+  border:1px solid var(--cyanBorder);
+  border-radius:999px;
+  background:var(--cyanSoft);
+  color:var(--cyan);
+  font-size:8px;font-weight:900;
+}
+.badge.gold{border-color:var(--goldBorder);background:var(--goldSoft);color:var(--gold)}
+.miniCard{
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:#10151c;
+}
+.miniCard + .miniCard{margin-top:10px}
+.miniCard strong{display:block;font-size:12px}
+.miniCard span{display:block;margin-top:4px;color:#7e8998;font-size:9px;line-height:1.55}
+.softLine{height:7px;border-radius:999px;background:#1e2630;overflow:hidden;margin-top:11px}
+.softLine i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--cyan),#5e93ff)}
+.softLine.gold i{background:linear-gradient(90deg,var(--gold),#f07843)}
+.trustList{display:grid;gap:10px}
+.trustRow{
+  display:flex;gap:11px;align-items:flex-start;
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:rgba(255,255,255,.018);
+}
+.trustMark{
+  width:24px;height:24px;display:grid;place-items:center;flex:0 0 auto;
+  border:1px solid rgba(52,199,89,.2);border-radius:50%;
+  background:rgba(52,199,89,.07);color:var(--green);
+  font-size:9px;font-weight:950;
+}
+.trustRow strong{display:block;font-size:11px}
+.trustRow span{display:block;margin-top:3px;color:#8e98a7;font-size:10px;line-height:1.55}
 .notice{
-  margin-top:24px;padding:18px 20px;border:1px solid var(--line);border-radius:18px;
-  background:rgba(255,255,255,.018);color:var(--muted);font-size:12px;line-height:1.7
+  margin-top:22px;
+  padding:18px 20px;
+  border:1px solid var(--line);
+  border-radius:17px;
+  background:rgba(255,255,255,.018);
+  color:#8f99a8;
+  font-size:11px;
+  line-height:1.7;
 }
 .notice strong{color:#fff}
-.proHero{
-  padding:36px;border:1px solid var(--gold-border);border-radius:30px;
-  background:radial-gradient(circle at 80% 0%,rgba(245,193,93,.09),transparent 30%),linear-gradient(180deg,rgba(245,193,93,.05),rgba(255,255,255,.012))
+.siteFooter{padding:42px 0 34px;border-top:1px solid var(--line2)}
+.footerMain{display:flex;justify-content:space-between;gap:40px}
+.footerBrand{max-width:450px}
+.footerBrand img{width:125px}
+.footerBrand p{margin-top:12px;color:#858f9e;font-size:11px;line-height:1.7}
+.footerColumns{display:flex;gap:54px}
+.footerColumn{display:grid;align-content:start;gap:8px;min-width:100px}
+.footerColumn strong{font-size:10px}
+.footerColumn a{color:#7f8998;font-size:10px}
+.footerColumn a:hover{color:#fff}
+.footerBottom{
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+  margin-top:30px;padding-top:18px;
+  border-top:1px solid var(--line2);
+  color:#5f6978;font-size:9px;
 }
-.proBadge{display:inline-flex;padding:7px 10px;border:1px solid var(--gold-border);border-radius:999px;background:var(--gold-soft);color:var(--gold);font-size:9px;font-weight:900;letter-spacing:1px}
-.planGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
-.plan{padding:24px;border:1px solid var(--line);border-radius:22px;background:#101114}
-.plan.featured{border-color:var(--gold-border);background:linear-gradient(180deg,rgba(245,193,93,.055),#101114)}
-.planName{font-size:18px;font-weight:900}
-.planMeta{margin-top:6px;color:var(--muted);font-size:12px}
-.plan ul{margin:18px 0 0 18px;color:#d7dce3;font-size:13px}
-.plan li{margin:8px 0}
-.companyGrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.quote{font-size:clamp(28px,4vw,46px);line-height:1.15;letter-spacing:-1.8px;font-weight:900}
-.footer{padding:34px 0 48px;border-top:1px solid rgba(255,255,255,.055)}
-.footerTop{display:flex;align-items:flex-start;justify-content:space-between;gap:30px}
-.footerLogo{width:120px}
-.footerCopy p{max-width:470px;margin-top:12px;color:var(--muted);font-size:12px}
-.footerLinks{display:flex;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:11px}
-.footerBottom{display:flex;justify-content:space-between;gap:20px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.045);color:var(--muted2);font-size:10px}
-.quikturnCredit{color:#8f98a6}
-@media(max-width:920px){
-  .heroGrid,.grid3,.companyGrid{grid-template-columns:1fr}
-  .grid2,.metricRow,.planGrid{grid-template-columns:1fr}
-  .navlinks{display:none}
-  .hero{padding-top:64px}
-  .visual{min-height:auto}
-  .footerTop,.footerBottom{flex-direction:column}
+@media(max-width:980px){
+  .heroGrid{grid-template-columns:1fr;gap:46px}
+  .grid4,.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footerMain{flex-direction:column}
 }
-@media(max-width:560px){
-  .container{width:min(var(--max),calc(100% - 24px))}
-  h1{letter-spacing:-2.6px}
-  .section{padding:72px 0}
-  .mockRow{grid-template-columns:1fr}
+@media(max-width:760px){
+  html,body{max-width:100%;overflow-x:hidden}
+  .siteContainer{width:min(var(--max),calc(100% - 28px))}
+  .siteNav{height:64px;gap:12px}
+  .desktopNav{display:none}
+  .brand{min-width:0}
+  .brand img{width:112px}
+  .navCta{min-height:38px;padding:0 11px;font-size:10px}
+  .pageHero{padding:68px 0 68px}
+  h1{font-size:clamp(42px,13vw,58px);letter-spacing:-2.5px}
+  h2{font-size:clamp(31px,9.5vw,42px);letter-spacing:-1.45px}
+  .heroLead{font-size:15px}
+  .contentSection{padding:72px 0}
+  .grid4,.grid3,.grid2{grid-template-columns:1fr}
+  .visualPanel{min-height:auto;padding:12px;border-radius:22px}
+  .visualInner{min-height:auto;padding:14px;border-radius:17px}
+  .footerColumns{display:grid;grid-template-columns:1fr 1fr;gap:28px 34px}
+  .heroActions{width:100%}
+  .heroActions .button{flex:1 1 180px}
 }
-
+@media(max-width:430px){
+  .siteContainer{width:min(var(--max),calc(100% - 24px))}
+  .pageHero{padding:58px 0 58px}
+  .contentSection{padding:62px 0}
+  .card{padding:20px;border-radius:18px}
+  .footerColumns{grid-template-columns:1fr 1fr}
+  .footerBottom{font-size:8.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation:none!important;transition:none!important}
+}
 </style>
+
+<style>
+.featureMap{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.featureMap .miniCard:nth-child(5),
+.featureMap .miniCard:nth-child(6){margin-top:0}
+.featureBand{
+  display:grid;grid-template-columns:.78fr 1.22fr;gap:42px;align-items:center;
+  padding:28px;border:1px solid var(--line);border-radius:26px;background:#090d12;
+}
+.featureBand + .featureBand{margin-top:16px}
+.featureBand.gold{border-color:var(--goldBorder)}
+.featureBandCopy p{margin-top:9px;color:#949eac;font-size:13px;line-height:1.7}
+.featurePreview{padding:16px;border:1px solid var(--line);border-radius:19px;background:#0e131a}
+.featurePreviewRow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.previewStat{padding:12px;border:1px solid var(--line);border-radius:12px;background:#080b0f}
+.previewStat strong{display:block;font-size:12px}
+.previewStat span{display:block;margin-top:3px;color:#758090;font-size:8px}
+@media(max-width:760px){
+  .featureBand{grid-template-columns:1fr;gap:22px;padding:20px}
+  .featurePreviewRow{grid-template-columns:1fr}
+  .featureMap{grid-template-columns:1fr}
+}
+</style>
+
 </head>
 <body>
-<div class="nav">
-  <div class="container">
-    <nav>
-      <a href="../"><img class="logo" src="../logo.png" alt="Finrival" /></a>
-      <div class="navlinks">
+
+<header class="siteHeader">
+  <div class="siteContainer">
+    <nav class="siteNav">
+      <a class="brand" href="../" aria-label="Finrival home">
+        <img src="../logo.png" alt="Finrival" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+        <span class="brandText">finrival<b>.</b></span>
+      </a>
+      <div class="desktopNav">
         <a href="../product/">Product</a>
-        <a href="../features/" class="active">Features</a>
-        <a href="../ai/">AI</a>
-        <a href="../pro/">PRO</a>
-        <a href="../company/">Company</a>
-        <a href="../support/">Support</a>
+<a class="active" href="../features/">Features</a>
+<a href="../ai/">Finrival AI</a>
+<a href="../pro/">PRO</a>
+<a href="../company/">Company</a>
+<a href="../support/">Support</a>
       </div>
+      <a class="navCta" href="#availability">Coming Soon</a>
     </nav>
   </div>
-</div>
-<main>
+</header>
 
-<section class="hero">
-  <div class="container heroGrid">
+<main>
+<section class="pageHero">
+  <div class="siteContainer heroGrid">
     <div>
-      <div class="pill"><span class="dot"></span>FEATURES</div>
-      <h1>Built around<br><span class="gradient">the next question.</span></h1>
-      <p class="lead">Every major Finrival screen is designed to move research forward: discover, compare, understand, save and revisit.</p>
+      <div class="eyebrow">FEATURES</div>
+      <h1>Built around<br><span class="textGradient">the next question.</span></h1>
+      <p class="heroLead">Every major Finrival surface has a clear job: discover, compare, understand, monitor and revisit without breaking the research flow.</p>
+      <div class="heroActions">
+        <a class="button buttonPrimary" href="../product/">See Product Tour <span>→</span></a>
+        <a class="button buttonSecondary" href="../ai/">Explore Finrival AI</a>
+      </div>
+      <div class="heroMeta"><div><span class="statusDot"></span>Mobile-first research workflow</div><div>iOS & Android · Coming Soon</div></div>
     </div>
-    <div class="visual">
-      <div class="screen">
-        <div class="screenTop"><span class="screenLabel">Feature map</span><span class="badge">FINRIVAL</span></div>
-        <div class="mockRow">
-          <div class="mockBlock"><strong>Market</strong><span>Movers, sessions, categories, search.</span></div>
-          <div class="mockBlock"><strong>News</strong><span>Financial stories and contextual follow-up.</span></div>
+    <div class="visualPanel">
+      <div class="visualInner">
+        <div class="visualHead"><span class="visualTitle">FINRIVAL FEATURE MAP</span><span class="badge">6 SURFACES</span></div>
+        <div class="featureMap">
+          <div class="miniCard"><strong>Market</strong><span>Movers, sessions, categories and searchable assets.</span></div>
+          <div class="miniCard"><strong>News</strong><span>Financial stories with visible source context.</span></div>
+          <div class="miniCard"><strong>Compare</strong><span>Side-by-side performance, momentum and risk context.</span></div>
+          <div class="miniCard"><strong>Watchlist</strong><span>Saved assets and reference-price alerts.</span></div>
+          <div class="miniCard" style="border-color:var(--goldBorder)"><strong style="color:var(--gold)">Rival</strong><span>Fictional-credit practice environment.</span></div>
+          <div class="miniCard" style="border-color:var(--cyanBorder)"><strong style="color:var(--cyan)">Finrival AI</strong><span>Research continuation with supported context attached.</span></div>
         </div>
-        <div class="mockRow">
-          <div class="mockBlock"><strong>Compare</strong><span>Side-by-side market research.</span></div>
-          <div class="mockBlock"><strong>Watchlist</strong><span>Saved assets and price-alert workflow.</span></div>
-        </div>
-        <div class="mockBlock"><strong>Rival</strong><span>Fictional-credit simulation, clearly separated from real money.</span></div>
-        <div class="mockBlock"><strong>Finrival AI</strong><span>Context-aware research continuation across supported screens.</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="sectionHead"><div class="kicker">CORE EXPERIENCE</div><h2>The six layers of Finrival.</h2><p>Each layer has a clear role and a clear boundary.</p></div>
-    <div class="grid2">
-      <div class="card cyan"><div class="icon">↗</div><h3>Market discovery</h3><p>Search the supported catalog, review movers, market sessions, activity and category views without turning the home screen into a terminal.</p></div>
-      <div class="card"><div class="icon">▤</div><h3>Financial news</h3><p>Browse market-focused stories, keep the source visible and use supported news context as a starting point for further research.</p></div>
-      <div class="card"><div class="icon">⇄</div><h3>Compare</h3><p>Keep two assets in the same visual frame with historical performance, momentum and supported analytical models.</p></div>
-      <div class="card"><div class="icon">◎</div><h3>Watchlist & alerts</h3><p>Save assets, revisit them quickly and use supported price-alert workflows without pretending the app is an execution venue.</p></div>
-      <div class="card gold"><div class="icon gold">★</div><h3>Rival simulation</h3><p>Practice with fictional Rival Credits in a separate gold visual system. Credits are non-transferable and have no real-world monetary value.</p></div>
-      <div class="card cyan"><div class="icon">◆</div><h3>Finrival AI</h3><p>Open the assistant from supported market, compare or news context instead of starting from a blank chat every time.</p></div>
+<section class="contentSection sectionMuted">
+  <div class="siteContainer">
+    <div class="sectionHeading">
+      <div class="sectionEyebrow">CORE EXPERIENCE</div>
+      <h2>Six layers. One research system.</h2>
+      <p>The features are designed to connect to each other instead of behaving like isolated tools.</p>
+    </div>
+
+    <div class="featureBand">
+      <div class="featureBandCopy"><div class="icon">↗</div><h3>Market discovery</h3><p>Search the supported catalog, review movers, market sessions, activity and category views while keeping the home experience focused.</p></div>
+      <div class="featurePreview">
+        <div class="visualHead"><span class="visualTitle">MARKET CONTEXT</span><span class="badge">DISCOVER</span></div>
+        <div class="featurePreviewRow">
+          <div class="previewStat"><strong>Movers</strong><span>Session-aware highlights</span></div>
+          <div class="previewStat"><strong>Search</strong><span>Supported local catalog</span></div>
+          <div class="previewStat"><strong>Sessions</strong><span>Market status context</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="featureBand">
+      <div class="featureBandCopy"><div class="icon">⇄</div><h3>Compare</h3><p>Keep two supported assets in the same visual frame with historical performance, momentum and analytical context.</p></div>
+      <div class="featurePreview">
+        <div class="visualHead"><span class="visualTitle">SIDE-BY-SIDE RESEARCH</span><span class="badge">COMPARE</span></div>
+        <div class="featurePreviewRow">
+          <div class="previewStat"><strong>Performance</strong><span>Historical timeframe view</span></div>
+          <div class="previewStat"><strong>Momentum</strong><span>Supported indicators</span></div>
+          <div class="previewStat"><strong>Risk</strong><span>Context, not certainty</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="featureBand">
+      <div class="featureBandCopy"><div class="icon">▤</div><h3>Financial news</h3><p>Browse market-focused stories with source visibility and use supported news context as a starting point for further research.</p></div>
+      <div class="featurePreview">
+        <div class="visualHead"><span class="visualTitle">NEWS FLOW</span><span class="badge">CONTEXT</span></div>
+        <div class="miniCard"><strong>Source-aware stories</strong><span>Follow the headline, timing and publisher context before continuing research.</span></div>
+        <div class="miniCard"><strong>AI follow-up where supported</strong><span>Move from a story into a structured question without starting over.</span></div>
+      </div>
+    </div>
+
+    <div class="featureBand">
+      <div class="featureBandCopy"><div class="icon">◎</div><h3>Watchlist & alerts</h3><p>Save supported assets, revisit them quickly and create reference-price alerts without turning the app into an execution venue.</p></div>
+      <div class="featurePreview">
+        <div class="visualHead"><span class="visualTitle">MONITOR</span><span class="badge">WATCHLIST</span></div>
+        <div class="featurePreviewRow">
+          <div class="previewStat"><strong>Save</strong><span>Organize key assets</span></div>
+          <div class="previewStat"><strong>Alerts</strong><span>Reference-price notifications</span></div>
+          <div class="previewStat"><strong>Revisit</strong><span>Jump back into research</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="featureBand gold">
+      <div class="featureBandCopy"><div class="icon gold">R</div><h3>Rival simulation</h3><p>Practice with fictional Rival Credits in a separate visual system. Credits are non-transferable, cannot be withdrawn and have no real-world monetary value.</p></div>
+      <div class="featurePreview" style="border-color:var(--goldBorder)">
+        <div class="visualHead"><span class="visualTitle">SIMULATION</span><span class="badge gold">RIVAL CREDITS</span></div>
+        <div class="miniCard" style="border-color:var(--goldBorder)"><strong>Practice portfolio</strong><span>Explore simulated positions without real-money execution.</span><div class="softLine gold"><i style="width:72%"></i></div></div>
+      </div>
+    </div>
+
+    <div class="featureBand">
+      <div class="featureBandCopy"><div class="icon">✦</div><h3>Finrival AI</h3><p>Open the assistant from supported market, comparison or news context so the research thread can continue with less repetition.</p></div>
+      <div class="featurePreview" style="border-color:var(--cyanBorder)">
+        <div class="visualHead"><span class="visualTitle">FINRIVAL AI</span><span class="badge">CONTEXT MODE</span></div>
+        <div class="miniCard"><strong>User</strong><span>What should I verify next?</span></div>
+        <div class="miniCard" style="border-color:var(--cyanBorder)"><strong style="color:var(--cyan)">Finrival AI</strong><span>Check freshness, timeframe, recent news and whether the comparison matches your research objective.</span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="sectionHead"><div class="kicker gold">PRO LAYER</div><h2>Free stays useful. PRO adds depth.</h2><p>PRO is designed around broader research capacity, advanced Compare access, larger tracking limits and an ad-free eligible workspace.</p></div>
-    <div class="notice"><strong>Availability note:</strong> exact store pricing, introductory offers and entitlement availability are determined by the App Store or Google Play storefront at launch and may vary by country or account.</div>
+<section class="contentSection" id="availability">
+  <div class="siteContainer">
+    <div class="sectionHeading">
+      <div class="sectionEyebrow gold">PRO LAYER</div>
+      <h2>Free stays useful. PRO adds depth.</h2>
+      <p>PRO is planned around broader research capacity, deeper Compare access, broader tracking and an ad-free eligible workspace.</p>
+    </div>
+    <div class="notice"><strong>Availability note:</strong> final entitlement availability, storefront pricing and any introductory offer are determined by the App Store or Google Play at launch and may vary by country or account.</div>
   </div>
 </section>
-
 </main>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footerTop">
-      <div class="footerCopy">
-        <a href="../"><img class="footerLogo" src="../logo.png" alt="Finrival" /></a>
-        <p>Market research, comparison, watchlists, simulation and AI-assisted context in one focused workspace.</p>
+<footer class="siteFooter">
+  <div class="siteContainer">
+    <div class="footerMain">
+      <div class="footerBrand">
+        <a href="../">
+          <img src="../logo.png" alt="Finrival" onerror="this.style.display='none'">
+        </a>
+        <p>Market research, comparison, monitoring, simulation and AI-assisted context in one focused workspace.</p>
       </div>
-      <div class="footerLinks">
-        <a href="../product/">Product</a>
-        <a href="../features/">Features</a>
-        <a href="../ai/">AI</a>
-        <a href="../pro/">PRO</a>
-        <a href="../company/">Company</a>
-        <a href="../privacy/">Privacy</a>
-        <a href="../terms/">Terms</a>
-        <a href="../delete-account/">Delete Account</a>
-        <a href="../support/">Support</a>
+      <div class="footerColumns">
+        <div class="footerColumn">
+          <strong>Product</strong>
+          <a href="../product/">Product</a>
+          <a href="../features/">Features</a>
+          <a href="../ai/">Finrival AI</a>
+          <a href="../pro/">PRO</a>
+        </div>
+        <div class="footerColumn">
+          <strong>Company</strong>
+          <a href="../company/">About</a>
+          <a href="../support/">Support</a>
+        </div>
+        <div class="footerColumn">
+          <strong>Legal</strong>
+          <a href="../privacy/">Privacy</a>
+          <a href="../terms/">Terms</a>
+          <a href="../delete-account/">Delete Account</a>
+        </div>
       </div>
     </div>
     <div class="footerBottom">
       <span>© 2026 Finrival. All rights reserved.</span>
-      <span>Informational, educational and simulation-focused. • <a class="quikturnCredit" href="https://getquikturn.io?ref=finrival.com">Logos by Quikturn</a></span>
+      <span>Informational, educational and simulation-focused.</span>
     </div>
   </div>
 </footer>
+
 </body>
 </html>

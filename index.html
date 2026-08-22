@@ -1,4 +1,6 @@
 <!doctype html>
+<!-- FINRIVAL HOME V11 — MOBILE SAFE — 2026-08-22 -->
+<!-- FINRIVAL WEBSITE V10 — Interactive Phone Carousel — 2026-08-22 -->
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -1551,7 +1553,493 @@ h2{font-weight:840}
   .rivalCardMini > strong{font-size:29px}
 }
 
+
+
+/* =========================================================
+   V10 — INTERACTIVE PRODUCT PHONE CAROUSEL
+   Adds arrow navigation, progress dots, autoplay and touch swipe
+   without changing the source-accurate app replica.
+========================================================= */
+.tourVisual{
+  isolation:isolate;
+  outline:none;
+}
+.tourVisual:focus-visible{
+  box-shadow:0 0 0 2px rgba(0,229,255,.22),0 24px 80px rgba(0,0,0,.28);
+}
+.tourArrow{
+  position:absolute;
+  top:50%;
+  z-index:12;
+  width:46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:50%;
+  background:rgba(8,8,10,.72);
+  color:#fff;
+  font:500 31px/1 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  cursor:pointer;
+  transform:translateY(-50%);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 12px 34px rgba(0,0,0,.34);
+  transition:transform .18s ease,border-color .18s ease,background .18s ease,color .18s ease;
+}
+.tourArrow:hover{
+  transform:translateY(-50%) scale(1.07);
+  border-color:rgba(0,229,255,.35);
+  background:rgba(0,229,255,.08);
+  color:var(--cyan);
+}
+.tourArrow:focus-visible{outline:2px solid rgba(0,229,255,.55);outline-offset:3px}
+.tourPrev{left:18px}
+.tourNext{right:18px}
+.tourCarouselMeta{
+  position:absolute;
+  left:50%;
+  bottom:18px;
+  z-index:12;
+  width:min(88%,420px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:10px 12px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  background:rgba(7,7,9,.72);
+  transform:translateX(-50%);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  box-shadow:0 12px 36px rgba(0,0,0,.28);
+}
+.tourScreenLabel{
+  min-width:112px;
+  color:#d9dee8;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.75px;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.tourDots{display:flex;align-items:center;gap:6px}
+.tourDot{
+  width:7px;
+  height:7px;
+  padding:0;
+  border:0;
+  border-radius:999px;
+  background:#41444b;
+  cursor:pointer;
+  transition:width .22s ease,background .22s ease,transform .22s ease;
+}
+.tourDot:hover{transform:scale(1.18);background:#737985}
+.tourDot.active{width:22px;background:var(--cyan)}
+.tourDot.gold.active{background:var(--gold)}
+.tourHint{
+  color:var(--muted2);
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:.3px;
+  white-space:nowrap;
+}
+.tourReplicaMount .device{transition:filter .25s ease,transform .25s ease}
+.tourVisual:hover .tourReplicaMount .device{filter:brightness(1.035)}
+@media(max-width:860px){
+  .tourArrow{width:42px;height:42px;font-size:28px}
+  .tourPrev{left:12px}
+  .tourNext{right:12px}
+  .tourCarouselMeta{bottom:12px;width:92%;padding:9px 10px}
+  .tourHint{display:none}
+}
+@media(max-width:540px){
+  .tourArrow{top:auto;bottom:64px;transform:none;width:38px;height:38px;font-size:25px}
+  .tourArrow:hover{transform:scale(1.05)}
+  .tourPrev{left:18px}
+  .tourNext{right:18px}
+  .tourCarouselMeta{bottom:14px;width:calc(100% - 28px)}
+  .tourScreenLabel{min-width:96px;font-size:8px}
+  .tourDots{gap:5px}
+  .tourDot{width:6px;height:6px}
+  .tourDot.active{width:18px}
+}
+@media(prefers-reduced-motion:reduce){
+  .tourArrow,.tourDot,.tourReplicaMount .device{transition:none}
+}
+
 </style>
+
+<!-- FINRIVAL HOME V11 — MOBILE COLLISION SAFETY PATCH — 2026-08-22 -->
+<style>
+/* Keep every major block inside the viewport. */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg{max-width:100%}
+
+/* Tablet safety */
+@media(max-width:860px){
+  .heroGrid{
+    grid-template-columns:1fr !important;
+    gap:44px !important;
+  }
+
+  .heroCopy{
+    width:100%;
+    max-width:720px;
+    margin:0 auto;
+    text-align:center;
+  }
+
+  .heroText,.boundary{
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  .actions,.stores{
+    justify-content:center !important;
+  }
+
+  .nativeStage{
+    width:100%;
+    min-width:0;
+    overflow:visible;
+  }
+
+  .tourGrid,
+  .trustGrid,
+  .aiShowGrid{
+    grid-template-columns:1fr !important;
+  }
+
+  .tourVisual{
+    position:relative !important;
+    top:auto !important;
+    width:100%;
+    min-width:0;
+  }
+
+  .featureGrid{
+    grid-template-columns:1fr 1fr !important;
+  }
+
+  .how{
+    grid-template-columns:1fr 1fr !important;
+  }
+
+  .aiShowVisual{
+    border-left:0 !important;
+    border-top:1px solid var(--border) !important;
+  }
+}
+
+/* Phone safety */
+@media(max-width:680px){
+  .container{
+    width:calc(100% - 28px) !important;
+    max-width:100% !important;
+  }
+
+  nav{
+    height:64px !important;
+    gap:10px !important;
+  }
+
+  .logo{
+    width:112px !important;
+    max-width:42vw !important;
+  }
+
+  .navlinks{
+    display:none !important;
+  }
+
+  .navcta{
+    padding:9px 11px !important;
+    font-size:10px !important;
+    white-space:nowrap !important;
+  }
+
+  .hero{
+    padding:58px 0 74px !important;
+    overflow:hidden !important;
+  }
+
+  .heroGrid{
+    display:block !important;
+  }
+
+  .heroCopy{
+    text-align:left !important;
+    width:100% !important;
+    max-width:none !important;
+  }
+
+  h1{
+    font-size:clamp(42px,13vw,58px) !important;
+    line-height:1.02 !important;
+    letter-spacing:-2.4px !important;
+    overflow-wrap:anywhere;
+  }
+
+  .heroText{
+    margin-top:20px !important;
+    font-size:15px !important;
+    line-height:1.66 !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+  }
+
+  .actions,.stores{
+    justify-content:flex-start !important;
+    width:100% !important;
+  }
+
+  .actions .btn{
+    flex:1 1 160px;
+  }
+
+  .store{
+    min-width:0 !important;
+    flex:1 1 150px !important;
+  }
+
+  .boundary{
+    margin-left:0 !important;
+    margin-right:0 !important;
+    font-size:10.5px !important;
+  }
+
+  .nativeStage{
+    min-height:665px !important;
+    margin-top:36px !important;
+    overflow:hidden !important;
+  }
+
+  .nativeHalo{
+    width:360px !important;
+    height:360px !important;
+    max-width:94vw !important;
+  }
+
+  .nativeGlow{
+    width:290px !important;
+    height:500px !important;
+  }
+
+  .nativeStage > .device{
+    width:300px !important;
+    height:620px !important;
+    max-width:calc(100vw - 42px) !important;
+    transform:none !important;
+    border-radius:45px !important;
+  }
+
+  .nativeStage > .device .deviceScreen{
+    border-radius:36px !important;
+  }
+
+  .previewNote{
+    display:none !important;
+  }
+
+  .previewSelector{
+    position:absolute !important;
+    left:50% !important;
+    bottom:6px !important;
+    width:min(360px,calc(100vw - 30px)) !important;
+    transform:translateX(-50%) !important;
+    grid-template-columns:repeat(5,1fr) !important;
+    gap:3px !important;
+    padding:5px !important;
+  }
+
+  .previewSelector button{
+    min-height:34px !important;
+    padding:0 3px !important;
+    font-size:6.5px !important;
+  }
+
+  .section{
+    padding:72px 0 !important;
+    overflow:hidden !important;
+  }
+
+  .sectionHead{
+    width:100% !important;
+    max-width:none !important;
+    margin-bottom:30px !important;
+  }
+
+  h2{
+    font-size:clamp(31px,10vw,43px) !important;
+    line-height:1.06 !important;
+    letter-spacing:-1.55px !important;
+    overflow-wrap:anywhere;
+  }
+
+  .sectionCopy{
+    font-size:14px !important;
+    line-height:1.68 !important;
+  }
+
+  .how,
+  .featureGrid,
+  .proGrid,
+  .trustGrid,
+  .aiShowGrid,
+  .tourGrid{
+    grid-template-columns:1fr !important;
+  }
+
+  .how article{
+    min-height:auto !important;
+    border-right:0 !important;
+    border-bottom:1px solid var(--border) !important;
+  }
+
+  .how article:last-child{
+    border-bottom:0 !important;
+  }
+
+  .tourVisual{
+    min-height:560px !important;
+    position:relative !important;
+    overflow:hidden !important;
+  }
+
+  .tourReplicaMount{
+    left:50% !important;
+    top:50% !important;
+    transform:translate(-50%,-50%) scale(.67) !important;
+  }
+
+  .tourItems{
+    width:100% !important;
+    min-width:0 !important;
+  }
+
+  .tourItem{
+    padding:20px !important;
+  }
+
+  .feature{
+    min-height:245px !important;
+  }
+
+  .aiShowCopy{
+    padding:26px 20px !important;
+  }
+
+  .aiShowVisual{
+    padding:20px !important;
+  }
+
+  .aiWindow{
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  .trustGrid{
+    gap:30px !important;
+  }
+
+  .pro{
+    padding:34px 18px !important;
+  }
+
+  .cta{
+    grid-template-columns:1fr !important;
+    gap:20px !important;
+    padding:24px 20px !important;
+  }
+
+  .footerTop{
+    flex-direction:column !important;
+  }
+
+  .footerLinks{
+    justify-content:flex-start !important;
+    gap:14px 18px !important;
+  }
+
+  .footerBottom{
+    flex-direction:column !important;
+  }
+
+  .modal{
+    padding:12px !important;
+  }
+
+  .modalCard{
+    max-height:calc(100vh - 24px) !important;
+    border-radius:20px !important;
+  }
+
+  .modalInner{
+    padding:22px 16px !important;
+  }
+
+  .modalGrid{
+    grid-template-columns:1fr !important;
+  }
+}
+
+@media(max-width:430px){
+  .container{
+    width:calc(100% - 24px) !important;
+  }
+
+  .hero{
+    padding-top:52px !important;
+  }
+
+  .nativeStage{
+    min-height:625px !important;
+  }
+
+  .nativeStage > .device{
+    width:286px !important;
+    height:592px !important;
+    max-width:calc(100vw - 34px) !important;
+  }
+
+  .previewSelector{
+    width:calc(100vw - 22px) !important;
+  }
+
+  .previewSelector button{
+    font-size:6px !important;
+  }
+
+  .tourVisual{
+    min-height:525px !important;
+  }
+
+  .tourReplicaMount{
+    transform:translate(-50%,-50%) scale(.61) !important;
+  }
+
+  .feature{
+    min-height:230px !important;
+    padding:20px !important;
+  }
+
+  .featureFooter{
+    left:20px !important;
+    right:20px !important;
+  }
+
+  .aiShowCopy{
+    padding:24px 18px !important;
+  }
+
+  .pro{
+    padding:30px 16px !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -2090,16 +2578,31 @@ h2{font-weight:840}
     <div class="sectionHead">
       <div class="sectionKicker">Inside Finrival</div>
       <h2>A closer look at the product.</h2>
-      <p class="sectionCopy">Choose a module and the phone changes with it. The same mobile replica is reused here so the product story stays consistent from the hero through the deeper tour.</p>
+      <p class="sectionCopy">Move through the product inside one phone. Use the arrows, swipe the device or choose a module to preview Market, News, Compare, Rival, Watchlist and Finrival AI.</p>
     </div>
 
     <div class="tourGrid">
-      <div class="tourVisual">
+      <div class="tourVisual" id="tourVisual" tabindex="0" aria-label="Interactive Finrival product preview. Use left and right arrow keys or the on-screen controls to change screens.">
+        <button class="tourArrow tourPrev" id="tourPrev" type="button" aria-label="Previous Finrival screen">‹</button>
         <div
           class="tourReplicaMount"
           id="tourReplicaMount"
           aria-label="Source-accurate Finrival mobile app replica"
         ></div>
+        <button class="tourArrow tourNext" id="tourNext" type="button" aria-label="Next Finrival screen">›</button>
+
+        <div class="tourCarouselMeta" aria-label="Product preview navigation">
+          <span class="tourScreenLabel" id="tourScreenLabel" aria-live="polite">01 / 06 · Market</span>
+          <div class="tourDots" id="tourDots">
+            <button class="tourDot active" type="button" data-tour-dot="home" aria-label="Show Market"></button>
+            <button class="tourDot" type="button" data-tour-dot="news" aria-label="Show News"></button>
+            <button class="tourDot" type="button" data-tour-dot="compare" aria-label="Show Compare"></button>
+            <button class="tourDot gold" type="button" data-tour-dot="rival" aria-label="Show Rival"></button>
+            <button class="tourDot" type="button" data-tour-dot="watchlist" aria-label="Show Watchlist"></button>
+            <button class="tourDot" type="button" data-tour-dot="ai" aria-label="Show Finrival AI"></button>
+          </div>
+          <span class="tourHint">Swipe · arrows</span>
+        </div>
       </div>
 
       <div class="tourItems">
@@ -2414,9 +2917,57 @@ function initTourReplica(){
   setReplicaPage('home');
 }
 
-function setTour(key){
+const tourOrder=['home','news','compare','rival','watchlist','ai'];
+const tourLabels={
+  home:'01 / 06 · Market',
+  news:'02 / 06 · News',
+  compare:'03 / 06 · Compare',
+  rival:'04 / 06 · Rival',
+  watchlist:'05 / 06 · Watchlist',
+  ai:'06 / 06 · Finrival AI'
+};
+const tourVisual=document.getElementById('tourVisual');
+const tourPrev=document.getElementById('tourPrev');
+const tourNext=document.getElementById('tourNext');
+const tourScreenLabel=document.getElementById('tourScreenLabel');
+const tourDots=[...document.querySelectorAll('[data-tour-dot]')];
+let activeTourIndex=0;
+let tourAutoTimer=null;
+let tourPointerStartX=null;
+
+function updateTourControls(key){
+  activeTourIndex=Math.max(0,tourOrder.indexOf(key));
+  if(tourScreenLabel)tourScreenLabel.textContent=tourLabels[key]||tourLabels.home;
+  tourDots.forEach(dot=>dot.classList.toggle('active',dot.dataset.tourDot===key));
+}
+
+function clearTourAutoplay(){
+  if(tourAutoTimer){
+    clearInterval(tourAutoTimer);
+    tourAutoTimer=null;
+  }
+}
+
+function startTourAutoplay(){
+  clearTourAutoplay();
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  tourAutoTimer=setInterval(()=>{
+    const nextIndex=(activeTourIndex+1)%tourOrder.length;
+    setTour(tourOrder[nextIndex],false);
+  },5200);
+}
+
+function setTour(key,restartAuto=true){
+  if(!tourOrder.includes(key))key='home';
   tourItems.forEach(x=>x.classList.toggle('active',x.dataset.tourKey===key));
   setReplicaPage(key);
+  updateTourControls(key);
+  if(restartAuto)startTourAutoplay();
+}
+
+function stepTour(direction){
+  const nextIndex=(activeTourIndex+direction+tourOrder.length)%tourOrder.length;
+  setTour(tourOrder[nextIndex]);
 }
 
 tourItems.forEach(x=>{
@@ -2426,7 +2977,41 @@ tourItems.forEach(x=>{
   x.addEventListener('click',()=>setTour(k));
 });
 
+tourDots.forEach(dot=>dot.addEventListener('click',()=>setTour(dot.dataset.tourDot)));
+if(tourPrev)tourPrev.addEventListener('click',()=>stepTour(-1));
+if(tourNext)tourNext.addEventListener('click',()=>stepTour(1));
+
+if(tourVisual){
+  tourVisual.addEventListener('keydown',event=>{
+    if(event.key==='ArrowLeft'){event.preventDefault();stepTour(-1)}
+    if(event.key==='ArrowRight'){event.preventDefault();stepTour(1)}
+  });
+
+  tourVisual.addEventListener('pointerdown',event=>{
+    if(event.pointerType==='mouse')return;
+    tourPointerStartX=event.clientX;
+  });
+
+  tourVisual.addEventListener('pointerup',event=>{
+    if(tourPointerStartX===null)return;
+    const delta=event.clientX-tourPointerStartX;
+    tourPointerStartX=null;
+    if(Math.abs(delta)<42)return;
+    stepTour(delta<0?1:-1);
+  });
+
+  tourVisual.addEventListener('pointercancel',()=>{tourPointerStartX=null});
+  tourVisual.addEventListener('mouseenter',clearTourAutoplay);
+  tourVisual.addEventListener('mouseleave',startTourAutoplay);
+  tourVisual.addEventListener('focusin',clearTourAutoplay);
+  tourVisual.addEventListener('focusout',event=>{
+    if(!tourVisual.contains(event.relatedTarget))startTourAutoplay();
+  });
+}
+
 initTourReplica();
+updateTourControls('home');
+startTourAutoplay();
 
 const data={
 market:{
