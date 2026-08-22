@@ -4811,6 +4811,78 @@ body,button,a,input,textarea{font-synthesis:none;}
     }
   </style>
 
+  <style>
+   /* =====================================================
+      V21 — LAUNCH-READY PREMIUM VISUAL HOME
+      Keeps the full interactive V19 product preview.
+   ====================================================== */
+   .hero{padding-top:62px!important;padding-bottom:54px!important;}
+   .heroGrid{grid-template-columns:minmax(0,1.02fr) minmax(390px,.98fr)!important;gap:48px!important;align-items:center!important;}
+   .heroCopy{max-width:660px!important;}
+   .hero h1{font-size:clamp(54px,6.35vw,80px)!important;line-height:.965!important;letter-spacing:-2.55px!important;font-weight:800!important;}
+   .heroLead{max-width:610px!important;margin-top:18px!important;font-size:17px!important;line-height:1.58!important;color:#aeb8c4!important;font-weight:450!important;}
+
+   .v21HeroRail{display:flex;align-items:stretch;gap:9px;margin-top:22px;max-width:640px;}
+   .v21HeroRailItem{min-width:0;flex:1;padding:11px 10px;border:1px solid rgba(255,255,255,.085);border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));box-shadow:inset 0 1px 0 rgba(255,255,255,.035);}
+   .v21HeroRailItem>svg{width:100%;height:27px;}
+   .v21HeroRailItem>span{display:block;margin-top:6px;color:#eff4f8;font-size:12px;line-height:1.2;font-weight:700;white-space:nowrap;}
+   .v21RailArrow{display:grid;place-items:center;color:#566273;font-size:16px;font-weight:700;}
+   .v21VsMini{height:27px;display:grid;grid-template-columns:1fr 25px 1fr;align-items:center;gap:5px;}
+   .v21VsMini b{height:25px;display:grid;place-items:center;border-radius:8px;background:#090f16;color:#dce5ee;font-size:10px;font-weight:750;}
+   .v21VsMini i{height:24px;display:grid;place-items:center;border:1px solid rgba(244,185,66,.25);border-radius:50%;background:rgba(244,185,66,.07);color:#f4c963;font-size:8px;font-style:normal;font-weight:750;}
+   .v21AiMini{position:relative;height:27px;padding:4px 27px 4px 4px;display:grid;gap:3px;}
+   .v21AiMini i{height:4px;border-radius:999px;background:rgba(255,255,255,.12);}.v21AiMini i:first-child{width:70%;background:rgba(0,229,255,.28);}.v21AiMini i:nth-child(2){width:92%;}
+   .v21AiMini b{position:absolute;right:1px;top:1px;width:24px;height:24px;display:grid;place-items:center;border-radius:50%;background:var(--cyan);color:#061014;font-size:12px;font-weight:800;}
+   .v21WatchMini{height:27px;display:grid;place-items:center;border-radius:9px;background:#090f16;color:#7ee8a3;font-size:18px;font-weight:750;}
+   .v15StoreGrid{margin-top:18px!important;}
+   .v15HeroActions{margin-top:14px!important;}
+
+   .v21MarketSection{padding-top:42px!important;padding-bottom:46px!important;border-top:1px solid rgba(255,255,255,.045);}
+   .v21SectionHead{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:18px;}
+   .v21SectionHead.compact{margin-bottom:16px;}
+   .v21SectionHead h2{margin-top:8px;color:#f6f9fc;font-size:clamp(32px,4.2vw,48px);line-height:1.03;letter-spacing:-1.45px;font-weight:800;}
+   .v21PreviewTag{padding:8px 11px;border:1px solid rgba(0,229,255,.17);border-radius:999px;background:rgba(0,229,255,.05);color:#98eaff;font-size:12px;line-height:1;font-weight:700;white-space:nowrap;}
+
+   .v21MarketBoard{padding:18px;border:1px solid rgba(0,229,255,.12);border-radius:28px;background:linear-gradient(180deg,#091421 0%,#08111b 100%);box-shadow:0 28px 70px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.03);}
+   .v21MoverGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+   .v21Mover{position:relative;min-height:195px;padding:16px 17px 14px;overflow:hidden;border:1px solid rgba(0,228,90,.22);border-radius:24px;background:#0c1723;}
+   .v21Mover.decline{border-color:rgba(255,69,58,.22);}
+   .v21Mover::after{content:"";position:absolute;right:-45px;top:-48px;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(0,228,90,.10),transparent 68%);pointer-events:none;}
+   .v21Mover.decline::after{background:radial-gradient(circle,rgba(255,69,58,.09),transparent 68%);}
+   .v21MoverTop{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+   .v21MoverLabel{display:inline-flex;align-items:center;gap:8px;color:#f2f6fb;font-size:13px;line-height:1.2;font-weight:750;}
+   .v21MoverLabel i{width:7px;height:7px;border-radius:50%;background:#00e45a;box-shadow:0 0 12px rgba(0,228,90,.4);}.decline .v21MoverLabel i{background:#ff453a;box-shadow:0 0 12px rgba(255,69,58,.4);}
+   .v21MoverCount{color:#8f9aaa;font-size:12px;font-weight:650;}
+   .v21AssetLine{display:flex;align-items:center;gap:12px;margin-top:15px;}
+   .v21AssetAvatar{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:#f2f5f8;color:#0c1520;font-size:19px;font-weight:800;}.v21AssetAvatar.shield{background:#e9eef3;color:#7f2938;}
+   .v21AssetLine strong{display:block;color:#f7f9fc;font-size:19px;line-height:1.05;font-weight:800;letter-spacing:-.25px;}.v21AssetLine span{display:block;margin-top:4px;color:#96a2b1;font-size:13px;line-height:1.2;font-weight:500;}
+   .v21MoverChart{width:190px;height:48px;margin-top:7px;shape-rendering:geometricPrecision;}
+   .v21MoverBottom{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:0;}.v21MoverBottom>strong{color:#f5f8fb;font-size:18px;font-weight:760;}.v21MoverBottom>span{padding:6px 10px;border-radius:10px;background:rgba(0,228,90,.08);color:#00e45a;font-size:14px;font-weight:760;}.decline .v21MoverBottom>span{background:rgba(255,69,58,.09);color:#ff5147;}
+
+   .v21Activity{margin-top:16px;padding:18px;border:1px solid rgba(255,255,255,.07);border-radius:24px;background:#0c1723;}
+   .v21ActivityTop{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;}
+   .v21ActivityTop>div:first-child>strong{display:flex;align-items:center;gap:10px;color:#f4f7fb;font-size:17px;line-height:1.25;font-weight:780;}.v21ActivityTop>div:first-child>strong i{width:12px;height:12px;border:1.5px solid var(--cyan);border-radius:2px;}.v21ActivityTop>div:first-child>span{display:block;margin-top:5px;color:#8d99a8;font-size:12px;line-height:1.35;font-weight:500;}
+   .v21Coverage{min-width:90px;padding:8px 10px;border:1px solid rgba(0,229,255,.24);border-radius:13px;background:rgba(0,229,255,.04);text-align:center;}.v21Coverage b{display:block;color:#18e2ff;font-size:16px;line-height:1;font-weight:780;}.v21Coverage span{display:block;margin-top:4px;color:#8b9aaa;font-size:10px;line-height:1;text-transform:uppercase;font-weight:700;letter-spacing:.2px;}
+   .v21ActivityBar{display:flex;height:11px;margin-top:17px;overflow:hidden;border-radius:999px;background:#111d29;}.v21ActivityBar i{height:100%;display:block;}
+   .v21SectorGrid{display:grid;grid-template-columns:1fr 1fr;column-gap:38px;row-gap:11px;margin-top:18px;}.v21SectorRow{display:grid;grid-template-columns:7px minmax(0,1fr) auto;gap:10px;align-items:center;}.v21SectorRow>i{width:6px;height:6px;border-radius:50%;}.v21SectorRow>strong{color:#e9eef4;font-size:13px;line-height:1.2;font-weight:650;}.v21SectorRow>b{font-size:13px;line-height:1.2;font-weight:760;}.v21SectorRow.purple>i{background:#a55eff}.v21SectorRow.purple>b{color:#a96aff}.v21SectorRow.cyan>i{background:#08ddfb}.v21SectorRow.cyan>b{color:#08ddfb}.v21SectorRow.blue>i{background:#40b8f6}.v21SectorRow.blue>b{color:#40b8f6}.v21SectorRow.green>i{background:#38ce69}.v21SectorRow.green>b{color:#38ce69}
+   .v21ActivityFooter{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:16px;padding-top:13px;border-top:1px solid rgba(255,255,255,.055);color:#7f8b9a;font-size:11px;line-height:1.2;font-weight:600;}.v21ActivityFooter span+span::before{content:"•";margin-right:10px;color:#485463;}
+
+   .v21FlowSection{padding-top:42px!important;padding-bottom:44px!important;}
+   .v21FlowRail{display:grid;grid-template-columns:1fr 28px 1fr 28px 1fr 28px 1fr;gap:8px;align-items:center;}
+   .v21FlowNode{min-width:0;padding:15px;border:1px solid rgba(255,255,255,.075);border-radius:19px;background:rgba(255,255,255,.018);}.v21FlowNode>strong{display:block;margin-top:10px;color:#f2f6fa;font-size:15px;line-height:1.2;font-weight:760;}.v21FlowNode>span{display:block;margin-top:4px;color:#8c98a8;font-size:12px;line-height:1.35;font-weight:500;}.v21FlowArrow{display:grid;place-items:center;color:#4d5968;font-size:19px;font-weight:700;}
+   .v21FlowVisual{height:52px;overflow:hidden;border-radius:13px;background:#080f17;}.v21FlowVisual svg{width:100%;height:100%;shape-rendering:geometricPrecision;}.v21FlowVisual.duel{display:grid;grid-template-columns:1fr 30px 1fr;gap:6px;align-items:center;padding:8px;}.v21FlowVisual.duel b{height:30px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.06);border-radius:9px;color:#dce5ee;font-size:10px;font-weight:750;}.v21FlowVisual.duel i{height:28px;display:grid;place-items:center;border:1px solid rgba(244,185,66,.24);border-radius:50%;background:rgba(244,185,66,.06);color:#f0c35e;font-size:8px;font-style:normal;font-weight:750;}
+   .v21FlowVisual.chat{position:relative;padding:10px 42px 10px 11px;display:grid;gap:5px;}.v21FlowVisual.chat i{height:5px;border-radius:999px;background:rgba(255,255,255,.10);}.v21FlowVisual.chat i:first-child{width:72%;background:rgba(0,229,255,.25);}.v21FlowVisual.chat i:nth-child(2){width:94%;}.v21FlowVisual.chat i:nth-child(3){width:55%;}.v21FlowVisual.chat b{position:absolute;right:10px;top:10px;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:var(--cyan);color:#071013;font-size:14px;font-weight:800;}
+   .v21FlowVisual.watch{padding:10px;display:grid;grid-template-columns:34px 1fr;grid-template-rows:1fr 1fr;gap:5px 9px;align-items:center;}.v21FlowVisual.watch span{grid-row:1/3;width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:rgba(52,199,89,.08);color:#73e399;font-size:17px;}.v21FlowVisual.watch i{height:5px;border-radius:999px;background:rgba(255,255,255,.09);}.v21FlowVisual.watch i:last-child{width:67%;}
+   .v21BoundaryBar{display:flex;align-items:center;justify-content:space-between;gap:22px;margin-top:16px;padding:14px 16px;border:1px solid rgba(255,255,255,.065);border-radius:17px;background:#0a1017;}.v21BoundaryBar>strong{color:#f1f5f8;font-size:13px;font-weight:750;white-space:nowrap;}.v21BoundaryBar>div{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:7px;}.v21BoundaryBar span{padding:6px 9px;border:1px solid rgba(255,255,255,.06);border-radius:999px;color:#929eac;font-size:11px;line-height:1.2;font-weight:600;}
+   .finalCta{padding:25px!important;border-radius:23px!important;}.finalCta h2{font-size:clamp(30px,4vw,43px)!important;letter-spacing:-1.25px!important;}.finalCta p{max-width:560px!important;}
+   .phonePreviewCaption{color:#818e9e!important;}
+
+   @media(min-width:1081px){.phoneStage{min-height:812px!important;}}
+   @media(max-width:1080px){.heroGrid{grid-template-columns:minmax(0,1fr) 330px!important;gap:28px!important;}.v21MoverGrid{grid-template-columns:1fr 1fr;}.v21FlowRail{grid-template-columns:1fr 20px 1fr 20px 1fr 20px 1fr;}.v21FlowNode{padding:12px;}}
+   @media(max-width:820px){.heroGrid{grid-template-columns:1fr!important;gap:24px!important;}.v21HeroRail{max-width:none;}.v21MarketSection{padding-top:30px!important;}.v21MoverGrid{grid-template-columns:1fr;}.v21SectorGrid{grid-template-columns:1fr;}.v21FlowRail{grid-template-columns:1fr 1fr;gap:10px;}.v21FlowArrow{display:none;}.v21BoundaryBar{align-items:flex-start;flex-direction:column;}.v21BoundaryBar>div{justify-content:flex-start;}.v21SectionHead{align-items:flex-start;}}
+   @media(max-width:560px){.hero{padding-top:42px!important;}.hero h1{font-size:47px!important;line-height:.99!important;letter-spacing:-1.6px!important;}.heroLead{font-size:16px!important;line-height:1.52!important;}.v21HeroRail{display:grid;grid-template-columns:1fr 1fr;gap:8px;}.v21RailArrow{display:none;}.v21HeroRailItem{padding:10px;}.v21MarketBoard{padding:10px;border-radius:22px;}.v21Mover,.v21Activity{border-radius:18px;}.v21Mover{min-height:188px;}.v21MoverChart{width:160px;}.v21SectorRow>strong,.v21SectorRow>b{font-size:12px;}.v21ActivityFooter{display:none;}.v21FlowRail{grid-template-columns:1fr 1fr;}.v21FlowNode>strong{font-size:14px;}.v21SectionHead h2{font-size:34px;letter-spacing:-1px;}.v21PreviewTag{font-size:11px;}.v21BoundaryBar span{font-size:10px;}}
+  </style>
+
 </head>
  <body>
   <!-- =====================================================
@@ -4923,71 +4995,30 @@ body,button,a,input,textarea{font-synthesis:none;}
       <p class="heroLead">
        Market moves, financial news, side-by-side comparisons and Finrival AI — in one mobile app.
       </p>
-      <div aria-label="Finrival core tools" class="v18QuickMap">
-       <div class="v18QuickCard">
-        <div aria-hidden="true" class="v18QuickVisual">
-         <svg preserveaspectratio="none" viewbox="0 0 120 52">
-          <path d="M5 41 C20 38,28 30,42 31 S62 18,76 22 S96 31,115 12" fill="none" stroke="#00E5FF" stroke-linecap="round" stroke-width="3">
-          </path>
-          <path d="M5 44 H115" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1">
-          </path>
+             <div aria-label="Finrival core workflow" class="v21HeroRail">
+        <div class="v21HeroRailItem cyan">
+         <svg aria-hidden="true" viewBox="0 0 64 26">
+          <path d="M2 21 C10 22,14 16,21 17 S31 9,38 12 S49 15,62 4" fill="none" stroke="#00E5FF" stroke-linecap="round" stroke-width="2.5"></path>
          </svg>
+         <span>Market</span>
         </div>
-        <strong>
-         Market
-        </strong>
-        <span>
-         Spot movement fast
-        </span>
-       </div>
-       <div class="v18QuickCard gold">
-        <div aria-hidden="true" class="v18CompareVisual">
-         <div>
-          <b>
-           NVDA
-          </b>
-          <i>
-          </i>
-         </div>
-         <em>
-          VS
-         </em>
-         <div>
-          <b>
-           MSFT
-          </b>
-          <i>
-          </i>
-         </div>
+        <div class="v21RailArrow">→</div>
+        <div class="v21HeroRailItem gold">
+         <div class="v21VsMini"><b>NVDA</b><i>VS</i><b>MSFT</b></div>
+         <span>Compare</span>
         </div>
-        <strong>
-         Compare
-        </strong>
-        <span>
-         See both sides
-        </span>
-       </div>
-       <div class="v18QuickCard">
-        <div aria-hidden="true" class="v18AiVisual">
-         <i>
-         </i>
-         <i>
-         </i>
-         <i>
-         </i>
-         <b>
-          ↑
-         </b>
+        <div class="v21RailArrow">→</div>
+        <div class="v21HeroRailItem cyan">
+         <div class="v21AiMini"><i></i><i></i><b>↑</b></div>
+         <span>Finrival AI</span>
         </div>
-        <strong>
-         Finrival AI
-        </strong>
-        <span>
-         Ask in context
-        </span>
+        <div class="v21RailArrow">→</div>
+        <div class="v21HeroRailItem green">
+         <div class="v21WatchMini">◎</div>
+         <span>Watchlist</span>
+        </div>
        </div>
-      </div>
-      <div aria-label="Finrival mobile app availability" class="v15StoreGrid" id="download">
+<div aria-label="Finrival mobile app availability" class="v15StoreGrid" id="download">
        <div aria-label="App Store coming soon" class="v15StoreCard">
         <div aria-hidden="true" class="v15StoreIcon">
          <svg viewbox="0 0 24 24">
@@ -5035,24 +5066,7 @@ body,button,a,input,textarea{font-synthesis:none;}
         </span>
        </a>
       </div>
-      <div class="v15TrustRow">
-       <span>
-        <i>
-        </i>
-        iOS &amp; Android
-       </span>
-       <span>
-        <i>
-        </i>
-        Finrival AI
-       </span>
-       <span>
-        <i>
-        </i>
-        Side-by-side compare
-       </span>
       </div>
-     </div>
      <div aria-label="Interactive Finrival mobile app preview" class="phoneStage">
       <div class="phone">
        <div class="phoneScreen">
@@ -5945,98 +5959,120 @@ body,button,a,input,textarea{font-synthesis:none;}
     </div>
    </section>
    <!-- =====================================================
-         SIMPLE WORKFLOW
+         V21 — MARKET INTELLIGENCE SHOWCASE
     ====================================================== -->
-   <section class="section soft">
-    <div class="container">
-     <div class="sectionHead v18SectionHead">
-      <div class="sectionEyebrow">
-       HOW IT FLOWS
+    <section class="section v21MarketSection" id="market-preview">
+     <div class="container">
+      <div class="v21SectionHead">
+       <div>
+        <div class="sectionEyebrow">MARKET AT A GLANCE</div>
+        <h2>See what is moving.</h2>
+       </div>
+       <div class="v21PreviewTag">Product preview</div>
       </div>
-      <h2>
-       See it. Compare it. Ask. Track.
-      </h2>
+
+      <div class="v21MarketBoard">
+       <div class="v21MoverGrid">
+        <article class="v21Mover gain">
+         <div class="v21MoverTop">
+          <span class="v21MoverLabel"><i></i>Top Gainers</span>
+          <span class="v21MoverCount">5/7</span>
+         </div>
+         <div class="v21AssetLine">
+          <div class="v21AssetAvatar">M</div>
+          <div><strong>MRVL</strong><span>Marvell Technology</span></div>
+         </div>
+         <svg class="v21MoverChart" preserveaspectratio="none" viewBox="0 0 220 62" aria-hidden="true">
+          <path d="M1 48 L18 56 L36 48 L55 46 L73 35 L91 38 L110 25 L128 43 L145 20 L162 37 L181 18 L199 25 L219 8" fill="none" stroke="#00E45A" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
+          <path d="M1 48 L18 56 L36 48 L55 46 L73 35 L91 38 L110 25 L128 43 L145 20 L162 37 L181 18 L199 25 L219 8 L219 62 L1 62 Z" fill="url(#v21GainFill)"></path>
+          <defs><linearGradient id="v21GainFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#00E45A" stop-opacity=".18"></stop><stop offset="1" stop-color="#00E45A" stop-opacity="0"></stop></linearGradient></defs>
+         </svg>
+         <div class="v21MoverBottom"><strong>$251.01</strong><span>↗ +5.79%</span></div>
+        </article>
+
+        <article class="v21Mover decline">
+         <div class="v21MoverTop">
+          <span class="v21MoverLabel"><i></i>Top Decliners</span>
+          <span class="v21MoverCount">5/7</span>
+         </div>
+         <div class="v21AssetLine">
+          <div class="v21AssetAvatar shield">K</div>
+          <div><strong>KTOS</strong><span>Kratos Defense</span></div>
+         </div>
+         <svg class="v21MoverChart" preserveaspectratio="none" viewBox="0 0 220 62" aria-hidden="true">
+          <path d="M1 32 L20 20 L38 15 L56 16 L74 23 L92 11 L110 18 L128 24 L146 31 L164 35 L182 39 L200 46 L219 58" fill="none" stroke="#FF453A" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
+          <path d="M1 32 L20 20 L38 15 L56 16 L74 23 L92 11 L110 18 L128 24 L146 31 L164 35 L182 39 L200 46 L219 58 L219 62 L1 62 Z" fill="url(#v21LossFill)"></path>
+          <defs><linearGradient id="v21LossFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#FF453A" stop-opacity=".16"></stop><stop offset="1" stop-color="#FF453A" stop-opacity="0"></stop></linearGradient></defs>
+         </svg>
+         <div class="v21MoverBottom"><strong>$56.18</strong><span>↘ −7.23%</span></div>
+        </article>
+       </div>
+
+       <article class="v21Activity">
+        <div class="v21ActivityTop">
+         <div>
+          <strong><i></i>Daily Trading Activity</strong>
+          <span>US Market · latest common session</span>
+         </div>
+         <div class="v21Coverage"><b>100.0%</b><span>Coverage</span></div>
+        </div>
+        <div class="v21ActivityBar" aria-hidden="true">
+         <i style="width:33.5%;background:#A55EFF"></i><i style="width:25.9%;background:#08DDFB"></i><i style="width:7.8%;background:#40B8F6"></i><i style="width:7.7%;background:#38CE69"></i><i style="width:6.7%;background:#E84CA4"></i><i style="width:4.4%;background:#F5A400"></i><i style="width:4.1%;background:#C8A632"></i><i style="width:3.2%;background:#6E63E8"></i><i style="width:3.1%;background:#F45B39"></i><i style="width:3.6%;background:#A653E8"></i>
+        </div>
+        <div class="v21SectorGrid">
+         <div class="v21SectorRow purple"><i></i><strong>AI &amp; Semiconductors</strong><b>33.5%</b></div>
+         <div class="v21SectorRow cyan"><i></i><strong>Technology</strong><b>25.9%</b></div>
+         <div class="v21SectorRow blue"><i></i><strong>Finance</strong><b>7.8%</b></div>
+         <div class="v21SectorRow green"><i></i><strong>Consumer</strong><b>7.7%</b></div>
+        </div>
+        <div class="v21ActivityFooter"><span>+7 more sectors</span><span>Tap inside the app to expand</span></div>
+       </article>
+      </div>
      </div>
-     <div class="v18FlowGrid">
-      <article class="v18FlowCard">
-       <div aria-hidden="true" class="v18FlowIcon">
-        ↗
-       </div>
-       <strong>
-        Discover
-       </strong>
-       <span>
-        Find the move.
-       </span>
-      </article>
-      <article class="v18FlowCard">
-       <div aria-hidden="true" class="v18FlowIcon">
-        ⇄
-       </div>
-       <strong>
-        Compare
-       </strong>
-       <span>
-        Put assets side by side.
-       </span>
-      </article>
-      <article class="v18FlowCard">
-       <div aria-hidden="true" class="v18FlowIcon">
-        ✦
-       </div>
-       <strong>
-        Understand
-       </strong>
-       <span>
-        Continue with Finrival AI.
-       </span>
-      </article>
-      <article class="v18FlowCard">
-       <div aria-hidden="true" class="v18FlowIcon">
-        ◎
-       </div>
-       <strong>
-        Monitor
-       </strong>
-       <span>
-        Save it. Set an alert.
-       </span>
-      </article>
-     </div>
-    </div>
-   </section>
-   <!-- =====================================================
-         CLARITY
+    </section>
+
+    <!-- =====================================================
+         V21 — CONNECTED RESEARCH FLOW
     ====================================================== -->
-   <section class="section v18ClaritySection">
-    <div class="container">
-     <div class="v18ClarityBar">
-      <div>
-       <div class="sectionEyebrow">
-        CLEAR BY DESIGN
+       <section class="section soft v21FlowSection">
+     <div class="container">
+      <div class="v21SectionHead compact">
+       <div>
+        <div class="sectionEyebrow">ONE RESEARCH FLOW</div>
+        <h2>Move from signal to context.</h2>
        </div>
-       <h2>
-        Research, not execution.
-       </h2>
-       <p>
-        Finrival helps you explore and compare markets. It does not place trades.
-       </p>
       </div>
-      <div aria-label="Product boundaries" class="v18BoundaryPills">
-       <span>
-        Market data may be delayed
-       </span>
-       <span>
-        AI can be wrong
-       </span>
-       <span>
-        Rival uses fictional credits
-       </span>
+      <div class="v21FlowRail">
+       <article class="v21FlowNode market">
+        <div class="v21FlowVisual">
+         <svg preserveaspectratio="none" viewBox="0 0 150 54" aria-hidden="true"><path d="M2 44 C20 42,27 31,42 34 S69 13,86 21 S115 34,148 7" fill="none" stroke="#00E5FF" stroke-linecap="round" stroke-width="3"></path></svg>
+        </div>
+        <strong>Market</strong><span>Find the move.</span>
+       </article>
+       <div class="v21FlowArrow">→</div>
+       <article class="v21FlowNode compare">
+        <div class="v21FlowVisual duel"><b>NVDA</b><i>VS</i><b>MSFT</b></div>
+        <strong>Compare</strong><span>See both sides.</span>
+       </article>
+       <div class="v21FlowArrow">→</div>
+       <article class="v21FlowNode ai">
+        <div class="v21FlowVisual chat"><i></i><i></i><i></i><b>↑</b></div>
+        <strong>Finrival AI</strong><span>Ask in context.</span>
+       </article>
+       <div class="v21FlowArrow">→</div>
+       <article class="v21FlowNode watch">
+        <div class="v21FlowVisual watch"><span>◎</span><i></i><i></i></div>
+        <strong>Watchlist</strong><span>Keep it close.</span>
+       </article>
+      </div>
+
+      <div class="v21BoundaryBar">
+       <strong>Research, not execution.</strong>
+       <div><span>Market data may be delayed</span><span>AI can be wrong</span><span>Rival uses fictional credits</span></div>
       </div>
      </div>
-    </div>
-   </section>
-   <!-- =====================================================
+    </section>
+<!-- =====================================================
          CTA
     ====================================================== -->
    <section class="section" id="coming-soon">
