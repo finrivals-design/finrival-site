@@ -1,2747 +1,1177 @@
 <!doctype html>
-<!-- FINRIVAL PRODUCT V2 — INTERACTIVE MOBILE EXPERIENCE — 2026-08-22 -->
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  />
-
-  <meta name="theme-color" content="#070A0F" />
-  <meta name="color-scheme" content="dark" />
-
-  <title>What is Finrival? — Market Research in One Workspace</title>
-
-  <meta
-    name="description"
-    content="Discover what Finrival is and how market discovery, asset comparison, financial news, watchlists, simulation and AI-assisted research come together in one focused mobile workspace."
-  />
-
-  <link
-    rel="canonical"
-    href="https://finrival.com/product/"
-  />
-
-  <meta property="og:type" content="website" />
-  <meta
-    property="og:title"
-    content="What is Finrival? — Market Research in One Workspace"
-  />
-  <meta
-    property="og:description"
-    content="A focused market research workspace connecting discovery, comparison, monitoring, simulation and AI-assisted context."
-  />
-  <meta
-    property="og:url"
-    content="https://finrival.com/product/"
-  />
-  <meta property="og:site_name" content="Finrival" />
-
-  <link
-    rel="stylesheet"
-    href="../assets/css/finrival.css"
-  />
-
-  <!-- ======================================================
-       FINRIVAL PRODUCT V2 — INTERACTIVE PRODUCT EXPERIENCE
-       Scoped styles. These sit on top of ../assets/css/finrival.css
-       without changing the shared site stylesheet.
-  ======================================================= -->
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="#05070a" name="theme-color"/>
+  <meta content="dark" name="color-scheme"/>
+  <title>
+   Finrival Product — Market Research in One Connected Workspace
+  </title>
+  <meta content="See how Finrival connects market discovery, news, comparison, watchlist monitoring, Rival simulation and AI-assisted context inside one focused mobile workflow." name="description"/>
+  <link href="https://finrival.com/product/" rel="canonical"/>
+  <meta content="website" property="og:type"/>
+  <meta content="Finrival Product — Market Research in One Connected Workspace" property="og:title"/>
+  <meta content="A compact product overview grounded in the real Finrival app structure." property="og:description"/>
+  <meta content="https://finrival.com/product/" property="og:url"/>
+  <meta content="Finrival" property="og:site_name"/>
   <style>
-    /* ---------- Product experience shell ---------- */
-    .productExperienceSection{
-      position:relative;
-      overflow:hidden;
-      padding:96px 0 108px;
-      border-top:1px solid rgba(255,255,255,.06);
-      border-bottom:1px solid rgba(255,255,255,.06);
-      background:
-        radial-gradient(circle at 22% 12%,rgba(0,229,255,.075),transparent 30%),
-        radial-gradient(circle at 82% 58%,rgba(245,158,11,.035),transparent 26%),
-        #06080c;
-    }
-
-    .productExperienceGrid{
-      display:grid;
-      grid-template-columns:minmax(0,.88fr) minmax(420px,1.12fr);
-      gap:72px;
-      align-items:center;
-    }
-
-    .productExperienceCopy{
-      min-width:0;
-    }
-
-    .productExperienceCopy h2{
-      max-width:610px;
-      margin-top:10px;
-    }
-
-    .productExperienceLead{
-      max-width:590px;
-      margin-top:18px;
-      color:#9BA5B4;
-      font-size:15px;
-      line-height:1.78;
-    }
-
-    .productSlideMeta{
-      margin-top:30px;
-      padding:18px;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:18px;
-      background:rgba(255,255,255,.025);
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
-    }
-
-    .productSlideEyebrow{
-      color:#00E5FF;
-      font-size:9px;
-      font-weight:900;
-      letter-spacing:1.1px;
-      text-transform:uppercase;
-    }
-
-    .productSlideTitle{
-      margin-top:8px;
-      color:#fff;
-      font-size:23px;
-      line-height:1.22;
-      letter-spacing:-.45px;
-      font-weight:880;
-    }
-
-    .productSlideCopy{
-      max-width:510px;
-      margin-top:8px;
-      color:#919BAA;
-      font-size:13px;
-      line-height:1.65;
-    }
-
-    .productCarouselControls{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin-top:18px;
-    }
-
-    .productArrow{
-      width:44px;
-      height:44px;
-      display:grid;
-      place-items:center;
-      flex:0 0 auto;
-      border:1px solid rgba(255,255,255,.11);
-      border-radius:14px;
-      background:#10141A;
-      color:#fff;
-      cursor:pointer;
-      transition:transform .18s ease,border-color .18s ease,background .18s ease;
-    }
-
-    .productArrow:hover,
-    .productArrow:focus-visible{
-      transform:translateY(-1px);
-      border-color:rgba(0,229,255,.34);
-      background:rgba(0,229,255,.055);
-      outline:none;
-    }
-
-    .productDots{
-      display:flex;
-      align-items:center;
-      gap:7px;
-      min-width:0;
-      flex:1;
-      padding:0 5px;
-    }
-
-    .productDot{
-      width:8px;
-      height:8px;
-      flex:0 0 auto;
-      padding:0;
-      border:0;
-      border-radius:999px;
-      background:#343B45;
-      cursor:pointer;
-      transition:width .24s ease,background .24s ease,box-shadow .24s ease;
-    }
-
-    .productDot.active{
-      width:28px;
-      background:#00E5FF;
-      box-shadow:0 0 18px rgba(0,229,255,.35);
-    }
-
-    .productCounter{
-      min-width:42px;
-      color:#697484;
-      font-size:10px;
-      font-weight:800;
-      text-align:right;
-      font-variant-numeric:tabular-nums;
-    }
-
-    /* ---------- Device stage ---------- */
-    .productDeviceStage{
-      position:relative;
-      min-width:0;
-      min-height:720px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      isolation:isolate;
-    }
-
-    .productDeviceStage::before{
-      content:"";
-      position:absolute;
-      width:520px;
-      height:520px;
-      max-width:92vw;
-      border-radius:50%;
-      border:1px solid rgba(0,229,255,.06);
-      box-shadow:
-        0 0 0 46px rgba(0,229,255,.012),
-        0 0 0 92px rgba(0,229,255,.006);
-      z-index:-2;
-    }
-
-    .productDeviceStage::after{
-      content:"";
-      position:absolute;
-      width:390px;
-      height:610px;
-      max-width:78vw;
-      border-radius:50%;
-      background:radial-gradient(ellipse,rgba(0,229,255,.085),transparent 67%);
-      filter:blur(18px);
-      z-index:-1;
-    }
-
-    .productDevice{
-      position:relative;
-      width:336px;
-      height:688px;
-      max-width:calc(100vw - 46px);
-      padding:9px;
-      border:1px solid #363A42;
-      border-radius:50px;
-      background:linear-gradient(145deg,#2B3038,#090B0F 48%,#1A1E25);
-      box-shadow:
-        0 42px 108px rgba(0,0,0,.68),
-        0 0 54px rgba(0,229,255,.045),
-        inset 0 1px 0 rgba(255,255,255,.12);
-      touch-action:pan-y;
-      user-select:none;
-    }
-
-    .productDevice::before{
-      content:"";
-      position:absolute;
-      top:17px;
-      left:50%;
-      width:100px;
-      height:27px;
-      transform:translateX(-50%);
-      z-index:30;
-      border-radius:999px;
-      background:#000;
-      box-shadow:0 0 0 1px rgba(255,255,255,.025);
-    }
-
-    .productDeviceScreen{
-      position:relative;
-      width:100%;
-      height:100%;
-      overflow:hidden;
-      border-radius:41px;
-      background:#05070A;
-    }
-
-    .productStatusBar{
-      position:absolute;
-      top:0;
-      left:0;
-      right:0;
-      z-index:28;
-      height:36px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:0 18px;
-      color:#DCE3EC;
-      font-size:8px;
-      font-weight:850;
-      pointer-events:none;
-    }
-
-    .productStatusRight{
-      display:flex;
-      align-items:center;
-      gap:5px;
-      color:#AAB3C0;
-    }
-
-    .productAppHeader{
-      position:absolute;
-      top:0;
-      left:0;
-      right:0;
-      z-index:24;
-      height:82px;
-      display:grid;
-      grid-template-columns:40px 1fr 40px;
-      align-items:center;
-      padding:32px 14px 10px;
-      border-bottom:1px solid rgba(255,255,255,.04);
-      background:linear-gradient(180deg,rgba(4,6,9,.98),rgba(4,6,9,.9));
-      backdrop-filter:blur(18px);
-    }
-
-    .productAppBrand{
-      text-align:center;
-      font-size:11px;
-      font-weight:950;
-      letter-spacing:-.2px;
-    }
-
-    .productAppBrand b{
-      color:#00E5FF;
-    }
-
-    .productMenuFake{
-      width:31px;
-      height:31px;
-      display:grid;
-      place-items:center;
-      justify-self:end;
-      border:1px solid rgba(255,255,255,.09);
-      border-radius:10px;
-      color:#C7CED8;
-      background:#11151B;
-      font-size:11px;
-    }
-
-    .productSlides{
-      position:absolute;
-      inset:0;
-    }
-
-    .productSlide{
-      position:absolute;
-      inset:0;
-      opacity:0;
-      transform:translateX(16px) scale(.995);
-      pointer-events:none;
-      transition:
-        opacity .34s ease,
-        transform .4s cubic-bezier(.2,.8,.2,1);
-    }
-
-    .productSlide.active{
-      opacity:1;
-      transform:none;
-      pointer-events:auto;
-    }
-
-    .productSlideScroll{
-      position:absolute;
-      top:0;
-      left:0;
-      right:0;
-      bottom:0;
-      overflow:hidden;
-      padding:96px 15px 103px;
-    }
-
-    .phoneKicker{
-      color:#6E7887;
-      font-size:6px;
-      font-weight:900;
-      letter-spacing:.7px;
-      text-transform:uppercase;
-    }
-
-    .phoneTitle{
-      margin-top:4px;
-      color:#F8FAFC;
-      font-size:15px;
-      line-height:1.1;
-      letter-spacing:-.35px;
-      font-weight:950;
-    }
-
-    .phoneMuted{
-      color:#788394;
-    }
-
-    .phoneCard{
-      margin-top:10px;
-      padding:11px;
-      border:1px solid rgba(255,255,255,.085);
-      border-radius:15px;
-      background:#10141A;
-    }
-
-    .phoneCard.cyan{
-      border-color:rgba(0,229,255,.18);
-      background:linear-gradient(145deg,rgba(0,229,255,.055),rgba(16,20,26,.94));
-    }
-
-    .phoneCard.gold{
-      border-color:rgba(245,158,11,.19);
-      background:linear-gradient(145deg,rgba(245,158,11,.055),rgba(16,20,26,.94));
-    }
-
-    .phoneRow{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:8px;
-    }
-
-    .phoneAsset{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      min-width:0;
-    }
-
-    .phoneLogo{
-      width:30px;
-      height:30px;
-      display:grid;
-      place-items:center;
-      flex:0 0 auto;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:10px;
-      background:#080B0F;
-      color:#fff;
-      font-size:7px;
-      font-weight:950;
-    }
-
-    .phoneSymbol{
-      color:#fff;
-      font-size:7.5px;
-      font-weight:900;
-    }
-
-    .phoneName{
-      margin-top:1px;
-      color:#707B8B;
-      font-size:5px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-
-    .phonePrice{
-      color:#fff;
-      font-size:7px;
-      font-weight:850;
-      text-align:right;
-    }
-
-    .phoneChange{
-      margin-top:2px;
-      color:#34C759;
-      font-size:5px;
-      font-weight:850;
-      text-align:right;
-    }
-
-    .phoneChange.red{color:#FF453A}
-    .phoneChange.gold{color:#F59E0B}
-
-    .phoneLabelRow{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:8px;
-      margin-bottom:8px;
-    }
-
-    .phoneLabel{
-      color:#AEB7C4;
-      font-size:6px;
-      font-weight:850;
-      letter-spacing:.35px;
-      text-transform:uppercase;
-    }
-
-    .phoneMiniBadge{
-      padding:3px 5px;
-      border:1px solid rgba(0,229,255,.17);
-      border-radius:6px;
-      color:#00E5FF;
-      background:rgba(0,229,255,.05);
-      font-size:4.6px;
-      font-weight:900;
-    }
-
-    .phoneMiniBadge.gold{
-      border-color:rgba(245,158,11,.19);
-      color:#F59E0B;
-      background:rgba(245,158,11,.05);
-    }
-
-    .phoneBar{
-      height:5px;
-      overflow:hidden;
-      border-radius:99px;
-      background:#202631;
-    }
-
-    .phoneBar > span{
-      display:block;
-      height:100%;
-      border-radius:inherit;
-      background:linear-gradient(90deg,#00E5FF,#4F8DFF);
-    }
-
-    .phoneChart{
-      position:relative;
-      height:104px;
-      margin-top:9px;
-      overflow:hidden;
-      border-radius:12px;
-      background:
-        linear-gradient(to bottom,transparent 32%,rgba(255,255,255,.035) 33%,transparent 34%,transparent 65%,rgba(255,255,255,.035) 66%,transparent 67%),
-        #090C11;
-    }
-
-    .phoneChart svg{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-    }
-
-    .compareTiles{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:7px;
-      margin-top:10px;
-    }
-
-    .compareTile{
-      padding:10px;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:13px;
-      background:#10141A;
-      text-align:center;
-    }
-
-    .compareTile .phoneLogo{margin:auto}
-    .compareTile .phonePrice{margin-top:6px;text-align:center}
-
-    .aiChatMini{
-      margin-top:10px;
-    }
-
-    .aiMiniBubble{
-      max-width:88%;
-      margin-bottom:7px;
-      padding:9px 10px;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:12px;
-      background:#10141A;
-      color:#C6CFDA;
-      font-size:5.6px;
-      line-height:1.5;
-    }
-
-    .aiMiniBubble.user{
-      margin-left:auto;
-      border-color:rgba(0,229,255,.19);
-      background:rgba(0,229,255,.055);
-    }
-
-    .aiMiniBubble strong{
-      display:block;
-      margin-bottom:3px;
-      color:#00E5FF;
-      font-size:5px;
-      letter-spacing:.35px;
-      text-transform:uppercase;
-    }
-
-    .newsMiniStory{
-      display:grid;
-      grid-template-columns:58px 1fr;
-      gap:9px;
-      align-items:center;
-      padding:9px 0;
-      border-bottom:1px solid rgba(255,255,255,.055);
-    }
-
-    .newsMiniStory:last-child{border-bottom:0}
-
-    .newsThumb{
-      height:44px;
-      border-radius:9px;
-      background:
-        radial-gradient(circle at 80% 20%,rgba(0,229,255,.18),transparent 30%),
-        linear-gradient(135deg,#1D2430,#0A0D12);
-    }
-
-    .newsSource{
-      color:#00E5FF;
-      font-size:4.6px;
-      font-weight:900;
-      text-transform:uppercase;
-    }
-
-    .newsHeadline{
-      margin-top:3px;
-      color:#E9EDF3;
-      font-size:5.8px;
-      line-height:1.35;
-      font-weight:780;
-    }
-
-    .rivalBalance{
-      margin-top:5px;
-      color:#fff;
-      font-size:27px;
-      line-height:1;
-      letter-spacing:-.9px;
-      font-weight:950;
-    }
-
-    .rivalCredits{
-      margin-top:4px;
-      color:#F59E0B;
-      font-size:5.4px;
-      font-weight:850;
-    }
-
-    .rivalButtons{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:7px;
-      margin-top:10px;
-    }
-
-    .rivalButton{
-      height:31px;
-      display:grid;
-      place-items:center;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:9px;
-      background:#0A0D12;
-      color:#C5CDD8;
-      font-size:5.4px;
-      font-weight:850;
-    }
-
-    .rivalButton.primary{
-      border-color:#F59E0B;
-      background:#F59E0B;
-      color:#171006;
-    }
-
-    .watchSearchMini{
-      height:36px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:0 10px;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:11px;
-      background:#10141A;
-      color:#717C8B;
-      font-size:5.5px;
-    }
-
-    .watchAction{
-      width:25px;
-      height:25px;
-      display:grid;
-      place-items:center;
-      border:1px solid rgba(0,229,255,.17);
-      border-radius:8px;
-      color:#00E5FF;
-      background:rgba(0,229,255,.05);
-      font-size:7px;
-    }
-
-    .productBottomNav{
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:0;
-      z-index:25;
-      height:73px;
-      display:grid;
-      grid-template-columns:repeat(5,1fr);
-      align-items:center;
-      padding:7px 3px 8px;
-      border-top:1px solid rgba(255,255,255,.06);
-      background:#05070A;
-    }
-
-    .productBottomItem{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      gap:3px;
-      color:#707A89;
-      font-size:5px;
-      font-weight:750;
-    }
-
-    .productBottomIcon{
-      height:18px;
-      display:grid;
-      place-items:center;
-      font-size:9px;
-    }
-
-    .productBottomItem.active{color:#00E5FF}
-    .productBottomItem.rival{color:#F59E0B}
-
-    .productBottomItem.compare{
-      position:relative;
-      top:-12px;
-      color:#00E5FF;
-    }
-
-    .productCompareButton{
-      width:40px;
-      height:40px;
-      display:grid;
-      place-items:center;
-      border-radius:50%;
-      background:#00E5FF;
-      color:#020708;
-      font-size:13px;
-      font-weight:950;
-      box-shadow:0 5px 14px rgba(0,0,0,.4);
-    }
-
-    .productSwipeHint{
-      position:absolute;
-      right:-8px;
-      bottom:116px;
-      z-index:8;
-      padding:9px 11px;
-      border:1px solid rgba(0,229,255,.16);
-      border-radius:11px;
-      background:rgba(8,11,15,.92);
-      color:#758091;
-      font-size:7px;
-      font-weight:750;
-      backdrop-filter:blur(12px);
-    }
-
-    .productSwipeHint b{color:#00E5FF}
-
-    /* ---------- Existing Product page responsive safety ---------- */
-    @media (max-width:980px){
-      .productExperienceGrid{
-        grid-template-columns:1fr;
-        gap:48px;
-      }
-
-      .productExperienceCopy{
-        max-width:720px;
-        margin:0 auto;
-        text-align:center;
-      }
-
-      .productExperienceLead{
-        margin-left:auto;
-        margin-right:auto;
-      }
-
-      .productSlideMeta{
-        max-width:620px;
-        margin-left:auto;
-        margin-right:auto;
-        text-align:left;
-      }
-
-      .productCarouselControls{
-        max-width:620px;
-        margin-left:auto;
-        margin-right:auto;
-      }
-
-      .productDeviceStage{
-        min-height:720px;
-      }
-
-      .productSwipeHint{
-        display:none;
-      }
-    }
-
-    @media (max-width:760px){
-      html,body{
-        max-width:100%;
-        overflow-x:hidden;
-      }
-
-      .productExperienceSection{
-        padding:72px 0 78px;
-      }
-
-      .productExperienceGrid{
-        gap:34px;
-      }
-
-      .productExperienceCopy{
-        text-align:left;
-      }
-
-      .productExperienceLead{
-        margin-left:0;
-        margin-right:0;
-        font-size:14px;
-        line-height:1.7;
-      }
-
-      .productSlideMeta{
-        margin-top:22px;
-        padding:15px;
-        border-radius:16px;
-      }
-
-      .productSlideTitle{
-        font-size:20px;
-      }
-
-      .productSlideCopy{
-        font-size:12px;
-      }
-
-      .productCarouselControls{
-        margin-left:0;
-        margin-right:0;
-      }
-
-      .productArrow{
-        width:42px;
-        height:42px;
-        border-radius:13px;
-      }
-
-      .productDeviceStage{
-        min-height:650px;
-      }
-
-      .productDeviceStage::before{
-        width:400px;
-        height:400px;
-      }
-
-      .productDeviceStage::after{
-        width:300px;
-        height:500px;
-      }
-
-      .productDevice{
-        width:min(310px,calc(100vw - 40px));
-        height:635px;
-        border-radius:45px;
-      }
-
-      .productDeviceScreen{
-        border-radius:36px;
-      }
-
-      /* Shared-site mobile safety: prevent the page layouts from colliding. */
-      .splitIntro,
-      .differenceGrid,
-      .boundaryPanel,
-      .availabilityPanel{
-        grid-template-columns:1fr !important;
-        gap:28px !important;
-      }
-
-      .workflowGrid,
-      .moduleGrid{
-        grid-template-columns:1fr !important;
-      }
-
-      .moduleCardLarge{
-        grid-column:auto !important;
-      }
-
-      .heroActions,
-      .heroMeta,
-      .storeButtons{
-        flex-wrap:wrap !important;
-      }
-
-      .pageHero,
-      .contentSection,
-      .availabilitySection{
-        overflow:hidden;
-      }
-
-      .pageHeroInner,
-      .sectionHeading,
-      .splitIntro > *,
-      .differenceGrid > *,
-      .boundaryPanel > *,
-      .availabilityPanel > *{
-        min-width:0;
-      }
-
-      .desktopNav{
-        display:none !important;
-      }
-
-      .siteNav{
-        gap:12px !important;
-      }
-
-      .brand img{
-        max-width:116px;
-        height:auto;
-      }
-
-      .navCta{
-        white-space:nowrap;
-        padding-left:12px !important;
-        padding-right:12px !important;
-      }
-
-      .footerMain{
-        gap:34px !important;
-      }
-
-      .footerColumns{
-        gap:24px !important;
-        flex-wrap:wrap !important;
-      }
-    }
-
-    @media (max-width:430px){
-      .productExperienceSection{
-        padding:62px 0 68px;
-      }
-
-      .productDeviceStage{
-        min-height:600px;
-      }
-
-      .productDevice{
-        width:min(286px,calc(100vw - 34px));
-        height:586px;
-        padding:8px;
-        border-radius:42px;
-      }
-
-      .productDevice::before{
-        top:15px;
-        width:88px;
-        height:24px;
-      }
-
-      .productDeviceScreen{
-        border-radius:34px;
-      }
-
-      .productSlideScroll{
-        padding:91px 13px 98px;
-      }
-
-      .productAppHeader{
-        height:78px;
-        padding:30px 12px 9px;
-      }
-
-      .phoneTitle{
-        font-size:13px;
-      }
-
-      .phoneCard{
-        padding:9px;
-      }
-
-      .phoneChart{
-        height:86px;
-      }
-
-      .rivalBalance{
-        font-size:23px;
-      }
-
-      .productBottomNav{
-        height:68px;
-      }
-
-      .productDots{
-        gap:5px;
-      }
-
-      .productDot{
-        width:7px;
-        height:7px;
-      }
-
-      .productDot.active{
-        width:22px;
-      }
-
-      .productCounter{
-        min-width:36px;
-        font-size:9px;
-      }
-
-      .productSlideTitle{
-        font-size:18px;
-      }
-
-      .productSlideCopy{
-        font-size:11.5px;
-      }
-
-      .siteContainer{
-        width:min(100% - 28px,1180px) !important;
-      }
-
-      .footerColumns{
-        display:grid !important;
-        grid-template-columns:1fr 1fr !important;
-      }
-    }
-
-    @media (prefers-reduced-motion:reduce){
-      .productSlide,
-      .productArrow,
-      .productDot{
-        transition:none !important;
-      }
-    }
+   :root{
+  --bg:#05070a;
+  --bg2:#080b10;
+  --card:#0f141b;
+  --card2:#131a23;
+  --card3:#0b1016;
+  --text:#f7f9fc;
+  --muted:#96a0ae;
+  --muted2:#687382;
+  --line:rgba(255,255,255,.085);
+  --line2:rgba(255,255,255,.05);
+  --cyan:#00e5ff;
+  --cyanSoft:rgba(0,229,255,.075);
+  --cyanBorder:rgba(0,229,255,.22);
+  --gold:#f4b942;
+  --goldSoft:rgba(244,185,66,.075);
+  --goldBorder:rgba(244,185,66,.22);
+  --green:#34c759;
+  --red:#ff453a;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 10% 0%,rgba(0,229,255,.08),transparent 23%),
+    radial-gradient(circle at 90% 4%,rgba(244,185,66,.03),transparent 20%),
+    linear-gradient(180deg,#05070a,#030507 46%,#05070a);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img,svg{max-width:100%}
+.siteContainer{width:min(var(--max),calc(100% - 40px));margin:auto}
+.siteHeader{
+  position:sticky;top:0;z-index:100;
+  background:rgba(5,7,10,.78);
+  border-bottom:1px solid var(--line2);
+  backdrop-filter:blur(20px);
+}
+.siteNav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:inline-flex;align-items:center;min-width:120px}
+.brand img{width:128px;display:block}
+.brandText{display:none;font-size:21px;font-weight:950;letter-spacing:-.8px}
+.brandText b{color:var(--cyan)}
+.desktopNav{display:flex;align-items:center;gap:18px;color:var(--muted);font-size:12px;font-weight:800}
+.desktopNav a{position:relative;transition:color .16s ease}
+.desktopNav a:hover,.desktopNav a.active{color:#fff}
+.desktopNav a.active::after{content:"";position:absolute;left:50%;bottom:-12px;width:4px;height:4px;transform:translateX(-50%);border-radius:50%;background:var(--cyan);box-shadow:0 0 10px rgba(0,229,255,.5)}
+.navStores{display:flex;align-items:center;gap:8px}
+.navStore{min-height:38px;display:inline-flex;align-items:center;gap:8px;padding:0 13px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02);font-size:11px;font-weight:850;color:#d6e0eb;white-space:nowrap}
+.navStore b{color:var(--cyan)}
+.mobileMenuButton{display:none;width:40px;height:40px;place-items:center;border:1px solid var(--line);border-radius:12px;background:var(--card);color:#fff;cursor:pointer}
+.mobileMenu{display:none;border-top:1px solid var(--line2);background:rgba(5,7,10,.98)}
+.mobileMenu.open{display:block}
+.mobileMenuInner{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:12px 0 16px}
+.mobileMenu a{padding:11px 12px;border:1px solid var(--line);border-radius:11px;background:#0c1117;color:#aeb7c4;font-size:11px;font-weight:800}
+.mobileMenu a.active{border-color:var(--cyanBorder);color:var(--cyan);background:var(--cyanSoft)}
+.hero{padding:82px 0 48px}
+.heroGrid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(360px,.98fr);gap:34px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid var(--cyanBorder);border-radius:999px;background:var(--cyanSoft);color:#9ce7ff;font-size:11px;font-weight:900;letter-spacing:.35px;text-transform:uppercase}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px rgba(0,229,255,.45)}
+h1{margin-top:18px;font-size:clamp(38px,5.6vw,62px);line-height:.98;letter-spacing:-2.2px;font-weight:980}
+.gradientText{background:linear-gradient(90deg,#fff,#bff5ff 42%,#7ddaff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent}
+.heroLead{max-width:630px;margin-top:18px;color:var(--muted);font-size:16px;line-height:1.82}
+.heroActions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.button{min-height:50px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 20px;border:1px solid transparent;border-radius:14px;font-size:12px;font-weight:900}
+.buttonPrimary{background:var(--cyan);color:#071013}
+.buttonSecondary{border-color:var(--line);background:var(--card);color:#fff}
+.heroMeta{display:flex;flex-wrap:wrap;gap:12px 18px;margin-top:18px;color:var(--muted2);font-size:11px;font-weight:800}
+.heroMeta span{display:inline-flex;align-items:center;gap:7px}
+.heroMeta i{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block}
+.heroArt{position:relative;min-height:430px;display:flex;align-items:center;justify-content:center}
+.artHalo{position:absolute;width:470px;height:470px;max-width:84vw;border-radius:50%;border:1px solid rgba(0,229,255,.06);box-shadow:0 0 0 42px rgba(0,229,255,.012),0 0 0 90px rgba(0,229,255,.006)}
+.visualStack{position:relative;width:min(100%,480px);display:grid;gap:14px;z-index:2}
+.board{position:relative;overflow:hidden;padding:16px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01)),rgba(11,16,22,.96);box-shadow:0 22px 56px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.04)}
+.board::before{content:"";position:absolute;right:-24px;bottom:-30px;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,rgba(0,229,255,.14),transparent 70%)}
+.board.goldGlow::before{background:radial-gradient(circle,rgba(244,185,66,.13),transparent 70%)}
+.boardLabel{display:inline-flex;align-items:center;gap:7px;padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.04);color:#9fdfff;font-size:10px;font-weight:900;letter-spacing:.28px;text-transform:uppercase}
+.boardLabel.gold{color:#f4cf7b}
+.boardTitle{margin-top:12px;font-size:18px;line-height:1.1;font-weight:940;letter-spacing:-.5px}
+.boardCopy{margin-top:7px;color:var(--muted);font-size:13px;line-height:1.65}
+.infoPills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.infoPills span{padding:7px 10px;border:1px solid rgba(255,255,255,.06);border-radius:999px;background:rgba(255,255,255,.025);color:#dbe5ef;font-size:10px;font-weight:850}
+.mosaic{display:grid;grid-template-columns:1.14fr .86fr;gap:14px}
+.column{display:grid;gap:14px}
+.miniChart{margin-top:12px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.05);background:#0a1017;position:relative;overflow:hidden}
+.miniChart svg{position:absolute;inset:0;width:100%;height:100%}
+.screenMock{margin-top:14px;padding:12px;border:1px solid rgba(255,255,255,.06);border-radius:18px;background:rgba(6,10,14,.92)}
+.screenTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.screenTop strong{font-size:12px;letter-spacing:.1px}
+.screenChip{padding:5px 8px;border-radius:999px;background:rgba(0,229,255,.09);color:#9be7ff;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.25px}
+.marketPair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.spotCard{padding:10px;border:1px solid rgba(255,255,255,.06);border-radius:14px;background:rgba(255,255,255,.02)}
+.spotCard small{display:block;color:#7f8b9b;font-size:9px;font-weight:900;letter-spacing:.25px;text-transform:uppercase}
+.spotCard strong{display:block;margin-top:5px;font-size:14px;font-weight:930}
+.spotCard span{display:block;margin-top:3px;color:#8fdfff;font-size:10px;font-weight:850}
+.screenList{display:grid;gap:9px;margin-top:10px}
+.listRow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 10px;border:1px solid rgba(255,255,255,.05);border-radius:12px;background:rgba(255,255,255,.018)}
+.listRow .left{display:flex;flex-direction:column;gap:2px}
+.listRow .left b{font-size:11px}
+.listRow .left small{color:#7f8b9b;font-size:9px;font-weight:800}
+.listRow .right{font-size:10px;font-weight:900;color:#fff;text-align:right}
+.listRow .right em{display:block;font-style:normal;color:#7ecf92}
+.timeline{display:grid;gap:10px}
+.story{padding:10px;border:1px solid rgba(255,255,255,.05);border-radius:14px;background:rgba(255,255,255,.018)}
+.story .head{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#7f8b9b;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.24px}
+.story h4{margin-top:6px;font-size:12px;line-height:1.4;font-weight:880}
+.story .foot{margin-top:7px;display:flex;align-items:center;justify-content:space-between;gap:8px;color:#8fdfff;font-size:9px;font-weight:850}
+.duel{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center}
+.duelCard{padding:10px;border:1px solid rgba(255,255,255,.05);border-radius:14px;background:rgba(255,255,255,.02)}
+.duelCard strong{display:block;font-size:13px}
+.duelCard span{display:block;color:#8ba0b3;font-size:10px;margin-top:2px}
+.vsBadge{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(244,185,66,.25);background:rgba(244,185,66,.08);color:#f4cf7b;font-size:11px;font-weight:950}
+.modeBar{display:flex;gap:8px;margin-bottom:10px}
+.modeBar span{padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.04);font-size:9px;font-weight:900;letter-spacing:.2px;text-transform:uppercase;color:#d9e4ef}
+.modeBar span.active{background:rgba(0,229,255,.1);color:#98eaff;border:1px solid rgba(0,229,255,.18)}
+.modeBar span.goldActive{background:rgba(244,185,66,.1);color:#f4cf7b;border:1px solid rgba(244,185,66,.18)}
+.aiBubble{padding:11px 12px;border-radius:15px;background:rgba(0,229,255,.08);color:#e8fbff;font-size:12px;line-height:1.5}
+.aiBubble.secondary{background:rgba(255,255,255,.04);color:#d9e4ef}
+.aiComposer{margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);color:#7f8b9b;font-size:11px;font-weight:800}
+.aiSend{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--cyan);color:#071013;font-weight:950}
+.section{padding:50px 0}
+.sectionBorder{border-top:1px solid var(--line2)}
+.sectionHead{max-width:760px;margin-bottom:24px}
+.sectionKicker{display:inline-flex;align-items:center;gap:8px;color:#8fdfff;font-size:11px;font-weight:900;letter-spacing:.35px;text-transform:uppercase}
+.sectionKicker::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan)}
+.sectionHead h2{margin-top:10px;font-size:clamp(28px,4.2vw,42px);line-height:1.04;letter-spacing:-1.4px;font-weight:960}
+.sectionCopy{margin-top:12px;color:var(--muted);font-size:15px;line-height:1.75}
+.cardGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.featureCard,.policyCard,.stepCard,.pricingCard{position:relative;overflow:hidden;padding:20px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01)),var(--card);box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+.featureCard::before,.policyCard::before,.stepCard::before,.pricingCard::before{content:"";position:absolute;right:-20px;bottom:-20px;width:88px;height:88px;border-radius:50%;background:radial-gradient(circle,rgba(0,229,255,.12),transparent 70%)}
+.featureCard.gold::before,.policyCard.gold::before,.pricingCard.gold::before{background:radial-gradient(circle,rgba(244,185,66,.12),transparent 70%)}
+.featureCard .cardTag,.policyCard .cardTag,.stepCard .cardTag,.pricingCard .cardTag{display:inline-flex;align-items:center;gap:7px;padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.04);color:#8fdfff;font-size:10px;font-weight:900;letter-spacing:.24px;text-transform:uppercase}
+.featureCard.gold .cardTag,.policyCard.gold .cardTag,.pricingCard.gold .cardTag{color:#f4cf7b}
+.featureCard h3,.policyCard h3,.stepCard h3,.pricingCard h3{margin-top:12px;font-size:20px;line-height:1.12;letter-spacing:-.42px;font-weight:940}
+.featureCard p,.policyCard p,.stepCard p,.pricingCard p{margin-top:8px;color:var(--muted);font-size:13px;line-height:1.7}
+.cardBullets{display:grid;gap:7px;margin-top:12px}
+.cardBullets span{display:flex;align-items:flex-start;gap:8px;color:#dbe4ef;font-size:12px;line-height:1.55}
+.cardBullets i{flex:0 0 auto;width:8px;height:8px;margin-top:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px rgba(0,229,255,.35)}
+.cardBullets.gold i{background:var(--gold);box-shadow:0 0 10px rgba(244,185,66,.35)}
+.dualGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+.stepsGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.stepCard strong{display:block;margin-top:12px;font-size:14px;color:#8fdfff;letter-spacing:.22px;text-transform:uppercase}
+.stepCard p{margin-top:8px}
+.quoteBand{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;padding:18px 20px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01)),var(--card)}
+.quoteBand strong{display:block;font-size:22px;line-height:1.15;letter-spacing:-.6px;font-weight:940}
+.quoteBand p{margin-top:8px;color:var(--muted);font-size:14px;line-height:1.7;max-width:720px}
+.quoteBadge{padding:11px 14px;border:1px solid var(--goldBorder);border-radius:999px;background:var(--goldSoft);color:#f4cf7b;font-size:11px;font-weight:900;white-space:nowrap}
+.cta{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;padding:24px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01)),var(--card2)}
+.cta h3{font-size:28px;line-height:1.08;letter-spacing:-1px;font-weight:960}
+.cta p{margin-top:8px;color:var(--muted);font-size:14px;line-height:1.72;max-width:720px}
+.footer{padding:22px 0 34px;border-top:1px solid var(--line2)}
+.footerTop{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px}
+.footerCopy{max-width:520px;color:var(--muted);font-size:13px;line-height:1.7}
+.footerCopy img{width:120px;display:block;margin-bottom:10px}
+.footerLinks{display:flex;flex-wrap:wrap;gap:10px 14px;color:#b8c4d1;font-size:12px;font-weight:800}
+.footerBottom{margin-top:16px;padding-top:16px;border-top:1px solid var(--line2);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;color:#7e8a99;font-size:12px}
+.highlightNote{margin-top:16px;padding:14px 16px;border:1px solid rgba(255,255,255,.06);border-radius:16px;background:rgba(255,255,255,.02);color:#cdd7e2;font-size:12px;line-height:1.65}
+@media(max-width:1080px){.heroGrid,.dualGrid{grid-template-columns:1fr}.mosaic{grid-template-columns:1fr}}
+@media(max-width:920px){.desktopNav,.navStores{display:none}.mobileMenuButton{display:grid}.cardGrid,.stepsGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.marketPair,.cta,.quoteBand{grid-template-columns:1fr}}
+@media(max-width:680px){.siteContainer{width:min(var(--max),calc(100% - 26px))}.hero{padding:68px 0 34px}.siteNav{height:66px}h1{letter-spacing:-1.4px}.heroLead,.sectionCopy{font-size:14px}.cardGrid,.stepsGrid{grid-template-columns:1fr}.boardTitle{font-size:16px}.footerBottom{flex-direction:column}}
   </style>
-
-</head>
-
-<body>
-
-  <!-- ======================================================
-       NAVIGATION
-  ======================================================= -->
-
+ </head>
+ <body>
   <header class="siteHeader">
-    <div class="siteContainer">
-
-      <nav class="siteNav">
-
-        <a
-          class="brand"
-          href="../"
-          aria-label="Finrival home"
-        >
-          <img
-            src="../logo.png"
-            alt="Finrival"
-          />
-        </a>
-
-        <div class="desktopNav">
-
-          <a
-            class="active"
-            href="../product/"
-          >
-            Product
-          </a>
-
-          <a href="../features/">
-            Features
-          </a>
-
-          <a href="../ai/">
-            Finrival AI
-          </a>
-
-          <a href="../pro/">
-            PRO
-          </a>
-
-          <a href="../company/">
-            Company
-          </a>
-
-          <a href="../support/">
-            Support
-          </a>
-
-        </div>
-
-        <a
-          class="navCta"
-          href="#availability"
-        >
-          Coming Soon
-        </a>
-
-      </nav>
-
+   <div class="siteContainer">
+    <nav aria-label="Finrival site navigation" class="siteNav">
+     <a aria-label="Finrival home" class="brand" href="../">
+      <img alt="Finrival" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex';" src="../logo.png"/>
+      <span class="brandText">
+       Fin
+       <b>
+        rival
+       </b>
+      </span>
+     </a>
+     <div class="desktopNav">
+      <a href="../">
+       Home
+      </a>
+      <a class="active" href="../product/">
+       Product
+      </a>
+      <a href="../features/">
+       Features
+      </a>
+      <a href="../ai/">
+       AI
+      </a>
+      <a href="../pro/">
+       PRO
+      </a>
+      <a href="../company/">
+       Company
+      </a>
+      <a href="../support/">
+       Support
+      </a>
+     </div>
+     <div aria-label="Mobile app availability" class="navStores">
+      <a class="navStore" href="#download">
+       <span>
+        App Store
+       </span>
+       <b>
+        Soon
+       </b>
+      </a>
+      <a class="navStore" href="#download">
+       <span>
+        Google Play
+       </span>
+       <b>
+        Soon
+       </b>
+      </a>
+     </div>
+     <button aria-expanded="false" aria-label="Open navigation" class="mobileMenuButton" id="mobileMenuButton" type="button">
+      ☰
+     </button>
+    </nav>
+   </div>
+   <div class="mobileMenu" id="mobileMenu">
+    <div class="siteContainer mobileMenuInner">
+     <a href="../">
+      Home
+     </a>
+     <a class="active" href="../product/">
+      Product
+     </a>
+     <a href="../features/">
+      Features
+     </a>
+     <a href="../ai/">
+      AI
+     </a>
+     <a href="../pro/">
+      PRO
+     </a>
+     <a href="../company/">
+      Company
+     </a>
+     <a href="../support/">
+      Support
+     </a>
+     <a href="#download">
+      App Store &amp; Google Play · Soon
+     </a>
     </div>
+   </div>
   </header>
-
-
   <main>
-
-
-    <!-- ======================================================
-         HERO
-    ======================================================= -->
-
-    <section class="pageHero">
-
-      <div class="heroGlow heroGlowLeft"></div>
-      <div class="heroGlow heroGlowRight"></div>
-
-      <div class="siteContainer">
-
-        <div class="pageHeroInner">
-
-          <div class="eyebrow">
-            PRODUCT
-          </div>
-
-          <h1>
-            Market research,
-            <span class="textGradient">
-              connected.
-            </span>
-          </h1>
-
-          <p class="heroLead">
-            Finrival brings market discovery, asset comparison,
-            financial news, saved assets, simulation tools and
-            AI-assisted research into one focused mobile workspace.
-          </p>
-
-          <div class="heroActions">
-
-            <a
-              class="button buttonPrimary"
-              href="../features/"
-            >
-              Explore Features
-              <span>→</span>
-            </a>
-
-            <a
-              class="button buttonSecondary"
-              href="../ai/"
-            >
-              Discover Finrival AI
-            </a>
-
-          </div>
-
-          <div class="heroMeta">
-
-            <div>
-              <span class="statusDot"></span>
-              Mobile-first research workspace
-            </div>
-
-            <div>
-              iOS & Android · Coming Soon
-            </div>
-
-          </div>
-
-        </div>
-
+   <section class="hero">
+    <div class="siteContainer heroGrid">
+     <div>
+      <div class="eyebrow">
+       Product overview
       </div>
-    </section>
-
-
-
-    <!-- ======================================================
-         INTERACTIVE PRODUCT EXPERIENCE
-    ======================================================= -->
-    <section class="productExperienceSection" aria-labelledby="productExperienceTitle">
-      <div class="siteContainer">
-        <div class="productExperienceGrid">
-
-          <div class="productExperienceCopy">
-            <div class="sectionEyebrow">
-              INTERACTIVE PRODUCT TOUR
-            </div>
-
-            <h2 id="productExperienceTitle">
-              Move through Finrival
-              <br />
-              like it is already in your hand.
-            </h2>
-
-            <p class="productExperienceLead">
-              Explore the core research surfaces inside one continuous mobile workflow.
-              Use the arrows, dots or swipe directly on the phone preview.
-            </p>
-
-            <div class="productSlideMeta" aria-live="polite">
-              <div class="productSlideEyebrow" id="productSlideEyebrow">
-                MARKET
-              </div>
-
-              <div class="productSlideTitle" id="productSlideTitle">
-                Discover what deserves attention.
-              </div>
-
-              <p class="productSlideCopy" id="productSlideCopy">
-                Scan supported assets, movers, sessions and market context before going deeper.
-              </p>
-            </div>
-
-            <div class="productCarouselControls">
-              <button
-                class="productArrow"
-                id="productPrev"
-                type="button"
-                aria-label="Previous Finrival screen"
-              >
-                ←
-              </button>
-
-              <div
-                class="productDots"
-                id="productDots"
-                aria-label="Finrival product screens"
-              ></div>
-
-              <div class="productCounter" id="productCounter">
-                01 / 06
-              </div>
-
-              <button
-                class="productArrow"
-                id="productNext"
-                type="button"
-                aria-label="Next Finrival screen"
-              >
-                →
-              </button>
-            </div>
-          </div>
-
-
-          <div class="productDeviceStage">
-
-            <div
-              class="productDevice"
-              id="productDevice"
-              aria-label="Interactive Finrival mobile interface preview"
-            >
-              <div class="productDeviceScreen">
-
-                <div class="productStatusBar">
-                  <span>9:41</span>
-                  <div class="productStatusRight">
-                    <span>●●●</span>
-                    <span>Wi‑Fi</span>
-                    <span>▰</span>
-                  </div>
-                </div>
-
-                <div class="productAppHeader">
-                  <div></div>
-                  <div class="productAppBrand">
-                    finrival<b>.</b>
-                  </div>
-                  <div class="productMenuFake">☰</div>
-                </div>
-
-                <div class="productSlides" id="productSlides">
-
-                  <!-- MARKET -->
-                  <div class="productSlide active" data-product-slide="0">
-                    <div class="productSlideScroll">
-                      <div class="phoneKicker">MARKET SIGNAL</div>
-                      <div class="phoneTitle">Today at a glance.</div>
-
-                      <div class="compareTiles">
-                        <div class="phoneCard" style="margin-top:0;border-color:rgba(52,199,89,.18)">
-                          <div class="phoneLabelRow">
-                            <span class="phoneLabel">Top gainer</span>
-                            <span class="phoneChange">+6.42%</span>
-                          </div>
-                          <div class="phoneAsset">
-                            <div class="phoneLogo">NVDA</div>
-                            <div>
-                              <div class="phoneSymbol">NVDA</div>
-                              <div class="phoneName">NVIDIA</div>
-                            </div>
-                          </div>
-                          <div class="phonePrice" style="margin-top:9px;text-align:left">$182.40</div>
-                        </div>
-
-                        <div class="phoneCard" style="margin-top:0;border-color:rgba(255,69,58,.18)">
-                          <div class="phoneLabelRow">
-                            <span class="phoneLabel">Top dip</span>
-                            <span class="phoneChange red">−4.18%</span>
-                          </div>
-                          <div class="phoneAsset">
-                            <div class="phoneLogo">TSLA</div>
-                            <div>
-                              <div class="phoneSymbol">TSLA</div>
-                              <div class="phoneName">Tesla</div>
-                            </div>
-                          </div>
-                          <div class="phonePrice" style="margin-top:9px;text-align:left">$318.16</div>
-                        </div>
-                      </div>
-
-                      <div class="phoneCard cyan">
-                        <div class="phoneLabelRow">
-                          <span class="phoneLabel">Market activity</span>
-                          <span class="phoneMiniBadge">LIVE CONTEXT</span>
-                        </div>
-                        <div class="phoneBar"><span style="width:68%"></span></div>
-                        <div class="phoneRow" style="margin-top:8px">
-                          <span class="phoneName">US session · supported universe</span>
-                          <span class="phoneSymbol">68%</span>
-                        </div>
-                      </div>
-
-                      <div class="phoneCard">
-                        <div class="phoneLabelRow">
-                          <span class="phoneLabel">All markets</span>
-                          <span class="phoneName">Search & filter</span>
-                        </div>
-
-                        <div class="phoneRow" style="padding:7px 0">
-                          <div class="phoneAsset">
-                            <div class="phoneLogo">AAPL</div>
-                            <div>
-                              <div class="phoneSymbol">AAPL</div>
-                              <div class="phoneName">Apple Inc.</div>
-                            </div>
-                          </div>
-                          <div>
-                            <div class="phonePrice">$226.18</div>
-                            <div class="phoneChange">+1.24%</div>
-                          </div>
-                        </div>
-
-                        <div class="phoneRow" style="padding:7px 0;border-top:1px solid rgba(255,255,255,.05)">
-                          <div class="phoneAsset">
-                            <div class="phoneLogo">BTC</div>
-                            <div>
-                              <div class="phoneSymbol">BTC</div>
-                              <div class="phoneName">Bitcoin</div>
-                            </div>
-                          </div>
-                          <div>
-                            <div class="phonePrice">$68,920</div>
-                            <div class="phoneChange">+2.06%</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <!-- COMPARE -->
-                  <div class="productSlide" data-product-slide="1">
-                    <div class="productSlideScroll">
-                      <div class="phoneKicker">COMPARE</div>
-                      <div class="phoneTitle">Put context side by side.</div>
-
-                      <div class="compareTiles">
-                        <div class="compareTile">
-                          <div class="phoneLogo">AAPL</div>
-                          <div class="phoneSymbol" style="margin-top:6px">AAPL</div>
-                          <div class="phoneName">Apple Inc.</div>
-                          <div class="phonePrice">$226.18</div>
-                          <div class="phoneChange">+1.24%</div>
-                        </div>
-
-                        <div class="compareTile">
-                          <div class="phoneLogo" style="color:#00E5FF">MSFT</div>
-                          <div class="phoneSymbol" style="margin-top:6px">MSFT</div>
-                          <div class="phoneName">Microsoft</div>
-                          <div class="phonePrice">$514.72</div>
-                          <div class="phoneChange red">−0.31%</div>
-                        </div>
-                      </div>
-
-                      <div class="phoneCard">
-                        <div class="phoneLabelRow">
-                          <span class="phoneLabel">Performance</span>
-                          <span class="phoneMiniBadge">1Y</span>
-                        </div>
-
-                        <div class="phoneChart">
-                          <svg viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true">
-                            <path d="M0 76 C24 67 36 70 58 54 S99 55 121 39 S162 50 188 29 S224 34 247 22 S278 25 300 14"
-                              fill="none" stroke="#00E5FF" stroke-width="2.2"/>
-                            <path d="M0 68 C28 75 49 57 71 62 S116 43 142 52 S185 38 209 45 S252 31 300 36"
-                              fill="none" stroke="#F59E0B" stroke-width="2.1"/>
-                          </svg>
-                        </div>
-
-                        <div class="phoneRow" style="margin-top:9px">
-                          <span class="phoneName">Historical return</span>
-                          <span class="phoneChange">AAPL +18.7%</span>
-                        </div>
-                      </div>
-
-                      <div class="phoneCard cyan">
-                        <div class="phoneLabelRow">
-                          <span class="phoneLabel">Momentum & risk</span>
-                          <span class="phoneMiniBadge">PRO VIEW</span>
-                        </div>
-                        <div class="phoneRow">
-                          <span class="phoneName">RSI 14</span>
-                          <span class="phoneSymbol">61.4</span>
-                        </div>
-                        <div class="phoneRow" style="margin-top:7px">
-                          <span class="phoneName">Historical volatility</span>
-                          <span class="phoneSymbol">22.8%</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <!-- AI -->
-                  <div class="productSlide" data-product-slide="2">
-                    <div class="productSlideScroll">
-                      <div class="phoneKicker">FINRIVAL AI</div>
-                      <div class="phoneTitle">Continue the research.</div>
-
-                      <div class="phoneCard cyan">
-                        <div class="phoneLabelRow">
-                          <span class="phoneLabel">Asset context</span>
-                          <span class="phoneMiniBadge">AAPL</span>
-                        </div>
-                        <div class="phoneRow">
-                          <div class="phoneAsset">
-                            <div class="phoneLogo">AAPL</div>
-                            <div>
-                              <div class="phoneSymbol">Apple Inc.</div>
-                              <div class="phoneName">$226.18 · +1.24%</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="aiChatMini">
-                        <div class="aiMiniBubble user">
-                          Compare today’s move with the broader momentum picture.
-                        </div>
-
-                        <div class="aiMiniBubble">
-                          <strong>FINRIVAL AI</strong>
-                          Price action is positive in this snapshot, while the broader view should be read together with recent range, volume and historical momentum rather than as a standalone signal.
-                        </div>
-
-                        <div class="aiMiniBubble user">
-                          What should I check next?
-                        </div>
-
-                        <div class="aiMiniBubble">
-                          <strong>FINRIVAL AI</strong>
-                          Review the selected comparison period, recent volatility and any material market or company context before drawing a conclusion.
-                        </div>
-                      </div>
-
-                      <div class="phoneCard">
-                        <div class="phoneRow">
-                          <span class="phoneName">Ask a market research question…</span>
-                          <span class="phoneMiniBadge">↑</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <!-- NEWS -->
-                  <div class="productSlide" data-product-slide="3">
-                    <div class="productSlideScroll">
-                      <div class="phoneKicker">MARKET NEWS</div>
-                      <div class="phoneTitle">Follow the story, not the noise.</div>
-
-                      <div class="phoneCard cyan">
-                        <div class="phoneLabelRow">
-                          <span class="phoneLabel">Featured context</span>
-                          <span class="phoneMiniBadge">LATEST</span>
-                        </div>
-                        <div class="newsThumb" style="height:72px"></div>
-                        <div class="newsSource" style="margin-top:8px">MARKET UPDATE</div>
-                        <div class="newsHeadline" style="font-size:7px">
-                          Key market themes and supported financial headlines in one focused feed.
-                        </div>
-                      </div>
-
-                      <div class="phoneCard">
-                        <div class="newsMiniStory">
-                          <div class="newsThumb"></div>
-                          <div>
-                            <div class="newsSource">MACRO · 18 MIN</div>
-                            <div class="newsHeadline">Rates, inflation and market expectations remain in focus.</div>
-                          </div>
-                        </div>
-
-                        <div class="newsMiniStory">
-                          <div class="newsThumb"></div>
-                          <div>
-                            <div class="newsSource">TECH · 41 MIN</div>
-                            <div class="newsHeadline">Large-cap technology names shape the session narrative.</div>
-                          </div>
-                        </div>
-
-                        <div class="newsMiniStory">
-                          <div class="newsThumb"></div>
-                          <div>
-                            <div class="newsSource">DIGITAL ASSETS · 1H</div>
-                            <div class="newsHeadline">Crypto markets move alongside broader risk sentiment.</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <!-- RIVAL -->
-                  <div class="productSlide" data-product-slide="4">
-                    <div class="productSlideScroll">
-                      <div class="phoneKicker" style="color:#F59E0B">RIVAL</div>
-                      <div class="phoneTitle">Practice without real money.</div>
-
-                      <div class="phoneCard gold">
-                        <div class="phoneLabel">Practice portfolio</div>
-                        <div class="rivalBalance">100,000</div>
-                        <div class="rivalCredits">Rival Credits · fictional simulation balance</div>
-
-                        <div class="rivalButtons">
-                          <div class="rivalButton primary">Explore market</div>
-                          <div class="rivalButton">Portfolio</div>
-                        </div>
-                      </div>
-
-                      <div class="phoneCard">
-                        <div class="phoneLabelRow">
-                          <span class="phoneLabel">Positions</span>
-                          <span class="phoneMiniBadge gold">SIMULATION</span>
-                        </div>
-
-                        <div class="phoneRow" style="padding:7px 0">
-                          <div class="phoneAsset">
-                            <div class="phoneLogo">NVDA</div>
-                            <div>
-                              <div class="phoneSymbol">NVDA</div>
-                              <div class="phoneName">20 shares · simulated</div>
-                            </div>
-                          </div>
-                          <div>
-                            <div class="phonePrice">RC 3,648</div>
-                            <div class="phoneChange">+4.7%</div>
-                          </div>
-                        </div>
-
-                        <div class="phoneRow" style="padding:7px 0;border-top:1px solid rgba(255,255,255,.05)">
-                          <div class="phoneAsset">
-                            <div class="phoneLogo">BTC</div>
-                            <div>
-                              <div class="phoneSymbol">BTC</div>
-                              <div class="phoneName">0.04 · simulated</div>
-                            </div>
-                          </div>
-                          <div>
-                            <div class="phonePrice">RC 2,756</div>
-                            <div class="phoneChange gold">+1.9%</div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="phoneCard gold">
-                        <div class="phoneName">
-                          Rival Credits have no real-world monetary value and cannot be withdrawn.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <!-- WATCHLIST -->
-                  <div class="productSlide" data-product-slide="5">
-                    <div class="productSlideScroll">
-                      <div class="phoneKicker">WATCHLIST</div>
-                      <div class="phoneTitle">Keep important assets close.</div>
-
-                      <div class="watchSearchMini">
-                        <span>Search saved assets</span>
-                        <span>⌕</span>
-                      </div>
-
-                      <div class="phoneCard">
-                        <div class="phoneLabelRow">
-                          <span class="phoneLabel">Saved assets</span>
-                          <span class="phoneMiniBadge">ALERTS</span>
-                        </div>
-
-                        <div class="phoneRow" style="padding:8px 0">
-                          <div class="phoneAsset">
-                            <div class="phoneLogo">AAPL</div>
-                            <div>
-                              <div class="phoneSymbol">AAPL</div>
-                              <div class="phoneName">Apple Inc.</div>
-                            </div>
-                          </div>
-                          <div style="display:flex;align-items:center;gap:7px">
-                            <div>
-                              <div class="phonePrice">$226.18</div>
-                              <div class="phoneChange">+1.24%</div>
-                            </div>
-                            <div class="watchAction">◎</div>
-                          </div>
-                        </div>
-
-                        <div class="phoneRow" style="padding:8px 0;border-top:1px solid rgba(255,255,255,.05)">
-                          <div class="phoneAsset">
-                            <div class="phoneLogo">BTC</div>
-                            <div>
-                              <div class="phoneSymbol">BTC</div>
-                              <div class="phoneName">Bitcoin</div>
-                            </div>
-                          </div>
-                          <div style="display:flex;align-items:center;gap:7px">
-                            <div>
-                              <div class="phonePrice">$68,920</div>
-                              <div class="phoneChange">+2.06%</div>
-                            </div>
-                            <div class="watchAction">✦</div>
-                          </div>
-                        </div>
-
-                        <div class="phoneRow" style="padding:8px 0;border-top:1px solid rgba(255,255,255,.05)">
-                          <div class="phoneAsset">
-                            <div class="phoneLogo">SAP</div>
-                            <div>
-                              <div class="phoneSymbol">SAP.DE</div>
-                              <div class="phoneName">SAP SE</div>
-                            </div>
-                          </div>
-                          <div style="display:flex;align-items:center;gap:7px">
-                            <div>
-                              <div class="phonePrice">On demand</div>
-                              <div class="phoneName">Saved</div>
-                            </div>
-                            <div class="watchAction">◎</div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="phoneCard cyan">
-                        <div class="phoneLabelRow">
-                          <span class="phoneLabel">Reference-price alert</span>
-                          <span class="phoneMiniBadge">AAPL</span>
-                        </div>
-                        <div class="phoneRow">
-                          <span class="phoneName">Notify above</span>
-                          <span class="phoneSymbol">$230.00</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="productBottomNav" aria-hidden="true">
-                  <div class="productBottomItem active" data-product-nav="0">
-                    <div class="productBottomIcon">⌁</div>
-                    <span>Market</span>
-                  </div>
-
-                  <div class="productBottomItem" data-product-nav="3">
-                    <div class="productBottomIcon">▤</div>
-                    <span>News</span>
-                  </div>
-
-                  <div class="productBottomItem compare" data-product-nav="1">
-                    <div class="productCompareButton">⇄</div>
-                    <span>Compare</span>
-                  </div>
-
-                  <div class="productBottomItem rival" data-product-nav="4">
-                    <div class="productBottomIcon">R</div>
-                    <span>Rival</span>
-                  </div>
-
-                  <div class="productBottomItem" data-product-nav="5">
-                    <div class="productBottomIcon">◎</div>
-                    <span>Watchlist</span>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="productSwipeHint">
-              <b>Swipe</b> the phone to explore
-            </div>
-
-          </div>
-
-        </div>
+      <h1>
+       One research path.
+       <span class="gradientText">
+        Six connected surfaces.
+       </span>
+      </h1>
+      <p class="heroLead">
+       Finrival does not split discovery, comparison, news, monitoring and AI into separate disconnected tools. The product keeps them in one mobile workflow, and the visuals below are aligned to the recovered app structure rather than to a generic fintech concept.
+      </p>
+      <div class="heroActions">
+       <a class="button buttonPrimary" href="#surfaces">
+        Explore the surfaces
+       </a>
+       <a class="button buttonSecondary" href="../">
+        Back to Home
+       </a>
       </div>
-    </section>
-
-
-    <!-- ======================================================
-         WHAT IS FINRIVAL
-    ======================================================= -->
-
-    <section class="contentSection">
-
-      <div class="siteContainer">
-
-        <div class="splitIntro">
-
-          <div>
-
-            <div class="sectionEyebrow">
-              WHAT IS FINRIVAL?
-            </div>
-
-            <h2>
-              One workspace instead of
-              disconnected research tools.
-            </h2>
-
-          </div>
-
-          <div class="largeCopy">
-
-            <p>
-              Financial research often means jumping between
-              market screens, charting tools, news feeds,
-              watchlists and separate AI products.
-            </p>
-
-            <p>
-              Finrival is designed to connect those steps.
-              Start with the market, move into deeper comparison,
-              continue with relevant context and keep important
-              assets organized without leaving the same workspace.
-            </p>
-
-          </div>
-
-        </div>
-
+      <div class="heroMeta">
+       <span>
+        <i>
+        </i>
+        Market / News / Compare / Rival / Watchlist / AI
+       </span>
+       <span>
+        <i>
+        </i>
+        Source-matched website previews
+       </span>
+       <span>
+        <i>
+        </i>
+        Compact mobile-first story
+       </span>
       </div>
-    </section>
-
-
-    <!-- ======================================================
-         RESEARCH FLOW
-    ======================================================= -->
-
-    <section class="contentSection sectionMuted">
-
-      <div class="siteContainer">
-
-        <div class="sectionHeading">
-
-          <div class="sectionEyebrow">
-            THE FINRIVAL FLOW
-          </div>
-
-          <h2>
-            Start broad.
-            <br />
-            End with context.
-          </h2>
-
-          <p>
-            Finrival is structured around a simple research flow
-            rather than a collection of isolated features.
-          </p>
-
-        </div>
-
-
-        <div class="workflowGrid">
-
-          <article class="workflowCard">
-
-            <span class="workflowNumber">
-              01
-            </span>
-
-            <div class="workflowIcon">
-              ↗
-            </div>
-
-            <h3>
-              Discover
-            </h3>
-
-            <p>
-              Scan supported assets, market movers,
-              session information and broader market context.
-            </p>
-
-          </article>
-
-
-          <article class="workflowCard">
-
-            <span class="workflowNumber">
-              02
-            </span>
-
-            <div class="workflowIcon">
-              ⇄
-            </div>
-
-            <h3>
-              Compare
-            </h3>
-
-            <p>
-              Put supported assets side by side and examine
-              historical performance, momentum and risk context.
-            </p>
-
-          </article>
-
-
-          <article class="workflowCard">
-
-            <span class="workflowNumber">
-              03
-            </span>
-
-            <div class="workflowIcon">
-              ✦
-            </div>
-
-            <h3>
-              Understand
-            </h3>
-
-            <p>
-              Continue supported research into Finrival AI
-              for structured contextual analysis.
-            </p>
-
-          </article>
-
-
-          <article class="workflowCard">
-
-            <span class="workflowNumber">
-              04
-            </span>
-
-            <div class="workflowIcon">
-              ◎
-            </div>
-
-            <h3>
-              Monitor
-            </h3>
-
-            <p>
-              Save supported assets and create reference-price
-              alerts from a dedicated watchlist.
-            </p>
-
-          </article>
-
-        </div>
-
+      <div class="highlightNote">
+       This page only uses modules Finrival actually has today: Market, News, Compare, Rival simulation, Watchlist / alerts and the global Finrival AI layer.
       </div>
-    </section>
-
-
-    <!-- ======================================================
-         PRODUCT MODULES
-    ======================================================= -->
-
-    <section class="contentSection">
-
-      <div class="siteContainer">
-
-        <div class="sectionHeading">
-
-          <div class="sectionEyebrow">
-            ONE PRODUCT · CONNECTED SURFACES
-          </div>
-
-          <h2>
-            Six tools.
-            <br />
-            One research system.
-          </h2>
-
-        </div>
-
-
-        <div class="moduleGrid">
-
-
-          <article class="moduleCard moduleCardLarge">
-
-            <div class="moduleTop">
-
-              <span class="moduleLabel">
-                MARKET
-              </span>
-
-              <span class="moduleArrow">
-                ↗
-              </span>
-
-            </div>
-
-            <div>
-
-              <h3>
-                Find what deserves attention.
-              </h3>
-
-              <p>
-                Follow supported market assets, daily movers,
-                market sessions, liquidity context and
-                searchable asset discovery.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="moduleCard moduleCardLarge">
-
-            <div class="moduleTop">
-
-              <span class="moduleLabel">
-                COMPARE
-              </span>
-
-              <span class="moduleArrow">
-                ↗
-              </span>
-
-            </div>
-
-            <div>
-
-              <h3>
-                Go beyond a single ticker.
-              </h3>
-
-              <p>
-                Compare supported assets using historical
-                performance, chart views, momentum and
-                analytical context.
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="moduleCard">
-
-            <div class="moduleTop">
-
-              <span class="moduleLabel">
-                FINRIVAL AI
-              </span>
-
-              <span class="moduleArrow cyan">
-                ✦
-              </span>
-
-            </div>
-
-            <h3>
-              Continue the research.
-            </h3>
-
-            <p>
-              Use contextual AI assistance for supported
-              market research questions and asset analysis.
-            </p>
-
-            <a
-              class="textLink"
-              href="../ai/"
-            >
-              Explore Finrival AI →
-            </a>
-
-          </article>
-
-
-          <article class="moduleCard">
-
-            <div class="moduleTop">
-
-              <span class="moduleLabel">
-                NEWS
-              </span>
-
-              <span class="moduleArrow">
-                ◫
-              </span>
-
-            </div>
-
-            <h3>
-              Follow market stories.
-            </h3>
-
-            <p>
-              Browse financial news with source,
-              time and contextual follow-up.
-            </p>
-
-          </article>
-
-
-          <article class="moduleCard">
-
-            <div class="moduleTop">
-
-              <span class="moduleLabel gold">
-                RIVAL
-              </span>
-
-              <span class="moduleArrow gold">
-                R
-              </span>
-
-            </div>
-
-            <h3>
-              Practice without real money.
-            </h3>
-
-            <p>
-              Explore simulated portfolio activity using
-              fictional Rival Credits with no real-world
-              monetary value.
-            </p>
-
-          </article>
-
-
-          <article class="moduleCard">
-
-            <div class="moduleTop">
-
-              <span class="moduleLabel">
-                WATCHLIST
-              </span>
-
-              <span class="moduleArrow">
-                ◎
-              </span>
-
-            </div>
-
-            <h3>
-              Keep important assets close.
-            </h3>
-
-            <p>
-              Save supported assets and create convenient
-              reference-price alerts in one organized view.
-            </p>
-
-          </article>
-
-        </div>
-
-
-        <div class="sectionAction">
-
-          <a
-            class="button buttonSecondary"
-            href="../features/"
-          >
-            View All Features
-            <span>→</span>
-          </a>
-
-        </div>
-
+     </div>
+     <div class="heroArt">
+      <div class="artHalo">
       </div>
-    </section>
-
-
-    <!-- ======================================================
-         DIFFERENCE
-    ======================================================= -->
-
-    <section class="contentSection sectionMuted">
-
-      <div class="siteContainer">
-
-        <div class="differenceGrid">
-
-          <div class="sectionHeading">
-
-            <div class="sectionEyebrow">
-              THE IDEA
-            </div>
-
-            <h2>
-              Context before complexity.
-            </h2>
-
-            <p>
-              Finrival is designed to make deeper research
-              accessible without turning the experience
-              into a professional trading terminal.
-            </p>
-
-          </div>
-
-
-          <div class="principleList">
-
-            <article class="principle">
-
-              <span>01</span>
-
-              <div>
-                <h3>
-                  Connected
-                </h3>
-
-                <p>
-                  Research can move naturally between market,
-                  comparison, news, AI and monitoring.
-                </p>
-              </div>
-
-            </article>
-
-
-            <article class="principle">
-
-              <span>02</span>
-
-              <div>
-                <h3>
-                  Focused
-                </h3>
-
-                <p>
-                  Important information is prioritized instead
-                  of filling every screen with unnecessary data.
-                </p>
-              </div>
-
-            </article>
-
-
-            <article class="principle">
-
-              <span>03</span>
-
-              <div>
-                <h3>
-                  Mobile-first
-                </h3>
-
-                <p>
-                  Finrival is designed around a focused
-                  mobile research workflow for iOS and Android.
-                </p>
-              </div>
-
-            </article>
-
-
-            <article class="principle">
-
-              <span>04</span>
-
-              <div>
-                <h3>
-                  Clear boundaries
-                </h3>
-
-                <p>
-                  Research, AI assistance and simulation are
-                  visually and functionally separated from
-                  real-money execution.
-                </p>
-              </div>
-
-            </article>
-
-          </div>
-
+      <div class="visualStack">
+       <div class="board">
+        <div class="boardLabel">
+         Recovered app flow
         </div>
-
-      </div>
-    </section>
-
-
-    <!-- ======================================================
-         PRODUCT BOUNDARIES
-    ======================================================= -->
-
-    <section class="contentSection">
-
-      <div class="siteContainer">
-
-        <div class="boundaryPanel">
-
-          <div>
-
-            <div class="sectionEyebrow">
-              PRODUCT BOUNDARIES
-            </div>
-
-            <h2>
-              Research software,
-              not a brokerage.
-            </h2>
-
-          </div>
-
-
-          <div class="boundaryContent">
-
-            <div class="boundaryPoint">
-              <span>✓</span>
-
-              <p>
-                Finrival does not execute real-money
-                securities or crypto orders.
-              </p>
-            </div>
-
-
-            <div class="boundaryPoint">
-              <span>✓</span>
-
-              <p>
-                Finrival does not hold customer investment funds.
-              </p>
-            </div>
-
-
-            <div class="boundaryPoint">
-              <span>✓</span>
-
-              <p>
-                Market information may be delayed, cached,
-                incomplete, stale or inaccurate.
-              </p>
-            </div>
-
-
-            <div class="boundaryPoint">
-              <span>✓</span>
-
-              <p>
-                Finrival AI output may be incorrect,
-                incomplete or outdated.
-              </p>
-            </div>
-
-
-            <div class="boundaryPoint">
-              <span>✓</span>
-
-              <p>
-                Rival Credits are fictional and have no
-                real-world monetary value.
-              </p>
-            </div>
-
-          </div>
-
+        <div class="boardTitle">
+         Start broad, narrow fast.
         </div>
-
-
-        <div class="legalNotice">
-
-          <strong>
-            Financial information disclaimer
-          </strong>
-
-          <p>
-            Finrival is intended for informational, educational
-            and simulation purposes. Finrival is not a broker,
-            investment adviser, bank, exchange or fiduciary.
-            Nothing on this website or in the application
-            constitutes personalized financial, investment,
-            tax or legal advice, or an offer to buy or sell
-            a financial instrument.
-          </p>
-
+        <div class="boardCopy">
+         Discovery starts on Market, moves into Compare or News, then carries context into Watchlist or Finrival AI.
         </div>
-
-      </div>
-    </section>
-
-
-    <!-- ======================================================
-         AVAILABILITY
-    ======================================================= -->
-
-    <section
-      class="contentSection availabilitySection"
-      id="availability"
-    >
-
-      <div class="siteContainer">
-
-        <div class="availabilityPanel">
-
-          <div>
-
-            <div class="sectionEyebrow">
-              FINRIVAL MOBILE
-            </div>
-
-            <h2>
-              Built for the next
-              generation of market research.
-            </h2>
-
-            <p>
-              Finrival is being prepared for release
-              on iOS and Android.
-            </p>
-
+        <div class="infoPills">
+         <span>
+          Top Gainer / Top Dip
+         </span>
+         <span>
+          AI Battle Report
+         </span>
+         <span>
+          Alerts
+         </span>
+         <span>
+          V-Trade Simulator
+         </span>
+        </div>
+       </div>
+       <div class="mosaic">
+        <div class="column">
+         <div class="screenMock">
+          <div class="screenTop">
+           <strong>
+            Market
+           </strong>
+           <span class="screenChip">
+            Top
+           </span>
           </div>
-
-
-          <div class="storeButtons">
-
-            <div class="storeButton">
-
-              <div class="storeMark">
-                A
-              </div>
-
-              <div>
-                <small>
-                  COMING SOON ON
-                </small>
-
-                <strong>
-                  App Store
-                </strong>
-              </div>
-
-            </div>
-
-
-            <div class="storeButton">
-
-              <div class="storeMark">
-                ▶
-              </div>
-
-              <div>
-                <small>
-                  COMING SOON ON
-                </small>
-
-                <strong>
-                  Google Play
-                </strong>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-  </main>
-
-
-  <!-- ======================================================
-       FOOTER
-  ======================================================= -->
-
-  <footer class="siteFooter">
-
-    <div class="siteContainer">
-
-      <div class="footerMain">
-
-        <div class="footerBrand">
-
-          <img
-            src="../logo.png"
-            alt="Finrival"
-          />
-
-          <p>
-            Market research, comparison, monitoring,
-            simulation and AI-assisted context in one
-            focused workspace.
-          </p>
-
-        </div>
-
-
-        <div class="footerColumns">
-
-          <div class="footerColumn">
-
+          <div class="marketPair">
+           <div class="spotCard">
+            <small>
+             Top Gainer
+            </small>
             <strong>
-              Product
+             NVDA
             </strong>
-
-            <a href="../product/">
-              Product
-            </a>
-
-            <a href="../features/">
-              Features
-            </a>
-
-            <a href="../ai/">
-              Finrival AI
-            </a>
-
-            <a href="../pro/">
-              PRO
-            </a>
-
-          </div>
-
-
-          <div class="footerColumn">
-
+            <span>
+             +3.8%
+            </span>
+           </div>
+           <div class="spotCard">
+            <small>
+             Top Dip
+            </small>
             <strong>
-              Company
+             TSLA
             </strong>
-
-            <a href="../company/">
-              About
-            </a>
-
-            <a href="../support/">
-              Support
-            </a>
-
+            <span style="color:#ff8b82">
+             −2.1%
+            </span>
+           </div>
           </div>
-
-
-          <div class="footerColumn">
-
+          <div class="miniChart">
+           <svg preserveaspectratio="none" viewbox="0 0 160 44">
+            <path d="M0 33h160" stroke="rgba(255,255,255,.06)">
+            </path>
+            <path d="M8 30 C24 24, 34 24, 48 18 S76 12, 92 14 S120 28, 138 19 S148 11,154 10" fill="none" stroke="#00E5FF" stroke-linecap="round" stroke-width="2.3">
+            </path>
+           </svg>
+          </div>
+          <div class="screenList">
+           <div class="listRow">
+            <div class="left">
+             <b>
+              Daily Liquidity
+             </b>
+             <small>
+              Verified session
+             </small>
+            </div>
+            <div class="right">
+             $18.6B
+             <em>
+              US cash
+             </em>
+            </div>
+           </div>
+           <div class="listRow">
+            <div class="left">
+             <b>
+              Market Signal
+             </b>
+             <small>
+              Top gain / top decline
+             </small>
+            </div>
+            <div class="right">
+             AI Analyze
+             <em>
+              Next scan 2h
+             </em>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="screenMock">
+          <div class="modeBar">
+           <span class="active">
+            Rival View
+           </span>
+           <span>
+            Wealth Simulator
+           </span>
+          </div>
+          <div class="screenTop">
+           <strong>
+            Compare
+           </strong>
+           <span class="screenChip">
+            Global Rivalry
+           </span>
+          </div>
+          <div class="duel">
+           <div class="duelCard">
             <strong>
-              Legal
+             NVDA
             </strong>
-
-            <a href="../privacy/">
-              Privacy
-            </a>
-
-            <a href="../terms/">
-              Terms
-            </a>
-
-            <a href="../delete-account/">
-              Delete Account
-            </a>
-
+            <span>
+             NVIDIA Corp.
+            </span>
+            <span>
+             $— • ▲ %—
+            </span>
+           </div>
+           <div class="vsBadge">
+            VS
+           </div>
+           <div class="duelCard">
+            <strong>
+             MSFT
+            </strong>
+            <span>
+             Microsoft Corp.
+            </span>
+            <span>
+             $— • ▲ %—
+            </span>
+           </div>
           </div>
-
+          <div class="listRow" style="margin-top:10px">
+           <div class="left">
+            <b>
+             AI Battle Report
+            </b>
+            <small>
+             Compare-specific insight
+            </small>
+           </div>
+           <div class="right">
+            Price Momentum
+            <em>
+             Dual Pro charts
+            </em>
+           </div>
+          </div>
+         </div>
         </div>
-
+        <div class="column">
+         <div class="screenMock">
+          <div class="screenTop">
+           <strong>
+            Finrival AI
+           </strong>
+           <span class="screenChip">
+            FREE AI • 5 DAILY REQUESTS
+           </span>
+          </div>
+          <div class="aiBubble">
+           <strong>
+            Context-first:
+           </strong>
+           the assistant keeps the current market or compare context attached before you ask the next question.
+          </div>
+          <div class="aiBubble secondary" style="margin-top:10px">
+           Explain why the top gainer is leading today and what market structure supports the move.
+          </div>
+          <div class="aiComposer">
+           <span>
+            Ask Finrival AI...
+           </span>
+           <span class="aiSend">
+            ↑
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
       </div>
-
-
-      <div class="footerBottom">
-
-        <span>
-          © 2026 Finrival. All rights reserved.
-        </span>
-
-        <span>
-          Informational, educational and simulation-focused.
-        </span>
-
-      </div>
-
+     </div>
     </div>
-
+   </section>
+   <section class="section sectionBorder" id="surfaces">
+    <div class="siteContainer">
+     <div class="sectionHead">
+      <div class="sectionKicker">
+       Inside the app
+      </div>
+      <h2>
+       What the product actually contains.
+      </h2>
+      <p class="sectionCopy">
+       The cards below describe the real Finrival surfaces and echo how they appear in the recovered website phone replica.
+      </p>
+     </div>
+     <div class="cardGrid">
+      <article class="featureCard">
+       <div class="cardTag">
+        01 · Market
+       </div>
+       <h3>
+        Discovery starts on the home tab.
+       </h3>
+       <p>
+        MarketScreen is the first layer. It carries the shared app shell and opens with spotlight cards, liquidity context, anomaly context, sessions and the all-assets list.
+       </p>
+       <div class="cardBullets">
+        <span>
+         <i>
+         </i>
+         Top Gainer / Top Dip spotlight cards
+        </span>
+        <span>
+         <i>
+         </i>
+         Daily Liquidity + market freshness context
+        </span>
+        <span>
+         <i>
+         </i>
+         Search and all-assets browsing
+        </span>
+       </div>
+       <div class="screenMock">
+        <div class="screenTop">
+         <strong>
+          Market
+         </strong>
+         <span class="screenChip">
+          Top
+         </span>
+        </div>
+        <div class="marketPair">
+         <div class="spotCard">
+          <small>
+           Top Gainer
+          </small>
+          <strong>
+           NVDA
+          </strong>
+          <span>
+           +3.8%
+          </span>
+         </div>
+         <div class="spotCard">
+          <small>
+           Top Dip
+          </small>
+          <strong>
+           TSLA
+          </strong>
+          <span style="color:#ff8b82">
+           −2.1%
+          </span>
+         </div>
+        </div>
+        <div class="miniChart">
+         <svg preserveaspectratio="none" viewbox="0 0 160 44">
+          <path d="M0 33h160" stroke="rgba(255,255,255,.06)">
+          </path>
+          <path d="M8 30 C24 24, 34 24, 48 18 S76 12, 92 14 S120 28, 138 19 S148 11,154 10" fill="none" stroke="#00E5FF" stroke-linecap="round" stroke-width="2.3">
+          </path>
+         </svg>
+        </div>
+        <div class="screenList">
+         <div class="listRow">
+          <div class="left">
+           <b>
+            Daily Liquidity
+           </b>
+           <small>
+            Verified session
+           </small>
+          </div>
+          <div class="right">
+           $18.6B
+           <em>
+            US cash
+           </em>
+          </div>
+         </div>
+         <div class="listRow">
+          <div class="left">
+           <b>
+            Market Signal
+           </b>
+           <small>
+            Top gain / top decline
+           </small>
+          </div>
+          <div class="right">
+           AI Analyze
+           <em>
+            Next scan 2h
+           </em>
+          </div>
+         </div>
+        </div>
+       </div>
+      </article>
+      <article class="featureCard">
+       <div class="cardTag">
+        02 · News
+       </div>
+       <h3>
+        News stays compact and time-aware.
+       </h3>
+       <p>
+        News uses a timeline-like card layout with source and time context, then provides a path into AI follow-up without pretending to be a live terminal.
+       </p>
+       <div class="cardBullets">
+        <span>
+         <i>
+         </i>
+         Top / Stocks / Crypto category strip
+        </span>
+        <span>
+         <i>
+         </i>
+         Source and time context on each story
+        </span>
+        <span>
+         <i>
+         </i>
+         AI follow-up path
+        </span>
+       </div>
+       <div class="screenMock">
+        <div class="screenTop">
+         <strong>
+          News
+         </strong>
+         <span class="screenChip">
+          Top • Stocks • Crypto
+         </span>
+        </div>
+        <div class="timeline">
+         <article class="story">
+          <div class="head">
+           <span>
+            US EQUITIES
+           </span>
+           <span>
+            12 min
+           </span>
+          </div>
+          <h4>
+           Semiconductor leaders advance as AI demand remains firm.
+          </h4>
+          <div class="foot">
+           <span>
+            Positive
+           </span>
+           <span>
+            AI Insight
+           </span>
+          </div>
+         </article>
+         <article class="story">
+          <div class="head">
+           <span>
+            GLOBAL MACRO
+           </span>
+           <span>
+            31 min
+           </span>
+          </div>
+          <h4>
+           Cross-asset volatility stays contained while policy signals are digested.
+          </h4>
+          <div class="foot">
+           <span>
+            Neutral
+           </span>
+           <span>
+            Source + Time
+           </span>
+          </div>
+         </article>
+        </div>
+       </div>
+      </article>
+      <article class="featureCard">
+       <div class="cardTag">
+        03 · Compare
+       </div>
+       <h3>
+        Compare keeps two assets in the same frame.
+       </h3>
+       <p>
+        The Compare tab is emphasized in the navigation and opens Rival View plus Wealth Simulator, with defaults grounded in the recovered compare structure.
+       </p>
+       <div class="cardBullets">
+        <span>
+         <i>
+         </i>
+         Rival View + Wealth Simulator modes
+        </span>
+        <span>
+         <i>
+         </i>
+         Global Rivalry default: NVDA vs MSFT
+        </span>
+        <span>
+         <i>
+         </i>
+         AI Battle Report and dual Pro charts
+        </span>
+       </div>
+       <div class="screenMock">
+        <div class="modeBar">
+         <span class="active">
+          Rival View
+         </span>
+         <span>
+          Wealth Simulator
+         </span>
+        </div>
+        <div class="screenTop">
+         <strong>
+          Compare
+         </strong>
+         <span class="screenChip">
+          Global Rivalry
+         </span>
+        </div>
+        <div class="duel">
+         <div class="duelCard">
+          <strong>
+           NVDA
+          </strong>
+          <span>
+           NVIDIA Corp.
+          </span>
+          <span>
+           $— • ▲ %—
+          </span>
+         </div>
+         <div class="vsBadge">
+          VS
+         </div>
+         <div class="duelCard">
+          <strong>
+           MSFT
+          </strong>
+          <span>
+           Microsoft Corp.
+          </span>
+          <span>
+           $— • ▲ %—
+          </span>
+         </div>
+        </div>
+        <div class="listRow" style="margin-top:10px">
+         <div class="left">
+          <b>
+           AI Battle Report
+          </b>
+          <small>
+           Compare-specific insight
+          </small>
+         </div>
+         <div class="right">
+          Price Momentum
+          <em>
+           Dual Pro charts
+          </em>
+         </div>
+        </div>
+       </div>
+      </article>
+      <article class="featureCard gold">
+       <div class="cardTag">
+        04 · Rival
+       </div>
+       <h3>
+        Simulation is intentionally separate.
+       </h3>
+       <p>
+        Rival uses gold treatment and fictional credits so it never reads like a real brokerage flow. It is a simulation surface, not a live-money trading venue.
+       </p>
+       <div class="cardBullets gold">
+        <span>
+         <i>
+         </i>
+         V-Trade Simulator presentation
+        </span>
+        <span>
+         <i>
+         </i>
+         Fictional Rival Credits only
+        </span>
+        <span>
+         <i>
+         </i>
+         Practice positions and activity
+        </span>
+       </div>
+       <div class="screenMock">
+        <div class="modeBar">
+         <span class="goldActive">
+          V-Trade Simulator
+         </span>
+        </div>
+        <div class="screenTop">
+         <strong>
+          Rival
+         </strong>
+         <span class="screenChip">
+          Simulation
+         </span>
+        </div>
+        <div class="screenList">
+         <div class="listRow">
+          <div class="left">
+           <b>
+            Rival Credits
+           </b>
+           <small>
+            Fictional capital only
+           </small>
+          </div>
+          <div class="right">
+           125,000 RC
+           <em>
+            No real broker link
+           </em>
+          </div>
+         </div>
+         <div class="listRow">
+          <div class="left">
+           <b>
+            Open Positions
+           </b>
+           <small>
+            Practice portfolio
+           </small>
+          </div>
+          <div class="right">
+           3 trades
+           <em>
+            Tracked in-app
+           </em>
+          </div>
+         </div>
+        </div>
+       </div>
+      </article>
+      <article class="featureCard">
+       <div class="cardTag">
+        05 · Watchlist
+       </div>
+       <h3>
+        Monitoring stays in a dedicated tab.
+       </h3>
+       <p>
+        Saved assets, alert entry points and user-specific price alerts live here. Alerts are reference-price helpers built around shared caches, not execution tools.
+       </p>
+       <div class="cardBullets">
+        <span>
+         <i>
+         </i>
+         Saved assets list
+        </span>
+        <span>
+         <i>
+         </i>
+         One-time reference-price alerts
+        </span>
+        <span>
+         <i>
+         </i>
+         Native push path on iOS / Android
+        </span>
+       </div>
+       <div class="screenMock">
+        <div class="screenTop">
+         <strong>
+          Watchlist
+         </strong>
+         <span class="screenChip">
+          Saved assets
+         </span>
+        </div>
+        <div class="screenList">
+         <div class="listRow">
+          <div class="left">
+           <b>
+            AAPL
+           </b>
+           <small>
+            Alert enabled
+           </small>
+          </div>
+          <div class="right">
+           $—
+           <em>
+            Bell set
+           </em>
+          </div>
+         </div>
+         <div class="listRow">
+          <div class="left">
+           <b>
+            BTC
+           </b>
+           <small>
+            Price reference
+           </small>
+          </div>
+          <div class="right">
+           $—
+           <em>
+            One-time alert
+           </em>
+          </div>
+         </div>
+         <div class="listRow">
+          <div class="left">
+           <b>
+            User-specific Price Alerts
+           </b>
+           <small>
+            Shared cache prices
+           </small>
+          </div>
+          <div class="right">
+           Web + native path
+           <em>
+            Not broker execution
+           </em>
+          </div>
+         </div>
+        </div>
+       </div>
+      </article>
+      <article class="featureCard">
+       <div class="cardTag">
+        06 · Finrival AI
+       </div>
+       <h3>
+        AI sits above the tabs as a global layer.
+       </h3>
+       <p>
+        The assistant is not another fake tab. It opens above the main navigation and carries the current screen context forward into the next question.
+       </p>
+       <div class="cardBullets">
+        <span>
+         <i>
+         </i>
+         Asset insight + general chat paths
+        </span>
+        <span>
+         <i>
+         </i>
+         Context attached from screens
+        </span>
+        <span>
+         <i>
+         </i>
+         Quota-aware free usage and PRO expansion
+        </span>
+       </div>
+       <div class="screenMock">
+        <div class="screenTop">
+         <strong>
+          Finrival AI
+         </strong>
+         <span class="screenChip">
+          FREE AI • 5 DAILY REQUESTS
+         </span>
+        </div>
+        <div class="aiBubble">
+         <strong>
+          Context-first:
+         </strong>
+         the assistant keeps the current market or compare context attached before you ask the next question.
+        </div>
+        <div class="aiBubble secondary" style="margin-top:10px">
+         Explain why the top gainer is leading today and what market structure supports the move.
+        </div>
+        <div class="aiComposer">
+         <span>
+          Ask Finrival AI...
+         </span>
+         <span class="aiSend">
+          ↑
+         </span>
+        </div>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section sectionBorder">
+    <div class="siteContainer">
+     <div class="sectionHead">
+      <div class="sectionKicker">
+       Connected workflow
+      </div>
+      <h2>
+       Discover. Compare. Understand. Monitor.
+      </h2>
+      <p class="sectionCopy">
+       This is the shortest honest description of the product: find what matters, inspect it in context, continue the question and keep the important assets close.
+      </p>
+     </div>
+     <div class="stepsGrid">
+      <article class="stepCard">
+       <strong>
+        01 · Discover
+       </strong>
+       <h3>
+        Market and News
+       </h3>
+       <p>
+        Start with market movement, liquidity, sessions or a story that needs follow-up.
+       </p>
+      </article>
+      <article class="stepCard">
+       <strong>
+        02 · Compare
+       </strong>
+       <h3>
+        Compare or Rival
+       </h3>
+       <p>
+        Move from a broad idea into side-by-side structure, simulation or relative context.
+       </p>
+      </article>
+      <article class="stepCard">
+       <strong>
+        03 · Understand
+       </strong>
+       <h3>
+        Finrival AI
+       </h3>
+       <p>
+        Keep the context attached when you ask for a short explanation or follow-up insight.
+       </p>
+      </article>
+      <article class="stepCard">
+       <strong>
+        04 · Monitor
+       </strong>
+       <h3>
+        Watchlist
+       </h3>
+       <p>
+        Save the assets that still matter and set reference-price alerts where useful.
+       </p>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section sectionBorder" id="download">
+    <div class="siteContainer">
+     <div class="cta">
+      <div>
+       <h3>
+        Finrival is being prepared for mobile release.
+       </h3>
+       <p>
+        App Store and Google Play availability stay clearly marked as coming soon while the product and the core app continue to be completed.
+       </p>
+      </div>
+      <div class="heroActions">
+       <a class="button buttonPrimary" href="../support/">
+        Contact Support
+       </a>
+       <a class="button buttonSecondary" href="../features/">
+        See Features
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="footer">
+   <div class="siteContainer">
+    <div class="footerTop">
+     <div class="footerCopy">
+      <img alt="Finrival" onerror="this.style.display='none';" src="../logo.png"/>
+      <p>
+       Finrival brings market discovery, financial news, comparison, watchlists, simulation and AI-assisted context into one focused mobile workspace.
+      </p>
+     </div>
+     <div class="footerLinks">
+      <a href="../">
+       Home
+      </a>
+      <a href="../product/">
+       Product
+      </a>
+      <a href="../features/">
+       Features
+      </a>
+      <a href="../ai/">
+       AI
+      </a>
+      <a href="../pro/">
+       PRO
+      </a>
+      <a href="../company/">
+       Company
+      </a>
+      <a href="../privacy/">
+       Privacy
+      </a>
+      <a href="../terms/">
+       Terms
+      </a>
+      <a href="../delete-account/">
+       Delete Account
+      </a>
+      <a href="../support/">
+       Support
+      </a>
+     </div>
+    </div>
+    <div class="footerBottom">
+     <span>
+      © 2026 Finrival. All rights reserved.
+     </span>
+     <span>
+      Informational, educational and simulation-focused. Logos by Quikturn.
+     </span>
+    </div>
+   </div>
   </footer>
-
-
-
   <script>
-    (() => {
-      const slides = Array.from(
-        document.querySelectorAll('[data-product-slide]')
-      );
-
-      const prevButton = document.getElementById('productPrev');
-      const nextButton = document.getElementById('productNext');
-      const dotsWrap = document.getElementById('productDots');
-      const counter = document.getElementById('productCounter');
-      const device = document.getElementById('productDevice');
-
-      const eyebrow = document.getElementById('productSlideEyebrow');
-      const title = document.getElementById('productSlideTitle');
-      const copy = document.getElementById('productSlideCopy');
-
-      if (
-        !slides.length ||
-        !prevButton ||
-        !nextButton ||
-        !dotsWrap ||
-        !counter ||
-        !device
-      ) {
-        return;
-      }
-
-      const slideContent = [
-        {
-          eyebrow: 'MARKET',
-          title: 'Discover what deserves attention.',
-          copy: 'Scan supported assets, movers, sessions and market context before going deeper.'
-        },
-        {
-          eyebrow: 'COMPARE',
-          title: 'Put context side by side.',
-          copy: 'Compare supported assets across historical performance, momentum and analytical context.'
-        },
-        {
-          eyebrow: 'FINRIVAL AI',
-          title: 'Continue the research.',
-          copy: 'Carry supported asset context into structured AI-assisted research without leaving the workspace.'
-        },
-        {
-          eyebrow: 'NEWS',
-          title: 'Follow the story, not the noise.',
-          copy: 'Move from market headlines into relevant context and continue research from the same workflow.'
-        },
-        {
-          eyebrow: 'RIVAL',
-          title: 'Practice without real money.',
-          copy: 'Explore simulated portfolio activity with fictional Rival Credits that have no real-world monetary value.'
-        },
-        {
-          eyebrow: 'WATCHLIST',
-          title: 'Keep important assets close.',
-          copy: 'Save supported assets and create convenient reference-price alerts from one organized view.'
-        }
-      ];
-
-      const navItems = Array.from(
-        document.querySelectorAll('[data-product-nav]')
-      );
-
-      let activeIndex = 0;
-      let autoTimer = null;
-      let pointerStartX = null;
-      let pointerStartY = null;
-
-      const prefersReducedMotion =
-        window.matchMedia &&
-        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      slideContent.forEach((item, index) => {
-        const dot = document.createElement('button');
-        dot.className = 'productDot' + (index === 0 ? ' active' : '');
-        dot.type = 'button';
-        dot.setAttribute('aria-label', `Show ${item.eyebrow} screen`);
-        dot.addEventListener('click', () => {
-          showSlide(index, true);
-        });
-        dotsWrap.appendChild(dot);
-      });
-
-      const dots = Array.from(
-        dotsWrap.querySelectorAll('.productDot')
-      );
-
-      function setNavState(index) {
-        navItems.forEach((item) => {
-          const targetIndex = Number(item.dataset.productNav);
-          item.classList.toggle('active', targetIndex === index);
-        });
-      }
-
-      function showSlide(index, restartAuto = false) {
-        const nextIndex =
-          (index + slides.length) % slides.length;
-
-        activeIndex = nextIndex;
-
-        slides.forEach((slide, slideIndex) => {
-          slide.classList.toggle(
-            'active',
-            slideIndex === activeIndex
-          );
-        });
-
-        dots.forEach((dot, dotIndex) => {
-          dot.classList.toggle(
-            'active',
-            dotIndex === activeIndex
-          );
-          dot.setAttribute(
-            'aria-current',
-            dotIndex === activeIndex ? 'true' : 'false'
-          );
-        });
-
-        const content = slideContent[activeIndex];
-
-        if (content) {
-          eyebrow.textContent = content.eyebrow;
-          title.textContent = content.title;
-          copy.textContent = content.copy;
-        }
-
-        counter.textContent =
-          `${String(activeIndex + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
-
-        setNavState(activeIndex);
-
-        if (restartAuto) {
-          startAuto();
-        }
-      }
-
-      function nextSlide(restartAuto = false) {
-        showSlide(activeIndex + 1, restartAuto);
-      }
-
-      function prevSlide(restartAuto = false) {
-        showSlide(activeIndex - 1, restartAuto);
-      }
-
-      function stopAuto() {
-        if (autoTimer) {
-          window.clearInterval(autoTimer);
-          autoTimer = null;
-        }
-      }
-
-      function startAuto() {
-        stopAuto();
-
-        if (prefersReducedMotion) {
-          return;
-        }
-
-        autoTimer = window.setInterval(() => {
-          nextSlide(false);
-        }, 5600);
-      }
-
-      prevButton.addEventListener('click', () => {
-        prevSlide(true);
-      });
-
-      nextButton.addEventListener('click', () => {
-        nextSlide(true);
-      });
-
-      device.addEventListener('pointerdown', (event) => {
-        pointerStartX = event.clientX;
-        pointerStartY = event.clientY;
-      });
-
-      device.addEventListener('pointerup', (event) => {
-        if (
-          pointerStartX === null ||
-          pointerStartY === null
-        ) {
-          return;
-        }
-
-        const deltaX = event.clientX - pointerStartX;
-        const deltaY = event.clientY - pointerStartY;
-
-        pointerStartX = null;
-        pointerStartY = null;
-
-        if (
-          Math.abs(deltaX) < 42 ||
-          Math.abs(deltaX) <= Math.abs(deltaY)
-        ) {
-          return;
-        }
-
-        if (deltaX < 0) {
-          nextSlide(true);
-        } else {
-          prevSlide(true);
-        }
-      });
-
-      device.addEventListener('pointercancel', () => {
-        pointerStartX = null;
-        pointerStartY = null;
-      });
-
-      device.addEventListener('mouseenter', stopAuto);
-      device.addEventListener('mouseleave', startAuto);
-      device.addEventListener('focusin', stopAuto);
-      device.addEventListener('focusout', startAuto);
-
-      document.addEventListener('keydown', (event) => {
-        const tag = document.activeElement?.tagName?.toLowerCase();
-
-        if (
-          tag === 'input' ||
-          tag === 'textarea' ||
-          tag === 'select'
-        ) {
-          return;
-        }
-
-        if (event.key === 'ArrowRight') {
-          nextSlide(true);
-        }
-
-        if (event.key === 'ArrowLeft') {
-          prevSlide(true);
-        }
-      });
-
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-          stopAuto();
-        } else {
-          startAuto();
-        }
-      });
-
-      showSlide(0, false);
-      startAuto();
-    })();
+   const mobileMenuButton=document.getElementById('mobileMenuButton');const mobileMenu=document.getElementById('mobileMenu');if(mobileMenuButton && mobileMenu){mobileMenuButton.addEventListener('click',()=>{const open=mobileMenu.classList.toggle('open');mobileMenuButton.setAttribute('aria-expanded',open?'true':'false');});}
   </script>
-
-
-  <script src="../assets/js/finrival.js"></script>
-
-</body>
+ </body>
 </html>

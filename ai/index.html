@@ -1,24 +1,27 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#05070a">
-<meta name="color-scheme" content="dark">
-<title>Finrival AI — Context-Aware Market Research</title>
-<meta name="description" content="Learn how Finrival AI continues supported asset, comparison and financial-news research with context attached.">
-<link rel="canonical" href="https://finrival.com/ai/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Finrival AI — Context-Aware Market Research">
-<meta property="og:description" content="Context-aware AI assistance inside the Finrival market research workflow.">
-<meta property="og:url" content="https://finrival.com/ai/">
-<meta property="og:site_name" content="Finrival">
-<style>
-:root{
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="#05070a" name="theme-color"/>
+  <meta content="dark" name="color-scheme"/>
+  <title>
+   Finrival AI — Context-Aware Research Assistance
+  </title>
+  <meta content="Learn how Finrival AI continues market, news and compare research with context attached." name="description"/>
+  <link href="https://finrival.com/ai/" rel="canonical"/>
+  <meta content="website" property="og:type"/>
+  <meta content="Finrival AI — Context-Aware Research Assistance" property="og:title"/>
+  <meta content="Context-aware AI support shown through real Finrival product routes." property="og:description"/>
+  <meta content="https://finrival.com/ai/" property="og:url"/>
+  <meta content="Finrival" property="og:site_name"/>
+  <style>
+   :root{
   --bg:#05070a;
   --bg2:#080b10;
   --card:#0f141b;
   --card2:#131a23;
+  --card3:#0b1016;
   --text:#f7f9fc;
   --muted:#96a0ae;
   --muted2:#687382;
@@ -51,443 +54,799 @@ body{
 }
 a{color:inherit;text-decoration:none}
 button{font:inherit}
+img,svg{max-width:100%}
 .siteContainer{width:min(var(--max),calc(100% - 40px));margin:auto}
 .siteHeader{
   position:sticky;top:0;z-index:100;
-  background:rgba(5,7,10,.76);
+  background:rgba(5,7,10,.78);
   border-bottom:1px solid var(--line2);
   backdrop-filter:blur(20px);
 }
-.siteNav{
-  height:72px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-}
+.siteNav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:inline-flex;align-items:center;min-width:120px}
 .brand img{width:128px;display:block}
 .brandText{display:none;font-size:21px;font-weight:950;letter-spacing:-.8px}
 .brandText b{color:var(--cyan)}
-.desktopNav{display:flex;align-items:center;gap:24px;color:var(--muted);font-size:12px;font-weight:780}
-.desktopNav a{transition:color .16s ease}
+.desktopNav{display:flex;align-items:center;gap:18px;color:var(--muted);font-size:12px;font-weight:800}
+.desktopNav a{position:relative;transition:color .16s ease}
 .desktopNav a:hover,.desktopNav a.active{color:#fff}
-.navCta{
-  min-height:40px;
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:0 14px;
-  border:1px solid var(--cyanBorder);
-  border-radius:12px;
-  background:var(--cyanSoft);
-  color:var(--cyan);
-  font-size:11px;font-weight:900;
-  white-space:nowrap;
-}
-.pageHero{
-  position:relative;
-  overflow:hidden;
-  padding:92px 0 88px;
-}
-.pageHero:before{
-  content:"";
-  position:absolute;
-  top:-250px;left:50%;
-  width:980px;height:690px;
-  transform:translateX(-50%);
-  background:radial-gradient(ellipse,rgba(0,229,255,.095),transparent 66%);
-  pointer-events:none;
-}
-.heroGrid{
-  position:relative;z-index:1;
-  display:grid;
-  grid-template-columns:minmax(0,.94fr) minmax(420px,1.06fr);
-  gap:70px;
-  align-items:center;
-}
-.eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  margin-bottom:18px;
-  color:#bac3cf;
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:1.15px;
-  text-transform:uppercase;
-}
-.eyebrow:before{
-  content:"";
-  width:7px;height:7px;border-radius:50%;
-  background:var(--cyan);
-  box-shadow:0 0 15px rgba(0,229,255,.55);
-}
-.eyebrow.gold:before{background:var(--gold);box-shadow:0 0 15px rgba(244,185,66,.42)}
-h1{
-  font-size:clamp(48px,6vw,78px);
-  line-height:1;
-  letter-spacing:-3.4px;
-  font-weight:950;
-}
-.textGradient{
-  background:linear-gradient(105deg,#fff 0%,#eafcff 36%,#6aefff 75%,var(--cyan));
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-}
-.goldGradient{
-  background:linear-gradient(105deg,#fff 0%,#fff0c7 44%,#f8cb70 76%,var(--gold));
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-}
-.heroLead{
-  max-width:650px;
-  margin-top:23px;
-  color:#a5afbc;
-  font-size:17px;
-  line-height:1.76;
-}
-.heroActions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.button{
-  min-height:50px;
-  display:inline-flex;align-items:center;justify-content:center;
-  gap:8px;
-  padding:0 20px;
-  border:1px solid transparent;
-  border-radius:14px;
-  font-size:12px;font-weight:900;
-}
+.desktopNav a.active::after{content:"";position:absolute;left:50%;bottom:-12px;width:4px;height:4px;transform:translateX(-50%);border-radius:50%;background:var(--cyan);box-shadow:0 0 10px rgba(0,229,255,.5)}
+.navStores{display:flex;align-items:center;gap:8px}
+.navStore{min-height:38px;display:inline-flex;align-items:center;gap:8px;padding:0 13px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02);font-size:11px;font-weight:850;color:#d6e0eb;white-space:nowrap}
+.navStore b{color:var(--cyan)}
+.mobileMenuButton{display:none;width:40px;height:40px;place-items:center;border:1px solid var(--line);border-radius:12px;background:var(--card);color:#fff;cursor:pointer}
+.mobileMenu{display:none;border-top:1px solid var(--line2);background:rgba(5,7,10,.98)}
+.mobileMenu.open{display:block}
+.mobileMenuInner{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:12px 0 16px}
+.mobileMenu a{padding:11px 12px;border:1px solid var(--line);border-radius:11px;background:#0c1117;color:#aeb7c4;font-size:11px;font-weight:800}
+.mobileMenu a.active{border-color:var(--cyanBorder);color:var(--cyan);background:var(--cyanSoft)}
+.hero{padding:82px 0 48px}
+.heroGrid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(360px,.98fr);gap:34px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid var(--cyanBorder);border-radius:999px;background:var(--cyanSoft);color:#9ce7ff;font-size:11px;font-weight:900;letter-spacing:.35px;text-transform:uppercase}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px rgba(0,229,255,.45)}
+h1{margin-top:18px;font-size:clamp(38px,5.6vw,62px);line-height:.98;letter-spacing:-2.2px;font-weight:980}
+.gradientText{background:linear-gradient(90deg,#fff,#bff5ff 42%,#7ddaff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent}
+.heroLead{max-width:630px;margin-top:18px;color:var(--muted);font-size:16px;line-height:1.82}
+.heroActions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.button{min-height:50px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 20px;border:1px solid transparent;border-radius:14px;font-size:12px;font-weight:900}
 .buttonPrimary{background:var(--cyan);color:#071013}
-.buttonGold{background:var(--gold);color:#171006}
-.buttonSecondary{background:var(--card);border-color:var(--line);color:#fff}
-.heroMeta{display:flex;flex-wrap:wrap;gap:14px 22px;margin-top:20px;color:var(--muted2);font-size:10px;font-weight:750}
-.statusDot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:6px;background:var(--green)}
-.contentSection{padding:92px 0;border-top:1px solid var(--line2)}
-.sectionMuted{background:linear-gradient(180deg,rgba(255,255,255,.012),rgba(255,255,255,.022))}
-.sectionHeading{max-width:780px;margin-bottom:38px}
-.sectionEyebrow{color:var(--cyan);font-size:10px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:11px}
-.sectionEyebrow.gold{color:var(--gold)}
-h2{font-size:clamp(34px,4.7vw,54px);line-height:1.06;letter-spacing:-2px;font-weight:930}
-h3{font-size:20px;line-height:1.2;letter-spacing:-.45px}
-.sectionHeading p{max-width:690px;margin-top:14px;color:#9ca6b4;font-size:15px;line-height:1.75}
-.card{
-  position:relative;
-  overflow:hidden;
-  padding:25px;
-  border:1px solid var(--line);
-  border-radius:22px;
-  background:linear-gradient(180deg,rgba(18,24,32,.94),rgba(9,13,18,.96));
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
-}
-.card.cyan{border-color:var(--cyanBorder);background:linear-gradient(180deg,rgba(0,229,255,.055),rgba(9,13,18,.96))}
-.card.gold{border-color:var(--goldBorder);background:linear-gradient(180deg,rgba(244,185,66,.055),rgba(9,13,18,.96))}
-.card p{margin-top:9px;color:#97a1af;font-size:13px;line-height:1.7}
-.icon{
-  width:46px;height:46px;
-  display:grid;place-items:center;
-  margin-bottom:22px;
-  border:1px solid var(--cyanBorder);
-  border-radius:14px;
-  background:var(--cyanSoft);
-  color:var(--cyan);
-  font-size:17px;font-weight:950;
-}
-.icon.gold{border-color:var(--goldBorder);background:var(--goldSoft);color:var(--gold)}
-.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.visualPanel{
-  min-height:520px;
-  padding:18px;
-  border:1px solid var(--cyanBorder);
-  border-radius:30px;
-  background:
-    radial-gradient(circle at 80% 0%,rgba(0,229,255,.075),transparent 32%),
-    linear-gradient(180deg,#0d1218,#070a0e);
-  box-shadow:0 34px 90px rgba(0,0,0,.5);
-}
-.visualInner{
-  min-height:482px;
-  padding:20px;
-  border:1px solid var(--line);
-  border-radius:23px;
-  background:#080b0f;
-}
-.visualHead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
-.visualTitle{font-size:12px;font-weight:900}
-.badge{
-  padding:6px 9px;
-  border:1px solid var(--cyanBorder);
-  border-radius:999px;
-  background:var(--cyanSoft);
-  color:var(--cyan);
-  font-size:8px;font-weight:900;
-}
-.badge.gold{border-color:var(--goldBorder);background:var(--goldSoft);color:var(--gold)}
-.miniCard{
-  padding:14px;
-  border:1px solid var(--line);
-  border-radius:15px;
-  background:#10151c;
-}
-.miniCard + .miniCard{margin-top:10px}
-.miniCard strong{display:block;font-size:12px}
-.miniCard span{display:block;margin-top:4px;color:#7e8998;font-size:9px;line-height:1.55}
-.softLine{height:7px;border-radius:999px;background:#1e2630;overflow:hidden;margin-top:11px}
-.softLine i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--cyan),#5e93ff)}
-.softLine.gold i{background:linear-gradient(90deg,var(--gold),#f07843)}
-.trustList{display:grid;gap:10px}
-.trustRow{
-  display:flex;gap:11px;align-items:flex-start;
-  padding:14px;
-  border:1px solid var(--line);
-  border-radius:14px;
-  background:rgba(255,255,255,.018);
-}
-.trustMark{
-  width:24px;height:24px;display:grid;place-items:center;flex:0 0 auto;
-  border:1px solid rgba(52,199,89,.2);border-radius:50%;
-  background:rgba(52,199,89,.07);color:var(--green);
-  font-size:9px;font-weight:950;
-}
-.trustRow strong{display:block;font-size:11px}
-.trustRow span{display:block;margin-top:3px;color:#8e98a7;font-size:10px;line-height:1.55}
-.notice{
-  margin-top:22px;
-  padding:18px 20px;
-  border:1px solid var(--line);
-  border-radius:17px;
-  background:rgba(255,255,255,.018);
-  color:#8f99a8;
-  font-size:11px;
-  line-height:1.7;
-}
-.notice strong{color:#fff}
-.siteFooter{padding:42px 0 34px;border-top:1px solid var(--line2)}
-.footerMain{display:flex;justify-content:space-between;gap:40px}
-.footerBrand{max-width:450px}
-.footerBrand img{width:125px}
-.footerBrand p{margin-top:12px;color:#858f9e;font-size:11px;line-height:1.7}
-.footerColumns{display:flex;gap:54px}
-.footerColumn{display:grid;align-content:start;gap:8px;min-width:100px}
-.footerColumn strong{font-size:10px}
-.footerColumn a{color:#7f8998;font-size:10px}
-.footerColumn a:hover{color:#fff}
-.footerBottom{
-  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
-  margin-top:30px;padding-top:18px;
-  border-top:1px solid var(--line2);
-  color:#5f6978;font-size:9px;
-}
-@media(max-width:980px){
-  .heroGrid{grid-template-columns:1fr;gap:46px}
-  .grid4,.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .footerMain{flex-direction:column}
-}
-@media(max-width:760px){
-  html,body{max-width:100%;overflow-x:hidden}
-  .siteContainer{width:min(var(--max),calc(100% - 28px))}
-  .siteNav{height:64px;gap:12px}
-  .desktopNav{display:none}
-  .brand{min-width:0}
-  .brand img{width:112px}
-  .navCta{min-height:38px;padding:0 11px;font-size:10px}
-  .pageHero{padding:68px 0 68px}
-  h1{font-size:clamp(42px,13vw,58px);letter-spacing:-2.5px}
-  h2{font-size:clamp(31px,9.5vw,42px);letter-spacing:-1.45px}
-  .heroLead{font-size:15px}
-  .contentSection{padding:72px 0}
-  .grid4,.grid3,.grid2{grid-template-columns:1fr}
-  .visualPanel{min-height:auto;padding:12px;border-radius:22px}
-  .visualInner{min-height:auto;padding:14px;border-radius:17px}
-  .footerColumns{display:grid;grid-template-columns:1fr 1fr;gap:28px 34px}
-  .heroActions{width:100%}
-  .heroActions .button{flex:1 1 180px}
-}
-@media(max-width:430px){
-  .siteContainer{width:min(var(--max),calc(100% - 24px))}
-  .pageHero{padding:58px 0 58px}
-  .contentSection{padding:62px 0}
-  .card{padding:20px;border-radius:18px}
-  .footerColumns{grid-template-columns:1fr 1fr}
-  .footerBottom{font-size:8.5px}
-}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*:before,*:after{animation:none!important;transition:none!important}
-}
-</style>
-
-<style>
-.aiHeroVisual{border-color:var(--cyanBorder)}
-.aiChat{display:grid;gap:10px;margin-top:10px}
-.aiBubble{
-  max-width:88%;
-  padding:12px 13px;
-  border:1px solid var(--line);
-  border-radius:14px;
-  background:#10151c;
-  color:#c8d0da;
-  font-size:10px;
-  line-height:1.55;
-}
-.aiBubble.user{margin-left:auto;border-color:var(--cyanBorder);background:rgba(0,229,255,.05)}
-.aiBubble strong{display:block;margin-bottom:4px;color:var(--cyan);font-size:8px;letter-spacing:.5px;text-transform:uppercase}
-.aiComposer{
-  display:flex;align-items:center;gap:8px;
-  margin-top:12px;padding:9px 10px;
-  border:1px solid var(--line);border-radius:13px;background:#0d1218;
-}
-.aiComposer span{flex:1;color:#667282;font-size:9px}
-.aiSend{width:30px;height:30px;display:grid;place-items:center;border-radius:9px;background:var(--cyan);color:#041014;font-weight:950}
-.contextFlow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.contextStep{position:relative;padding:20px;border:1px solid var(--line);border-radius:18px;background:#0b1016}
-.contextStep:not(:last-child):after{
-  content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);
-  color:#54606e;font-weight:900;z-index:2;
-}
-.contextStep small{color:var(--cyan);font-size:8px;font-weight:900;letter-spacing:.8px}
-.contextStep strong{display:block;margin-top:12px;font-size:15px}
-.contextStep span{display:block;margin-top:5px;color:#85909f;font-size:10px;line-height:1.55}
-@media(max-width:760px){
-  .contextFlow{grid-template-columns:1fr}
-  .contextStep:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-19px;transform:translateX(-50%)}
-}
-</style>
-
-</head>
-<body>
-
-<header class="siteHeader">
-  <div class="siteContainer">
-    <nav class="siteNav">
-      <a class="brand" href="../" aria-label="Finrival home">
-        <img src="../logo.png" alt="Finrival" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
-        <span class="brandText">finrival<b>.</b></span>
+.buttonSecondary{border-color:var(--line);background:var(--card);color:#fff}
+.heroMeta{display:flex;flex-wrap:wrap;gap:12px 18px;margin-top:18px;color:var(--muted2);font-size:11px;font-weight:800}
+.heroMeta span{display:inline-flex;align-items:center;gap:7px}
+.heroMeta i{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block}
+.heroArt{position:relative;min-height:430px;display:flex;align-items:center;justify-content:center}
+.artHalo{position:absolute;width:470px;height:470px;max-width:84vw;border-radius:50%;border:1px solid rgba(0,229,255,.06);box-shadow:0 0 0 42px rgba(0,229,255,.012),0 0 0 90px rgba(0,229,255,.006)}
+.visualStack{position:relative;width:min(100%,480px);display:grid;gap:14px;z-index:2}
+.board{position:relative;overflow:hidden;padding:16px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01)),rgba(11,16,22,.96);box-shadow:0 22px 56px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.04)}
+.board::before{content:"";position:absolute;right:-24px;bottom:-30px;width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,rgba(0,229,255,.14),transparent 70%)}
+.board.goldGlow::before{background:radial-gradient(circle,rgba(244,185,66,.13),transparent 70%)}
+.boardLabel{display:inline-flex;align-items:center;gap:7px;padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.04);color:#9fdfff;font-size:10px;font-weight:900;letter-spacing:.28px;text-transform:uppercase}
+.boardLabel.gold{color:#f4cf7b}
+.boardTitle{margin-top:12px;font-size:18px;line-height:1.1;font-weight:940;letter-spacing:-.5px}
+.boardCopy{margin-top:7px;color:var(--muted);font-size:13px;line-height:1.65}
+.infoPills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.infoPills span{padding:7px 10px;border:1px solid rgba(255,255,255,.06);border-radius:999px;background:rgba(255,255,255,.025);color:#dbe5ef;font-size:10px;font-weight:850}
+.mosaic{display:grid;grid-template-columns:1.14fr .86fr;gap:14px}
+.column{display:grid;gap:14px}
+.miniChart{margin-top:12px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.05);background:#0a1017;position:relative;overflow:hidden}
+.miniChart svg{position:absolute;inset:0;width:100%;height:100%}
+.screenMock{margin-top:14px;padding:12px;border:1px solid rgba(255,255,255,.06);border-radius:18px;background:rgba(6,10,14,.92)}
+.screenTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.screenTop strong{font-size:12px;letter-spacing:.1px}
+.screenChip{padding:5px 8px;border-radius:999px;background:rgba(0,229,255,.09);color:#9be7ff;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.25px}
+.marketPair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.spotCard{padding:10px;border:1px solid rgba(255,255,255,.06);border-radius:14px;background:rgba(255,255,255,.02)}
+.spotCard small{display:block;color:#7f8b9b;font-size:9px;font-weight:900;letter-spacing:.25px;text-transform:uppercase}
+.spotCard strong{display:block;margin-top:5px;font-size:14px;font-weight:930}
+.spotCard span{display:block;margin-top:3px;color:#8fdfff;font-size:10px;font-weight:850}
+.screenList{display:grid;gap:9px;margin-top:10px}
+.listRow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 10px;border:1px solid rgba(255,255,255,.05);border-radius:12px;background:rgba(255,255,255,.018)}
+.listRow .left{display:flex;flex-direction:column;gap:2px}
+.listRow .left b{font-size:11px}
+.listRow .left small{color:#7f8b9b;font-size:9px;font-weight:800}
+.listRow .right{font-size:10px;font-weight:900;color:#fff;text-align:right}
+.listRow .right em{display:block;font-style:normal;color:#7ecf92}
+.timeline{display:grid;gap:10px}
+.story{padding:10px;border:1px solid rgba(255,255,255,.05);border-radius:14px;background:rgba(255,255,255,.018)}
+.story .head{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#7f8b9b;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.24px}
+.story h4{margin-top:6px;font-size:12px;line-height:1.4;font-weight:880}
+.story .foot{margin-top:7px;display:flex;align-items:center;justify-content:space-between;gap:8px;color:#8fdfff;font-size:9px;font-weight:850}
+.duel{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center}
+.duelCard{padding:10px;border:1px solid rgba(255,255,255,.05);border-radius:14px;background:rgba(255,255,255,.02)}
+.duelCard strong{display:block;font-size:13px}
+.duelCard span{display:block;color:#8ba0b3;font-size:10px;margin-top:2px}
+.vsBadge{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(244,185,66,.25);background:rgba(244,185,66,.08);color:#f4cf7b;font-size:11px;font-weight:950}
+.modeBar{display:flex;gap:8px;margin-bottom:10px}
+.modeBar span{padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.04);font-size:9px;font-weight:900;letter-spacing:.2px;text-transform:uppercase;color:#d9e4ef}
+.modeBar span.active{background:rgba(0,229,255,.1);color:#98eaff;border:1px solid rgba(0,229,255,.18)}
+.modeBar span.goldActive{background:rgba(244,185,66,.1);color:#f4cf7b;border:1px solid rgba(244,185,66,.18)}
+.aiBubble{padding:11px 12px;border-radius:15px;background:rgba(0,229,255,.08);color:#e8fbff;font-size:12px;line-height:1.5}
+.aiBubble.secondary{background:rgba(255,255,255,.04);color:#d9e4ef}
+.aiComposer{margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);color:#7f8b9b;font-size:11px;font-weight:800}
+.aiSend{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--cyan);color:#071013;font-weight:950}
+.section{padding:50px 0}
+.sectionBorder{border-top:1px solid var(--line2)}
+.sectionHead{max-width:760px;margin-bottom:24px}
+.sectionKicker{display:inline-flex;align-items:center;gap:8px;color:#8fdfff;font-size:11px;font-weight:900;letter-spacing:.35px;text-transform:uppercase}
+.sectionKicker::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan)}
+.sectionHead h2{margin-top:10px;font-size:clamp(28px,4.2vw,42px);line-height:1.04;letter-spacing:-1.4px;font-weight:960}
+.sectionCopy{margin-top:12px;color:var(--muted);font-size:15px;line-height:1.75}
+.cardGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.featureCard,.policyCard,.stepCard,.pricingCard{position:relative;overflow:hidden;padding:20px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01)),var(--card);box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+.featureCard::before,.policyCard::before,.stepCard::before,.pricingCard::before{content:"";position:absolute;right:-20px;bottom:-20px;width:88px;height:88px;border-radius:50%;background:radial-gradient(circle,rgba(0,229,255,.12),transparent 70%)}
+.featureCard.gold::before,.policyCard.gold::before,.pricingCard.gold::before{background:radial-gradient(circle,rgba(244,185,66,.12),transparent 70%)}
+.featureCard .cardTag,.policyCard .cardTag,.stepCard .cardTag,.pricingCard .cardTag{display:inline-flex;align-items:center;gap:7px;padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.04);color:#8fdfff;font-size:10px;font-weight:900;letter-spacing:.24px;text-transform:uppercase}
+.featureCard.gold .cardTag,.policyCard.gold .cardTag,.pricingCard.gold .cardTag{color:#f4cf7b}
+.featureCard h3,.policyCard h3,.stepCard h3,.pricingCard h3{margin-top:12px;font-size:20px;line-height:1.12;letter-spacing:-.42px;font-weight:940}
+.featureCard p,.policyCard p,.stepCard p,.pricingCard p{margin-top:8px;color:var(--muted);font-size:13px;line-height:1.7}
+.cardBullets{display:grid;gap:7px;margin-top:12px}
+.cardBullets span{display:flex;align-items:flex-start;gap:8px;color:#dbe4ef;font-size:12px;line-height:1.55}
+.cardBullets i{flex:0 0 auto;width:8px;height:8px;margin-top:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px rgba(0,229,255,.35)}
+.cardBullets.gold i{background:var(--gold);box-shadow:0 0 10px rgba(244,185,66,.35)}
+.dualGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+.stepsGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.stepCard strong{display:block;margin-top:12px;font-size:14px;color:#8fdfff;letter-spacing:.22px;text-transform:uppercase}
+.stepCard p{margin-top:8px}
+.quoteBand{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;padding:18px 20px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01)),var(--card)}
+.quoteBand strong{display:block;font-size:22px;line-height:1.15;letter-spacing:-.6px;font-weight:940}
+.quoteBand p{margin-top:8px;color:var(--muted);font-size:14px;line-height:1.7;max-width:720px}
+.quoteBadge{padding:11px 14px;border:1px solid var(--goldBorder);border-radius:999px;background:var(--goldSoft);color:#f4cf7b;font-size:11px;font-weight:900;white-space:nowrap}
+.cta{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;padding:24px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01)),var(--card2)}
+.cta h3{font-size:28px;line-height:1.08;letter-spacing:-1px;font-weight:960}
+.cta p{margin-top:8px;color:var(--muted);font-size:14px;line-height:1.72;max-width:720px}
+.footer{padding:22px 0 34px;border-top:1px solid var(--line2)}
+.footerTop{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px}
+.footerCopy{max-width:520px;color:var(--muted);font-size:13px;line-height:1.7}
+.footerCopy img{width:120px;display:block;margin-bottom:10px}
+.footerLinks{display:flex;flex-wrap:wrap;gap:10px 14px;color:#b8c4d1;font-size:12px;font-weight:800}
+.footerBottom{margin-top:16px;padding-top:16px;border-top:1px solid var(--line2);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;color:#7e8a99;font-size:12px}
+.highlightNote{margin-top:16px;padding:14px 16px;border:1px solid rgba(255,255,255,.06);border-radius:16px;background:rgba(255,255,255,.02);color:#cdd7e2;font-size:12px;line-height:1.65}
+@media(max-width:1080px){.heroGrid,.dualGrid{grid-template-columns:1fr}.mosaic{grid-template-columns:1fr}}
+@media(max-width:920px){.desktopNav,.navStores{display:none}.mobileMenuButton{display:grid}.cardGrid,.stepsGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.marketPair,.cta,.quoteBand{grid-template-columns:1fr}}
+@media(max-width:680px){.siteContainer{width:min(var(--max),calc(100% - 26px))}.hero{padding:68px 0 34px}.siteNav{height:66px}h1{letter-spacing:-1.4px}.heroLead,.sectionCopy{font-size:14px}.cardGrid,.stepsGrid{grid-template-columns:1fr}.boardTitle{font-size:16px}.footerBottom{flex-direction:column}}
+  </style>
+ </head>
+ <body>
+  <header class="siteHeader">
+   <div class="siteContainer">
+    <nav aria-label="Finrival site navigation" class="siteNav">
+     <a aria-label="Finrival home" class="brand" href="../">
+      <img alt="Finrival" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex';" src="../logo.png"/>
+      <span class="brandText">
+       Fin
+       <b>
+        rival
+       </b>
+      </span>
+     </a>
+     <div class="desktopNav">
+      <a href="../">
+       Home
       </a>
-      <div class="desktopNav">
-        <a href="../product/">Product</a>
-<a href="../features/">Features</a>
-<a class="active" href="../ai/">Finrival AI</a>
-<a href="../pro/">PRO</a>
-<a href="../company/">Company</a>
-<a href="../support/">Support</a>
-      </div>
-      <a class="navCta" href="#availability">Coming Soon</a>
+      <a href="../product/">
+       Product
+      </a>
+      <a href="../features/">
+       Features
+      </a>
+      <a class="active" href="../ai/">
+       AI
+      </a>
+      <a href="../pro/">
+       PRO
+      </a>
+      <a href="../company/">
+       Company
+      </a>
+      <a href="../support/">
+       Support
+      </a>
+     </div>
+     <div aria-label="Mobile app availability" class="navStores">
+      <a class="navStore" href="#download">
+       <span>
+        App Store
+       </span>
+       <b>
+        Soon
+       </b>
+      </a>
+      <a class="navStore" href="#download">
+       <span>
+        Google Play
+       </span>
+       <b>
+        Soon
+       </b>
+      </a>
+     </div>
+     <button aria-expanded="false" aria-label="Open navigation" class="mobileMenuButton" id="mobileMenuButton" type="button">
+      ☰
+     </button>
     </nav>
-  </div>
-</header>
-
-<main>
-<section class="pageHero">
-  <div class="siteContainer heroGrid">
-    <div>
-      <div class="eyebrow">FINRIVAL AI</div>
-      <h1>Ask with<br><span class="textGradient">context attached.</span></h1>
-      <p class="heroLead">Finrival AI is designed as a research layer inside the product flow — not as a generic chatbot bolted onto the side.</p>
+   </div>
+   <div class="mobileMenu" id="mobileMenu">
+    <div class="siteContainer mobileMenuInner">
+     <a href="../">
+      Home
+     </a>
+     <a href="../product/">
+      Product
+     </a>
+     <a href="../features/">
+      Features
+     </a>
+     <a class="active" href="../ai/">
+      AI
+     </a>
+     <a href="../pro/">
+      PRO
+     </a>
+     <a href="../company/">
+      Company
+     </a>
+     <a href="../support/">
+      Support
+     </a>
+     <a href="#download">
+      App Store &amp; Google Play · Soon
+     </a>
+    </div>
+   </div>
+  </header>
+  <main>
+   <section class="hero">
+    <div class="siteContainer heroGrid">
+     <div>
+      <div class="eyebrow">
+       Finrival AI
+      </div>
+      <h1>
+       Ask with context attached.
+      </h1>
+      <p class="heroLead">
+       Finrival AI is designed to continue the current research path instead of acting like an isolated chatbot. The website presentation below follows the recovered GlobalAIBot entry and keeps the surrounding product context visible.
+      </p>
       <div class="heroActions">
-        <a class="button buttonPrimary" href="../product/">See Product Tour <span>→</span></a>
-        <a class="button buttonSecondary" href="../pro/">Explore PRO</a>
+       <a class="button buttonPrimary" href="#ai-flows">
+        See AI flows
+       </a>
+       <a class="button buttonSecondary" href="../features/">
+        See all features
+       </a>
       </div>
-      <div class="heroMeta"><div><span class="statusDot"></span>Context-aware research continuation</div><div>AI output still requires verification</div></div>
-    </div>
-
-    <div class="visualPanel aiHeroVisual">
-      <div class="visualInner">
-        <div class="visualHead"><span class="visualTitle">FINRIVAL AI</span><span class="badge">CONTEXT MODE</span></div>
-        <div class="miniCard"><strong>Selected context</strong><span>AAPL vs MSFT · 1Y comparison · supported market data</span></div>
-        <div class="aiChat">
-          <div class="aiBubble user">Compare the momentum and risk context of these two assets.</div>
-          <div class="aiBubble"><strong>Finrival AI</strong>I can summarize the supported historical, momentum and risk context for the selected timeframe. Verify the underlying data and recent news before making a financial decision.</div>
-          <div class="aiBubble user">What should I verify next?</div>
-          <div class="aiBubble"><strong>Finrival AI</strong>Check data freshness, the selected timeframe, recent company or macro news and whether the comparison matches your research objective.</div>
-        </div>
-        <div class="aiComposer"><span>Ask a market research question…</span><div class="aiSend">↑</div></div>
+      <div class="heroMeta">
+       <span>
+        <i>
+        </i>
+        Global assistant, not a separate main tab
+       </span>
+       <span>
+        <i>
+        </i>
+        Asset insight and general chat
+       </span>
+       <span>
+        <i>
+        </i>
+        Short, research-style responses
+       </span>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="contentSection sectionMuted">
-  <div class="siteContainer">
-    <div class="sectionHeading">
-      <div class="sectionEyebrow">HOW CONTEXT MOVES</div>
-      <h2>The research thread stays connected.</h2>
-      <p>Where supported, Finrival AI receives structured context from the screen the user is already working in.</p>
-    </div>
-    <div class="contextFlow">
-      <div class="contextStep"><small>01</small><strong>Discover</strong><span>Open a supported asset or market signal.</span></div>
-      <div class="contextStep"><small>02</small><strong>Compare</strong><span>Frame the timeframe, performance and analytical context.</span></div>
-      <div class="contextStep"><small>03</small><strong>Ask</strong><span>Carry structured context into Finrival AI.</span></div>
-      <div class="contextStep"><small>04</small><strong>Verify</strong><span>Check freshness, source material and important facts independently.</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="contentSection">
-  <div class="siteContainer">
-    <div class="sectionHeading">
-      <div class="sectionEyebrow">SUPPORTED CONTEXT</div>
-      <h2>AI follows the research surface.</h2>
-      <p>The assistant is designed to reduce repetition while keeping the user's research objective visible.</p>
-    </div>
-    <div class="grid3">
-      <div class="card cyan"><div class="icon">◎</div><h3>Asset insight</h3><p>Open AI from a supported asset and continue with symbol, price and relevant market context attached.</p></div>
-      <div class="card"><div class="icon">⇄</div><h3>Compare follow-up</h3><p>Turn a side-by-side view into a structured explanation of performance, momentum, risk and timeframe.</p></div>
-      <div class="card"><div class="icon">▤</div><h3>News follow-up</h3><p>Ask follow-up questions from supported financial-news context while keeping source awareness in the workflow.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="contentSection sectionMuted" id="availability">
-  <div class="siteContainer">
-    <div class="sectionHeading">
-      <div class="sectionEyebrow gold">RESPONSIBLE USE</div>
-      <h2>Useful output still needs verification.</h2>
-      <p>AI output can be wrong, incomplete or outdated. Finrival keeps that limitation visible instead of presenting generated text as certainty.</p>
-    </div>
-    <div class="trustList">
-      <div class="trustRow"><div class="trustMark">✓</div><div><strong>No personalized investment advice</strong><span>Finrival AI is informational and educational, not a fiduciary or investment adviser.</span></div></div>
-      <div class="trustRow"><div class="trustMark">✓</div><div><strong>Data freshness matters</strong><span>Market information may be delayed, cached, stale, incomplete or inaccurate.</span></div></div>
-      <div class="trustRow"><div class="trustMark">✓</div><div><strong>Independent verification</strong><span>Important facts should be checked independently before financial decisions are made.</span></div></div>
-      <div class="trustRow"><div class="trustMark">✓</div><div><strong>Context is not certainty</strong><span>Structured context can improve a research conversation without guaranteeing a correct conclusion.</span></div></div>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer class="siteFooter">
-  <div class="siteContainer">
-    <div class="footerMain">
-      <div class="footerBrand">
-        <a href="../">
-          <img src="../logo.png" alt="Finrival" onerror="this.style.display='none'">
-        </a>
-        <p>Market research, comparison, monitoring, simulation and AI-assisted context in one focused workspace.</p>
+      <div class="highlightNote">
+       The AI layer should feel connected to Market, Compare and News. That is why the website visuals below reuse those same entry contexts instead of dropping AI into a blank generic page.
       </div>
-      <div class="footerColumns">
-        <div class="footerColumn">
-          <strong>Product</strong>
-          <a href="../product/">Product</a>
-          <a href="../features/">Features</a>
-          <a href="../ai/">Finrival AI</a>
-          <a href="../pro/">PRO</a>
-        </div>
-        <div class="footerColumn">
-          <strong>Company</strong>
-          <a href="../company/">About</a>
-          <a href="../support/">Support</a>
-        </div>
-        <div class="footerColumn">
-          <strong>Legal</strong>
-          <a href="../privacy/">Privacy</a>
-          <a href="../terms/">Terms</a>
-          <a href="../delete-account/">Delete Account</a>
-        </div>
+     </div>
+     <div class="heroArt">
+      <div class="artHalo">
       </div>
+      <div class="visualStack">
+       <div class="board">
+        <div class="boardLabel">
+         Recovered AI entry
+        </div>
+        <div class="boardTitle">
+         Finrival AI opens above the app navigation.
+        </div>
+        <div class="boardCopy">
+         This mirrors the product design decision already visible in the source-matched home preview: AI floats above the tabs, then opens into its own blurred sheet.
+        </div>
+        <div class="infoPills">
+         <span>
+          FREE AI • 5 DAILY REQUESTS
+         </span>
+         <span>
+          Context-first
+         </span>
+         <span>
+          Ask Finrival AI...
+         </span>
+        </div>
+       </div>
+       <div class="screenMock">
+        <div class="screenTop">
+         <strong>
+          Finrival AI
+         </strong>
+         <span class="screenChip">
+          FREE AI • 5 DAILY REQUESTS
+         </span>
+        </div>
+        <div class="aiBubble">
+         <strong>
+          Context-first:
+         </strong>
+         the assistant keeps the current market or compare context attached before you ask the next question.
+        </div>
+        <div class="aiBubble secondary" style="margin-top:10px">
+         Explain why the top gainer is leading today and what market structure supports the move.
+        </div>
+        <div class="aiComposer">
+         <span>
+          Ask Finrival AI...
+         </span>
+         <span class="aiSend">
+          ↑
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section sectionBorder" id="ai-flows">
+    <div class="siteContainer">
+     <div class="sectionHead">
+      <div class="sectionKicker">
+       Context routes
+      </div>
+      <h2>
+       The research thread stays connected.
+      </h2>
+      <p class="sectionCopy">
+       The most useful AI behavior in Finrival is not just answer quality. It is the way questions can begin from a real screen and continue without manually rebuilding context.
+      </p>
+     </div>
+     <div class="dualGrid">
+      <article class="featureCard">
+       <div class="cardTag">
+        From Market
+       </div>
+       <h3>
+        Follow the move behind a market signal.
+       </h3>
+       <p>
+        Users can move from a spotlight mover or anomaly context into a short explanation path.
+       </p>
+       <div class="cardBullets">
+        <span>
+         <i>
+         </i>
+         Top gainer / top decline follow-up
+        </span>
+        <span>
+         <i>
+         </i>
+         Freshness and liquidity remain visible
+        </span>
+        <span>
+         <i>
+         </i>
+         Short explanation style
+        </span>
+       </div>
+       <div class="screenMock">
+        <div class="screenTop">
+         <strong>
+          Market
+         </strong>
+         <span class="screenChip">
+          Top
+         </span>
+        </div>
+        <div class="marketPair">
+         <div class="spotCard">
+          <small>
+           Top Gainer
+          </small>
+          <strong>
+           NVDA
+          </strong>
+          <span>
+           +3.8%
+          </span>
+         </div>
+         <div class="spotCard">
+          <small>
+           Top Dip
+          </small>
+          <strong>
+           TSLA
+          </strong>
+          <span style="color:#ff8b82">
+           −2.1%
+          </span>
+         </div>
+        </div>
+        <div class="miniChart">
+         <svg preserveaspectratio="none" viewbox="0 0 160 44">
+          <path d="M0 33h160" stroke="rgba(255,255,255,.06)">
+          </path>
+          <path d="M8 30 C24 24, 34 24, 48 18 S76 12, 92 14 S120 28, 138 19 S148 11,154 10" fill="none" stroke="#00E5FF" stroke-linecap="round" stroke-width="2.3">
+          </path>
+         </svg>
+        </div>
+        <div class="screenList">
+         <div class="listRow">
+          <div class="left">
+           <b>
+            Daily Liquidity
+           </b>
+           <small>
+            Verified session
+           </small>
+          </div>
+          <div class="right">
+           $18.6B
+           <em>
+            US cash
+           </em>
+          </div>
+         </div>
+         <div class="listRow">
+          <div class="left">
+           <b>
+            Market Signal
+           </b>
+           <small>
+            Top gain / top decline
+           </small>
+          </div>
+          <div class="right">
+           AI Analyze
+           <em>
+            Next scan 2h
+           </em>
+          </div>
+         </div>
+        </div>
+       </div>
+      </article>
+      <article class="featureCard">
+       <div class="cardTag">
+        From Compare
+       </div>
+       <h3>
+        Continue directly from a two-asset comparison.
+       </h3>
+       <p>
+        Compare already frames the research question, so the AI Battle Report path is one of the most product-specific AI entry points Finrival has.
+       </p>
+       <div class="cardBullets">
+        <span>
+         <i>
+         </i>
+         NVDA vs MSFT default framing
+        </span>
+        <span>
+         <i>
+         </i>
+         Rival View or Wealth Simulator context
+        </span>
+        <span>
+         <i>
+         </i>
+         Battle-report style handoff
+        </span>
+       </div>
+       <div class="screenMock">
+        <div class="modeBar">
+         <span class="active">
+          Rival View
+         </span>
+         <span>
+          Wealth Simulator
+         </span>
+        </div>
+        <div class="screenTop">
+         <strong>
+          Compare
+         </strong>
+         <span class="screenChip">
+          Global Rivalry
+         </span>
+        </div>
+        <div class="duel">
+         <div class="duelCard">
+          <strong>
+           NVDA
+          </strong>
+          <span>
+           NVIDIA Corp.
+          </span>
+          <span>
+           $— • ▲ %—
+          </span>
+         </div>
+         <div class="vsBadge">
+          VS
+         </div>
+         <div class="duelCard">
+          <strong>
+           MSFT
+          </strong>
+          <span>
+           Microsoft Corp.
+          </span>
+          <span>
+           $— • ▲ %—
+          </span>
+         </div>
+        </div>
+        <div class="listRow" style="margin-top:10px">
+         <div class="left">
+          <b>
+           AI Battle Report
+          </b>
+          <small>
+           Compare-specific insight
+          </small>
+         </div>
+         <div class="right">
+          Price Momentum
+          <em>
+           Dual Pro charts
+          </em>
+         </div>
+        </div>
+       </div>
+      </article>
+      <article class="featureCard">
+       <div class="cardTag">
+        From News
+       </div>
+       <h3>
+        Keep the story source in sight.
+       </h3>
+       <p>
+        News stories can lead into AI follow-up while still carrying their category and timing context.
+       </p>
+       <div class="cardBullets">
+        <span>
+         <i>
+         </i>
+         Story source + time context
+        </span>
+        <span>
+         <i>
+         </i>
+         Compact follow-up path
+        </span>
+        <span>
+         <i>
+         </i>
+         Research continuation, not news rewriting
+        </span>
+       </div>
+       <div class="screenMock">
+        <div class="screenTop">
+         <strong>
+          News
+         </strong>
+         <span class="screenChip">
+          Top • Stocks • Crypto
+         </span>
+        </div>
+        <div class="timeline">
+         <article class="story">
+          <div class="head">
+           <span>
+            US EQUITIES
+           </span>
+           <span>
+            12 min
+           </span>
+          </div>
+          <h4>
+           Semiconductor leaders advance as AI demand remains firm.
+          </h4>
+          <div class="foot">
+           <span>
+            Positive
+           </span>
+           <span>
+            AI Insight
+           </span>
+          </div>
+         </article>
+         <article class="story">
+          <div class="head">
+           <span>
+            GLOBAL MACRO
+           </span>
+           <span>
+            31 min
+           </span>
+          </div>
+          <h4>
+           Cross-asset volatility stays contained while policy signals are digested.
+          </h4>
+          <div class="foot">
+           <span>
+            Neutral
+           </span>
+           <span>
+            Source + Time
+           </span>
+          </div>
+         </article>
+        </div>
+       </div>
+      </article>
+      <article class="featureCard">
+       <div class="cardTag">
+        General chat
+       </div>
+       <h3>
+        Ask broader market questions too.
+       </h3>
+       <p>
+        Finrival AI is not limited to one symbol. It can also handle broader market-research questions while still keeping the in-app tone concise.
+       </p>
+       <div class="cardBullets">
+        <span>
+         <i>
+         </i>
+         General finance questions
+        </span>
+        <span>
+         <i>
+         </i>
+         Language follows the app / user
+        </span>
+        <span>
+         <i>
+         </i>
+         No pretend certainty
+        </span>
+       </div>
+       <div class="screenMock">
+        <div class="screenTop">
+         <strong>
+          Finrival AI
+         </strong>
+         <span class="screenChip">
+          FREE AI • 5 DAILY REQUESTS
+         </span>
+        </div>
+        <div class="aiBubble">
+         <strong>
+          Context-first:
+         </strong>
+         the assistant keeps the current market or compare context attached before you ask the next question.
+        </div>
+        <div class="aiBubble secondary" style="margin-top:10px">
+         Explain why the top gainer is leading today and what market structure supports the move.
+        </div>
+        <div class="aiComposer">
+         <span>
+          Ask Finrival AI...
+         </span>
+         <span class="aiSend">
+          ↑
+         </span>
+        </div>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section sectionBorder">
+    <div class="siteContainer">
+     <div class="sectionHead">
+      <div class="sectionKicker">
+       Boundaries
+      </div>
+      <h2>
+       Useful output still needs verification.
+      </h2>
+      <p class="sectionCopy">
+       Finrival AI is presented as a context helper, not as investment advice and not as a substitute for independent verification.
+      </p>
+     </div>
+     <div class="cardGrid">
+      <article class="policyCard">
+       <div class="cardTag">
+        Short by design
+       </div>
+       <h3>
+        Concise research support.
+       </h3>
+       <p>
+        The intended response style is brief and practical rather than long generic essays.
+       </p>
+      </article>
+      <article class="policyCard">
+       <div class="cardTag">
+        No certainty theater
+       </div>
+       <h3>
+        Boundaries stay visible.
+       </h3>
+       <p>
+        The site and the app both keep limitations visible so the assistant does not read like a guaranteed authority.
+       </p>
+      </article>
+      <article class="policyCard gold">
+       <div class="cardTag">
+        Not advice
+       </div>
+       <h3>
+        Users still verify.
+       </h3>
+       <p>
+        Output should be independently checked and is not presented as investment, legal or tax advice.
+       </p>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section sectionBorder" id="download">
+    <div class="siteContainer">
+     <div class="cta">
+      <div>
+       <h3>
+        AI makes more sense when the product is visible around it.
+       </h3>
+       <p>
+        That is the reason this page uses app-shaped visuals and screen-linked routes instead of a text-only AI sales page.
+       </p>
+      </div>
+      <div class="heroActions">
+       <a class="button buttonPrimary" href="../product/">
+        See Product
+       </a>
+       <a class="button buttonSecondary" href="../support/">
+        Questions?
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="footer">
+   <div class="siteContainer">
+    <div class="footerTop">
+     <div class="footerCopy">
+      <img alt="Finrival" onerror="this.style.display='none';" src="../logo.png"/>
+      <p>
+       Finrival brings market discovery, financial news, comparison, watchlists, simulation and AI-assisted context into one focused mobile workspace.
+      </p>
+     </div>
+     <div class="footerLinks">
+      <a href="../">
+       Home
+      </a>
+      <a href="../product/">
+       Product
+      </a>
+      <a href="../features/">
+       Features
+      </a>
+      <a href="../ai/">
+       AI
+      </a>
+      <a href="../pro/">
+       PRO
+      </a>
+      <a href="../company/">
+       Company
+      </a>
+      <a href="../privacy/">
+       Privacy
+      </a>
+      <a href="../terms/">
+       Terms
+      </a>
+      <a href="../delete-account/">
+       Delete Account
+      </a>
+      <a href="../support/">
+       Support
+      </a>
+     </div>
     </div>
     <div class="footerBottom">
-      <span>© 2026 Finrival. All rights reserved.</span>
-      <span>Informational, educational and simulation-focused.</span>
+     <span>
+      © 2026 Finrival. All rights reserved.
+     </span>
+     <span>
+      Informational, educational and simulation-focused. Logos by Quikturn.
+     </span>
     </div>
-  </div>
-</footer>
-
-</body>
+   </div>
+  </footer>
+  <script>
+   const mobileMenuButton=document.getElementById('mobileMenuButton');const mobileMenu=document.getElementById('mobileMenu');if(mobileMenuButton && mobileMenu){mobileMenuButton.addEventListener('click',()=>{const open=mobileMenu.classList.toggle('open');mobileMenuButton.setAttribute('aria-expanded',open?'true':'false');});}
+  </script>
+ </body>
 </html>

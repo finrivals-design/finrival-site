@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- FINRIVAL HOME V14 — SOURCE-MATCHED APP PREVIEW — 2026-08-22 -->
+<!-- FINRIVAL HOME V17 — SOURCE-MATCHED APP PREVIEW + VISUAL GROUNDING — 2026-08-22 -->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#05070a" />
   <meta name="color-scheme" content="dark" />
 
-  <title>Finrival — Market Research, Connected.</title>
+  <title>Finrival — Research the market. Keep the context.</title>
   <meta
     name="description"
     content="Finrival connects market discovery, comparison, financial news, watchlists, simulation and AI-assisted research in one focused mobile workspace."
@@ -3784,7 +3784,461 @@
         transition:none!important;
       }
     }
+
+
+    /* =====================================================
+         V15 — PREMIUM CONVERSION HOME OVERRIDES
+    ====================================================== */
+    :root{
+      --v15Ice:#8DD8FF;
+      --v15IceSoft:rgba(141,216,255,.08);
+      --v15IceBorder:rgba(141,216,255,.20);
+      --v15Hair:rgba(255,255,255,.075);
+    }
+
+    body{
+      background:
+        radial-gradient(circle at 12% -3%,rgba(141,216,255,.105),transparent 27%),
+        radial-gradient(circle at 90% 3%,rgba(82,103,255,.055),transparent 23%),
+        linear-gradient(180deg,#020407 0%,#000 54%,#020407 100%);
+    }
+
+    .siteHeader{background:rgba(2,4,7,.78);border-bottom-color:var(--v15Hair);backdrop-filter:blur(22px) saturate(125%)}
+    .siteNav{height:68px}
+    .desktopNav{gap:23px}
+    .desktopNav a{font-size:11px}
+    .navCta{display:none!important}
+    .v15NavStores{display:flex;align-items:center;gap:7px}
+    .v15NavStore{height:37px;display:flex;align-items:center;gap:7px;padding:0 10px;border:1px solid var(--v15Hair);border-radius:11px;background:rgba(255,255,255,.025);font-size:9px;font-weight:800;color:#dce4ee}
+    .v15NavStore b{color:var(--v15Ice);font-size:7px;letter-spacing:.55px;text-transform:uppercase}
+
+    .hero{padding:58px 0 68px}
+    .heroGrid{grid-template-columns:minmax(0,.93fr) minmax(430px,1.07fr);gap:46px;align-items:center}
+    .heroCopy{max-width:590px}
+    .eyebrow{font-size:9px;letter-spacing:1.15px;color:#a7b3c2}
+    .hero h1{font-size:clamp(48px,5.7vw,72px);line-height:.98;letter-spacing:-3.35px}
+    .gradientText{background:linear-gradient(105deg,#fff 0%,#dcf6ff 42%,#8DD8FF 78%,#5ec9ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .heroLead{max-width:585px;margin-top:20px;font-size:15px;line-height:1.68;color:#98a4b4}
+
+    .heroActions,.heroMeta{display:none!important}
+    .v15StoreGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:540px;margin-top:26px}
+    .v15StoreCard{min-height:72px;display:flex;align-items:center;gap:12px;padding:11px 13px;border:1px solid rgba(255,255,255,.10);border-radius:17px;background:linear-gradient(145deg,rgba(255,255,255,.052),rgba(255,255,255,.016));box-shadow:inset 0 1px 0 rgba(255,255,255,.045),0 14px 34px rgba(0,0,0,.18)}
+    .v15StoreIcon{width:39px;height:39px;flex:0 0 39px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.09);border-radius:12px;background:#030507}
+    .v15StoreIcon svg{width:20px;height:20px;fill:#fff}
+    .v15StoreCopy{min-width:0;display:flex;flex-direction:column;line-height:1.05}
+    .v15StoreCopy small{color:#778292;font-size:7.5px;font-weight:850;letter-spacing:.62px;text-transform:uppercase}
+    .v15StoreCopy strong{margin-top:6px;font-size:14px;letter-spacing:-.2px;color:#f5f7fa}
+    .v15Soon{margin-left:auto;align-self:flex-start;padding:4px 6px;border:1px solid var(--v15IceBorder);border-radius:8px;background:rgba(141,216,255,.045);color:var(--v15Ice);font-size:7px;font-weight:900;letter-spacing:.55px;text-transform:uppercase}
+    .v15HeroActions{display:flex;align-items:center;gap:14px;margin-top:14px}
+    .v15HeroActions .button{min-height:43px;padding:0 16px}
+    .v15TextLink{font-size:9.5px;font-weight:800;color:#98a3b1}
+    .v15TextLink:hover{color:#fff}
+    .v15TrustRow{display:flex;flex-wrap:wrap;gap:7px 14px;margin-top:17px;color:#748092;font-size:8.5px;font-weight:730}
+    .v15TrustRow span{display:flex;align-items:center;gap:6px}
+    .v15TrustRow i{width:4px;height:4px;border-radius:50%;background:var(--v15Ice);box-shadow:0 0 9px rgba(141,216,255,.35)}
+
+    .storeRail{display:none!important}
+    .phoneStage{min-height:690px}
+    .phoneStage::before{opacity:.85;filter:blur(4px)}
+    .phone{transform:translateZ(0);box-shadow:0 56px 125px rgba(0,0,0,.78),0 0 74px rgba(141,216,255,.07),inset 0 1px 0 rgba(255,255,255,.13)}
+    .phonePreviewCaption{margin-top:17px;font-size:8.5px;color:#758090}
+
+    .section{padding:64px 0}
+    .sectionHead h2,.clarityPanel h2,.finalCta h2{letter-spacing:-1.55px}
+    .workflowGrid{margin-top:28px}
+    .workflowCard{min-height:170px}
+    .clarityPanel{padding:34px}
+    .finalCta{padding:30px}
+
+    @media(max-width:1060px){
+      .v15NavStores{display:none}
+      .heroGrid{grid-template-columns:1fr 1fr;gap:30px}
+      .v15StoreGrid{grid-template-columns:1fr}
+    }
+
+    @media(max-width:820px){
+      .heroGrid{grid-template-columns:1fr;gap:10px}
+      .heroCopy{text-align:left}
+      .v15StoreGrid{grid-template-columns:1fr 1fr;max-width:none}
+      .v15HeroActions{justify-content:flex-start}
+      .v15TrustRow{justify-content:flex-start}
+      .phoneStage{margin-top:4px}
+    }
+
+    @media(max-width:560px){
+      .hero{padding:38px 0 50px}
+      .hero h1{font-size:44px;letter-spacing:-2.7px}
+      .heroLead{font-size:14px;line-height:1.62}
+      .v15StoreGrid{grid-template-columns:1fr;gap:8px;margin-top:22px}
+      .v15StoreCard{min-height:66px}
+      .v15HeroActions{margin-top:12px}
+      .section{padding:50px 0}
+      .clarityPanel,.finalCta{padding:22px}
+    }
+
+  
+
+    .heroSignalCluster{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+      margin:18px 0 0;
+    }
+
+    .heroSignalCard{
+      position:relative;
+      overflow:hidden;
+      min-height:112px;
+      padding:13px 13px 12px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01)),
+        rgba(13,18,25,.92);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+    }
+
+    .heroSignalCard::before{
+      content:"";
+      position:absolute;
+      inset:auto -12px -26px auto;
+      width:86px;
+      height:86px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(0,229,255,.15),transparent 68%);
+      pointer-events:none;
+    }
+
+    .heroSignalCard.gold::before{
+      background:radial-gradient(circle,rgba(244,185,66,.14),transparent 68%);
+    }
+
+    .heroSignalLabel{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      color:#8fdfff;
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.34px;
+      text-transform:uppercase;
+    }
+
+    .heroSignalCard.gold .heroSignalLabel{color:#f2c86a;}
+
+    .heroSignalCard strong{
+      display:block;
+      margin-top:8px;
+      color:#f7fbff;
+      font-size:13px;
+      line-height:1.18;
+      font-weight:930;
+      letter-spacing:-.28px;
+    }
+
+    .heroSignalCard p{
+      margin-top:6px;
+      color:#8f9baa;
+      font-size:11px;
+      line-height:1.45;
+    }
+
+    .heroSignalMeta{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-top:10px;
+      color:#6e7a89;
+      font-size:9px;
+      font-weight:820;
+      flex-wrap:wrap;
+    }
+
+    .heroMiniTrack{
+      margin-top:9px;
+      height:26px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,.05);
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01)),
+        #0a1017;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .heroMiniTrack svg{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+    }
+
+    .heroVisualNote{
+      margin-top:14px;
+      color:#738092;
+      font-size:10px;
+      font-weight:760;
+      line-height:1.55;
+    }
+
+    @media(max-width:960px){
+      .heroSignalCluster{grid-template-columns:1fr;}
+    }
+
   </style>
+
+
+  <style>
+    /* =====================================================
+       V16 — SOURCE-FIDELITY + PIXEL-CLARITY PASS
+       Keeps the recovered app hierarchy/proportions intact.
+       Only removes website-only helper copy from inside the
+       device and improves browser text/vector rasterization.
+    ====================================================== */
+
+    /* Keep the phone replica crisp without changing its layout hierarchy. */
+    .phoneScreen,
+    .phoneScreen *{
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:geometricPrecision;
+      font-kerning:normal;
+      font-variant-ligatures:none;
+    }
+
+    .phoneScreen svg,
+    .phoneScreen svg *{
+      shape-rendering:geometricPrecision;
+      vector-effect:non-scaling-stroke;
+    }
+
+    .phoneScreen img{
+      image-rendering:auto;
+      -webkit-backface-visibility:hidden;
+      backface-visibility:hidden;
+    }
+
+    /* These lines existed only to explain the website preview.
+       They are intentionally hidden so the device itself stays app-like. */
+    .phoneScreen .sourceHint,
+    .phoneScreen .previewDisclaimer,
+    .phoneScreen .watchNativeNoteV14{
+      display:none!important;
+    }
+
+    /* Stronger legibility for micro-labels while keeping the same UI density. */
+    .phoneScreen .activityCoverageV14 span,
+    .phoneScreen .marketDataBadgeV14,
+    .phoneScreen .duelIdentityV14 .updated,
+    .phoneScreen .syncV14,
+    .phoneScreen .marketDataPillV14,
+    .phoneScreen .walletStatsV14 small,
+    .phoneScreen .liquidityLabelsV14,
+    .phoneScreen .storeSoon::after{
+      font-size:4.25px!important;
+      line-height:1.28!important;
+      font-weight:760!important;
+      letter-spacing:.02px!important;
+      color:#8A98AA;
+    }
+
+    .phoneScreen .signalPillV14,
+    .phoneScreen .topStoryV14 .meta,
+    .phoneScreen .timelineCardV14 .head,
+    .phoneScreen .sentimentV14,
+    .phoneScreen .aiInsightV14,
+    .phoneScreen .chartTypeV14 span,
+    .phoneScreen .savedAssetV14 .meta span{
+      font-size:4.45px!important;
+      line-height:1.3!important;
+      font-weight:760!important;
+    }
+
+    .phoneScreen .marketSpotAsset span,
+    .phoneScreen .activityScopeV14,
+    .phoneScreen .activityRowV14,
+    .phoneScreen .signalContextV14,
+    .phoneScreen .marketSessionV14 div,
+    .phoneScreen .proChartSubV14,
+    .phoneScreen .chartControlV14,
+    .phoneScreen .simulationBadgeV14,
+    .phoneScreen .walletTopV14 small,
+    .phoneScreen .emptyPortfolioV14 p,
+    .phoneScreen .watchInfoV14 p,
+    .phoneScreen .watchSectionHeadV14 span,
+    .phoneScreen .savedPriceV14 span,
+    .phoneScreen .storeSoonText small{
+      font-size:4.6px!important;
+      line-height:1.32!important;
+      font-weight:720!important;
+    }
+
+    .phoneScreen .marketQuickV14 span,
+    .phoneScreen .newsCategoryV14,
+    .phoneScreen .duelIdentityV14 .name,
+    .phoneScreen .duelIdentityV14 .change,
+    .phoneScreen .watchHeaderV14 p,
+    .phoneScreen .watchSearchV14{
+      font-size:4.85px!important;
+      line-height:1.28!important;
+      font-weight:760!important;
+    }
+
+    .phoneScreen .previewSearch,
+    .phoneScreen .marketSearchV14,
+    .phoneScreen .newsSearchV14,
+    .phoneScreen .compareModeV14{
+      font-size:5px!important;
+      line-height:1.25!important;
+    }
+
+    .phoneScreen .phoneNavItem span{
+      font-size:5.5px!important;
+      line-height:7.4px!important;
+      font-weight:700!important;
+      letter-spacing:0!important;
+    }
+
+    .phoneScreen .phoneNavItem.active span{
+      font-weight:850!important;
+    }
+
+    /* Preserve the device proportions; enlarge the whole replica on larger
+       displays so all native-style type gains physical pixels instead of
+       redesigning individual cards. */
+    @media(min-width:1061px){
+      .phoneStage{min-height:760px}
+      .phone{width:364px;height:741px}
+    }
+
+    @media(min-width:561px) and (max-width:1060px){
+      .phone{width:min(334px,calc(100vw - 40px));height:682px}
+      .phoneStage{min-height:704px}
+    }
+
+    @media(max-width:560px){
+      .phone{width:min(318px,calc(100vw - 28px));height:652px}
+      .phoneStage{min-height:676px}
+      .phonePreviewCaption{font-size:8px}
+    }
+
+    /* Avoid transform-induced blur on the device surface. */
+    .phone{
+      -webkit-font-smoothing:antialiased;
+      transform:translate3d(0,0,0);
+      backface-visibility:hidden;
+    }
+  
+
+    .heroSignalCluster{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+      margin:18px 0 0;
+    }
+
+    .heroSignalCard{
+      position:relative;
+      overflow:hidden;
+      min-height:112px;
+      padding:13px 13px 12px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01)),
+        rgba(13,18,25,.92);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+    }
+
+    .heroSignalCard::before{
+      content:"";
+      position:absolute;
+      inset:auto -12px -26px auto;
+      width:86px;
+      height:86px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(0,229,255,.15),transparent 68%);
+      pointer-events:none;
+    }
+
+    .heroSignalCard.gold::before{
+      background:radial-gradient(circle,rgba(244,185,66,.14),transparent 68%);
+    }
+
+    .heroSignalLabel{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      color:#8fdfff;
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.34px;
+      text-transform:uppercase;
+    }
+
+    .heroSignalCard.gold .heroSignalLabel{color:#f2c86a;}
+
+    .heroSignalCard strong{
+      display:block;
+      margin-top:8px;
+      color:#f7fbff;
+      font-size:13px;
+      line-height:1.18;
+      font-weight:930;
+      letter-spacing:-.28px;
+    }
+
+    .heroSignalCard p{
+      margin-top:6px;
+      color:#8f9baa;
+      font-size:11px;
+      line-height:1.45;
+    }
+
+    .heroSignalMeta{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      margin-top:10px;
+      color:#6e7a89;
+      font-size:9px;
+      font-weight:820;
+      flex-wrap:wrap;
+    }
+
+    .heroMiniTrack{
+      margin-top:9px;
+      height:26px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,.05);
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01)),
+        #0a1017;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .heroMiniTrack svg{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+    }
+
+    .heroVisualNote{
+      margin-top:14px;
+      color:#738092;
+      font-size:10px;
+      font-weight:760;
+      line-height:1.55;
+    }
+
+    @media(max-width:960px){
+      .heroSignalCluster{grid-template-columns:1fr;}
+    }
+
+  </style>
+
 </head>
 
 <body>
@@ -3792,16 +4246,12 @@
   <!-- =====================================================
        HEADER
   ====================================================== -->
+
   <header class="siteHeader">
     <div class="container">
       <nav class="siteNav">
-
         <a class="brand" href="./" aria-label="Finrival home">
-          <img
-            src="./logo.png"
-            alt="Finrival"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'"
-          />
+          <img src="./logo.png" alt="Finrival" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'" />
           <span class="brandText">finrival<b>.</b></span>
         </a>
 
@@ -3815,20 +4265,12 @@
           <a href="./support/">Support</a>
         </div>
 
-        <a class="navCta" href="#coming-soon">
-          Coming Soon
-        </a>
+        <div class="v15NavStores" aria-label="Mobile app availability">
+          <a href="#coming-soon" class="v15NavStore"><span>App Store</span><b>Soon</b></a>
+          <a href="#coming-soon" class="v15NavStore"><span>Google Play</span><b>Soon</b></a>
+        </div>
 
-        <button
-          class="mobileMenuButton"
-          id="mobileMenuButton"
-          type="button"
-          aria-label="Open navigation"
-          aria-expanded="false"
-        >
-          ☰
-        </button>
-
+        <button class="mobileMenuButton" id="mobileMenuButton" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
       </nav>
     </div>
 
@@ -3841,6 +4283,7 @@
         <a href="./pro/">PRO</a>
         <a href="./company/">Company</a>
         <a href="./support/">Support</a>
+        <a href="#coming-soon">App Store & Google Play · Soon</a>
       </div>
     </div>
   </header>
@@ -3854,11 +4297,9 @@
     <section class="hero">
       <div class="container heroGrid">
 
-        <div class="heroCopy">
 
-          <div class="eyebrow">
-            MOBILE MARKET RESEARCH
-          </div>
+        <div class="heroCopy">
+          <div class="eyebrow">MOBILE MARKET RESEARCH</div>
 
           <h1>
             Research the market.
@@ -3867,64 +4308,84 @@
           </h1>
 
           <p class="heroLead">
-            Finrival brings <strong>market discovery, comparison, news, saved assets and AI-assisted research</strong>
-            into one focused mobile workspace.
+            Discover market movement, compare assets, follow financial news, save what matters and continue with Finrival AI — inside one focused mobile workflow.
           </p>
 
-          <div class="heroActions">
-            <a class="button buttonPrimary" href="./product/">
-              Explore Finrival <span>→</span>
-            </a>
+          <div class="heroSignalCluster" aria-label="Source-matched Finrival surfaces">
+            <article class="heroSignalCard">
+              <div class="heroSignalLabel">◉ Market</div>
+              <strong>Top Gainer / Top Dip, Daily Liquidity and market sessions.</strong>
+              <div class="heroMiniTrack" aria-hidden="true">
+                <svg viewBox="0 0 160 40" preserveAspectRatio="none">
+                  <path d="M0 29h160" stroke="rgba(255,255,255,.06)"/>
+                  <path d="M8 27 C24 22, 33 23, 45 18 S72 13, 85 16 S112 26, 128 20 S145 12, 154 10" fill="none" stroke="#00E5FF" stroke-width="2.4" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <p>Mirrors the recovered MarketScreen hierarchy instead of using a generic finance mockup.</p>
+              <div class="heroSignalMeta"><span>Top • Search markets</span><span>Market Signal</span></div>
+            </article>
 
-            <a class="button buttonSecondary" href="./features/">
-              View Features
-            </a>
+            <article class="heroSignalCard gold">
+              <div class="heroSignalLabel">◉ Compare</div>
+              <strong>Rival View and Wealth Simulator stay distinct.</strong>
+              <div class="heroMiniTrack" aria-hidden="true">
+                <svg viewBox="0 0 160 40" preserveAspectRatio="none">
+                  <path d="M0 29h160" stroke="rgba(255,255,255,.06)"/>
+                  <path d="M8 24 C22 24, 28 11, 42 11 S67 24, 82 23 S109 16, 125 17 S144 12, 154 13" fill="none" stroke="#F4B942" stroke-width="2.4" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <p>Based on the real Compare defaults: Global Rivalry, NVDA vs MSFT, AI Battle Report and dual Pro charts.</p>
+              <div class="heroSignalMeta"><span>RIVAL VIEW</span><span>NVDA vs MSFT</span></div>
+            </article>
+
+            <article class="heroSignalCard">
+              <div class="heroSignalLabel">◉ Finrival AI</div>
+              <strong>AI opens above the navigation, not as a fake extra tab.</strong>
+              <div class="heroMiniTrack" aria-hidden="true">
+                <svg viewBox="0 0 160 40" preserveAspectRatio="none">
+                  <rect x="10" y="10" width="68" height="10" rx="5" fill="rgba(0,229,255,.18)"/>
+                  <rect x="54" y="24" width="96" height="8" rx="4" fill="rgba(255,255,255,.08)"/>
+                  <rect x="10" y="24" width="36" height="8" rx="4" fill="rgba(255,255,255,.18)"/>
+                </svg>
+              </div>
+              <p>The visual language follows the recovered GlobalAIBot entry, sheet, prompt area and composer style.</p>
+              <div class="heroSignalMeta"><span>FREE AI • 5 DAILY REQUESTS</span><span>Context-first</span></div>
+            </article>
           </div>
 
-          <div class="heroMeta">
-            <div>
-              <span class="statusDot"></span>
-              iOS & Android
+          <div class="heroVisualNote">Every card, label and preview module on this page is intentionally tied back to the recovered Finrival app structure, so the website reads more like the product and less like a generic AI landing page.</div>
+
+          <div class="v15StoreGrid" id="download" aria-label="Finrival mobile app availability">
+            <div class="v15StoreCard" aria-label="App Store coming soon">
+              <div class="v15StoreIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.79 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.09zM12.03 7.25C11.88 5.02 13.69 3.18 15.77 3c.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+              </div>
+              <div class="v15StoreCopy"><small>Download on the</small><strong>App Store</strong></div>
+              <span class="v15Soon">Soon</span>
             </div>
-            <div>
-              Coming Soon
+
+            <div class="v15StoreCard" aria-label="Google Play coming soon">
+              <div class="v15StoreIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M3.7 2.25a1.65 1.65 0 0 1 1.74.08l10.82 6.2-2.7 2.72L3.7 2.25zm-.88 1.1c-.1.21-.16.45-.16.72v15.88c0 .25.05.48.14.68l9.86-9.85L2.82 3.35zm11.9 9.02-2.78-2.77 3.04-1.75 3.55 2.03c.8.46.8 1.62 0 2.08l-3.81 2.19v-1.78zm-.9.52-2.7 2.7-5.66 3.25a1.65 1.65 0 0 1-1.74.08l10.1-9.03z"/></svg>
+              </div>
+              <div class="v15StoreCopy"><small>Get it on</small><strong>Google Play</strong></div>
+              <span class="v15Soon">Soon</span>
             </div>
           </div>
 
+          <div class="v15HeroActions">
+            <a class="button buttonPrimary" href="./product/">Explore product <span>→</span></a>
+            <a class="v15TextLink" href="./company/">About Finrival →</a>
+          </div>
+
+          <div class="v15TrustRow">
+            <span><i></i>iOS & Android</span>
+            <span><i></i>AI-assisted research</span>
+            <span><i></i>Market compare</span>
+          </div>
         </div>
 
-
-
-
         <div class="phoneStage" aria-label="Interactive Finrival mobile app preview">
-
-          <div class="storeRail" aria-label="App availability">
-            <div class="storeRailLabel">Mobile apps</div>
-
-            <div class="storeSoon" aria-disabled="true">
-              <div class="storeSoonIcon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.79 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.09zM12.03 7.25C11.88 5.02 13.69 3.18 15.77 3c.29 2.58-2.34 4.5-3.74 4.25z"/>
-                </svg>
-              </div>
-              <div class="storeSoonText">
-                <small>Coming to</small>
-                <strong>App Store</strong>
-              </div>
-            </div>
-
-            <div class="storeSoon" aria-disabled="true">
-              <div class="storeSoonIcon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M3.7 2.25a1.65 1.65 0 0 1 1.74.08l10.82 6.2-2.7 2.72L3.7 2.25zm-.88 1.1c-.1.21-.16.45-.16.72v15.88c0 .25.05.48.14.68l9.86-9.85L2.82 3.35zm11.9 9.02-2.78-2.77 3.04-1.75 3.55 2.03c.8.46.8 1.62 0 2.08l-3.81 2.19v-1.78zm-.9.52-2.7 2.7-5.66 3.25a1.65 1.65 0 0 1-1.74.08l10.1-9.03z"/>
-                </svg>
-              </div>
-              <div class="storeSoonText">
-                <small>Coming to</small>
-                <strong>Google Play</strong>
-              </div>
-            </div>
-          </div>
 
           <div class="phone">
             <div class="phoneScreen">
@@ -4444,7 +4905,7 @@
           </div>
 
           <div class="phonePreviewCaption">
-            Tap the tabs — preview structure is matched to the recovered Finrival app source.
+            Preview rotates automatically. Tap any tab to take control.
           </div>
 
         </div>
@@ -4619,11 +5080,11 @@
             </div>
 
             <h2>
-              Explore the product without the homepage overload.
+              Finrival is coming to mobile.
             </h2>
 
             <p>
-              Product shows the workflow. Features explains the tools. Finrival AI explains the research assistant.
+              Explore the product now. App Store and Google Play release links will appear here when the mobile launch is live.
             </p>
           </div>
 
@@ -4633,8 +5094,8 @@
               Product Tour
             </a>
 
-            <a class="button buttonSecondary" href="./features/">
-              Features
+            <a class="button buttonSecondary" href="./ai/">
+              Finrival AI
             </a>
           </div>
 
