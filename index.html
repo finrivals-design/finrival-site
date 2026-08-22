@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- FINRIVAL HOME V13 — INTERACTIVE REAL-APP PHONE PREVIEW — 2026-08-22 -->
+<!-- FINRIVAL HOME V14 — SOURCE-MATCHED APP PREVIEW — 2026-08-22 -->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -2023,6 +2023,1755 @@
       }
     }
 
+
+    /* =====================================================
+       V14 — SOURCE-MATCHED FINRIVAL APP PREVIEW
+       Based on recovered App.js + screen source hierarchy.
+    ====================================================== */
+
+    .phoneStage{
+      min-height:720px;
+      overflow:visible;
+    }
+
+    .phone{
+      width:344px;
+      height:700px;
+    }
+
+    .phoneScreen{
+      background:#000;
+    }
+
+    .phoneHeader{
+      height:82px;
+      grid-template-columns:50px 1fr 50px;
+      padding:31px 16px 13px;
+      border-bottom:1px solid rgba(151,195,222,.16);
+      background:rgba(9,15,24,.975);
+    }
+
+    .phoneHeaderLogo{
+      width:110px;
+      height:34px;
+      object-fit:contain;
+      display:block;
+      margin:0 auto;
+    }
+
+    .phoneMenu{
+      position:relative;
+      width:36px;
+      height:36px;
+      justify-self:end;
+      border-radius:12px;
+      border:1px solid rgba(151,195,222,.14);
+      background:#111923;
+      color:#f4f7fb;
+      font-size:17px;
+      line-height:1;
+    }
+
+    .phoneMenu::after{
+      content:"★";
+      position:absolute;
+      top:-3px;
+      right:-3px;
+      width:10px;
+      height:10px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:#ff3b30;
+      color:#fff;
+      font-size:4px;
+    }
+
+    .phoneBody{
+      padding:0;
+    }
+
+    .previewPanel{
+      inset:82px 0 71px;
+      overflow:hidden;
+      padding:0 15px;
+      background:#000;
+    }
+
+    .previewPanel.active{
+      overflow:auto;
+      scrollbar-width:none;
+    }
+
+    .previewPanel.active::-webkit-scrollbar{
+      display:none;
+    }
+
+    .phoneNav{
+      height:71px;
+      min-height:64px;
+      padding:5px;
+      border-top:1px solid rgba(151,195,222,.16);
+      background:rgba(9,15,24,.985);
+    }
+
+    .phoneNavItem{
+      min-height:54px;
+      gap:0;
+      color:#738092;
+      outline:none;
+    }
+
+    .phoneNavItem:focus{
+      outline:none;
+      box-shadow:none;
+    }
+
+    .phoneNavItem:focus-visible{
+      outline:1px solid rgba(141,220,255,.3);
+      outline-offset:-2px;
+      border-radius:10px;
+    }
+
+    .phoneNavItem::before{
+      content:"";
+      width:16px;
+      height:2px;
+      margin-bottom:4px;
+      border-radius:2px;
+      background:transparent;
+      opacity:0;
+    }
+
+    .phoneNavItem.active::before{
+      background:#00E5FF;
+      opacity:1;
+    }
+
+    .phoneNavItem[data-phone-tab="rival"].active::before{
+      background:#E5C35A;
+    }
+
+    .phoneNavIcon{
+      width:34px;
+      height:28px;
+      border:1px solid transparent;
+      border-radius:10px;
+      background:transparent;
+    }
+
+    .phoneNavItem.active .phoneNavIcon{
+      border-color:rgba(0,229,255,.46);
+      background:rgba(0,229,255,.07);
+      box-shadow:0 0 7px rgba(0,229,255,.12);
+    }
+
+    .phoneNavItem[data-phone-tab="rival"].active .phoneNavIcon{
+      border-color:rgba(229,195,90,.52);
+      background:rgba(229,195,90,.07);
+      box-shadow:0 0 7px rgba(229,195,90,.12);
+    }
+
+    .phoneNavItem span{
+      margin-top:3px;
+      font-size:5.2px;
+      line-height:7px;
+      font-weight:600;
+      letter-spacing:.05px;
+    }
+
+    .phoneNavItem.active span{
+      color:#f7fafc;
+      font-weight:800;
+    }
+
+    .phoneNavCompare{
+      top:0;
+    }
+
+    .compareButton{
+      width:48px;
+      height:31px;
+      border:1px solid rgba(141,220,255,.36);
+      border-radius:11px;
+      background:rgba(255,255,255,.035);
+      color:#8DDCFF;
+      box-shadow:none;
+    }
+
+    .phoneNavCompare.active .compareButton{
+      transform:translateY(-2px);
+      border-color:rgba(0,229,255,.66);
+      background:rgba(0,229,255,.09);
+      color:#00E5FF;
+      box-shadow:0 0 10px rgba(0,229,255,.14);
+    }
+
+    .phoneNavCompare.active::before{
+      background:#00E5FF;
+    }
+
+    .appScrollTop{
+      padding-top:14px;
+    }
+
+    .appCard{
+      border:1px solid rgba(151,195,222,.13);
+      border-radius:16px;
+      background:#0d141d;
+    }
+
+    .assetLogo{
+      flex:0 0 auto;
+      width:34px;
+      height:34px;
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.11);
+      border-radius:11px;
+      background:#f8fafc;
+    }
+
+    .assetLogo.round{
+      border-radius:50%;
+    }
+
+    .assetLogo img{
+      width:76%;
+      height:76%;
+      object-fit:contain;
+      display:block;
+    }
+
+    .assetLogo.small{
+      width:28px;
+      height:28px;
+      border-radius:9px;
+    }
+
+    .assetLogo.large{
+      width:50px;
+      height:50px;
+      border-radius:14px;
+    }
+
+    .sourceHint{
+      color:#536075;
+      font-size:3.8px;
+      line-height:1.35;
+      text-align:center;
+    }
+
+    /* MARKET — exact source order: Spotlight -> Activity -> Signal -> market list */
+    .marketSpotlights{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+      margin-bottom:13px;
+    }
+
+    .marketSpotCard{
+      padding:10px;
+      border:1px solid rgba(151,195,222,.12);
+      border-radius:14px;
+      background:#0d141d;
+      min-height:91px;
+    }
+
+    .marketSpotEyebrow{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:6px;
+      color:#7d899a;
+      font-size:4.5px;
+      font-weight:900;
+      letter-spacing:.55px;
+      text-transform:uppercase;
+    }
+
+    .marketSpotAsset{
+      display:flex;
+      align-items:center;
+      gap:7px;
+      margin-top:8px;
+    }
+
+    .marketSpotAsset strong{
+      display:block;
+      color:#f4f7fb;
+      font-size:6px;
+      font-weight:900;
+    }
+
+    .marketSpotAsset span{
+      display:block;
+      margin-top:1px;
+      color:#6f7b8d;
+      font-size:4px;
+    }
+
+    .marketSpotMove{
+      margin-left:auto;
+      font-size:5.7px;
+      font-weight:900;
+    }
+
+    .marketSpotMove.up{color:#00c805}
+    .marketSpotMove.down{color:#ff3b30}
+
+    .activityCardV14{
+      margin-top:14px;
+      padding:11px;
+      border:1px solid rgba(151,195,222,.12);
+      border-radius:16px;
+      background:#0d141d;
+    }
+
+    .activityHeaderV14{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+    }
+
+    .activityTitleV14{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      color:#f4f7fb;
+      font-size:6.4px;
+      font-weight:850;
+    }
+
+    .activityTitleV14 svg{
+      width:12px;
+      height:12px;
+      stroke:#00E5FF;
+      fill:none;
+      stroke-width:1.8;
+    }
+
+    .activityScopeV14{
+      margin-top:3px;
+      color:#718094;
+      font-size:4.1px;
+      font-weight:650;
+    }
+
+    .activityCoverageV14{
+      padding:5px 7px;
+      border:1px solid rgba(0,229,255,.28);
+      border-radius:9px;
+      background:rgba(0,229,255,.055);
+      text-align:center;
+    }
+
+    .activityCoverageV14 strong{
+      display:block;
+      color:#00E5FF;
+      font-size:6px;
+      font-weight:900;
+    }
+
+    .activityCoverageV14 span{
+      display:block;
+      color:#718094;
+      font-size:3.6px;
+      font-weight:800;
+      text-transform:uppercase;
+    }
+
+    .activityBarV14{
+      display:flex;
+      height:4px;
+      overflow:hidden;
+      margin-top:9px;
+      border-radius:99px;
+      background:#1b2531;
+    }
+
+    .activityBarV14 i{display:block;height:100%}
+
+    .activityRowsV14{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:6px 10px;
+      margin-top:8px;
+    }
+
+    .activityRowV14{
+      display:flex;
+      align-items:center;
+      gap:5px;
+      min-width:0;
+      color:#aab4c2;
+      font-size:4.2px;
+      font-weight:750;
+    }
+
+    .activityDotV14{
+      width:5px;
+      height:5px;
+      flex:0 0 auto;
+      border-radius:50%;
+    }
+
+    .activityRowV14 strong{
+      margin-left:auto;
+      color:#dce3eb;
+      font-size:4.4px;
+      font-weight:900;
+    }
+
+    .signalHeroV14{
+      position:relative;
+      overflow:hidden;
+      margin-top:20px;
+      padding:12px;
+      border:1px solid rgba(0,229,255,.20);
+      border-radius:16px;
+      background:
+        radial-gradient(circle at 95% 0%,rgba(0,229,255,.075),transparent 36%),
+        #0d141d;
+      box-shadow:0 0 18px rgba(0,229,255,.055);
+    }
+
+    .signalTopV14{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+    }
+
+    .signalHeadingV14{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      min-width:0;
+    }
+
+    .signalHeadingV14 strong{
+      color:#f4f7fb;
+      font-size:7px;
+      font-weight:850;
+    }
+
+    .signalPillV14{
+      display:flex;
+      align-items:center;
+      gap:4px;
+      padding:4px 6px;
+      border-radius:999px;
+      background:rgba(57,217,138,.07);
+      color:#39D98A;
+      font-size:3.8px;
+      font-weight:850;
+    }
+
+    .signalPillV14 i{
+      width:4px;
+      height:4px;
+      border-radius:50%;
+      background:#39D98A;
+    }
+
+    .signalAiV14{
+      padding:6px 8px;
+      border:1px solid rgba(0,229,255,.20);
+      border-radius:10px;
+      background:rgba(0,229,255,.07);
+      color:#00E5FF;
+      font-size:4.3px;
+      font-weight:850;
+    }
+
+    .signalAssetV14{
+      display:flex;
+      align-items:center;
+      margin-top:10px;
+    }
+
+    .signalAssetV14 .identity{
+      flex:1;
+      min-width:0;
+      padding-left:9px;
+    }
+
+    .signalAssetV14 .identity strong{
+      display:block;
+      color:#f4f7fb;
+      font-size:7.3px;
+      font-weight:850;
+    }
+
+    .signalAssetV14 .identity span{
+      display:block;
+      margin-top:2px;
+      color:#7a8799;
+      font-size:4.6px;
+      font-weight:600;
+    }
+
+    .signalAssetV14 .move{
+      min-width:64px;
+      text-align:right;
+      color:#39D98A;
+      font-size:8px;
+      font-weight:900;
+    }
+
+    .signalContextV14{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      margin:8px 0 0 43px;
+      color:#6f7d90;
+      font-size:4px;
+      font-weight:650;
+    }
+
+    .signalProgressV14{
+      height:2px;
+      margin-top:9px;
+      overflow:hidden;
+      border-radius:99px;
+      background:#1c2732;
+    }
+
+    .signalProgressV14 span{
+      display:block;
+      width:58%;
+      height:100%;
+      background:#00E5FF;
+    }
+
+    .marketSectionV14{
+      margin-top:16px;
+    }
+
+    .marketSectionTopV14{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+    }
+
+    .marketSectionTopV14 h3{
+      color:#f4f7fb;
+      font-size:10px;
+      letter-spacing:-.2px;
+      font-weight:800;
+    }
+
+    .marketDataBadgeV14{
+      padding:4px 6px;
+      border:1px solid rgba(0,229,255,.18);
+      border-radius:7px;
+      color:#00E5FF;
+      background:rgba(0,229,255,.05);
+      font-size:3.7px;
+      font-weight:800;
+    }
+
+    .marketSessionV14{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:5px;
+      margin-top:7px;
+    }
+
+    .marketSessionV14 div{
+      min-height:27px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:4px;
+      border:1px solid rgba(151,195,222,.11);
+      border-radius:10px;
+      background:#0d141d;
+      color:#8a96a8;
+      font-size:4px;
+      font-weight:750;
+    }
+
+    .marketSessionV14 i{
+      width:5px;
+      height:5px;
+      border-radius:50%;
+      background:#39D98A;
+    }
+
+    .marketToolsV14{
+      display:grid;
+      grid-template-columns:1fr 38px;
+      gap:7px;
+      margin-top:8px;
+    }
+
+    .marketSearchV14,
+    .marketFilterV14{
+      height:38px;
+      display:flex;
+      align-items:center;
+      border:1px solid rgba(151,195,222,.12);
+      border-radius:14px;
+      background:#0d141d;
+    }
+
+    .marketSearchV14{
+      padding:0 11px;
+      gap:7px;
+      color:#7c899a;
+      font-size:4.7px;
+      font-weight:650;
+    }
+
+    .marketFilterV14{
+      justify-content:center;
+      color:#00E5FF;
+      font-size:9px;
+    }
+
+    .marketQuickV14{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:6px;
+      margin-top:7px;
+    }
+
+    .marketQuickV14 span{
+      min-height:29px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(151,195,222,.11);
+      border-radius:11px;
+      background:#0d141d;
+      color:#7d899a;
+      font-size:4.4px;
+      font-weight:750;
+    }
+
+    .marketQuickV14 span.active{
+      border-color:rgba(0,229,255,.24);
+      background:rgba(0,229,255,.06);
+      color:#00E5FF;
+    }
+
+    /* NEWS — recovered source order: category strip -> search -> Top Stories */
+    .newsCategoryStripV14{
+      display:flex;
+      gap:7px;
+      margin:0 -15px 10px;
+      padding:10px 15px 0;
+      overflow:hidden;
+      background:#000;
+    }
+
+    .newsCategoryV14{
+      flex:0 0 auto;
+      padding:6px 8px;
+      border:1px solid rgba(151,195,222,.11);
+      border-radius:12px;
+      background:#0d141d;
+      color:#748194;
+      font-size:4.4px;
+      font-weight:650;
+    }
+
+    .newsCategoryV14.active{
+      border-color:rgba(0,229,255,.30);
+      background:rgba(0,229,255,.08);
+      color:#00E5FF;
+      font-weight:800;
+    }
+
+    .newsSearchV14{
+      height:38px;
+      display:flex;
+      align-items:center;
+      gap:7px;
+      padding:0 11px;
+      border:1px solid rgba(151,195,222,.12);
+      border-radius:13px;
+      background:#0d141d;
+      color:#748194;
+      font-size:4.7px;
+      font-weight:650;
+    }
+
+    .newsSectionTitleV14{
+      margin:12px 0 7px;
+      color:#f4f7fb;
+      font-size:9.5px;
+      font-weight:850;
+    }
+
+    .topStoryRailV14{
+      display:flex;
+      gap:8px;
+      overflow:hidden;
+    }
+
+    .topStoryV14{
+      flex:0 0 76%;
+      min-height:126px;
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(151,195,222,.10);
+      border-radius:15px;
+      background:
+        linear-gradient(180deg,rgba(2,7,12,.03),rgba(2,7,12,.96)),
+        radial-gradient(circle at 75% 5%,rgba(0,229,255,.18),transparent 35%),
+        #111923;
+      padding:11px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+    }
+
+    .topStoryV14 .source{
+      color:#00E5FF;
+      font-size:4.2px;
+      font-weight:850;
+    }
+
+    .topStoryV14 strong{
+      margin-top:5px;
+      color:#fff;
+      font-size:7.5px;
+      line-height:1.28;
+      font-weight:850;
+    }
+
+    .topStoryV14 .meta{
+      margin-top:5px;
+      color:#7b8798;
+      font-size:3.9px;
+      font-weight:650;
+    }
+
+    .timelineStoryV14{
+      display:grid;
+      grid-template-columns:14px 1fr;
+      gap:6px;
+      margin-top:8px;
+    }
+
+    .timelineRailV14{
+      position:relative;
+      display:flex;
+      justify-content:center;
+    }
+
+    .timelineRailV14::before{
+      content:"";
+      position:absolute;
+      top:8px;
+      bottom:-15px;
+      width:1px;
+      background:rgba(0,229,255,.2);
+    }
+
+    .timelineRailV14 i{
+      position:relative;
+      z-index:2;
+      width:6px;
+      height:6px;
+      margin-top:9px;
+      border-radius:50%;
+      background:#00E5FF;
+      box-shadow:0 0 6px rgba(0,229,255,.4);
+    }
+
+    .timelineCardV14{
+      padding:9px;
+      border:1px solid rgba(151,195,222,.10);
+      border-radius:13px;
+      background:#0d141d;
+    }
+
+    .timelineCardV14 .head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+      color:#718094;
+      font-size:3.9px;
+      font-weight:700;
+    }
+
+    .timelineCardV14 .head strong{
+      color:#00E5FF;
+      font-size:4.1px;
+    }
+
+    .timelineCardV14 h4{
+      margin-top:5px;
+      color:#f0f4f8;
+      font-size:6.3px;
+      line-height:1.32;
+      font-weight:800;
+    }
+
+    .timelineFooterV14{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-top:7px;
+    }
+
+    .sentimentV14{
+      display:flex;
+      align-items:center;
+      gap:4px;
+      color:#39D98A;
+      font-size:3.9px;
+      font-weight:750;
+    }
+
+    .sentimentV14 i{
+      width:5px;
+      height:5px;
+      border-radius:50%;
+      background:#39D98A;
+    }
+
+    .aiInsightV14{
+      padding:4px 6px;
+      border:1px solid rgba(0,229,255,.20);
+      border-radius:7px;
+      background:rgba(0,229,255,.055);
+      color:#00E5FF;
+      font-size:3.8px;
+      font-weight:850;
+    }
+
+    /* COMPARE — default recovered source: RIVAL VIEW, NVDA vs MSFT */
+    .compareScrollV14{
+      padding-top:14px;
+      padding-bottom:18px;
+    }
+
+    .compareModeSwitchV14{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:3px;
+      padding:3px;
+      border:1px solid rgba(151,195,222,.12);
+      border-radius:12px;
+      background:#0d141d;
+      margin-bottom:20px;
+    }
+
+    .compareModeV14{
+      min-height:34px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:5px;
+      border-radius:8px;
+      color:#7a8799;
+      font-size:4.8px;
+      font-weight:700;
+      letter-spacing:.1px;
+    }
+
+    .compareModeV14.active{
+      background:#00E5FF;
+      color:#000;
+      font-weight:800;
+    }
+
+    .compareHeadingV14 h2{
+      color:#f4f7fb;
+      font-size:15px;
+      line-height:1.05;
+      letter-spacing:-.3px;
+      font-weight:800;
+    }
+
+    .compareHeadingV14 p{
+      margin-top:4px;
+      color:#778497;
+      font-size:5.2px;
+      font-weight:500;
+    }
+
+    .duelRowV14{
+      position:relative;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin:14px 0 15px;
+    }
+
+    .duelCardV14{
+      position:relative;
+      overflow:hidden;
+      min-height:190px;
+      padding:14px 0;
+      border:1px solid rgba(151,195,222,.13);
+      border-radius:20px;
+      background:#0d141d;
+    }
+
+    .duelCardV14::before{
+      content:"";
+      position:absolute;
+      width:105px;
+      height:105px;
+      border-radius:50%;
+      filter:blur(26px);
+      opacity:.11;
+      pointer-events:none;
+    }
+
+    .duelCardV14.nvda::before{
+      top:-50px;
+      left:-50px;
+      background:#76B900;
+    }
+
+    .duelCardV14.msft::before{
+      top:-50px;
+      right:-50px;
+      background:#00A4EF;
+    }
+
+    .duelLogoV14{
+      height:70px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-bottom:1px solid rgba(151,195,222,.09);
+    }
+
+    .duelIdentityV14{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:10px 8px 0;
+      text-align:center;
+    }
+
+    .duelIdentityV14 strong{
+      color:#f4f7fb;
+      font-size:8.2px;
+      font-weight:800;
+    }
+
+    .duelIdentityV14 .name{
+      max-width:100%;
+      overflow:hidden;
+      margin-top:2px;
+      color:#788598;
+      font-size:4.5px;
+      white-space:nowrap;
+      text-overflow:ellipsis;
+    }
+
+    .duelIdentityV14 .price{
+      margin-top:8px;
+      color:#f4f7fb;
+      font-size:7.5px;
+      font-weight:700;
+    }
+
+    .duelIdentityV14 .change{
+      margin-top:6px;
+      padding:4px 7px;
+      border-radius:8px;
+      background:rgba(52,199,89,.10);
+      color:#34C759;
+      font-size:4.4px;
+      font-weight:800;
+    }
+
+    .duelIdentityV14 .updated{
+      margin-top:7px;
+      color:#6b788b;
+      font-size:3.7px;
+      font-weight:700;
+    }
+
+    .vsBadgeV14{
+      position:absolute;
+      top:50%;
+      left:50%;
+      z-index:8;
+      width:40px;
+      height:40px;
+      margin:-20px 0 0 -20px;
+      display:grid;
+      place-items:center;
+      border:2px solid rgba(151,195,222,.14);
+      border-radius:50%;
+      background:#000;
+      color:#f4f7fb;
+      font-size:5px;
+      font-weight:900;
+      box-shadow:0 4px 8px rgba(0,0,0,.5);
+    }
+
+    .battleButtonV14{
+      width:calc(100% - 36px);
+      min-height:38px;
+      margin:0 auto 15px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:5px;
+      border:1px solid rgba(0,229,255,.30);
+      border-radius:14px;
+      background:rgba(0,229,255,.08);
+      color:#00E5FF;
+      font-size:5px;
+      font-weight:850;
+    }
+
+    .sectionHeaderV14{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin:15px 0;
+      padding-bottom:8px;
+      border-bottom:1px solid rgba(151,195,222,.12);
+    }
+
+    .sectionHeaderV14 strong{
+      color:#7d899a;
+      font-size:6px;
+      font-weight:800;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+    }
+
+    .syncV14{
+      padding:5px 7px;
+      border:1px solid rgba(0,229,255,.44);
+      border-radius:9px;
+      background:rgba(0,229,255,.08);
+      color:#00E5FF;
+      font-size:3.7px;
+      font-weight:900;
+      letter-spacing:.3px;
+    }
+
+    .proChartV14{
+      padding:12px;
+      margin-bottom:12px;
+      border:1px solid rgba(151,195,222,.13);
+      border-radius:20px;
+      background:#0d141d;
+    }
+
+    .proChartHeadV14{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:8px;
+    }
+
+    .proChartIdentityV14{
+      min-width:0;
+      flex:1;
+    }
+
+    .proChartIdentityV14 strong{
+      color:#f4f7fb;
+      font-size:7px;
+      font-weight:800;
+    }
+
+    .proChartSubV14{
+      display:flex;
+      align-items:center;
+      gap:5px;
+      margin-top:3px;
+      color:#718094;
+      font-size:4px;
+      font-weight:600;
+    }
+
+    .marketDataPillV14{
+      display:inline-flex;
+      align-items:center;
+      gap:3px;
+      padding:3px 5px;
+      border:1px solid currentColor;
+      border-radius:7px;
+      font-size:3.2px;
+      font-weight:800;
+      letter-spacing:.3px;
+    }
+
+    .marketDataPillV14 i{
+      width:4px;
+      height:4px;
+      border-radius:50%;
+      background:currentColor;
+    }
+
+    .proChartControlsV14{
+      display:flex;
+      align-items:center;
+      gap:5px;
+    }
+
+    .chartControlV14{
+      min-height:28px;
+      display:grid;
+      place-items:center;
+      padding:0 7px;
+      border:1px solid rgba(151,195,222,.12);
+      border-radius:9px;
+      background:#000;
+      color:#79869a;
+      font-size:4px;
+      font-weight:800;
+    }
+
+    .chartControlV14.active.cyan{
+      color:#00E5FF;
+      border-color:rgba(0,229,255,.46);
+      background:rgba(0,229,255,.06);
+    }
+
+    .chartControlV14.active.gold{
+      color:#FFD700;
+      border-color:rgba(255,215,0,.46);
+      background:rgba(255,215,0,.06);
+    }
+
+    .chartTypeV14{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:5px;
+      margin:10px 0;
+      padding:4px;
+      border:1px solid rgba(151,195,222,.12);
+      border-radius:11px;
+      background:#000;
+    }
+
+    .chartTypeV14 span{
+      min-height:27px;
+      display:grid;
+      place-items:center;
+      border:1px solid transparent;
+      border-radius:8px;
+      color:#718094;
+      font-size:3.9px;
+      font-weight:700;
+    }
+
+    .chartTypeV14 span.active.cyan{
+      color:#00E5FF;
+      border-color:#00E5FF;
+      background:rgba(0,229,255,.10);
+    }
+
+    .chartTypeV14 span.active.gold{
+      color:#FFD700;
+      border-color:#FFD700;
+      background:rgba(255,215,0,.09);
+    }
+
+    .chartAreaV14{
+      position:relative;
+      height:96px;
+      overflow:hidden;
+      border:1px solid rgba(151,195,222,.12);
+      border-radius:13px;
+      background:
+        linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px),
+        #080D14;
+      background-size:100% 24px,55px 100%,auto;
+    }
+
+    .chartAreaV14 svg{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+    }
+
+    /* RIVAL — recovered source heading + simulation badge + wallet */
+    .rivalHeaderV14{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:8px;
+      padding-top:14px;
+    }
+
+    .rivalHeaderV14 h2{
+      color:#f4f7fb;
+      font-size:14px;
+      line-height:1;
+      font-weight:850;
+    }
+
+    .rivalActionsV14{
+      display:flex;
+      gap:6px;
+    }
+
+    .rivalIconBtnV14{
+      width:31px;
+      height:31px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(151,195,222,.12);
+      border-radius:10px;
+      background:#0d141d;
+      color:#00E5FF;
+      font-size:9px;
+    }
+
+    .simulationBadgeV14{
+      width:max-content;
+      margin-top:8px;
+      padding:5px 8px;
+      border:1px solid rgba(0,229,255,.27);
+      border-radius:10px;
+      background:rgba(0,229,255,.07);
+      color:#00E5FF;
+      font-size:4px;
+      font-weight:900;
+      letter-spacing:.35px;
+    }
+
+    .portfolioHeroV14{
+      position:relative;
+      overflow:hidden;
+      margin-top:14px;
+      padding:14px;
+      border:1px solid rgba(151,195,222,.12);
+      border-radius:20px;
+      background:
+        radial-gradient(circle at 10% 10%,rgba(0,229,255,.18),transparent 42%),
+        radial-gradient(circle at 95% 100%,rgba(120,80,255,.15),transparent 40%),
+        #101720;
+    }
+
+    .portfolioHeroV14::after{
+      content:"";
+      position:absolute;
+      top:-45px;
+      left:38%;
+      width:42px;
+      height:210%;
+      transform:rotate(25deg);
+      background:rgba(255,255,255,.035);
+    }
+
+    .walletTopV14{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      position:relative;
+      z-index:2;
+    }
+
+    .walletTopV14 small{
+      color:rgba(255,255,255,.5);
+      font-size:4px;
+      font-weight:750;
+    }
+
+    .walletTopV14 strong{
+      display:block;
+      margin-top:4px;
+      color:#fff;
+      font-size:15px;
+      font-weight:900;
+    }
+
+    .walletStatsV14{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:14px;
+    }
+
+    .walletStatsV14 div:last-child{
+      text-align:right;
+    }
+
+    .walletStatsV14 small{
+      display:block;
+      color:rgba(255,255,255,.5);
+      font-size:3.7px;
+      font-weight:700;
+    }
+
+    .walletStatsV14 strong{
+      display:block;
+      margin-top:3px;
+      color:#00E5FF;
+      font-size:5.5px;
+      font-weight:850;
+    }
+
+    .walletStatsV14 div:last-child strong{
+      color:#34C759;
+    }
+
+    .liquidityBarV14{
+      position:relative;
+      z-index:2;
+      display:flex;
+      height:4px;
+      margin-top:12px;
+      overflow:hidden;
+      border-radius:99px;
+      background:#19222d;
+    }
+
+    .liquidityBarV14 span:first-child{
+      width:82%;
+      background:#6f7d90;
+    }
+
+    .liquidityBarV14 span:last-child{
+      width:18%;
+      background:#00E5FF;
+    }
+
+    .liquidityLabelsV14{
+      position:relative;
+      z-index:2;
+      display:flex;
+      justify-content:space-between;
+      margin-top:5px;
+      color:rgba(255,255,255,.5);
+      font-size:3.5px;
+      font-weight:700;
+    }
+
+    .rivalDividerV14{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      margin:14px 0;
+    }
+
+    .rivalDividerV14 span{
+      flex:1;
+      height:1px;
+      background:rgba(151,195,222,.12);
+    }
+
+    .rivalDividerV14 i{
+      width:5px;
+      height:5px;
+      border-radius:50%;
+      background:#00E5FF;
+      box-shadow:0 0 7px rgba(0,229,255,.45);
+    }
+
+    .emptyPortfolioV14{
+      padding:16px 12px;
+      border:1px solid rgba(151,195,222,.12);
+      border-radius:16px;
+      text-align:center;
+    }
+
+    .emptyPortfolioV14 .walletIcon{
+      color:#718094;
+      font-size:21px;
+      opacity:.6;
+    }
+
+    .emptyPortfolioV14 strong{
+      display:block;
+      margin-top:7px;
+      color:#9aa6b7;
+      font-size:5.6px;
+      font-weight:750;
+    }
+
+    .emptyPortfolioV14 p{
+      margin-top:4px;
+      color:#687588;
+      font-size:4.2px;
+      line-height:1.4;
+    }
+
+    .discoverV14{
+      margin:9px auto 0;
+      width:max-content;
+      padding:7px 10px;
+      border-radius:9px;
+      background:#00E5FF;
+      color:#000;
+      font-size:4.3px;
+      font-weight:850;
+    }
+
+    /* WATCHLIST — recovered source heading + alert info + add search + saved assets */
+    .watchHeaderV14{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding-top:14px;
+    }
+
+    .watchHeaderV14 .copy{
+      flex:1;
+      min-width:0;
+    }
+
+    .watchHeaderV14 h2{
+      color:#f4f7fb;
+      font-size:14px;
+      line-height:1;
+      font-weight:850;
+    }
+
+    .watchHeaderV14 p{
+      margin-top:5px;
+      color:#728094;
+      font-size:4.4px;
+      font-weight:600;
+    }
+
+    .watchProfileV14{
+      width:32px;
+      height:32px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(151,195,222,.12);
+      border-radius:10px;
+      background:#0d141d;
+      color:#00E5FF;
+      font-size:8px;
+      font-weight:900;
+    }
+
+    .watchInfoV14{
+      display:grid;
+      grid-template-columns:30px 1fr;
+      gap:8px;
+      margin-top:12px;
+      padding:10px;
+      border:1px solid rgba(151,195,222,.12);
+      border-radius:14px;
+      background:#0d141d;
+    }
+
+    .watchInfoIconV14{
+      width:28px;
+      height:28px;
+      display:grid;
+      place-items:center;
+      border-radius:9px;
+      background:rgba(0,229,255,.07);
+      color:#00E5FF;
+      font-size:10px;
+    }
+
+    .watchInfoV14 strong{
+      display:block;
+      color:#f1f5f9;
+      font-size:5.5px;
+      font-weight:850;
+    }
+
+    .watchInfoV14 p{
+      margin-top:4px;
+      color:#758296;
+      font-size:4px;
+      line-height:1.42;
+    }
+
+    .watchNativeNoteV14{
+      margin-top:5px;
+      color:#00E5FF;
+      font-size:3.7px;
+      line-height:1.35;
+      font-weight:700;
+    }
+
+    .watchSearchV14{
+      height:39px;
+      display:grid;
+      grid-template-columns:18px 1fr 14px;
+      align-items:center;
+      gap:6px;
+      margin-top:10px;
+      padding:0 10px;
+      border:1px solid rgba(151,195,222,.12);
+      border-radius:13px;
+      background:#0d141d;
+      color:#778497;
+      font-size:4.5px;
+      font-weight:650;
+    }
+
+    .watchSectionHeadV14{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:8px;
+      margin:12px 1px 6px;
+    }
+
+    .watchSectionHeadV14 strong{
+      display:block;
+      color:#f4f7fb;
+      font-size:7px;
+      font-weight:850;
+    }
+
+    .watchSectionHeadV14 span{
+      display:block;
+      margin-top:2px;
+      color:#6e7b8e;
+      font-size:4px;
+      font-weight:650;
+    }
+
+    .savedAssetV14{
+      min-height:49px;
+      display:grid;
+      grid-template-columns:31px minmax(0,1fr) auto 26px;
+      align-items:center;
+      gap:7px;
+      padding:7px 8px;
+      border-bottom:1px solid rgba(151,195,222,.07);
+    }
+
+    .savedAssetV14:last-child{
+      border-bottom:0;
+    }
+
+    .savedAssetV14 .meta strong{
+      display:block;
+      color:#f1f5f9;
+      font-size:5.5px;
+      font-weight:850;
+    }
+
+    .savedAssetV14 .meta span{
+      display:block;
+      margin-top:1px;
+      color:#6e7b8e;
+      font-size:3.9px;
+    }
+
+    .savedPriceV14{
+      text-align:right;
+    }
+
+    .savedPriceV14 strong{
+      display:block;
+      color:#f1f5f9;
+      font-size:5.2px;
+      font-weight:800;
+    }
+
+    .savedPriceV14 span{
+      display:block;
+      margin-top:1px;
+      color:#34C759;
+      font-size:4px;
+      font-weight:750;
+    }
+
+    .bellV14{
+      width:25px;
+      height:25px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(0,229,255,.18);
+      border-radius:8px;
+      color:#00E5FF;
+      background:rgba(0,229,255,.045);
+      font-size:8px;
+    }
+
+    /* Exact GlobalAIBot collapsed treatment: pill, not a circular AI orb. */
+    .aiOrb{
+      right:16px;
+      bottom:82px;
+      width:auto;
+      height:36px;
+      padding:0 14px;
+      display:flex;
+      align-items:center;
+      gap:4px;
+      border:1px solid rgba(0,229,255,.31);
+      border-radius:18px;
+      background:rgba(25,30,36,.92);
+      color:#f4f7fb;
+      box-shadow:0 4px 8px rgba(0,0,0,.3),0 0 7px rgba(0,229,255,.10);
+      font-size:5.2px;
+      letter-spacing:.2px;
+    }
+
+    .aiOrb::before{
+      content:"⚡";
+      color:#00E5FF;
+      font-size:7px;
+    }
+
+    .aiOrb .aiAccent{
+      color:#00E5FF;
+    }
+
+    /* App store availability rail beside phone */
+    .storeRail{
+      position:absolute;
+      left:0;
+      top:50%;
+      z-index:6;
+      width:146px;
+      transform:translate(-100%,-50%);
+      padding-right:22px;
+      display:flex;
+      flex-direction:column;
+      gap:9px;
+    }
+
+    .storeRailLabel{
+      margin:0 0 2px 3px;
+      color:#596679;
+      font-size:7px;
+      font-weight:850;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+    }
+
+    .storeSoon{
+      position:relative;
+      min-height:54px;
+      display:grid;
+      grid-template-columns:30px 1fr;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border:1px solid rgba(151,195,222,.14);
+      border-radius:15px;
+      background:
+        linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012)),
+        #0d141d;
+      box-shadow:0 12px 28px rgba(0,0,0,.22);
+    }
+
+    .storeSoon::after{
+      content:"SOON";
+      position:absolute;
+      top:6px;
+      right:7px;
+      padding:2px 4px;
+      border:1px solid rgba(0,229,255,.18);
+      border-radius:5px;
+      background:rgba(0,229,255,.055);
+      color:#79eaff;
+      font-size:3.4px;
+      font-weight:950;
+      letter-spacing:.45px;
+    }
+
+    .storeSoonIcon{
+      width:28px;
+      height:28px;
+      display:grid;
+      place-items:center;
+      border-radius:9px;
+      background:#111a24;
+      color:#fff;
+    }
+
+    .storeSoonIcon svg{
+      width:17px;
+      height:17px;
+      fill:currentColor;
+    }
+
+    .storeSoonText small{
+      display:block;
+      color:#6e7a8d;
+      font-size:4px;
+      font-weight:750;
+    }
+
+    .storeSoonText strong{
+      display:block;
+      margin-top:1px;
+      color:#eef3f8;
+      font-size:6px;
+      font-weight:900;
+    }
+
+    @media(max-width:1160px){
+      .storeRail{
+        left:50%;
+        top:auto;
+        bottom:-66px;
+        width:min(330px,92vw);
+        transform:translateX(-50%);
+        padding-right:0;
+        flex-direction:row;
+        justify-content:center;
+      }
+
+      .storeRailLabel{
+        display:none;
+      }
+
+      .storeSoon{
+        flex:1;
+        max-width:158px;
+      }
+
+      .phoneStage{
+        margin-bottom:64px;
+      }
+    }
+
+    @media(max-width:430px){
+      .previewPanel{
+        inset:76px 0 65px;
+        padding:0 11px;
+      }
+
+      .phoneHeaderLogo{
+        width:96px;
+      }
+
+      .phoneNav{
+        height:65px;
+      }
+
+      .phoneNavIcon{
+        width:31px;
+        height:26px;
+      }
+
+      .compareButton{
+        width:44px;
+        height:30px;
+      }
+
+      .storeRail{
+        bottom:-62px;
+        gap:6px;
+      }
+
+      .storeSoon{
+        min-height:50px;
+        padding:7px 8px;
+      }
+    }
+
     @media(prefers-reduced-motion:reduce){
       html{
         scroll-behavior:auto;
@@ -2146,7 +3895,36 @@
 
 
 
+
         <div class="phoneStage" aria-label="Interactive Finrival mobile app preview">
+
+          <div class="storeRail" aria-label="App availability">
+            <div class="storeRailLabel">Mobile apps</div>
+
+            <div class="storeSoon" aria-disabled="true">
+              <div class="storeSoonIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.79 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.09zM12.03 7.25C11.88 5.02 13.69 3.18 15.77 3c.29 2.58-2.34 4.5-3.74 4.25z"/>
+                </svg>
+              </div>
+              <div class="storeSoonText">
+                <small>Coming to</small>
+                <strong>App Store</strong>
+              </div>
+            </div>
+
+            <div class="storeSoon" aria-disabled="true">
+              <div class="storeSoonIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M3.7 2.25a1.65 1.65 0 0 1 1.74.08l10.82 6.2-2.7 2.72L3.7 2.25zm-.88 1.1c-.1.21-.16.45-.16.72v15.88c0 .25.05.48.14.68l9.86-9.85L2.82 3.35zm11.9 9.02-2.78-2.77 3.04-1.75 3.55 2.03c.8.46.8 1.62 0 2.08l-3.81 2.19v-1.78zm-.9.52-2.7 2.7-5.66 3.25a1.65 1.65 0 0 1-1.74.08l10.1-9.03z"/>
+                </svg>
+              </div>
+              <div class="storeSoonText">
+                <small>Coming to</small>
+                <strong>Google Play</strong>
+              </div>
+            </div>
+          </div>
 
           <div class="phone">
             <div class="phoneScreen">
@@ -2158,347 +3936,459 @@
 
               <div class="phoneHeader">
                 <div></div>
-                <div class="phoneBrand">finrival<b>.</b></div>
-                <div class="phoneMenu" aria-hidden="true">•••</div>
+                <img class="phoneHeaderLogo" src="./logo.png" alt="Finrival" />
+                <div class="phoneMenu" aria-hidden="true">≡</div>
               </div>
 
               <div class="phoneBody">
 
-                <!-- MARKET -->
+                <!-- ==================================================
+                     MARKET — source hierarchy matched to MarketScreen STEP8
+                =================================================== -->
                 <section class="previewPanel active" data-phone-panel="market">
-                  <div class="previewTopRow">
-                    <div>
-                      <div class="previewEyebrow">MARKET</div>
-                      <div class="previewTitle">Discover the session.</div>
-                    </div>
-                    <span class="previewBadge">UI PREVIEW</span>
-                  </div>
+                  <div class="appScrollTop">
 
-                  <div class="previewSearch">
-                    <span class="previewSearchIcon"></span>
-                    Search markets, tickers or names
-                  </div>
-
-                  <div class="signalCard">
-                    <div class="signalHeader">
-                      <span class="signalLabel">Market Signal</span>
-                      <span class="aiMiniButton">✦ AI Analyze</span>
-                    </div>
-
-                    <div class="signalMoves">
-                      <div class="signalMove up">
-                        <div class="moveKind up">Top gain</div>
-                        <div class="moveIdentity">
-                          <div class="tickerAvatar">NVDA</div>
-                          <div class="tickerText">
-                            <div class="tickerSymbol">NVDA</div>
-                            <div class="tickerName">NVIDIA</div>
-                          </div>
+                    <div class="marketSpotlights">
+                      <div class="marketSpotCard">
+                        <div class="marketSpotEyebrow">
+                          <span>TOP GAINER</span>
+                          <span style="color:#00E5FF">AI</span>
                         </div>
-                        <div class="moveFooter">
-                          <span class="samplePrice">$—</span>
-                          <span class="sampleMove up">+4.82%</span>
+                        <div class="marketSpotAsset">
+                          <div class="assetLogo small">
+                            <img src="https://img.icons8.com/color/96/nvidia.png" alt="NVIDIA logo" />
+                          </div>
+                          <div>
+                            <strong>NVDA</strong>
+                            <span>NVIDIA</span>
+                          </div>
+                          <div class="marketSpotMove up">+4.82%</div>
                         </div>
                       </div>
 
-                      <div class="signalMove down">
-                        <div class="moveKind down">Top decline</div>
-                        <div class="moveIdentity">
-                          <div class="tickerAvatar">TSLA</div>
-                          <div class="tickerText">
-                            <div class="tickerSymbol">TSLA</div>
-                            <div class="tickerName">Tesla</div>
-                          </div>
+                      <div class="marketSpotCard">
+                        <div class="marketSpotEyebrow">
+                          <span>TOP DECLINER</span>
+                          <span style="color:#00E5FF">AI</span>
                         </div>
-                        <div class="moveFooter">
-                          <span class="samplePrice">$—</span>
-                          <span class="sampleMove down">−3.14%</span>
+                        <div class="marketSpotAsset">
+                          <div class="assetLogo small">
+                            <img src="https://img.icons8.com/color/96/tesla-logo.png" alt="Tesla logo" />
+                          </div>
+                          <div>
+                            <strong>TSLA</strong>
+                            <span>Tesla</span>
+                          </div>
+                          <div class="marketSpotMove down">−3.14%</div>
                         </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="marketMiniStatus">
-                    <div class="statusChip"><strong>US</strong><span>Market view</span></div>
-                    <div class="statusChip"><strong>EU</strong><span>Market view</span></div>
-                    <div class="statusChip"><strong>CRYPTO</strong><span>24/7</span></div>
-                  </div>
+                    <div class="activityCardV14">
+                      <div class="activityHeaderV14">
+                        <div>
+                          <div class="activityTitleV14">
+                            <svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg>
+                            Daily Trading Activity
+                          </div>
+                          <div class="activityScopeV14">US Market • Latest common session</div>
+                        </div>
+                        <div class="activityCoverageV14">
+                          <strong>84.7%</strong>
+                          <span>coverage</span>
+                        </div>
+                      </div>
 
-                  <div class="sectionMiniHeader">
-                    <strong>Top markets</strong>
-                    <span>Shared data context</span>
-                  </div>
+                      <div class="activityBarV14" aria-hidden="true">
+                        <i style="width:31%;background:#00E5FF"></i>
+                        <i style="width:24%;background:#8B5CF6"></i>
+                        <i style="width:21%;background:#38BDF8"></i>
+                        <i style="width:24%;background:#F97316"></i>
+                      </div>
 
-                  <div class="compactList">
-                    <div class="compactRow">
-                      <div class="tickerAvatar">AAPL</div>
-                      <div class="compactMeta"><strong>AAPL</strong><span>Apple Inc.</span></div>
-                      <div class="compactRight"><strong>$—</strong><span class="positive">+1.24%</span></div>
+                      <div class="activityRowsV14">
+                        <div class="activityRowV14"><i class="activityDotV14" style="background:#00E5FF"></i>Technology <strong>31.0%</strong></div>
+                        <div class="activityRowV14"><i class="activityDotV14" style="background:#8B5CF6"></i>AI & Semis <strong>24.0%</strong></div>
+                        <div class="activityRowV14"><i class="activityDotV14" style="background:#38BDF8"></i>Finance <strong>21.0%</strong></div>
+                        <div class="activityRowV14"><i class="activityDotV14" style="background:#F97316"></i>Energy <strong>24.0%</strong></div>
+                      </div>
                     </div>
-                    <div class="compactRow">
-                      <div class="tickerAvatar">BTC</div>
-                      <div class="compactMeta"><strong>BTC</strong><span>Bitcoin</span></div>
-                      <div class="compactRight"><strong>$—</strong><span class="positive">+2.06%</span></div>
-                    </div>
-                  </div>
 
-                  <div class="previewDisclaimer">Static interface preview. Values shown are illustrative, not live market data.</div>
+                    <div class="signalHeroV14">
+                      <div class="signalTopV14">
+                        <div class="signalHeadingV14">
+                          <strong>Market Signal</strong>
+                          <span class="signalPillV14"><i></i>Top gain</span>
+                        </div>
+                        <span class="signalAiV14">⌁ AI Analyze</span>
+                      </div>
+
+                      <div class="signalAssetV14">
+                        <div class="assetLogo round">
+                          <img src="https://img.icons8.com/color/96/nvidia.png" alt="NVIDIA logo" />
+                        </div>
+                        <div class="identity">
+                          <strong>NVDA</strong>
+                          <span>NVIDIA Corp.</span>
+                        </div>
+                        <div class="move">+4.82%</div>
+                      </div>
+
+                      <div class="signalContextV14">
+                        <span>Today's verified session</span>
+                        <span>•</span>
+                        <span>Activity —</span>
+                      </div>
+
+                      <div class="signalProgressV14"><span></span></div>
+                    </div>
+
+                    <div class="marketSectionV14">
+                      <div class="marketSectionTopV14">
+                        <h3>Top</h3>
+                        <span class="marketDataBadgeV14">CACHED MARKET DATA</span>
+                      </div>
+
+                      <div class="marketSessionV14">
+                        <div><i></i>US</div>
+                        <div><i></i>EU</div>
+                        <div><i></i>CRYPTO</div>
+                      </div>
+
+                      <div class="marketToolsV14">
+                        <div class="marketSearchV14">⌕ &nbsp; Search markets</div>
+                        <div class="marketFilterV14">☷</div>
+                      </div>
+
+                      <div class="marketQuickV14">
+                        <span class="active">Top</span>
+                        <span>$1–$10</span>
+                        <span>Most Traded</span>
+                      </div>
+                    </div>
+
+                    <div class="sourceHint" style="margin:10px 0 14px">Preview values are illustrative; layout follows the recovered MarketScreen source.</div>
+                  </div>
                 </section>
 
 
-                <!-- NEWS -->
+                <!-- ==================================================
+                     NEWS — source hierarchy matched to NewsScreen
+                =================================================== -->
                 <section class="previewPanel" data-phone-panel="news">
-                  <div class="previewTopRow">
-                    <div>
-                      <div class="previewEyebrow">NEWS</div>
-                      <div class="previewTitle">Keep the market story.</div>
-                    </div>
-                    <span class="previewBadge">TRANSLATION</span>
+
+                  <div class="newsCategoryStripV14">
+                    <span class="newsCategoryV14 active">Top</span>
+                    <span class="newsCategoryV14">Stocks</span>
+                    <span class="newsCategoryV14">Crypto</span>
+                    <span class="newsCategoryV14">Economy</span>
+                    <span class="newsCategoryV14">Technology</span>
                   </div>
 
-                  <div class="previewSearch">
-                    <span class="previewSearchIcon"></span>
-                    Search financial news
+                  <div class="newsSearchV14">⌕ &nbsp; Quick Search</div>
+
+                  <div class="newsSectionTitleV14">Top Stories</div>
+
+                  <div class="topStoryRailV14">
+                    <article class="topStoryV14">
+                      <span class="source">MARKET NEWS</span>
+                      <strong>Technology shares lead the session as investors reassess growth expectations.</strong>
+                      <span class="meta">Illustrative headline • 3 min read</span>
+                    </article>
+                    <article class="topStoryV14">
+                      <span class="source">MACRO</span>
+                      <strong>Rate expectations shift after a fresh inflation update.</strong>
+                      <span class="meta">Illustrative headline</span>
+                    </article>
                   </div>
 
-                  <div class="newsChips">
-                    <span class="newsChip active">Top Stories</span>
-                    <span class="newsChip">US</span>
-                    <span class="newsChip">Europe</span>
-                    <span class="newsChip">AI & Tech</span>
+                  <div class="newsSectionTitleV14">Latest</div>
+
+                  <div class="timelineStoryV14">
+                    <div class="timelineRailV14"><i></i></div>
+                    <article class="timelineCardV14">
+                      <div class="head"><strong>MARKET NEWS</strong><span>12 min</span></div>
+                      <h4>Chipmakers remain in focus as traders track demand and sector momentum.</h4>
+                      <div class="timelineFooterV14">
+                        <span class="sentimentV14"><i></i>Bullish</span>
+                        <span class="aiInsightV14">⚡ AI Insight</span>
+                      </div>
+                    </article>
                   </div>
 
-                  <article class="storyCard">
-                    <div class="storyTop">
-                      <span class="storyTag">MARKET</span>
-                      <span>Illustrative feed</span>
-                    </div>
-                    <div class="storyTitle">Chipmakers lead a broad technology rebound as traders reassess growth expectations.</div>
-                    <div class="storySummary">Open the story, keep the original source context and translate the text inside Finrival.</div>
-                    <div class="storyFooter">
-                      <span>Market News</span>
-                      <span class="sentiment positive">Positive</span>
-                    </div>
-                  </article>
+                  <div class="timelineStoryV14">
+                    <div class="timelineRailV14"><i></i></div>
+                    <article class="timelineCardV14">
+                      <div class="head"><strong>GLOBAL MACRO</strong><span>31 min</span></div>
+                      <h4>Global markets digest policy signals while cross-asset volatility stays contained.</h4>
+                      <div class="timelineFooterV14">
+                        <span class="sentimentV14" style="color:#7c899a"><i style="background:#7c899a"></i>Neutral</span>
+                        <span class="aiInsightV14">⚡ AI Insight</span>
+                      </div>
+                    </article>
+                  </div>
 
-                  <article class="storyCard">
-                    <div class="storyTop">
-                      <span class="storyTag">MACRO</span>
-                      <span>Illustrative feed</span>
-                    </div>
-                    <div class="storyTitle">Rate expectations shift after new inflation data changes the near-term policy debate.</div>
-                    <div class="storySummary">News categories stay connected to the same research workflow used across the app.</div>
-                    <div class="storyFooter">
-                      <span>Macro Brief</span>
-                      <span class="sentiment neutral">Neutral</span>
-                    </div>
-                  </article>
-
-                  <article class="storyCard">
-                    <div class="storyTop">
-                      <span class="storyTag">DIGITAL ASSETS</span>
-                      <span>Illustrative feed</span>
-                    </div>
-                    <div class="storyTitle">Digital assets hold a narrow range while traders watch liquidity and risk appetite.</div>
-                    <div class="storyFooter">
-                      <span>Crypto Brief</span>
-                      <span class="sentiment neutral">Neutral</span>
-                    </div>
-                  </article>
+                  <div class="sourceHint" style="margin:10px 0 14px">Illustrative stories; interface order follows the recovered NewsScreen source.</div>
                 </section>
 
 
-                <!-- COMPARE -->
+                <!-- ==================================================
+                     COMPARE — source hierarchy matched to recovered full code
+                =================================================== -->
                 <section class="previewPanel" data-phone-panel="compare">
-                  <div class="previewTopRow">
-                    <div>
-                      <div class="previewEyebrow">COMPARE</div>
-                      <div class="previewTitle">Put assets side by side.</div>
-                    </div>
-                    <span class="previewBadge">ANALYTICS</span>
-                  </div>
+                  <div class="compareScrollV14">
 
-                  <div class="comparePair">
-                    <div class="compareAsset">
-                      <div class="compareAssetTop">
-                        <div class="tickerAvatar">AAPL</div>
-                        <div><strong>AAPL</strong><span>Apple Inc.</span></div>
+                    <div class="compareModeSwitchV14">
+                      <div class="compareModeV14 active">◒ &nbsp; RIVAL VIEW</div>
+                      <div class="compareModeV14">◷ &nbsp; WEALTH SIMULATOR</div>
+                    </div>
+
+                    <div class="compareHeadingV14">
+                      <h2>Global Rivalry</h2>
+                      <p>Institutional level cross-asset analysis.</p>
+                    </div>
+
+                    <div class="duelRowV14">
+                      <div class="duelCardV14 nvda">
+                        <div class="duelLogoV14">
+                          <div class="assetLogo large">
+                            <img src="https://img.icons8.com/color/96/nvidia.png" alt="NVIDIA logo" />
+                          </div>
+                        </div>
+                        <div class="duelIdentityV14">
+                          <strong>NVDA</strong>
+                          <span class="name">NVIDIA Corp.</span>
+                          <span class="price">$—</span>
+                          <span class="change">▲ %—</span>
+                          <span class="updated">▣ Update time unavailable</span>
+                        </div>
+                      </div>
+
+                      <div class="vsBadgeV14">VS</div>
+
+                      <div class="duelCardV14 msft">
+                        <div class="duelLogoV14">
+                          <div class="assetLogo large">
+                            <img src="https://img.icons8.com/color/96/microsoft.png" alt="Microsoft logo" />
+                          </div>
+                        </div>
+                        <div class="duelIdentityV14">
+                          <strong>MSFT</strong>
+                          <span class="name">Microsoft Corp.</span>
+                          <span class="price">$—</span>
+                          <span class="change">▲ %—</span>
+                          <span class="updated">▣ Update time unavailable</span>
+                        </div>
                       </div>
                     </div>
-                    <div class="versus">VS</div>
-                    <div class="compareAsset">
-                      <div class="compareAssetTop">
-                        <div class="tickerAvatar">NVDA</div>
-                        <div><strong>NVDA</strong><span>NVIDIA</span></div>
+
+                    <div class="battleButtonV14">⚡ &nbsp; AI Battle Report</div>
+
+                    <div class="sectionHeaderV14">
+                      <strong>Price Momentum</strong>
+                      <span class="syncV14">↗ SYNC ON</span>
+                    </div>
+
+                    <div class="proChartV14">
+                      <div class="proChartHeadV14">
+                        <div class="proChartIdentityV14">
+                          <strong>NVDA Pro Chart</strong>
+                          <div class="proChartSubV14">
+                            <span>NVIDIA Corp.</span>
+                            <span class="marketDataPillV14" style="color:#76B900"><i></i>MARKET DATA</span>
+                          </div>
+                        </div>
+                        <div class="proChartControlsV14">
+                          <span class="chartControlV14">$</span>
+                          <span class="chartControlV14 active cyan">1M⌄</span>
+                        </div>
+                      </div>
+
+                      <div class="chartTypeV14">
+                        <span>Candles</span>
+                        <span>Area</span>
+                        <span class="active cyan">Line</span>
+                      </div>
+
+                      <div class="chartAreaV14" aria-hidden="true">
+                        <svg viewBox="0 0 290 96" preserveAspectRatio="none">
+                          <path d="M0,72 C22,67 34,73 50,60 C70,43 82,50 100,42 C121,34 138,48 153,36 C171,22 188,31 204,25 C224,18 244,23 290,12"
+                                fill="none" stroke="#76B900" stroke-width="2"/>
+                        </svg>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="chartCard">
-                    <div class="chartHead">
-                      <strong>Performance comparison</strong>
-                      <div class="chartRange"><span>1D</span><span class="active">1M</span><span>1Y</span></div>
+                    <div class="proChartV14">
+                      <div class="proChartHeadV14">
+                        <div class="proChartIdentityV14">
+                          <strong>MSFT Pro Chart</strong>
+                          <div class="proChartSubV14">
+                            <span>Microsoft Corp.</span>
+                            <span class="marketDataPillV14" style="color:#FFD700"><i></i>MARKET DATA</span>
+                          </div>
+                        </div>
+                        <div class="proChartControlsV14">
+                          <span class="chartControlV14">$</span>
+                          <span class="chartControlV14 active gold">1M⌄</span>
+                        </div>
+                      </div>
+
+                      <div class="chartTypeV14">
+                        <span>Candles</span>
+                        <span>Area</span>
+                        <span class="active gold">Line</span>
+                      </div>
+
+                      <div class="chartAreaV14" aria-hidden="true">
+                        <svg viewBox="0 0 290 96" preserveAspectRatio="none">
+                          <path d="M0,65 C25,62 35,70 55,61 C77,50 95,56 112,45 C130,36 146,43 163,34 C184,24 201,31 220,22 C241,12 258,20 290,16"
+                                fill="none" stroke="#FFD700" stroke-width="2"/>
+                        </svg>
+                      </div>
                     </div>
 
-                    <div class="miniChart" aria-hidden="true">
-                      <svg viewBox="0 0 280 112" preserveAspectRatio="none">
-                        <defs>
-                          <linearGradient id="lineA" x1="0" x2="1">
-                            <stop offset="0%" stop-color="#8DD8FF"/>
-                            <stop offset="100%" stop-color="#00E5FF"/>
-                          </linearGradient>
-                          <linearGradient id="lineB" x1="0" x2="1">
-                            <stop offset="0%" stop-color="#D4B56A"/>
-                            <stop offset="100%" stop-color="#F4D48A"/>
-                          </linearGradient>
-                        </defs>
-                        <path d="M0,82 C22,78 29,60 49,65 C70,70 78,43 101,49 C126,55 136,31 157,39 C180,47 192,23 213,30 C236,36 246,18 280,21"
-                              fill="none" stroke="url(#lineA)" stroke-width="2"/>
-                        <path d="M0,73 C25,69 35,80 56,71 C77,62 88,67 110,57 C134,46 145,61 168,51 C192,41 202,46 225,37 C249,29 262,34 280,27"
-                              fill="none" stroke="url(#lineB)" stroke-width="2"/>
-                      </svg>
-                    </div>
+                    <div class="sourceHint">Compare preview follows recovered defaults: RIVAL VIEW, Global Rivalry, NVDA vs MSFT, AI Battle Report and dual Pro Charts.</div>
                   </div>
-
-                  <div class="compareStats">
-                    <div class="compareStat"><span>RANGE RETURN</span><strong>Context</strong></div>
-                    <div class="compareStat"><span>VOLATILITY</span><strong>Risk</strong></div>
-                    <div class="compareStat"><span>CORRELATION</span><strong>Model</strong></div>
-                  </div>
-
-                  <div class="signalCard" style="margin-top:8px">
-                    <div class="signalHeader">
-                      <span class="signalLabel">Rival Edge</span>
-                      <span class="aiMiniButton">✦ AI Battle Report</span>
-                    </div>
-                    <div style="margin-top:7px;color:#7D8A9D;font-size:4.8px;line-height:1.45">
-                      Compare performance, risk, drawdown and model context without leaving the screen.
-                    </div>
-                  </div>
-
-                  <div class="previewDisclaimer">Static interface preview. Chart paths are illustrative.</div>
                 </section>
 
 
-                <!-- RIVAL -->
+                <!-- ==================================================
+                     RIVAL — source hierarchy matched to recovered RivalScreen
+                =================================================== -->
                 <section class="previewPanel" data-phone-panel="rival">
-                  <div class="previewTopRow">
-                    <div>
-                      <div class="previewEyebrow">RIVAL</div>
-                      <div class="previewTitle">Practice the decision.</div>
-                    </div>
-                    <span class="previewBadge" style="border-color:rgba(212,181,106,.2);color:#D4B56A;background:rgba(212,181,106,.055)">SIMULATION</span>
-                  </div>
+                  <div class="appScrollTop">
 
-                  <div class="rivalWallet">
-                    <small>Practice balance</small>
-                    <div class="rivalBalance">100,000 <span>RC</span></div>
-                    <div class="rivalWalletMeta">
-                      <span>Fictional Rival Credits</span>
-                      <span class="simulationPill">No real money</span>
+                    <div class="rivalHeaderV14">
+                      <h2>V-Trade Simulator</h2>
+                      <div class="rivalActionsV14">
+                        <span class="rivalIconBtnV14">↻</span>
+                        <span class="rivalIconBtnV14">ⓘ</span>
+                      </div>
                     </div>
-                  </div>
 
-                  <div class="sectionMiniHeader">
-                    <strong>Open Positions</strong>
-                    <span>Simulated P&amp;L</span>
-                  </div>
+                    <div class="simulationBadgeV14">⚗ &nbsp; SIMULATION • NO REAL MONEY</div>
 
-                  <div class="positionCard">
-                    <div class="positionRow">
-                      <div class="tickerAvatar">NVDA</div>
-                      <div class="positionMeta"><strong>NVDA</strong><span>Practice position</span></div>
-                      <div class="pnl positive"><strong>+3.8%</strong><span>simulated</span></div>
-                    </div>
-                    <div class="positionRow">
-                      <div class="tickerAvatar">AAPL</div>
-                      <div class="positionMeta"><strong>AAPL</strong><span>Practice position</span></div>
-                      <div class="pnl negative"><strong>−1.2%</strong><span>simulated</span></div>
-                    </div>
-                  </div>
+                    <div class="portfolioHeroV14">
+                      <div class="walletTopV14">
+                        <div>
+                          <small>SIMULATED BALANCE</small>
+                          <strong>RC 100,000.00</strong>
+                        </div>
+                        <span style="color:rgba(255,255,255,.55);font-size:9px">◉</span>
+                      </div>
 
-                  <div class="signalCard" style="margin-top:9px;border-color:rgba(212,181,106,.16)">
-                    <div class="signalHeader">
-                      <span class="signalLabel">Practice trade</span>
-                      <span class="simulationPill">RC</span>
-                    </div>
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px">
-                      <div style="padding:8px;border:1px solid rgba(57,217,138,.15);border-radius:9px;background:rgba(57,217,138,.04);color:#39D98A;font-size:5px;font-weight:900;text-align:center">BUY</div>
-                      <div style="padding:8px;border:1px solid rgba(255,107,122,.15);border-radius:9px;background:rgba(255,107,122,.04);color:#FF6B7A;font-size:5px;font-weight:900;text-align:center">SELL</div>
-                    </div>
-                  </div>
+                      <div class="walletStatsV14">
+                        <div>
+                          <small>Rival Credits</small>
+                          <strong>RC 100,000.00</strong>
+                        </div>
+                        <div>
+                          <small>Total P&amp;L</small>
+                          <strong>+RC 0.00 (0.00%)</strong>
+                        </div>
+                      </div>
 
-                  <div class="previewDisclaimer">Rival is a fictional practice simulator. Rival Credits have no monetary value.</div>
+                      <div class="liquidityBarV14"><span></span><span></span></div>
+                      <div class="liquidityLabelsV14"><span>CASH 100%</span><span>INVESTED 0%</span></div>
+                    </div>
+
+                    <div class="rivalDividerV14"><span></span><i></i><span></span></div>
+
+                    <div class="emptyPortfolioV14">
+                      <div class="walletIcon">▱</div>
+                      <strong>Your practice portfolio is empty.</strong>
+                      <p>Search for assets below to start practicing with simulated credits.</p>
+                      <div class="discoverV14">Discover Assets</div>
+                    </div>
+
+                    <div class="sourceHint" style="margin:11px 0 14px">Rival is a fictional practice simulator; Rival Credits have no monetary value.</div>
+                  </div>
                 </section>
 
 
-                <!-- WATCHLIST -->
+                <!-- ==================================================
+                     WATCHLIST — source hierarchy matched to recovered WatchlistScreen
+                =================================================== -->
                 <section class="previewPanel" data-phone-panel="watchlist">
-                  <div class="previewTopRow">
-                    <div>
-                      <div class="previewEyebrow">WATCHLIST</div>
-                      <div class="previewTitle">Save what matters.</div>
-                    </div>
-                    <span class="previewBadge">ALERTS</span>
-                  </div>
+                  <div class="appScrollTop">
 
-                  <div class="watchHero">
-                    <div>
-                      <strong>Your saved market context</strong>
-                      <span>Follow assets and set server-side price alerts.</span>
+                    <div class="watchHeaderV14">
+                      <div class="copy">
+                        <h2>Watchlist</h2>
+                        <p>Shared cached market data</p>
+                      </div>
+                      <div class="watchProfileV14">I</div>
                     </div>
-                    <div class="watchCount">4</div>
-                  </div>
 
-                  <div class="sectionMiniHeader">
-                    <strong>Saved assets</strong>
-                    <span>Example layout</span>
-                  </div>
-
-                  <div class="compactList">
-                    <div class="compactRow">
-                      <div class="tickerAvatar">AAPL</div>
-                      <div class="compactMeta"><strong>AAPL</strong><span>Apple Inc.</span></div>
-                      <div class="compactRight"><strong>$—</strong><span class="positive">+1.24%</span></div>
-                    </div>
-                    <div class="compactRow">
-                      <div class="tickerAvatar">BTC</div>
-                      <div class="compactMeta"><strong>BTC</strong><span>Bitcoin</span></div>
-                      <div class="compactRight"><strong>$—</strong><span class="positive">+2.06%</span></div>
-                    </div>
-                    <div class="compactRow">
-                      <div class="tickerAvatar">GLD</div>
-                      <div class="compactMeta"><strong>GLD</strong><span>Gold ETF</span></div>
-                      <div class="compactRight">
-                        <strong>$—</strong>
-                        <span class="muted">Saved</span>
+                    <div class="watchInfoV14">
+                      <div class="watchInfoIconV14">♧</div>
+                      <div>
+                        <strong>User-specific Price Alerts</strong>
+                        <p>Tap the bell on a saved asset. Alerts are one-time and use Finrival shared cached reference prices — not broker execution quotes.</p>
+                        <div class="watchNativeNoteV14">Web preview: server alerts can be configured now; phone push activates on native iOS/Android.</div>
                       </div>
                     </div>
-                    <div class="compactRow">
-                      <div class="tickerAvatar">NVDA</div>
-                      <div class="compactMeta"><strong>NVDA</strong><span>NVIDIA</span></div>
-                      <div class="compactRight">
-                        <div class="alertBell" aria-label="Price alert">⌁</div>
+
+                    <div class="watchSearchV14">
+                      <span>⌕</span>
+                      <span>Search 150+ stocks &amp; crypto to add...</span>
+                      <span>›</span>
+                    </div>
+
+                    <div class="watchSectionHeadV14">
+                      <div>
+                        <strong>Saved Assets</strong>
+                        <span>4/5 free slots used</span>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="signalCard" style="margin-top:9px">
-                    <div class="signalHeader">
-                      <span class="signalLabel">Price alert</span>
-                      <span class="previewBadge" style="min-height:17px">SERVER</span>
-                    </div>
-                    <div style="margin-top:7px;color:#7E8B9E;font-size:4.8px;line-height:1.45">
-                      Example: notify when NVDA moves above your selected target.
-                    </div>
-                  </div>
+                    <div class="appCard">
+                      <div class="savedAssetV14">
+                        <div class="assetLogo small">
+                          <img src="https://img.icons8.com/color/96/apple-logo.png" alt="Apple logo" />
+                        </div>
+                        <div class="meta"><strong>AAPL</strong><span>Apple Inc.</span></div>
+                        <div class="savedPriceV14"><strong>$—</strong><span>+1.24%</span></div>
+                        <div class="bellV14">♢</div>
+                      </div>
 
-                  <div class="previewDisclaimer">Static interface preview. No alert is created from this website preview.</div>
+                      <div class="savedAssetV14">
+                        <div class="assetLogo small">
+                          <img src="https://img.icons8.com/color/96/nvidia.png" alt="NVIDIA logo" />
+                        </div>
+                        <div class="meta"><strong>NVDA</strong><span>NVIDIA Corp.</span></div>
+                        <div class="savedPriceV14"><strong>$—</strong><span>+4.82%</span></div>
+                        <div class="bellV14">♢</div>
+                      </div>
+
+                      <div class="savedAssetV14">
+                        <div class="assetLogo small">
+                          <img src="https://img.icons8.com/color/96/bitcoin--v1.png" alt="Bitcoin logo" />
+                        </div>
+                        <div class="meta"><strong>BTC</strong><span>Bitcoin</span></div>
+                        <div class="savedPriceV14"><strong>$—</strong><span>+2.06%</span></div>
+                        <div class="bellV14">♢</div>
+                      </div>
+
+                      <div class="savedAssetV14">
+                        <div class="assetLogo small">
+                          <img src="https://img.icons8.com/color/96/tesla-logo.png" alt="Tesla logo" />
+                        </div>
+                        <div class="meta"><strong>TSLA</strong><span>Tesla</span></div>
+                        <div class="savedPriceV14"><strong>$—</strong><span style="color:#ff3b30">−3.14%</span></div>
+                        <div class="bellV14">♢</div>
+                      </div>
+                    </div>
+
+                    <div class="sourceHint" style="margin:10px 0 14px">Illustrative values; watchlist structure follows the recovered production screen.</div>
+                  </div>
                 </section>
 
               </div>
 
-              <button class="aiOrb" id="phoneAiOrb" type="button" aria-label="Open Finrival AI preview">AI</button>
+              <button class="aiOrb" id="phoneAiOrb" type="button" aria-label="Open Finrival AI preview">
+                Finrival <span class="aiAccent">AI</span>
+              </button>
 
               <div class="aiSheet" id="phoneAiSheet" aria-hidden="true">
                 <div class="aiSheetHead">
@@ -2507,7 +4397,7 @@
                 </div>
                 <div class="aiPrompt" id="phoneAiPrompt">Ask about the current market screen.</div>
                 <div class="aiResponse">
-                  <strong>Context-first:</strong> Finrival AI can use the selected asset or active research view as context. Output may be wrong and should be independently verified.
+                  <strong>Context-first:</strong> this website preview mirrors the in-app AI entry point. AI output may be wrong and should be independently verified.
                 </div>
               </div>
 
@@ -2515,7 +4405,7 @@
 
                 <button class="phoneNavItem active" type="button" data-phone-tab="market">
                   <div class="phoneNavIcon">
-                    <svg viewBox="0 0 24 24"><path d="M4 17l5-5 4 3 7-8"/><path d="M16 7h4v4"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M4 13h3l2-6 4 12 2-6h5"/></svg>
                   </div>
                   <span>Market</span>
                 </button>
@@ -2536,7 +4426,7 @@
 
                 <button class="phoneNavItem" type="button" data-phone-tab="rival">
                   <div class="phoneNavIcon">
-                    <svg viewBox="0 0 24 24"><path d="M8 5h5a4 4 0 010 8H8z"/><path d="M8 13l8 6"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M13 2L5 13h6l-1 9 9-12h-6z"/></svg>
                   </div>
                   <span>Rival</span>
                 </button>
@@ -2554,7 +4444,7 @@
           </div>
 
           <div class="phonePreviewCaption">
-            Tap the app tabs to preview the Finrival workflow.
+            Tap the tabs — preview structure is matched to the recovered Finrival app source.
           </div>
 
         </div>
@@ -2861,8 +4751,8 @@
       const promptCopy = {
         market: 'Ask about the current market screen.',
         news: 'Ask for context on the selected market story.',
-        compare: 'Ask about the assets in this comparison.',
-        rival: 'Ask about this fictional practice scenario.',
+        compare: 'Ask for a Finrival comparison report for NVDA vs MSFT.',
+        rival: 'Ask about this fictional V-Trade simulation scenario.',
         watchlist: 'Ask about an asset saved in your watchlist.'
       };
 
