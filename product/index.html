@@ -184,7 +184,301 @@ h1{margin-top:18px;font-size:clamp(38px,5.6vw,62px);line-height:.98;letter-spaci
 @media(max-width:1080px){.heroGrid,.dualGrid{grid-template-columns:1fr}.mosaic{grid-template-columns:1fr}}
 @media(max-width:920px){.desktopNav,.navStores{display:none}.mobileMenuButton{display:grid}.cardGrid,.stepsGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.marketPair,.cta,.quoteBand{grid-template-columns:1fr}}
 @media(max-width:680px){.siteContainer{width:min(var(--max),calc(100% - 26px))}.hero{padding:68px 0 34px}.siteNav{height:66px}h1{letter-spacing:-1.4px}.heroLead,.sectionCopy{font-size:14px}.cardGrid,.stepsGrid{grid-template-columns:1fr}.boardTitle{font-size:16px}.footerBottom{flex-direction:column}}
-  </style>
+  
+
+/* =========================================================
+   TRUE CRISP TYPOGRAPHY V5 — Windows / Chrome readability
+   Keeps layout and product visuals unchanged.
+========================================================= */
+html,
+body {
+  font-family:
+    "Segoe UI Variable Text",
+    "Segoe UI Variable",
+    "Segoe UI",
+    Inter,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+button,
+a,
+input,
+textarea {
+  font-kerning: normal;
+}
+
+/* Use real, supported weights instead of synthetic ultra-heavy values. */
+h1 {
+  font-weight: 800;
+  letter-spacing: -1.55px;
+}
+
+.sectionHead h2,
+.cta h3,
+.quoteBand strong {
+  font-weight: 800;
+}
+
+.desktopNav {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.navStore,
+.mobileMenu a {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.eyebrow,
+.sectionKicker {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .16px;
+}
+
+.heroLead {
+  font-size: 17px;
+  line-height: 1.72;
+  font-weight: 400;
+}
+
+.heroMeta {
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+.button {
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
+.boardLabel,
+.featureCard .cardTag,
+.policyCard .cardTag,
+.stepCard .cardTag,
+.pricingCard .cardTag {
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .10px;
+}
+
+.boardTitle {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -.28px;
+}
+
+.boardCopy {
+  font-size: 14px;
+  line-height: 1.62;
+}
+
+.infoPills span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+/* Mini app surfaces: never let visible text collapse to 9px. */
+.screenTop strong {
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.screenChip {
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .06px;
+}
+
+.spotCard small {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06px;
+}
+
+.spotCard strong {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.spotCard span {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.listRow .left b {
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.listRow .left small {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.listRow .right {
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.story .head {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06px;
+}
+
+.story h4 {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.story .foot {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.duelCard strong {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.duelCard span {
+  font-size: 11px;
+  font-weight: 550;
+}
+
+.vsBadge {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.modeBar span {
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .05px;
+}
+
+.aiBubble {
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.aiComposer {
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.aiSend {
+  font-weight: 800;
+}
+
+.sectionCopy {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.featureCard h3,
+.policyCard h3,
+.stepCard h3,
+.pricingCard h3 {
+  font-weight: 800;
+}
+
+.featureCard p,
+.policyCard p,
+.stepCard p,
+.pricingCard p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.cardBullets span {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.stepCard strong {
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: .08px;
+}
+
+.quoteBand p,
+.cta p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.quoteBadge {
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.highlightNote,
+.footerCopy,
+.footerLinks,
+.footerBottom {
+  font-size: 13px;
+}
+
+.footerLinks {
+  font-weight: 650;
+}
+
+/* Keep vector edges and UI text stable. */
+svg,
+svg * {
+  shape-rendering: geometricPrecision;
+}
+
+.screenMock,
+.board,
+.featureCard,
+.policyCard,
+.stepCard,
+.pricingCard {
+  transform: none !important;
+  backface-visibility: visible;
+}
+
+@media (max-width: 680px) {
+  .heroLead {
+    font-size: 16px;
+  }
+
+  .sectionCopy {
+    font-size: 15px;
+  }
+
+  .desktopNav,
+  .navStore,
+  .mobileMenu a,
+  .button,
+  .heroMeta,
+  .highlightNote,
+  .footerCopy,
+  .footerLinks,
+  .footerBottom {
+    text-rendering: optimizeLegibility;
+  }
+}
+
+</style>
  </head>
  <body>
   <header class="siteHeader">

@@ -6,14 +6,14 @@
   <meta content="#05070a" name="theme-color"/>
   <meta content="dark" name="color-scheme"/>
   <title>
-   Finrival Features — Market, News, Compare, Watchlist, Rival and AI
+   Finrival Product — Market Research in One Connected Workspace
   </title>
-  <meta content="Explore the six connected Finrival feature surfaces through compact, app-grounded visual cards." name="description"/>
-  <link href="https://finrival.com/features/" rel="canonical"/>
+  <meta content="See how Finrival connects market discovery, news, comparison, watchlist monitoring, Rival simulation and AI-assisted context inside one focused mobile workflow." name="description"/>
+  <link href="https://finrival.com/product/" rel="canonical"/>
   <meta content="website" property="og:type"/>
-  <meta content="Finrival Features — Market, News, Compare, Watchlist, Rival and AI" property="og:title"/>
-  <meta content="Six connected app surfaces shown in a more grounded, less generic way." property="og:description"/>
-  <meta content="https://finrival.com/features/" property="og:url"/>
+  <meta content="Finrival Product — Market Research in One Connected Workspace" property="og:title"/>
+  <meta content="A compact product overview grounded in the real Finrival app structure." property="og:description"/>
+  <meta content="https://finrival.com/product/" property="og:url"/>
   <meta content="Finrival" property="og:site_name"/>
   <style>
    :root{
@@ -184,7 +184,301 @@ h1{margin-top:18px;font-size:clamp(38px,5.6vw,62px);line-height:.98;letter-spaci
 @media(max-width:1080px){.heroGrid,.dualGrid{grid-template-columns:1fr}.mosaic{grid-template-columns:1fr}}
 @media(max-width:920px){.desktopNav,.navStores{display:none}.mobileMenuButton{display:grid}.cardGrid,.stepsGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.marketPair,.cta,.quoteBand{grid-template-columns:1fr}}
 @media(max-width:680px){.siteContainer{width:min(var(--max),calc(100% - 26px))}.hero{padding:68px 0 34px}.siteNav{height:66px}h1{letter-spacing:-1.4px}.heroLead,.sectionCopy{font-size:14px}.cardGrid,.stepsGrid{grid-template-columns:1fr}.boardTitle{font-size:16px}.footerBottom{flex-direction:column}}
-  </style>
+  
+
+/* =========================================================
+   TRUE CRISP TYPOGRAPHY V5 — Windows / Chrome readability
+   Keeps layout and product visuals unchanged.
+========================================================= */
+html,
+body {
+  font-family:
+    "Segoe UI Variable Text",
+    "Segoe UI Variable",
+    "Segoe UI",
+    Inter,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+button,
+a,
+input,
+textarea {
+  font-kerning: normal;
+}
+
+/* Use real, supported weights instead of synthetic ultra-heavy values. */
+h1 {
+  font-weight: 800;
+  letter-spacing: -1.55px;
+}
+
+.sectionHead h2,
+.cta h3,
+.quoteBand strong {
+  font-weight: 800;
+}
+
+.desktopNav {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.navStore,
+.mobileMenu a {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.eyebrow,
+.sectionKicker {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .16px;
+}
+
+.heroLead {
+  font-size: 17px;
+  line-height: 1.72;
+  font-weight: 400;
+}
+
+.heroMeta {
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+.button {
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
+.boardLabel,
+.featureCard .cardTag,
+.policyCard .cardTag,
+.stepCard .cardTag,
+.pricingCard .cardTag {
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .10px;
+}
+
+.boardTitle {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -.28px;
+}
+
+.boardCopy {
+  font-size: 14px;
+  line-height: 1.62;
+}
+
+.infoPills span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+/* Mini app surfaces: never let visible text collapse to 9px. */
+.screenTop strong {
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.screenChip {
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .06px;
+}
+
+.spotCard small {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06px;
+}
+
+.spotCard strong {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.spotCard span {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.listRow .left b {
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.listRow .left small {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.listRow .right {
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.story .head {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06px;
+}
+
+.story h4 {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.story .foot {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.duelCard strong {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.duelCard span {
+  font-size: 11px;
+  font-weight: 550;
+}
+
+.vsBadge {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.modeBar span {
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .05px;
+}
+
+.aiBubble {
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.aiComposer {
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.aiSend {
+  font-weight: 800;
+}
+
+.sectionCopy {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.featureCard h3,
+.policyCard h3,
+.stepCard h3,
+.pricingCard h3 {
+  font-weight: 800;
+}
+
+.featureCard p,
+.policyCard p,
+.stepCard p,
+.pricingCard p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.cardBullets span {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.stepCard strong {
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: .08px;
+}
+
+.quoteBand p,
+.cta p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.quoteBadge {
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.highlightNote,
+.footerCopy,
+.footerLinks,
+.footerBottom {
+  font-size: 13px;
+}
+
+.footerLinks {
+  font-weight: 650;
+}
+
+/* Keep vector edges and UI text stable. */
+svg,
+svg * {
+  shape-rendering: geometricPrecision;
+}
+
+.screenMock,
+.board,
+.featureCard,
+.policyCard,
+.stepCard,
+.pricingCard {
+  transform: none !important;
+  backface-visibility: visible;
+}
+
+@media (max-width: 680px) {
+  .heroLead {
+    font-size: 16px;
+  }
+
+  .sectionCopy {
+    font-size: 15px;
+  }
+
+  .desktopNav,
+  .navStore,
+  .mobileMenu a,
+  .button,
+  .heroMeta,
+  .highlightNote,
+  .footerCopy,
+  .footerLinks,
+  .footerBottom {
+    text-rendering: optimizeLegibility;
+  }
+}
+
+</style>
  </head>
  <body>
   <header class="siteHeader">
@@ -203,10 +497,10 @@ h1{margin-top:18px;font-size:clamp(38px,5.6vw,62px);line-height:.98;letter-spaci
       <a href="../">
        Home
       </a>
-      <a href="../product/">
+      <a class="active" href="../product/">
        Product
       </a>
-      <a class="active" href="../features/">
+      <a href="../features/">
        Features
       </a>
       <a href="../ai/">
@@ -250,10 +544,10 @@ h1{margin-top:18px;font-size:clamp(38px,5.6vw,62px);line-height:.98;letter-spaci
      <a href="../">
       Home
      </a>
-     <a href="../product/">
+     <a class="active" href="../product/">
       Product
      </a>
-     <a class="active" href="../features/">
+     <a href="../features/">
       Features
      </a>
      <a href="../ai/">
@@ -279,41 +573,44 @@ h1{margin-top:18px;font-size:clamp(38px,5.6vw,62px);line-height:.98;letter-spaci
     <div class="siteContainer heroGrid">
      <div>
       <div class="eyebrow">
-       Feature map
+       Product overview
       </div>
       <h1>
-       Features that look like the product,
+       One research path.
        <span class="gradientText">
-        not like filler copy.
+        Six connected surfaces.
        </span>
       </h1>
       <p class="heroLead">
-       Each Finrival feature below is tied to the actual app structure: Market, News, Compare, Watchlist, Rival simulation and the global Finrival AI layer. We reduced generic website language and let the product surfaces carry more of the story.
+       Finrival does not split discovery, comparison, news, monitoring and AI into separate disconnected tools. The product keeps them in one mobile workflow, and the visuals below are aligned to the recovered app structure rather than to a generic fintech concept.
       </p>
       <div class="heroActions">
-       <a class="button buttonPrimary" href="#feature-grid">
-        Open feature grid
+       <a class="button buttonPrimary" href="#surfaces">
+        Explore the surfaces
        </a>
-       <a class="button buttonSecondary" href="../product/">
-        Product overview
+       <a class="button buttonSecondary" href="../">
+        Back to Home
        </a>
       </div>
       <div class="heroMeta">
        <span>
         <i>
         </i>
-        Six app surfaces
+        Market / News / Compare / Rival / Watchlist / AI
        </span>
        <span>
         <i>
         </i>
-        Recovered labels and defaults
+        Source-matched website previews
        </span>
        <span>
         <i>
         </i>
-        Compact by design
+        Compact mobile-first story
        </span>
+      </div>
+      <div class="highlightNote">
+       This page only uses modules Finrival actually has today: Market, News, Compare, Rival simulation, Watchlist / alerts and the global Finrival AI layer.
       </div>
      </div>
      <div class="heroArt">
@@ -322,26 +619,26 @@ h1{margin-top:18px;font-size:clamp(38px,5.6vw,62px);line-height:.98;letter-spaci
       <div class="visualStack">
        <div class="board">
         <div class="boardLabel">
-         Source-matched preview
+         Recovered app flow
         </div>
         <div class="boardTitle">
-         A website should not out-talk the app.
+         Start broad, narrow fast.
         </div>
         <div class="boardCopy">
-         So this page uses visual mini-surfaces and short descriptions rather than long, repetitive marketing paragraphs.
+         Discovery starts on Market, moves into Compare or News, then carries context into Watchlist or Finrival AI.
         </div>
         <div class="infoPills">
          <span>
-          Top • Search markets
-         </span>
-         <span>
-          Global Rivalry
+          Top Gainer / Top Dip
          </span>
          <span>
           AI Battle Report
          </span>
          <span>
-          FREE AI • 5 DAILY REQUESTS
+          Alerts
+         </span>
+         <span>
+          V-Trade Simulator
          </span>
         </div>
        </div>
@@ -424,62 +721,6 @@ h1{margin-top:18px;font-size:clamp(38px,5.6vw,62px);line-height:.98;letter-spaci
           </div>
          </div>
          <div class="screenMock">
-          <div class="screenTop">
-           <strong>
-            News
-           </strong>
-           <span class="screenChip">
-            Top • Stocks • Crypto
-           </span>
-          </div>
-          <div class="timeline">
-           <article class="story">
-            <div class="head">
-             <span>
-              US EQUITIES
-             </span>
-             <span>
-              12 min
-             </span>
-            </div>
-            <h4>
-             Semiconductor leaders advance as AI demand remains firm.
-            </h4>
-            <div class="foot">
-             <span>
-              Positive
-             </span>
-             <span>
-              AI Insight
-             </span>
-            </div>
-           </article>
-           <article class="story">
-            <div class="head">
-             <span>
-              GLOBAL MACRO
-             </span>
-             <span>
-              31 min
-             </span>
-            </div>
-            <h4>
-             Cross-asset volatility stays contained while policy signals are digested.
-            </h4>
-            <div class="foot">
-             <span>
-              Neutral
-             </span>
-             <span>
-              Source + Time
-             </span>
-            </div>
-           </article>
-          </div>
-         </div>
-        </div>
-        <div class="column">
-         <div class="screenMock">
           <div class="modeBar">
            <span class="active">
             Rival View
@@ -541,50 +782,79 @@ h1{margin-top:18px;font-size:clamp(38px,5.6vw,62px);line-height:.98;letter-spaci
           </div>
          </div>
         </div>
+        <div class="column">
+         <div class="screenMock">
+          <div class="screenTop">
+           <strong>
+            Finrival AI
+           </strong>
+           <span class="screenChip">
+            FREE AI • 5 DAILY REQUESTS
+           </span>
+          </div>
+          <div class="aiBubble">
+           <strong>
+            Context-first:
+           </strong>
+           the assistant keeps the current market or compare context attached before you ask the next question.
+          </div>
+          <div class="aiBubble secondary" style="margin-top:10px">
+           Explain why the top gainer is leading today and what market structure supports the move.
+          </div>
+          <div class="aiComposer">
+           <span>
+            Ask Finrival AI...
+           </span>
+           <span class="aiSend">
+            ↑
+           </span>
+          </div>
+         </div>
+        </div>
        </div>
       </div>
      </div>
     </div>
    </section>
-   <section class="section sectionBorder" id="feature-grid">
+   <section class="section sectionBorder" id="surfaces">
     <div class="siteContainer">
      <div class="sectionHead">
       <div class="sectionKicker">
-       Six layers
+       Inside the app
       </div>
       <h2>
-       One research system with six visible surfaces.
+       What the product actually contains.
       </h2>
       <p class="sectionCopy">
-       These cards intentionally mention the real UI elements that already appear on Finrival’s recovered website phone replica.
+       The cards below describe the real Finrival surfaces and echo how they appear in the recovered website phone replica.
       </p>
      </div>
      <div class="cardGrid">
       <article class="featureCard">
        <div class="cardTag">
-        Market discovery
+        01 · Market
        </div>
        <h3>
-        Spot opportunity before you chase details.
+        Discovery starts on the home tab.
        </h3>
        <p>
-        The Market surface opens with spotlight movers, then adds liquidity, anomaly context, sessions and search.
+        MarketScreen is the first layer. It carries the shared app shell and opens with spotlight cards, liquidity context, anomaly context, sessions and the all-assets list.
        </p>
        <div class="cardBullets">
         <span>
          <i>
          </i>
-         Top Gainer / Top Dip
+         Top Gainer / Top Dip spotlight cards
         </span>
         <span>
          <i>
          </i>
-         Daily Liquidity
+         Daily Liquidity + market freshness context
         </span>
         <span>
          <i>
          </i>
-         Market freshness + all assets
+         Search and all-assets browsing
         </span>
        </div>
        <div class="screenMock">
@@ -666,24 +936,24 @@ h1{margin-top:18px;font-size:clamp(38px,5.6vw,62px);line-height:.98;letter-spaci
       </article>
       <article class="featureCard">
        <div class="cardTag">
-        Financial news
+        02 · News
        </div>
        <h3>
-        Stay close to the story around the move.
+        News stays compact and time-aware.
        </h3>
        <p>
-        News keeps source and time context visible so stories do not lose their origin.
+        News uses a timeline-like card layout with source and time context, then provides a path into AI follow-up without pretending to be a live terminal.
        </p>
        <div class="cardBullets">
         <span>
          <i>
          </i>
-         Timeline-style story cards
+         Top / Stocks / Crypto category strip
         </span>
         <span>
          <i>
          </i>
-         Category strip
+         Source and time context on each story
         </span>
         <span>
          <i>
@@ -748,29 +1018,29 @@ h1{margin-top:18px;font-size:clamp(38px,5.6vw,62px);line-height:.98;letter-spaci
       </article>
       <article class="featureCard">
        <div class="cardTag">
-        Compare
+        03 · Compare
        </div>
        <h3>
-        Put two assets in the same frame.
+        Compare keeps two assets in the same frame.
        </h3>
        <p>
-        Compare is where the research gets specific: historical framing, side-by-side context and the AI Battle Report entry point.
+        The Compare tab is emphasized in the navigation and opens Rival View plus Wealth Simulator, with defaults grounded in the recovered compare structure.
        </p>
        <div class="cardBullets">
         <span>
          <i>
          </i>
-         Rival View + Wealth Simulator
+         Rival View + Wealth Simulator modes
         </span>
         <span>
          <i>
          </i>
-         NVDA vs MSFT default
+         Global Rivalry default: NVDA vs MSFT
         </span>
         <span>
          <i>
          </i>
-         Dual Pro charts
+         AI Battle Report and dual Pro charts
         </span>
        </div>
        <div class="screenMock">
@@ -835,31 +1105,108 @@ h1{margin-top:18px;font-size:clamp(38px,5.6vw,62px);line-height:.98;letter-spaci
         </div>
        </div>
       </article>
-      <article class="featureCard">
+      <article class="featureCard gold">
        <div class="cardTag">
-        Watchlist &amp; alerts
+        04 · Rival
        </div>
        <h3>
-        Keep the useful names close.
+        Simulation is intentionally separate.
        </h3>
        <p>
-        Monitoring lives in a dedicated tab, separate from discovery and comparison.
+        Rival uses gold treatment and fictional credits so it never reads like a real brokerage flow. It is a simulation surface, not a live-money trading venue.
+       </p>
+       <div class="cardBullets gold">
+        <span>
+         <i>
+         </i>
+         V-Trade Simulator presentation
+        </span>
+        <span>
+         <i>
+         </i>
+         Fictional Rival Credits only
+        </span>
+        <span>
+         <i>
+         </i>
+         Practice positions and activity
+        </span>
+       </div>
+       <div class="screenMock">
+        <div class="modeBar">
+         <span class="goldActive">
+          V-Trade Simulator
+         </span>
+        </div>
+        <div class="screenTop">
+         <strong>
+          Rival
+         </strong>
+         <span class="screenChip">
+          Simulation
+         </span>
+        </div>
+        <div class="screenList">
+         <div class="listRow">
+          <div class="left">
+           <b>
+            Rival Credits
+           </b>
+           <small>
+            Fictional capital only
+           </small>
+          </div>
+          <div class="right">
+           125,000 RC
+           <em>
+            No real broker link
+           </em>
+          </div>
+         </div>
+         <div class="listRow">
+          <div class="left">
+           <b>
+            Open Positions
+           </b>
+           <small>
+            Practice portfolio
+           </small>
+          </div>
+          <div class="right">
+           3 trades
+           <em>
+            Tracked in-app
+           </em>
+          </div>
+         </div>
+        </div>
+       </div>
+      </article>
+      <article class="featureCard">
+       <div class="cardTag">
+        05 · Watchlist
+       </div>
+       <h3>
+        Monitoring stays in a dedicated tab.
+       </h3>
+       <p>
+        Saved assets, alert entry points and user-specific price alerts live here. Alerts are reference-price helpers built around shared caches, not execution tools.
        </p>
        <div class="cardBullets">
         <span>
          <i>
          </i>
-         Saved assets
+         Saved assets list
         </span>
         <span>
          <i>
          </i>
-         One-time alerts
+         One-time reference-price alerts
         </span>
         <span>
          <i>
          </i>
-         Shared-cache reference prices
+         Native push path on iOS / Android
         </span>
        </div>
        <div class="screenMock">
@@ -923,108 +1270,31 @@ h1{margin-top:18px;font-size:clamp(38px,5.6vw,62px);line-height:.98;letter-spaci
         </div>
        </div>
       </article>
-      <article class="featureCard gold">
-       <div class="cardTag">
-        Rival simulation
-       </div>
-       <h3>
-        Practice without pretending it is live trading.
-       </h3>
-       <p>
-        Rival remains clearly marked as a simulation environment using fictional credits.
-       </p>
-       <div class="cardBullets gold">
-        <span>
-         <i>
-         </i>
-         V-Trade Simulator
-        </span>
-        <span>
-         <i>
-         </i>
-         Fictional credits
-        </span>
-        <span>
-         <i>
-         </i>
-         Separate gold treatment
-        </span>
-       </div>
-       <div class="screenMock">
-        <div class="modeBar">
-         <span class="goldActive">
-          V-Trade Simulator
-         </span>
-        </div>
-        <div class="screenTop">
-         <strong>
-          Rival
-         </strong>
-         <span class="screenChip">
-          Simulation
-         </span>
-        </div>
-        <div class="screenList">
-         <div class="listRow">
-          <div class="left">
-           <b>
-            Rival Credits
-           </b>
-           <small>
-            Fictional capital only
-           </small>
-          </div>
-          <div class="right">
-           125,000 RC
-           <em>
-            No real broker link
-           </em>
-          </div>
-         </div>
-         <div class="listRow">
-          <div class="left">
-           <b>
-            Open Positions
-           </b>
-           <small>
-            Practice portfolio
-           </small>
-          </div>
-          <div class="right">
-           3 trades
-           <em>
-            Tracked in-app
-           </em>
-          </div>
-         </div>
-        </div>
-       </div>
-      </article>
       <article class="featureCard">
        <div class="cardTag">
-        Finrival AI
+        06 · Finrival AI
        </div>
        <h3>
-        Continue the question without losing context.
+        AI sits above the tabs as a global layer.
        </h3>
        <p>
-        The assistant sits above the tabs and can carry the current market or compare context into the next prompt.
+        The assistant is not another fake tab. It opens above the main navigation and carries the current screen context forward into the next question.
        </p>
        <div class="cardBullets">
         <span>
          <i>
          </i>
-         Context-aware assistant
+         Asset insight + general chat paths
         </span>
         <span>
          <i>
          </i>
-         Asset insight + general chat
+         Context attached from screens
         </span>
         <span>
          <i>
          </i>
-         Quota-aware free path
+         Quota-aware free usage and PRO expansion
         </span>
        </div>
        <div class="screenMock">
@@ -1060,18 +1330,62 @@ h1{margin-top:18px;font-size:clamp(38px,5.6vw,62px);line-height:.98;letter-spaci
    </section>
    <section class="section sectionBorder">
     <div class="siteContainer">
-     <div class="quoteBand">
-      <div>
+     <div class="sectionHead">
+      <div class="sectionKicker">
+       Connected workflow
+      </div>
+      <h2>
+       Discover. Compare. Understand. Monitor.
+      </h2>
+      <p class="sectionCopy">
+       This is the shortest honest description of the product: find what matters, inspect it in context, continue the question and keep the important assets close.
+      </p>
+     </div>
+     <div class="stepsGrid">
+      <article class="stepCard">
        <strong>
-        Free stays useful. PRO adds depth.
+        01 · Discover
        </strong>
+       <h3>
+        Market and News
+       </h3>
        <p>
-        Free users can still discover, compare, monitor and use Finrival AI within limits. PRO is positioned as depth on top of the same workflow, not as a different product.
+        Start with market movement, liquidity, sessions or a story that needs follow-up.
        </p>
-      </div>
-      <div class="quoteBadge">
-       Storefront pricing is authoritative
-      </div>
+      </article>
+      <article class="stepCard">
+       <strong>
+        02 · Compare
+       </strong>
+       <h3>
+        Compare or Rival
+       </h3>
+       <p>
+        Move from a broad idea into side-by-side structure, simulation or relative context.
+       </p>
+      </article>
+      <article class="stepCard">
+       <strong>
+        03 · Understand
+       </strong>
+       <h3>
+        Finrival AI
+       </h3>
+       <p>
+        Keep the context attached when you ask for a short explanation or follow-up insight.
+       </p>
+      </article>
+      <article class="stepCard">
+       <strong>
+        04 · Monitor
+       </strong>
+       <h3>
+        Watchlist
+       </h3>
+       <p>
+        Save the assets that still matter and set reference-price alerts where useful.
+       </p>
+      </article>
      </div>
     </div>
    </section>
@@ -1080,18 +1394,18 @@ h1{margin-top:18px;font-size:clamp(38px,5.6vw,62px);line-height:.98;letter-spaci
      <div class="cta">
       <div>
        <h3>
-        Want the full product story in one page?
+        Finrival is being prepared for mobile release.
        </h3>
        <p>
-        Use Product for the connected overview or return to Home for the source-matched phone preview.
+        App Store and Google Play availability stay clearly marked as coming soon while the product and the core app continue to be completed.
        </p>
       </div>
       <div class="heroActions">
-       <a class="button buttonPrimary" href="../product/">
-        Open Product
+       <a class="button buttonPrimary" href="../support/">
+        Contact Support
        </a>
-       <a class="button buttonSecondary" href="../">
-        Back Home
+       <a class="button buttonSecondary" href="../features/">
+        See Features
        </a>
       </div>
      </div>

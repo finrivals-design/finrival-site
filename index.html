@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- FINRIVAL HOME V18 — ULTRA-COMPACT VISUAL-FIRST + PIXEL CLARITY — 2026-08-22 -->
+<!-- FINRIVAL HOME V19 — TRUE CRISP TYPOGRAPHY + STABLE PIXEL RENDERING — 2026-08-22 -->
 <html lang="en">
  <head>
   <meta charset="utf-8"/>
@@ -4273,7 +4273,545 @@ body,button,a,input,textarea{font-synthesis:none;}
 @media(max-width:820px){.hero{padding:48px 0 56px;}.heroGrid{grid-template-columns:1fr!important;gap:28px!important;}.heroCopy{max-width:none;}.hero h1{font-size:clamp(46px,11vw,64px);letter-spacing:-2.4px;}.v18FlowGrid{grid-template-columns:repeat(2,minmax(0,1fr));}.v18ClarityBar{grid-template-columns:1fr;}.v18BoundaryPills{justify-content:flex-start;max-width:none;}}
 @media(max-width:560px){.hero h1{font-size:46px;line-height:1;letter-spacing:-2px;}.heroLead{margin-top:16px;font-size:15px;line-height:1.55;}.v18QuickMap{grid-template-columns:1fr 1fr 1fr;gap:7px;margin-top:18px;}.v18QuickCard{padding:10px 8px;border-radius:14px;}.v18QuickCard strong{font-size:12px;}.v18QuickCard span{display:none;}.v18QuickVisual,.v18CompareVisual,.v18AiVisual{height:29px;}.v15StoreGrid{margin-top:14px;}.v18FlowGrid{grid-template-columns:1fr 1fr;gap:9px;}.v18FlowCard{padding:15px 13px;}.v18FlowCard strong{font-size:14px;}.v18FlowCard span{font-size:12px;}.v18BoundaryPills span{white-space:normal;}}
   </style>
- </head>
+ 
+  <style>
+    /* =====================================================
+       V19 — TRUE CRISP TYPOGRAPHY + STABLE PIXEL RENDERING
+       Goal: improve text clarity without changing the product layout.
+    ====================================================== */
+
+    :root{
+      font-synthesis:none;
+      text-size-adjust:100%;
+      -webkit-text-size-adjust:100%;
+    }
+
+    html{
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+
+    body,
+    button,
+    input,
+    textarea,
+    select{
+      font-family:
+        "Segoe UI Variable Text",
+        "Segoe UI Variable",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Inter,
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+      font-kerning:normal;
+      font-synthesis:none;
+      font-optical-sizing:auto;
+    }
+
+    body,
+    .siteHeader,
+    .hero,
+    .heroCopy,
+    .section,
+    .siteFooter,
+    .v18QuickCard,
+    .v18FlowCard,
+    .v18ClarityBar,
+    .finalCta{
+      filter:none!important;
+      -webkit-filter:none!important;
+    }
+
+    /* ---------- Main website typography ---------- */
+    .desktopNav,
+    .desktopNav a{
+      font-size:14px!important;
+      line-height:1.2!important;
+      font-weight:700!important;
+      letter-spacing:0!important;
+    }
+
+    .eyebrow,
+    .sectionEyebrow{
+      font-size:12px!important;
+      line-height:1.2!important;
+      font-weight:750!important;
+      letter-spacing:.5px!important;
+    }
+
+    .hero h1{
+      font-weight:800!important;
+      letter-spacing:-2.6px!important;
+      text-rendering:optimizeLegibility;
+    }
+
+    .heroLead{
+      color:#aab4c1!important;
+      font-size:17px!important;
+      line-height:1.62!important;
+      font-weight:450!important;
+      letter-spacing:0!important;
+    }
+
+    .v18QuickCard strong{
+      font-size:14px!important;
+      line-height:1.22!important;
+      font-weight:750!important;
+      letter-spacing:0!important;
+    }
+
+    .v18QuickCard span{
+      font-size:13px!important;
+      line-height:1.4!important;
+      font-weight:500!important;
+      letter-spacing:0!important;
+    }
+
+    .v18CompareVisual div b,
+    .v18CompareVisual em{
+      font-size:11px!important;
+      font-weight:750!important;
+      letter-spacing:0!important;
+    }
+
+    .v15StoreCopy small{
+      font-size:12px!important;
+      line-height:1.2!important;
+      font-weight:550!important;
+    }
+
+    .v15StoreCopy strong{
+      font-size:16px!important;
+      line-height:1.1!important;
+      font-weight:750!important;
+      letter-spacing:0!important;
+    }
+
+    .v15Soon{
+      font-size:12px!important;
+      font-weight:750!important;
+      letter-spacing:0!important;
+    }
+
+    .button{
+      font-size:14px!important;
+      line-height:1.2!important;
+      font-weight:750!important;
+      letter-spacing:0!important;
+    }
+
+    .v15TrustRow,
+    .heroMeta{
+      font-size:13px!important;
+      line-height:1.45!important;
+      font-weight:600!important;
+      letter-spacing:0!important;
+    }
+
+    .v18SectionHead h2,
+    .v18ClarityBar h2,
+    .finalCta h2{
+      font-weight:800!important;
+      text-rendering:optimizeLegibility;
+    }
+
+    .v18FlowCard strong{
+      font-size:16px!important;
+      line-height:1.25!important;
+      font-weight:750!important;
+      letter-spacing:0!important;
+    }
+
+    .v18FlowCard span{
+      font-size:13px!important;
+      line-height:1.5!important;
+      font-weight:500!important;
+      letter-spacing:0!important;
+    }
+
+    .v18ClarityBar p,
+    .finalCta p{
+      font-size:15px!important;
+      line-height:1.6!important;
+      font-weight:450!important;
+      letter-spacing:0!important;
+    }
+
+    .v18BoundaryPills span{
+      font-size:13px!important;
+      line-height:1.25!important;
+      font-weight:650!important;
+      letter-spacing:0!important;
+    }
+
+    .footerBrand p,
+    .footerLinks,
+    .footerLinks a,
+    .footerBottom{
+      font-size:13px!important;
+      line-height:1.55!important;
+      font-weight:500!important;
+      letter-spacing:0!important;
+    }
+
+    /* ---------- Avoid blurry GPU/fractional text layers ---------- */
+    .phone,
+    .phoneStage,
+    .phoneScreen,
+    .phoneBody,
+    .previewPanel,
+    .previewPanel.active,
+    .aiSheet,
+    .aiSheet.open,
+    .phoneNavItem,
+    .phoneNavCompare,
+    .compareButton{
+      backface-visibility:visible!important;
+      -webkit-backface-visibility:visible!important;
+      perspective:none!important;
+      -webkit-perspective:none!important;
+      will-change:auto!important;
+    }
+
+    .phone{
+      transform:none!important;
+      -webkit-transform:none!important;
+    }
+
+    .previewPanel,
+    .previewPanel.active{
+      transform:none!important;
+      -webkit-transform:none!important;
+      transition:opacity .18s ease!important;
+    }
+
+    .aiSheet,
+    .aiSheet.open{
+      transform:none!important;
+      -webkit-transform:none!important;
+      transition:opacity .18s ease!important;
+    }
+
+    .phoneNavItem:active,
+    .phoneNavCompare.active .compareButton{
+      transform:none!important;
+      -webkit-transform:none!important;
+    }
+
+    /* ---------- Larger physical preview on wide screens ---------- */
+    @media(min-width:1081px){
+      .phone{
+        width:390px!important;
+        height:794px!important;
+      }
+
+      .phoneStage{
+        min-height:812px!important;
+      }
+    }
+
+    /* ---------- Phone preview typography: fewer ultra-thin glyphs ---------- */
+    .phoneScreen,
+    .phoneScreen button,
+    .phoneScreen input,
+    .phoneScreen textarea{
+      font-family:
+        "Segoe UI Variable Text",
+        "Segoe UI Variable",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Inter,
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif!important;
+      -webkit-font-smoothing:antialiased!important;
+      -moz-osx-font-smoothing:grayscale!important;
+      text-rendering:optimizeLegibility!important;
+      font-kerning:normal!important;
+      font-synthesis:none!important;
+    }
+
+    .phoneScreen .previewTitle{
+      font-size:15px!important;
+      font-weight:800!important;
+      letter-spacing:-.15px!important;
+    }
+
+    .phoneScreen .previewEyebrow,
+    .phoneScreen .previewBadge,
+    .phoneScreen .previewSearch,
+    .phoneScreen .signalLabel,
+    .phoneScreen .aiMiniButton,
+    .phoneScreen .moveKind,
+    .phoneScreen .tickerName,
+    .phoneScreen .statusChip span,
+    .phoneScreen .sectionMiniHeader span,
+    .phoneScreen .compactMeta span,
+    .phoneScreen .compactRight span,
+    .phoneScreen .newsChip,
+    .phoneScreen .storyTop,
+    .phoneScreen .storyTag,
+    .phoneScreen .storySummary,
+    .phoneScreen .storyFooter,
+    .phoneScreen .sentiment,
+    .phoneScreen .compareAsset span,
+    .phoneScreen .versus,
+    .phoneScreen .chartRange span,
+    .phoneScreen .compareStat span,
+    .phoneScreen .rivalWallet small,
+    .phoneScreen .rivalWalletMeta,
+    .phoneScreen .simulationPill,
+    .phoneScreen .positionMeta span,
+    .phoneScreen .pnl span,
+    .phoneScreen .watchHero span,
+    .phoneScreen .marketSpotEyebrow,
+    .phoneScreen .marketSpotAsset span,
+    .phoneScreen .activityScopeV14,
+    .phoneScreen .activityCoverageV14 span,
+    .phoneScreen .activityRowV14,
+    .phoneScreen .signalPillV14,
+    .phoneScreen .signalAiV14,
+    .phoneScreen .signalAssetV14 .identity span,
+    .phoneScreen .signalContextV14,
+    .phoneScreen .marketDataBadgeV14,
+    .phoneScreen .marketSessionV14 div,
+    .phoneScreen .marketSearchV14,
+    .phoneScreen .marketQuickV14 span,
+    .phoneScreen .newsCategoryV14,
+    .phoneScreen .newsSearchV14,
+    .phoneScreen .topStoryV14 .source,
+    .phoneScreen .topStoryV14 .meta,
+    .phoneScreen .timelineCardV14 .head,
+    .phoneScreen .sentimentV14,
+    .phoneScreen .aiInsightV14,
+    .phoneScreen .compareModeV14,
+    .phoneScreen .duelIdentityV14 .name,
+    .phoneScreen .duelIdentityV14 .change,
+    .phoneScreen .duelIdentityV14 .updated,
+    .phoneScreen .syncV14,
+    .phoneScreen .proChartSubV14,
+    .phoneScreen .marketDataPillV14,
+    .phoneScreen .chartControlV14,
+    .phoneScreen .chartTypeV14 span,
+    .phoneScreen .simulationBadgeV14,
+    .phoneScreen .walletTopV14 small,
+    .phoneScreen .walletStatsV14 small,
+    .phoneScreen .liquidityLabelsV14,
+    .phoneScreen .emptyPortfolioV14 p,
+    .phoneScreen .watchHeaderV14 p,
+    .phoneScreen .watchInfoV14 p,
+    .phoneScreen .watchSearchV14,
+    .phoneScreen .watchSectionHeadV14 span,
+    .phoneScreen .savedAssetV14 .meta span,
+    .phoneScreen .savedPriceV14 span,
+    .phoneScreen .storeSoonText small{
+      font-weight:650!important;
+      letter-spacing:0!important;
+    }
+
+    .phoneScreen .previewEyebrow,
+    .phoneScreen .previewBadge,
+    .phoneScreen .moveKind,
+    .phoneScreen .storyTag,
+    .phoneScreen .sentiment,
+    .phoneScreen .marketSpotEyebrow,
+    .phoneScreen .signalPillV14,
+    .phoneScreen .marketDataBadgeV14,
+    .phoneScreen .marketDataPillV14,
+    .phoneScreen .simulationBadgeV14{
+      text-transform:uppercase;
+      letter-spacing:.18px!important;
+    }
+
+    .phoneScreen .tickerSymbol,
+    .phoneScreen .samplePrice,
+    .phoneScreen .statusChip strong,
+    .phoneScreen .sectionMiniHeader strong,
+    .phoneScreen .compactMeta strong,
+    .phoneScreen .compactRight strong,
+    .phoneScreen .storyTitle,
+    .phoneScreen .compareAsset strong,
+    .phoneScreen .chartHead strong,
+    .phoneScreen .compareStat strong,
+    .phoneScreen .rivalBalance span,
+    .phoneScreen .positionMeta strong,
+    .phoneScreen .pnl strong,
+    .phoneScreen .watchHero strong,
+    .phoneScreen .marketSpotAsset strong,
+    .phoneScreen .marketSpotMove,
+    .phoneScreen .activityTitleV14,
+    .phoneScreen .activityCoverageV14 strong,
+    .phoneScreen .activityRowV14 strong,
+    .phoneScreen .signalHeadingV14 strong,
+    .phoneScreen .signalAssetV14 .identity strong,
+    .phoneScreen .topStoryV14 strong,
+    .phoneScreen .timelineCardV14 h4,
+    .phoneScreen .duelIdentityV14 .price,
+    .phoneScreen .sectionHeaderV14 strong,
+    .phoneScreen .proChartIdentityV14 strong,
+    .phoneScreen .walletStatsV14 strong,
+    .phoneScreen .emptyPortfolioV14 strong,
+    .phoneScreen .watchInfoV14 strong,
+    .phoneScreen .watchSectionHeadV14 strong,
+    .phoneScreen .savedAssetV14 .meta strong,
+    .phoneScreen .savedPriceV14 strong{
+      font-weight:750!important;
+      letter-spacing:0!important;
+    }
+
+    .phoneScreen .previewSearch,
+    .phoneScreen .marketSearchV14,
+    .phoneScreen .newsSearchV14,
+    .phoneScreen .compareModeV14{
+      font-size:5.4px!important;
+    }
+
+    .phoneScreen .marketQuickV14 span,
+    .phoneScreen .newsCategoryV14,
+    .phoneScreen .watchSearchV14,
+    .phoneScreen .duelIdentityV14 .name,
+    .phoneScreen .duelIdentityV14 .change{
+      font-size:5.1px!important;
+    }
+
+    .phoneScreen .marketDataBadgeV14,
+    .phoneScreen .signalPillV14,
+    .phoneScreen .topStoryV14 .meta,
+    .phoneScreen .timelineCardV14 .head,
+    .phoneScreen .sentimentV14,
+    .phoneScreen .aiInsightV14,
+    .phoneScreen .chartTypeV14 span,
+    .phoneScreen .savedAssetV14 .meta span{
+      font-size:4.8px!important;
+    }
+
+    .phoneScreen .activityCoverageV14 span,
+    .phoneScreen .syncV14,
+    .phoneScreen .marketDataPillV14,
+    .phoneScreen .walletStatsV14 small,
+    .phoneScreen .liquidityLabelsV14,
+    .phoneScreen .storeSoonText small{
+      font-size:4.6px!important;
+    }
+
+    .phoneScreen .marketSpotAsset span,
+    .phoneScreen .activityScopeV14,
+    .phoneScreen .activityRowV14,
+    .phoneScreen .signalContextV14,
+    .phoneScreen .marketSessionV14 div,
+    .phoneScreen .proChartSubV14,
+    .phoneScreen .chartControlV14,
+    .phoneScreen .simulationBadgeV14,
+    .phoneScreen .walletTopV14 small,
+    .phoneScreen .emptyPortfolioV14 p,
+    .phoneScreen .watchHeaderV14 p,
+    .phoneScreen .watchInfoV14 p,
+    .phoneScreen .watchSectionHeadV14 span,
+    .phoneScreen .savedPriceV14 span{
+      font-size:4.9px!important;
+    }
+
+    .phoneScreen .phoneNavItem span{
+      font-size:6px!important;
+      line-height:1.1!important;
+      font-weight:700!important;
+      letter-spacing:0!important;
+    }
+
+    .phoneScreen .aiPrompt{
+      font-size:5.5px!important;
+      line-height:1.4!important;
+      font-weight:600!important;
+      letter-spacing:0!important;
+    }
+
+    .phoneScreen .aiResponse{
+      font-size:5.3px!important;
+      line-height:1.45!important;
+      font-weight:550!important;
+      letter-spacing:0!important;
+    }
+
+    .phonePreviewCaption{
+      font-size:11px!important;
+      line-height:1.4!important;
+      font-weight:550!important;
+      letter-spacing:0!important;
+    }
+
+    .phoneScreen svg,
+    .phoneScreen svg *{
+      shape-rendering:geometricPrecision;
+      vector-effect:non-scaling-stroke;
+    }
+
+    @media(min-width:821px) and (max-width:1080px){
+      .desktopNav,
+      .desktopNav a{
+        font-size:13px!important;
+      }
+
+      .phone{
+        width:322px!important;
+        height:657px!important;
+      }
+
+      .phoneStage{
+        min-height:674px!important;
+      }
+    }
+
+    @media(max-width:820px){
+      .heroLead{
+        font-size:16px!important;
+      }
+
+      .v18QuickCard strong{
+        font-size:14px!important;
+      }
+
+      .v18QuickCard span{
+        font-size:12px!important;
+      }
+    }
+
+    @media(max-width:560px){
+      .hero h1{
+        letter-spacing:-1.55px!important;
+      }
+
+      .eyebrow,
+      .sectionEyebrow{
+        font-size:11px!important;
+      }
+
+      .v18QuickCard strong{
+        font-size:13px!important;
+      }
+
+      .v18FlowCard strong{
+        font-size:15px!important;
+      }
+
+      .v18FlowCard span,
+      .v18BoundaryPills span,
+      .footerBrand p,
+      .footerLinks,
+      .footerLinks a,
+      .footerBottom{
+        font-size:12px!important;
+      }
+    }
+  </style>
+
+</head>
  <body>
   <!-- =====================================================
        HEADER
@@ -5334,7 +5872,7 @@ body,button,a,input,textarea{font-synthesis:none;}
           <strong>
            Context-first:
           </strong>
-          this website preview mirrors the in-app AI entry point. AI output may be wrong and should be independently verified.
+          Use the current screen as context. AI output may be wrong and should be independently verified.
          </div>
         </div>
         <div aria-label="Finrival app preview tabs" class="phoneNav">
