@@ -5911,10 +5911,229 @@ body,button,a,input,textarea{font-synthesis:none;}
   }
 }
 
+
+
+/* ==============================================================
+   FINRIVAL HOME V25 — RESPONSIVE CRISP PHONE
+   - Full V24 structure preserved.
+   - Smaller physical device footprint on desktop and mobile.
+   - App text remains physically readable; no transform scaling.
+   ============================================================== */
+
+/* Desktop: slightly smaller device, still larger than the original 344px build. */
+@media(min-width:1081px){
+  .phone{
+    width:405px!important;
+    height:826px!important;
+    max-width:405px!important;
+    transform:none!important;
+    -webkit-transform:none!important;
+  }
+
+  .phoneStage{
+    min-height:850px!important;
+  }
+
+  .phoneStage::before{
+    width:470px!important;
+    height:470px!important;
+  }
+
+  .phoneStage::after{
+    width:345px!important;
+    height:620px!important;
+  }
+}
+
+/* Laptop / tablet: keep the phone balanced inside narrower hero columns. */
+@media(min-width:821px) and (max-width:1080px){
+  .phone{
+    width:360px!important;
+    height:733px!important;
+    max-width:calc(100vw - 44px)!important;
+    transform:none!important;
+    -webkit-transform:none!important;
+  }
+
+  .phoneStage{
+    min-height:758px!important;
+  }
+
+  .phoneStage::before{
+    width:420px!important;
+    height:420px!important;
+  }
+
+  .phoneStage::after{
+    width:315px!important;
+    height:550px!important;
+  }
+}
+
+/* Mobile: never overflow the viewport; preserve the original device ratio. */
+@media(max-width:820px){
+  .phoneStage{
+    min-height:718px!important;
+    margin-top:26px!important;
+    overflow:visible!important;
+  }
+
+  .phone{
+    width:min(330px,calc(100vw - 28px))!important;
+    height:672px!important;
+    max-width:calc(100vw - 28px)!important;
+    border-radius:46px!important;
+    transform:none!important;
+    -webkit-transform:none!important;
+  }
+
+  .phoneScreen{
+    border-radius:38px!important;
+  }
+
+  .phoneStage::before{
+    width:360px!important;
+    height:360px!important;
+    max-width:92vw!important;
+  }
+
+  .phoneStage::after{
+    width:270px!important;
+    height:470px!important;
+  }
+}
+
+@media(max-width:380px){
+  .phone{
+    width:min(318px,calc(100vw - 22px))!important;
+    height:648px!important;
+    max-width:calc(100vw - 22px)!important;
+  }
+
+  .phoneStage{
+    min-height:690px!important;
+  }
+}
+
+/* Typography remains crisp and physically readable after the device reduction. */
+.phoneScreen .phoneStatus{
+  font-size:8.4px!important;
+  font-weight:720!important;
+  letter-spacing:0!important;
+}
+
+.phoneScreen .phoneBrand{
+  font-size:18px!important;
+  font-weight:800!important;
+}
+
+.phoneScreen .previewEyebrow,
+.phoneScreen .previewBadge,
+.phoneScreen .moveKind,
+.phoneScreen .storyTag,
+.phoneScreen .sentiment,
+.phoneScreen .marketSpotEyebrow,
+.phoneScreen .signalPillV14,
+.phoneScreen .marketDataBadgeV14,
+.phoneScreen .marketDataPillV14,
+.phoneScreen .simulationBadgeV14{
+  font-size:7.2px!important;
+  font-weight:740!important;
+  letter-spacing:.10px!important;
+}
+
+.phoneScreen .activityCoverageV14 span,
+.phoneScreen .syncV14,
+.phoneScreen .walletStatsV14 small{
+  font-size:7px!important;
+}
+
+.phoneScreen .phoneNavItem span{
+  font-size:7.4px!important;
+  font-weight:720!important;
+}
+
+/* Current NewsScreen V4 preview: eliminate the remaining micro-type. */
+.newsV24Category{
+  font-size:7.3px!important;
+  min-height:26px!important;
+}
+
+.newsV24Toolbar{
+  font-size:8.6px!important;
+}
+
+.newsV24SectionHead strong{
+  font-size:11.2px!important;
+}
+
+.newsV24Delay,
+.newsV24Source,
+.newsV24Time,
+.newsV24ItemHead,
+.newsV24ItemHead strong,
+.newsV24Ai,
+.newsV24Sentiment{
+  font-size:7.1px!important;
+  letter-spacing:0!important;
+}
+
+.newsV24TopCard h4{
+  font-size:9.2px!important;
+  line-height:1.37!important;
+}
+
+.newsV24Item h4{
+  font-size:9px!important;
+  line-height:1.4!important;
+}
+
+/* Keep content legible on mobile instead of scaling the whole phone layer. */
+@media(max-width:820px){
+  .phoneScreen .marketSearchV14,
+  .phoneScreen .compareModeV14,
+  .phoneScreen .watchSearchV14{
+    font-size:8px!important;
+  }
+
+  .phoneScreen .marketQuickV14 span,
+  .phoneScreen .marketSessionV14 div,
+  .phoneScreen .activityScopeV14,
+  .phoneScreen .activityRowV14,
+  .phoneScreen .signalContextV14,
+  .phoneScreen .marketSpotAsset span,
+  .phoneScreen .proChartSubV14,
+  .phoneScreen .chartControlV14,
+  .phoneScreen .chartTypeV14 span,
+  .phoneScreen .walletTopV14 small,
+  .phoneScreen .liquidityLabelsV14,
+  .phoneScreen .watchHeaderV14 p,
+  .phoneScreen .watchInfoV14 p,
+  .phoneScreen .watchSectionHeadV14 span,
+  .phoneScreen .savedAssetV14 .meta span,
+  .phoneScreen .savedPriceV14 span{
+    font-size:7.4px!important;
+  }
+
+  .phoneScreen .marketSpotAsset strong,
+  .phoneScreen .activityTitleV14,
+  .phoneScreen .activityRowV14 strong,
+  .phoneScreen .signalHeadingV14 strong,
+  .phoneScreen .signalAssetV14 .identity strong,
+  .phoneScreen .sectionHeaderV14 strong,
+  .phoneScreen .walletStatsV14 strong,
+  .phoneScreen .watchInfoV14 strong,
+  .phoneScreen .watchSectionHeadV14 strong,
+  .phoneScreen .savedAssetV14 .meta strong,
+  .phoneScreen .savedPriceV14 strong{
+    font-size:9.2px!important;
+  }
+}
+
 </style>
 
 </head>
- <body data-finrival-home-version="V24">
+ <body data-finrival-home-version="V25">
   <!-- =====================================================
        HEADER
   ====================================================== -->
