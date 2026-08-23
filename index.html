@@ -5290,10 +5290,631 @@ body,button,a,input,textarea{font-synthesis:none;}
      .v22CapabilityCopy strong{font-size:12px}
      .v22CapabilityCopy span{font-size:10px}
    }
+
+
+/* ==============================================================
+   FINRIVAL HOME V24 — FULL APP-MATCHED PHONE PREVIEW
+   - Built as a patch over the complete V22 home file.
+   - No transform scaling on text layers.
+   - Larger physical phone + readable app typography.
+   - Current NewsScreen V4 hierarchy mirrored in the News tab.
+   ============================================================== */
+
+/* Internal implementation notes are not public-facing marketing copy. */
+.sourceHint,
+.previewDisclaimer,
+.watchNativeNoteV14{
+  display:none!important;
+}
+
+/* Keep the phone physically large instead of scaling a tiny raster-like layer. */
+@media(min-width:1081px){
+  .phone{
+    width:450px!important;
+    height:918px!important;
+    transform:none!important;
+    -webkit-transform:none!important;
+  }
+
+  .phoneStage{
+    min-height:944px!important;
+  }
+}
+
+/* Stable, crisp text rendering inside the product preview. */
+.phoneScreen,
+.phoneScreen *{
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-synthesis:none;
+}
+
+.phoneScreen,
+.phoneScreen button,
+.phoneScreen input,
+.phoneScreen textarea{
+  font-family:
+    "Segoe UI Variable Text",
+    "Segoe UI Variable",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Inter,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif!important;
+}
+
+/* No fractional transform blur during panel transitions. */
+.previewPanel,
+.previewPanel.active,
+.phoneBody,
+.phoneScreen,
+.aiSheet,
+.aiSheet.open{
+  transform:none!important;
+  -webkit-transform:none!important;
+  backface-visibility:visible!important;
+  -webkit-backface-visibility:visible!important;
+  will-change:auto!important;
+}
+
+.previewPanel{
+  opacity:0!important;
+  visibility:hidden!important;
+  transition:opacity .34s cubic-bezier(.22,.61,.36,1), visibility .34s ease!important;
+}
+
+.previewPanel.active{
+  opacity:1!important;
+  visibility:visible!important;
+}
+
+/* Base preview sizes: nothing important should live at 4–5px anymore. */
+.phoneScreen .previewEyebrow,
+.phoneScreen .previewBadge,
+.phoneScreen .moveKind,
+.phoneScreen .storyTag,
+.phoneScreen .sentiment,
+.phoneScreen .marketSpotEyebrow,
+.phoneScreen .signalPillV14,
+.phoneScreen .marketDataBadgeV14,
+.phoneScreen .marketDataPillV14,
+.phoneScreen .simulationBadgeV14{
+  font-size:7px!important;
+  line-height:1.2!important;
+  font-weight:760!important;
+  letter-spacing:.18px!important;
+}
+
+.phoneScreen .previewSearch,
+.phoneScreen .marketSearchV14,
+.phoneScreen .compareModeV14,
+.phoneScreen .watchSearchV14{
+  font-size:8px!important;
+  line-height:1.3!important;
+  font-weight:650!important;
+  letter-spacing:0!important;
+}
+
+.phoneScreen .marketQuickV14 span,
+.phoneScreen .marketSessionV14 div,
+.phoneScreen .activityScopeV14,
+.phoneScreen .activityRowV14,
+.phoneScreen .signalContextV14,
+.phoneScreen .marketSpotAsset span,
+.phoneScreen .proChartSubV14,
+.phoneScreen .chartControlV14,
+.phoneScreen .chartTypeV14 span,
+.phoneScreen .walletTopV14 small,
+.phoneScreen .walletStatsV14 small,
+.phoneScreen .liquidityLabelsV14,
+.phoneScreen .watchHeaderV14 p,
+.phoneScreen .watchInfoV14 p,
+.phoneScreen .watchSectionHeadV14 span,
+.phoneScreen .savedAssetV14 .meta span,
+.phoneScreen .savedPriceV14 span{
+  font-size:7.2px!important;
+  line-height:1.35!important;
+  font-weight:620!important;
+  letter-spacing:0!important;
+}
+
+.phoneScreen .marketSpotAsset strong,
+.phoneScreen .marketSpotMove,
+.phoneScreen .activityTitleV14,
+.phoneScreen .activityCoverageV14 strong,
+.phoneScreen .activityRowV14 strong,
+.phoneScreen .signalHeadingV14 strong,
+.phoneScreen .signalAssetV14 .identity strong,
+.phoneScreen .duelIdentityV14 .price,
+.phoneScreen .sectionHeaderV14 strong,
+.phoneScreen .proChartIdentityV14 strong,
+.phoneScreen .walletStatsV14 strong,
+.phoneScreen .emptyPortfolioV14 strong,
+.phoneScreen .watchInfoV14 strong,
+.phoneScreen .watchSectionHeadV14 strong,
+.phoneScreen .savedAssetV14 .meta strong,
+.phoneScreen .savedPriceV14 strong{
+  font-size:9px!important;
+  line-height:1.25!important;
+  font-weight:760!important;
+  letter-spacing:0!important;
+}
+
+.phoneScreen .marketSpotMove{
+  font-size:8.4px!important;
+}
+
+.phoneScreen .activityCoverageV14 span,
+.phoneScreen .syncV14,
+.phoneScreen .walletStatsV14 small{
+  font-size:6.6px!important;
+}
+
+.phoneScreen .phoneNavItem span{
+  font-size:7px!important;
+  line-height:1.1!important;
+  font-weight:720!important;
+  letter-spacing:0!important;
+}
+
+/* Compare: preserve real hierarchy while making the important hierarchy readable. */
+.phoneScreen .compareHeadingV14 h2{
+  font-size:15px!important;
+  line-height:1.05!important;
+  font-weight:800!important;
+  letter-spacing:-.25px!important;
+}
+
+.phoneScreen .compareHeadingV14 p{
+  font-size:7.4px!important;
+  line-height:1.4!important;
+  font-weight:560!important;
+}
+
+.phoneScreen .duelIdentityV14 strong,
+.phoneScreen .duelIdentityV14 .symbol{
+  font-size:10px!important;
+  font-weight:780!important;
+}
+
+.phoneScreen .duelIdentityV14 .name,
+.phoneScreen .duelIdentityV14 .change,
+.phoneScreen .duelIdentityV14 .updated{
+  font-size:7px!important;
+  line-height:1.35!important;
+  font-weight:650!important;
+}
+
+.phoneScreen .proChartIdentityV14 strong{
+  font-size:8.8px!important;
+}
+
+/* Rival + Watchlist: readable product copy, not tiny legal-looking microcopy. */
+.phoneScreen .rivalHeaderV14 h2,
+.phoneScreen .watchHeaderV14 h2{
+  font-size:14px!important;
+  line-height:1.1!important;
+  font-weight:800!important;
+  letter-spacing:-.25px!important;
+}
+
+.phoneScreen .walletTopV14 strong{
+  font-size:15px!important;
+  font-weight:780!important;
+}
+
+.phoneScreen .emptyPortfolioV14 p{
+  font-size:7.5px!important;
+  line-height:1.45!important;
+  font-weight:540!important;
+}
+
+.phoneScreen .discoverV14{
+  font-size:8px!important;
+  font-weight:740!important;
+}
+
+/* ==============================================================
+   CURRENT NEWSSCREEN V4 — MARKET-UNIFIED WEBSITE PREVIEW
+   ============================================================== */
+.newsV24{
+  height:100%;
+  overflow:hidden;
+  padding:0 1px 14px;
+  color:#f6f9fc;
+}
+
+.newsV24Categories{
+  display:flex;
+  gap:7px;
+  overflow:hidden;
+  padding:2px 0 10px;
+  white-space:nowrap;
+}
+
+.newsV24Category{
+  flex:0 0 auto;
+  min-height:25px;
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  padding:0 9px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:11px;
+  background:#0d1621;
+  color:#8e9cad;
+  font-size:7px;
+  line-height:1;
+  font-weight:700;
+}
+
+.newsV24Category.active{
+  border-color:rgba(0,229,255,.30);
+  background:rgba(0,229,255,.09);
+  color:#83efff;
+}
+
+.newsV24Toolbar{
+  min-height:38px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:0 12px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:13px;
+  background:linear-gradient(180deg,#0e1723,#0b141f);
+  color:#9cabbc;
+  font-size:8.4px;
+  font-weight:650;
+}
+
+.newsV24Toolbar .icon{
+  width:20px;
+  height:20px;
+  display:grid;
+  place-items:center;
+  border-radius:8px;
+  background:rgba(0,229,255,.07);
+  color:#8befff;
+  font-size:10px;
+}
+
+.newsV24SectionHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  margin-top:12px;
+  margin-bottom:8px;
+}
+
+.newsV24SectionHead strong{
+  font-size:11px;
+  line-height:1.15;
+  font-weight:800;
+  letter-spacing:-.12px;
+}
+
+.newsV24Delay{
+  min-height:21px;
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  padding:0 7px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:9px;
+  background:#0d1621;
+  color:#8f9cad;
+  font-size:6.8px;
+  font-weight:700;
+}
+
+.newsV24TopRail{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+}
+
+.newsV24TopCard{
+  position:relative;
+  min-height:116px;
+  overflow:hidden;
+  padding:11px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:17px;
+  background:
+    radial-gradient(circle at 75% 18%,rgba(0,229,255,.22),transparent 30%),
+    linear-gradient(145deg,#172534 0%,#0a111a 62%,#071018 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+}
+
+.newsV24TopCard.alt{
+  background:
+    radial-gradient(circle at 70% 18%,rgba(159,98,255,.22),transparent 30%),
+    linear-gradient(145deg,#201b31 0%,#0d111a 64%,#091019 100%);
+}
+
+.newsV24TopCard::before{
+  content:"";
+  position:absolute;
+  inset:auto -18px -28px 20px;
+  height:72px;
+  opacity:.55;
+  background:
+    linear-gradient(135deg,transparent 12%,rgba(0,229,255,.22) 13%,rgba(0,229,255,.22) 15%,transparent 16%) 0 0/30px 30px;
+  pointer-events:none;
+}
+
+.newsV24CardTop{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:7px;
+}
+
+.newsV24Source{
+  min-width:0;
+  max-width:90px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  padding:4px 6px;
+  border-radius:7px;
+  background:rgba(0,229,255,.13);
+  color:#87eeff;
+  font-size:6.4px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.12px;
+}
+
+.newsV24NewsIcon{
+  width:20px;
+  height:20px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(0,229,255,.20);
+  border-radius:50%;
+  background:rgba(0,0,0,.35);
+  color:#8ceeff;
+  font-size:9px;
+}
+
+.newsV24TopCard h4{
+  position:relative;
+  z-index:2;
+  margin-top:19px;
+  color:#fff;
+  font-size:9px;
+  line-height:1.35;
+  font-weight:780;
+  letter-spacing:-.08px;
+}
+
+.newsV24TopFoot{
+  position:absolute;
+  z-index:2;
+  left:11px;
+  right:11px;
+  bottom:9px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+
+.newsV24Ai{
+  min-height:20px;
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding:0 7px;
+  border:1px solid rgba(0,229,255,.20);
+  border-radius:8px;
+  background:rgba(0,229,255,.08);
+  color:#87edff;
+  font-size:6.3px;
+  font-weight:780;
+}
+
+.newsV24Time{
+  color:#aab5c2;
+  font-size:6.4px;
+  font-weight:700;
+}
+
+.newsV24Divider{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:12px 0 10px;
+}
+
+.newsV24Divider i{
+  flex:1;
+  height:1px;
+  background:rgba(255,255,255,.10);
+}
+
+.newsV24Divider b{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#00e5ff;
+  box-shadow:0 0 9px rgba(0,229,255,.42);
+}
+
+.newsV24Timeline{
+  position:relative;
+  padding-left:13px;
+}
+
+.newsV24Timeline::before{
+  content:"";
+  position:absolute;
+  left:3px;
+  top:13px;
+  bottom:0;
+  width:1px;
+  background:rgba(0,229,255,.13);
+}
+
+.newsV24Item{
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr 56px;
+  gap:9px;
+  min-height:90px;
+  padding:11px;
+  margin-bottom:9px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;
+  background:linear-gradient(180deg,#0e1722,#0b141e);
+}
+
+.newsV24Item::before{
+  content:"";
+  position:absolute;
+  left:-13px;
+  top:21px;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#00e5ff;
+  box-shadow:0 0 9px rgba(0,229,255,.42);
+}
+
+.newsV24ItemHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:6px;
+  color:#8796a8;
+  font-size:6.5px;
+  font-weight:700;
+}
+
+.newsV24ItemHead strong{
+  color:#85edff;
+  font-size:6.5px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.12px;
+}
+
+.newsV24Item h4{
+  margin-top:6px;
+  color:#f4f8fc;
+  font-size:8.6px;
+  line-height:1.38;
+  font-weight:730;
+  letter-spacing:-.05px;
+}
+
+.newsV24Thumb{
+  position:relative;
+  overflow:hidden;
+  min-height:56px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.06);
+  background:
+    radial-gradient(circle at 70% 22%,rgba(0,229,255,.28),transparent 28%),
+    linear-gradient(145deg,#173044,#0a121c 70%);
+}
+
+.newsV24Thumb.alt{
+  background:
+    radial-gradient(circle at 68% 20%,rgba(244,190,82,.25),transparent 28%),
+    linear-gradient(145deg,#352a18,#10151c 70%);
+}
+
+.newsV24Thumb::after{
+  content:"";
+  position:absolute;
+  left:8px;
+  right:8px;
+  bottom:9px;
+  height:18px;
+  border-bottom:2px solid rgba(255,255,255,.18);
+  border-right:2px solid rgba(0,229,255,.38);
+  transform:skewY(-8deg);
+}
+
+.newsV24ItemFoot{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  margin-top:8px;
+}
+
+.newsV24Sentiment{
+  min-height:19px;
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  padding:0 7px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:7px;
+  background:#080f17;
+  color:#55e98d;
+  font-size:6.3px;
+  font-weight:800;
+}
+
+.newsV24Sentiment i{
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#34c759;
+}
+
+.newsV24Sentiment.neutral{
+  color:#9aa7b6;
+}
+
+.newsV24Sentiment.neutral i{
+  background:#7c899a;
+}
+
+/* Better visible card hierarchy on Compare/Rival/Watchlist without changing source order. */
+.previewPanel[data-phone-panel="compare"] .proChartV14,
+.previewPanel[data-phone-panel="rival"] .portfolioHeroV14,
+.previewPanel[data-phone-panel="watchlist"] .watchInfoV14,
+.previewPanel[data-phone-panel="watchlist"] .appCard{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035),0 12px 24px rgba(0,0,0,.10)!important;
+}
+
+/* Mobile: keep preview readable instead of shrinking typography back to micro type. */
+@media(max-width:1080px){
+  .phoneScreen .marketSearchV14,
+  .phoneScreen .compareModeV14,
+  .phoneScreen .watchSearchV14{
+    font-size:7.5px!important;
+  }
+}
+
+@media(max-width:560px){
+  .phone{
+    width:min(100%,420px)!important;
+    height:860px!important;
+  }
+
+  .phoneStage{
+    min-height:884px!important;
+  }
+}
+
 </style>
 
 </head>
- <body>
+ <body data-finrival-home-version="V24">
   <!-- =====================================================
        HEADER
   ====================================================== -->
@@ -5758,123 +6379,101 @@ body,button,a,input,textarea{font-synthesis:none;}
            </div>
           </div>
          </section>
-         <!-- ==================================================
-                     NEWS — source hierarchy matched to NewsScreen
+                  <!-- ==================================================
+                     NEWS — current NewsScreen V4 market-unified hierarchy
                 =================================================== -->
          <section class="previewPanel" data-phone-panel="news">
-          <div class="newsCategoryStripV14">
-           <span class="newsCategoryV14 active">
-            Top
-           </span>
-           <span class="newsCategoryV14">
-            Stocks
-           </span>
-           <span class="newsCategoryV14">
-            Crypto
-           </span>
-           <span class="newsCategoryV14">
-            Economy
-           </span>
-           <span class="newsCategoryV14">
-            Technology
-           </span>
-          </div>
-          <div class="newsSearchV14">
-           ⌕   Quick Search
-          </div>
-          <div class="newsSectionTitleV14">
-           Top Stories
-          </div>
-          <div class="topStoryRailV14">
-           <article class="topStoryV14">
-            <span class="source">
-             MARKET NEWS
-            </span>
-            <strong>
-             Technology shares lead the session as investors reassess growth expectations.
-            </strong>
-            <span class="meta">
-             Illustrative headline • 3 min read
-            </span>
-           </article>
-           <article class="topStoryV14">
-            <span class="source">
-             MACRO
-            </span>
-            <strong>
-             Rate expectations shift after a fresh inflation update.
-            </strong>
-            <span class="meta">
-             Illustrative headline
-            </span>
-           </article>
-          </div>
-          <div class="newsSectionTitleV14">
-           Latest
-          </div>
-          <div class="timelineStoryV14">
-           <div class="timelineRailV14">
-            <i>
-            </i>
+          <div class="newsV24">
+           <div class="newsV24Categories" aria-label="News categories">
+            <span class="newsV24Category active">◎ All News</span>
+            <span class="newsV24Category">⌁ Market Movers</span>
+            <span class="newsV24Category">⇄ Crypto Flows</span>
+            <span class="newsV24Category">↗ Nasdaq</span>
+            <span class="newsV24Category">▦ EU Markets</span>
+            <span class="newsV24Category">◈ Tech &amp; AI</span>
+            <span class="newsV24Category">₿ Digital Assets</span>
+            <span class="newsV24Category">$ Macro &amp; Rates</span>
+            <span class="newsV24Category">◒ Earnings</span>
            </div>
-           <article class="timelineCardV14">
-            <div class="head">
-             <strong>
-              MARKET NEWS
-             </strong>
-             <span>
-              12 min
-             </span>
-            </div>
-            <h4>
-             Chipmakers remain in focus as traders track demand and sector momentum.
-            </h4>
-            <div class="timelineFooterV14">
-             <span class="sentimentV14">
-              <i>
-              </i>
-              Bullish
-             </span>
-             <span class="aiInsightV14">
-              ⚡ AI Insight
-             </span>
-            </div>
-           </article>
-          </div>
-          <div class="timelineStoryV14">
-           <div class="timelineRailV14">
-            <i>
-            </i>
+
+           <div class="newsV24Toolbar">
+            <span class="icon">⌕</span>
+            <span>Quick Search</span>
            </div>
-           <article class="timelineCardV14">
-            <div class="head">
-             <strong>
-              GLOBAL MACRO
-             </strong>
-             <span>
-              31 min
-             </span>
-            </div>
-            <h4>
-             Global markets digest policy signals while cross-asset volatility stays contained.
-            </h4>
-            <div class="timelineFooterV14">
-             <span class="sentimentV14" style="color:#7c899a">
-              <i style="background:#7c899a">
-              </i>
-              Neutral
-             </span>
-             <span class="aiInsightV14">
-              ⚡ AI Insight
-             </span>
-            </div>
-           </article>
-          </div>
-          <div class="sourceHint" style="margin:10px 0 14px">
-           Illustrative stories; interface order follows the recovered NewsScreen source.
+
+           <div class="newsV24SectionHead">
+            <strong>Top Stories</strong>
+           </div>
+
+           <div class="newsV24TopRail">
+            <article class="newsV24TopCard">
+             <div class="newsV24CardTop">
+              <span class="newsV24Source">MARKET NEWS</span>
+              <span class="newsV24NewsIcon">▤</span>
+             </div>
+             <h4>Chipmakers stay in focus as AI demand and sector momentum remain firm.</h4>
+             <div class="newsV24TopFoot">
+              <span class="newsV24Ai">⚡ AI Insight</span>
+              <span class="newsV24Time">12 min</span>
+             </div>
+            </article>
+
+            <article class="newsV24TopCard alt">
+             <div class="newsV24CardTop">
+              <span class="newsV24Source">GLOBAL MACRO</span>
+              <span class="newsV24NewsIcon">▤</span>
+             </div>
+             <h4>Markets digest policy signals while cross-asset volatility stays contained.</h4>
+             <div class="newsV24TopFoot">
+              <span class="newsV24Ai">⚡ AI Insight</span>
+              <span class="newsV24Time">31 min</span>
+             </div>
+            </article>
+           </div>
+
+           <div class="newsV24Divider" aria-hidden="true">
+            <i></i><b></b><i></i>
+           </div>
+
+           <div class="newsV24SectionHead">
+            <strong>All News</strong>
+            <span class="newsV24Delay">◷ 12h</span>
+           </div>
+
+           <div class="newsV24Timeline">
+            <article class="newsV24Item">
+             <div>
+              <div class="newsV24ItemHead">
+               <strong>MARKET NEWS</strong>
+               <span>42 min</span>
+              </div>
+              <h4>Semiconductor shares hold leadership as traders track demand and guidance.</h4>
+              <div class="newsV24ItemFoot">
+               <span class="newsV24Sentiment"><i></i>Bullish</span>
+               <span class="newsV24Ai">⚡ AI Insight</span>
+              </div>
+             </div>
+             <div class="newsV24Thumb" aria-hidden="true"></div>
+            </article>
+
+            <article class="newsV24Item">
+             <div>
+              <div class="newsV24ItemHead">
+               <strong>EU MARKETS</strong>
+               <span>1h</span>
+              </div>
+              <h4>European equities trade mixed as investors weigh rates and earnings.</h4>
+              <div class="newsV24ItemFoot">
+               <span class="newsV24Sentiment neutral"><i></i>Neutral</span>
+               <span class="newsV24Ai">⚡ AI Insight</span>
+              </div>
+             </div>
+             <div class="newsV24Thumb alt" aria-hidden="true"></div>
+            </article>
+           </div>
           </div>
          </section>
-         <!-- ==================================================
+<!-- ==================================================
                      COMPARE — source hierarchy matched to recovered full code
                 =================================================== -->
          <section class="previewPanel" data-phone-panel="compare">
@@ -6048,7 +6647,7 @@ body,button,a,input,textarea{font-synthesis:none;}
             </div>
            </div>
            <div class="sourceHint">
-            Compare preview follows recovered defaults: RIVAL VIEW, Global Rivalry, NVDA vs MSFT, AI Battle Report and dual Pro Charts.
+            
            </div>
           </div>
          </section>
@@ -6143,7 +6742,7 @@ body,button,a,input,textarea{font-synthesis:none;}
             </div>
            </div>
            <div class="sourceHint" style="margin:11px 0 14px">
-            Rival is a fictional practice simulator; Rival Credits have no monetary value.
+            Simulation only • Rival Credits have no monetary value.
            </div>
           </div>
          </section>
