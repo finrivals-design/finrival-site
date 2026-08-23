@@ -5203,9 +5203,55 @@ body,button,a,input,textarea{font-synthesis:none;}
      letter-spacing:.5px;
    }
    .v22StoreCard.play .v22StoreMark{
-     border-color:rgba(52,199,89,.18);
-     background:linear-gradient(145deg,rgba(52,199,89,.07),rgba(255,255,255,.018));
+     border-color:rgba(61,220,132,.22);
+     background:linear-gradient(145deg,rgba(61,220,132,.075),rgba(255,255,255,.018));
      color:#8ee9a8;
+   }
+
+   /* =====================================================
+      V28 — PRE-LAUNCH STORE MARKS
+      Apple: no standalone Apple logo. Use a neutral iOS mark.
+      Google Play: Android robot is used under Google's published
+      Creative Commons attribution terms; no handmade Play logo.
+   ====================================================== */
+   .v28IosMarkText{
+     display:inline-flex;
+     align-items:center;
+     justify-content:center;
+     color:#dff7ff;
+     font-size:13px;
+     line-height:1;
+     font-weight:800;
+     letter-spacing:-.35px;
+     font-variant-numeric:tabular-nums;
+   }
+
+   .v28AndroidRobot{
+     width:27px;
+     height:27px;
+     overflow:visible;
+   }
+
+   .v28AndroidRobot .androidFill{
+     fill:#3DDC84;
+   }
+
+   .v28AndroidRobot .androidCut{
+     fill:#07110c;
+   }
+
+   .v22StoreCard.apple .v22StoreMark{
+     border-color:rgba(141,216,255,.25);
+     background:
+       radial-gradient(circle at 35% 25%,rgba(196,244,255,.10),transparent 48%),
+       linear-gradient(145deg,rgba(141,216,255,.075),rgba(255,255,255,.018));
+     box-shadow:inset 0 1px 0 rgba(255,255,255,.055);
+   }
+
+   .v22StoreCard.play .v22StoreMark{
+     box-shadow:
+       inset 0 1px 0 rgba(255,255,255,.045),
+       0 0 24px rgba(61,220,132,.025);
    }
    .v22StoreCopy{
      min-width:0;
@@ -6517,7 +6563,7 @@ body,button,a,input,textarea{font-synthesis:none;}
    }
   </style>
 </head>
- <body data-finrival-home-version="V26">
+ <body data-finrival-home-version="V28">
   <!-- =====================================================
        HEADER
   ====================================================== -->
@@ -6709,7 +6755,9 @@ body,button,a,input,textarea{font-synthesis:none;}
       </div>
       <div aria-label="Finrival mobile app availability" class="v22StoreGrid" id="download">
        <a aria-label="Finrival on the App Store coming soon" class="v22StoreCard apple" href="#coming-soon">
-        <div class="v22StoreMark">APP</div>
+        <div class="v22StoreMark" aria-hidden="true">
+         <span class="v28IosMarkText">iOS</span>
+        </div>
         <div class="v22StoreCopy">
          <small>COMING TO THE</small>
          <strong>App Store</strong>
@@ -6717,7 +6765,20 @@ body,button,a,input,textarea{font-synthesis:none;}
         <span class="v22StoreSoon">Coming Soon</span>
        </a>
        <a aria-label="Finrival on Google Play coming soon" class="v22StoreCard play" href="#coming-soon">
-        <div class="v22StoreMark">PLAY</div>
+        <div class="v22StoreMark" aria-hidden="true">
+         <svg class="v28AndroidRobot" viewBox="0 0 48 48" role="img" aria-label="Android platform mark">
+          <g class="androidFill">
+           <path d="M15.6 15.1 12.2 9.2a1.15 1.15 0 0 1 2-1.15l3.48 6.03A18.7 18.7 0 0 1 24 12.98c2.2 0 4.32.38 6.3 1.1l3.48-6.03a1.15 1.15 0 1 1 2 1.15l-3.4 5.9A16.18 16.18 0 0 1 40 28.3H8a16.18 16.18 0 0 1 7.6-13.2Z"/>
+           <rect x="8" y="25.5" width="32" height="14.5" rx="2.8"/>
+           <rect x="3.4" y="26.5" width="4" height="12" rx="2"/>
+           <rect x="40.6" y="26.5" width="4" height="12" rx="2"/>
+           <rect x="13" y="38.2" width="4.5" height="7" rx="2.1"/>
+           <rect x="30.5" y="38.2" width="4.5" height="7" rx="2.1"/>
+          </g>
+          <circle class="androidCut" cx="17.4" cy="21.2" r="1.35"/>
+          <circle class="androidCut" cx="30.6" cy="21.2" r="1.35"/>
+         </svg>
+        </div>
         <div class="v22StoreCopy">
          <small>COMING TO</small>
          <strong>Google Play</strong>
@@ -7797,7 +7858,7 @@ body,button,a,input,textarea{font-synthesis:none;}
       © 2026 Finrival. All rights reserved.
      </span>
      <span>
-      Informational, educational and simulation-focused. App Store is a trademark of Apple Inc. Google Play is a trademark of Google LLC.
+      Informational, educational and simulation-focused. App Store is a trademark of Apple Inc. Google Play and Android are trademarks of Google LLC. The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the Creative Commons 3.0 Attribution License.
      </span>
     </div>
    </div>
