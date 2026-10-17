@@ -1,0 +1,47 @@
+  <a class="skip-link" href="#main">{{a11y.skip}}</a>
+
+  <!-- ========== Header ========== -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="{{@home}}" aria-label="{{a11y.home}}">
+        <img src="/logo.png" alt="Finrival" width="91" height="27">
+      </a>
+      <nav class="nav__links" aria-label="{{a11y.primaryNav}}">
+        <a href="{{@link:/product/}}"{{@current:/product/}}>{{nav.product}}</a>
+        <a href="{{@link:/ai/}}"{{@current:/ai/}}>Finrival AI</a>
+        <a href="{{@link:/pro/}}"{{@current:/pro/}}>PRO</a>
+        <a href="{{@link:/support/}}"{{@current:/support/}}>{{nav.support}}</a>
+      </nav>
+      <div class="nav__actions">
+        <div class="lang">
+          <button class="lang__btn" type="button" aria-expanded="false" aria-controls="lang-menu" aria-label="{{lang.label}}: {{@langName}}">
+            <svg class="ic"><use href="#i-globe"/></svg><span>{{@langCode}}</span><svg class="ic lang__chev"><use href="#i-chevron"/></svg>
+          </button>
+          <ul class="lang__menu" id="lang-menu">
+{{@langMenu}}
+          </ul>
+        </div>
+        <a class="btn btn--primary btn--sm" href="#download">{{nav.getApp}}</a>
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="{{a11y.openMenu}}" data-label-open="{{a11y.openMenu}}" data-label-close="{{a11y.closeMenu}}"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <nav aria-label="{{a11y.mobileNav}}">
+      <a href="{{@link:/product/}}"{{@current:/product/}}>{{nav.product}}</a>
+      <a href="{{@link:/ai/}}"{{@current:/ai/}}>Finrival AI</a>
+      <a href="{{@link:/pro/}}"{{@current:/pro/}}>PRO</a>
+      <a href="{{@link:/support/}}"{{@current:/support/}}>{{nav.support}}</a>
+    </nav>
+    <div class="mobile-menu__foot">
+      <div class="lang-row" aria-label="{{lang.label}}">
+{{@langRow}}
+      </div>
+      <div class="stores">
+        <span class="store"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">{{store.appleSmall}}</span><span class="store__big">App Store</span></span></span>
+        <span class="store"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">{{store.googleSmall}}</span><span class="store__big">Google Play</span></span></span>
+      </div>
+    </div>
+  </div>
+

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="{{@lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{aiPage.metaTitle}}</title>
+  <meta name="description" content="{{aiPage.metaDescription}}">
+  <link rel="canonical" href="{{@canonical}}">
+{{@alternates}}
+  <meta name="theme-color" content="#06090d">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Finrival">
+  <meta property="og:locale" content="{{@locale}}">
+  <meta property="og:url" content="{{@canonical}}">
+  <meta property="og:title" content="{{aiPage.metaTitle}}">
+  <meta property="og:description" content="{{aiPage.metaDescription}}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>document.documentElement.classList.add("js")</script>
+  <script defer src="/assets/js/site.js"></script>
+</head>
+<body>
+{{>sprite}}
+{{>header}}
+  <main id="main">
+    <!-- ========== Intro ========== -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <span class="kicker rise">Finrival AI</span>
+        <h1 class="display page-hero__title" id="page-title">
+          <span class="mask-line"><span style="--d:.06s">{{aiPage.title1}}</span></span>
+          <span class="mask-line"><span style="--d:.14s" class="gold">{{aiPage.title2}}</span></span>
+        </h1>
+        <p class="lead rise" style="--d:.26s">{{aiPage.lead}}</p>
+      </div>
+    </section>
+
+    <!-- ========== A real answer, replayed ========== -->
+    <section class="demo" aria-labelledby="demo-title">
+      <div class="container demo__grid">
+        <div class="demo__copy">
+          <span class="kicker" data-reveal>{{aiPage.demoKicker}}</span>
+          <h2 class="h2" id="demo-title" data-reveal style="--d:.06s">{{aiPage.demoTitle}}</h2>
+          <p class="demo__source" data-reveal style="--d:.1s">{{aiPage.demoSource}}</p>
+          <ol class="demo__notes">
+            <li data-note="1"><b>{{aiPage.n1Title}}</b><span>{{aiPage.n1Body}}</span></li>
+            <li data-note="2"><b>{{aiPage.n2Title}}</b><span>{{aiPage.n2Body}}</span></li>
+            <li data-note="3"><b>{{aiPage.n3Title}}</b><span>{{aiPage.n3Body}}</span></li>
+            <li data-note="4"><b>{{aiPage.n4Title}}</b><span>{{aiPage.n4Body}}</span></li>
+            <li data-note="5"><b>{{aiPage.n5Title}}</b><span>{{aiPage.n5Body}}</span></li>
+          </ol>
+          <button class="demo__replay" type="button" hidden><svg class="ic"><use href="#i-replay"/></svg>{{aiPage.replay}}</button>
+        </div>
+
+        <div class="demo__visual">
+          <div class="device demo__device">
+            <div class="chat-screen" data-chat lang="{{@lang}}">
+              <div class="cs-status" aria-hidden="true">
+                <span>9:41</span>
+                <span class="cs-status__icons">
+                  <svg viewBox="0 0 18 10"><rect x="0" y="6" width="3" height="4" rx="1"/><rect x="5" y="4" width="3" height="6" rx="1"/><rect x="10" y="2" width="3" height="8" rx="1"/><rect x="15" y="0" width="3" height="10" rx="1"/></svg>
+                  <svg viewBox="0 0 24 11"><rect x=".5" y=".5" width="20" height="10" rx="3" fill="none" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="17" height="7" rx="1.6"/><rect x="21.6" y="3.5" width="1.6" height="4" rx=".8" opacity=".45"/></svg>
+                </span>
+              </div>
+              <div class="cs-head">
+                <img src="/assets/screens/ai-icon.webp" width="60" height="60" alt="">
+                <div class="cs-head__title"><b>FINRIVAL <em>AI</em></b><small>{{aiChat.powered}}</small></div>
+                <span class="cs-round" aria-hidden="true">i</span>
+                <span class="cs-round" aria-hidden="true">×</span>
+              </div>
+              <div class="cs-tabs" aria-hidden="true">
+                <span>{{aiChat.currentMarket}} <i>×</i></span>
+                <span class="is-active">GOOGL vs MSFT <i>×</i></span>
+                <span class="cs-tabs__new">+ {{aiChat.new}}</span>
+              </div>
+              <div class="cs-body">
+                <div class="cs-scroll">
+                  <p class="cs-q">{{aiChat.question}}</p>
+                  <p class="cs-thinking"><span class="cs-spinner" aria-hidden="true"></span>{{aiChat.thinking}}</p>
+                  <div class="cs-answer">
+                    <p class="cs-step" data-step="1">• {{aiChat.b1}}</p>
+                    <p class="cs-step" data-step="2">• {{aiChat.b2}}</p>
+                    <p class="cs-step" data-step="3">• {{aiChat.b3}}</p>
+                    <p class="cs-step" data-step="4">• {{aiChat.b4}}</p>
+                    <p class="cs-step cs-disclaimer" data-step="4">{{aiChat.note}}</p>
+                    <p class="cs-step cs-report" data-step="4"><svg class="ic"><use href="#i-flag"/></svg>{{aiChat.report}}</p>
+                  </div>
+                  <div class="cs-step cs-follow" data-step="5">
+                    <b>{{aiChat.followTitle}}</b>
+                    <small>{{aiChat.followHint}}</small>
+                    <span>{{aiChat.follow1}}<i>↑</i></span>
+                    <span>{{aiChat.follow2}}<i>↑</i></span>
+                  </div>
+                  <div class="cs-step cs-pro" data-step="5">
+                    <b><svg class="ic"><use href="#i-sparkle"/></svg>{{aiChat.proTitle}}</b>
+                    <small>{{aiChat.proBody}}</small>
+                    <span>{{aiChat.proAction}}<i>→</i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="cs-foot">
+                <small>{{aiChat.disclaimer}}</small>
+                <b class="cs-remaining" data-before="{{aiChat.remaining5}}" data-after="{{aiChat.remaining4}}">{{aiChat.remaining4}}</b>
+                <div class="cs-input">{{aiChat.placeholder}}<span>↑</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Where a question can start ========== -->
+    <section class="section" aria-labelledby="modes-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker" data-reveal>{{aiPage.modesKicker}}</span>
+          <h2 class="h2" id="modes-title" data-reveal style="--d:.06s">{{aiPage.modesTitle}}</h2>
+        </div>
+        <div class="modes">
+          <div class="mode" data-reveal><h3>{{aiPage.m1Title}}</h3><p>{{aiPage.m1Body}}</p><span>{{aiPage.m1Ask}}</span></div>
+          <div class="mode" data-reveal style="--d:.06s"><h3>{{aiPage.m2Title}}</h3><p>{{aiPage.m2Body}}</p><span>{{aiPage.m2Ask}}</span></div>
+          <div class="mode" data-reveal style="--d:.12s"><h3>{{aiPage.m3Title}}</h3><p>{{aiPage.m3Body}}</p><span>{{aiPage.m3Ask}}</span></div>
+          <div class="mode" data-reveal><h3>{{aiPage.m4Title}}</h3><p>{{aiPage.m4Body}}</p><span>{{aiPage.m4Ask}}</span></div>
+          <div class="mode" data-reveal style="--d:.06s"><h3>{{aiPage.m5Title}}</h3><p>{{aiPage.m5Body}}</p><span>{{aiPage.m5Ask}}</span></div>
+          <div class="mode" data-reveal style="--d:.12s"><h3>{{aiPage.m6Title}}</h3><p>{{aiPage.m6Body}}</p><span>{{aiPage.m6Ask}}</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Limits ========== -->
+    <section class="section" style="padding-top:0" aria-labelledby="limits-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker" data-reveal>{{aiPage.limitsKicker}}</span>
+          <h2 class="h2" id="limits-title" data-reveal style="--d:.06s">{{aiPage.limitsTitle}}</h2>
+        </div>
+        <div class="principles">
+          <div class="principle" data-reveal><h3>{{aiPage.l1Title}}</h3><p>{{aiPage.l1Body}}</p></div>
+          <div class="principle" data-reveal style="--d:.08s"><h3>{{aiPage.l2Title}}</h3><p>{{aiPage.l2Body}}</p></div>
+          <div class="principle" data-reveal style="--d:.16s"><h3>{{aiPage.l3Title}}</h3><p>{{aiPage.l3Body}}</p></div>
+          <div class="principle" data-reveal style="--d:.24s"><h3>{{aiPage.l4Title}}</h3><p>{{aiPage.l4Body}}</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Free and PRO ========== -->
+    <section class="section" style="padding-top:0" aria-labelledby="tiers-title">
+      <div class="container">
+        <h2 class="h2 tiers__title" id="tiers-title" data-reveal>{{aiPage.tiersTitle}}</h2>
+        <div class="tiers">
+          <div class="tier" data-reveal>
+            <span class="tier__name">Free</span>
+            <b>{{aiPage.freeHeadline}}</b>
+            <p>{{aiPage.freeBody}}</p>
+          </div>
+          <div class="tier tier--pro" data-reveal style="--d:.08s">
+            <span class="tier__name">PRO</span>
+            <b>{{aiPage.proHeadline}}</b>
+            <p>{{aiPage.proBody}}</p>
+            <a class="link" href="{{@link:/pro/}}">{{pro.cta}} <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Download ========== -->
+    <section class="section cta" id="download" style="padding-top:0" aria-labelledby="cta-title">
+      <div class="container" data-reveal>
+        <div class="cta__icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><path d="M10 47L26 31l8 8 17-18" fill="none" stroke="#1fb5c6" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M41 15h14v14z" fill="#1fb5c6"/></svg>
+        </div>
+        <h2 class="h2" id="cta-title">{{cta.title}}</h2>
+        <p class="lead">{{cta.lead}}</p>
+        <div class="stores">
+          <span class="store"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">{{store.appleSmall}}</span><span class="store__big">App Store</span></span></span>
+          <span class="store"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">{{store.googleSmall}}</span><span class="store__big">Google Play</span></span></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+{{>footer}}
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="{{@lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{productPage.metaTitle}}</title>
+  <meta name="description" content="{{productPage.metaDescription}}">
+  <link rel="canonical" href="{{@canonical}}">
+{{@alternates}}
+  <meta name="theme-color" content="#06090d">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Finrival">
+  <meta property="og:locale" content="{{@locale}}">
+  <meta property="og:url" content="{{@canonical}}">
+  <meta property="og:title" content="{{productPage.metaTitle}}">
+  <meta property="og:description" content="{{productPage.metaDescription}}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>document.documentElement.classList.add("js")</script>
+  <script defer src="/assets/js/site.js"></script>
+</head>
+<body>
+{{>sprite}}
+{{>header}}
+  <main id="main">
+    <!-- ========== Intro ========== -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <span class="kicker rise">{{nav.product}}</span>
+        <h1 class="display page-hero__title" id="page-title">
+          <span class="mask-line"><span style="--d:.06s">{{productPage.title1}}</span></span>
+          <span class="mask-line"><span style="--d:.14s" class="gold">{{productPage.title2}}</span></span>
+        </h1>
+        <p class="lead rise" style="--d:.26s">{{productPage.lead}}</p>
+      </div>
+    </section>
+
+    <!-- ========== The loop: one rising line through four real screens ========== -->
+    <section class="loop" aria-label="{{productPage.loopLabel}}">
+      <div class="container">
+        <ol class="loop__steps">
+          <li class="loop__step" style="--i:0">
+            <div class="loop__head">
+              <span class="loop__dot" aria-hidden="true"></span>
+              <span class="loop__num">01</span>
+              <h2 class="loop__title">{{productPage.s1Title}}</h2>
+              <p>{{productPage.s1Body}}</p>
+            </div>
+            <figure class="device loop__device"><img src="/assets/screens/market-{{@s}}-sm.webp" srcset="/assets/screens/market-{{@s}}-sm.webp 440w, /assets/screens/market-{{@s}}.webp 720w" sizes="(max-width: 900px) 260px, 220px" width="440" height="957" loading="lazy" alt="{{alt.market}}"></figure>
+          </li>
+          <li class="loop__step" style="--i:1">
+            <div class="loop__head">
+              <span class="loop__dot" aria-hidden="true"></span>
+              <span class="loop__num">02</span>
+              <h2 class="loop__title">{{productPage.s2Title}}</h2>
+              <p>{{productPage.s2Body}}</p>
+            </div>
+            <figure class="device loop__device"><img src="/assets/screens/compare-{{@s}}-sm.webp" srcset="/assets/screens/compare-{{@s}}-sm.webp 440w, /assets/screens/compare-{{@s}}.webp 720w" sizes="(max-width: 900px) 260px, 220px" width="440" height="957" loading="lazy" alt="{{alt.compare}}"></figure>
+          </li>
+          <li class="loop__step" style="--i:2">
+            <div class="loop__head">
+              <span class="loop__dot" aria-hidden="true"></span>
+              <span class="loop__num">03</span>
+              <h2 class="loop__title">{{productPage.s3Title}}</h2>
+              <p>{{productPage.s3Body}}</p>
+            </div>
+            <figure class="device loop__device"><img src="/assets/screens/ai-{{@s}}-sm.webp" srcset="/assets/screens/ai-{{@s}}-sm.webp 440w, /assets/screens/ai-{{@s}}.webp 720w" sizes="(max-width: 900px) 260px, 220px" width="440" height="957" loading="lazy" alt="{{alt.ai}}"></figure>
+          </li>
+          <li class="loop__step" style="--i:3">
+            <div class="loop__head">
+              <span class="loop__dot" aria-hidden="true"></span>
+              <span class="loop__num">04</span>
+              <h2 class="loop__title">{{productPage.s4Title}}</h2>
+              <p>{{productPage.s4Body}}</p>
+            </div>
+            <figure class="device loop__device"><img src="/assets/screens/rival-{{@s}}-sm.webp" srcset="/assets/screens/rival-{{@s}}-sm.webp 440w, /assets/screens/rival-{{@s}}.webp 720w" sizes="(max-width: 900px) 260px, 220px" width="440" height="957" loading="lazy" alt="{{alt.rival}}"></figure>
+          </li>
+        </ol>
+        <svg class="loop__line" aria-hidden="true">
+          <defs>
+            <linearGradient id="loop-grad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#8c7444"/>
+              <stop offset=".55" stop-color="#d8bf83"/>
+              <stop offset="1" stop-color="#1fb5c6"/>
+            </linearGradient>
+          </defs>
+          <path class="loop__path" pathLength="1"/>
+          <path class="loop__arrow"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ========== Everything in the app ========== -->
+    <section class="section" aria-labelledby="index-title">
+      <div class="container index">
+        <div class="index__head">
+          <span class="kicker" data-reveal>{{productPage.indexKicker}}</span>
+          <h2 class="h2" id="index-title" data-reveal style="--d:.06s">{{productPage.indexTitle}}</h2>
+        </div>
+        <dl class="index__list">
+          <div data-reveal><dt>{{market.kicker}}</dt><dd>{{productPage.iMarket}}</dd></div>
+          <div data-reveal><dt>Compare</dt><dd>{{productPage.iCompare}}</dd></div>
+          <div data-reveal><dt>Finrival AI</dt><dd>{{productPage.iAi}}</dd></div>
+          <div data-reveal><dt>Rival</dt><dd>{{productPage.iRival}}</dd></div>
+          <div data-reveal><dt>{{plans.watchlist}}</dt><dd>{{productPage.iWatchlist}}</dd></div>
+          <div data-reveal><dt>{{news.title}}</dt><dd>{{productPage.iNews}}</dd></div>
+          <div data-reveal><dt>{{learn.title}}</dt><dd>{{productPage.iLearn}}</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ========== What it isn't ========== -->
+    <section class="section" style="padding-top:0" aria-labelledby="not-title">
+      <div class="container">
+        <div class="nots" data-reveal>
+          <h2 class="nots__title" id="not-title">{{productPage.notTitle}}</h2>
+          <ul class="nots__list">
+            <li><span aria-hidden="true">✕</span>{{productPage.not1}}</li>
+            <li><span aria-hidden="true">✕</span>{{productPage.not2}}</li>
+            <li><span aria-hidden="true">✕</span>{{productPage.not3}}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Download ========== -->
+    <section class="section cta" id="download" style="padding-top:0" aria-labelledby="cta-title">
+      <div class="container" data-reveal>
+        <div class="cta__icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><path d="M10 47L26 31l8 8 17-18" fill="none" stroke="#1fb5c6" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M41 15h14v14z" fill="#1fb5c6"/></svg>
+        </div>
+        <h2 class="h2" id="cta-title">{{cta.title}}</h2>
+        <p class="lead">{{cta.lead}}</p>
+        <div class="stores">
+          <span class="store"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">{{store.appleSmall}}</span><span class="store__big">App Store</span></span></span>
+          <span class="store"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">{{store.googleSmall}}</span><span class="store__big">Google Play</span></span></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+{{>footer}}
+</body>
+</html>

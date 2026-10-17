@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="{{@lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{meta.title}}</title>
+  <meta name="description" content="{{meta.description}}">
+  <link rel="canonical" href="{{@canonical}}">
+{{@alternates}}
+  <meta name="theme-color" content="#06090d">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Finrival">
+  <meta property="og:locale" content="{{@locale}}">
+  <meta property="og:url" content="{{@canonical}}">
+  <meta property="og:title" content="{{meta.title}}">
+  <meta property="og:description" content="{{meta.ogDescription}}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="preload" as="image" href="/assets/screens/market-{{@s}}.webp" imagesrcset="/assets/screens/market-{{@s}}-sm.webp 440w, /assets/screens/market-{{@s}}.webp 720w" imagesizes="(max-width: 640px) 246px, 340px">
+  <script>
+    (function (d) {
+      d.classList.add("js");
+      // Returning visitors land on the language they picked (the English home is the default)
+      try {
+        var saved = localStorage.getItem("fr-lang");
+        if (location.pathname === "/" && /^(tr|pl)$/.test(saved || "")) {
+          location.replace("/" + saved + "/" + location.search + location.hash);
+          return;
+        }
+      } catch (e) {}
+      // Intro plays once per session (add ?intro to the URL to replay it)
+      try {
+        var forced = /[?&]intro\b/.test(location.search);
+        var calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (forced || (!calm && !sessionStorage.getItem("fr-intro"))) {
+          d.classList.add("intro-play");
+          sessionStorage.setItem("fr-intro", "1");
+        }
+      } catch (e) {}
+    })(document.documentElement);
+  </script>
+  <script defer src="/assets/js/site.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Finrival",
+    "url": "https://finrival.com/",
+    "logo": "https://finrival.com/logo.png",
+    "email": "finrivals@gmail.com"
+  }
+  </script>
+</head>
+<body>
+{{>sprite}}
+  <!-- ========== Intro ========== -->
+  <div class="intro" aria-hidden="true">
+    <div class="intro__glow"></div>
+    <svg class="intro__line" viewBox="0 0 1000 300" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="intro-grad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#8c7444" stop-opacity=".35"/>
+          <stop offset=".3" stop-color="#d8bf83"/>
+          <stop offset="1" stop-color="#1fb5c6"/>
+        </linearGradient>
+      </defs>
+      <path pathLength="1" d="M0 262 L110 244 L170 258 L280 206 L345 224 L455 160 L520 182 L640 112 L705 132 L840 62 L1000 18"/>
+    </svg>
+    <img class="intro__logo" src="/logo.png" alt="" width="240" height="71">
+  </div>
+
+{{>header}}
+  <main id="main">
+    <!-- ========== Hero ========== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <span class="hero__badge rise"><i></i>{{hero.badge}}</span>
+        <h1 class="display" id="hero-title">
+          <span class="mask-line"><span style="--d:.08s">{{hero.line1}}</span></span>
+          <span class="mask-line"><span style="--d:.18s">{{hero.line2}}</span></span>
+        </h1>
+        <p class="lead rise" style="--d:.32s">{{hero.lead}}</p>
+        <div class="hero__ctas rise" style="--d:.42s">
+          <span class="store"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">{{store.appleSmall}}</span><span class="store__big">App Store</span></span></span>
+          <span class="store"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">{{store.googleSmall}}</span><span class="store__big">Google Play</span></span></span>
+        </div>
+      </div>
+
+      <div class="hero__stage">
+        <figure class="device device--side device--left rise" style="--d:.7s">
+          <img src="/assets/screens/compare-{{@s}}.webp" srcset="/assets/screens/compare-{{@s}}-sm.webp 440w, /assets/screens/compare-{{@s}}.webp 720w" sizes="(max-width: 640px) 206px, 290px" width="720" height="1565" alt="{{alt.compare}}">
+        </figure>
+        <figure class="device device--center rise" style="--d:.55s">
+          <img src="/assets/screens/market-{{@s}}.webp" srcset="/assets/screens/market-{{@s}}-sm.webp 440w, /assets/screens/market-{{@s}}.webp 720w" sizes="(max-width: 640px) 246px, 340px" width="720" height="1565" fetchpriority="high" alt="{{alt.market}}">
+        </figure>
+        <figure class="device device--side device--right rise" style="--d:.7s">
+          <img src="/assets/screens/rival-{{@s}}.webp" srcset="/assets/screens/rival-{{@s}}-sm.webp 440w, /assets/screens/rival-{{@s}}.webp 720w" sizes="(max-width: 640px) 206px, 290px" width="720" height="1565" alt="{{alt.rival}}">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========== Product tour ========== -->
+    <section class="section tour" id="tour" aria-labelledby="tour-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="kicker" data-reveal>{{tour.kicker}}</span>
+          <h2 class="h2" id="tour-title" data-reveal style="--d:.06s">{{tour.title}}</h2>
+        </div>
+
+        <div class="tour__grid">
+          <div class="tour__steps">
+            <article class="tour__step" data-screen="market">
+              <span class="kicker">{{market.kicker}}</span>
+              <h3 class="h3">{{market.title}}</h3>
+              <p>{{market.body}}</p>
+              <ul class="facts">
+                <li><svg class="ic"><use href="#i-check"/></svg>{{market.f1}}</li>
+                <li><svg class="ic"><use href="#i-check"/></svg>{{market.f2}}</li>
+                <li><svg class="ic"><use href="#i-check"/></svg>{{market.f3}}</li>
+              </ul>
+              <figure class="tour__inline device"><img src="/assets/screens/market-{{@s}}-sm.webp" width="440" height="957" loading="lazy" alt="{{alt.market}}"></figure>
+            </article>
+
+            <article class="tour__step" data-screen="compare">
+              <span class="kicker">Compare</span>
+              <h3 class="h3">{{compare.title}}</h3>
+              <p>{{compare.body}}</p>
+              <ul class="facts">
+                <li><svg class="ic"><use href="#i-check"/></svg>{{compare.f1}}</li>
+                <li><svg class="ic"><use href="#i-check"/></svg>{{compare.f2}}</li>
+                <li><svg class="ic"><use href="#i-check"/></svg>{{compare.f3}}</li>
+              </ul>
+              <figure class="tour__inline device"><img src="/assets/screens/compare-{{@s}}-sm.webp" width="440" height="957" loading="lazy" alt="{{alt.compare}}"></figure>
+            </article>
+
+            <article class="tour__step" data-screen="rival">
+              <span class="kicker">Rival</span>
+              <h3 class="h3">{{rival.title}}</h3>
+              <p>{{rival.body}}</p>
+              <ul class="facts">
+                <li><svg class="ic"><use href="#i-check"/></svg>{{rival.f1}}</li>
+                <li><svg class="ic"><use href="#i-check"/></svg>{{rival.f2}}</li>
+                <li><svg class="ic"><use href="#i-check"/></svg>{{rival.f3}}</li>
+              </ul>
+              <figure class="tour__inline device"><img src="/assets/screens/rival-{{@s}}-sm.webp" width="440" height="957" loading="lazy" alt="{{alt.rival}}"></figure>
+            </article>
+          </div>
+
+          <div class="tour__sticky" aria-hidden="true">
+            <div class="device tour__device">
+              <div class="tour__screens">
+                <img data-screen="market" class="is-active" src="/assets/screens/market-{{@s}}.webp" width="720" height="1565" loading="lazy" alt="">
+                <img data-screen="compare" src="/assets/screens/compare-{{@s}}.webp" width="720" height="1565" loading="lazy" alt="">
+                <img data-screen="rival" src="/assets/screens/rival-{{@s}}.webp" width="720" height="1565" loading="lazy" alt="">
+              </div>
+            </div>
+            <div class="tour__progress"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Finrival AI ========== -->
+    <section class="section spotlight" style="padding-top:0" aria-labelledby="ai-title">
+      <div class="container spotlight__grid">
+        <div>
+          <span class="kicker" data-reveal>Finrival AI</span>
+          <h2 class="h2" id="ai-title" data-reveal style="--d:.06s">{{ai.title}}</h2>
+          <p class="lead" data-reveal style="--d:.12s">{{ai.lead}}</p>
+          <ul class="facts" data-reveal style="--d:.18s">
+            <li><svg class="ic"><use href="#i-check"/></svg>{{ai.f1}}</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>{{ai.f2}}</li>
+            <li><svg class="ic"><use href="#i-check"/></svg>{{ai.f3}}</li>
+          </ul>
+        </div>
+        <div class="spotlight__visual" data-reveal style="--d:.1s">
+          <figure class="device spotlight__device">
+            <img src="/assets/screens/ai-{{@s}}.webp" srcset="/assets/screens/ai-{{@s}}-sm.webp 440w, /assets/screens/ai-{{@s}}.webp 720w" sizes="(max-width: 640px) 280px, 340px" width="720" height="1565" loading="lazy" alt="{{alt.ai}}">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== More features ========== -->
+    <section class="section" style="padding-top:0" aria-labelledby="more-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker" data-reveal>{{more.kicker}}</span>
+          <h2 class="h2" id="more-title" data-reveal style="--d:.06s">{{more.title}}</h2>
+        </div>
+        <div class="features">
+          <article class="feature" data-reveal>
+            <svg class="ic feature__icon"><use href="#i-bookmark"/></svg>
+            <h3>{{watch.title}}</h3>
+            <p>{{watch.body}}</p>
+            <span class="feature__meta">{{watch.meta}}</span>
+          </article>
+          <article class="feature" data-reveal style="--d:.08s">
+            <svg class="ic feature__icon"><use href="#i-book"/></svg>
+            <h3>{{learn.title}}</h3>
+            <p>{{learn.body}}</p>
+            <span class="feature__meta">{{learn.meta}}</span>
+          </article>
+          <article class="feature" data-reveal style="--d:.16s">
+            <svg class="ic feature__icon"><use href="#i-news"/></svg>
+            <h3>{{news.title}}</h3>
+            <p>{{news.body}}</p>
+            <span class="feature__meta">{{news.meta}}</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PRO ========== -->
+    <section class="section" style="padding-top:0" aria-labelledby="pro-title">
+      <div class="container">
+        <div class="pro" data-reveal>
+          <div>
+            <span class="pro-badge">Finrival <b>PRO</b></span>
+            <h2 class="h2" id="pro-title">{{pro.title1}}<br><span class="gold">{{pro.title2}}</span></h2>
+            <p class="lead">{{pro.lead}}</p>
+            <a class="btn btn--gold" href="{{@link:/pro/}}">{{pro.cta}}</a>
+          </div>
+          <div class="plans-card">
+            <table class="plans">
+              <thead>
+                <tr><th scope="col">{{plans.heading}}</th><th scope="col">Free</th><th scope="col" class="is-pro">PRO</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row"><span class="plans__icon"><svg class="ic"><use href="#i-zap"/></svg></span>Finrival AI</th><td>{{plans.aiFree}}</td><td class="is-pro">{{plans.aiPro}}</td></tr>
+                <tr><th scope="row"><span class="plans__icon"><svg class="ic"><use href="#i-book"/></svg></span>{{plans.learn}}</th><td>{{plans.learnFree}}</td><td class="is-pro">{{plans.learnPro}}</td></tr>
+                <tr><th scope="row"><span class="plans__icon"><svg class="ic"><use href="#i-bookmark"/></svg></span>{{plans.watchlist}}</th><td>{{plans.watchFree}}</td><td class="is-pro">{{plans.watchPro}}</td></tr>
+                <tr><th scope="row"><span class="plans__icon"><svg class="ic"><use href="#i-trend"/></svg></span>{{plans.simulation}}</th><td>{{plans.simFree}}</td><td class="is-pro">{{plans.simPro}}</td></tr>
+                <tr><th scope="row"><span class="plans__icon"><svg class="ic"><use href="#i-ad"/></svg></span>{{plans.ads}}</th><td>{{plans.adsFree}}</td><td class="is-pro">{{plans.adsPro}}</td></tr>
+              </tbody>
+            </table>
+            <p class="plans__note">{{pro.note}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Principles ========== -->
+    <section class="section" style="padding-top:0" aria-labelledby="principles-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker" data-reveal>{{principles.kicker}}</span>
+          <h2 class="h2" id="principles-title" data-reveal style="--d:.06s">{{principles.title}}</h2>
+        </div>
+        <div class="principles">
+          <div class="principle" data-reveal>
+            <h3>{{principles.p1Title}}</h3>
+            <p>{{principles.p1Body}}</p>
+          </div>
+          <div class="principle" data-reveal style="--d:.08s">
+            <h3>{{principles.p2Title}}</h3>
+            <p>{{principles.p2Body}}</p>
+          </div>
+          <div class="principle" data-reveal style="--d:.16s">
+            <h3>{{principles.p3Title}}</h3>
+            <p>{{principles.p3Body}}</p>
+          </div>
+          <div class="principle" data-reveal style="--d:.24s">
+            <h3>{{principles.p4Title}}</h3>
+            <p>{{principles.p4Body}}</p>
+            <a class="link" href="{{@link:/privacy/}}">{{principles.p4Link}} <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Download ========== -->
+    <section class="section cta" id="download" style="padding-top:0" aria-labelledby="cta-title">
+      <div class="container" data-reveal>
+        <div class="cta__icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><path d="M10 47L26 31l8 8 17-18" fill="none" stroke="#1fb5c6" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M41 15h14v14z" fill="#1fb5c6"/></svg>
+        </div>
+        <h2 class="h2" id="cta-title">{{cta.title}}</h2>
+        <p class="lead">{{cta.lead}}</p>
+        <div class="stores">
+          <span class="store"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">{{store.appleSmall}}</span><span class="store__big">App Store</span></span></span>
+          <span class="store"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">{{store.googleSmall}}</span><span class="store__big">Google Play</span></span></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+{{>footer}}
+</body>
+</html>

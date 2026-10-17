@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="{{@lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{doc.metaTitle}}</title>
+  <meta name="description" content="{{doc.metaDescription}}">
+  <link rel="canonical" href="{{@canonical}}">
+{{@alternates}}
+  <meta name="theme-color" content="#06090d">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Finrival">
+  <meta property="og:locale" content="{{@locale}}">
+  <meta property="og:url" content="{{@canonical}}">
+  <meta property="og:title" content="{{doc.metaTitle}}">
+  <meta property="og:description" content="{{doc.metaDescription}}">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>document.documentElement.classList.add("js")</script>
+  <script defer src="/assets/js/site.js"></script>
+</head>
+<body>
+{{>sprite}}
+{{>header}}
+  <main id="main">
+    <section class="page-hero doc-hero" aria-labelledby="page-title">
+      <div class="container">
+        <span class="kicker rise">{{doc.kicker}}</span>
+        <h1 class="display page-hero__title" id="page-title">
+          <span class="mask-line"><span style="--d:.06s">{{doc.title}}</span></span>
+        </h1>
+        <p class="lead rise" style="--d:.18s">{{doc.lead}}</p>
+        <p class="doc-hero__meta rise" style="--d:.26s">{{doc.meta}}</p>
+      </div>
+    </section>
+
+    <section class="doc">
+      <div class="container doc__grid">
+        <aside class="doc__aside">
+          <details class="doc__toc" open>
+            <summary>{{legal.onThisPage}}</summary>
+            <ol>
+{{@toc}}
+            </ol>
+          </details>
+        </aside>
+        <article class="doc__body">
+{{@content}}
+        </article>
+      </div>
+    </section>
+  </main>
+
+{{>footer}}
+</body>
+</html>

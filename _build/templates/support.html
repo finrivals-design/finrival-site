@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="{{@lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{supportPage.metaTitle}}</title>
+  <meta name="description" content="{{supportPage.metaDescription}}">
+  <link rel="canonical" href="{{@canonical}}">
+{{@alternates}}
+  <meta name="theme-color" content="#06090d">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Finrival">
+  <meta property="og:locale" content="{{@locale}}">
+  <meta property="og:url" content="{{@canonical}}">
+  <meta property="og:title" content="{{supportPage.metaTitle}}">
+  <meta property="og:description" content="{{supportPage.metaDescription}}">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>document.documentElement.classList.add("js")</script>
+  <script defer src="/assets/js/site.js"></script>
+</head>
+<body>
+{{>sprite}}
+{{>header}}
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <span class="kicker rise">{{nav.support}}</span>
+        <h1 class="display page-hero__title" id="page-title">
+          <span class="mask-line"><span style="--d:.06s">{{supportPage.title}}</span></span>
+        </h1>
+        <p class="lead rise" style="--d:.18s">{{supportPage.lead}}</p>
+      </div>
+    </section>
+
+    <!-- ========== Contact ========== -->
+    <section class="help" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="help-contact rise" style="--d:.3s">
+          <div>
+            <span class="kicker">{{supportPage.contactKicker}}</span>
+            <h2 class="help-contact__title" id="contact-title">finrivals@gmail.com</h2>
+            <p>{{supportPage.contactBody}}</p>
+          </div>
+          <div class="help-contact__actions">
+            <a class="btn btn--gold" href="mailto:finrivals@gmail.com?subject=Finrival%20Support">{{supportPage.contactCta}}</a>
+            <p class="help-contact__warn"><svg class="ic"><use href="#i-lock"/></svg>{{supportPage.contactWarn}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Topics ========== -->
+    <section class="section" style="padding-top:clamp(72px, 9vw, 120px)" aria-labelledby="topics-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker" data-reveal>{{supportPage.topicsKicker}}</span>
+          <h2 class="h2" id="topics-title" data-reveal style="--d:.06s">{{supportPage.topicsTitle}}</h2>
+        </div>
+        <div class="topics">
+          <a class="topic" href="#q-account" data-reveal><svg class="ic"><use href="#i-user"/></svg><b>{{supportPage.t1Title}}</b><span>{{supportPage.t1Body}}</span></a>
+          <a class="topic" href="{{@link:/privacy/}}" data-reveal style="--d:.05s"><svg class="ic"><use href="#i-lock"/></svg><b>{{supportPage.t2Title}}</b><span>{{supportPage.t2Body}}</span></a>
+          <a class="topic" href="{{@link:/delete-account/}}" data-reveal style="--d:.1s"><svg class="ic"><use href="#i-trash"/></svg><b>{{supportPage.t3Title}}</b><span>{{supportPage.t3Body}}</span></a>
+          <a class="topic" href="mailto:finrivals@gmail.com?subject=Finrival%20Technical%20Issue" data-reveal><svg class="ic"><use href="#i-wrench"/></svg><b>{{supportPage.t4Title}}</b><span>{{supportPage.t4Body}}</span></a>
+          <a class="topic" href="#q-subscriptions" data-reveal style="--d:.05s"><svg class="ic"><use href="#i-sparkle"/></svg><b>{{supportPage.t5Title}}</b><span>{{supportPage.t5Body}}</span></a>
+          <a class="topic" href="{{@link:/product/}}" data-reveal style="--d:.1s"><svg class="ic"><use href="#i-compass"/></svg><b>{{supportPage.t6Title}}</b><span>{{supportPage.t6Body}}</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Quick answers ========== -->
+    <section class="section" style="padding-top:0" aria-labelledby="answers-title">
+      <div class="container faq">
+        <div>
+          <span class="kicker" data-reveal>{{supportPage.answersKicker}}</span>
+          <h2 class="h2" id="answers-title" data-reveal style="--d:.06s">{{supportPage.answersTitle}}</h2>
+        </div>
+        <div class="faq__list" data-reveal>
+          <details id="q-account"><summary>{{supportPage.q1}}</summary><p>{{supportPage.a1}}</p></details>
+          <details><summary>{{supportPage.q2}}</summary><p>{{supportPage.a2}}</p></details>
+          <details id="q-subscriptions"><summary>{{supportPage.q3}}</summary><p>{{supportPage.a3}}</p></details>
+          <details><summary>{{supportPage.q4}}</summary><p>{{supportPage.a4}}</p></details>
+          <details><summary>{{supportPage.q5}}</summary><p>{{supportPage.a5}}</p></details>
+          <details><summary>{{supportPage.q6}}</summary><p>{{supportPage.a6}}</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Documents ========== -->
+    <section class="section" style="padding-top:0" aria-labelledby="docs-title">
+      <div class="container">
+        <h2 class="h2 tiers__title" id="docs-title" data-reveal>{{supportPage.docsTitle}}</h2>
+        <div class="doc-links">
+          <a href="{{@link:/privacy/}}" data-reveal><b>{{footer.privacy}}</b><span>{{supportPage.d1}}</span><svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a href="{{@link:/terms/}}" data-reveal style="--d:.06s"><b>{{footer.terms}}</b><span>{{supportPage.d2}}</span><svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a href="{{@link:/delete-account/}}" data-reveal style="--d:.12s"><b>{{footer.delete}}</b><span>{{supportPage.d3}}</span><svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+{{>footer}}
+</body>
+</html>

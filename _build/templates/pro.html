@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="{{@lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{proPage.metaTitle}}</title>
+  <meta name="description" content="{{proPage.metaDescription}}">
+  <link rel="canonical" href="{{@canonical}}">
+{{@alternates}}
+  <meta name="theme-color" content="#06090d">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Finrival">
+  <meta property="og:locale" content="{{@locale}}">
+  <meta property="og:url" content="{{@canonical}}">
+  <meta property="og:title" content="{{proPage.metaTitle}}">
+  <meta property="og:description" content="{{proPage.metaDescription}}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>document.documentElement.classList.add("js")</script>
+  <script defer src="/assets/js/site.js"></script>
+</head>
+<body>
+{{>sprite}}
+{{>header}}
+  <main id="main">
+    <!-- ========== Intro ========== -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <span class="pro-badge rise">Finrival <b>PRO</b></span>
+        <h1 class="display page-hero__title" id="page-title">
+          <span class="mask-line"><span style="--d:.06s">{{proPage.title1}}</span></span>
+          <span class="mask-line"><span style="--d:.14s" class="gold">{{proPage.title2}}</span></span>
+        </h1>
+        <p class="lead rise" style="--d:.26s">{{proPage.lead}}</p>
+      </div>
+    </section>
+
+    <!-- ========== Free / PRO switch ========== -->
+    <section class="flip" data-flip aria-labelledby="flip-title">
+      <div class="container">
+        <h2 class="sr-only" id="flip-title">{{proPage.flipTitle}}</h2>
+        <div class="flip__switch" role="group" aria-label="{{proPage.flipTitle}}">
+          <button type="button" data-plan="free" aria-pressed="true">Free</button>
+          <button type="button" data-plan="pro" aria-pressed="false">PRO</button>
+          <span class="flip__thumb" aria-hidden="true"></span>
+        </div>
+
+        <div class="flip__grid">
+          <!-- Finrival AI -->
+          <article class="flip__card flip__card--wide">
+            <header><svg class="ic"><use href="#i-zap"/></svg><h3>Finrival AI</h3></header>
+            <div class="viz-dots" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i class="x"></i><i class="x"></i><i class="x"></i><i class="x"></i><i class="x"></i><i class="x"></i><i class="x"></i>
+            </div>
+            <p class="flip__value"><span class="v-free">{{plans.aiFree}}</span><span class="v-pro">{{plans.aiPro}}</span></p>
+            <p class="flip__note"><span class="v-free">{{proPage.aiFreeNote}}</span><span class="v-pro">{{proPage.aiProNote}}</span></p>
+          </article>
+
+          <!-- Watchlist -->
+          <article class="flip__card">
+            <header><svg class="ic"><use href="#i-bookmark"/></svg><h3>{{plans.watchlist}}</h3></header>
+            <div class="viz-grid" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i>
+              <i class="x"></i><i class="x"></i><i class="x"></i><i class="x"></i><i class="x"></i>
+              <i class="x"></i><i class="x"></i><i class="x"></i><i class="x"></i><i class="x"></i>
+              <i class="x"></i><i class="x"></i><i class="x"></i><i class="x"></i><i class="x"></i>
+              <i class="x"></i><i class="x"></i><i class="x"></i><i class="x"></i><i class="x"></i>
+            </div>
+            <p class="flip__value"><span class="v-free">{{plans.watchFree}}</span><span class="v-pro">{{plans.watchPro}}</span></p>
+          </article>
+
+          <!-- Learn -->
+          <article class="flip__card">
+            <header><svg class="ic"><use href="#i-book"/></svg><h3>{{plans.learn}}</h3></header>
+            <div class="viz-chips" aria-hidden="true">
+              <span class="base">{{plans.learnFree}}</span>
+              <span class="x">{{proPage.topic1}}</span>
+              <span class="x">{{proPage.topic2}}</span>
+              <span class="x">{{proPage.topic3}}</span>
+              <span class="x">{{proPage.topic4}}</span>
+            </div>
+            <p class="flip__value"><span class="v-free">{{plans.learnFree}}</span><span class="v-pro">{{plans.learnPro}}</span></p>
+            <p class="flip__note"><span class="v-free">{{proPage.learnFreeNote}}</span><span class="v-pro">{{proPage.learnProNote}}</span></p>
+          </article>
+
+          <!-- Simulation -->
+          <article class="flip__card">
+            <header><svg class="ic"><use href="#i-trend"/></svg><h3>{{plans.simulation}}</h3></header>
+            <div class="viz-chips" aria-hidden="true">
+              <span class="base">{{proPage.scStandard}}</span>
+              <span class="x">{{proPage.scLiquidity}}</span>
+              <span class="x">{{proPage.scHikes}}</span>
+              <span class="x">{{proPage.scInflation}}</span>
+            </div>
+            <p class="flip__value"><span class="v-free">{{plans.simFree}}</span><span class="v-pro">{{plans.simPro}}</span></p>
+            <p class="flip__note"><span class="v-free">{{proPage.simFreeNote}}</span><span class="v-pro">{{proPage.simProNote}}</span></p>
+          </article>
+
+          <!-- Ads -->
+          <article class="flip__card">
+            <header><svg class="ic"><use href="#i-ad"/></svg><h3>{{plans.ads}}</h3></header>
+            <div class="viz-feed" aria-hidden="true">
+              <i></i><i></i><b>Ad</b><i></i>
+            </div>
+            <p class="flip__value"><span class="v-free">{{plans.adsFree}}</span><span class="v-pro">{{plans.adsPro}}</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Plans ========== -->
+    <section class="section" style="padding-top:0" aria-labelledby="plans-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker" data-reveal>{{proPage.plansKicker}}</span>
+          <h2 class="h2" id="plans-title" data-reveal style="--d:.06s">{{proPage.plansTitle}}</h2>
+        </div>
+        <div class="tiers tiers--three">
+          <div class="tier" data-reveal>
+            <span class="tier__name">{{proPage.monthlyName}}</span>
+            <b>{{proPage.monthlyHeadline}}</b>
+            <p>{{proPage.monthlyBody}}</p>
+          </div>
+          <div class="tier tier--pro" data-reveal style="--d:.08s">
+            <span class="tier__name">{{proPage.annualName}}</span>
+            <b>{{proPage.annualHeadline}}</b>
+            <p>{{proPage.annualBody}}</p>
+          </div>
+          <div class="tier" data-reveal style="--d:.16s">
+            <span class="tier__name">{{proPage.priceName}}</span>
+            <b>{{proPage.priceHeadline}}</b>
+            <p>{{proPage.priceBody}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Questions ========== -->
+    <section class="section" style="padding-top:0" aria-labelledby="faq-title">
+      <div class="container faq">
+        <div>
+          <span class="kicker" data-reveal>{{proPage.faqKicker}}</span>
+          <h2 class="h2" id="faq-title" data-reveal style="--d:.06s">{{proPage.faqTitle}}</h2>
+        </div>
+        <div class="faq__list" data-reveal>
+          <details><summary>{{proPage.q1}}</summary><p>{{proPage.a1}}</p></details>
+          <details><summary>{{proPage.q2}}</summary><p>{{proPage.a2}}</p></details>
+          <details><summary>{{proPage.q3}}</summary><p>{{proPage.a3}}</p></details>
+          <details><summary>{{proPage.q4}}</summary><p>{{proPage.a4}}</p></details>
+          <details><summary>{{proPage.q5}}</summary><p>{{proPage.a5}}</p></details>
+          <details><summary>{{proPage.q6}}</summary><p>{{proPage.a6}}</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Download ========== -->
+    <section class="section cta" id="download" style="padding-top:0" aria-labelledby="cta-title">
+      <div class="container" data-reveal>
+        <div class="cta__icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><path d="M10 47L26 31l8 8 17-18" fill="none" stroke="#1fb5c6" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M41 15h14v14z" fill="#1fb5c6"/></svg>
+        </div>
+        <h2 class="h2" id="cta-title">{{cta.title}}</h2>
+        <p class="lead">{{cta.lead}}</p>
+        <div class="stores">
+          <span class="store"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">{{store.appleSmall}}</span><span class="store__big">App Store</span></span></span>
+          <span class="store"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">{{store.googleSmall}}</span><span class="store__big">Google Play</span></span></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+{{>footer}}
+</body>
+</html>
