@@ -127,13 +127,13 @@
         <div class="demo__copy">
           <span class="kicker" data-reveal>Gerçek bir cevap</span>
           <h2 class="h2" id="demo-title" data-reveal style="--d:.06s">Bir soru, baştan sona</h2>
-          <p class="demo__source" data-reveal style="--d:.1s">Uygulamadan yeniden oynatıldı: beş yıllık GOOGL ve MSFT karşılaştırması, Free hesapla</p>
+          <p class="demo__source" data-reveal style="--d:.1s">Uygulamadan tekrar oynatıldı: beş yıllık GOOGL ve MSFT karşılaştırması, PRO hesapta</p>
           <ol class="demo__notes">
-            <li data-note="1"><b>Senin seçtiğin veriyi kullanır</b><span>Tahmin değil, Compare'deki beş yıllık veri penceresi</span></li>
-            <li data-note="2"><b>Getiriyi riske karşı tartar</b><span>Büyüme, volatilite ve düşüşle yan yana gösterilir</span></li>
-            <li data-note="3"><b>Rakamın ne anlama gelmediğini söyler</b><span>Momentum bir güç olarak anlatılır, asla bir vaat olarak değil</span></li>
-            <li data-note="4"><b>Sahte güven vermez</b><span>Düşük korelasyon bir koruma gibi sunulmaz</span></li>
-            <li data-note="5"><b>Harcamadan önce sorar</b><span>Devam soruları sadece soruyu hazırlar, hak gönderdiğinde kullanılır</span></li>
+            <li data-note="1"><b>Önce net bir sonuç</b><span>Seçtiğin beş yıllık veriden dengeli bir değerlendirme</span></li>
+            <li data-note="2"><b>Neyin belirlediğini gösterir</b><span>Büyüme, ortak dönem farkı, oynaklık ve korelasyon, her biri sayısıyla</span></li>
+            <li data-note="3"><b>Asıl riski adıyla söyler</b><span>Daha derin düşüş öne çıkar, ivme vaat değil güç olarak okunur</span></li>
+            <li data-note="4"><b>Görüşü neyin değiştireceğini söyler</b><span>Tahmin değil, izlenebilir bir değişim</span></li>
+            <li data-note="5"><b>Göndermeden harcamaz</b><span>Devam soruları yalnızca soruyu hazırlar, PRO hakkın gönderdiğinde kullanılır</span></li>
           </ol>
           <button class="demo__replay" type="button" hidden><svg class="ic"><use href="#i-replay"/></svg>Yeniden oynat</button>
         </div>
@@ -164,29 +164,40 @@
                   <p class="cs-q">GOOGL ve MSFT için 5 yıllık veri penceresini kullanarak profesyonel bir Finrival karşılaştırma raporu oluştur.</p>
                   <p class="cs-thinking"><span class="cs-spinner" aria-hidden="true"></span>Finrival AI analiz ediyor...</p>
                   <div class="cs-answer">
-                    <p class="cs-step" data-step="1">• Verilen 5 yıllık geçmiş dönemde GOOGL, MSFT'nin %11,49'una karşı %19,02 yıllık bileşik büyüme oranıyla (CAGR) daha yüksek uzun vadeli büyüme gösterdi; ancak ortak tarihli son dönem performansında MSFT 21,30 puan önde ve serisinin zirvesinde işlem görüyor.</p>
-                    <p class="cs-step" data-step="2">• Temel denge risk ile getiri arasında: GOOGL güçlü bir geçmiş büyüme sunuyor ancak daha yüksek fiyat dalgalanması (MSFT'nin %27,82'sine karşı %29,66 volatilite) ve zirveden dibe daha derin bir kayıp (MSFT'nin %37,56'sına karşı %44,32 düşüş) yaşadı.</p>
-                    <p class="cs-step" data-step="3">• MSFT, GOOGL'ın 56,38'ine karşı 62,98'lik 14 periyotluk Göreceli Güç Endeksi (RSI) ile daha güçlü bir yakın dönem alım momentumu gösteriyor; ancak yüksek momentum son dönemdeki fiyat gücünü gösterir, devamını ya da ani bir dönüşü garanti etmez.</p>
-                    <p class="cs-step" data-step="4">• 0,44'lük orta düzey geçmiş getiri korelasyonu, bu hisselerin zaman zaman bağımsız hareket ettiğini gösteriyor; ancak geçmişteki birlikte hareket gelecekte çeşitlendirme ya da risk koruması sağlamaz.</p>
-                    <p class="cs-step cs-disclaimer" data-step="4">Bu analiz yalnızca bilgilendirme amaçlıdır ve yatırım tavsiyesi niteliği taşımaz.</p>
+                    <div class="cs-step cs-verdict" data-step="1">
+                      <div class="cs-verdict__top"><span>Sonuç</span><em>NÖTR-KARIŞIK</em></div>
+                      <p>Sağlanan 5 yıllık verilere göre GOOGL daha yüksek yıllık bileşik getiri sunarken, MSFT daha düşük düşüş riski ve ortak dönem performansında öne çıkmaktadır.</p>
+                    </div>
+                    <div class="cs-step cs-sec" data-step="2">
+                      <h4>Öne çıkanlar</h4>
+                      <p><b>Yıllık Bileşik Getiri:</b> GOOGL %19,02 bileşik getiri (CAGR - geçmiş dönemsel büyüme) ile MSFT'nin %11,49'luk getirisinin üzerinde yer aldı.</p>
+                      <p><b>Ortak Dönem Performansı:</b> Aynı zaman aralığını kapsayan göreli performansta MSFT, 21,3 yüzde puanlık farkla lider durumdadır ve serinin en yüksek seviyesindedir.</p>
+                      <p><b>Volatilite ve İvme:</b> MSFT %27,82 yıllık oynaklık ve 62,98 RSI (14 gözlemli ivme) ile GOOGL'a (%29,66 oynaklık, 56,38 RSI) kıyasla daha istikrarlı bir risk-getiri profili sundu.</p>
+                      <p><b>Birlikte Hareket Eğilimi:</b> Varlıklar arasındaki 0,44'lük getiri korelasyonu (birlikte hareket etme oranı), portföy içi ilişkilerin orta düzeyde olduğunu gösterir.</p>
+                    </div>
+                    <div class="cs-step cs-sec" data-step="3">
+                      <h4>Risk</h4>
+                      <p><b>Düşüş Riski:</b> GOOGL %44,32 maksimum değer kaybı (en yüksek seviyeden yaşanan en büyük düşüş) ile MSFT'nin %37,56'lık kayıp oranına göre daha yüksek oynaklık riski taşıdı.</p>
+                    </div>
+                    <div class="cs-step cs-sec" data-step="4">
+                      <h4>Görüşü ne değiştirir</h4>
+                      <p><b></b> MSFT'nin ortak dönemdeki 21,3 yüzde puanlık liderliğini kaybetmesi veya GOOGL'ın risk odaklı düşüş oranlarını düşürmesi relatif görünümü değiştirebilir.</p>
+                    </div>
+                    <p class="cs-step cs-disclaimer" data-step="4">Bu analiz sadece bilgilendirme amaçlıdır ve yatırım tavsiyesi değildir.</p>
                     <p class="cs-step cs-report" data-step="4"><svg class="ic"><use href="#i-flag"/></svg>Yanıtı bildir</p>
                   </div>
                   <div class="cs-step cs-follow" data-step="5">
                     <b>Bir sonraki sorunu seç</b>
-                    <small>Dokunmak yalnızca soruyu hazırlar. AI hakkı, Gönder ile kullanılır.</small>
+                    <small>Dokunmak yalnızca soruyu hazırlar. Gönder ile yeni yanıt istenir.</small>
                     <span>Risk farkını açıkla<i>↑</i></span>
                     <span>Kıyaslama ne kadar sağlam?<i>↑</i></span>
                   </div>
-                  <div class="cs-step cs-pro" data-step="5">
-                    <b><svg class="ic"><use href="#i-sparkle"/></svg>Finrival PRO ile daha derine in</b>
-                    <small>Daha kapsamlı gerekçeler, risk değerlendirmeleri ve ayrıntılı takip yanıtları için Finrival PRO’yu keşfet.</small>
-                    <span>Finrival PRO’yu incele<i>→</i></span>
-                  </div>
+
                 </div>
               </div>
               <div class="cs-foot">
                 <small>AI yanılabilir. Yatırım tavsiyesi değildir.</small>
-                <b class="cs-remaining" data-before="Kalan AI hakkı: 5" data-after="Kalan AI hakkı: 4">Kalan AI hakkı: 4</b>
+                <b class="cs-remaining cs-remaining--pro" data-before="PRO · Bugün kalan AI: %100" data-after="PRO · Bugün kalan AI: %98">PRO · Bugün kalan AI: %98</b>
                 <div class="cs-input">Küresel piyasalar hakkında soru sor...<span>↑</span></div>
               </div>
             </div>

@@ -85,10 +85,25 @@
                   <p class="cs-q">{{aiChat.question}}</p>
                   <p class="cs-thinking"><span class="cs-spinner" aria-hidden="true"></span>{{aiChat.thinking}}</p>
                   <div class="cs-answer">
-                    <p class="cs-step" data-step="1">• {{aiChat.b1}}</p>
-                    <p class="cs-step" data-step="2">• {{aiChat.b2}}</p>
-                    <p class="cs-step" data-step="3">• {{aiChat.b3}}</p>
-                    <p class="cs-step" data-step="4">• {{aiChat.b4}}</p>
+                    <div class="cs-step cs-verdict" data-step="1">
+                      <div class="cs-verdict__top"><span>{{aiChat.verdictLabel}}</span><em>{{aiChat.direction}}</em></div>
+                      <p>{{aiChat.headline}}</p>
+                    </div>
+                    <div class="cs-step cs-sec" data-step="2">
+                      <h4>{{aiChat.driversLabel}}</h4>
+                      <p><b>{{aiChat.d1Lead}}</b> {{aiChat.d1}}</p>
+                      <p><b>{{aiChat.d2Lead}}</b> {{aiChat.d2}}</p>
+                      <p><b>{{aiChat.d3Lead}}</b> {{aiChat.d3}}</p>
+                      <p><b>{{aiChat.d4Lead}}</b> {{aiChat.d4}}</p>
+                    </div>
+                    <div class="cs-step cs-sec" data-step="3">
+                      <h4>{{aiChat.riskLabel}}</h4>
+                      <p><b>{{aiChat.r1Lead}}</b> {{aiChat.r1}}</p>
+                    </div>
+                    <div class="cs-step cs-sec" data-step="4">
+                      <h4>{{aiChat.watchLabel}}</h4>
+                      <p><b>{{aiChat.w1Lead}}</b> {{aiChat.w1}}</p>
+                    </div>
                     <p class="cs-step cs-disclaimer" data-step="4">{{aiChat.note}}</p>
                     <p class="cs-step cs-report" data-step="4"><svg class="ic"><use href="#i-flag"/></svg>{{aiChat.report}}</p>
                   </div>
@@ -98,16 +113,12 @@
                     <span>{{aiChat.follow1}}<i>↑</i></span>
                     <span>{{aiChat.follow2}}<i>↑</i></span>
                   </div>
-                  <div class="cs-step cs-pro" data-step="5">
-                    <b><svg class="ic"><use href="#i-sparkle"/></svg>{{aiChat.proTitle}}</b>
-                    <small>{{aiChat.proBody}}</small>
-                    <span>{{aiChat.proAction}}<i>→</i></span>
-                  </div>
+
                 </div>
               </div>
               <div class="cs-foot">
                 <small>{{aiChat.disclaimer}}</small>
-                <b class="cs-remaining" data-before="{{aiChat.remaining5}}" data-after="{{aiChat.remaining4}}">{{aiChat.remaining4}}</b>
+                <b class="cs-remaining cs-remaining--pro" data-before="{{aiChat.proBefore}}" data-after="{{aiChat.proAfter}}">{{aiChat.proAfter}}</b>
                 <div class="cs-input">{{aiChat.placeholder}}<span>↑</span></div>
               </div>
             </div>

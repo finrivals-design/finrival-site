@@ -127,13 +127,13 @@
         <div class="demo__copy">
           <span class="kicker" data-reveal>A real answer</span>
           <h2 class="h2" id="demo-title" data-reveal style="--d:.06s">One question, start to finish</h2>
-          <p class="demo__source" data-reveal style="--d:.1s">Replayed from the app: GOOGL vs MSFT over five years, on a Free account</p>
+          <p class="demo__source" data-reveal style="--d:.1s">Replayed from the app: GOOGL vs MSFT over five years, on a PRO account</p>
           <ol class="demo__notes">
-            <li data-note="1"><b>Uses the data you chose</b><span>The five-year window from Compare, not a guess</span></li>
-            <li data-note="2"><b>Weighs return against risk</b><span>Growth is shown next to volatility and drawdown</span></li>
-            <li data-note="3"><b>Says what a number doesn't mean</b><span>Momentum is described as strength, never as a promise</span></li>
-            <li data-note="4"><b>Avoids false comfort</b><span>A low correlation is not sold as protection</span></li>
-            <li data-note="5"><b>Asks before it spends</b><span>Follow-ups only prepare the question, a request is used when you send</span></li>
+            <li data-note="1"><b>Starts with a verdict</b><span>A balanced call from the five-year data you chose</span></li>
+            <li data-note="2"><b>Shows what drives it</b><span>Growth, the common-date lead, volatility and correlation, each with its number</span></li>
+            <li data-note="3"><b>Names the real risk</b><span>The deeper drawdown, and momentum read as strength, never as a promise</span></li>
+            <li data-note="4"><b>Says what would change the view</b><span>Something you can watch, not a prediction</span></li>
+            <li data-note="5"><b>Asks before it spends</b><span>Follow-ups only prepare the question, your PRO allowance is used when you send</span></li>
           </ol>
           <button class="demo__replay" type="button" hidden><svg class="ic"><use href="#i-replay"/></svg>Replay</button>
         </div>
@@ -164,29 +164,40 @@
                   <p class="cs-q">Create a professional Finrival comparison report for GOOGL vs MSFT using the 5Y data window.</p>
                   <p class="cs-thinking"><span class="cs-spinner" aria-hidden="true"></span>Finrival AI is thinking...</p>
                   <div class="cs-answer">
-                    <p class="cs-step" data-step="1">• Over the supplied 5-year historical window, GOOGL demonstrated higher long-term growth with a 19.02% CAGR compared to MSFT's 11.49%, though MSFT led recent common-date pair performance by 21.30 percentage points and traded at its series high.</p>
-                    <p class="cs-step" data-step="2">• The primary trade-off is risk versus return: GOOGL offers strong historical growth but experienced higher historical price fluctuations (29.66% volatility vs MSFT's 27.82%) and a deeper maximum loss from peak to trough (44.32% drawdown vs MSFT's 37.56%).</p>
-                    <p class="cs-step" data-step="3">• MSFT displays stronger recent buying momentum with a 14-period Relative Strength Index (RSI) of 62.98, compared to GOOGL's 56.38; however, elevated momentum indicates recent price strength, not a guaranteed continuation or immediate price reversal.</p>
-                    <p class="cs-step" data-step="4">• Their moderate historical return correlation of 0.44 shows these stocks occasionally move independently, but historical co-movement does not ensure future diversification or risk protection.</p>
-                    <p class="cs-step cs-disclaimer" data-step="4">This analysis is for informational purposes only and does not constitute financial advice.</p>
+                    <div class="cs-step cs-verdict" data-step="1">
+                      <div class="cs-verdict__top"><span>Verdict</span><em>NEUTRAL-MIXED</em></div>
+                      <p>The supplied 5-year historical snapshot shows a trade-off between higher standalone growth for Alphabet and stronger relative common-date risk metrics for Microsoft.</p>
+                    </div>
+                    <div class="cs-step cs-sec" data-step="2">
+                      <h4>What's driving it</h4>
+                      <p><b>Standalone annualized growth:</b> Alphabet achieved a higher 5-year historical CAGR of 19.02% compared to Microsoft's 11.49%.</p>
+                      <p><b>Common-date leadership:</b> Microsoft led Alphabet by 21.3 percentage points over their shared timeline while sitting at a series high.</p>
+                      <p><b>Lower risk profile:</b> Microsoft demonstrated lower annualized volatility (27.82% versus 29.66%) and a smaller maximum drawdown (37.56% versus 44.32%) than Alphabet.</p>
+                      <p><b>Moderate correlation:</b> A 0.44 return correlation indicates moderate price co-movement rather than identical price action or total diversification assurance.</p>
+                    </div>
+                    <div class="cs-step cs-sec" data-step="3">
+                      <h4>Risk</h4>
+                      <p><b>Downside exposure and momentum risks:</b> Alphabet suffered notably deeper historical drawdowns, whereas Microsoft's higher RSI14 (62.98) reflects recent momentum rather than a forecast of future gains.</p>
+                    </div>
+                    <div class="cs-step cs-sec" data-step="4">
+                      <h4>What would change the view</h4>
+                      <p><b>Macro or earnings shift:</b> A sustained relative return convergence or a widening gap in drawdown metrics during market pullbacks would shift the comparative risk-adjusted balance.</p>
+                    </div>
+                    <p class="cs-step cs-disclaimer" data-step="4">This analysis is provided for informational purposes only and does not constitute financial advice.</p>
                     <p class="cs-step cs-report" data-step="4"><svg class="ic"><use href="#i-flag"/></svg>Report response</p>
                   </div>
                   <div class="cs-step cs-follow" data-step="5">
                     <b>Choose a follow-up</b>
-                    <small>Tapping only prepares the question. An AI credit is used when you Send.</small>
+                    <small>Tapping only prepares the question. Send requests a new answer.</small>
                     <span>Explain the risk difference<i>↑</i></span>
                     <span>How reliable is the comparison?<i>↑</i></span>
                   </div>
-                  <div class="cs-step cs-pro" data-step="5">
-                    <b><svg class="ic"><use href="#i-sparkle"/></svg>Go deeper with Finrival PRO</b>
-                    <small>Explore Finrival PRO for fuller reasoning, risk assessments and more detailed follow-up answers.</small>
-                    <span>Explore Finrival PRO<i>→</i></span>
-                  </div>
+
                 </div>
               </div>
               <div class="cs-foot">
                 <small>AI can make mistakes. Not investment advice.</small>
-                <b class="cs-remaining" data-before="AI requests remaining: 5" data-after="AI requests remaining: 4">AI requests remaining: 4</b>
+                <b class="cs-remaining cs-remaining--pro" data-before="PRO · 100% of today’s AI left" data-after="PRO · 98% of today’s AI left">PRO · 98% of today’s AI left</b>
                 <div class="cs-input">Ask about global markets...<span>↑</span></div>
               </div>
             </div>
