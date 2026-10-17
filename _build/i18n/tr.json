@@ -67,7 +67,7 @@
     "lead": "Finrival AI baktığın piyasayı, varlığı ya da karşılaştırmayı bağlam olarak alır, böylece her soru doğru yerden başlar",
     "f1": "Google Gemini altyapısıyla",
     "f2": "İki varlığı karşılaştır ya da bir kavramı açıklat",
-    "f3": "Günde 5 ücretsiz soru, PRO'da 5 soruluk günlük sınır yok"
+    "f3": "Günde 5 ücretsiz soru, PRO'da 10 katı"
   },
   "more": {
     "kicker": "Finrival'da ayrıca",
@@ -102,7 +102,7 @@
     "simulation": "Simülasyon",
     "ads": "Reklamlar",
     "aiFree": "5 hak / gün",
-    "aiPro": "5 hak sınırı yok",
+    "aiPro": "10 kat fazla / gün",
     "learnFree": "Günün 5 sorusu",
     "learnPro": "+ Konu turları",
     "watchFree": "5 varlık",
@@ -226,7 +226,7 @@
     "tiersTitle": "Sormak ücretsiz, derine inmek PRO ile",
     "freeHeadline": "Günde 5 soru",
     "freeBody": "Her kısa ödüllü video için 3 soru daha",
-    "proHeadline": "5 soruluk günlük sınır yok",
+    "proHeadline": "Free'nin 10 katı günlük soru",
     "proBody": "Daha kapsamlı gerekçeler, risk değerlendirmeleri ve daha ayrıntılı devam cevapları"
   },
   "aiChat": {
@@ -255,10 +255,10 @@
   },
   "proPage": {
     "metaTitle": "Finrival PRO | Araştırmana daha fazla alan",
-    "metaDescription": "Finrival PRO neler ekler: 5 soruluk günlük AI sınırı yok, 25 varlıklık takip listesi, Öğren konu turları, makro senaryolar ve reklamsız deneyim",
+    "metaDescription": "Finrival PRO neler ekler: 10 kat daha fazla günlük AI sorusu, 25 varlıklık takip listesi, Öğren konu turları, makro senaryolar ve reklamsız deneyim",
     "title1": "Free ile başla",
     "title2": "PRO ile daha ileri git",
-    "lead": "PRO Finrival'ın çalışma şeklini değiştirmez, ona alan açar: 5 soruluk günlük AI sınırı kalkar, takip listen büyür, Öğren'e konu turları ve Servet Simülatörü'ne makro senaryolar gelir, hepsi reklamsız",
+    "lead": "PRO Finrival'ın çalışma şeklini değiştirmez, ona alan açar: günlük AI soruların 10 katına çıkar, takip listen büyür, Öğren'e konu turları ve Servet Simülatörü'ne makro senaryolar gelir, hepsi reklamsız",
     "flipTitle": "Free ve PRO'yu karşılaştır",
     "aiFreeNote": "Kısa ve öz cevaplar, her ödüllü video için 3 soru daha",
     "aiProNote": "Daha kapsamlı gerekçeler, risk değerlendirmeleri ve ayrıntılı devam cevapları",
@@ -294,7 +294,7 @@
     "q3": "PRO'yu birden fazla cihazda kullanabilir miyim?",
     "a3": "Evet, aynı hesapla giriş yaparak PRO'yu tüm cihazlarında açabilirsin",
     "q4": "PRO’da kaç AI sorusu var?",
-    "a4": "PRO 5 soruluk günlük sınırı kaldırır, adil kullanım sınırları ise hizmeti herkes için hızlı ve güvenilir tutar",
+    "a4": "PRO, Free planın günlük AI sorularının 10 katını verir ve hak her gün yenilenir; adil kullanım sınırları hizmeti herkes için hızlı ve güvenilir tutar",
     "q5": "Uygulamayı yeniden yükledim, PRO'yu nasıl geri alırım?",
     "a5": "Uygulamadaki Satın Alımları Geri Yükle seçeneğini kullan ya da daha önce kullandığın hesapla giriş yap",
     "q6": "PRO işlem ya da yatırım tavsiyesi ekler mi?",
@@ -358,7 +358,7 @@
       "kicker": "Yasal",
       "title": "Kullanım Şartları",
       "lead": "Finrival'ı kullanırken geçerli olan kurallar, finansal bilgi sınırları, abonelik koşulları ve kullanıcı sorumlulukları",
-      "meta": "Yürürlük 17 Ağustos 2026 · Son güncelleme 17 Ekim 2026"
+      "meta": "Yürürlük 17 Ağustos 2026 · Son güncelleme 18 Ekim 2026"
     },
     "delete": {
       "metaTitle": "Finrival hesabını sil",

@@ -67,7 +67,7 @@
     "lead": "Finrival AI picks up the market, asset or comparison you're looking at, so every question starts with the right context",
     "f1": "Powered by Google Gemini",
     "f2": "Compare two assets or have a concept explained",
-    "f3": "5 free requests a day, no 5-request cap on PRO"
+    "f3": "5 free requests a day, 10× more on PRO"
   },
   "more": {
     "kicker": "Also in Finrival",
@@ -102,7 +102,7 @@
     "simulation": "Simulation",
     "ads": "Ads",
     "aiFree": "5 requests / day",
-    "aiPro": "No 5-request daily cap",
+    "aiPro": "10× more / day",
     "learnFree": "Daily five",
     "learnPro": "+ Topic rounds",
     "watchFree": "5 assets",
@@ -226,7 +226,7 @@
     "tiersTitle": "Free to ask, PRO to go deeper",
     "freeHeadline": "5 requests a day",
     "freeBody": "Plus 3 more each time you watch a short rewarded video",
-    "proHeadline": "No 5-request daily cap",
+    "proHeadline": "10× the Free daily requests",
     "proBody": "Fuller reasoning, risk assessments and more detailed follow-up answers"
   },
   "aiChat": {
@@ -255,10 +255,10 @@
   },
   "proPage": {
     "metaTitle": "Finrival PRO | More room to research",
-    "metaDescription": "See what Finrival PRO adds: no 5-request daily AI cap, a 25-asset watchlist, Learn topic rounds, macro scenarios and no ads",
+    "metaDescription": "See what Finrival PRO adds: 10× the daily AI requests, a 25-asset watchlist, Learn topic rounds, macro scenarios and no ads",
     "title1": "Free gets you started",
     "title2": "PRO takes you further",
-    "lead": "PRO doesn't change how Finrival works, it gives it more room: no daily AI cap of five, a bigger watchlist, topic rounds in Learn and macro scenarios in the Wealth Simulator, all without ads",
+    "lead": "PRO doesn't change how Finrival works, it gives it more room: 10× the daily AI requests, a bigger watchlist, topic rounds in Learn and macro scenarios in the Wealth Simulator, all without ads",
     "flipTitle": "Compare Free and PRO",
     "aiFreeNote": "Concise answers, plus 3 requests per rewarded video",
     "aiProNote": "Fuller reasoning, risk assessments and detailed follow-ups",
@@ -294,7 +294,7 @@
     "q3": "Can I use PRO on more than one device?",
     "a3": "Yes, sign in with the same account to unlock PRO across your devices",
     "q4": "How many AI requests does PRO include?",
-    "a4": "PRO removes the 5-request daily cap, while fair-use limits keep the service fast and reliable for everyone",
+    "a4": "PRO gives you 10× the Free plan's daily AI requests, and the allowance resets every day; fair-use limits keep the service fast and reliable for everyone",
     "q5": "I reinstalled the app, how do I get PRO back?",
     "a5": "Use Restore Purchases in the app, or sign in with the account you used before",
     "q6": "Does PRO add trading or investment advice?",
@@ -358,7 +358,7 @@
       "kicker": "Legal",
       "title": "Terms of Use",
       "lead": "The rules, financial-information boundaries, subscription terms and user responsibilities that apply when you use Finrival",
-      "meta": "Effective 17 August 2026 · Last updated 17 October 2026"
+      "meta": "Effective 17 August 2026 · Last updated 18 October 2026"
     },
     "delete": {
       "metaTitle": "Delete your Finrival account",

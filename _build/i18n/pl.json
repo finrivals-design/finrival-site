@@ -67,7 +67,7 @@
     "lead": "Finrival AI bierze pod uwagę rynek, aktywo lub porównanie, które właśnie oglądasz, więc każde pytanie zaczyna się od właściwego kontekstu",
     "f1": "Napędzany przez Google Gemini",
     "f2": "Porównaj dwa aktywa lub poproś o wyjaśnienie pojęcia",
-    "f3": "5 darmowych zapytań dziennie, w PRO znika dzienny limit 5 zapytań"
+    "f3": "5 darmowych zapytań dziennie, w PRO 10× więcej"
   },
   "more": {
     "kicker": "Również w Finrival",
@@ -102,7 +102,7 @@
     "simulation": "Symulacja",
     "ads": "Reklamy",
     "aiFree": "5 pytań / dzień",
-    "aiPro": "Bez dziennego limitu 5 pytań",
+    "aiPro": "10× więcej / dzień",
     "learnFree": "5 pytań dnia",
     "learnPro": "+ Rundy tematyczne",
     "watchFree": "5 aktywów",
@@ -226,7 +226,7 @@
     "tiersTitle": "Pytaj za darmo, analizuj głębiej z PRO",
     "freeHeadline": "5 zapytań dziennie",
     "freeBody": "I 3 kolejne za każdy obejrzany krótki film z nagrodą",
-    "proHeadline": "Bez dziennego limitu 5 zapytań",
+    "proHeadline": "10× więcej zapytań dziennie niż w Free",
     "proBody": "Pełniejsze uzasadnienia, oceny ryzyka i bardziej szczegółowe odpowiedzi na kolejne pytania"
   },
   "aiChat": {
@@ -255,10 +255,10 @@
   },
   "proPage": {
     "metaTitle": "Finrival PRO | Więcej miejsca na analizę",
-    "metaDescription": "Zobacz, co dodaje Finrival PRO: brak dziennego limitu 5 zapytań AI, lista 25 obserwowanych aktywów, rundy tematyczne w Nauce, scenariusze makro i brak reklam",
+    "metaDescription": "Zobacz, co dodaje Finrival PRO: 10× więcej dziennych zapytań AI, lista 25 obserwowanych aktywów, rundy tematyczne w Nauce, scenariusze makro i brak reklam",
     "title1": "Free na start",
     "title2": "PRO, by pójść dalej",
-    "lead": "PRO nie zmienia tego, jak działa Finrival, tylko daje mu więcej miejsca: znika dzienny limit 5 zapytań AI, rośnie lista obserwowanych, w Nauce pojawiają się rundy tematyczne, a w Symulatorze majątku scenariusze makro, wszystko bez reklam",
+    "lead": "PRO nie zmienia tego, jak działa Finrival, tylko daje mu więcej miejsca: 10× więcej dziennych zapytań AI, większa lista obserwowanych, rundy tematyczne w Nauce i scenariusze makro w Symulatorze majątku, wszystko bez reklam",
     "flipTitle": "Porównaj Free i PRO",
     "aiFreeNote": "Zwięzłe odpowiedzi i 3 zapytania za każdy film z nagrodą",
     "aiProNote": "Pełniejsze uzasadnienia, oceny ryzyka i szczegółowe odpowiedzi na kolejne pytania",
@@ -294,7 +294,7 @@
     "q3": "Czy mogę używać PRO na kilku urządzeniach?",
     "a3": "Tak, zaloguj się na to samo konto, aby odblokować PRO na wszystkich urządzeniach",
     "q4": "Ile zapytań AI obejmuje PRO?",
-    "a4": "PRO znosi dzienny limit 5 zapytań, a zasady uczciwego korzystania dbają o to, by usługa była szybka i niezawodna dla wszystkich",
+    "a4": "PRO daje 10× więcej dziennych zapytań AI niż plan Free, a limit odnawia się każdego dnia; zasady uczciwego korzystania dbają o to, by usługa była szybka i niezawodna dla wszystkich",
     "q5": "Zainstalowałem aplikację ponownie, jak odzyskać PRO?",
     "a5": "Użyj opcji Przywróć zakupy w aplikacji lub zaloguj się na konto, którego używałeś wcześniej",
     "q6": "Czy PRO dodaje handel lub porady inwestycyjne?",
@@ -358,7 +358,7 @@
       "kicker": "Informacje prawne",
       "title": "Warunki użytkowania",
       "lead": "Zasady, granice informacji finansowych, warunki subskrypcji i obowiązki użytkownika obowiązujące podczas korzystania z Finrival",
-      "meta": "Obowiązuje od 17 sierpnia 2026 · Ostatnia aktualizacja 17 października 2026"
+      "meta": "Obowiązuje od 17 sierpnia 2026 · Ostatnia aktualizacja 18 października 2026"
     },
     "delete": {
       "metaTitle": "Usuń konto Finrival",
