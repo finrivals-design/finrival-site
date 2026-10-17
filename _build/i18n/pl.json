@@ -326,7 +326,7 @@
     "answersKicker": "Szybkie odpowiedzi",
     "answersTitle": "Zanim napiszesz",
     "q1": "Myślę, że ktoś uzyskał dostęp do mojego konta",
-    "a1": "Jak najszybciej napisz na finrivals@gmail.com, przed wprowadzeniem wrażliwych zmian w koncie możemy poprosić o rozsądną weryfikację",
+    "a1": "Jak najszybciej napisz na support@finrival.com, przed wprowadzeniem wrażliwych zmian w koncie możemy poprosić o rozsądną weryfikację",
     "q2": "Jak zapytać o moje dane lub skorzystać z praw dotyczących prywatności?",
     "a2": "Napisz na ten sam adres pomocy i zajrzyj do Polityki prywatności, aby sprawdzić, co i dlaczego przetwarzamy, a prośby o usunięcie konta zaczynają się na stronie Usuń konto",
     "q3": "Jak działają subskrypcje, anulowanie i zwroty?",
@@ -366,7 +366,7 @@
       "kicker": "Konto i dane",
       "title": "Usuń swoje konto",
       "lead": "Usuń konto w aplikacji lub napisz do nas z tej strony, jeśli nie masz już aplikacji lub nie możesz się zalogować",
-      "meta": "Pytania: finrivals@gmail.com"
+      "meta": "Pytania: support@finrival.com"
     }
   }
 }

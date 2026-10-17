@@ -326,7 +326,7 @@
     "answersKicker": "Kısa cevaplar",
     "answersTitle": "Yazmadan önce",
     "q1": "Hesabıma başkasının eriştiğini düşünüyorum",
-    "a1": "En kısa sürede finrivals@gmail.com adresine yaz, hassas hesap değişikliklerinden önce makul bir doğrulama isteyebiliriz",
+    "a1": "En kısa sürede support@finrival.com adresine yaz, hassas hesap değişikliklerinden önce makul bir doğrulama isteyebiliriz",
     "q2": "Verilerimi nasıl sorarım ya da gizlilik haklarımı nasıl kullanırım?",
     "a2": "Aynı destek adresine yaz ve neyi neden işlediğimizi görmek için Gizlilik Politikası'na bak, silme talepleri Hesabı Sil sayfasından başlar",
     "q3": "Abonelik, iptal ve iadeler nasıl işliyor?",
@@ -366,7 +366,7 @@
       "kicker": "Hesap ve veriler",
       "title": "Hesabını sil",
       "lead": "Hesabını uygulamadan sil ya da uygulaman yoksa veya giriş yapamıyorsan bu sayfadan bize yaz",
-      "meta": "Sorular: finrivals@gmail.com"
+      "meta": "Sorular: support@finrival.com"
     }
   }
 }

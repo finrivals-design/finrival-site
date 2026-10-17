@@ -326,7 +326,7 @@
     "answersKicker": "Quick answers",
     "answersTitle": "Before you write",
     "q1": "I think someone accessed my account",
-    "a1": "Email finrivals@gmail.com as soon as you can, and we may ask for reasonable verification before making sensitive account changes",
+    "a1": "Email support@finrival.com as soon as you can, and we may ask for reasonable verification before making sensitive account changes",
     "q2": "How do I ask about my data or use my privacy rights?",
     "a2": "Write to the same support address and see the Privacy Policy for what we process and why, deletion requests start on the Delete Account page",
     "q3": "How do subscriptions, cancellations and refunds work?",
@@ -366,7 +366,7 @@
       "kicker": "Account and data",
       "title": "Delete your account",
       "lead": "Delete your account in the app, or ask us from this page if you no longer have the app or can't sign in",
-      "meta": "Questions: finrivals@gmail.com"
+      "meta": "Questions: support@finrival.com"
     }
   }
 }
