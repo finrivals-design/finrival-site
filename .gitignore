@@ -1,0 +1,2 @@
+# Editor workspace files stay local, they must never be published with the site
+*.code-workspace

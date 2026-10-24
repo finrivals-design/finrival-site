@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- Link preview card (1200x630). Rendered per language by _build/og/render.mjs -->
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    position: relative;
+    background: #06090d;
+    color: #f2f5f8;
+    font-family: "Segoe UI Variable Display", "Segoe UI", Inter, Arial, sans-serif;
+  }
+  .glow {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(620px 420px at 82% 46%, rgba(216, 191, 131, 0.16), transparent 70%),
+      radial-gradient(700px 520px at 8% 110%, rgba(52, 78, 128, 0.32), transparent 70%);
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(800px 500px at 30% 50%, #000, transparent 75%);
+  }
+  .copy { position: absolute; left: 80px; top: 84px; width: 660px; }
+  .logo { display: block; height: 46px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 10px; margin-top: 64px;
+    padding: 9px 18px; border: 1px solid rgba(255,255,255,.14); border-radius: 999px;
+    color: #a7b1bd; font-size: 21px;
+  }
+  .badge i { width: 9px; height: 9px; border-radius: 50%; background: #5fd197; box-shadow: 0 0 12px #5fd197; }
+  h1 { margin: 26px 0 0; font-size: 62px; line-height: 1.04; letter-spacing: -0.045em; font-weight: 650; }
+  h1 span { display: block; }
+  h1 .gold { background: linear-gradient(100deg, #eddcb2, #d8bf83 45%, #8c7444); -webkit-background-clip: text; color: transparent; }
+  .url { position: absolute; left: 80px; bottom: 62px; color: #6b7683; font-size: 22px; letter-spacing: .02em; }
+  .phone {
+    position: absolute; right: 96px; top: 64px; width: 300px; height: 652px;
+    border-radius: 48px; padding: 10px; box-sizing: border-box;
+    background: linear-gradient(160deg, #2a3240, #0d131a 40%, #1a212b);
+    box-shadow: 0 40px 90px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.1) inset;
+    transform: rotate(4deg);
+  }
+  .phone img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 39px; }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="grid"></div>
+  <div class="copy">
+    <img class="logo" src="{{root}}/logo.png" alt="">
+    <div class="badge"><i></i>{{badge}}</div>
+    <h1><span>{{line1}}</span><span class="gold">{{line2}}</span></h1>
+  </div>
+  <div class="url">finrival.com</div>
+  <div class="phone"><img src="{{root}}/assets/screens/market-{{lang}}.webp" alt=""></div>
+</body>
+</html>

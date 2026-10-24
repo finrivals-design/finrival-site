@@ -2,7 +2,8 @@
   "meta": {
     "title": "Finrival | Hareketi yakala, önemli olanı karşılaştır",
     "description": "Piyasanın öne çıkanları, yan yana karşılaştırma, haberler, takip listesi ve yapay zeka asistanı tek mobil uygulamada, çok yakında iPhone ve Android'de",
-    "ogDescription": "Piyasanın öne çıkanları, yan yana karşılaştırma, haberler ve yapay zeka asistanı tek mobil uygulamada"
+    "ogDescription": "Piyasanın öne çıkanları, yan yana karşılaştırma, haberler ve yapay zeka asistanı tek mobil uygulamada",
+    "ogImageAlt": "Finrival, hareketi yakala ve önemli olanı karşılaştır, uygulamanın Piyasa ekranıyla"
   },
   "a11y": {
     "skip": "İçeriğe geç",
@@ -352,6 +353,16 @@
     "d1": "Neyi, neden topladığımız ve hakların",
     "d2": "Ürünün sınırları, abonelikler ve sorumlulukların",
     "d3": "Hesabını uygulamadan ya da web üzerinden sil"
+  },
+  "notFound": {
+    "metaTitle": "Sayfa bulunamadı | Finrival",
+    "title": "Bu sayfa artık burada değil",
+    "lead": "Bağlantı eski ya da hatalı yazılmış olabilir, Finrival'in sunduğu her şey yine bir tık uzağında",
+    "home": "Ana sayfaya dön",
+    "linksTitle": "Sık ziyaret edilen sayfalar",
+    "product": "İlk hareketten pratiğe, Finrival nasıl çalışır",
+    "ai": "Bulunduğun ekrandan yola çıkan yanıtlar",
+    "pro": "Ücretsiz plandaki günlük AI isteklerinin 10 katı ve reklamsız kullanım"
   },
   "legal": {
     "onThisPage": "Bu sayfada",

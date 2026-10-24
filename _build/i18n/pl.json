@@ -2,7 +2,8 @@
   "meta": {
     "title": "Finrival | Wyłap ruch, porównaj to, co ważne",
     "description": "Największe ruchy rynku, porównania obok siebie, wiadomości, lista obserwowanych i asystent AI w jednej aplikacji mobilnej, już wkrótce na iPhone'a i Androida",
-    "ogDescription": "Największe ruchy rynku, porównania obok siebie, wiadomości i asystent AI w jednej aplikacji mobilnej"
+    "ogDescription": "Największe ruchy rynku, porównania obok siebie, wiadomości i asystent AI w jednej aplikacji mobilnej",
+    "ogImageAlt": "Finrival, wyłap ruch i porównaj to, co ważne, na ekranie Rynek w aplikacji"
   },
   "a11y": {
     "skip": "Przejdź do treści",
@@ -148,7 +149,7 @@
     "metaTitle": "Finrival Produkt | Jedna aplikacja, jeden cykl analizy",
     "metaDescription": "Zobacz, jak działa Finrival: zauważ ruch na Rynku, porównaj go, zapytaj Finrival AI dlaczego i sprawdź pomysł w Rival",
     "title1": "Zauważ, porównaj, zapytaj",
-    "title2": "Potem sprawdź sam",
+    "title2": "Potem sprawdź w praktyce",
     "lead": "Finrival podąża za tym, jak ludzie naprawdę patrzą na rynek, od pierwszego zauważonego ruchu do pomysłu, który przetestujesz bez ryzyka",
     "loopLabel": "Jak działa Finrival w czterech krokach",
     "s1Title": "Zauważ",
@@ -352,6 +353,16 @@
     "d1": "Co zbieramy, dlaczego i jakie masz prawa",
     "d2": "Granice produktu, subskrypcje i Twoje obowiązki",
     "d3": "Usuń konto w aplikacji lub przez internet"
+  },
+  "notFound": {
+    "metaTitle": "Nie znaleziono strony | Finrival",
+    "title": "Tej strony już tu nie ma",
+    "lead": "Link może być nieaktualny lub zawierać literówkę, ale wszystko, co oferuje Finrival, jest nadal o jedno kliknięcie stąd",
+    "home": "Wróć na stronę główną",
+    "linksTitle": "Popularne strony",
+    "product": "Jak działa Finrival, od pierwszego ruchu do praktyki",
+    "ai": "Odpowiedzi, które zaczynają się od ekranu, na którym jesteś",
+    "pro": "10× więcej dziennych zapytań do AI niż w planie Free i brak reklam"
   },
   "legal": {
     "onThisPage": "Na tej stronie",

@@ -2,7 +2,8 @@
   "meta": {
     "title": "Finrival | Find the move, compare what matters",
     "description": "Market movers, side-by-side comparison, news, watchlists and an AI assistant in one mobile app, coming soon to iPhone and Android",
-    "ogDescription": "Market movers, side-by-side comparison, news and an AI assistant in one mobile app"
+    "ogDescription": "Market movers, side-by-side comparison, news and an AI assistant in one mobile app",
+    "ogImageAlt": "Finrival, find the move and compare what matters, with the app Market screen"
   },
   "a11y": {
     "skip": "Skip to content",
@@ -352,6 +353,16 @@
     "d1": "What we collect, why, and your rights",
     "d2": "Product boundaries, subscriptions and your responsibilities",
     "d3": "Delete your account in the app or from the web"
+  },
+  "notFound": {
+    "metaTitle": "Page not found | Finrival",
+    "title": "This page has moved on",
+    "lead": "The link may be old or mistyped, but everything Finrival offers is still one click away",
+    "home": "Back to home",
+    "linksTitle": "Popular pages",
+    "product": "How Finrival works, from the first move to practice",
+    "ai": "Answers that start from the screen you're on",
+    "pro": "10× the Free daily AI requests and no ads"
   },
   "legal": {
     "onThisPage": "On this page",

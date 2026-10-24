@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="{{@lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{notFound.metaTitle}}</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#06090d">
+  <meta name="color-scheme" content="dark">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script>
+    (function (d) {
+      d.classList.add("js");
+      // GitHub Pages serves the English /404.html for every missing URL, so swap in the
+      // Turkish or Polish page when the URL or the saved language asks for it
+      var lang = (location.pathname.match(/^\/(tr|pl)\//) || [])[1];
+      if (!lang) { try { lang = localStorage.getItem("fr-lang") || ""; } catch (e) {} }
+      if (!/^(tr|pl)$/.test(lang || "") || lang === "{{@lang}}" || !window.fetch) return;
+      d.style.visibility = "hidden";
+      fetch("/" + lang + "/404.html")
+        .then(function (r) { if (!r.ok) throw r; return r.text(); })
+        .then(function (html) { document.open(); document.write(html); document.close(); })
+        .catch(function () { d.style.visibility = ""; });
+    })(document.documentElement);
+  </script>
+  <script defer src="/assets/js/site.js"></script>
+</head>
+<body>
+{{>sprite}}
+{{>header}}
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <span class="kicker rise">404</span>
+        <h1 class="display page-hero__title" id="page-title">
+          <span class="mask-line"><span style="--d:.06s">{{notFound.title}}</span></span>
+        </h1>
+        <p class="lead rise" style="--d:.18s">{{notFound.lead}}</p>
+        <div class="hero__ctas rise" style="--d:.3s">
+          <a class="btn btn--gold" href="{{@home}}">{{notFound.home}}</a>
+          <a class="btn btn--ghost" href="{{@link:/support/}}">{{nav.support}}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:clamp(24px, 4vw, 48px)" aria-labelledby="links-title">
+      <div class="container">
+        <h2 class="h2 tiers__title" id="links-title" data-reveal>{{notFound.linksTitle}}</h2>
+        <div class="doc-links">
+          <a href="{{@link:/product/}}" data-reveal><b>{{nav.product}}</b><span>{{notFound.product}}</span><svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a href="{{@link:/ai/}}" data-reveal style="--d:.06s"><b>Finrival AI</b><span>{{notFound.ai}}</span><svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a href="{{@link:/pro/}}" data-reveal style="--d:.12s"><b>PRO</b><span>{{notFound.pro}}</span><svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+{{>footer}}
+</body>
+</html>
