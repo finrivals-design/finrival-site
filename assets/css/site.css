@@ -933,15 +933,24 @@ button {
   }
 }
 
-/* On phones one large, fully visible screen reads better than three small ones;
-   the product tour shows the others right below */
+/* On phones all three screens stay fully visible: a smaller centre phone with the side
+   phones fanned out behind it, slightly off the screen edges */
 @media (max-width: 640px) {
   .hero__stage .device--center {
-    --w: min(280px, 76vw);
+    --w: min(212px, 55vw);
   }
 
   .hero__stage .device--side {
-    display: none;
+    --w: min(164px, 42vw);
+    top: 34px;
+  }
+
+  .hero__stage .device--left {
+    transform: translateX(calc(-50% - var(--w) * 0.66)) rotate(-7deg);
+  }
+
+  .hero__stage .device--right {
+    transform: translateX(calc(-50% + var(--w) * 0.66)) rotate(7deg);
   }
 }
 
@@ -3840,21 +3849,15 @@ body::after {
   display: none;
 }
 
-/* A gold ring pulses on the tab bar and the AI button until the first tap */
-.live-phone.is-hinting .live-phone__hit[data-go="compare"]::after,
+/* A gold ring traces the Finrival AI button until the first tap (the chips below the phone
+   show the tabs, so the tab bar itself gets no ring) */
 .live-phone.is-hinting .live-phone__hit--ai::after {
   content: "";
   position: absolute;
-  inset: 12% 30%;
-  border-radius: 50%;
-  border: 1.5px solid var(--gold);
-  animation: live-ping 1.8s ease-out 2.4s infinite both;
-}
-
-.live-phone.is-hinting .live-phone__hit--ai::after {
   inset: 0;
   border-radius: 999px;
-  animation-delay: 3.3s;
+  border: 1.5px solid var(--gold);
+  animation: live-ping 1.8s ease-out 2.4s infinite both;
 }
 
 @keyframes live-ping {
@@ -4632,22 +4635,20 @@ p {
     white-space: nowrap;
   }
 
-  /* Phone frames show the top of the screen and fade out, like a device rising from the page */
+  /* Phone frames stay whole on phones, just smaller */
   .tour__inline.device,
   .loop__device,
   .spotlight__device {
-    --w: min(244px, 64vw);
-    margin-bottom: calc(var(--w) * -0.86);
-    -webkit-mask-image: linear-gradient(180deg, #000 52%, transparent 66%);
-    mask-image: linear-gradient(180deg, #000 52%, transparent 66%);
+    --w: min(212px, 56vw);
+  }
+
+  .tour__step {
+    padding-bottom: 24px;
   }
 
   .hero__stage {
-    margin-top: 48px;
-    padding-bottom: 0;
-    margin-bottom: calc(min(280px, 76vw) * -0.9);
-    -webkit-mask-image: linear-gradient(180deg, #000 50%, transparent 64%);
-    mask-image: linear-gradient(180deg, #000 50%, transparent 64%);
+    margin-top: 44px;
+    padding-bottom: 28px;
   }
 
   .hero__stage::before {
