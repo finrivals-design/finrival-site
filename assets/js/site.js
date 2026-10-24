@@ -326,6 +326,179 @@
     revealables.forEach((el) => el.classList.add("is-visible"));
   }
 
+  // Premium touch, only for a mouse or trackpad and only when motion is welcome
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (finePointer && !reduceMotion) {
+    // Hero phones lean toward the pointer
+    const hero = document.querySelector(".hero");
+    if (hero && stage) {
+      let frame = 0;
+      hero.addEventListener("pointermove", (e) => {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => {
+          const r = hero.getBoundingClientRect();
+          stage.style.setProperty("--tx", ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
+          stage.style.setProperty("--ty", ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
+        });
+      });
+      hero.addEventListener("pointerleave", () => {
+        stage.style.setProperty("--tx", "0");
+        stage.style.setProperty("--ty", "0");
+      });
+    }
+
+    // Cards light up where the pointer is
+    document.querySelectorAll(".feature, .topic").forEach((card) => {
+      const glow = document.createElement("span");
+      glow.className = "card-glow";
+      glow.setAttribute("aria-hidden", "true");
+      card.prepend(glow);
+      card.addEventListener("pointermove", (e) => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty("--mx", `${e.clientX - r.left}px`);
+        card.style.setProperty("--my", `${e.clientY - r.top}px`);
+      });
+    });
+  }
+
+  // Swipe rails on phones: page dots that follow the card in view
+  document.querySelectorAll(".tour__steps, .features, .modes").forEach((rail) => {
+    const cards = [...rail.children];
+    const dots = document.createElement("div");
+    dots.className = "rail-dots";
+    dots.setAttribute("aria-hidden", "true");
+    cards.forEach(() => dots.append(document.createElement("span")));
+    rail.after(dots);
+    let frame = 0;
+    const sync = () => {
+      const start = rail.getBoundingClientRect().left;
+      let on = 0;
+      let best = Infinity;
+      cards.forEach((card, i) => {
+        const d = Math.abs(card.getBoundingClientRect().left - start);
+        if (d < best) {
+          best = d;
+          on = i;
+        }
+      });
+      // The last card can't scroll to the start edge, so the end of the rail counts as the last page
+      if (rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 4) on = cards.length - 1;
+      [...dots.children].forEach((dot, i) => dot.classList.toggle("is-on", i === on));
+    };
+    rail.addEventListener("scroll", () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(sync);
+    }, { passive: true });
+    sync();
+  });
+
+  // Home: living phone. The app's own tab bar, its Finrival AI button and the chips below switch the screen
+  const phone = document.querySelector("[data-live-phone]");
+  if (phone) {
+    const order = ["market", "compare", "rival", "ai"];
+    const chips = document.querySelectorAll(".live-tabs [data-go]");
+    let current = "market";
+    let previous = "market";
+    phone.dataset.on = current;
+    phone.classList.add("is-hinting");
+    const show = (name) => {
+      if (name === "back") name = previous;
+      if (!order.includes(name) || name === current) return;
+      const forward = order.indexOf(name) > order.indexOf(current);
+      phone.querySelectorAll(".live-phone__screens img").forEach((img) => {
+        const leaving = img.dataset.screen === current;
+        img.style.setProperty("--from", (forward === leaving ? "-" : "") + "28%");
+        img.classList.toggle("is-on", img.dataset.screen === name);
+      });
+      chips.forEach((chip) => chip.setAttribute("aria-pressed", String(chip.dataset.go === name)));
+      if (name !== "ai") previous = name;
+      current = name;
+      phone.dataset.on = name;
+      phone.classList.remove("is-hinting");
+    };
+    phone.querySelectorAll(".live-phone__hit").forEach((hit) => {
+      hit.addEventListener("click", () => {
+        if (hit.dataset.go) return show(hit.dataset.go);
+        // News and Watchlist have no screenshot yet: a small shake instead of a dead tap
+        hit.classList.remove("is-nope");
+        void hit.offsetWidth;
+        hit.classList.add("is-nope");
+      });
+    });
+    chips.forEach((chip) => chip.addEventListener("click", () => show(chip.dataset.go)));
+  }
+
+  // Home: Rival Duel. The cards slide in, the bars race and RC 10,000 counts up, once it is in view
+  const duel = document.querySelector("[data-duel]");
+  if (duel) {
+    const rows = [...duel.querySelectorAll(".duel__row")];
+    const totals = [...duel.querySelectorAll(".duel__grow b")];
+    const rc = (n) => "RC " + Math.round(n).toLocaleString("en-US");
+    const fill = (row, on) => {
+      const max = Number(row.dataset.max);
+      const [a, b] = row.querySelectorAll(".duel__bar i");
+      a.style.setProperty("--fill", on ? (Number(row.dataset.a) / max) * 100 + "%" : "0%");
+      b.style.setProperty("--fill", on ? (Number(row.dataset.b) / max) * 100 + "%" : "0%");
+    };
+    let timers = [];
+    const play = () => {
+      timers.forEach(clearTimeout);
+      timers = [];
+      duel.classList.remove("is-on");
+      duel.classList.add("is-racing");
+      rows.forEach((row) => fill(row, false));
+      totals.forEach((el) => (el.textContent = rc(10000)));
+      const at = (ms, fn) => timers.push(setTimeout(fn, reduceMotion ? 0 : ms));
+      at(60, () => duel.classList.add("is-on"));
+      rows.forEach((row, i) => at(900 + i * 350, () => fill(row, true)));
+      at(2400, () => duel.classList.remove("is-racing"));
+      at(2200, () => totals.forEach((el) => {
+        const to = Number(el.dataset.to);
+        const start = performance.now();
+        const step = (now) => {
+          const p = reduceMotion ? 1 : Math.min(1, (now - start) / 1800);
+          el.textContent = rc(10000 + (to - 10000) * (1 - Math.pow(1 - p, 3)));
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      }));
+    };
+    // Bars start empty so the race has somewhere to go; without IntersectionObserver they just fill
+    rows.forEach((row) => fill(row, false));
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          io.disconnect();
+          play();
+        }
+      }, { threshold: 0.35 });
+      io.observe(duel);
+    } else {
+      duel.classList.add("is-on");
+      rows.forEach((row) => fill(row, true));
+    }
+    duel.querySelector("[data-duel-replay]")?.addEventListener("click", play);
+  }
+
+  // Home: one Learn question. Answer once, then the app's explanation opens
+  const quiz = document.querySelector("[data-quiz]");
+  if (quiz) {
+    const right = quiz.dataset.correct;
+    const options = quiz.querySelectorAll(".quiz__options button");
+    const verdict = quiz.querySelector(".quiz__verdict");
+    options.forEach((option) => option.addEventListener("click", () => {
+      options.forEach((o) => {
+        o.disabled = true;
+        o.classList.add(o.dataset.i === right ? "is-right" : "is-other");
+        if (o.dataset.i === right) o.querySelector("i").textContent = "✓";
+      });
+      option.classList.add("is-picked");
+      option.classList.remove("is-other");
+      verdict.textContent = option.dataset.i === right ? verdict.dataset.right : verdict.dataset.wrong;
+      quiz.classList.add("is-done");
+    }));
+  }
+
   // Footer year
   document.querySelectorAll("[data-year]").forEach((el) => {
     el.textContent = String(new Date().getFullYear());

@@ -50,9 +50,9 @@ const urlFor = (lang, path) => (localized.has(path) ? LANGS[lang].prefix + path 
 function lookup(dict, key, lang) {
   const value = key.split(".").reduce((node, part) => (node == null ? node : node[part]), dict);
   if (typeof value !== "string") throw new Error(`Missing "${key}" in ${lang}.json`);
-  // House style: no sentence-final periods in site copy. "aiChat" is exempt: it quotes the
-  // app's own chat word for word, punctuation included.
-  if (!key.startsWith("aiChat.") && /\.\s*$/.test(value)) throw new Error(`"${key}" in ${lang}.json ends with a period`);
+  // House style: no sentence-final periods in site copy. "aiChat" and "learnQ" are exempt: they quote
+  // the app's own chat and Learn question word for word, punctuation included.
+  if (!/^(aiChat|learnQ)\./.test(key) && /\.\s*$/.test(value)) throw new Error(`"${key}" in ${lang}.json ends with a period`);
   return value;
 }
 

@@ -18,7 +18,7 @@
   <meta property="og:description" content="{{meta.ogDescription}}">
 {{@social}}
 
-  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+{{>icons}}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
@@ -48,15 +48,25 @@
   </script>
   <script defer src="/assets/js/site.js"></script>
 
+  <!-- Google: site name and logo shown next to finrival.com in search results -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Finrival",
-    "url": "https://finrival.com/",
-    "logo": "https://finrival.com/logo.png",
-    "email": "support@finrival.com"
-  }
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Finrival",
+      "alternateName": "Finrival app",
+      "url": "https://finrival.com/"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Finrival",
+      "url": "https://finrival.com/",
+      "logo": "https://finrival.com/assets/img/logo-square-512.png",
+      "email": "support@finrival.com"
+    }
+  ]
   </script>
 </head>
 <body>
@@ -98,12 +108,35 @@
         <figure class="device device--side device--left rise" style="--d:.7s">
           <img src="/assets/screens/compare-{{@s}}.webp" srcset="/assets/screens/compare-{{@s}}-sm.webp 440w, /assets/screens/compare-{{@s}}.webp 720w" sizes="(max-width: 640px) 206px, 290px" width="720" height="1565" alt="{{alt.compare}}">
         </figure>
-        <figure class="device device--center rise" style="--d:.55s">
-          <img src="/assets/screens/market-{{@s}}.webp" srcset="/assets/screens/market-{{@s}}-sm.webp 440w, /assets/screens/market-{{@s}}.webp 720w" sizes="(max-width: 640px) 246px, 340px" width="720" height="1565" fetchpriority="high" alt="{{alt.market}}">
+        <!-- Living phone: the app's own tab bar and Finrival AI button switch the screen (site.js) -->
+        <figure class="device device--center rise live-phone" style="--d:.55s" data-live-phone>
+          <div class="live-phone__screens">
+            <img class="is-on" data-screen="market" src="/assets/screens/market-{{@s}}.webp" srcset="/assets/screens/market-{{@s}}-sm.webp 440w, /assets/screens/market-{{@s}}.webp 720w" sizes="(max-width: 640px) 246px, 340px" width="720" height="1565" fetchpriority="high" alt="{{alt.market}}">
+            <img data-screen="compare" src="/assets/screens/compare-{{@s}}.webp" srcset="/assets/screens/compare-{{@s}}-sm.webp 440w, /assets/screens/compare-{{@s}}.webp 720w" sizes="(max-width: 640px) 246px, 340px" width="720" height="1565" loading="lazy" alt="{{alt.compare}}">
+            <img data-screen="rival" src="/assets/screens/rival-{{@s}}.webp" srcset="/assets/screens/rival-{{@s}}-sm.webp 440w, /assets/screens/rival-{{@s}}.webp 720w" sizes="(max-width: 640px) 246px, 340px" width="720" height="1565" loading="lazy" alt="{{alt.rival}}">
+            <img data-screen="ai" src="/assets/screens/ai-{{@s}}.webp" srcset="/assets/screens/ai-{{@s}}-sm.webp 440w, /assets/screens/ai-{{@s}}.webp 720w" sizes="(max-width: 640px) 246px, 340px" width="720" height="1565" loading="lazy" alt="{{alt.ai}}">
+          </div>
+          <button class="live-phone__hit" type="button" data-go="market" style="left:5%" aria-label="{{live.market}}"></button>
+          <button class="live-phone__hit" type="button" data-go="" style="left:23%" tabindex="-1" aria-hidden="true"></button>
+          <button class="live-phone__hit" type="button" data-go="compare" style="left:41%" aria-label="{{live.compare}}"></button>
+          <button class="live-phone__hit" type="button" data-go="rival" style="left:59%" aria-label="Rival"></button>
+          <button class="live-phone__hit" type="button" data-go="" style="left:77%" tabindex="-1" aria-hidden="true"></button>
+          <button class="live-phone__hit live-phone__hit--ai" type="button" data-go="ai" aria-label="Finrival AI"></button>
+          <button class="live-phone__hit live-phone__hit--close" type="button" data-go="back" aria-label="{{a11y.closeMenu}}"></button>
         </figure>
         <figure class="device device--side device--right rise" style="--d:.7s">
           <img src="/assets/screens/rival-{{@s}}.webp" srcset="/assets/screens/rival-{{@s}}-sm.webp 440w, /assets/screens/rival-{{@s}}.webp 720w" sizes="(max-width: 640px) 206px, 290px" width="720" height="1565" alt="{{alt.rival}}">
         </figure>
+      </div>
+
+      <div class="container live-tabs rise" style="--d:.9s">
+        <p class="live-tabs__hint">{{live.hint}}</p>
+        <div class="live-tabs__row" role="group" aria-label="{{live.label}}">
+          <button type="button" data-go="market" aria-pressed="true">{{live.market}}</button>
+          <button type="button" data-go="compare" aria-pressed="false">{{live.compare}}</button>
+          <button type="button" data-go="rival" aria-pressed="false">Rival</button>
+          <button type="button" data-go="ai" aria-pressed="false"><svg class="ic"><use href="#i-zap"/></svg>Finrival AI</button>
+        </div>
       </div>
     </section>
 
@@ -168,6 +201,46 @@
       </div>
     </section>
 
+    <!-- ========== Rival Duel: the GOOGL vs MSFT snapshot replayed on the AI page, as a race (site.js) ========== -->
+    <section class="section duel-sec" style="padding-top:0" aria-labelledby="duel-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="kicker" data-reveal>{{duel.kicker}}</span>
+          <h2 class="h2" id="duel-title" data-reveal style="--d:.06s">{{duel.title}}</h2>
+          <p class="lead" data-reveal style="--d:.12s">{{duel.lead}}</p>
+        </div>
+        <div class="duel" data-duel>
+          <div class="duel__cards">
+            <div class="duel__fighter duel__fighter--a"><b>GOOGL</b><span>Alphabet</span></div>
+            <div class="duel__vs" aria-hidden="true">VS</div>
+            <div class="duel__fighter duel__fighter--b"><b>MSFT</b><span>Microsoft</span></div>
+          </div>
+          <div class="duel__rows">
+            <!-- Values and labels as the app's Compare analysis shows them: signed CAGR, signed drawdown -->
+            <div class="duel__row" data-a="19.02" data-b="11.49" data-max="25" data-better="high">
+              <div class="duel__bar duel__bar--a is-win"><i></i><em>+19.02%</em></div><span class="duel__label">{{duel.growth}}</span><div class="duel__bar duel__bar--b"><i></i><em>+11.49%</em></div>
+            </div>
+            <div class="duel__row" data-a="29.66" data-b="27.82" data-max="40" data-better="low">
+              <div class="duel__bar duel__bar--a"><i></i><em>29.66%</em></div><span class="duel__label">{{duel.volatility}}</span><div class="duel__bar duel__bar--b is-win"><i></i><em>27.82%</em></div>
+            </div>
+            <div class="duel__row" data-a="44.32" data-b="37.56" data-max="55" data-better="low">
+              <div class="duel__bar duel__bar--a"><i></i><em>-44.32%</em></div><span class="duel__label">{{duel.drawdown}}</span><div class="duel__bar duel__bar--b is-win"><i></i><em>-37.56%</em></div>
+            </div>
+          </div>
+          <p class="duel__legend"><span aria-hidden="true">●</span>{{duel.legend}}</p>
+          <div class="duel__grow">
+            <div><small>{{duel.growA}}</small><b data-to="23884">RC 23,884</b></div>
+            <div><small>{{duel.growB}}</small><b data-to="17226">RC 17,226</b></div>
+          </div>
+          <div class="duel__foot">
+            <button class="btn btn--ghost btn--sm" type="button" data-duel-replay>{{duel.replay}}</button>
+            <a class="link" href="{{@link:/ai/}}">{{duel.aiLink}} <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+        <p class="duel__note">{{duel.note}}</p>
+      </div>
+    </section>
+
     <!-- ========== Finrival AI ========== -->
     <section class="section spotlight" style="padding-top:0" aria-labelledby="ai-title">
       <div class="container spotlight__grid">
@@ -215,6 +288,39 @@
             <p>{{news.body}}</p>
             <span class="feature__meta">{{news.meta}}</span>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Learn: one real question from the app's question bank (site.js) ========== -->
+    <section class="section" style="padding-top:0" aria-labelledby="quiz-title">
+      <div class="container quiz-sec">
+        <div class="section-head">
+          <span class="kicker" data-reveal>{{quiz.kicker}}</span>
+          <h2 class="h2" id="quiz-title" data-reveal style="--d:.06s">{{quiz.title}}</h2>
+          <p class="lead" data-reveal style="--d:.12s">{{quiz.lead}}</p>
+        </div>
+        <div class="quiz" data-quiz data-correct="1" data-reveal>
+          <span class="quiz__tag">{{learnQ.tag}}</span>
+          <p class="quiz__context">{{learnQ.context}}</p>
+          <h3 class="quiz__prompt">{{learnQ.prompt}}</h3>
+          <dl class="quiz__facts">
+            <div><dt>{{learnQ.fact1Label}}</dt><dd>{{learnQ.fact1Value}}</dd></div>
+            <div><dt>{{learnQ.fact2Label}}</dt><dd>{{learnQ.fact2Value}}</dd></div>
+          </dl>
+          <div class="quiz__options">
+            <button type="button" data-i="0"><i>A</i><span>{{learnQ.option1}}</span></button>
+            <button type="button" data-i="1"><i>B</i><span>{{learnQ.option2}}</span></button>
+            <button type="button" data-i="2"><i>C</i><span>{{learnQ.option3}}</span></button>
+          </div>
+          <div class="quiz__result" aria-live="polite">
+            <div>
+              <b class="quiz__verdict" data-right="{{learnQ.correct}}" data-wrong="{{learnQ.incorrect}}"></b>
+              <p>{{learnQ.explanation}}</p>
+              <p class="quiz__takeaway">{{learnQ.takeaway}}</p>
+            </div>
+          </div>
+          <p class="quiz__more">{{quiz.more}}</p>
         </div>
       </div>
     </section>

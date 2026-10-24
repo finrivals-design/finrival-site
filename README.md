@@ -26,3 +26,5 @@ Folders starting with `_` are not published by GitHub Pages.
 
 - `assets/css/site.css` and `assets/js/site.js`: design system and behaviour for the redesigned pages
 - `assets/screens/`: real app screenshots per language (`market-en.webp`, `market-tr.webp`, …)
+- Icons (tab, Google, home screen): generated from the full logo `logo.png` with `node _build/brand/icons.mjs`
+- Link preview images: `node _build/og/render.mjs`

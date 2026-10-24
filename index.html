@@ -27,7 +27,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://finrival.com/assets/img/og-en.png">
 
-  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/assets/img/favicon-96.png" type="image/png" sizes="96x96">
+  <link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
@@ -57,15 +61,25 @@
   </script>
   <script defer src="/assets/js/site.js"></script>
 
+  <!-- Google: site name and logo shown next to finrival.com in search results -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Finrival",
-    "url": "https://finrival.com/",
-    "logo": "https://finrival.com/logo.png",
-    "email": "support@finrival.com"
-  }
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Finrival",
+      "alternateName": "Finrival app",
+      "url": "https://finrival.com/"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Finrival",
+      "url": "https://finrival.com/",
+      "logo": "https://finrival.com/assets/img/logo-square-512.png",
+      "email": "support@finrival.com"
+    }
+  ]
   </script>
 </head>
 <body>
@@ -180,12 +194,35 @@
         <figure class="device device--side device--left rise" style="--d:.7s">
           <img src="/assets/screens/compare-en.webp" srcset="/assets/screens/compare-en-sm.webp 440w, /assets/screens/compare-en.webp 720w" sizes="(max-width: 640px) 206px, 290px" width="720" height="1565" alt="Finrival Global Rival View comparing Fermi America and Microsoft side by side">
         </figure>
-        <figure class="device device--center rise" style="--d:.55s">
-          <img src="/assets/screens/market-en.webp" srcset="/assets/screens/market-en-sm.webp 440w, /assets/screens/market-en.webp 720w" sizes="(max-width: 640px) 246px, 340px" width="720" height="1565" fetchpriority="high" alt="Finrival Market screen with top gainers, top decliners and daily trading activity">
+        <!-- Living phone: the app's own tab bar and Finrival AI button switch the screen (site.js) -->
+        <figure class="device device--center rise live-phone" style="--d:.55s" data-live-phone>
+          <div class="live-phone__screens">
+            <img class="is-on" data-screen="market" src="/assets/screens/market-en.webp" srcset="/assets/screens/market-en-sm.webp 440w, /assets/screens/market-en.webp 720w" sizes="(max-width: 640px) 246px, 340px" width="720" height="1565" fetchpriority="high" alt="Finrival Market screen with top gainers, top decliners and daily trading activity">
+            <img data-screen="compare" src="/assets/screens/compare-en.webp" srcset="/assets/screens/compare-en-sm.webp 440w, /assets/screens/compare-en.webp 720w" sizes="(max-width: 640px) 246px, 340px" width="720" height="1565" loading="lazy" alt="Finrival Global Rival View comparing Fermi America and Microsoft side by side">
+            <img data-screen="rival" src="/assets/screens/rival-en.webp" srcset="/assets/screens/rival-en-sm.webp 440w, /assets/screens/rival-en.webp 720w" sizes="(max-width: 640px) 246px, 340px" width="720" height="1565" loading="lazy" alt="Finrival Rival practice screen with a balance of RC 100,000">
+            <img data-screen="ai" src="/assets/screens/ai-en.webp" srcset="/assets/screens/ai-en-sm.webp 440w, /assets/screens/ai-en.webp 720w" sizes="(max-width: 640px) 246px, 340px" width="720" height="1565" loading="lazy" alt="Finrival AI, powered by Google Gemini, with suggestions to compare two assets or explain a concept">
+          </div>
+          <button class="live-phone__hit" type="button" data-go="market" style="left:5%" aria-label="Market"></button>
+          <button class="live-phone__hit" type="button" data-go="" style="left:23%" tabindex="-1" aria-hidden="true"></button>
+          <button class="live-phone__hit" type="button" data-go="compare" style="left:41%" aria-label="Compare"></button>
+          <button class="live-phone__hit" type="button" data-go="rival" style="left:59%" aria-label="Rival"></button>
+          <button class="live-phone__hit" type="button" data-go="" style="left:77%" tabindex="-1" aria-hidden="true"></button>
+          <button class="live-phone__hit live-phone__hit--ai" type="button" data-go="ai" aria-label="Finrival AI"></button>
+          <button class="live-phone__hit live-phone__hit--close" type="button" data-go="back" aria-label="Close menu"></button>
         </figure>
         <figure class="device device--side device--right rise" style="--d:.7s">
           <img src="/assets/screens/rival-en.webp" srcset="/assets/screens/rival-en-sm.webp 440w, /assets/screens/rival-en.webp 720w" sizes="(max-width: 640px) 206px, 290px" width="720" height="1565" alt="Finrival Rival practice screen with a balance of RC 100,000">
         </figure>
+      </div>
+
+      <div class="container live-tabs rise" style="--d:.9s">
+        <p class="live-tabs__hint">Tap the phone, it works like the app</p>
+        <div class="live-tabs__row" role="group" aria-label="Switch the screen">
+          <button type="button" data-go="market" aria-pressed="true">Market</button>
+          <button type="button" data-go="compare" aria-pressed="false">Compare</button>
+          <button type="button" data-go="rival" aria-pressed="false">Rival</button>
+          <button type="button" data-go="ai" aria-pressed="false"><svg class="ic"><use href="#i-zap"/></svg>Finrival AI</button>
+        </div>
       </div>
     </section>
 
@@ -250,6 +287,46 @@
       </div>
     </section>
 
+    <!-- ========== Rival Duel: the GOOGL vs MSFT snapshot replayed on the AI page, as a race (site.js) ========== -->
+    <section class="section duel-sec" style="padding-top:0" aria-labelledby="duel-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="kicker" data-reveal>Global Rival View</span>
+          <h2 class="h2" id="duel-title" data-reveal style="--d:.06s">Two assets, five years, one view</h2>
+          <p class="lead" data-reveal style="--d:.12s">The same five-year snapshot Finrival AI reads on the AI page, side by side and played out in Rival Credits</p>
+        </div>
+        <div class="duel" data-duel>
+          <div class="duel__cards">
+            <div class="duel__fighter duel__fighter--a"><b>GOOGL</b><span>Alphabet</span></div>
+            <div class="duel__vs" aria-hidden="true">VS</div>
+            <div class="duel__fighter duel__fighter--b"><b>MSFT</b><span>Microsoft</span></div>
+          </div>
+          <div class="duel__rows">
+            <!-- Values and labels as the app's Compare analysis shows them: signed CAGR, signed drawdown -->
+            <div class="duel__row" data-a="19.02" data-b="11.49" data-max="25" data-better="high">
+              <div class="duel__bar duel__bar--a is-win"><i></i><em>+19.02%</em></div><span class="duel__label">5Y CAGR</span><div class="duel__bar duel__bar--b"><i></i><em>+11.49%</em></div>
+            </div>
+            <div class="duel__row" data-a="29.66" data-b="27.82" data-max="40" data-better="low">
+              <div class="duel__bar duel__bar--a"><i></i><em>29.66%</em></div><span class="duel__label">Historical volatility</span><div class="duel__bar duel__bar--b is-win"><i></i><em>27.82%</em></div>
+            </div>
+            <div class="duel__row" data-a="44.32" data-b="37.56" data-max="55" data-better="low">
+              <div class="duel__bar duel__bar--a"><i></i><em>-44.32%</em></div><span class="duel__label">Historical max drawdown</span><div class="duel__bar duel__bar--b is-win"><i></i><em>-37.56%</em></div>
+            </div>
+          </div>
+          <p class="duel__legend"><span aria-hidden="true">●</span>Stronger on this measure</p>
+          <div class="duel__grow">
+            <div><small>RC 10,000 in GOOGL five years ago</small><b data-to="23884">RC 23,884</b></div>
+            <div><small>RC 10,000 in MSFT five years ago</small><b data-to="17226">RC 17,226</b></div>
+          </div>
+          <div class="duel__foot">
+            <button class="btn btn--ghost btn--sm" type="button" data-duel-replay>Replay</button>
+            <a class="link" href="/ai/">Read the AI analysis <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+        <p class="duel__note">Historical five-year snapshot from the app · Price returns, dividends not included · RC values compound the 5Y CAGR · Fictional Rival Credits · Past results don't predict future returns · Not investment advice</p>
+      </div>
+    </section>
+
     <!-- ========== Finrival AI ========== -->
     <section class="section spotlight" style="padding-top:0" aria-labelledby="ai-title">
       <div class="container spotlight__grid">
@@ -297,6 +374,39 @@
             <p>Open the latest headlines for any asset straight from Compare, with the source and time on every story</p>
             <span class="feature__meta">Stocks and crypto</span>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Learn: one real question from the app's question bank (site.js) ========== -->
+    <section class="section" style="padding-top:0" aria-labelledby="quiz-title">
+      <div class="container quiz-sec">
+        <div class="section-head">
+          <span class="kicker" data-reveal>Learn</span>
+          <h2 class="h2" id="quiz-title" data-reveal style="--d:.06s">Try one question from Learn</h2>
+          <p class="lead" data-reveal style="--d:.12s">The app asks five short questions like this every day, each with a clear explanation</p>
+        </div>
+        <div class="quiz" data-quiz data-correct="1" data-reveal>
+          <span class="quiz__tag">UNDERSTAND COMPANIES</span>
+          <p class="quiz__context">A company announcement</p>
+          <h3 class="quiz__prompt">A company reported higher profit. Why might its share price have fallen?</h3>
+          <dl class="quiz__facts">
+            <div><dt>Reported profit</dt><dd>Higher than last year</dd></div>
+            <div><dt>Share price</dt><dd>Fell</dd></div>
+          </dl>
+          <div class="quiz__options">
+            <button type="button" data-i="0"><i>A</i><span>Profit growth must lift the price by the same percentage</span></button>
+            <button type="button" data-i="1"><i>B</i><span>Investors may have expected a larger increase</span></button>
+            <button type="button" data-i="2"><i>C</i><span>Company profit and market expectations are the same thing</span></button>
+          </div>
+          <div class="quiz__result" aria-live="polite">
+            <div>
+              <b class="quiz__verdict" data-right="Exactly. You got it." data-wrong="Here is the detail that matters:"></b>
+              <p>A good result can still fall short of expectations. The outlook and expectations already reflected in the price can also influence the market response.</p>
+              <p class="quiz__takeaway">A good result is not the same as beating expectations.</p>
+            </div>
+          </div>
+          <p class="quiz__more">Five new questions every day in the app</p>
         </div>
       </div>
     </section>
