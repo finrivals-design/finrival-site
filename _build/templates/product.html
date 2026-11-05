@@ -139,7 +139,7 @@
         <h2 class="h2" id="cta-title">{{cta.title}}</h2>
         <p class="lead">{{cta.lead}}</p>
         <div class="stores">
-          <span class="store"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">{{store.appleSmall}}</span><span class="store__big">App Store</span></span></span>
+          <a class="store" href="{{@appStore}}"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">{{store.appleSmall}}</span><span class="store__big">{{store.appleBig}}</span></span></a>
           <span class="store"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">{{store.googleSmall}}</span><span class="store__big">Google Play</span></span></span>
         </div>
       </div>

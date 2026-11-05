@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Finrival | Find the move, compare what matters",
-    "description": "Market movers, side-by-side comparison, news, watchlists and an AI assistant in one mobile app, coming soon to iPhone and Android",
+    "description": "Market movers, side-by-side comparison, news, watchlists and an AI assistant in one mobile app, now on iPhone and coming soon to Android",
     "ogDescription": "Market movers, side-by-side comparison, news and an AI assistant in one mobile app",
     "ogImageAlt": "Finrival, find the move and compare what matters, with the app Market screen"
   },
@@ -22,11 +22,12 @@
     "getApp": "Get the app"
   },
   "store": {
-    "appleSmall": "Coming soon on the",
+    "appleSmall": "Download on the",
+    "appleBig": "App Store",
     "googleSmall": "Coming soon on"
   },
   "hero": {
-    "badge": "Coming soon to iPhone and Android",
+    "badge": "Now on iPhone, coming soon to Android",
     "line1": "Find the move",
     "line2": "Compare what matters",
     "lead": "Market movers, side-by-side comparison, news and an AI assistant that starts from the screen you're on, all in one app"
@@ -128,7 +129,7 @@
   },
   "cta": {
     "title": "Your markets, in focus",
-    "lead": "Finrival launches soon on iPhone and Android"
+    "lead": "Finrival is on the App Store now, and Android is coming soon"
   },
   "footer": {
     "tagline": "Market research, comparison and AI in one mobile app",

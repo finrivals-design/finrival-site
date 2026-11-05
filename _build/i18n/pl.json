@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Finrival | Wyłap ruch, porównaj to, co ważne",
-    "description": "Największe ruchy rynku, porównania obok siebie, wiadomości, lista obserwowanych i asystent AI w jednej aplikacji mobilnej, już wkrótce na iPhone'a i Androida",
+    "description": "Największe ruchy rynku, porównania obok siebie, wiadomości, lista obserwowanych i asystent AI w jednej aplikacji mobilnej, już na iPhone'a, wkrótce na Androida",
     "ogDescription": "Największe ruchy rynku, porównania obok siebie, wiadomości i asystent AI w jednej aplikacji mobilnej",
     "ogImageAlt": "Finrival, wyłap ruch i porównaj to, co ważne, na ekranie Rynek w aplikacji"
   },
@@ -22,11 +22,12 @@
     "getApp": "Pobierz aplikację"
   },
   "store": {
-    "appleSmall": "Wkrótce w",
+    "appleSmall": "Pobierz z",
+    "appleBig": "App Store",
     "googleSmall": "Wkrótce w"
   },
   "hero": {
-    "badge": "Już wkrótce na iPhone'a i Androida",
+    "badge": "Już na iPhone'a, wkrótce na Androida",
     "line1": "Wyłap ruch",
     "line2": "Porównaj to, co ważne",
     "lead": "Największe ruchy rynku, porównania obok siebie, wiadomości i asystent AI, który zaczyna od ekranu, na którym jesteś, wszystko w jednej aplikacji"
@@ -128,7 +129,7 @@
   },
   "cta": {
     "title": "Twoje rynki w centrum uwagi",
-    "lead": "Finrival już wkrótce na iPhone'a i Androida"
+    "lead": "Finrival jest już w App Store, wersja na Androida wkrótce"
   },
   "footer": {
     "tagline": "Analiza rynku, porównania i AI w jednej aplikacji mobilnej",

@@ -22,6 +22,7 @@ import { fileURLToPath } from "node:url";
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, "..");
 const SITE = "https://finrival.com";
+const APP_STORE_URL = "https://apps.apple.com/app/id6802657842";
 
 const LANGS = {
   en: { prefix: "", locale: "en_US", code: "EN", name: "English" },
@@ -96,6 +97,8 @@ function render(template, lang, dict, page, content = "") {
       `  <meta name="twitter:card" content="summary_large_image">`,
       `  <meta name="twitter:image" content="${SITE}/assets/img/og-${lang}.png">`,
     ].join("\n"),
+    // App Store listing; this address opens the App Store app on iPhone in the visitor's own storefront
+    appStore: APP_STORE_URL,
     // "Get the app" scrolls to the page's own download section, or to the one on the home page
     download: template.includes('id="download"') ? "#download" : urlFor(lang, "/") + "#download",
     langMenu: langLinks(switchPath, lang, "")

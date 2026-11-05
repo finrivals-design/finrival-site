@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Finrival | Hareketi yakala, önemli olanı karşılaştır",
-    "description": "Piyasanın öne çıkanları, yan yana karşılaştırma, haberler, takip listesi ve yapay zeka asistanı tek mobil uygulamada, çok yakında iPhone ve Android'de",
+    "description": "Piyasanın öne çıkanları, yan yana karşılaştırma, haberler, takip listesi ve yapay zeka asistanı tek mobil uygulamada, şimdi iPhone'da, yakında Android'de",
     "ogDescription": "Piyasanın öne çıkanları, yan yana karşılaştırma, haberler ve yapay zeka asistanı tek mobil uygulamada",
     "ogImageAlt": "Finrival, hareketi yakala ve önemli olanı karşılaştır, uygulamanın Piyasa ekranıyla"
   },
@@ -22,11 +22,12 @@
     "getApp": "Uygulamayı edin"
   },
   "store": {
-    "appleSmall": "Çok yakında",
+    "appleSmall": "App Store'dan",
+    "appleBig": "İndirin",
     "googleSmall": "Çok yakında"
   },
   "hero": {
-    "badge": "Çok yakında iPhone ve Android'de",
+    "badge": "Şimdi iPhone'da, yakında Android'de",
     "line1": "Hareketi yakala",
     "line2": "Önemli olanı karşılaştır",
     "lead": "Piyasanın öne çıkanları, yan yana karşılaştırma, haberler ve bulunduğun ekrandan yola çıkan bir yapay zeka asistanı, hepsi tek uygulamada"
@@ -128,7 +129,7 @@
   },
   "cta": {
     "title": "Piyasalar artık odağında",
-    "lead": "Finrival çok yakında iPhone ve Android'de"
+    "lead": "Finrival şimdi App Store'da, Android sürümü çok yakında"
   },
   "footer": {
     "tagline": "Piyasa araştırması, karşılaştırma ve yapay zeka tek mobil uygulamada",
