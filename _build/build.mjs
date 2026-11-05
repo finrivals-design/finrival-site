@@ -22,7 +22,8 @@ import { fileURLToPath } from "node:url";
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, "..");
 const SITE = "https://finrival.com";
-const APP_STORE_URL = "https://apps.apple.com/app/id6802657842";
+// App Store Connect campaign link "website": downloads from the site show up under Analytics > Campaigns
+const APP_STORE_URL = "https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8";
 
 const LANGS = {
   en: { prefix: "", locale: "en_US", code: "EN", name: "English" },
