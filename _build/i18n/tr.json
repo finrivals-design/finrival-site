@@ -433,5 +433,12 @@
       "lead": "Hesabını uygulamadan sil ya da uygulaman yoksa veya giriş yapamıyorsan bu sayfadan bize yaz",
       "meta": "Sorular: support@finrival.com"
     }
+  },
+  "consent": {
+    "text": "Reklamlarımızın performansını ölçmek için çerez kullanıyoruz, yalnızca kabul edersen",
+    "accept": "Kabul et",
+    "reject": "Reddet",
+    "policy": "Gizlilik Politikası",
+    "settings": "Çerez ayarları"
   }
 }

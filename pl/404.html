@@ -4,6 +4,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google tag (Tag Manager container GTM-T2BCLWW9). Consent Mode v2: everything stays denied
+       until the visitor accepts in the cookie banner (partials/consent.html) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('set', 'url_passthrough', true);
+    try {
+      if (localStorage.getItem('finrival-consent') === 'granted') {
+        gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' });
+      }
+    } catch (e) {}
+    gtag('js', new Date());
+  </script>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-T2BCLWW9"></script>
   <title>Nie znaleziono strony | Finrival</title>
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#06090d">
@@ -168,6 +184,7 @@
             <li><a href="/pl/privacy/">Polityka prywatności</a></li>
             <li><a href="/pl/terms/">Warunki użytkowania</a></li>
             <li><a href="/pl/delete-account/">Usuń konto</a></li>
+            <li><button type="button" class="footer__link" data-consent-open>Ustawienia cookies</button></li>
           </ul>
         </div>
       </div>
@@ -182,5 +199,42 @@
       </div>
     </div>
   </footer>
+  <!-- ========== Cookie consent ========== -->
+  <div class="consent" id="consent" role="dialog" aria-live="polite" aria-labelledby="consent-text" hidden>
+    <p id="consent-text">Używamy plików cookie do mierzenia skuteczności naszych reklam, tylko jeśli się zgodzisz · <a href="/pl/privacy/">Polityka prywatności</a></p>
+    <div class="consent__actions">
+      <button type="button" class="consent__btn" data-consent="denied">Odrzucam</button>
+      <button type="button" class="consent__btn" data-consent="granted">Akceptuję</button>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var KEY = 'finrival-consent';
+      var box = document.getElementById('consent');
+      var stored = null;
+      try { stored = localStorage.getItem(KEY); } catch (e) {}
+      if (stored !== 'granted' && stored !== 'denied') box.hidden = false;
+
+      function choose(value) {
+        try { localStorage.setItem(KEY, value); } catch (e) {}
+        gtag('consent', 'update', { ad_storage: value, ad_user_data: value, ad_personalization: value, analytics_storage: value });
+        dataLayer.push({ event: 'consent_update', consent: value });
+        box.hidden = true;
+      }
+      box.querySelectorAll('[data-consent]').forEach(function (b) {
+        b.addEventListener('click', function () { choose(b.getAttribute('data-consent')); });
+      });
+      document.querySelectorAll('[data-consent-open]').forEach(function (b) {
+        b.addEventListener('click', function () { box.hidden = false; box.querySelector('button').focus(); });
+      });
+
+      // Conversion signal: a click on any App Store link. In Tag Manager, trigger the
+      // Google Ads conversion tag on the custom event "app_store_click"
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="apps.apple.com"]');
+        if (a) dataLayer.push({ event: 'app_store_click', link_url: a.href, page_language: document.documentElement.lang });
+      });
+    })();
+  </script>
 </body>
 </html>

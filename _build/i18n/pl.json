@@ -433,5 +433,12 @@
       "lead": "Usuń konto w aplikacji lub napisz do nas z tej strony, jeśli nie masz już aplikacji lub nie możesz się zalogować",
       "meta": "Pytania: support@finrival.com"
     }
+  },
+  "consent": {
+    "text": "Używamy plików cookie do mierzenia skuteczności naszych reklam, tylko jeśli się zgodzisz",
+    "accept": "Akceptuję",
+    "reject": "Odrzucam",
+    "policy": "Polityka prywatności",
+    "settings": "Ustawienia cookies"
   }
 }

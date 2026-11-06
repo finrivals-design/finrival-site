@@ -433,5 +433,12 @@
       "lead": "Delete your account in the app, or ask us from this page if you no longer have the app or can't sign in",
       "meta": "Questions: support@finrival.com"
     }
+  },
+  "consent": {
+    "text": "We use cookies to measure how our ads perform, and only if you accept",
+    "accept": "Accept",
+    "reject": "Reject",
+    "policy": "Privacy Policy",
+    "settings": "Cookie settings"
   }
 }
