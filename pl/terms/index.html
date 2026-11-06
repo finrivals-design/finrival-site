@@ -461,12 +461,19 @@
         b.addEventListener('click', function () { box.hidden = false; box.querySelector('button').focus(); });
       });
 
-      // Conversion signal: a click on any App Store link. In Tag Manager, trigger the
-      // Google Ads conversion tag on the custom event "app_store_click"
+      // Google Ads conversion "App Store click" (Outbound click, primary): any App Store link.
+      // Without consent, Consent Mode sends only a cookieless ping
       document.addEventListener('click', function (e) {
         var a = e.target.closest && e.target.closest('a[href*="apps.apple.com"]');
-        if (a) dataLayer.push({ event: 'app_store_click', link_url: a.href, page_language: document.documentElement.lang });
+        if (!a) return;
+        dataLayer.push({ event: 'app_store_click', link_url: a.href, page_language: document.documentElement.lang });
+        gtag('event', 'conversion', { send_to: 'AW-18535453558/sUOxCMmKwrMdEPamsoZF', transport_type: 'beacon' });
       });
+
+      // Google Ads page view conversions for the PRO and Finrival AI pages, in every language
+      var page = location.pathname.replace(/index\.html$/, '').replace(/^\/(pl|tr)\//, '/');
+      var pageViews = { '/pro/': 'AW-18535453558/6WWMCMyKwrMdEPamsoZF', '/ai/': 'AW-18535453558/M6_5CM-KwrMdEPamsoZF' };
+      if (pageViews[page]) gtag('event', 'conversion', { send_to: pageViews[page] });
     })();
   </script>
 </body>
