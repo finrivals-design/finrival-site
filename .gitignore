@@ -1,2 +1,7 @@
 # Editor workspace files stay local, they must never be published with the site
 *.code-workspace
+
+# Rendered video ad outputs, rebuild with node _video/music.mjs and node _video/render.mjs
+_video/*.mp4
+_video/*.wav
+_video/still-*.png

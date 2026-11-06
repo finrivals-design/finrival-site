@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<!-- Finrival 15 s video ad (1920x1080) in Polish, English and Turkish. Open in Chrome with ?lang=pl|en|tr to preview,
+     render to MP4 with: node _video/render.mjs -->
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<title>Finrival reklama wideo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&display=block">
+<style>
+  :root {
+    --bg: #06090d;
+    --text: #f2f5f8;
+    --text-2: #a7b1bd;
+    --text-3: #6b7683;
+    --gold: #d8bf83;
+    --gold-2: #eddcb2;
+    --gold-deep: #8c7444;
+    --navy: #344e80;
+    --teal: #1fb5c6;
+    --up: #5fd197;
+    --down: #ff6b7a;
+    --ease: cubic-bezier(0.22, 0.61, 0.24, 1);
+    --ease-io: cubic-bezier(0.76, 0, 0.24, 1);
+    --spring: cubic-bezier(0.34, 1.4, 0.5, 1);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: var(--bg); }
+  body {
+    position: relative;
+    color: var(--text);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    letter-spacing: -0.02em;
+    -webkit-font-smoothing: antialiased;
+  }
+  .abs { position: absolute; }
+
+  /* ---------- Ambient background ---------- */
+  .glow-a, .glow-b, .glow-c { position: absolute; border-radius: 50%; filter: blur(40px); }
+  .glow-a { width: 1300px; height: 900px; left: 900px; top: 60px;
+    background: radial-gradient(closest-side, rgba(216,191,131,.20), transparent);
+    animation: driftA 15s linear both; }
+  .glow-b { width: 1400px; height: 1000px; left: -500px; top: 500px;
+    background: radial-gradient(closest-side, rgba(52,78,128,.42), transparent);
+    animation: driftB 15s linear both; }
+  .glow-c { width: 900px; height: 700px; left: 1100px; top: -350px;
+    background: radial-gradient(closest-side, rgba(31,181,198,.13), transparent);
+    animation: driftA 15s linear both reverse; }
+  @keyframes driftA { from { transform: translate(0,0) scale(1); } to { transform: translate(-160px,40px) scale(1.12); } }
+  @keyframes driftB { from { transform: translate(0,0); } to { transform: translate(180px,-80px); } }
+  .grid {
+    position: absolute; inset: -60px;
+    background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    -webkit-mask-image: radial-gradient(1100px 700px at 40% 50%, #000, transparent 75%);
+    animation: gridPan 15s linear both;
+  }
+  @keyframes gridPan { from { transform: translate(0,0); } to { transform: translate(-80px,-40px); } }
+
+  /* Rising market line behind the intro */
+  .chart { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+  .chart path { fill: none; stroke: url(#lineGrad); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 2600; stroke-dashoffset: 2600;
+    animation: draw 2.2s var(--ease) .1s both, fadeOut .5s var(--ease-io) 2.5s forwards; }
+  .chart .area { stroke: none; fill: url(#areaGrad); stroke-dasharray: none; stroke-dashoffset: 0; opacity: 0;
+    animation: areaIn 1.6s var(--ease) .5s both, fadeOut .5s var(--ease-io) 2.5s forwards; }
+  @keyframes areaIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+
+  /* ---------- Generic motion ---------- */
+  @keyframes rise { from { opacity: 0; transform: translateY(46px); filter: blur(10px); } to { opacity: 1; transform: none; filter: blur(0); } }
+  @keyframes pop { from { opacity: 0; transform: scale(.82); filter: blur(8px); } to { opacity: 1; transform: none; filter: blur(0); } }
+  @keyframes leave { to { opacity: 0; transform: translateY(-36px); filter: blur(10px); } }
+  @keyframes fadeOut { to { opacity: 0; } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  /* ---------- Intro ---------- */
+  .intro { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .intro .logo { height: 92px; animation: pop .8s var(--ease) .15s both, leave .45s var(--ease-io) 2.45s forwards; }
+  .intro h1 { margin: 52px 0 0; font-size: 150px; line-height: .98; font-weight: 750; letter-spacing: -0.045em; }
+  .intro h1 span { display: inline-block; }
+  .intro .w1 { animation: rise .7s var(--ease) .65s both, leave .45s var(--ease-io) 2.5s forwards; }
+  .intro .w2 { animation: rise .7s var(--ease) .85s both, leave .45s var(--ease-io) 2.55s forwards; }
+  .gold { background: linear-gradient(100deg, var(--gold-2), var(--gold) 45%, var(--gold-deep)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 14px; margin-top: 54px;
+    padding: 14px 28px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px;
+    background: rgba(255,255,255,.035); color: var(--text-2); font-size: 30px; letter-spacing: -0.01em;
+  }
+  .badge i { width: 12px; height: 12px; border-radius: 50%; background: var(--up); box-shadow: 0 0 16px var(--up); }
+  .intro .badge { animation: rise .6s var(--ease) 1.3s both, leave .45s var(--ease-io) 2.6s forwards; }
+
+  /* ---------- Feature copy (left) ---------- */
+  .copy { position: absolute; left: 170px; top: 50%; width: 860px; transform: translateY(-50%); }
+  .copy > * { display: block; }
+  .kicker { display: flex; align-items: center; gap: 18px; font-size: 28px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+  .kicker b { display: inline-grid; place-items: center; width: 54px; height: 54px; border-radius: 50%; border: 1.5px solid rgba(216,191,131,.5); font-size: 22px; letter-spacing: 0; color: var(--gold-2); }
+  .copy h2 { margin: 34px 0 0; font-size: 100px; line-height: 1.02; font-weight: 720; letter-spacing: -0.04em; }
+  .copy p { margin: 36px 0 0; max-width: 720px; font-size: 34px; line-height: 1.42; color: var(--text-2); letter-spacing: -0.012em; }
+
+  .c1 .kicker { animation: rise .6s var(--ease) 3.0s both, leave .4s var(--ease-io) 5.75s forwards; }
+  .c1 h2      { animation: rise .7s var(--ease) 3.12s both, leave .4s var(--ease-io) 5.8s forwards; }
+  .c1 p       { animation: rise .7s var(--ease) 3.3s both, leave .4s var(--ease-io) 5.85s forwards; }
+  .c2 .kicker { animation: rise .6s var(--ease) 6.15s both, leave .4s var(--ease-io) 8.85s forwards; }
+  .c2 h2      { animation: rise .7s var(--ease) 6.27s both, leave .4s var(--ease-io) 8.9s forwards; }
+  .c2 p       { animation: rise .7s var(--ease) 6.45s both, leave .4s var(--ease-io) 8.95s forwards; }
+  .c3 .kicker { animation: rise .6s var(--ease) 9.25s both, leave .4s var(--ease-io) 11.8s forwards; }
+  .c3 h2      { animation: rise .7s var(--ease) 9.37s both, leave .4s var(--ease-io) 11.85s forwards; }
+  .c3 p       { animation: rise .7s var(--ease) 9.55s both, leave .4s var(--ease-io) 11.9s forwards; }
+
+  /* ---------- Phone ---------- */
+  .stage { position: absolute; left: 1150px; top: 0; width: 640px; height: 1080px; perspective: 2200px; }
+  .phone {
+    position: absolute; left: 113px; top: 96px; width: 414px; height: 888px;
+    border-radius: 66px; padding: 12px;
+    background: linear-gradient(160deg, #3a4352, #10161e 38%, #222a35 80%, #3a4352);
+    box-shadow: 0 60px 120px rgba(0,0,0,.65), 0 0 0 1.5px rgba(255,255,255,.12) inset, 0 0 0 5px #0a0e13 inset;
+    transform-style: preserve-3d;
+    animation: phoneIn 1s var(--ease) 2.7s both, phoneSway 9s ease-in-out 3.7s forwards, phoneOut .7s var(--ease-io) 11.9s forwards;
+  }
+  @keyframes phoneIn { from { opacity: 0; transform: translateX(520px) rotateY(-38deg) rotateZ(10deg) scale(.9); } to { opacity: 1; transform: rotateY(-12deg) rotateZ(2deg); } }
+  @keyframes phoneSway {
+    from { transform: rotateY(-12deg) rotateZ(2deg); }
+    35%  { transform: rotateY(-6deg) rotateZ(0deg) translateY(-8px); }
+    70%  { transform: rotateY(-14deg) rotateZ(2.5deg) translateY(6px); }
+    to   { transform: rotateY(-10deg) rotateZ(1.5deg); }
+  }
+  @keyframes phoneOut { to { opacity: 0; transform: translateX(380px) rotateY(-40deg) rotateZ(8deg) scale(.9); } }
+  .screen { position: relative; width: 390px; height: 864px; border-radius: 55px; overflow: hidden; background: #0b1016; }
+  .screen img { position: absolute; left: 0; top: 0; width: 390px; height: auto; }
+  .island { position: absolute; left: 50%; top: 13px; width: 112px; height: 33px; margin-left: -56px; border-radius: 20px; background: #000; z-index: 5; }
+  .shine { position: absolute; inset: 0; border-radius: 55px; z-index: 4; pointer-events: none;
+    background: linear-gradient(115deg, rgba(255,255,255,.10), transparent 32%, transparent 70%, rgba(255,255,255,.04)); }
+
+  .s-market  { animation: screenOut .55s var(--ease-io) 5.9s forwards; }
+  .s-compare { animation: screenIn .55s var(--ease-io) 5.9s both, screenOut .55s var(--ease-io) 9.0s forwards; }
+  .s-ai      { animation: screenIn .55s var(--ease-io) 9.0s both; }
+  @keyframes screenIn { from { transform: translateY(100%); filter: brightness(.6); } to { transform: none; filter: none; } }
+  @keyframes screenOut { to { transform: translateY(-30%); filter: brightness(.35); } }
+
+  /* Focus rings on the part of each screen that matters (screen px = image px * 0.5417) */
+  .ring { position: absolute; z-index: 3; border-radius: 22px; border: 3px solid var(--gold);
+    box-shadow: 0 0 0 6px rgba(216,191,131,.18), 0 0 40px rgba(216,191,131,.45); opacity: 0; }
+  @keyframes ringIn { from { opacity: 0; transform: scale(1.12); } to { opacity: 1; transform: none; } }
+  @keyframes pulse { 50% { box-shadow: 0 0 0 12px rgba(216,191,131,.08), 0 0 60px rgba(216,191,131,.6); } }
+  .r-market  { left: 12px; top: 146px; width: 366px; height: 304px;
+    animation: ringIn .5s var(--spring) 3.9s both, pulse 1.4s ease-in-out 4.4s 2, fadeOut .3s ease 5.65s forwards; }
+  .r-compare { left: 12px; top: 366px; width: 366px; height: 270px;
+    animation: ringIn .5s var(--spring) 7.0s both, pulse 1.4s ease-in-out 7.5s 1, fadeOut .3s ease 8.75s forwards; }
+  .r-ai      { left: 14px; top: 752px; width: 362px; height: 56px; border-radius: 30px;
+    animation: ringIn .5s var(--spring) 9.9s both, fadeOut .3s ease 11.7s forwards; }
+
+  /* Floating chips beside the phone */
+  .chip {
+    position: absolute; z-index: 6; display: flex; align-items: center; gap: 14px;
+    padding: 18px 26px; border-radius: 22px; font-size: 26px; font-weight: 600; white-space: nowrap;
+    background: rgba(17,25,35,.86); border: 1px solid rgba(255,255,255,.14);
+    box-shadow: 0 24px 60px rgba(0,0,0,.5); backdrop-filter: blur(12px);
+  }
+  .chip small { display: block; font-size: 19px; font-weight: 500; color: var(--text-3); letter-spacing: 0; }
+  .chip .val { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; }
+  .chip .dot { width: 14px; height: 14px; border-radius: 50%; }
+  @keyframes chipIn { from { opacity: 0; transform: translate(40px, 20px) scale(.85); } to { opacity: 1; transform: none; } }
+  @keyframes float { 50% { transform: translateY(-10px); } }
+  .ch-up   { left: -90px; top: 230px;
+    animation: chipIn .6s var(--spring) 4.15s both, float 2.4s ease-in-out 4.75s 1, leave .35s var(--ease-io) 5.7s forwards; }
+  .ch-down { left: -150px; top: 640px;
+    animation: chipIn .6s var(--spring) 4.45s both, float 2.4s ease-in-out 5.05s 1, leave .35s var(--ease-io) 5.75s forwards; }
+  .vs {
+    position: absolute; z-index: 6; left: 268px; top: 551px; width: 104px; height: 104px; border-radius: 50%;
+    display: grid; place-items: center; font-size: 40px; font-style: italic; font-weight: 800; color: var(--gold-2);
+    background: radial-gradient(circle at 35% 30%, #1d2734, #070b10); border: 2px solid rgba(216,191,131,.6);
+    box-shadow: 0 0 50px rgba(216,191,131,.45), 0 20px 50px rgba(0,0,0,.6);
+    animation: vsIn .6s var(--spring) 6.75s both, leave .35s var(--ease-io) 8.8s forwards;
+  }
+  @keyframes vsIn { from { opacity: 0; transform: scale(2.4) rotate(-20deg); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+  .ch-news { left: -110px; top: 742px;
+    animation: chipIn .6s var(--spring) 7.6s both, leave .35s var(--ease-io) 8.85s forwards; }
+
+  /* AI question typed into the input */
+  .ask {
+    position: absolute; z-index: 6; right: 520px; top: 830px;
+    padding: 22px 28px; border-radius: 26px 26px 8px 26px;
+    background: linear-gradient(135deg, rgba(31,181,198,.22), rgba(52,78,128,.35));
+    border: 1px solid rgba(31,181,198,.45); box-shadow: 0 24px 60px rgba(0,0,0,.5);
+    font-size: 28px; font-weight: 550; line-height: 1.3; white-space: nowrap;
+    animation: chipIn .5s var(--spring) 9.85s both, leave .35s var(--ease-io) 11.75s forwards;
+  }
+  .ask .typed { display: inline-block; vertical-align: bottom; overflow: hidden; white-space: nowrap; width: 0;
+    animation: type 1.25s steps(var(--n, 23), end) 10.25s forwards; }
+  @keyframes type { to { width: var(--w, 340px); } }
+  .ask .caret { display: inline-block; width: 3px; height: 32px; margin-left: 3px; vertical-align: -5px; background: var(--teal);
+    animation: blink .55s steps(2, start) 10s 3; }
+  @keyframes blink { to { visibility: hidden; } }
+  .ch-gemini { left: 420px; top: 300px;
+    animation: chipIn .6s var(--spring) 10.9s both, leave .35s var(--ease-io) 11.8s forwards; }
+
+  /* ---------- Outro ---------- */
+  .outro { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .outro .logo { height: 84px; animation: pop .7s var(--ease) 12.35s both; }
+  .outro h2 { margin: 54px 0 0; font-size: 116px; line-height: 1; font-weight: 750; letter-spacing: -0.052em;
+    animation: rise .75s var(--ease) 12.6s both; }
+  .store {
+    display: inline-flex; align-items: center; gap: 18px; margin-top: 60px;
+    padding: 18px 40px 18px 30px; border-radius: 22px; background: #000; border: 1.5px solid rgba(255,255,255,.35);
+    animation: pop .6s var(--spring) 13.0s both;
+  }
+  .store svg { width: 58px; height: 58px; color: #fff; }
+  .store span { display: block; text-align: left; line-height: 1.05; }
+  .store small { display: block; font-size: 22px; font-weight: 500; letter-spacing: 0; color: #fff; }
+  .store strong { display: block; font-size: 44px; font-weight: 650; letter-spacing: -0.02em; color: #fff; }
+  .outro .url { margin-top: 44px; font-size: 30px; color: var(--text-2); letter-spacing: .02em; animation: fadeIn .6s var(--ease) 13.35s both; }
+  .legal { position: absolute; left: 0; right: 0; bottom: 48px; text-align: center; font-size: 21px; color: var(--text-3); letter-spacing: 0;
+    animation: fadeIn .6s var(--ease) 13.4s both; }
+  .outro-glow { position: absolute; left: 50%; top: 50%; width: 1400px; height: 900px; margin: -450px 0 0 -700px; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(216,191,131,.16), transparent); animation: fadeIn 1.2s var(--ease) 12.2s both; }
+</style>
+</head>
+<body>
+  <div class="glow-b"></div>
+  <div class="glow-a"></div>
+  <div class="glow-c"></div>
+  <div class="grid"></div>
+
+  <svg class="chart" viewBox="0 0 1920 1080" aria-hidden="true">
+    <defs>
+      <linearGradient id="lineGrad" x1="0" x2="1"><stop offset="0" stop-color="#1fb5c6" stop-opacity="0"/><stop offset=".35" stop-color="#1fb5c6" stop-opacity=".55"/><stop offset="1" stop-color="#d8bf83" stop-opacity=".8"/></linearGradient>
+      <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1fb5c6" stop-opacity=".10"/><stop offset="1" stop-color="#1fb5c6" stop-opacity="0"/></linearGradient>
+    </defs>
+    <path class="area" d="M-20 930 L180 880 L330 905 L480 820 L620 850 L790 740 L930 770 L1090 640 L1230 680 L1400 520 L1540 560 L1720 380 L1940 300 L1940 1080 L-20 1080 Z"/>
+    <path d="M-20 930 L180 880 L330 905 L480 820 L620 850 L790 740 L930 770 L1090 640 L1230 680 L1400 520 L1540 560 L1720 380 L1940 300"/>
+  </svg>
+
+  <!-- 0–2.9 s: hook -->
+  <section class="intro">
+    <img class="logo" src="../logo.png" alt="Finrival">
+    <h1><span class="w1">Wyłap ruch</span> <span class="w2 gold">na rynku</span></h1>
+    <div class="badge"><i></i>Analiza rynku, porównania i AI w jednej aplikacji</div>
+  </section>
+
+  <!-- 3–12 s: features -->
+  <div class="copy c1">
+    <span class="kicker"><b>01</b>Rynek</span>
+    <h2>Zobacz największe<br>ruchy dnia</h2>
+    <p>Największe wzrosty i spadki z wykresami z ostatniego miesiąca</p>
+  </div>
+  <div class="copy c2">
+    <span class="kicker"><b>02</b>Porównaj</span>
+    <h2>Porównaj akcje<br><span class="gold">i kryptowaluty</span></h2>
+    <p>Dwa aktywa obok siebie, z ceną, statusem rynku i wiadomościami</p>
+  </div>
+  <div class="copy c3">
+    <span class="kicker"><b>03</b>Finrival AI</span>
+    <h2>Zapytaj AI o to,<br><span class="gold">co widzisz</span></h2>
+    <p>Odpowiedzi, które zaczynają się od ekranu, na którym jesteś</p>
+  </div>
+
+  <div class="stage">
+    <div class="phone">
+      <div class="screen">
+        <img class="s-market" src="../assets/screens/market-pl.webp" alt="">
+        <img class="s-compare" src="../assets/screens/compare-pl.webp" alt="">
+        <img class="s-ai" src="../assets/screens/ai-pl.webp" alt="">
+        <div class="ring r-market"></div>
+        <div class="ring r-compare"></div>
+        <div class="ring r-ai"></div>
+        <div class="island"></div>
+        <div class="shine"></div>
+      </div>
+    </div>
+
+    <div class="chip ch-up"><span class="dot" style="background:var(--up);box-shadow:0 0 14px var(--up)"></span><span><small>Największe wzrosty</small><span class="val" style="color:var(--up)">▲ +4.27%</span></span></div>
+    <div class="chip ch-down"><span class="dot" style="background:var(--gold);box-shadow:0 0 14px var(--gold)"></span><span><small>Dzienna aktywność handlowa</small><span class="val">AI i półprzewodniki <span style="color:var(--gold)">26.6%</span></span></span></div>
+    <div class="vs">VS</div>
+    <div class="chip ch-news"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#d8bf83" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M7 9h10M7 13h10M7 17h6"/></svg><span><small>Wiadomości</small>Nagłówki dla każdego aktywa</span></div>
+    <div class="ask"><span class="typed">Wyjaśnij różnicę ryzyka</span><span class="caret"></span></div>
+    <div class="chip ch-gemini"><svg width="28" height="28" viewBox="0 0 24 24"><path fill="#1fb5c6" d="M12 2c.6 4.9 5.1 9.4 10 10-4.9.6-9.4 5.1-10 10-.6-4.9-5.1-9.4-10-10 4.9-.6 9.4-5.1 10-10z"/></svg><span><small>Napędzany przez</small>Google Gemini</span></div>
+  </div>
+
+  <!-- 12.2–15 s: call to action -->
+  <div class="outro-glow"></div>
+  <section class="outro">
+    <img class="logo" src="../logo.png" alt="Finrival">
+    <h2>Pobierz Finrival<br><span class="gold">na iPhone'a</span></h2>
+    <div class="store">
+      <svg viewBox="0 0 24 24"><path fill="currentColor" d="M16.37 12.67c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.73-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.86-.76-1.47.02-2.83.86-3.59 2.17-1.530 2.65-.39 6.58 1.1 8.73.73 1.05 1.6 2.24 2.73 2.2 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.4 1.2-2.46-.03-.01-2.3-.88-2.32-3.5zM14.2 6.21c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.64-1.05 1.67-.92 2.66.97.08 1.96-.49 2.56-1.21z"/></svg>
+      <span><small>Pobierz z</small><strong>App Store</strong></span>
+    </div>
+    <div class="url">finrival.com</div>
+  </section>
+  <div class="legal">Charakter informacyjny i edukacyjny · To nie jest porada inwestycyjna · Wersja na Androida wkrótce</div>
+
+<script>
+  // Copy per language, taken from the site's _build/i18n files. Polish is written in the markup above.
+  const G = (s) => `<span class="gold">${s}</span>`;
+  const COPY = {
+    en: {
+      ".intro h1": `<span class="w1">Find</span> <span class="w2 gold">the move</span>`,
+      ".intro .badge": `<i></i>Market research, comparison and AI in one app`,
+      ".c1 .kicker": `<b>01</b>Market`,
+      ".c1 h2": `See the day's<br>biggest moves`,
+      ".c1 p": `Top gainers and decliners with one-month charts`,
+      ".c2 .kicker": `<b>02</b>Compare`,
+      ".c2 h2": `Compare stocks<br>${G("and crypto")}`,
+      ".c2 p": `Two assets side by side, with price, market status and news`,
+      ".c3 .kicker": `<b>03</b>Finrival AI`,
+      ".c3 h2": `Ask AI about<br>${G("what you see")}`,
+      ".c3 p": `Answers that start from the screen you're on`,
+      ".ch-up small": `Top Gainers`,
+      ".ch-up .val": `▲ +3.65%`,
+      ".ch-down small": `Daily Trading Activity`,
+      ".ch-down .val": `AI &amp; Semiconductors <span style="color:var(--gold)">26.6%</span>`,
+      ".ch-news > span": `<small>News</small>Headlines for every asset`,
+      ".ask .typed": `Explain the risk difference`,
+      ".ch-gemini > span": `<small>Powered by</small>Google Gemini`,
+      ".outro h2": `Get Finrival<br>${G("on iPhone")}`,
+      ".store span": `<small>Download on the</small><strong>App Store</strong>`,
+      ".legal": `Informational and educational · Not investment advice · Android coming soon`,
+    },
+    tr: {
+      ".intro h1": `<span class="w1">Hareketi</span> <span class="w2 gold">yakala</span>`,
+      ".intro .badge": `<i></i>Piyasa araştırması, karşılaştırma ve yapay zeka tek uygulamada`,
+      ".c1 .kicker": `<b>01</b>Piyasa`,
+      ".c1 h2": `Günün en büyük<br>hareketlerini gör`,
+      ".c1 p": `Bir aylık grafikleriyle en çok yükselenler ve düşenler`,
+      ".c2 .kicker": `<b>02</b>Kıyasla`,
+      ".c2 h2": `Hisseleri ve kriptoyu<br>${G("karşılaştır")}`,
+      ".c2 p": `İki varlık yan yana, fiyat, piyasa durumu ve haberlerle`,
+      ".c3 .kicker": `<b>03</b><span lang="en">Finrival AI</span>`,
+      ".c3 h2": `Ekranında ne varsa<br>${G("yapay zekaya sor")}`,
+      ".c3 p": `Bulunduğun ekrandan başlayan cevaplar`,
+      ".ch-up small": `En Çok Yükselenler`,
+      ".ch-up .val": `▲ +3.65%`,
+      ".ch-down small": `Günlük İşlem Aktivitesi`,
+      ".ch-down .val": `Yapay Zeka &amp; Yarı İletkenler <span style="color:var(--gold)">26.6%</span>`,
+      ".ch-news > span": `<small>Haberler</small>Her varlık için son haberler`,
+      ".ask .typed": `Risk farkını açıkla`,
+      ".ch-gemini > span": `<small>Yapay zeka altyapısı</small>Google Gemini`,
+      ".outro h2": `Finrival'i<br>${G("iPhone'una indir")}`,
+      ".store span": `<small>App Store'dan</small><strong>İndirin</strong>`,
+      ".legal": `Bilgilendirme ve eğitim amaçlıdır · Yatırım tavsiyesi değildir · Android sürümü yakında`,
+    },
+  };
+  const lang = new URLSearchParams(location.search).get("lang") || "pl";
+  document.documentElement.lang = lang;
+  for (const [sel, html] of Object.entries(COPY[lang] || {})) document.querySelector(sel).innerHTML = html;
+  for (const name of ["market", "compare", "ai"]) document.querySelector(`.s-${name}`).src = `../assets/screens/${name}-${lang}.webp`;
+  // Typing effect: one step per character, ending at the text's real width
+  const typed = document.querySelector(".ask .typed");
+  typed.style.setProperty("--n", typed.textContent.length);
+  typed.style.setProperty("--w", `${typed.scrollWidth + 2}px`);
+</script>
+</body>
+</html>
