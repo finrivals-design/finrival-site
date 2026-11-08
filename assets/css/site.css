@@ -375,6 +375,29 @@ button {
   color: var(--text);
 }
 
+/* Terminal: the Finrival web app (app.finrival.com), marked with a small live dot */
+.nav__terminal {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.nav__links a.nav__terminal {
+  color: var(--gold);
+}
+.nav__links a.nav__terminal:hover {
+  color: var(--gold-2);
+}
+.nav__terminal::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 3px rgba(216, 191, 131, 0.18);
+  flex: none;
+  align-self: center;
+}
+
 .nav__actions {
   display: flex;
   align-items: center;
@@ -4946,4 +4969,11 @@ p {
   .consent__btn {
     flex: 1;
   }
+}
+
+.mobile-menu nav a.nav__terminal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--gold);
 }
