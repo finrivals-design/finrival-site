@@ -96,7 +96,7 @@
     "title2": "Daha fazlası için PRO",
     "lead": "Ücretsiz başla, daha fazla derinlik, daha geniş bir takip listesi ve reklamsız bir deneyim istediğinde PRO’ya geç",
     "cta": "PRO'yu keşfet",
-    "note": "Aylık veya yıllık plan, fiyatlar uygulamada yerel para biriminle gösterilir, ödeme App Store veya Google Play üzerinden alınır"
+    "note": "Aylık veya yıllık plan, yerel para biriminle; App Store veya Google Play üzerinden ya da Finrival web sitesinde kartla"
   },
   "plans": {
     "heading": "Senin Finrival’ın",
@@ -340,13 +340,13 @@
     "annualBody": "Tam bir yıl PRO, aylık plana göre ayda daha düşük maliyetle",
     "priceName": "FİYAT",
     "priceHeadline": "Kendi para biriminde",
-    "priceBody": "Uygulama satın almadan önce yerel fiyatını gösterir, ödemeyi App Store veya Google Play yönetir",
+    "priceBody": "Uygulama veya web sitesindeki ödeme sayfası satın almadan önce yerel fiyatını gösterir; ödemeyi App Store, Google Play veya satıcımız Polar yönetir",
     "faqKicker": "Sorular",
     "faqTitle": "Bilmekte fayda var",
     "q1": "Finrival'ı kullanmak için PRO gerekli mi?",
     "a1": "Hiç değil, Piyasa, Compare, Haberler, Rival, 5 varlıklık takip listesi ve günde 5 AI sorusu ücretsiz",
     "q2": "Nasıl iptal ederim?",
-    "a2": "İstediğin zaman App Store veya Google Play abonelik ayarlarından, PRO ödediğin dönemin sonuna kadar açık kalır",
+    "a2": "İstediğin zaman: App Store veya Google Play abonelik ayarlarından ya da kartla alınan planlar için Finrival web sitesindeki Kart aboneliğini yönet seçeneğinden. PRO ödediğin dönemin sonuna kadar açık kalır",
     "q3": "PRO'yu birden fazla cihazda kullanabilir miyim?",
     "a3": "Evet, aynı hesapla giriş yaparak PRO'yu tüm cihazlarında açabilirsin",
     "q4": "PRO’da kaç AI sorusu var?",
