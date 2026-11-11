@@ -209,6 +209,21 @@
         <canvas></canvas>
         <div class="dotfield__tip"></div>
       </div>
+      <!-- Company card: opens when a dot is clicked or tapped (home-live.js) -->
+      <div class="dotcard" data-dotcard role="dialog" aria-modal="false" aria-labelledby="dotcard-name" hidden
+        data-rose="Son kapanışta {p} yükseldi" data-fell="Son kapanışta {p} düştü" data-ask-q="{name} ({s}) hakkında kısa bir özet ver ve son hareketinin nedenini açıkla" data-sectors="cat_ai=Yapay zeka ve büyük veri|cat_semi=Yarı iletkenler|cat_tech=Teknoloji|cat_healthcare=Sağlık|cat_biotech=Biyoteknoloji|cat_finance=Finans|cat_consumer=Tüketim|cat_industrial=Sanayi|cat_energy=Enerji|cat_utilities=Kamu hizmetleri|cat_materials=Hammaddeler|cat_metals=Metal ve madencilik|cat_realestate=Gayrimenkul|cat_comm=İletişim|cat_def=Savunma ve havacılık|cat_ev=Elektrikli araçlar ve mobilite|cat_div=Temettü hisseleri">
+        <button class="dotcard__x" type="button" data-dotcard-close aria-label="Kapat"><span></span></button>
+        <div class="dotcard__top">
+          <span class="dotcard__sym" data-f="s"></span>
+          <span class="dotcard__chg" data-f="chg"></span>
+        </div>
+        <h3 class="dotcard__name" id="dotcard-name" data-f="name"></h3>
+        <p class="dotcard__meta" data-f="meta"></p>
+        <div class="dotcard__actions">
+          <a class="dotcard__btn dotcard__btn--gold" data-f="compare" href="/terminal/">Terminal’de karşılaştır<svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a class="dotcard__btn" data-f="ask" href="/terminal/"><svg class="ic"><use href="#i-zap"/></svg>Finrival AI’a sor</a>
+        </div>
+      </div>
       <div class="container">
         <span class="hero__badge rise"><i></i>Şimdi iPhone’da ve web’de</span>
         <h1 class="display" id="hero-title">

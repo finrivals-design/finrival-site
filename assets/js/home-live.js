@@ -98,6 +98,36 @@
       } else tip.classList.remove("is-on");
       if (reduceMotion) restart();
     });
+    // Click or tap a dot: company card with Compare and Ask links into the Terminal
+    const card = document.querySelector("[data-dotcard]");
+    const sectors = Object.fromEntries((card?.dataset.sectors || "").split("|").map((x) => x.split("=")));
+    const meta = Object.fromEntries(rows.map((r) => [r.symbol, r]));
+    let down = null;
+    field.addEventListener("pointerdown", (e) => { down = { x: e.clientX, y: e.clientY }; });
+    field.addEventListener("pointerup", (e) => {
+      if (!card || !down || Math.hypot(e.clientX - down.x, e.clientY - down.y) > 10) return;
+      const box = field.getBoundingClientRect();
+      const px = e.clientX - box.left, py = e.clientY - box.top;
+      let best = null, bd = step * 0.9;
+      for (const d of dots) { const dd = Math.hypot(d.x - px, d.y - py); if (dd < bd) { bd = dd; best = d; } }
+      if (!best) { card.hidden = true; return; }
+      const r = meta[best.s] || {};
+      const pct = (best.p > 0 ? "+" : "") + best.p.toFixed(2) + "%";
+      const set = (k, v) => { const el = card.querySelector(`[data-f="${k}"]`); if (el) el.textContent = v; return el; };
+      set("s", best.s);
+      set("chg", pct).className = "dotcard__chg " + (best.p > 0 ? "up" : "down");
+      set("name", best.n);
+      set("meta", [sectors[r.category], (best.p > 0 ? card.dataset.rose : card.dataset.fell).replace("{p}", pct.replace(/^[+-]/, ""))].filter(Boolean).join(" · "));
+      card.querySelector("[data-f=compare]").href = "/terminal/?compare=" + encodeURIComponent(best.s);
+      card.querySelector("[data-f=ask]").href = "/terminal/?ask=" + encodeURIComponent(card.dataset.askQ.replace("{name}", best.n).replace("{s}", best.s));
+      card.hidden = false;
+      const left = Math.min(Math.max(best.x - 170, 16), w - 356);
+      card.style.left = left + "px";
+      card.style.top = (best.y + 18) + "px";
+      hover = best; restart();
+    });
+    card?.querySelector("[data-dotcard-close]")?.addEventListener("click", () => { card.hidden = true; });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && card) card.hidden = true; });
     field.addEventListener("pointerleave", () => { cx = cy = -9999; hover = null; tip.classList.remove("is-on"); if (reduceMotion) restart(); });
     document.addEventListener("visibilitychange", () => { if (!document.hidden) restart(); });
     let rt;

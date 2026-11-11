@@ -209,6 +209,21 @@
         <canvas></canvas>
         <div class="dotfield__tip"></div>
       </div>
+      <!-- Company card: opens when a dot is clicked or tapped (home-live.js) -->
+      <div class="dotcard" data-dotcard role="dialog" aria-modal="false" aria-labelledby="dotcard-name" hidden
+        data-rose="Rose {p} at the last close" data-fell="Fell {p} at the last close" data-ask-q="Give me a short overview of {name} ({s}) and what moved it recently" data-sectors="cat_ai=AI and big data|cat_semi=Semiconductors|cat_tech=Technology|cat_healthcare=Healthcare|cat_biotech=Biotech|cat_finance=Finance|cat_consumer=Consumer|cat_industrial=Industrials|cat_energy=Energy|cat_utilities=Utilities|cat_materials=Materials|cat_metals=Metals and mining|cat_realestate=Real estate|cat_comm=Communication|cat_def=Defence and aerospace|cat_ev=EV and mobility|cat_div=Dividend stocks">
+        <button class="dotcard__x" type="button" data-dotcard-close aria-label="Close"><span></span></button>
+        <div class="dotcard__top">
+          <span class="dotcard__sym" data-f="s"></span>
+          <span class="dotcard__chg" data-f="chg"></span>
+        </div>
+        <h3 class="dotcard__name" id="dotcard-name" data-f="name"></h3>
+        <p class="dotcard__meta" data-f="meta"></p>
+        <div class="dotcard__actions">
+          <a class="dotcard__btn dotcard__btn--gold" data-f="compare" href="/terminal/">Compare in Terminal<svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a class="dotcard__btn" data-f="ask" href="/terminal/"><svg class="ic"><use href="#i-zap"/></svg>Ask Finrival AI</a>
+        </div>
+      </div>
       <div class="container">
         <span class="hero__badge rise"><i></i>Now on iPhone and the web</span>
         <h1 class="display" id="hero-title">

@@ -667,3 +667,35 @@ a.anywhere__card:hover .anywhere__go .ic {
     display: none;
   }
 }
+
+/* ---------- Company card (dot click / tap) ---------- */
+.dotfield { touch-action: pan-y; }
+@media (max-width: 900px) {
+  .dotfield { pointer-events: auto; }
+  .hero > .container { pointer-events: none; }
+  .hero > .container a, .hero > .container button, .hero > .container .pulse { pointer-events: auto; }
+}
+.dotcard {
+  position: absolute; z-index: 5; width: min(340px, calc(100vw - 32px)); padding: 18px;
+  border: 1px solid rgba(216, 191, 131, 0.3); border-radius: 20px;
+  background: rgba(10, 14, 19, 0.96); box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.9);
+  text-align: left; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+.dotcard[hidden] { display: none; }
+.dotcard__x { position: absolute; top: 10px; right: 10px; width: 32px; height: 32px; border: 0; border-radius: 10px; background: rgba(255,255,255,0.06); cursor: pointer; }
+.dotcard__x span::before, .dotcard__x span::after { content: ""; position: absolute; left: 9px; top: 15px; width: 14px; height: 1.6px; background: var(--text-2); transform: rotate(45deg); }
+.dotcard__x span::after { transform: rotate(-45deg); }
+.dotcard__top { display: flex; align-items: center; gap: 10px; }
+.dotcard__sym { padding: 3px 9px; border-radius: 8px; background: rgba(255,255,255,0.07); font-weight: 700; font-size: 13px; }
+.dotcard__chg { font-weight: 700; font-size: 14px; }
+.dotcard__chg.up { color: var(--gold); }
+.dotcard__chg.down { color: var(--text-2); }
+.dotcard__name { margin: 10px 0 2px; font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+.dotcard__meta { margin: 0; color: var(--text-2); font-size: 13.5px; }
+.dotcard__actions { display: grid; gap: 8px; margin-top: 14px; }
+.dotcard__btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 44px; border: 1px solid var(--line-2); border-radius: 12px; font-weight: 600; font-size: 14.5px; color: var(--text); }
+.dotcard__btn--gold { border-color: transparent; background: var(--gold); color: #17130a; }
+.dotcard__btn .ic { width: 16px; height: 16px; stroke: currentColor; }
+@media (max-width: 640px) {
+  .dotcard { position: fixed; left: 16px !important; right: 16px; top: auto !important; bottom: calc(86px + env(safe-area-inset-bottom, 0px)); width: auto; }
+}

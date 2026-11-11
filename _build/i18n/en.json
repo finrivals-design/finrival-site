@@ -479,5 +479,15 @@
     "q3": "What does a P/E ratio tell me?",
     "q4": "Which sectors led the market?",
     "button": "Ask"
+  },
+  "dotcard": {
+    "rose": "Rose {p} at the last close",
+    "fell": "Fell {p} at the last close",
+    "compare": "Compare in Terminal",
+    "ask": "Ask Finrival AI",
+    "askQ": "Give me a short overview of {name} ({s}) and what moved it recently",
+    "close": "Close",
+    "hint": "Tap a dot to see the company",
+    "sectors": "cat_ai=AI and big data|cat_semi=Semiconductors|cat_tech=Technology|cat_healthcare=Healthcare|cat_biotech=Biotech|cat_finance=Finance|cat_consumer=Consumer|cat_industrial=Industrials|cat_energy=Energy|cat_utilities=Utilities|cat_materials=Materials|cat_metals=Metals and mining|cat_realestate=Real estate|cat_comm=Communication|cat_def=Defence and aerospace|cat_ev=EV and mobility|cat_div=Dividend stocks"
   }
 }

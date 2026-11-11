@@ -209,6 +209,21 @@
         <canvas></canvas>
         <div class="dotfield__tip"></div>
       </div>
+      <!-- Company card: opens when a dot is clicked or tapped (home-live.js) -->
+      <div class="dotcard" data-dotcard role="dialog" aria-modal="false" aria-labelledby="dotcard-name" hidden
+        data-rose="Wzrost o {p} na ostatnim zamknięciu" data-fell="Spadek o {p} na ostatnim zamknięciu" data-ask-q="Krótko opisz {name} ({s}) i co ostatnio wpłynęło na kurs" data-sectors="cat_ai=AI i big data|cat_semi=Półprzewodniki|cat_tech=Technologia|cat_healthcare=Ochrona zdrowia|cat_biotech=Biotechnologia|cat_finance=Finanse|cat_consumer=Konsumpcja|cat_industrial=Przemysł|cat_energy=Energia|cat_utilities=Usługi komunalne|cat_materials=Surowce|cat_metals=Metale i górnictwo|cat_realestate=Nieruchomości|cat_comm=Komunikacja|cat_def=Obronność i lotnictwo|cat_ev=Pojazdy elektryczne i mobilność|cat_div=Spółki dywidendowe">
+        <button class="dotcard__x" type="button" data-dotcard-close aria-label="Zamknij"><span></span></button>
+        <div class="dotcard__top">
+          <span class="dotcard__sym" data-f="s"></span>
+          <span class="dotcard__chg" data-f="chg"></span>
+        </div>
+        <h3 class="dotcard__name" id="dotcard-name" data-f="name"></h3>
+        <p class="dotcard__meta" data-f="meta"></p>
+        <div class="dotcard__actions">
+          <a class="dotcard__btn dotcard__btn--gold" data-f="compare" href="/terminal/">Porównaj w Terminalu<svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a class="dotcard__btn" data-f="ask" href="/terminal/"><svg class="ic"><use href="#i-zap"/></svg>Zapytaj Finrival AI</a>
+        </div>
+      </div>
       <div class="container">
         <span class="hero__badge rise"><i></i>Teraz na iPhonie i w sieci</span>
         <h1 class="display" id="hero-title">

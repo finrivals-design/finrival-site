@@ -101,6 +101,21 @@
         <canvas></canvas>
         <div class="dotfield__tip"></div>
       </div>
+      <!-- Company card: opens when a dot is clicked or tapped (home-live.js) -->
+      <div class="dotcard" data-dotcard role="dialog" aria-modal="false" aria-labelledby="dotcard-name" hidden
+        data-rose="{{dotcard.rose}}" data-fell="{{dotcard.fell}}" data-ask-q="{{dotcard.askQ}}" data-sectors="{{dotcard.sectors}}">
+        <button class="dotcard__x" type="button" data-dotcard-close aria-label="{{dotcard.close}}"><span></span></button>
+        <div class="dotcard__top">
+          <span class="dotcard__sym" data-f="s"></span>
+          <span class="dotcard__chg" data-f="chg"></span>
+        </div>
+        <h3 class="dotcard__name" id="dotcard-name" data-f="name"></h3>
+        <p class="dotcard__meta" data-f="meta"></p>
+        <div class="dotcard__actions">
+          <a class="dotcard__btn dotcard__btn--gold" data-f="compare" href="/terminal/">{{dotcard.compare}}<svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a class="dotcard__btn" data-f="ask" href="/terminal/"><svg class="ic"><use href="#i-zap"/></svg>{{dotcard.ask}}</a>
+        </div>
+      </div>
       <div class="container">
         <span class="hero__badge rise"><i></i>{{hero.badge}}</span>
         <h1 class="display" id="hero-title">
