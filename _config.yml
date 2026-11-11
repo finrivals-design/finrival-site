@@ -1,0 +1,8 @@
+# GitHub Pages (Jekyll) settings for finrival.com.
+# Jekyll hides folders that start with "_" and any "node_modules" folder. The Terminal
+# (/terminal/, the Finrival web app) needs its "_expo" scripts and icon fonts under
+# "assets/node_modules", so those two names are published. Everything else stays as it was:
+# _build, _preview and _video are still not published.
+include:
+  - _expo
+  - node_modules

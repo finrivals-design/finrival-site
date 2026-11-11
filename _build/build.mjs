@@ -171,6 +171,9 @@ const sitemap = [
       ].join("\n")
     )
   ),
+  // The Terminal (Finrival web app) is one page for every language; it is built
+  // from the app repository with `node scripts/build-terminal.cjs` and copied into /terminal/.
+  `  <url>\n    <loc>${SITE}/terminal/</loc>\n  </url>`,
   "</urlset>",
   "",
 ].join("\n");

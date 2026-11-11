@@ -168,4 +168,7 @@
     <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/delete-account/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/delete-account/"/>
   </url>
+  <url>
+    <loc>https://finrival.com/terminal/</loc>
+  </url>
 </urlset>

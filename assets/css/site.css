@@ -375,7 +375,7 @@ button {
   color: var(--text);
 }
 
-/* Terminal: the Finrival web app (app.finrival.com), marked with a small live dot */
+/* Terminal: the Finrival web app (finrival.com/terminal), marked with a small live dot */
 .nav__terminal {
   display: inline-flex;
   align-items: center;
