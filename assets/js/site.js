@@ -507,6 +507,7 @@
     const app = getbar.querySelector("[data-getbar-app]");
     const store = document.querySelector("a.store[href*=\"apps.apple.com\"]");
     if (app && store && /iPhone|iPod/.test(navigator.userAgent)) app.href = store.href;
+    if (store && /iPhone|iPod/.test(navigator.userAgent)) document.querySelectorAll("[data-app-link]").forEach((x) => { x.href = store.href; });
     const top = document.querySelector(".hero, .page-hero");
     const end = document.querySelector("#download, .site-footer");
     let pastTop = !top, atEnd = false;

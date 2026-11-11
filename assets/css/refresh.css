@@ -982,3 +982,102 @@ a.anywhere__card:hover .anywhere__go .ic {
 @media (max-width: 640px) {
   .lg--tap { display: block; flex-basis: 100%; text-align: center; font-size: 12.5px !important; font-weight: 500 !important; color: var(--text-3); }
 }
+
+/* ===== Inner pages (v9): same signature as the home hero ===== */
+.page-hero {
+  position: relative;
+  isolation: isolate;
+}
+
+/* A calm, static field of gold and grey dots behind the title */
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: calc(var(--header-h, 72px) + 8px) 0 -10% 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(216, 191, 131, 0.8) 1.9px, transparent 2.5px),
+    radial-gradient(circle, rgba(139, 150, 163, 0.45) 1.5px, transparent 2.1px);
+  background-size: 34px 34px, 34px 34px;
+  background-position: 0 0, 17px 17px;
+  -webkit-mask-image: radial-gradient(80% 75% at 50% 38%, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.12) 34%, #000 62%, transparent 94%);
+  mask-image: radial-gradient(80% 75% at 50% 38%, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.12) 34%, #000 62%, transparent 94%);
+  opacity: 1;
+}
+
+.page-hero__title {
+  letter-spacing: -0.045em;
+}
+
+.page-hero__title .mask-line > span {
+  background: linear-gradient(180deg, #f6ead0 0%, #e2c78d 55%, #b8955a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* The small page label becomes a pill, like the home status pill */
+.page-hero .kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  background: rgba(13, 19, 26, 0.7);
+  color: var(--text-2);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+}
+
+.page-hero .kicker::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.page-hero .lead {
+  max-width: 54ch;
+  margin-inline: auto;
+}
+
+.page-hero__ctas .getapp--hero {
+  justify-content: center;
+}
+
+/* Download panel at the end of every page: a framed card */
+.cta > .container {
+  position: relative;
+  max-width: 980px;
+  padding: clamp(40px, 6vw, 72px) clamp(20px, 5vw, 64px);
+  border: 1px solid rgba(216, 191, 131, 0.22);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(70% 90% at 50% 0%, rgba(216, 191, 131, 0.1), transparent 60%),
+    radial-gradient(circle, rgba(216, 191, 131, 0.18) 1.2px, transparent 1.8px) 0 0 / 30px 30px,
+    var(--surface);
+  overflow: hidden;
+}
+
+.cta > .container .h2 {
+  letter-spacing: -0.04em;
+}
+
+@media (max-width: 640px) {
+  .page-hero::after {
+    background-size: 26px 26px, 26px 26px;
+    background-position: 0 0, 13px 13px;
+    -webkit-mask-image: linear-gradient(#000 0%, rgba(0, 0, 0, 0.5) 40%, transparent 85%);
+    mask-image: linear-gradient(#000 0%, rgba(0, 0, 0, 0.5) 40%, transparent 85%);
+    opacity: 0.55;
+  }
+
+  .cta > .container {
+    margin-inline: 16px;
+    width: auto;
+    border-radius: 28px;
+  }
+}
