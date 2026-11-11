@@ -229,27 +229,25 @@
         </div>
       </div>
       <div class="container">
-        <span class="hero__badge rise"><i></i>Now on iPhone and the web</span>
+        <!-- Live market status (home-live.js); the plain badge shows until it loads -->
+        <span class="hero__badge hero__badge--clock rise" data-clock data-badge data-open="open" data-closed="closed" data-opens="opens in {t}" data-closes="closes in {t}" aria-label="Stock market hours in your time zone"><i></i>Now on iPhone and the web</span>
         <h1 class="display" id="hero-title">
           <span class="mask-line"><span style="--d:.08s">Find the move</span></span>
           <span class="mask-line"><span style="--d:.18s">Compare what matters</span></span>
         </h1>
-        <p class="lead rise" style="--d:.32s">Market movers, side-by-side comparison, news and an AI assistant that starts from the screen you're on, all in one app</p>
+        <p class="lead rise" style="--d:.32s">Markets, comparisons and AI answers in one place</p>
         <div class="hero__ctas rise" style="--d:.42s">
-          <div class="getapp">
-            <a class="getapp__terminal" href="/terminal/" data-terminal-link>
-              <span class="getapp__live" aria-hidden="true"></span>
-              <span class="store__text"><span class="store__small">Free in your browser</span><span class="store__big">Open the Terminal</span></span>
-              <svg class="ic getapp__arrow"><use href="#i-arrow"/></svg>
-            </a>
-            <a class="store" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">Download on the</span><span class="store__big">App Store</span></span></a>
-            <span class="store store--soon"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">Coming soon on</span><span class="store__big">Google Play</span></span></span>
+          <div class="getapp getapp--hero">
+            <a class="getapp__terminal" href="/terminal/" data-terminal-link><span class="getapp__live" aria-hidden="true"></span><span class="store__big">Open the Terminal</span><svg class="ic getapp__arrow"><use href="#i-arrow"/></svg></a>
+            <a class="getapp__app" href="#download" data-app-link><svg class="getapp__os"><use href="#i-apple"/></svg><span>Get the app</span></a>
           </div>
         </div>
         <div class="pulse rise" style="--d:.55s">
-          <p class="pulse__dots" data-dotfield-caption data-tpl="Each dot is a company · tap one ({date})" data-up="Went up {n}" data-down="Went down {n}" hidden></p>
-          <div class="groups" data-groups-legend role="group" aria-label="Giants · Under $10 · Future themes (AI, chips, EV, biotech)" hidden></div>
-          <div class="pulse__clock" data-clock data-open="open" data-closed="closed" data-opens="opens in {t}" data-closes="closes in {t}" aria-label="Stock market hours in your time zone"></div>
+          <div class="pulse__row">
+            <p class="pulse__dots" data-dotfield-caption data-tpl="Each dot is a company · tap one to see it" data-up="Went up {n}" data-down="Went down {n}" hidden></p>
+            <div class="groups" data-groups-legend role="group" aria-label="Giants · Under $10 · Future themes (AI, chips, EV, biotech)" hidden></div>
+          </div>
+          <p class="groups__desc" data-groups-desc aria-live="polite"></p>
         </div>
       </div>
 

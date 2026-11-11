@@ -121,19 +121,25 @@
         </div>
       </div>
       <div class="container">
-        <span class="hero__badge rise"><i></i>{{hero.badge}}</span>
+        <!-- Live market status (home-live.js); the plain badge shows until it loads -->
+        <span class="hero__badge hero__badge--clock rise" data-clock data-badge data-open="{{pulse.open}}" data-closed="{{pulse.closed}}" data-opens="{{pulse.opensIn}}" data-closes="{{pulse.closesIn}}" aria-label="{{pulse.clockLabel}}"><i></i>{{hero.badge}}</span>
         <h1 class="display" id="hero-title">
           <span class="mask-line"><span style="--d:.08s">{{hero.line1}}</span></span>
           <span class="mask-line"><span style="--d:.18s">{{hero.line2}}</span></span>
         </h1>
         <p class="lead rise" style="--d:.32s">{{hero.lead}}</p>
         <div class="hero__ctas rise" style="--d:.42s">
-{{>getapp}}
+          <div class="getapp getapp--hero">
+            <a class="getapp__terminal" href="/terminal/" data-terminal-link><span class="getapp__live" aria-hidden="true"></span><span class="store__big">{{getapp.terminalBig}}</span><svg class="ic getapp__arrow"><use href="#i-arrow"/></svg></a>
+            <a class="getapp__app" href="#download" data-app-link><svg class="getapp__os"><use href="#i-apple"/></svg><span>{{nav.getApp}}</span></a>
+          </div>
         </div>
         <div class="pulse rise" style="--d:.55s">
-          <p class="pulse__dots" data-dotfield-caption data-tpl="{{pulse.dots}}" data-up="{{pulse.up}}" data-down="{{pulse.down}}" hidden></p>
-          <div class="groups" data-groups-legend role="group" aria-label="{{dotcard.legend}}" hidden></div>
-          <div class="pulse__clock" data-clock data-open="{{pulse.open}}" data-closed="{{pulse.closed}}" data-opens="{{pulse.opensIn}}" data-closes="{{pulse.closesIn}}" aria-label="{{pulse.clockLabel}}"></div>
+          <div class="pulse__row">
+            <p class="pulse__dots" data-dotfield-caption data-tpl="{{pulse.dots}}" data-up="{{pulse.up}}" data-down="{{pulse.down}}" hidden></p>
+            <div class="groups" data-groups-legend role="group" aria-label="{{dotcard.legend}}" hidden></div>
+          </div>
+          <p class="groups__desc" data-groups-desc aria-live="polite"></p>
         </div>
       </div>
 

@@ -31,7 +31,7 @@
     "badge": "Teraz na iPhonie i w sieci",
     "line1": "Wyłap ruch",
     "line2": "Porównaj to, co ważne",
-    "lead": "Największe ruchy rynku, porównania obok siebie, wiadomości i asystent AI, który zaczyna od ekranu, na którym jesteś, wszystko w jednej aplikacji"
+    "lead": "Rynki, porównania i odpowiedzi AI w jednym miejscu"
   },
   "alt": {
     "market": "Ekran Rynek w Finrival: największe wzrosty, największe spadki i dzienna aktywność handlowa",
@@ -464,7 +464,7 @@
     "androidBody": "Trwają testy, wkrótce w Google Play. Do tego czasu Terminal działa w przeglądarce telefonu"
   },
   "pulse": {
-    "dots": "Każda kropka to spółka · dotknij jednej ({date})",
+    "dots": "Każda kropka to spółka · dotknij, aby ją zobaczyć",
     "open": "otwarta",
     "closed": "zamknięta",
     "opensIn": "otwarcie za {t}",

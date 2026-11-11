@@ -31,7 +31,7 @@
     "badge": "Şimdi iPhone’da ve web’de",
     "line1": "Hareketi yakala",
     "line2": "Önemli olanı karşılaştır",
-    "lead": "Piyasanın öne çıkanları, yan yana karşılaştırma, haberler ve bulunduğun ekrandan yola çıkan bir yapay zeka asistanı, hepsi tek uygulamada"
+    "lead": "Piyasalar, karşılaştırmalar ve yapay zeka yanıtları tek yerde"
   },
   "alt": {
     "market": "Finrival Piyasa ekranı: en çok yükselenler, en çok düşenler ve günlük işlem aktivitesi",
@@ -464,7 +464,7 @@
     "androidBody": "Şu an test aşamasında, yakında Google Play’de. O zamana kadar web Terminal telefon tarayıcında çalışır"
   },
   "pulse": {
-    "dots": "Her nokta bir şirket · birine dokun ({date})",
+    "dots": "Her nokta bir şirket · görmek için birine dokun",
     "open": "açık",
     "closed": "kapalı",
     "opensIn": "{t} sonra açılıyor",

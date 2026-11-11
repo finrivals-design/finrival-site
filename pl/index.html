@@ -229,27 +229,25 @@
         </div>
       </div>
       <div class="container">
-        <span class="hero__badge rise"><i></i>Teraz na iPhonie i w sieci</span>
+        <!-- Live market status (home-live.js); the plain badge shows until it loads -->
+        <span class="hero__badge hero__badge--clock rise" data-clock data-badge data-open="otwarta" data-closed="zamknięta" data-opens="otwarcie za {t}" data-closes="zamknięcie za {t}" aria-label="Godziny giełd w Twojej strefie czasowej"><i></i>Teraz na iPhonie i w sieci</span>
         <h1 class="display" id="hero-title">
           <span class="mask-line"><span style="--d:.08s">Wyłap ruch</span></span>
           <span class="mask-line"><span style="--d:.18s">Porównaj to, co ważne</span></span>
         </h1>
-        <p class="lead rise" style="--d:.32s">Największe ruchy rynku, porównania obok siebie, wiadomości i asystent AI, który zaczyna od ekranu, na którym jesteś, wszystko w jednej aplikacji</p>
+        <p class="lead rise" style="--d:.32s">Rynki, porównania i odpowiedzi AI w jednym miejscu</p>
         <div class="hero__ctas rise" style="--d:.42s">
-          <div class="getapp">
-            <a class="getapp__terminal" href="/terminal/" data-terminal-link>
-              <span class="getapp__live" aria-hidden="true"></span>
-              <span class="store__text"><span class="store__small">Za darmo w przeglądarce</span><span class="store__big">Otwórz Terminal</span></span>
-              <svg class="ic getapp__arrow"><use href="#i-arrow"/></svg>
-            </a>
-            <a class="store" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">Pobierz z</span><span class="store__big">App Store</span></span></a>
-            <span class="store store--soon"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">Wkrótce w</span><span class="store__big">Google Play</span></span></span>
+          <div class="getapp getapp--hero">
+            <a class="getapp__terminal" href="/terminal/" data-terminal-link><span class="getapp__live" aria-hidden="true"></span><span class="store__big">Otwórz Terminal</span><svg class="ic getapp__arrow"><use href="#i-arrow"/></svg></a>
+            <a class="getapp__app" href="#download" data-app-link><svg class="getapp__os"><use href="#i-apple"/></svg><span>Pobierz aplikację</span></a>
           </div>
         </div>
         <div class="pulse rise" style="--d:.55s">
-          <p class="pulse__dots" data-dotfield-caption data-tpl="Każda kropka to spółka · dotknij jednej ({date})" data-up="Wzrosło {n}" data-down="Spadło {n}" hidden></p>
-          <div class="groups" data-groups-legend role="group" aria-label="Giganci · Poniżej 10 $ · Tematy przyszłości (AI, chipy, EV, biotech)" hidden></div>
-          <div class="pulse__clock" data-clock data-open="otwarta" data-closed="zamknięta" data-opens="otwarcie za {t}" data-closes="zamknięcie za {t}" aria-label="Godziny giełd w Twojej strefie czasowej"></div>
+          <div class="pulse__row">
+            <p class="pulse__dots" data-dotfield-caption data-tpl="Każda kropka to spółka · dotknij, aby ją zobaczyć" data-up="Wzrosło {n}" data-down="Spadło {n}" hidden></p>
+            <div class="groups" data-groups-legend role="group" aria-label="Giganci · Poniżej 10 $ · Tematy przyszłości (AI, chipy, EV, biotech)" hidden></div>
+          </div>
+          <p class="groups__desc" data-groups-desc aria-live="polite"></p>
         </div>
       </div>
 

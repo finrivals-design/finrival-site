@@ -229,27 +229,25 @@
         </div>
       </div>
       <div class="container">
-        <span class="hero__badge rise"><i></i>Şimdi iPhone’da ve web’de</span>
+        <!-- Live market status (home-live.js); the plain badge shows until it loads -->
+        <span class="hero__badge hero__badge--clock rise" data-clock data-badge data-open="açık" data-closed="kapalı" data-opens="{t} sonra açılıyor" data-closes="{t} sonra kapanıyor" aria-label="Senin saat diliminde borsa saatleri"><i></i>Şimdi iPhone’da ve web’de</span>
         <h1 class="display" id="hero-title">
           <span class="mask-line"><span style="--d:.08s">Hareketi yakala</span></span>
           <span class="mask-line"><span style="--d:.18s">Önemli olanı karşılaştır</span></span>
         </h1>
-        <p class="lead rise" style="--d:.32s">Piyasanın öne çıkanları, yan yana karşılaştırma, haberler ve bulunduğun ekrandan yola çıkan bir yapay zeka asistanı, hepsi tek uygulamada</p>
+        <p class="lead rise" style="--d:.32s">Piyasalar, karşılaştırmalar ve yapay zeka yanıtları tek yerde</p>
         <div class="hero__ctas rise" style="--d:.42s">
-          <div class="getapp">
-            <a class="getapp__terminal" href="/terminal/" data-terminal-link>
-              <span class="getapp__live" aria-hidden="true"></span>
-              <span class="store__text"><span class="store__small">Tarayıcında ücretsiz</span><span class="store__big">Terminal’i aç</span></span>
-              <svg class="ic getapp__arrow"><use href="#i-arrow"/></svg>
-            </a>
-            <a class="store" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">App Store'dan</span><span class="store__big">İndirin</span></span></a>
-            <span class="store store--soon"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">Çok yakında</span><span class="store__big">Google Play</span></span></span>
+          <div class="getapp getapp--hero">
+            <a class="getapp__terminal" href="/terminal/" data-terminal-link><span class="getapp__live" aria-hidden="true"></span><span class="store__big">Terminal’i aç</span><svg class="ic getapp__arrow"><use href="#i-arrow"/></svg></a>
+            <a class="getapp__app" href="#download" data-app-link><svg class="getapp__os"><use href="#i-apple"/></svg><span>Uygulamayı edin</span></a>
           </div>
         </div>
         <div class="pulse rise" style="--d:.55s">
-          <p class="pulse__dots" data-dotfield-caption data-tpl="Her nokta bir şirket · birine dokun ({date})" data-up="Yükselen {n}" data-down="Düşen {n}" hidden></p>
-          <div class="groups" data-groups-legend role="group" aria-label="Devler · 10 $ altı · Geleceğin temaları (yapay zeka, çip, elektrikli araç, biyoteknoloji)" hidden></div>
-          <div class="pulse__clock" data-clock data-open="açık" data-closed="kapalı" data-opens="{t} sonra açılıyor" data-closes="{t} sonra kapanıyor" aria-label="Senin saat diliminde borsa saatleri"></div>
+          <div class="pulse__row">
+            <p class="pulse__dots" data-dotfield-caption data-tpl="Her nokta bir şirket · görmek için birine dokun" data-up="Yükselen {n}" data-down="Düşen {n}" hidden></p>
+            <div class="groups" data-groups-legend role="group" aria-label="Devler · 10 $ altı · Geleceğin temaları (yapay zeka, çip, elektrikli araç, biyoteknoloji)" hidden></div>
+          </div>
+          <p class="groups__desc" data-groups-desc aria-live="polite"></p>
         </div>
       </div>
 

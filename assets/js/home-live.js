@@ -44,7 +44,7 @@
     // Text and buttons the dots must never sit behind (measured relative to the field)
     const blockers = () => {
       const box = field.getBoundingClientRect(), pad = small() ? 10 : 16;
-      return [...document.querySelectorAll(".hero__badge, .hero h1 .mask-line > span, .hero .lead, .hero .getapp > *, .pulse__dots, .groups, .clock__item, .site-header, .hero__stage .device, .live-tabs__row")]
+      return [...document.querySelectorAll(".hero__badge, .hero h1 .mask-line > span, .hero .lead, .hero .getapp > *, .pulse__dots, .groups, .groups__desc, .clock__item, .site-header, .hero__stage .device, .live-tabs__row")]
         .map((el) => el.getBoundingClientRect())
         .filter((r) => r.width && r.height)
         .map((r) => ({ l: r.left - box.left - pad, t: r.top - box.top - pad, r: r.right - box.left + pad, b: r.bottom - box.top + pad }));
@@ -122,7 +122,7 @@
       const t = now - t0;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, w, h);
-      const base = step * 0.12;
+      const base = step * 0.095;
       const lensed = [];
       // Faint area behind each labelled group
       for (const l of []) {
@@ -143,7 +143,7 @@
         const near = Math.max(0, 1 - dist / (LENS() * 1.6));
         const dim = focus && d.g !== focus ? 0.18 : 1, boost = focus && d.g === focus ? 1.6 : 1;
         const r = (base + mag * step * 0.1) * (d.g === "giant" ? 1.5 : 1) * boost * (1 + near * 0.5) * k;
-        const a = ((up ? 0.32 + mag * 0.55 : 0.12 + mag * 0.24) * tw * k + near * 0.2) * dim * (focus && d.g === focus ? 1.5 : 1);
+        const a = ((up ? 0.26 + mag * 0.6 : 0.07 + mag * 0.16) * tw * k + near * 0.2) * dim * (focus && d.g === focus ? 1.5 : 1);
         ctx.fillStyle = up ? `rgba(216,191,131,${Math.min(a, 1)})` : `rgba(167,177,189,${Math.min(a, 0.8)})`;
         ctx.beginPath();
         ctx.arc(d.x, d.y, Math.max(r, 0.6), 0, Math.PI * 2);
@@ -273,14 +273,14 @@
     if (legend) {
       const names = Object.fromEntries((field.dataset.groups || "").split("|").map((x) => x.split("=")));
       const desc = Object.fromEntries((field.dataset.groupDesc || "").split("|").map((x) => x.split("=")));
-      legend.innerHTML = `<span class="groups__label">${field.dataset.groupsLabel || ""}</span>` + ["giant", "under10", "future"].map((g) => `<button type="button" class="groups__chip groups__chip--${g}" data-g="${g}" aria-pressed="false">${names[g] || g}</button>`).join("") + `<p class="groups__desc" aria-live="polite"></p>`;
-      const descEl = legend.querySelector(".groups__desc");
+      legend.innerHTML = ["giant", "under10", "future"].map((g) => `<button type="button" class="groups__chip groups__chip--${g}" data-g="${g}" aria-pressed="false">${names[g] || g}</button>`).join("");
+      const descEl = document.querySelector("[data-groups-desc]");
       legend.hidden = false;
       legend.addEventListener("click", (e) => {
         const b = e.target.closest("[data-g]"); if (!b) return;
         focus = focus === b.dataset.g ? null : b.dataset.g;
         legend.querySelectorAll("[data-g]").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.g === focus)));
-        descEl.textContent = focus ? desc[focus] || "" : "";
+        if (descEl) descEl.textContent = focus ? desc[focus] || "" : descEl.dataset.hint || "";
         restart();
       });
     }
@@ -294,7 +294,9 @@
       let date = dataDate || "";
       try { date = new Intl.DateTimeFormat(lang, { day: "numeric", month: "short", timeZone: "UTC" }).format(new Date(dataDate + "T12:00:00Z")); } catch (e) {}
       const down = dots.filter((d) => d.p < 0).length;
-      caption.innerHTML = `<span class="lg lg--up"><i></i>${caption.dataset.up.replace("{n}", up)}</span><span class="lg lg--down"><i></i>${caption.dataset.down.replace("{n}", down)}</span><span class="lg lg--hint">${caption.dataset.tpl.replace("{date}", date)}</span>`;
+      caption.innerHTML = `<span class="lg lg--up"><i></i>${caption.dataset.up.replace("{n}", up)}</span><span class="lg lg--down"><i></i>${caption.dataset.down.replace("{n}", down)}</span>`;
+      const hintEl = document.querySelector("[data-groups-desc]");
+      if (hintEl) { hintEl.dataset.hint = caption.dataset.tpl; hintEl.textContent = caption.dataset.tpl; }
       caption.hidden = false;
     }
   }
@@ -347,7 +349,7 @@
     };
 
     const render = () => {
-      clock.innerHTML = markets.map((m) => {
+      clock.innerHTML = markets.slice(0, clock.hasAttribute("data-badge") ? 1 : markets.length).map((m) => {
         const { day, min } = local(m.tz);
         const weekday = day >= 1 && day <= 5;
         const isOpen = weekday && min >= m.open && min < m.close;
@@ -360,12 +362,17 @@
           text = clock.dataset.opens.replace("{t}", dur(wait));
         }
         const state = isOpen ? clock.dataset.open : clock.dataset.closed;
+        if (clock.hasAttribute("data-badge")) { clock.classList.toggle("is-open", isOpen); return `<i></i><b>${names[m.id]}</b>&nbsp;${state} · ${text}`; }
         return `<span class="clock__item${isOpen ? " is-open" : ""}"><i></i><b>${names[m.id]}</b>${state} · ${text}</span>`;
       }).join("");
     };
     render();
     setInterval(render, 30000);
   }
+
+  /* ---------- Get the app: straight to the App Store on iPhone ---------- */
+  const store = document.querySelector("a.store[href*=\"apps.apple.com\"]");
+  if (store && /iPhone|iPod/.test(navigator.userAgent)) document.querySelectorAll("[data-app-link]").forEach((a) => { a.href = store.href; });
 
   /* ---------- 3. Ask Finrival AI ---------- */
   const ask = document.querySelector("[data-ask]");
