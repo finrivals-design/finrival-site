@@ -18,18 +18,26 @@
     return h >>> 0;
   };
 
-  function startField(rows, dataDate) {
+  // Groups on the background. Giants is a fixed list of very large, widely known companies
+  // (the data has no market value); Future themes is defined by sector, not a recommendation.
+  const GIANTS = new Set("AAPL MSFT NVDA GOOGL GOOG AMZN META TSLA AVGO BRK.B JPM V MA LLY WMT XOM ORCL COST NFLX UNH JNJ HD PG BAC".split(" "));
+  const FUTURE = new Set(["cat_ai", "cat_semi", "cat_ev", "cat_biotech"]);
+  const groupOf = (r) => (GIANTS.has(r.symbol) ? "giant" : r.price >= 1 && r.price <= 10 ? "under10" : FUTURE.has(r.category) ? "future" : "rest");
+
+  function startField(rows, dataDate, assets = []) {
+    const extra = Object.fromEntries(assets.map((a) => [a.symbol, a]));
     const canvas = field.querySelector("canvas");
     const tip = field.querySelector(".dotfield__tip");
     const ctx = canvas.getContext("2d");
     // A stable scatter: the same company keeps its place every day
     const dots = rows
-      .map((r) => ({ s: r.symbol, n: r.name || r.symbol, p: Number(r.changePercent) }))
+      .map((r) => ({ s: r.symbol, n: r.name || r.symbol, p: Number(r.changePercent), g: groupOf(r), price: Number(r.price), prev: Number(r.previousSessionClose), vol: Number(extra[r.symbol]?.volume), traded: Number(extra[r.symbol]?.turnover), spark: extra[r.symbol]?.multiDaySparkline }))
       .filter((d) => Number.isFinite(d.p))
       .sort((a, b) => hash(a.s) - hash(b.s));
     if (dots.length < 50) return;
     field.dots = dots; // read-only handle for testing
 
+    let labels = [], focus = null;
     let w = 0, h = 0, dpr = 1, step = 20, cx = -9999, cy = -9999, hover = null, t0 = performance.now(), raf = 0;
     const small = () => w < 700;
 
@@ -60,13 +68,34 @@
         if (cells.length >= dots.length || step <= (small() ? 13 : 16)) break;
         step -= 1;
       }
-      // Keep the cells closest to the headline so the field hugs the text
-      const fx = w / 2, fy = h * 0.32;
-      cells.sort((a, b) => Math.hypot(a.x - fx, (a.y - fy) * 1.6) - Math.hypot(b.x - fx, (b.y - fy) * 1.6));
-      cells = cells.slice(0, dots.length).sort((a, b) => a.y - b.y || a.x - b.x);
-      dots.forEach((d, i) => {
-        const c = cells[i] || { x: -99, y: -99 };
-        d.x = c.x; d.y = c.y;
+      // Labelled groups claim the free cells nearest their corner; the rest hug the headline
+      const anchors = small()
+        ? { giant: [0.18, 0.6], future: [0.82, 0.6], under10: [0.5, 0.92] }
+        : { giant: [0.1, 0.42], future: [0.9, 0.42], under10: [0.1, 0.8] };
+      const take = (n, ax, ay, sy = 1) => {
+        cells.sort((a, b) => Math.hypot(a.x - ax, (a.y - ay) * sy) - Math.hypot(b.x - ax, (b.y - ay) * sy));
+        return cells.splice(0, n).sort((a, b) => a.y - b.y || a.x - b.x);
+      };
+      labels = [];
+      for (const g of ["giant", "under10", "future"]) {
+        const members = dots.filter((d) => d.g === g);
+        const spots = take(members.length, anchors[g][0] * w, anchors[g][1] * h);
+        members.forEach((d, i) => { d.x = spots[i]?.x ?? -99; d.y = spots[i]?.y ?? -99; });
+        const placed = members.filter((d) => d.x > 0);
+        if (placed.length) {
+          const top = Math.min(...placed.map((d) => d.y)), xs = placed.map((d) => d.x);
+          // Label above the group, or below it if text, buttons or the header are in the way
+          const bottom = Math.max(...placed.map((d) => d.y));
+          const lx = Math.min(Math.max((Math.min(...xs) + Math.max(...xs)) / 2, 70), w - 70);
+          let ly = top - step * 0.62;
+          if (ly < 70 || !free(lx, ly) || !free(lx - 50, ly) || !free(lx + 50, ly)) ly = bottom + step * 0.62;
+          labels.push({ g, n: placed.length, x: lx, y: ly, box: { l: Math.min(...xs) - step * 0.5, r: Math.max(...xs) + step * 0.5, t: top - step * 0.5, b: bottom + step * 0.5 } });
+        }
+      }
+      const rest = dots.filter((d) => d.g === "rest");
+      const spots = take(rest.length, w / 2, h * 0.32, 1.6);
+      rest.forEach((d, i) => { d.x = spots[i]?.x ?? -99; d.y = spots[i]?.y ?? -99; });
+      dots.forEach((d) => {
         d.delay = Math.hypot(d.x - w / 2, d.y - h * 0.35) * 1.6; // wave from the centre
         d.phase = (hash(d.s) % 628) / 100;
       });
@@ -95,6 +124,15 @@
       ctx.clearRect(0, 0, w, h);
       const base = step * 0.12;
       const lensed = [];
+      // Faint area behind each labelled group
+      for (const l of small() ? [] : labels) {
+        if (focus && l.g !== focus) continue;
+        const b = l.box, gold = l.g !== "future";
+        ctx.fillStyle = gold ? "rgba(216,191,131,0.045)" : "rgba(31,181,198,0.05)";
+        ctx.strokeStyle = gold ? "rgba(216,191,131,0.16)" : "rgba(31,181,198,0.2)";
+        ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.roundRect(b.l, b.t, b.r - b.l, b.b - b.t, Math.min(18, step * 0.6)); ctx.fill(); ctx.stroke();
+      }
       for (const d of dots) {
         const k = reduceMotion ? 1 : Math.min(1, Math.max(0, (t - d.delay) / 600));
         if (k <= 0) continue;
@@ -104,12 +142,28 @@
         const dist = Math.hypot(d.x - cx, d.y - cy);
         if (k === 1 && (dist < LENS() || d === hover)) { lensed.push([d, dist]); continue; }
         const near = Math.max(0, 1 - dist / (LENS() * 1.6));
-        const r = (base + mag * step * 0.1) * (1 + near * 0.5) * k;
-        const a = (up ? 0.32 + mag * 0.55 : 0.12 + mag * 0.24) * tw * k + near * 0.2;
+        const dim = focus && d.g !== focus ? 0.18 : 1, boost = focus && d.g === focus ? 1.6 : 1;
+        const r = (base + mag * step * 0.1) * (d.g === "giant" ? 1.5 : 1) * boost * (1 + near * 0.5) * k;
+        const a = ((up ? 0.32 + mag * 0.55 : 0.12 + mag * 0.24) * tw * k + near * 0.2) * dim * (focus && d.g === focus ? 1.5 : 1);
         ctx.fillStyle = up ? `rgba(216,191,131,${Math.min(a, 1)})` : `rgba(167,177,189,${Math.min(a, 0.8)})`;
         ctx.beginPath();
         ctx.arc(d.x, d.y, Math.max(r, 0.6), 0, Math.PI * 2);
         ctx.fill();
+      }
+      // Group labels above each cluster
+      const names = (field.dataset.groups || "").split("|").reduce((o, x) => { const [k, v] = x.split("="); o[k] = v; return o; }, {});
+      ctx.textAlign = "center"; ctx.textBaseline = "middle";
+      ctx.font = `700 ${small() ? 10.5 : 12}px Inter, system-ui, sans-serif`;
+      for (const l of small() ? [] : labels) {
+        if (focus && l.g !== focus) continue;
+        const text = ((names[l.g] || l.g) + "  " + l.n).toUpperCase();
+        const tw = ctx.measureText(text).width + 22, th = small() ? 20 : 24;
+        ctx.fillStyle = "rgba(10,14,19,0.85)";
+        ctx.strokeStyle = l.g === "future" ? "rgba(31,181,198,0.55)" : "rgba(216,191,131,0.5)";
+        ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.roundRect(l.x - tw / 2, l.y - th / 2, tw, th, th / 2); ctx.fill(); ctx.stroke();
+        ctx.fillStyle = l.g === "future" ? "#7fd8e2" : "#e6d09b";
+        ctx.fillText(text, l.x, l.y + 0.5);
       }
       // Lens: nearest companies become logo bubbles with a gold (rose) or grey (fell) ring
       lensed.sort((a, b) => b[1] - a[1]).slice(-16).forEach(([d, dist]) => {
@@ -179,6 +233,28 @@
       set("chg", pct).className = "dotcard__chg " + (best.p > 0 ? "up" : "down");
       set("name", best.n);
       set("meta", [sectors[r.category], (best.p > 0 ? card.dataset.rose : card.dataset.fell).replace("{p}", pct.replace(/^[+−]/, ""))].filter(Boolean).join(" · "));
+      // Group, prices, volume and a 5-session trail
+      const gn = Object.fromEntries((card.dataset.groupNames || "").split("|").map((x) => x.split("=")));
+      const metaEl = card.querySelector("[data-f=meta]");
+      if (gn[best.g]) metaEl.innerHTML = `<span class="dotcard__group dotcard__group--${best.g}">${gn[best.g]}</span>` + metaEl.innerHTML;
+      const usd = (v) => new Intl.NumberFormat(lang, { style: "currency", currency: "USD", maximumFractionDigits: v < 10 ? 3 : 2 }).format(v);
+      const compact = (v, cur) => new Intl.NumberFormat(lang, { notation: "compact", maximumFractionDigits: 1, ...(cur ? { style: "currency", currency: "USD" } : {}) }).format(v);
+      const facts = [
+        [card.dataset.lclose, Number.isFinite(best.price) && usd(best.price)],
+        [card.dataset.lprev, Number.isFinite(best.prev) && usd(best.prev)],
+        [card.dataset.lvol, Number.isFinite(best.vol) && compact(best.vol)],
+        [card.dataset.ltraded, Number.isFinite(best.traded) && compact(best.traded, true)],
+      ].filter(([, v]) => v);
+      card.querySelector("[data-f=facts]").innerHTML = facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("");
+      const sp = (Array.isArray(best.spark) ? best.spark : []).map(Number).filter(Number.isFinite);
+      const sbox = card.querySelector("[data-f=sparkbox]");
+      sbox.hidden = sp.length < 3;
+      if (sp.length >= 3) {
+        const lo = Math.min(...sp), hi = Math.max(...sp), span = hi - lo || 1;
+        card.querySelector("[data-f=spark]").setAttribute("d", sp.map((v, i) => `${i ? "L" : "M"}${(i / (sp.length - 1)) * 120},${27 - ((v - lo) / span) * 24}`).join(" "));
+        sbox.className = "dotcard__spark " + (sp[sp.length - 1] >= sp[0] ? "up" : "down");
+        card.querySelector("[data-f=sparklabel]").textContent = card.dataset.l5d;
+      }
       card.querySelector("[data-f=compare]").href = "/terminal/?compare=" + encodeURIComponent(best.s);
       card.querySelector("[data-f=ask]").href = "/terminal/?ask=" + encodeURIComponent(card.dataset.askQ.replace("{name}", best.n).replace("{s}", best.s));
       card.hidden = false;
@@ -195,6 +271,18 @@
     let rt;
     window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { layout(); t0 = performance.now() - 5000; restart(); }, 150); });
 
+    const legend = document.querySelector("[data-groups-legend]");
+    if (legend) {
+      const names = Object.fromEntries((field.dataset.groups || "").split("|").map((x) => x.split("=")));
+      legend.innerHTML = ["giant", "under10", "future"].map((g) => `<button type="button" class="groups__chip groups__chip--${g}" data-g="${g}" aria-pressed="false">${names[g] || g}<b>${dots.filter((d) => d.g === g).length}</b></button>`).join("");
+      legend.hidden = false;
+      legend.addEventListener("click", (e) => {
+        const b = e.target.closest("[data-g]"); if (!b) return;
+        focus = focus === b.dataset.g ? null : b.dataset.g;
+        legend.querySelectorAll("[data-g]").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.g === focus)));
+        restart();
+      });
+    }
     layout();
     setTimeout(() => { layout(); restart(); }, 1600);
     field.classList.add("is-ready");
@@ -215,7 +303,7 @@
         .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
         .then((j) => {
           const rows = j?.eodRanking?.rows?.length ? j.eodRanking.rows : j?.data || [];
-          startField(rows, j?.eodRanking?.dataDate || j?.eodTargetDate);
+          startField(rows, j?.eodRanking?.dataDate || j?.eodTargetDate, j?.completedSessionCatalog?.assets || []);
         })
         .catch(() => field.remove());
     // After the page itself has loaded, so the hero never waits for market data

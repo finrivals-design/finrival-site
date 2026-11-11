@@ -488,6 +488,16 @@
     "askQ": "{name} ({s}) hakkında kısa bir özet ver ve son hareketinin nedenini açıkla",
     "close": "Kapat",
     "hint": "Şirketi görmek için bir noktaya dokun",
-    "sectors": "cat_ai=Yapay zeka ve büyük veri|cat_semi=Yarı iletkenler|cat_tech=Teknoloji|cat_healthcare=Sağlık|cat_biotech=Biyoteknoloji|cat_finance=Finans|cat_consumer=Tüketim|cat_industrial=Sanayi|cat_energy=Enerji|cat_utilities=Kamu hizmetleri|cat_materials=Hammaddeler|cat_metals=Metal ve madencilik|cat_realestate=Gayrimenkul|cat_comm=İletişim|cat_def=Savunma ve havacılık|cat_ev=Elektrikli araçlar ve mobilite|cat_div=Temettü hisseleri"
+    "sectors": "cat_ai=Yapay zeka ve büyük veri|cat_semi=Yarı iletkenler|cat_tech=Teknoloji|cat_healthcare=Sağlık|cat_biotech=Biyoteknoloji|cat_finance=Finans|cat_consumer=Tüketim|cat_industrial=Sanayi|cat_energy=Enerji|cat_utilities=Kamu hizmetleri|cat_materials=Hammaddeler|cat_metals=Metal ve madencilik|cat_realestate=Gayrimenkul|cat_comm=İletişim|cat_def=Savunma ve havacılık|cat_ev=Elektrikli araçlar ve mobilite|cat_div=Temettü hisseleri",
+    "groups": "giant=Devler|under10=10 $ altı|future=Geleceğin temaları",
+    "lclose": "Son kapanış",
+    "lprev": "Önceki kapanış",
+    "lvol": "Hacim",
+    "ltraded": "İşlem değeri",
+    "l5d": "Son 5 seans",
+    "gGiant": "Dev şirket",
+    "gUnder10": "10 $ altı",
+    "gFuture": "Gelecek teması",
+    "legend": "Devler · 10 $ altı · Geleceğin temaları (yapay zeka, çip, elektrikli araç, biyoteknoloji)"
   }
 }

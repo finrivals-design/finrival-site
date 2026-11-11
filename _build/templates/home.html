@@ -97,13 +97,14 @@
     <!-- ========== Hero ========== -->
     <section class="hero" aria-labelledby="hero-title">
       <!-- Every dot is one company: last close of the Finrival catalogue, gold rose, grey fell (site.js) -->
-      <div class="dotfield" data-dotfield data-api="https://us-central1-finrival-dc2a7.cloudfunctions.net/getHybridMarketSnapshot" aria-hidden="true">
+      <div class="dotfield" data-dotfield data-groups="{{dotcard.groups}}" data-api="https://us-central1-finrival-dc2a7.cloudfunctions.net/getHybridMarketSnapshot" aria-hidden="true">
         <canvas></canvas>
         <div class="dotfield__tip"></div>
       </div>
       <!-- Company card: opens when a dot is clicked or tapped (home-live.js) -->
       <div class="dotcard" data-dotcard role="dialog" aria-modal="false" aria-labelledby="dotcard-name" hidden
-        data-rose="{{dotcard.rose}}" data-fell="{{dotcard.fell}}" data-ask-q="{{dotcard.askQ}}" data-sectors="{{dotcard.sectors}}">
+        data-rose="{{dotcard.rose}}" data-fell="{{dotcard.fell}}" data-ask-q="{{dotcard.askQ}}" data-sectors="{{dotcard.sectors}}"
+        data-group-names="giant={{dotcard.gGiant}}|under10={{dotcard.gUnder10}}|future={{dotcard.gFuture}}" data-lclose="{{dotcard.lclose}}" data-lprev="{{dotcard.lprev}}" data-lvol="{{dotcard.lvol}}" data-ltraded="{{dotcard.ltraded}}" data-l5d="{{dotcard.l5d}}">
         <button class="dotcard__x" type="button" data-dotcard-close aria-label="{{dotcard.close}}"><span></span></button>
         <div class="dotcard__top">
           <img class="dotcard__logo" data-f="logo" alt="" width="40" height="40" hidden>
@@ -112,6 +113,8 @@
         </div>
         <h3 class="dotcard__name" id="dotcard-name" data-f="name"></h3>
         <p class="dotcard__meta" data-f="meta"></p>
+        <dl class="dotcard__facts" data-f="facts"></dl>
+        <div class="dotcard__spark" data-f="sparkbox"><span data-f="sparklabel"></span><svg viewBox="0 0 120 30" preserveAspectRatio="none" aria-hidden="true"><path data-f="spark" d=""/></svg></div>
         <div class="dotcard__actions">
           <a class="dotcard__btn dotcard__btn--gold" data-f="compare" href="/terminal/">{{dotcard.compare}}<svg class="ic"><use href="#i-arrow"/></svg></a>
           <a class="dotcard__btn" data-f="ask" href="/terminal/"><svg class="ic"><use href="#i-zap"/></svg>{{dotcard.ask}}</a>
@@ -129,6 +132,7 @@
         </div>
         <div class="pulse rise" style="--d:.55s">
           <p class="pulse__dots" data-dotfield-caption data-tpl="{{pulse.dots}}" hidden></p>
+          <div class="groups" data-groups-legend role="group" aria-label="{{dotcard.legend}}" hidden></div>
           <div class="pulse__clock" data-clock data-open="{{pulse.open}}" data-closed="{{pulse.closed}}" data-opens="{{pulse.opensIn}}" data-closes="{{pulse.closesIn}}" aria-label="{{pulse.clockLabel}}"></div>
         </div>
       </div>
