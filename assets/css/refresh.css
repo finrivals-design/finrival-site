@@ -1,0 +1,351 @@
+/* FINRIVAL — site refresh (Nov 2026)
+   Loaded after site.css. Adds the web Terminal as a first-class way in (buttons, "use it
+   anywhere" band, phone bottom bar) and tightens the layout on phones. Nothing here changes
+   colours, type or screenshots. */
+
+/* ---------- Button row: Terminal + App Store + Google Play ---------- */
+.getapp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.getapp__terminal {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding: 0 18px 0 20px;
+  border-radius: 14px;
+  background: var(--gold);
+  color: #17130a;
+  box-shadow: 0 10px 34px -12px rgba(216, 191, 131, 0.55);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), background 0.3s var(--ease);
+}
+
+.getapp__terminal:hover {
+  background: var(--gold-2, #e6d09b);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px -12px rgba(216, 191, 131, 0.7);
+}
+
+.getapp__terminal .store__small {
+  color: rgba(23, 19, 10, 0.72);
+}
+
+.getapp__terminal .store__big {
+  color: #17130a;
+}
+
+.getapp__arrow {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  transition: transform 0.3s var(--ease);
+}
+
+.getapp__terminal:hover .getapp__arrow {
+  transform: translateX(3px);
+}
+
+/* Small pulsing "live" dot, the same idea as the Terminal link in the header */
+.getapp__live {
+  position: relative;
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.22);
+}
+
+.getapp__live::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: inherit;
+  animation: getapp-pulse 2.2s var(--ease) infinite;
+}
+
+@keyframes getapp-pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  80%, 100% { transform: scale(2.8); opacity: 0; }
+}
+
+.store--soon {
+  opacity: 0.72;
+}
+
+.cta .getapp {
+  margin-top: 32px;
+}
+
+.page-hero__ctas {
+  margin-top: 32px;
+}
+
+/* ---------- Use it anywhere ---------- */
+.anywhere {
+  padding: clamp(56px, 8vw, 112px) 0 0;
+}
+
+.anywhere__grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1fr;
+  gap: 16px;
+  margin-top: clamp(28px, 4vw, 48px);
+}
+
+.anywhere__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 236px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01)), var(--surface);
+  overflow: hidden;
+  transition: transform 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+
+a.anywhere__card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(216, 191, 131, 0.35);
+}
+
+.anywhere__card p {
+  color: var(--text-2);
+  margin: 0;
+}
+
+.anywhere__card--web {
+  border-color: rgba(216, 191, 131, 0.28);
+  background:
+    radial-gradient(120% 90% at 100% 0%, rgba(216, 191, 131, 0.16), transparent 60%),
+    radial-gradient(90% 80% at 0% 100%, rgba(31, 181, 198, 0.1), transparent 60%),
+    var(--surface);
+}
+
+.anywhere__card--soon {
+  opacity: 0.82;
+}
+
+.anywhere__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.anywhere__tag .ic {
+  width: 15px;
+  height: 15px;
+}
+
+.anywhere__go {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 14px;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.anywhere__go .ic {
+  width: 17px;
+  height: 17px;
+  stroke: currentColor;
+  transition: transform 0.3s var(--ease);
+}
+
+a.anywhere__card:hover .anywhere__go .ic {
+  transform: translateX(3px);
+}
+
+/* ---------- Header: Terminal reads as a button on desktop ---------- */
+@media (min-width: 1025px) {
+  .nav__links a.nav__terminal {
+    padding: 7px 14px;
+    border: 1px solid rgba(216, 191, 131, 0.35);
+    border-radius: 999px;
+    background: rgba(216, 191, 131, 0.06);
+  }
+
+  .nav__links a.nav__terminal:hover {
+    background: rgba(216, 191, 131, 0.14);
+  }
+}
+
+/* ---------- Phone bottom bar ---------- */
+.getbar {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .getbar {
+    position: fixed;
+    z-index: 60;
+    left: 12px;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid var(--line-2, rgba(255, 255, 255, 0.1));
+    border-radius: 18px;
+    background: rgba(10, 14, 19, 0.86);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.8);
+    transform: translateY(calc(100% + 24px));
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.45s var(--ease), opacity 0.3s var(--ease);
+  }
+
+  .getbar.is-on {
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .getbar__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    height: 46px;
+    border-radius: 12px;
+    border: 1px solid var(--line-2, rgba(255, 255, 255, 0.1));
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .getbar__btn--gold {
+    border-color: transparent;
+    background: var(--gold);
+    color: #17130a;
+  }
+
+  /* Keep the cookie banner above the bar */
+  .consent {
+    bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* Room so the bar never covers the last footer lines */
+  .site-footer {
+    padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* ---------- Tablets and phones ---------- */
+@media (max-width: 900px) {
+  .anywhere__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .anywhere__card--web {
+    grid-column: 1 / -1;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Shorter page: the original spacing was sized for large screens */
+  .section {
+    padding: 64px 0;
+  }
+
+  .anywhere__grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .anywhere__card {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  /* Full-width, thumb-sized buttons, Terminal first */
+  .getapp {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 420px;
+    margin-inline: auto;
+    gap: 10px;
+  }
+
+  .getapp__terminal {
+    grid-column: 1 / -1;
+    justify-content: center;
+    height: 58px;
+  }
+
+  .getapp .store {
+    justify-content: center;
+    height: 52px;
+    padding: 0 10px;
+    gap: 8px;
+  }
+
+  .getapp .store svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .getapp .store .store__big {
+    font-size: 15px;
+  }
+
+  .getapp .store .store__small {
+    font-size: 10px;
+  }
+
+  .hero__ctas,
+  .page-hero__ctas {
+    margin-top: 28px;
+  }
+}
+
+/* Phones: iPhone and Android side by side, short; the web Terminal card stays full width */
+@media (max-width: 640px) {
+  .anywhere__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .anywhere__card--web {
+    grid-column: 1 / -1;
+  }
+
+  .anywhere__card:not(.anywhere__card--web) {
+    padding: 18px;
+    gap: 8px;
+  }
+
+  .anywhere__card:not(.anywhere__card--web) p {
+    display: none;
+  }
+
+  .anywhere__card:not(.anywhere__card--web) .h3 {
+    font-size: 17px;
+  }
+
+  .anywhere__card:not(.anywhere__card--web) .anywhere__go {
+    padding-top: 6px;
+    font-size: 14px;
+  }
+}

@@ -24,6 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
   <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/refresh.css">
   <script>document.documentElement.classList.add("js")</script>
   <script defer src="/assets/js/site.js"></script>
 </head>
@@ -40,6 +41,9 @@
           <span class="mask-line"><span style="--d:.14s" class="gold">{{proPage.title2}}</span></span>
         </h1>
         <p class="lead rise" style="--d:.26s">{{proPage.lead}}</p>
+        <div class="hero__ctas page-hero__ctas rise" style="--d:.36s">
+{{>getapp}}
+        </div>
       </div>
     </section>
 
@@ -169,10 +173,7 @@
         </div>
         <h2 class="h2" id="cta-title">{{cta.title}}</h2>
         <p class="lead">{{cta.lead}}</p>
-        <div class="stores">
-          <a class="store" href="{{@appStore}}"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">{{store.appleSmall}}</span><span class="store__big">{{store.appleBig}}</span></span></a>
-          <span class="store"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">{{store.googleSmall}}</span><span class="store__big">Google Play</span></span></span>
-        </div>
+{{>getapp}}
       </div>
     </section>
   </main>

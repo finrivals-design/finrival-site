@@ -57,6 +57,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
   <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/refresh.css">
   <script>document.documentElement.classList.add("js")</script>
   <script defer src="/assets/js/site.js"></script>
 </head>
@@ -292,6 +293,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Phones: the two ways to start, pinned to the bottom once the visitor scrolls past the hero (site.js) -->
+  <div class="getbar" data-getbar aria-label="Zacznij z Finrival">
+    <a class="getbar__btn getbar__btn--gold" href="/terminal/" data-terminal-link><span class="getapp__live" aria-hidden="true"></span>Otwórz Terminal</a>
+    <a class="getbar__btn" href="/pl/#download" data-getbar-app>Pobierz aplikację</a>
+  </div>
   <!-- ========== Cookie consent ========== -->
   <div class="consent" id="consent" role="dialog" aria-live="polite" aria-labelledby="consent-text" hidden>
     <p id="consent-text">Używamy plików cookie do mierzenia skuteczności naszych reklam, tylko jeśli się zgodzisz · <a href="/pl/privacy/">Polityka prywatności</a></p>

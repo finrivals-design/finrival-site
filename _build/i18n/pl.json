@@ -28,7 +28,7 @@
     "googleSmall": "Wkrótce w"
   },
   "hero": {
-    "badge": "Już na iPhone'a, wkrótce na Androida",
+    "badge": "Teraz na iPhonie i w sieci",
     "line1": "Wyłap ruch",
     "line2": "Porównaj to, co ważne",
     "lead": "Największe ruchy rynku, porównania obok siebie, wiadomości i asystent AI, który zaczyna od ekranu, na którym jesteś, wszystko w jednej aplikacji"
@@ -130,7 +130,7 @@
   },
   "cta": {
     "title": "Twoje rynki w centrum uwagi",
-    "lead": "Finrival jest już w App Store, wersja na Androida wkrótce"
+    "lead": "Otwórz darmowy Terminal w przeglądarce albo pobierz aplikację z App Store. Android już wkrótce"
   },
   "footer": {
     "tagline": "Analiza rynku, porównania i AI w jednej aplikacji mobilnej",
@@ -441,5 +441,26 @@
     "reject": "Odrzucam",
     "policy": "Polityka prywatności",
     "settings": "Ustawienia cookies"
+  },
+  "getapp": {
+    "terminalSmall": "Za darmo w przeglądarce",
+    "terminalBig": "Otwórz Terminal",
+    "terminalShort": "Otwórz Terminal",
+    "barLabel": "Zacznij z Finrival"
+  },
+  "anywhere": {
+    "kicker": "Zacznij w kilka sekund",
+    "title": "Korzystaj z Finrival, gdziekolwiek jesteś",
+    "webTag": "Dostępny teraz",
+    "webTitle": "Terminal w przeglądarce",
+    "webBody": "Liderzy rynku, Porównanie, Wiadomości i Finrival AI na każdym komputerze, bez pobierania",
+    "webCta": "Otwórz Terminal",
+    "iosTag": "iPhone",
+    "iosTitle": "Pełna aplikacja",
+    "iosBody": "Pełna aplikacja z alertami, treningiem Rival i listą obserwowanych w kieszeni",
+    "iosCta": "Pobierz z App Store",
+    "androidTag": "Android",
+    "androidTitle": "Już wkrótce",
+    "androidBody": "Trwają testy, wkrótce w Google Play. Do tego czasu Terminal działa w przeglądarce telefonu"
   }
 }

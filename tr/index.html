@@ -57,6 +57,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
   <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/refresh.css">
   <link rel="preload" as="image" href="/assets/screens/market-tr.webp" imagesrcset="/assets/screens/market-tr-sm.webp 440w, /assets/screens/market-tr.webp 720w" imagesizes="(max-width: 640px) 246px, 340px">
   <script>
     (function (d) {
@@ -73,7 +74,9 @@
       try {
         var forced = /[?&]intro\b/.test(location.search);
         var calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (forced || (!calm && !sessionStorage.getItem("fr-intro"))) {
+        // Phones skip it: the hero (and its download buttons) shows at once on small screens
+        var wide = matchMedia("(min-width: 901px)").matches;
+        if (forced || (!calm && wide && !sessionStorage.getItem("fr-intro"))) {
           d.classList.add("intro-play");
           sessionStorage.setItem("fr-intro", "1");
         }
@@ -201,15 +204,22 @@
     <!-- ========== Hero ========== -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="container">
-        <span class="hero__badge rise"><i></i>Şimdi iPhone'da, yakında Android'de</span>
+        <span class="hero__badge rise"><i></i>Şimdi iPhone’da ve web’de</span>
         <h1 class="display" id="hero-title">
           <span class="mask-line"><span style="--d:.08s">Hareketi yakala</span></span>
           <span class="mask-line"><span style="--d:.18s">Önemli olanı karşılaştır</span></span>
         </h1>
         <p class="lead rise" style="--d:.32s">Piyasanın öne çıkanları, yan yana karşılaştırma, haberler ve bulunduğun ekrandan yola çıkan bir yapay zeka asistanı, hepsi tek uygulamada</p>
         <div class="hero__ctas rise" style="--d:.42s">
-          <a class="store" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">App Store'dan</span><span class="store__big">İndirin</span></span></a>
-          <span class="store"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">Çok yakında</span><span class="store__big">Google Play</span></span></span>
+          <div class="getapp">
+            <a class="getapp__terminal" href="/terminal/" data-terminal-link>
+              <span class="getapp__live" aria-hidden="true"></span>
+              <span class="store__text"><span class="store__small">Tarayıcında ücretsiz</span><span class="store__big">Terminal’i aç</span></span>
+              <svg class="ic getapp__arrow"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="store" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">App Store'dan</span><span class="store__big">İndirin</span></span></a>
+            <span class="store store--soon"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">Çok yakında</span><span class="store__big">Google Play</span></span></span>
+          </div>
         </div>
       </div>
 
@@ -245,6 +255,35 @@
           <button type="button" data-go="compare" aria-pressed="false">Kıyasla</button>
           <button type="button" data-go="rival" aria-pressed="false">Rival</button>
           <button type="button" data-go="ai" aria-pressed="false"><svg class="ic"><use href="#i-zap"/></svg>Finrival AI</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Use it anywhere: web Terminal, iPhone, Android ========== -->
+    <section class="anywhere" aria-labelledby="anywhere-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="kicker" data-reveal>Saniyeler içinde başla</span>
+          <h2 class="h2" id="anywhere-title" data-reveal style="--d:.06s">Finrival’i nerede olursan kullan</h2>
+        </div>
+        <div class="anywhere__grid">
+          <a class="anywhere__card anywhere__card--web" href="/terminal/" data-terminal-link data-reveal>
+            <span class="anywhere__tag"><span class="getapp__live" aria-hidden="true"></span>Şimdi yayında</span>
+            <h3 class="h3">Web Terminal</h3>
+            <p>Piyasa hareketleri, Karşılaştır, Haberler ve Finrival AI her bilgisayarda, indirme gerekmeden</p>
+            <span class="anywhere__go">Terminal’i aç<svg class="ic"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="anywhere__card" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8" data-reveal style="--d:.06s">
+            <span class="anywhere__tag"><svg class="ic"><use href="#i-apple"/></svg>iPhone</span>
+            <h3 class="h3">Uygulamanın tamamı</h3>
+            <p>Bildirimler, Rival pratiği ve izleme listenle uygulamanın tamamı cebinde</p>
+            <span class="anywhere__go">App Store’dan indir<svg class="ic"><use href="#i-arrow"/></svg></span>
+          </a>
+          <div class="anywhere__card anywhere__card--soon" data-reveal style="--d:.12s">
+            <span class="anywhere__tag"><svg class="ic"><use href="#i-play"/></svg>Android</span>
+            <h3 class="h3">Yakında geliyor</h3>
+            <p>Şu an test aşamasında, yakında Google Play’de. O zamana kadar web Terminal telefon tarayıcında çalışır</p>
+          </div>
         </div>
       </div>
     </section>
@@ -499,11 +538,16 @@
           <svg viewBox="0 0 64 64"><path d="M10 47L26 31l8 8 17-18" fill="none" stroke="#1fb5c6" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M41 15h14v14z" fill="#1fb5c6"/></svg>
         </div>
         <h2 class="h2" id="cta-title">Piyasalar artık odağında</h2>
-        <p class="lead">Finrival şimdi App Store'da, Android sürümü çok yakında</p>
-        <div class="stores">
-          <a class="store" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">App Store'dan</span><span class="store__big">İndirin</span></span></a>
-          <span class="store"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">Çok yakında</span><span class="store__big">Google Play</span></span></span>
-        </div>
+        <p class="lead">Ücretsiz web Terminal’i hemen aç ya da uygulamayı App Store’dan indir. Android yakında geliyor</p>
+          <div class="getapp">
+            <a class="getapp__terminal" href="/terminal/" data-terminal-link>
+              <span class="getapp__live" aria-hidden="true"></span>
+              <span class="store__text"><span class="store__small">Tarayıcında ücretsiz</span><span class="store__big">Terminal’i aç</span></span>
+              <svg class="ic getapp__arrow"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="store" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">App Store'dan</span><span class="store__big">İndirin</span></span></a>
+            <span class="store store--soon"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">Çok yakında</span><span class="store__big">Google Play</span></span></span>
+          </div>
       </div>
     </section>
   </main>
@@ -553,6 +597,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Phones: the two ways to start, pinned to the bottom once the visitor scrolls past the hero (site.js) -->
+  <div class="getbar" data-getbar aria-label="Finrival ile başla">
+    <a class="getbar__btn getbar__btn--gold" href="/terminal/" data-terminal-link><span class="getapp__live" aria-hidden="true"></span>Terminal’i aç</a>
+    <a class="getbar__btn" href="#download" data-getbar-app>Uygulamayı edin</a>
+  </div>
   <!-- ========== Cookie consent ========== -->
   <div class="consent" id="consent" role="dialog" aria-live="polite" aria-labelledby="consent-text" hidden>
     <p id="consent-text">Reklamlarımızın performansını ölçmek için çerez kullanıyoruz, yalnızca kabul edersen · <a href="/tr/privacy/">Gizlilik Politikası</a></p>

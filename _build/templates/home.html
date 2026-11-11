@@ -24,6 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
   <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/refresh.css">
   <link rel="preload" as="image" href="/assets/screens/market-{{@s}}.webp" imagesrcset="/assets/screens/market-{{@s}}-sm.webp 440w, /assets/screens/market-{{@s}}.webp 720w" imagesizes="(max-width: 640px) 246px, 340px">
   <script>
     (function (d) {
@@ -40,7 +41,9 @@
       try {
         var forced = /[?&]intro\b/.test(location.search);
         var calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (forced || (!calm && !sessionStorage.getItem("fr-intro"))) {
+        // Phones skip it: the hero (and its download buttons) shows at once on small screens
+        var wide = matchMedia("(min-width: 901px)").matches;
+        if (forced || (!calm && wide && !sessionStorage.getItem("fr-intro"))) {
           d.classList.add("intro-play");
           sessionStorage.setItem("fr-intro", "1");
         }
@@ -100,8 +103,7 @@
         </h1>
         <p class="lead rise" style="--d:.32s">{{hero.lead}}</p>
         <div class="hero__ctas rise" style="--d:.42s">
-          <a class="store" href="{{@appStore}}"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">{{store.appleSmall}}</span><span class="store__big">{{store.appleBig}}</span></span></a>
-          <span class="store"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">{{store.googleSmall}}</span><span class="store__big">Google Play</span></span></span>
+{{>getapp}}
         </div>
       </div>
 
@@ -137,6 +139,35 @@
           <button type="button" data-go="compare" aria-pressed="false">{{live.compare}}</button>
           <button type="button" data-go="rival" aria-pressed="false">Rival</button>
           <button type="button" data-go="ai" aria-pressed="false"><svg class="ic"><use href="#i-zap"/></svg>Finrival AI</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Use it anywhere: web Terminal, iPhone, Android ========== -->
+    <section class="anywhere" aria-labelledby="anywhere-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="kicker" data-reveal>{{anywhere.kicker}}</span>
+          <h2 class="h2" id="anywhere-title" data-reveal style="--d:.06s">{{anywhere.title}}</h2>
+        </div>
+        <div class="anywhere__grid">
+          <a class="anywhere__card anywhere__card--web" href="/terminal/" data-terminal-link data-reveal>
+            <span class="anywhere__tag"><span class="getapp__live" aria-hidden="true"></span>{{anywhere.webTag}}</span>
+            <h3 class="h3">{{anywhere.webTitle}}</h3>
+            <p>{{anywhere.webBody}}</p>
+            <span class="anywhere__go">{{anywhere.webCta}}<svg class="ic"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="anywhere__card" href="{{@appStore}}" data-reveal style="--d:.06s">
+            <span class="anywhere__tag"><svg class="ic"><use href="#i-apple"/></svg>{{anywhere.iosTag}}</span>
+            <h3 class="h3">{{anywhere.iosTitle}}</h3>
+            <p>{{anywhere.iosBody}}</p>
+            <span class="anywhere__go">{{anywhere.iosCta}}<svg class="ic"><use href="#i-arrow"/></svg></span>
+          </a>
+          <div class="anywhere__card anywhere__card--soon" data-reveal style="--d:.12s">
+            <span class="anywhere__tag"><svg class="ic"><use href="#i-play"/></svg>{{anywhere.androidTag}}</span>
+            <h3 class="h3">{{anywhere.androidTitle}}</h3>
+            <p>{{anywhere.androidBody}}</p>
+          </div>
         </div>
       </div>
     </section>
@@ -392,10 +423,7 @@
         </div>
         <h2 class="h2" id="cta-title">{{cta.title}}</h2>
         <p class="lead">{{cta.lead}}</p>
-        <div class="stores">
-          <a class="store" href="{{@appStore}}"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">{{store.appleSmall}}</span><span class="store__big">{{store.appleBig}}</span></span></a>
-          <span class="store"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">{{store.googleSmall}}</span><span class="store__big">Google Play</span></span></span>
-        </div>
+{{>getapp}}
       </div>
     </section>
   </main>

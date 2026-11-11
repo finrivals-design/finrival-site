@@ -28,7 +28,7 @@
     "googleSmall": "Coming soon on"
   },
   "hero": {
-    "badge": "Now on iPhone, coming soon to Android",
+    "badge": "Now on iPhone and the web",
     "line1": "Find the move",
     "line2": "Compare what matters",
     "lead": "Market movers, side-by-side comparison, news and an AI assistant that starts from the screen you're on, all in one app"
@@ -130,7 +130,7 @@
   },
   "cta": {
     "title": "Your markets, in focus",
-    "lead": "Finrival is on the App Store now, and Android is coming soon"
+    "lead": "Open the free web Terminal now, or get the app on the App Store. Android is coming soon"
   },
   "footer": {
     "tagline": "Market research, comparison and AI in one mobile app",
@@ -441,5 +441,26 @@
     "reject": "Reject",
     "policy": "Privacy Policy",
     "settings": "Cookie settings"
+  },
+  "getapp": {
+    "terminalSmall": "Free in your browser",
+    "terminalBig": "Open the Terminal",
+    "terminalShort": "Open Terminal",
+    "barLabel": "Start with Finrival"
+  },
+  "anywhere": {
+    "kicker": "Start in seconds",
+    "title": "Use Finrival wherever you are",
+    "webTag": "Live now",
+    "webTitle": "Web Terminal",
+    "webBody": "Market movers, Compare, News and Finrival AI on any computer, no download needed",
+    "webCta": "Open the Terminal",
+    "iosTag": "iPhone",
+    "iosTitle": "The full app",
+    "iosBody": "The full app with alerts, Rival practice and your watchlist in your pocket",
+    "iosCta": "Get it on the App Store",
+    "androidTag": "Android",
+    "androidTitle": "Coming soon",
+    "androidBody": "In testing now and coming soon to Google Play. Until then, the web Terminal works in your phone browser"
   }
 }

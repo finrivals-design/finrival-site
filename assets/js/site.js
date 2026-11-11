@@ -499,6 +499,24 @@
     }));
   }
 
+
+  // Phone bottom bar: shows after the hero, hides at the page's own download section.
+  // On iPhone "Get the app" opens the App Store directly.
+  const getbar = document.querySelector("[data-getbar]");
+  if (getbar) {
+    const app = getbar.querySelector("[data-getbar-app]");
+    const store = document.querySelector("a.store[href*=\"apps.apple.com\"]");
+    if (app && store && /iPhone|iPod/.test(navigator.userAgent)) app.href = store.href;
+    const top = document.querySelector(".hero, .page-hero");
+    const end = document.querySelector("#download, .site-footer");
+    let pastTop = !top, atEnd = false;
+    const sync = () => getbar.classList.toggle("is-on", pastTop && !atEnd);
+    if ("IntersectionObserver" in window) {
+      if (top) new IntersectionObserver(([e]) => { pastTop = !e.isIntersecting; sync(); }, { rootMargin: "-120px 0px 0px 0px" }).observe(top);
+      if (end) new IntersectionObserver(([e]) => { atEnd = e.isIntersecting; sync(); }).observe(end);
+    } else { getbar.classList.add("is-on"); }
+  }
+
   // Footer year
   document.querySelectorAll("[data-year]").forEach((el) => {
     el.textContent = String(new Date().getFullYear());

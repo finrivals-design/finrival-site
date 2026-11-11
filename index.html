@@ -57,6 +57,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
   <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/refresh.css">
   <link rel="preload" as="image" href="/assets/screens/market-en.webp" imagesrcset="/assets/screens/market-en-sm.webp 440w, /assets/screens/market-en.webp 720w" imagesizes="(max-width: 640px) 246px, 340px">
   <script>
     (function (d) {
@@ -73,7 +74,9 @@
       try {
         var forced = /[?&]intro\b/.test(location.search);
         var calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (forced || (!calm && !sessionStorage.getItem("fr-intro"))) {
+        // Phones skip it: the hero (and its download buttons) shows at once on small screens
+        var wide = matchMedia("(min-width: 901px)").matches;
+        if (forced || (!calm && wide && !sessionStorage.getItem("fr-intro"))) {
           d.classList.add("intro-play");
           sessionStorage.setItem("fr-intro", "1");
         }
@@ -201,15 +204,22 @@
     <!-- ========== Hero ========== -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="container">
-        <span class="hero__badge rise"><i></i>Now on iPhone, coming soon to Android</span>
+        <span class="hero__badge rise"><i></i>Now on iPhone and the web</span>
         <h1 class="display" id="hero-title">
           <span class="mask-line"><span style="--d:.08s">Find the move</span></span>
           <span class="mask-line"><span style="--d:.18s">Compare what matters</span></span>
         </h1>
         <p class="lead rise" style="--d:.32s">Market movers, side-by-side comparison, news and an AI assistant that starts from the screen you're on, all in one app</p>
         <div class="hero__ctas rise" style="--d:.42s">
-          <a class="store" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">Download on the</span><span class="store__big">App Store</span></span></a>
-          <span class="store"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">Coming soon on</span><span class="store__big">Google Play</span></span></span>
+          <div class="getapp">
+            <a class="getapp__terminal" href="/terminal/" data-terminal-link>
+              <span class="getapp__live" aria-hidden="true"></span>
+              <span class="store__text"><span class="store__small">Free in your browser</span><span class="store__big">Open the Terminal</span></span>
+              <svg class="ic getapp__arrow"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="store" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">Download on the</span><span class="store__big">App Store</span></span></a>
+            <span class="store store--soon"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">Coming soon on</span><span class="store__big">Google Play</span></span></span>
+          </div>
         </div>
       </div>
 
@@ -245,6 +255,35 @@
           <button type="button" data-go="compare" aria-pressed="false">Compare</button>
           <button type="button" data-go="rival" aria-pressed="false">Rival</button>
           <button type="button" data-go="ai" aria-pressed="false"><svg class="ic"><use href="#i-zap"/></svg>Finrival AI</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Use it anywhere: web Terminal, iPhone, Android ========== -->
+    <section class="anywhere" aria-labelledby="anywhere-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="kicker" data-reveal>Start in seconds</span>
+          <h2 class="h2" id="anywhere-title" data-reveal style="--d:.06s">Use Finrival wherever you are</h2>
+        </div>
+        <div class="anywhere__grid">
+          <a class="anywhere__card anywhere__card--web" href="/terminal/" data-terminal-link data-reveal>
+            <span class="anywhere__tag"><span class="getapp__live" aria-hidden="true"></span>Live now</span>
+            <h3 class="h3">Web Terminal</h3>
+            <p>Market movers, Compare, News and Finrival AI on any computer, no download needed</p>
+            <span class="anywhere__go">Open the Terminal<svg class="ic"><use href="#i-arrow"/></svg></span>
+          </a>
+          <a class="anywhere__card" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8" data-reveal style="--d:.06s">
+            <span class="anywhere__tag"><svg class="ic"><use href="#i-apple"/></svg>iPhone</span>
+            <h3 class="h3">The full app</h3>
+            <p>The full app with alerts, Rival practice and your watchlist in your pocket</p>
+            <span class="anywhere__go">Get it on the App Store<svg class="ic"><use href="#i-arrow"/></svg></span>
+          </a>
+          <div class="anywhere__card anywhere__card--soon" data-reveal style="--d:.12s">
+            <span class="anywhere__tag"><svg class="ic"><use href="#i-play"/></svg>Android</span>
+            <h3 class="h3">Coming soon</h3>
+            <p>In testing now and coming soon to Google Play. Until then, the web Terminal works in your phone browser</p>
+          </div>
         </div>
       </div>
     </section>
@@ -499,11 +538,16 @@
           <svg viewBox="0 0 64 64"><path d="M10 47L26 31l8 8 17-18" fill="none" stroke="#1fb5c6" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M41 15h14v14z" fill="#1fb5c6"/></svg>
         </div>
         <h2 class="h2" id="cta-title">Your markets, in focus</h2>
-        <p class="lead">Finrival is on the App Store now, and Android is coming soon</p>
-        <div class="stores">
-          <a class="store" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">Download on the</span><span class="store__big">App Store</span></span></a>
-          <span class="store"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">Coming soon on</span><span class="store__big">Google Play</span></span></span>
-        </div>
+        <p class="lead">Open the free web Terminal now, or get the app on the App Store. Android is coming soon</p>
+          <div class="getapp">
+            <a class="getapp__terminal" href="/terminal/" data-terminal-link>
+              <span class="getapp__live" aria-hidden="true"></span>
+              <span class="store__text"><span class="store__small">Free in your browser</span><span class="store__big">Open the Terminal</span></span>
+              <svg class="ic getapp__arrow"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="store" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">Download on the</span><span class="store__big">App Store</span></span></a>
+            <span class="store store--soon"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">Coming soon on</span><span class="store__big">Google Play</span></span></span>
+          </div>
       </div>
     </section>
   </main>
@@ -553,6 +597,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Phones: the two ways to start, pinned to the bottom once the visitor scrolls past the hero (site.js) -->
+  <div class="getbar" data-getbar aria-label="Start with Finrival">
+    <a class="getbar__btn getbar__btn--gold" href="/terminal/" data-terminal-link><span class="getapp__live" aria-hidden="true"></span>Open Terminal</a>
+    <a class="getbar__btn" href="#download" data-getbar-app>Get the app</a>
+  </div>
   <!-- ========== Cookie consent ========== -->
   <div class="consent" id="consent" role="dialog" aria-live="polite" aria-labelledby="consent-text" hidden>
     <p id="consent-text">We use cookies to measure how our ads perform, and only if you accept · <a href="/privacy/">Privacy Policy</a></p>

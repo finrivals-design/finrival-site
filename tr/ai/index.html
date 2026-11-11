@@ -57,6 +57,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap">
   <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/refresh.css">
   <script>document.documentElement.classList.add("js")</script>
   <script defer src="/assets/js/site.js"></script>
 </head>
@@ -148,6 +149,17 @@
           <span class="mask-line"><span style="--d:.14s" class="gold">Boş bir sayfadan değil</span></span>
         </h1>
         <p class="lead rise" style="--d:.26s">Finrival AI ekranındaki piyasayı, varlığı ya da karşılaştırmayı alır ve dikkatli bir analist gibi cevaplar, rakamlar ve sınırlar gözünün önünde</p>
+        <div class="hero__ctas page-hero__ctas rise" style="--d:.36s">
+          <div class="getapp">
+            <a class="getapp__terminal" href="/terminal/" data-terminal-link>
+              <span class="getapp__live" aria-hidden="true"></span>
+              <span class="store__text"><span class="store__small">Tarayıcında ücretsiz</span><span class="store__big">Terminal’i aç</span></span>
+              <svg class="ic getapp__arrow"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="store" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">App Store'dan</span><span class="store__big">İndirin</span></span></a>
+            <span class="store store--soon"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">Çok yakında</span><span class="store__big">Google Play</span></span></span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -297,11 +309,16 @@
           <svg viewBox="0 0 64 64"><path d="M10 47L26 31l8 8 17-18" fill="none" stroke="#1fb5c6" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M41 15h14v14z" fill="#1fb5c6"/></svg>
         </div>
         <h2 class="h2" id="cta-title">Piyasalar artık odağında</h2>
-        <p class="lead">Finrival şimdi App Store'da, Android sürümü çok yakında</p>
-        <div class="stores">
-          <a class="store" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">App Store'dan</span><span class="store__big">İndirin</span></span></a>
-          <span class="store"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">Çok yakında</span><span class="store__big">Google Play</span></span></span>
-        </div>
+        <p class="lead">Ücretsiz web Terminal’i hemen aç ya da uygulamayı App Store’dan indir. Android yakında geliyor</p>
+          <div class="getapp">
+            <a class="getapp__terminal" href="/terminal/" data-terminal-link>
+              <span class="getapp__live" aria-hidden="true"></span>
+              <span class="store__text"><span class="store__small">Tarayıcında ücretsiz</span><span class="store__big">Terminal’i aç</span></span>
+              <svg class="ic getapp__arrow"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="store" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">App Store'dan</span><span class="store__big">İndirin</span></span></a>
+            <span class="store store--soon"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">Çok yakında</span><span class="store__big">Google Play</span></span></span>
+          </div>
       </div>
     </section>
   </main>
@@ -351,6 +368,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Phones: the two ways to start, pinned to the bottom once the visitor scrolls past the hero (site.js) -->
+  <div class="getbar" data-getbar aria-label="Finrival ile başla">
+    <a class="getbar__btn getbar__btn--gold" href="/terminal/" data-terminal-link><span class="getapp__live" aria-hidden="true"></span>Terminal’i aç</a>
+    <a class="getbar__btn" href="#download" data-getbar-app>Uygulamayı edin</a>
+  </div>
   <!-- ========== Cookie consent ========== -->
   <div class="consent" id="consent" role="dialog" aria-live="polite" aria-labelledby="consent-text" hidden>
     <p id="consent-text">Reklamlarımızın performansını ölçmek için çerez kullanıyoruz, yalnızca kabul edersen · <a href="/tr/privacy/">Gizlilik Politikası</a></p>
