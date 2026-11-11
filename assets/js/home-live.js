@@ -44,7 +44,7 @@
     // Text and buttons the dots must never sit behind (measured relative to the field)
     const blockers = () => {
       const box = field.getBoundingClientRect(), pad = small() ? 10 : 16;
-      return [...document.querySelectorAll(".hero__badge, .hero h1 .mask-line > span, .hero .lead, .hero .getapp > *, .pulse__dots, .groups, .groups__desc, .clock__item, .site-header, .hero__stage .device, .live-tabs__row")]
+      return [...document.querySelectorAll(".hero__badge, .hero h1 .mask-line > span, .hero .lead, .hero .getapp > *, .pulse__dots, .groups, .groups__desc, .tiles, .clock__item, .site-header, .hero__stage .device, .live-tabs__row")]
         .map((el) => el.getBoundingClientRect())
         .filter((r) => r.width && r.height)
         .map((r) => ({ l: r.left - box.left - pad, t: r.top - box.top - pad, r: r.right - box.left + pad, b: r.bottom - box.top + pad }));
@@ -214,6 +214,47 @@
     if (card) document.body.appendChild(card);
     const sectors = Object.fromEntries((card?.dataset.sectors || "").split("|").map((x) => x.split("=")));
     const meta = Object.fromEntries(rows.map((r) => [r.symbol, r]));
+    // Company card, opened from a dot (desktop) or a tile (phones)
+    function openCard(d) {
+      const r = meta[d.s] || {};
+      const pct = pctOf(d.p);
+      const set = (k, v) => { const el = card.querySelector(`[data-f="${k}"]`); if (el) el.textContent = v; return el; };
+      set("s", d.s);
+      const lg = card.querySelector("[data-f=logo]"); if (lg) { lg.hidden = false; lg.onerror = () => { lg.hidden = true; }; lg.src = LOGO + encodeURIComponent(d.s); }
+      set("chg", pct).className = "dotcard__chg " + (d.p > 0 ? "up" : "down");
+      set("name", d.n);
+      set("meta", [sectors[r.category], (d.p > 0 ? card.dataset.rose : card.dataset.fell).replace("{p}", pct.replace(/^[+−]/, ""))].filter(Boolean).join(" · "));
+      // Group, prices, volume and a 5-session trail
+      const gn = Object.fromEntries((card.dataset.groupNames || "").split("|").map((x) => x.split("=")));
+      const metaEl = card.querySelector("[data-f=meta]");
+      if (gn[d.g]) metaEl.innerHTML = `<span class="dotcard__group dotcard__group--${d.g}">${gn[d.g]}</span>` + metaEl.innerHTML;
+      const usd = (v) => new Intl.NumberFormat(lang, { style: "currency", currency: "USD", maximumFractionDigits: v < 10 ? 3 : 2 }).format(v);
+      const compact = (v, cur) => new Intl.NumberFormat(lang, { notation: "compact", maximumFractionDigits: 1, ...(cur ? { style: "currency", currency: "USD" } : {}) }).format(v);
+      const facts = [
+        [card.dataset.lclose, Number.isFinite(d.price) && usd(d.price)],
+        [card.dataset.lprev, Number.isFinite(d.prev) && usd(d.prev)],
+        [card.dataset.lvol, Number.isFinite(d.vol) && compact(d.vol)],
+        [card.dataset.ltraded, Number.isFinite(d.traded) && compact(d.traded, true)],
+      ].filter(([, v]) => v);
+      card.querySelector("[data-f=facts]").innerHTML = facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("");
+      const sp = (Array.isArray(d.spark) ? d.spark : []).map(Number).filter(Number.isFinite);
+      const sbox = card.querySelector("[data-f=sparkbox]");
+      sbox.hidden = sp.length < 3;
+      if (sp.length >= 3) {
+        const lo = Math.min(...sp), hi = Math.max(...sp), span = hi - lo || 1;
+        card.querySelector("[data-f=spark]").setAttribute("d", sp.map((v, i) => `${i ? "L" : "M"}${(i / (sp.length - 1)) * 120},${27 - ((v - lo) / span) * 24}`).join(" "));
+        sbox.className = "dotcard__spark " + (sp[sp.length - 1] >= sp[0] ? "up" : "down");
+        card.querySelector("[data-f=sparklabel]").textContent = card.dataset.l5d;
+      }
+      card.querySelector("[data-f=compare]").href = "/terminal/?compare=" + encodeURIComponent(d.s);
+      card.querySelector("[data-f=ask]").href = "/terminal/?ask=" + encodeURIComponent(card.dataset.askQ.replace("{name}", d.n).replace("{s}", d.s));
+      card.hidden = false;
+      const left = Math.min(Math.max(d.x - 170, 16), w - 356);
+      const fb = field.getBoundingClientRect();
+      card.style.left = (fb.left + window.scrollX + left) + "px";
+      card.style.top = (fb.top + window.scrollY + d.y + 18) + "px";
+      hover = d; restart();
+    }
     let down = null;
     field.addEventListener("pointerdown", (e) => { down = { x: e.clientX, y: e.clientY }; });
     field.addEventListener("pointerup", (e) => {
@@ -223,44 +264,7 @@
       let best = null, bd = step * 0.9;
       for (const d of dots) { const dd = Math.hypot(d.x - px, d.y - py); if (dd < bd) { bd = dd; best = d; } }
       if (!best) { card.hidden = true; return; }
-      const r = meta[best.s] || {};
-      const pct = pctOf(best.p);
-      const set = (k, v) => { const el = card.querySelector(`[data-f="${k}"]`); if (el) el.textContent = v; return el; };
-      set("s", best.s);
-      const lg = card.querySelector("[data-f=logo]"); if (lg) { lg.hidden = false; lg.onerror = () => { lg.hidden = true; }; lg.src = LOGO + encodeURIComponent(best.s); }
-      set("chg", pct).className = "dotcard__chg " + (best.p > 0 ? "up" : "down");
-      set("name", best.n);
-      set("meta", [sectors[r.category], (best.p > 0 ? card.dataset.rose : card.dataset.fell).replace("{p}", pct.replace(/^[+−]/, ""))].filter(Boolean).join(" · "));
-      // Group, prices, volume and a 5-session trail
-      const gn = Object.fromEntries((card.dataset.groupNames || "").split("|").map((x) => x.split("=")));
-      const metaEl = card.querySelector("[data-f=meta]");
-      if (gn[best.g]) metaEl.innerHTML = `<span class="dotcard__group dotcard__group--${best.g}">${gn[best.g]}</span>` + metaEl.innerHTML;
-      const usd = (v) => new Intl.NumberFormat(lang, { style: "currency", currency: "USD", maximumFractionDigits: v < 10 ? 3 : 2 }).format(v);
-      const compact = (v, cur) => new Intl.NumberFormat(lang, { notation: "compact", maximumFractionDigits: 1, ...(cur ? { style: "currency", currency: "USD" } : {}) }).format(v);
-      const facts = [
-        [card.dataset.lclose, Number.isFinite(best.price) && usd(best.price)],
-        [card.dataset.lprev, Number.isFinite(best.prev) && usd(best.prev)],
-        [card.dataset.lvol, Number.isFinite(best.vol) && compact(best.vol)],
-        [card.dataset.ltraded, Number.isFinite(best.traded) && compact(best.traded, true)],
-      ].filter(([, v]) => v);
-      card.querySelector("[data-f=facts]").innerHTML = facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("");
-      const sp = (Array.isArray(best.spark) ? best.spark : []).map(Number).filter(Number.isFinite);
-      const sbox = card.querySelector("[data-f=sparkbox]");
-      sbox.hidden = sp.length < 3;
-      if (sp.length >= 3) {
-        const lo = Math.min(...sp), hi = Math.max(...sp), span = hi - lo || 1;
-        card.querySelector("[data-f=spark]").setAttribute("d", sp.map((v, i) => `${i ? "L" : "M"}${(i / (sp.length - 1)) * 120},${27 - ((v - lo) / span) * 24}`).join(" "));
-        sbox.className = "dotcard__spark " + (sp[sp.length - 1] >= sp[0] ? "up" : "down");
-        card.querySelector("[data-f=sparklabel]").textContent = card.dataset.l5d;
-      }
-      card.querySelector("[data-f=compare]").href = "/terminal/?compare=" + encodeURIComponent(best.s);
-      card.querySelector("[data-f=ask]").href = "/terminal/?ask=" + encodeURIComponent(card.dataset.askQ.replace("{name}", best.n).replace("{s}", best.s));
-      card.hidden = false;
-      const left = Math.min(Math.max(best.x - 170, 16), w - 356);
-      const fb = field.getBoundingClientRect();
-      card.style.left = (fb.left + window.scrollX + left) + "px";
-      card.style.top = (fb.top + window.scrollY + best.y + 18) + "px";
-      hover = best; restart();
+      openCard(best);
     });
     card?.querySelector("[data-dotcard-close]")?.addEventListener("click", () => { card.hidden = true; });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape" && card) card.hidden = true; });
@@ -276,9 +280,28 @@
       legend.innerHTML = ["giant", "under10", "future"].map((g) => `<button type="button" class="groups__chip groups__chip--${g}" data-g="${g}" aria-pressed="false">${names[g] || g}</button>`).join("");
       const descEl = document.querySelector("[data-groups-desc]");
       legend.hidden = false;
+      // Phones: the chosen group as big tiles (ticker + move), biggest moves first; Giants to start
+      const tiles = document.querySelector("[data-tiles]");
+      const renderTiles = () => {
+        if (!tiles) return;
+        const on = small();
+        tiles.hidden = !on;
+        if (!on) return;
+        const list = dots.filter((d) => d.g === (focus || "giant")).sort((a, b) => Math.abs(b.p) - Math.abs(a.p)).slice(0, 12);
+        tiles.innerHTML = list.map((d, i) => `<button type="button" class="tile ${d.p > 0 ? "up" : "down"}" data-i="${i}"><b>${d.s}</b><small>${d.n.replace(/,? (Inc|Corp|Corporation|Co|Ltd|plc|Holdings|Group)\.?$/i, "")}</small><span>${pctOf(d.p)}</span></button>`).join("");
+        tiles.onclick = (e) => { const t = e.target.closest("[data-i]"); if (t) openCard(list[Number(t.dataset.i)]); };
+      };
+      if (small()) {
+        focus = "giant";
+        legend.querySelector("[data-g=giant]")?.setAttribute("aria-pressed", "true");
+        if (descEl) descEl.textContent = desc.giant || "";
+      }
+      renderTiles();
+      window.addEventListener("resize", renderTiles);
       legend.addEventListener("click", (e) => {
         const b = e.target.closest("[data-g]"); if (!b) return;
-        focus = focus === b.dataset.g ? null : b.dataset.g;
+        focus = small() ? b.dataset.g : focus === b.dataset.g ? null : b.dataset.g;
+        renderTiles();
         legend.querySelectorAll("[data-g]").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.g === focus)));
         if (descEl) descEl.textContent = focus ? desc[focus] || "" : descEl.dataset.hint || "";
         restart();
@@ -296,7 +319,7 @@
       const down = dots.filter((d) => d.p < 0).length;
       caption.innerHTML = `<span class="lg lg--up"><i></i>${caption.dataset.up.replace("{n}", up)}</span><span class="lg lg--down"><i></i>${caption.dataset.down.replace("{n}", down)}</span>`;
       const hintEl = document.querySelector("[data-groups-desc]");
-      if (hintEl) { hintEl.dataset.hint = caption.dataset.tpl; hintEl.textContent = caption.dataset.tpl; }
+      if (hintEl) { hintEl.dataset.hint = caption.dataset.tpl; if (!focus) hintEl.textContent = caption.dataset.tpl; }
       caption.hidden = false;
     }
   }

@@ -913,3 +913,57 @@ a.anywhere__card:hover .anywhere__go .ic {
     padding-inline: 12px;
   }
 }
+
+/* ===== Phones (v7): big readable tiles instead of tiny dots ===== */
+.tiles { display: none; }
+
+@media (max-width: 640px) {
+  /* The dots behind the text are decoration only on phones */
+  .dotfield { pointer-events: none !important; opacity: 0.55; }
+  .dotfield.is-ready { opacity: 0.55; }
+
+  .tiles:not([hidden]) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+    max-width: 380px;
+    margin: 4px auto 0;
+  }
+
+  .tile {
+    display: grid;
+    gap: 2px;
+    justify-items: start;
+    min-height: 58px;
+    padding: 10px 12px;
+    border: 1px solid var(--line-2);
+    border-radius: 14px;
+    background: rgba(13, 19, 26, 0.85);
+    color: var(--text);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.15s var(--ease), border-color 0.2s var(--ease);
+  }
+
+  .tile:active { transform: scale(0.97); }
+
+  .tile b { font-size: 15px; font-weight: 700; letter-spacing: 0.01em; }
+  .tile span { font-size: 13.5px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .tile.up { border-color: rgba(216, 191, 131, 0.32); background: linear-gradient(180deg, rgba(216, 191, 131, 0.1), rgba(13, 19, 26, 0.85)); }
+  .tile.up span { color: var(--gold); }
+  .tile.down span { color: var(--text-2); }
+
+  /* Easy-to-tap chips */
+  .pulse__row .groups { width: 100%; justify-content: center; }
+  .pulse__row .groups__chip { min-height: 40px; padding: 8px 14px; font-size: 14px; }
+  .pulse__row .lg { font-size: 14px; }
+  .pulse > .groups__desc { min-height: 0; font-size: 13.5px; color: var(--text-2); }
+}
+@media (max-width: 640px) {
+  .tile { min-height: 70px; gap: 1px; }
+  .tile small { display: block; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 11.5px; color: var(--text-3); }
+  .tile span { margin-top: 3px; }
+}
