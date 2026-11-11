@@ -462,5 +462,22 @@
     "androidTag": "Android",
     "androidTitle": "Yakında geliyor",
     "androidBody": "Şu an test aşamasında, yakında Google Play’de. O zamana kadar web Terminal telefon tarayıcında çalışır"
+  },
+  "pulse": {
+    "dots": "Her nokta bir şirket · son kapanışta {n} şirketin {up} tanesi yükseldi ({date})",
+    "open": "açık",
+    "closed": "kapalı",
+    "opensIn": "{t} sonra açılıyor",
+    "closesIn": "{t} sonra kapanıyor",
+    "clockLabel": "Senin saat diliminde borsa saatleri"
+  },
+  "ask": {
+    "title": "Finrival AI’a sor",
+    "sub": "Bir şirket ya da piyasa hakkında sorunu yaz, yanıt Terminal’de açılır",
+    "q1": "Tesla bugün neden hareket etti?",
+    "q2": "Apple ile Microsoft’u karşılaştır",
+    "q3": "F/K oranı bana ne anlatır?",
+    "q4": "Piyasayı hangi sektörler sürükledi?",
+    "button": "Sor"
   }
 }

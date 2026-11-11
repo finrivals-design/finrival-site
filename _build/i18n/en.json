@@ -462,5 +462,22 @@
     "androidTag": "Android",
     "androidTitle": "Coming soon",
     "androidBody": "In testing now and coming soon to Google Play. Until then, the web Terminal works in your phone browser"
+  },
+  "pulse": {
+    "dots": "Every dot is one company · {up} of {n} rose at the last close ({date})",
+    "open": "open",
+    "closed": "closed",
+    "opensIn": "opens in {t}",
+    "closesIn": "closes in {t}",
+    "clockLabel": "Stock market hours in your time zone"
+  },
+  "ask": {
+    "title": "Ask Finrival AI",
+    "sub": "Type a question about any company or the market, the answer opens in the Terminal",
+    "q1": "Why did Tesla move today?",
+    "q2": "Compare Apple and Microsoft",
+    "q3": "What does a P/E ratio tell me?",
+    "q4": "Which sectors led the market?",
+    "button": "Ask"
   }
 }

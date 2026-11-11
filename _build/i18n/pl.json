@@ -462,5 +462,22 @@
     "androidTag": "Android",
     "androidTitle": "Już wkrótce",
     "androidBody": "Trwają testy, wkrótce w Google Play. Do tego czasu Terminal działa w przeglądarce telefonu"
+  },
+  "pulse": {
+    "dots": "Każda kropka to jedna spółka · {up} z {n} wzrosło na ostatnim zamknięciu ({date})",
+    "open": "otwarta",
+    "closed": "zamknięta",
+    "opensIn": "otwarcie za {t}",
+    "closesIn": "zamknięcie za {t}",
+    "clockLabel": "Godziny giełd w Twojej strefie czasowej"
+  },
+  "ask": {
+    "title": "Zapytaj Finrival AI",
+    "sub": "Wpisz pytanie o dowolną spółkę lub rynek, odpowiedź otworzy się w Terminalu",
+    "q1": "Dlaczego Tesla dziś się zmieniła?",
+    "q2": "Porównaj Apple i Microsoft",
+    "q3": "Co mówi mi wskaźnik C/Z?",
+    "q4": "Które sektory prowadziły rynek?",
+    "button": "Zapytaj"
   }
 }

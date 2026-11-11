@@ -84,6 +84,7 @@
     })(document.documentElement);
   </script>
   <script defer src="/assets/js/site.js"></script>
+  <script defer src="/assets/js/home-live.js"></script>
 
   <!-- Google: site name and logo shown next to finrival.com in search results -->
   <script type="application/ld+json">
@@ -203,6 +204,11 @@
   <main id="main">
     <!-- ========== Hero ========== -->
     <section class="hero" aria-labelledby="hero-title">
+      <!-- Every dot is one company: last close of the Finrival catalogue, gold rose, grey fell (site.js) -->
+      <div class="dotfield" data-dotfield data-api="https://us-central1-finrival-dc2a7.cloudfunctions.net/getHybridMarketSnapshot" aria-hidden="true">
+        <canvas></canvas>
+        <div class="dotfield__tip"></div>
+      </div>
       <div class="container">
         <span class="hero__badge rise"><i></i>Now on iPhone and the web</span>
         <h1 class="display" id="hero-title">
@@ -220,6 +226,10 @@
             <a class="store" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">Download on the</span><span class="store__big">App Store</span></span></a>
             <span class="store store--soon"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">Coming soon on</span><span class="store__big">Google Play</span></span></span>
           </div>
+        </div>
+        <div class="pulse rise" style="--d:.55s">
+          <p class="pulse__dots" data-dotfield-caption data-tpl="Every dot is one company · {up} of {n} rose at the last close ({date})" hidden></p>
+          <div class="pulse__clock" data-clock data-open="open" data-closed="closed" data-opens="opens in {t}" data-closes="closes in {t}" aria-label="Stock market hours in your time zone"></div>
         </div>
       </div>
 
@@ -285,6 +295,31 @@
             <p>In testing now and coming soon to Google Play. Until then, the web Terminal works in your phone browser</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ========== Ask Finrival AI: the question opens in the Terminal ========== -->
+    <section class="ask" aria-labelledby="ask-title">
+      <div class="container">
+        <form class="ask__box" action="/terminal/" method="get" data-ask data-reveal>
+          <div class="ask__head">
+            <span class="ask__icon" aria-hidden="true"><svg class="ic"><use href="#i-zap"/></svg></span>
+            <div>
+              <h2 class="ask__title" id="ask-title">Ask Finrival AI</h2>
+              <p class="ask__sub">Type a question about any company or the market, the answer opens in the Terminal</p>
+            </div>
+          </div>
+          <div class="ask__row">
+            <label class="sr-only" for="ask-q">Ask Finrival AI</label>
+            <input id="ask-q" name="ask" type="text" maxlength="300" autocomplete="off" placeholder="Why did Tesla move today?" data-ask-examples="Why did Tesla move today?|Compare Apple and Microsoft|What does a P/E ratio tell me?|Which sectors led the market?">
+            <button class="ask__btn" type="submit">Ask<svg class="ic"><use href="#i-arrow"/></svg></button>
+          </div>
+          <div class="ask__chips">
+            <button type="button" data-ask-chip>Compare Apple and Microsoft</button>
+            <button type="button" data-ask-chip>What does a P/E ratio tell me?</button>
+            <button type="button" data-ask-chip>Which sectors led the market?</button>
+          </div>
+        </form>
       </div>
     </section>
 

@@ -84,6 +84,7 @@
     })(document.documentElement);
   </script>
   <script defer src="/assets/js/site.js"></script>
+  <script defer src="/assets/js/home-live.js"></script>
 
   <!-- Google: site name and logo shown next to finrival.com in search results -->
   <script type="application/ld+json">
@@ -203,6 +204,11 @@
   <main id="main">
     <!-- ========== Hero ========== -->
     <section class="hero" aria-labelledby="hero-title">
+      <!-- Every dot is one company: last close of the Finrival catalogue, gold rose, grey fell (site.js) -->
+      <div class="dotfield" data-dotfield data-api="https://us-central1-finrival-dc2a7.cloudfunctions.net/getHybridMarketSnapshot" aria-hidden="true">
+        <canvas></canvas>
+        <div class="dotfield__tip"></div>
+      </div>
       <div class="container">
         <span class="hero__badge rise"><i></i>Şimdi iPhone’da ve web’de</span>
         <h1 class="display" id="hero-title">
@@ -220,6 +226,10 @@
             <a class="store" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">App Store'dan</span><span class="store__big">İndirin</span></span></a>
             <span class="store store--soon"><svg><use href="#i-play"/></svg><span class="store__text"><span class="store__small">Çok yakında</span><span class="store__big">Google Play</span></span></span>
           </div>
+        </div>
+        <div class="pulse rise" style="--d:.55s">
+          <p class="pulse__dots" data-dotfield-caption data-tpl="Her nokta bir şirket · son kapanışta {n} şirketin {up} tanesi yükseldi ({date})" hidden></p>
+          <div class="pulse__clock" data-clock data-open="açık" data-closed="kapalı" data-opens="{t} sonra açılıyor" data-closes="{t} sonra kapanıyor" aria-label="Senin saat diliminde borsa saatleri"></div>
         </div>
       </div>
 
@@ -285,6 +295,31 @@
             <p>Şu an test aşamasında, yakında Google Play’de. O zamana kadar web Terminal telefon tarayıcında çalışır</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ========== Ask Finrival AI: the question opens in the Terminal ========== -->
+    <section class="ask" aria-labelledby="ask-title">
+      <div class="container">
+        <form class="ask__box" action="/terminal/" method="get" data-ask data-reveal>
+          <div class="ask__head">
+            <span class="ask__icon" aria-hidden="true"><svg class="ic"><use href="#i-zap"/></svg></span>
+            <div>
+              <h2 class="ask__title" id="ask-title">Finrival AI’a sor</h2>
+              <p class="ask__sub">Bir şirket ya da piyasa hakkında sorunu yaz, yanıt Terminal’de açılır</p>
+            </div>
+          </div>
+          <div class="ask__row">
+            <label class="sr-only" for="ask-q">Finrival AI’a sor</label>
+            <input id="ask-q" name="ask" type="text" maxlength="300" autocomplete="off" placeholder="Tesla bugün neden hareket etti?" data-ask-examples="Tesla bugün neden hareket etti?|Apple ile Microsoft’u karşılaştır|F/K oranı bana ne anlatır?|Piyasayı hangi sektörler sürükledi?">
+            <button class="ask__btn" type="submit">Sor<svg class="ic"><use href="#i-arrow"/></svg></button>
+          </div>
+          <div class="ask__chips">
+            <button type="button" data-ask-chip>Apple ile Microsoft’u karşılaştır</button>
+            <button type="button" data-ask-chip>F/K oranı bana ne anlatır?</button>
+            <button type="button" data-ask-chip>Piyasayı hangi sektörler sürükledi?</button>
+          </div>
+        </form>
       </div>
     </section>
 

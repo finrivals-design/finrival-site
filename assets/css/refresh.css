@@ -349,3 +349,321 @@ a.anywhere__card:hover .anywhere__go .ic {
     font-size: 14px;
   }
 }
+
+/* ---------- Every dot is one company (hero background) ---------- */
+.dotfield {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: min(100vh, 980px);
+  z-index: 0;
+  pointer-events: none;
+  /* fades out under the phones and toward the edges so the headline stays first */
+  /* quiet zone behind the headline, fading out toward the edges and the phones */
+  -webkit-mask-image: radial-gradient(34% 20% at 50% 27%, rgba(0, 0, 0, 0.22) 0%, rgba(0, 0, 0, 0.22) 60%, #000 100%), radial-gradient(120% 75% at 50% 32%, #000 30%, rgba(0, 0, 0, 0.55) 62%, transparent 92%);
+  -webkit-mask-composite: source-in;
+  mask-image: radial-gradient(34% 20% at 50% 27%, rgba(0, 0, 0, 0.22) 0%, rgba(0, 0, 0, 0.22) 60%, #000 100%), radial-gradient(120% 75% at 50% 32%, #000 30%, rgba(0, 0, 0, 0.55) 62%, transparent 92%);
+  mask-composite: intersect;
+  opacity: 0;
+  transition: opacity 1.4s var(--ease);
+}
+
+.dotfield.is-ready {
+  opacity: 1;
+}
+
+.dotfield canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.dotfield__tip {
+  position: absolute;
+  z-index: 2;
+  padding: 7px 11px;
+  border: 1px solid var(--line-2);
+  border-radius: 10px;
+  background: rgba(10, 14, 19, 0.92);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transform: translate(-50%, calc(-100% - 12px));
+  opacity: 0;
+  transition: opacity 0.18s var(--ease);
+}
+
+.dotfield__tip.is-on {
+  opacity: 1;
+}
+
+.dotfield__tip b {
+  margin-left: 8px;
+}
+
+.dotfield__tip .up { color: var(--gold); }
+.dotfield__tip .down { color: var(--text-2); }
+
+.hero > .container,
+.hero > .hero__stage,
+.hero > .live-tabs {
+  position: relative;
+  z-index: 1;
+}
+
+/* Desktop: the field reacts to the cursor, so text passes clicks through to it */
+@media (hover: hover) and (min-width: 901px) {
+  .dotfield { pointer-events: auto; }
+  .hero > .container { pointer-events: none; }
+  .hero > .container a,
+  .hero > .container button,
+  .hero > .container .pulse { pointer-events: auto; }
+}
+
+/* ---------- Pulse: dots caption + world market clock ---------- */
+.pulse {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.pulse__dots {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--text-2);
+}
+
+.pulse__dots i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  vertical-align: 1px;
+}
+
+.pulse__clock {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.clock__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(13, 19, 26, 0.7);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  font-size: 13px;
+  color: var(--text-2);
+  white-space: nowrap;
+}
+
+.clock__item b {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.clock__item i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-3);
+}
+
+.clock__item.is-open i {
+  background: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.22);
+}
+
+/* ---------- Ask Finrival AI ---------- */
+.ask {
+  padding: clamp(48px, 7vw, 96px) 0 0;
+}
+
+.ask__box {
+  max-width: 860px;
+  margin-inline: auto;
+  padding: clamp(20px, 3vw, 32px);
+  border: 1px solid rgba(216, 191, 131, 0.25);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(80% 120% at 0% 0%, rgba(216, 191, 131, 0.12), transparent 55%),
+    radial-gradient(70% 120% at 100% 100%, rgba(31, 181, 198, 0.1), transparent 55%),
+    var(--surface);
+  box-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.9);
+}
+
+.ask__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ask__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: rgba(216, 191, 131, 0.12);
+  color: var(--gold);
+}
+
+.ask__icon .ic {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+}
+
+.ask__title {
+  margin: 0;
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.ask__sub {
+  margin: 2px 0 0;
+  color: var(--text-2);
+  font-size: 14.5px;
+}
+
+.ask__row {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 6px;
+  border: 1px solid var(--line-2);
+  border-radius: 18px;
+  background: rgba(6, 9, 13, 0.7);
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.ask__row:focus-within {
+  border-color: rgba(216, 191, 131, 0.55);
+  box-shadow: 0 0 0 4px rgba(216, 191, 131, 0.1);
+}
+
+.ask__row input {
+  flex: 1;
+  min-width: 0;
+  padding: 0 14px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 16px; /* 16px keeps iPhone from zooming in */
+  outline: none;
+}
+
+.ask__row input::placeholder {
+  color: var(--text-3);
+}
+
+.ask__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 13px;
+  background: var(--gold);
+  color: #17130a;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.ask__btn:hover {
+  background: var(--gold-2);
+  transform: translateY(-1px);
+}
+
+.ask__btn .ic {
+  width: 17px;
+  height: 17px;
+  stroke: currentColor;
+}
+
+.ask__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.ask__chips button {
+  padding: 8px 13px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-2);
+  font: inherit;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.ask__chips button:hover {
+  color: var(--text);
+  border-color: var(--line-3);
+}
+
+@media (max-width: 640px) {
+  .dotfield {
+    height: 760px;
+    -webkit-mask-image: radial-gradient(60% 18% at 50% 24%, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 55%, #000 100%), radial-gradient(140% 70% at 50% 28%, #000 25%, rgba(0, 0, 0, 0.45) 60%, transparent 90%);
+    mask-image: radial-gradient(60% 18% at 50% 24%, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 55%, #000 100%), radial-gradient(140% 70% at 50% 28%, #000 25%, rgba(0, 0, 0, 0.45) 60%, transparent 90%);
+  }
+
+  .pulse__dots {
+    font-size: 12.5px;
+    padding-inline: 8px;
+  }
+
+  .clock__item {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .ask__head .ask__sub {
+    font-size: 13.5px;
+  }
+
+  .ask__chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-inline: -4px;
+    padding: 0 4px 4px;
+    scrollbar-width: none;
+  }
+
+  .ask__chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ask__chips button {
+    flex: none;
+  }
+
+  .ask__btn {
+    padding: 0 16px;
+  }
+}
+
+/* Phones: the visitor's own market and New York only */
+@media (max-width: 640px) {
+  .clock__item:nth-child(n + 3) {
+    display: none;
+  }
+}
