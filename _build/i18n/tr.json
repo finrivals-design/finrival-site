@@ -464,12 +464,14 @@
     "androidBody": "Şu an test aşamasında, yakında Google Play’de. O zamana kadar web Terminal telefon tarayıcında çalışır"
   },
   "pulse": {
-    "dots": "Her nokta bir şirket · son kapanışta {n} şirketin {up} tanesi yükseldi ({date})",
+    "dots": "Her nokta bir şirket · birine dokun ({date})",
     "open": "açık",
     "closed": "kapalı",
     "opensIn": "{t} sonra açılıyor",
     "closesIn": "{t} sonra kapanıyor",
-    "clockLabel": "Senin saat diliminde borsa saatleri"
+    "clockLabel": "Senin saat diliminde borsa saatleri",
+    "up": "Yükselen {n}",
+    "down": "Düşen {n}"
   },
   "ask": {
     "title": "Finrival AI’a sor",
@@ -481,8 +483,8 @@
     "button": "Sor"
   },
   "dotcard": {
-    "rose": "Son kapanışta {p} yükseldi",
-    "fell": "Son kapanışta {p} düştü",
+    "rose": "Son işlem gününde {p} yükseldi",
+    "fell": "Son işlem gününde {p} düştü",
     "compare": "Terminal’de karşılaştır",
     "ask": "Finrival AI’a sor",
     "askQ": "{name} ({s}) hakkında kısa bir özet ver ve son hareketinin nedenini açıkla",
@@ -490,14 +492,16 @@
     "hint": "Şirketi görmek için bir noktaya dokun",
     "sectors": "cat_ai=Yapay zeka ve büyük veri|cat_semi=Yarı iletkenler|cat_tech=Teknoloji|cat_healthcare=Sağlık|cat_biotech=Biyoteknoloji|cat_finance=Finans|cat_consumer=Tüketim|cat_industrial=Sanayi|cat_energy=Enerji|cat_utilities=Kamu hizmetleri|cat_materials=Hammaddeler|cat_metals=Metal ve madencilik|cat_realestate=Gayrimenkul|cat_comm=İletişim|cat_def=Savunma ve havacılık|cat_ev=Elektrikli araçlar ve mobilite|cat_div=Temettü hisseleri",
     "groups": "giant=Devler|under10=10 $ altı|future=Geleceğin temaları",
-    "lclose": "Son kapanış",
-    "lprev": "Önceki kapanış",
-    "lvol": "Hacim",
-    "ltraded": "İşlem değeri",
-    "l5d": "Son 5 seans",
+    "lclose": "Fiyat",
+    "lprev": "Bir önceki gün",
+    "lvol": "İşlem gören hisse",
+    "ltraded": "İşlem gören para",
+    "l5d": "Son 5 gün",
     "gGiant": "Dev şirket",
     "gUnder10": "10 $ altı",
     "gFuture": "Gelecek teması",
-    "legend": "Devler · 10 $ altı · Geleceğin temaları (yapay zeka, çip, elektrikli araç, biyoteknoloji)"
+    "legend": "Devler · 10 $ altı · Geleceğin temaları (yapay zeka, çip, elektrikli araç, biyoteknoloji)",
+    "groupsLabel": "Göster:",
+    "groupDesc": "giant=Apple, Microsoft ve Nvidia gibi dünyanın en tanınmış şirketleri|under10=Hissesi 10 dolardan ucuz olan şirketler|future=Yapay zeka, çip, elektrikli araç ve biyoteknoloji şirketleri"
   }
 }

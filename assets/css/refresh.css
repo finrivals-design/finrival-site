@@ -725,3 +725,27 @@ a.anywhere__card:hover .anywhere__go .ic {
 .groups__chip[aria-pressed="true"] { background: rgba(216,191,131,0.16); border-color: var(--gold); }
 .groups__chip--future[aria-pressed="true"] { background: rgba(31,181,198,0.16); border-color: #7fd8e2; }
 @media (max-width: 640px) { .groups__chip { padding: 6px 11px; font-size: 12.5px; } }
+
+/* Simpler legend: went up / went down, then "Show me:" chips with a one-line explanation */
+.pulse__dots { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 16px; }
+.pulse__dots i { display: none; }
+.lg { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; }
+.lg i { display: inline-block !important; width: 10px; height: 10px; margin: 0 !important; border-radius: 50%; }
+.lg--up { color: var(--text); font-weight: 600; }
+.lg--up i { background: var(--gold); box-shadow: 0 0 0 3px rgba(216,191,131,0.18); }
+.lg--down { color: var(--text); font-weight: 600; }
+.lg--down i { background: #8b96a3; }
+.lg--hint { color: var(--text-2); }
+.groups { align-items: center; }
+.groups__label { font-size: 13px; color: var(--text-2); }
+.groups__chip b { display: none; }
+.groups__desc { flex-basis: 100%; margin: 2px 0 0; min-height: 1.4em; font-size: 13.5px; color: var(--text-2); text-align: center; }
+/* One market clock on phones, two on desktop */
+.clock__item:nth-child(n + 3) { display: none; }
+@media (max-width: 640px) {
+  .clock__item:nth-child(n + 2) { display: none; }
+  .lg { font-size: 13px; }
+}
+/* Room for a two-line explanation, reserved up front so nothing moves when a chip is tapped */
+.groups__desc { min-height: 2.9em; }
+@media (min-width: 641px) { .groups__desc { min-height: 1.5em; } }

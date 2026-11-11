@@ -205,14 +205,14 @@
     <!-- ========== Hero ========== -->
     <section class="hero" aria-labelledby="hero-title">
       <!-- Every dot is one company: last close of the Finrival catalogue, gold rose, grey fell (site.js) -->
-      <div class="dotfield" data-dotfield data-groups="giant=Giants|under10=Under $10|future=Future themes" data-api="https://us-central1-finrival-dc2a7.cloudfunctions.net/getHybridMarketSnapshot" aria-hidden="true">
+      <div class="dotfield" data-dotfield data-groups="giant=Giants|under10=Under $10|future=Future themes" data-groups-label="Show me:" data-group-desc="giant=The world’s best-known companies, like Apple, Microsoft and Nvidia|under10=Shares that cost less than $10 each|future=Companies in AI, computer chips, electric cars and biotech" data-api="https://us-central1-finrival-dc2a7.cloudfunctions.net/getHybridMarketSnapshot" aria-hidden="true">
         <canvas></canvas>
         <div class="dotfield__tip"></div>
       </div>
       <!-- Company card: opens when a dot is clicked or tapped (home-live.js) -->
       <div class="dotcard" data-dotcard role="dialog" aria-modal="false" aria-labelledby="dotcard-name" hidden
-        data-rose="Rose {p} at the last close" data-fell="Fell {p} at the last close" data-ask-q="Give me a short overview of {name} ({s}) and what moved it recently" data-sectors="cat_ai=AI and big data|cat_semi=Semiconductors|cat_tech=Technology|cat_healthcare=Healthcare|cat_biotech=Biotech|cat_finance=Finance|cat_consumer=Consumer|cat_industrial=Industrials|cat_energy=Energy|cat_utilities=Utilities|cat_materials=Materials|cat_metals=Metals and mining|cat_realestate=Real estate|cat_comm=Communication|cat_def=Defence and aerospace|cat_ev=EV and mobility|cat_div=Dividend stocks"
-        data-group-names="giant=Giant|under10=Under $10|future=Future theme" data-lclose="Last close" data-lprev="Previous close" data-lvol="Volume" data-ltraded="Value traded" data-l5d="Last 5 sessions">
+        data-rose="Went up {p} on the last trading day" data-fell="Went down {p} on the last trading day" data-ask-q="Give me a short overview of {name} ({s}) and what moved it recently" data-sectors="cat_ai=AI and big data|cat_semi=Semiconductors|cat_tech=Technology|cat_healthcare=Healthcare|cat_biotech=Biotech|cat_finance=Finance|cat_consumer=Consumer|cat_industrial=Industrials|cat_energy=Energy|cat_utilities=Utilities|cat_materials=Materials|cat_metals=Metals and mining|cat_realestate=Real estate|cat_comm=Communication|cat_def=Defence and aerospace|cat_ev=EV and mobility|cat_div=Dividend stocks"
+        data-group-names="giant=Giant|under10=Under $10|future=Future theme" data-lclose="Price" data-lprev="Day before" data-lvol="Shares traded" data-ltraded="Money traded" data-l5d="Last 5 days">
         <button class="dotcard__x" type="button" data-dotcard-close aria-label="Close"><span></span></button>
         <div class="dotcard__top">
           <img class="dotcard__logo" data-f="logo" alt="" width="40" height="40" hidden>
@@ -247,7 +247,7 @@
           </div>
         </div>
         <div class="pulse rise" style="--d:.55s">
-          <p class="pulse__dots" data-dotfield-caption data-tpl="Every dot is one company · {up} of {n} rose at the last close ({date})" hidden></p>
+          <p class="pulse__dots" data-dotfield-caption data-tpl="Each dot is a company · tap one ({date})" data-up="Went up {n}" data-down="Went down {n}" hidden></p>
           <div class="groups" data-groups-legend role="group" aria-label="Giants · Under $10 · Future themes (AI, chips, EV, biotech)" hidden></div>
           <div class="pulse__clock" data-clock data-open="open" data-closed="closed" data-opens="opens in {t}" data-closes="closes in {t}" aria-label="Stock market hours in your time zone"></div>
         </div>

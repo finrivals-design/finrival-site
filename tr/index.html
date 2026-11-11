@@ -205,14 +205,14 @@
     <!-- ========== Hero ========== -->
     <section class="hero" aria-labelledby="hero-title">
       <!-- Every dot is one company: last close of the Finrival catalogue, gold rose, grey fell (site.js) -->
-      <div class="dotfield" data-dotfield data-groups="giant=Devler|under10=10 $ altı|future=Geleceğin temaları" data-api="https://us-central1-finrival-dc2a7.cloudfunctions.net/getHybridMarketSnapshot" aria-hidden="true">
+      <div class="dotfield" data-dotfield data-groups="giant=Devler|under10=10 $ altı|future=Geleceğin temaları" data-groups-label="Göster:" data-group-desc="giant=Apple, Microsoft ve Nvidia gibi dünyanın en tanınmış şirketleri|under10=Hissesi 10 dolardan ucuz olan şirketler|future=Yapay zeka, çip, elektrikli araç ve biyoteknoloji şirketleri" data-api="https://us-central1-finrival-dc2a7.cloudfunctions.net/getHybridMarketSnapshot" aria-hidden="true">
         <canvas></canvas>
         <div class="dotfield__tip"></div>
       </div>
       <!-- Company card: opens when a dot is clicked or tapped (home-live.js) -->
       <div class="dotcard" data-dotcard role="dialog" aria-modal="false" aria-labelledby="dotcard-name" hidden
-        data-rose="Son kapanışta {p} yükseldi" data-fell="Son kapanışta {p} düştü" data-ask-q="{name} ({s}) hakkında kısa bir özet ver ve son hareketinin nedenini açıkla" data-sectors="cat_ai=Yapay zeka ve büyük veri|cat_semi=Yarı iletkenler|cat_tech=Teknoloji|cat_healthcare=Sağlık|cat_biotech=Biyoteknoloji|cat_finance=Finans|cat_consumer=Tüketim|cat_industrial=Sanayi|cat_energy=Enerji|cat_utilities=Kamu hizmetleri|cat_materials=Hammaddeler|cat_metals=Metal ve madencilik|cat_realestate=Gayrimenkul|cat_comm=İletişim|cat_def=Savunma ve havacılık|cat_ev=Elektrikli araçlar ve mobilite|cat_div=Temettü hisseleri"
-        data-group-names="giant=Dev şirket|under10=10 $ altı|future=Gelecek teması" data-lclose="Son kapanış" data-lprev="Önceki kapanış" data-lvol="Hacim" data-ltraded="İşlem değeri" data-l5d="Son 5 seans">
+        data-rose="Son işlem gününde {p} yükseldi" data-fell="Son işlem gününde {p} düştü" data-ask-q="{name} ({s}) hakkında kısa bir özet ver ve son hareketinin nedenini açıkla" data-sectors="cat_ai=Yapay zeka ve büyük veri|cat_semi=Yarı iletkenler|cat_tech=Teknoloji|cat_healthcare=Sağlık|cat_biotech=Biyoteknoloji|cat_finance=Finans|cat_consumer=Tüketim|cat_industrial=Sanayi|cat_energy=Enerji|cat_utilities=Kamu hizmetleri|cat_materials=Hammaddeler|cat_metals=Metal ve madencilik|cat_realestate=Gayrimenkul|cat_comm=İletişim|cat_def=Savunma ve havacılık|cat_ev=Elektrikli araçlar ve mobilite|cat_div=Temettü hisseleri"
+        data-group-names="giant=Dev şirket|under10=10 $ altı|future=Gelecek teması" data-lclose="Fiyat" data-lprev="Bir önceki gün" data-lvol="İşlem gören hisse" data-ltraded="İşlem gören para" data-l5d="Son 5 gün">
         <button class="dotcard__x" type="button" data-dotcard-close aria-label="Kapat"><span></span></button>
         <div class="dotcard__top">
           <img class="dotcard__logo" data-f="logo" alt="" width="40" height="40" hidden>
@@ -247,7 +247,7 @@
           </div>
         </div>
         <div class="pulse rise" style="--d:.55s">
-          <p class="pulse__dots" data-dotfield-caption data-tpl="Her nokta bir şirket · son kapanışta {n} şirketin {up} tanesi yükseldi ({date})" hidden></p>
+          <p class="pulse__dots" data-dotfield-caption data-tpl="Her nokta bir şirket · birine dokun ({date})" data-up="Yükselen {n}" data-down="Düşen {n}" hidden></p>
           <div class="groups" data-groups-legend role="group" aria-label="Devler · 10 $ altı · Geleceğin temaları (yapay zeka, çip, elektrikli araç, biyoteknoloji)" hidden></div>
           <div class="pulse__clock" data-clock data-open="açık" data-closed="kapalı" data-opens="{t} sonra açılıyor" data-closes="{t} sonra kapanıyor" aria-label="Senin saat diliminde borsa saatleri"></div>
         </div>

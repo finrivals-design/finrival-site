@@ -464,12 +464,14 @@
     "androidBody": "In testing now and coming soon to Google Play. Until then, the web Terminal works in your phone browser"
   },
   "pulse": {
-    "dots": "Every dot is one company · {up} of {n} rose at the last close ({date})",
+    "dots": "Each dot is a company · tap one ({date})",
     "open": "open",
     "closed": "closed",
     "opensIn": "opens in {t}",
     "closesIn": "closes in {t}",
-    "clockLabel": "Stock market hours in your time zone"
+    "clockLabel": "Stock market hours in your time zone",
+    "up": "Went up {n}",
+    "down": "Went down {n}"
   },
   "ask": {
     "title": "Ask Finrival AI",
@@ -481,8 +483,8 @@
     "button": "Ask"
   },
   "dotcard": {
-    "rose": "Rose {p} at the last close",
-    "fell": "Fell {p} at the last close",
+    "rose": "Went up {p} on the last trading day",
+    "fell": "Went down {p} on the last trading day",
     "compare": "Compare in Terminal",
     "ask": "Ask Finrival AI",
     "askQ": "Give me a short overview of {name} ({s}) and what moved it recently",
@@ -490,14 +492,16 @@
     "hint": "Tap a dot to see the company",
     "sectors": "cat_ai=AI and big data|cat_semi=Semiconductors|cat_tech=Technology|cat_healthcare=Healthcare|cat_biotech=Biotech|cat_finance=Finance|cat_consumer=Consumer|cat_industrial=Industrials|cat_energy=Energy|cat_utilities=Utilities|cat_materials=Materials|cat_metals=Metals and mining|cat_realestate=Real estate|cat_comm=Communication|cat_def=Defence and aerospace|cat_ev=EV and mobility|cat_div=Dividend stocks",
     "groups": "giant=Giants|under10=Under $10|future=Future themes",
-    "lclose": "Last close",
-    "lprev": "Previous close",
-    "lvol": "Volume",
-    "ltraded": "Value traded",
-    "l5d": "Last 5 sessions",
+    "lclose": "Price",
+    "lprev": "Day before",
+    "lvol": "Shares traded",
+    "ltraded": "Money traded",
+    "l5d": "Last 5 days",
     "gGiant": "Giant",
     "gUnder10": "Under $10",
     "gFuture": "Future theme",
-    "legend": "Giants · Under $10 · Future themes (AI, chips, EV, biotech)"
+    "legend": "Giants · Under $10 · Future themes (AI, chips, EV, biotech)",
+    "groupsLabel": "Show me:",
+    "groupDesc": "giant=The world’s best-known companies, like Apple, Microsoft and Nvidia|under10=Shares that cost less than $10 each|future=Companies in AI, computer chips, electric cars and biotech"
   }
 }

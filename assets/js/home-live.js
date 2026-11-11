@@ -44,7 +44,7 @@
     // Text and buttons the dots must never sit behind (measured relative to the field)
     const blockers = () => {
       const box = field.getBoundingClientRect(), pad = small() ? 10 : 16;
-      return [...document.querySelectorAll(".hero__badge, .hero h1 .mask-line > span, .hero .lead, .hero .getapp > *, .pulse__dots, .clock__item, .site-header, .hero__stage .device, .live-tabs__row")]
+      return [...document.querySelectorAll(".hero__badge, .hero h1 .mask-line > span, .hero .lead, .hero .getapp > *, .pulse__dots, .groups, .clock__item, .site-header, .hero__stage .device, .live-tabs__row")]
         .map((el) => el.getBoundingClientRect())
         .filter((r) => r.width && r.height)
         .map((r) => ({ l: r.left - box.left - pad, t: r.top - box.top - pad, r: r.right - box.left + pad, b: r.bottom - box.top + pad }));
@@ -125,8 +125,7 @@
       const base = step * 0.12;
       const lensed = [];
       // Faint area behind each labelled group
-      for (const l of small() ? [] : labels) {
-        if (focus && l.g !== focus) continue;
+      for (const l of []) {
         const b = l.box, gold = l.g !== "future";
         ctx.fillStyle = gold ? "rgba(216,191,131,0.045)" : "rgba(31,181,198,0.05)";
         ctx.strokeStyle = gold ? "rgba(216,191,131,0.16)" : "rgba(31,181,198,0.2)";
@@ -154,8 +153,7 @@
       const names = (field.dataset.groups || "").split("|").reduce((o, x) => { const [k, v] = x.split("="); o[k] = v; return o; }, {});
       ctx.textAlign = "center"; ctx.textBaseline = "middle";
       ctx.font = `700 ${small() ? 10.5 : 12}px Inter, system-ui, sans-serif`;
-      for (const l of small() ? [] : labels) {
-        if (focus && l.g !== focus) continue;
+      for (const l of []) {
         const text = ((names[l.g] || l.g) + "  " + l.n).toUpperCase();
         const tw = ctx.measureText(text).width + 22, th = small() ? 20 : 24;
         ctx.fillStyle = "rgba(10,14,19,0.85)";
@@ -274,12 +272,15 @@
     const legend = document.querySelector("[data-groups-legend]");
     if (legend) {
       const names = Object.fromEntries((field.dataset.groups || "").split("|").map((x) => x.split("=")));
-      legend.innerHTML = ["giant", "under10", "future"].map((g) => `<button type="button" class="groups__chip groups__chip--${g}" data-g="${g}" aria-pressed="false">${names[g] || g}<b>${dots.filter((d) => d.g === g).length}</b></button>`).join("");
+      const desc = Object.fromEntries((field.dataset.groupDesc || "").split("|").map((x) => x.split("=")));
+      legend.innerHTML = `<span class="groups__label">${field.dataset.groupsLabel || ""}</span>` + ["giant", "under10", "future"].map((g) => `<button type="button" class="groups__chip groups__chip--${g}" data-g="${g}" aria-pressed="false">${names[g] || g}</button>`).join("") + `<p class="groups__desc" aria-live="polite"></p>`;
+      const descEl = legend.querySelector(".groups__desc");
       legend.hidden = false;
       legend.addEventListener("click", (e) => {
         const b = e.target.closest("[data-g]"); if (!b) return;
         focus = focus === b.dataset.g ? null : b.dataset.g;
         legend.querySelectorAll("[data-g]").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.g === focus)));
+        descEl.textContent = focus ? desc[focus] || "" : "";
         restart();
       });
     }
@@ -292,7 +293,8 @@
       const up = dots.filter((d) => d.p > 0).length;
       let date = dataDate || "";
       try { date = new Intl.DateTimeFormat(lang, { day: "numeric", month: "short", timeZone: "UTC" }).format(new Date(dataDate + "T12:00:00Z")); } catch (e) {}
-      caption.innerHTML = "<i></i>" + caption.dataset.tpl.replace("{up}", up).replace("{n}", dots.length).replace("{date}", date);
+      const down = dots.filter((d) => d.p < 0).length;
+      caption.innerHTML = `<span class="lg lg--up"><i></i>${caption.dataset.up.replace("{n}", up)}</span><span class="lg lg--down"><i></i>${caption.dataset.down.replace("{n}", down)}</span><span class="lg lg--hint">${caption.dataset.tpl.replace("{date}", date)}</span>`;
       caption.hidden = false;
     }
   }

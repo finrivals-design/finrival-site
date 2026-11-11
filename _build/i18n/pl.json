@@ -464,12 +464,14 @@
     "androidBody": "Trwają testy, wkrótce w Google Play. Do tego czasu Terminal działa w przeglądarce telefonu"
   },
   "pulse": {
-    "dots": "Każda kropka to jedna spółka · {up} z {n} wzrosło na ostatnim zamknięciu ({date})",
+    "dots": "Każda kropka to spółka · dotknij jednej ({date})",
     "open": "otwarta",
     "closed": "zamknięta",
     "opensIn": "otwarcie za {t}",
     "closesIn": "zamknięcie za {t}",
-    "clockLabel": "Godziny giełd w Twojej strefie czasowej"
+    "clockLabel": "Godziny giełd w Twojej strefie czasowej",
+    "up": "Wzrosło {n}",
+    "down": "Spadło {n}"
   },
   "ask": {
     "title": "Zapytaj Finrival AI",
@@ -481,8 +483,8 @@
     "button": "Zapytaj"
   },
   "dotcard": {
-    "rose": "Wzrost o {p} na ostatnim zamknięciu",
-    "fell": "Spadek o {p} na ostatnim zamknięciu",
+    "rose": "Wzrost o {p} w ostatnim dniu handlu",
+    "fell": "Spadek o {p} w ostatnim dniu handlu",
     "compare": "Porównaj w Terminalu",
     "ask": "Zapytaj Finrival AI",
     "askQ": "Krótko opisz {name} ({s}) i co ostatnio wpłynęło na kurs",
@@ -490,14 +492,16 @@
     "hint": "Dotknij kropki, aby zobaczyć spółkę",
     "sectors": "cat_ai=AI i big data|cat_semi=Półprzewodniki|cat_tech=Technologia|cat_healthcare=Ochrona zdrowia|cat_biotech=Biotechnologia|cat_finance=Finanse|cat_consumer=Konsumpcja|cat_industrial=Przemysł|cat_energy=Energia|cat_utilities=Usługi komunalne|cat_materials=Surowce|cat_metals=Metale i górnictwo|cat_realestate=Nieruchomości|cat_comm=Komunikacja|cat_def=Obronność i lotnictwo|cat_ev=Pojazdy elektryczne i mobilność|cat_div=Spółki dywidendowe",
     "groups": "giant=Giganci|under10=Poniżej 10 $|future=Tematy przyszłości",
-    "lclose": "Ostatnie zamknięcie",
-    "lprev": "Poprzednie zamknięcie",
-    "lvol": "Wolumen",
-    "ltraded": "Wartość obrotu",
-    "l5d": "Ostatnie 5 sesji",
+    "lclose": "Cena",
+    "lprev": "Dzień wcześniej",
+    "lvol": "Akcje w obrocie",
+    "ltraded": "Pieniądze w obrocie",
+    "l5d": "Ostatnie 5 dni",
     "gGiant": "Gigant",
     "gUnder10": "Poniżej 10 $",
     "gFuture": "Temat przyszłości",
-    "legend": "Giganci · Poniżej 10 $ · Tematy przyszłości (AI, chipy, EV, biotech)"
+    "legend": "Giganci · Poniżej 10 $ · Tematy przyszłości (AI, chipy, EV, biotech)",
+    "groupsLabel": "Pokaż:",
+    "groupDesc": "giant=Najbardziej znane firmy świata, jak Apple, Microsoft i Nvidia|under10=Akcje tańsze niż 10 dolarów za sztukę|future=Firmy od AI, chipów, aut elektrycznych i biotechnologii"
   }
 }

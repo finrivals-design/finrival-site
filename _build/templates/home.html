@@ -97,7 +97,7 @@
     <!-- ========== Hero ========== -->
     <section class="hero" aria-labelledby="hero-title">
       <!-- Every dot is one company: last close of the Finrival catalogue, gold rose, grey fell (site.js) -->
-      <div class="dotfield" data-dotfield data-groups="{{dotcard.groups}}" data-api="https://us-central1-finrival-dc2a7.cloudfunctions.net/getHybridMarketSnapshot" aria-hidden="true">
+      <div class="dotfield" data-dotfield data-groups="{{dotcard.groups}}" data-groups-label="{{dotcard.groupsLabel}}" data-group-desc="{{dotcard.groupDesc}}" data-api="https://us-central1-finrival-dc2a7.cloudfunctions.net/getHybridMarketSnapshot" aria-hidden="true">
         <canvas></canvas>
         <div class="dotfield__tip"></div>
       </div>
@@ -131,7 +131,7 @@
 {{>getapp}}
         </div>
         <div class="pulse rise" style="--d:.55s">
-          <p class="pulse__dots" data-dotfield-caption data-tpl="{{pulse.dots}}" hidden></p>
+          <p class="pulse__dots" data-dotfield-caption data-tpl="{{pulse.dots}}" data-up="{{pulse.up}}" data-down="{{pulse.down}}" hidden></p>
           <div class="groups" data-groups-legend role="group" aria-label="{{dotcard.legend}}" hidden></div>
           <div class="pulse__clock" data-clock data-open="{{pulse.open}}" data-closed="{{pulse.closed}}" data-opens="{{pulse.opensIn}}" data-closes="{{pulse.closesIn}}" aria-label="{{pulse.clockLabel}}"></div>
         </div>
