@@ -122,7 +122,7 @@
       const t = now - t0;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, w, h);
-      const base = step * 0.095;
+      const base = step * (small() ? 0.15 : 0.095);
       const lensed = [];
       // Faint area behind each labelled group
       for (const l of []) {
@@ -143,7 +143,7 @@
         const near = Math.max(0, 1 - dist / (LENS() * 1.6));
         const dim = focus && d.g !== focus ? 0.18 : 1, boost = focus && d.g === focus ? 1.6 : 1;
         const r = (base + mag * step * 0.1) * (d.g === "giant" ? 1.5 : 1) * boost * (1 + near * 0.5) * k;
-        const a = ((up ? 0.26 + mag * 0.6 : 0.07 + mag * 0.16) * tw * k + near * 0.2) * dim * (focus && d.g === focus ? 1.5 : 1);
+        const a = ((up ? (small() ? 0.45 : 0.26) + mag * 0.55 : (small() ? 0.16 : 0.07) + mag * 0.18) * tw * k + near * 0.2) * dim * (focus && d.g === focus ? 1.5 : 1);
         ctx.fillStyle = up ? `rgba(216,191,131,${Math.min(a, 1)})` : `rgba(167,177,189,${Math.min(a, 0.8)})`;
         ctx.beginPath();
         ctx.arc(d.x, d.y, Math.max(r, 0.6), 0, Math.PI * 2);
@@ -261,7 +261,7 @@
       if (!card || !down || Math.hypot(e.clientX - down.x, e.clientY - down.y) > 10) return;
       const box = field.getBoundingClientRect();
       const px = e.clientX - box.left, py = e.clientY - box.top;
-      let best = null, bd = step * 0.9;
+      let best = null, bd = step * (small() ? 1.8 : 0.9);
       for (const d of dots) { const dd = Math.hypot(d.x - px, d.y - py); if (dd < bd) { bd = dd; best = d; } }
       if (!best) { card.hidden = true; return; }
       openCard(best);
@@ -284,14 +284,14 @@
       const tiles = document.querySelector("[data-tiles]");
       const renderTiles = () => {
         if (!tiles) return;
-        const on = small();
+        const on = false; // phones use the dot field itself now
         tiles.hidden = !on;
         if (!on) return;
         const list = dots.filter((d) => d.g === (focus || "giant")).sort((a, b) => Math.abs(b.p) - Math.abs(a.p)).slice(0, 12);
         tiles.innerHTML = list.map((d, i) => `<button type="button" class="tile ${d.p > 0 ? "up" : "down"}" data-i="${i}"><b>${d.s}</b><small>${d.n.replace(/,? (Inc|Corp|Corporation|Co|Ltd|plc|Holdings|Group)\.?$/i, "")}</small><span>${pctOf(d.p)}</span></button>`).join("");
         tiles.onclick = (e) => { const t = e.target.closest("[data-i]"); if (t) openCard(list[Number(t.dataset.i)]); };
       };
-      if (small()) {
+      if (false) {
         focus = "giant";
         legend.querySelector("[data-g=giant]")?.setAttribute("aria-pressed", "true");
         if (descEl) descEl.textContent = desc.giant || "";
@@ -317,7 +317,7 @@
       let date = dataDate || "";
       try { date = new Intl.DateTimeFormat(lang, { day: "numeric", month: "short", timeZone: "UTC" }).format(new Date(dataDate + "T12:00:00Z")); } catch (e) {}
       const down = dots.filter((d) => d.p < 0).length;
-      caption.innerHTML = `<span class="lg lg--up"><i></i>${caption.dataset.up.replace("{n}", up)}</span><span class="lg lg--down"><i></i>${caption.dataset.down.replace("{n}", down)}</span>`;
+      caption.innerHTML = `<span class="lg lg--up"><i></i>${caption.dataset.up.replace("{n}", up)}</span><span class="lg lg--down"><i></i>${caption.dataset.down.replace("{n}", down)}</span><span class="lg lg--tap">${caption.dataset.tpl}</span>`;
       const hintEl = document.querySelector("[data-groups-desc]");
       if (hintEl) { hintEl.dataset.hint = caption.dataset.tpl; if (!focus) hintEl.textContent = caption.dataset.tpl; }
       caption.hidden = false;
