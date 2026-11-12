@@ -19,7 +19,7 @@
   "nav": {
     "product": "Ürün",
     "support": "Destek",
-    "terminal": "Terminal",
+    "terminal": "Web Terminal",
     "getApp": "Uygulamayı edin"
   },
   "store": {
@@ -130,7 +130,7 @@
   },
   "cta": {
     "title": "Piyasalar artık odağında",
-    "lead": "Ücretsiz web Terminal’i hemen aç ya da uygulamayı App Store’dan indir. Android yakında geliyor"
+    "lead": "Ücretsiz Web Terminal’i dizüstü ya da masaüstü bilgisayarında aç veya uygulamayı App Store’dan indir. Google Play çok yakında"
   },
   "footer": {
     "tagline": "Piyasa araştırması, karşılaştırma ve yapay zeka tek mobil uygulamada",
@@ -443,9 +443,9 @@
     "settings": "Çerez ayarları"
   },
   "getapp": {
-    "terminalSmall": "Tarayıcında ücretsiz",
-    "terminalBig": "Terminal’i aç",
-    "terminalShort": "Terminal’i aç",
+    "terminalSmall": "Bilgisayarda ücretsiz",
+    "terminalBig": "Web Terminal’i aç",
+    "terminalShort": "Web Terminal",
     "barLabel": "Finrival ile başla"
   },
   "anywhere": {
@@ -453,15 +453,15 @@
     "title": "Finrival’i nerede olursan kullan",
     "webTag": "Şimdi yayında",
     "webTitle": "Web Terminal",
-    "webBody": "Piyasa hareketleri, Karşılaştır, Haberler ve Finrival AI her bilgisayarda, indirme gerekmeden",
-    "webCta": "Terminal’i aç",
+    "webBody": "Hareketliler, Karşılaştır, Haberler ve Finrival AI dizüstü ya da masaüstü bilgisayarında, indirme gerekmez",
+    "webCta": "Web Terminal’i aç",
     "iosTag": "iPhone",
     "iosTitle": "Uygulamanın tamamı",
     "iosBody": "Bildirimler, Rival pratiği ve izleme listenle uygulamanın tamamı cebinde",
     "iosCta": "App Store’dan indir",
     "androidTag": "Android",
     "androidTitle": "Yakında geliyor",
-    "androidBody": "Şu an test aşamasında, yakında Google Play’de. O zamana kadar web Terminal telefon tarayıcında çalışır"
+    "androidBody": "Şu an test aşamasında, yakında Google Play’de. O zamana kadar Web Terminal’i bilgisayarında kullan"
   },
   "pulse": {
     "dots": "Her nokta bir şirket · görmek için birine dokun",
@@ -475,7 +475,7 @@
   },
   "ask": {
     "title": "Finrival AI’a sor",
-    "sub": "Bir şirket ya da piyasa hakkında sorunu yaz, yanıt Terminal’de açılır",
+    "sub": "Bir şirket ya da piyasa hakkında sorunu yaz, yanıt Web Terminal’de açılır",
     "q1": "Tesla bugün neden hareket etti?",
     "q2": "Apple ile Microsoft’u karşılaştır",
     "q3": "F/K oranı bana ne anlatır?",
@@ -485,7 +485,7 @@
   "dotcard": {
     "rose": "Son işlem gününde {p} yükseldi",
     "fell": "Son işlem gününde {p} düştü",
-    "compare": "Terminal’de karşılaştır",
+    "compare": "Web Terminal’de karşılaştır",
     "ask": "Finrival AI’a sor",
     "askQ": "{name} ({s}) hakkında kısa bir özet ver ve son hareketinin nedenini açıkla",
     "close": "Kapat",
@@ -503,5 +503,12 @@
     "legend": "Devler · 10 $ altı · Geleceğin temaları (yapay zeka, çip, elektrikli araç, biyoteknoloji)",
     "groupsLabel": "Göster:",
     "groupDesc": "giant=Apple, Microsoft ve Nvidia gibi dünyanın en tanınmış şirketleri|under10=Hissesi 10 dolardan ucuz olan şirketler|future=Yapay zeka, çip, elektrikli araç ve biyoteknoloji şirketleri"
+  },
+  "phone": {
+    "title": "Web Terminal dizüstü ve masaüstü bilgisayarlar için",
+    "body": "Telefonunda ücretsiz Finrival uygulamasını indir: piyasalar, karşılaştırmalar ve AI yanıtları her yerde",
+    "ios": "App Store’dan indir",
+    "play": "Google Play · çok yakında",
+    "close": "Kapat"
   }
 }

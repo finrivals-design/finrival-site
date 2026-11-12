@@ -1139,3 +1139,21 @@ a.anywhere__card:hover .anywhere__go .ic {
   /* The company card is a sheet above the bottom bar, with room to breathe */
   .dotcard { border-radius: 22px; box-shadow: 0 -10px 60px rgba(0, 0, 0, 0.6); }
 }
+
+
+/* ===== Phones: Web Terminal popup (laptops and PCs only) ===== */
+.phonegate[hidden] { display: none; }
+.phonegate { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: flex-end; justify-content: center; }
+.phonegate__backdrop { position: absolute; inset: 0; background: rgba(5, 6, 8, 0.72); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.phonegate__sheet { position: relative; width: 100%; max-width: 460px; margin: 0 12px calc(12px + env(safe-area-inset-bottom, 0px)); padding: 28px 22px 22px; border-radius: 24px; background: #111316; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.55); text-align: center; animation: phonegate-in 0.28s cubic-bezier(.2,.8,.2,1); }
+@keyframes phonegate-in { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+.phonegate__x { position: absolute; top: 12px; right: 12px; width: 34px; height: 34px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, 0.06); cursor: pointer; }
+.phonegate__x span, .phonegate__x span::after { position: absolute; left: 10px; top: 16px; width: 14px; height: 1.6px; background: #a39d93; transform: rotate(45deg); content: ""; }
+.phonegate__x span::after { left: 0; top: 0; transform: rotate(90deg); }
+.phonegate__eyebrow { margin: 0; font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #c8a96b; }
+.phonegate__title { margin: 10px 0 0; font-size: 23px; line-height: 1.2; letter-spacing: -0.02em; color: #ece7df; }
+.phonegate__body { margin: 10px 0 0; font-size: 15px; line-height: 1.5; color: #a39d93; }
+.phonegate__ios { display: flex; align-items: center; justify-content: center; gap: 10px; height: 54px; margin-top: 22px; border-radius: 14px; background: #c8a96b; color: #17120a; font-weight: 600; font-size: 16px; text-decoration: none; }
+.phonegate__ios svg, .phonegate__play svg { width: 18px; height: 18px; fill: currentColor; }
+.phonegate__play { display: flex; align-items: center; justify-content: center; gap: 8px; height: 48px; margin-top: 10px; border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.1); color: #8e887e; font-size: 14px; }
+html.phonegate-open { overflow: hidden; }

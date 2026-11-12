@@ -98,7 +98,7 @@
         <img src="/logo.png" alt="Finrival" width="91" height="27">
       </a>
       <nav class="nav__links" aria-label="Primary">
-        <a class="nav__terminal" href="/terminal/">Terminal</a>
+        <a class="nav__terminal" href="/terminal/">Web Terminal</a>
         <a href="/product/">Product</a>
         <a href="/ai/">Finrival AI</a>
         <a href="/pro/">PRO</a>
@@ -123,7 +123,7 @@
 
   <div class="mobile-menu" id="mobile-menu">
     <nav aria-label="Mobile">
-      <a class="nav__terminal" href="/terminal/">Terminal</a>
+      <a class="nav__terminal" href="/terminal/">Web Terminal</a>
       <a href="/product/">Product</a>
       <a href="/ai/">Finrival AI</a>
       <a href="/pro/">PRO</a>
@@ -468,7 +468,7 @@
         <div class="footer__col">
           <h4>Product</h4>
           <ul>
-            <li><a href="/terminal/">Terminal</a></li>
+            <li><a href="/terminal/">Web Terminal</a></li>
             <li><a href="/product/">Overview</a></li>
             <li><a href="/ai/">Finrival AI</a></li>
             <li><a href="/pro/">PRO</a></li>
@@ -505,8 +505,21 @@
 
   <!-- Phones: the two ways to start, pinned to the bottom once the visitor scrolls past the hero (site.js) -->
   <div class="getbar" data-getbar aria-label="Start with Finrival">
-    <a class="getbar__btn getbar__btn--gold" href="/terminal/" data-terminal-link><span class="getapp__live" aria-hidden="true"></span>Open Terminal</a>
-    <a class="getbar__btn" href="/#download" data-getbar-app>Get the app</a>
+    <a class="getbar__btn getbar__btn--gold" href="/#download" data-getbar-app>Get the app</a>
+    <a class="getbar__btn" href="/terminal/" data-terminal-link>Web Terminal</a>
+  </div>
+
+  <!-- Phones: the Web Terminal is for laptops and PCs, so its links open this instead (site.js) -->
+  <div class="phonegate" data-phonegate hidden>
+    <div class="phonegate__backdrop" data-phonegate-close></div>
+    <div class="phonegate__sheet" role="dialog" aria-modal="true" aria-labelledby="phonegate-title">
+      <button class="phonegate__x" type="button" data-phonegate-close aria-label="Close"><span></span></button>
+      <p class="phonegate__eyebrow">Web Terminal</p>
+      <h2 class="phonegate__title" id="phonegate-title">The Web Terminal is for laptops and PCs</h2>
+      <p class="phonegate__body">On your phone, get the free Finrival app: markets, comparisons and AI answers on the go</p>
+      <a class="phonegate__ios" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg>Download on the App Store</a>
+      <span class="phonegate__play"><svg><use href="#i-play"/></svg>Google Play · coming soon</span>
+    </div>
   </div>
 
   <!-- ========== Cookie consent ========== -->

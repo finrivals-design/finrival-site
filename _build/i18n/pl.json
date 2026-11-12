@@ -19,7 +19,7 @@
   "nav": {
     "product": "Produkt",
     "support": "Wsparcie",
-    "terminal": "Terminal",
+    "terminal": "Web Terminal",
     "getApp": "Pobierz aplikację"
   },
   "store": {
@@ -130,7 +130,7 @@
   },
   "cta": {
     "title": "Twoje rynki w centrum uwagi",
-    "lead": "Otwórz darmowy Terminal w przeglądarce albo pobierz aplikację z App Store. Android już wkrótce"
+    "lead": "Otwórz darmowy Web Terminal na laptopie lub komputerze albo pobierz aplikację z App Store. Google Play już wkrótce"
   },
   "footer": {
     "tagline": "Analiza rynku, porównania i AI w jednej aplikacji mobilnej",
@@ -443,25 +443,25 @@
     "settings": "Ustawienia cookies"
   },
   "getapp": {
-    "terminalSmall": "Za darmo w przeglądarce",
-    "terminalBig": "Otwórz Terminal",
-    "terminalShort": "Otwórz Terminal",
+    "terminalSmall": "Za darmo na laptopie i PC",
+    "terminalBig": "Otwórz Web Terminal",
+    "terminalShort": "Web Terminal",
     "barLabel": "Zacznij z Finrival"
   },
   "anywhere": {
     "kicker": "Zacznij w kilka sekund",
     "title": "Korzystaj z Finrival, gdziekolwiek jesteś",
     "webTag": "Dostępny teraz",
-    "webTitle": "Terminal w przeglądarce",
-    "webBody": "Liderzy rynku, Porównanie, Wiadomości i Finrival AI na każdym komputerze, bez pobierania",
-    "webCta": "Otwórz Terminal",
+    "webTitle": "Web Terminal",
+    "webBody": "Największe zmiany, Porównania, Wiadomości i Finrival AI na laptopie lub komputerze, bez pobierania",
+    "webCta": "Otwórz Web Terminal",
     "iosTag": "iPhone",
     "iosTitle": "Pełna aplikacja",
     "iosBody": "Pełna aplikacja z alertami, treningiem Rival i listą obserwowanych w kieszeni",
     "iosCta": "Pobierz z App Store",
     "androidTag": "Android",
     "androidTitle": "Już wkrótce",
-    "androidBody": "Trwają testy, wkrótce w Google Play. Do tego czasu Terminal działa w przeglądarce telefonu"
+    "androidBody": "Trwają testy, wkrótce w Google Play. Do tego czasu korzystaj z Web Terminala na laptopie lub komputerze"
   },
   "pulse": {
     "dots": "Każda kropka to spółka · dotknij, aby ją zobaczyć",
@@ -475,7 +475,7 @@
   },
   "ask": {
     "title": "Zapytaj Finrival AI",
-    "sub": "Wpisz pytanie o dowolną spółkę lub rynek, odpowiedź otworzy się w Terminalu",
+    "sub": "Wpisz pytanie o dowolną spółkę lub rynek, odpowiedź otworzy się w Web Terminalu",
     "q1": "Dlaczego Tesla dziś się zmieniła?",
     "q2": "Porównaj Apple i Microsoft",
     "q3": "Co mówi mi wskaźnik C/Z?",
@@ -485,7 +485,7 @@
   "dotcard": {
     "rose": "Wzrost o {p} w ostatnim dniu handlu",
     "fell": "Spadek o {p} w ostatnim dniu handlu",
-    "compare": "Porównaj w Terminalu",
+    "compare": "Porównaj w Web Terminalu",
     "ask": "Zapytaj Finrival AI",
     "askQ": "Krótko opisz {name} ({s}) i co ostatnio wpłynęło na kurs",
     "close": "Zamknij",
@@ -503,5 +503,12 @@
     "legend": "Giganci · Poniżej 10 $ · Tematy przyszłości (AI, chipy, EV, biotech)",
     "groupsLabel": "Pokaż:",
     "groupDesc": "giant=Najbardziej znane firmy świata, jak Apple, Microsoft i Nvidia|under10=Akcje tańsze niż 10 dolarów za sztukę|future=Firmy od AI, chipów, aut elektrycznych i biotechnologii"
+  },
+  "phone": {
+    "title": "Web Terminal jest dla laptopów i komputerów",
+    "body": "Na telefonie pobierz darmową aplikację Finrival: rynki, porównania i odpowiedzi AI w drodze",
+    "ios": "Pobierz z App Store",
+    "play": "Google Play · wkrótce",
+    "close": "Zamknij"
   }
 }

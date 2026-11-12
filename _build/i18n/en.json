@@ -19,7 +19,7 @@
   "nav": {
     "product": "Product",
     "support": "Support",
-    "terminal": "Terminal",
+    "terminal": "Web Terminal",
     "getApp": "Get the app"
   },
   "store": {
@@ -130,7 +130,7 @@
   },
   "cta": {
     "title": "Your markets, in focus",
-    "lead": "Open the free web Terminal now, or get the app on the App Store. Android is coming soon"
+    "lead": "Open the free Web Terminal on your laptop or PC, or get the app on the App Store. Google Play is coming soon"
   },
   "footer": {
     "tagline": "Market research, comparison and AI in one mobile app",
@@ -443,9 +443,9 @@
     "settings": "Cookie settings"
   },
   "getapp": {
-    "terminalSmall": "Free in your browser",
-    "terminalBig": "Open the Terminal",
-    "terminalShort": "Open Terminal",
+    "terminalSmall": "Free on laptop and PC",
+    "terminalBig": "Open the Web Terminal",
+    "terminalShort": "Web Terminal",
     "barLabel": "Start with Finrival"
   },
   "anywhere": {
@@ -453,15 +453,15 @@
     "title": "Use Finrival wherever you are",
     "webTag": "Live now",
     "webTitle": "Web Terminal",
-    "webBody": "Market movers, Compare, News and Finrival AI on any computer, no download needed",
-    "webCta": "Open the Terminal",
+    "webBody": "Market movers, Compare, News and Finrival AI on your laptop or PC, no download needed",
+    "webCta": "Open the Web Terminal",
     "iosTag": "iPhone",
     "iosTitle": "The full app",
     "iosBody": "The full app with alerts, Rival practice and your watchlist in your pocket",
     "iosCta": "Get it on the App Store",
     "androidTag": "Android",
     "androidTitle": "Coming soon",
-    "androidBody": "In testing now and coming soon to Google Play. Until then, the web Terminal works in your phone browser"
+    "androidBody": "In testing now and coming soon to Google Play. Until then, use the Web Terminal on a laptop or PC"
   },
   "pulse": {
     "dots": "Each dot is a company · tap one to see it",
@@ -475,7 +475,7 @@
   },
   "ask": {
     "title": "Ask Finrival AI",
-    "sub": "Type a question about any company or the market, the answer opens in the Terminal",
+    "sub": "Type a question about any company or the market, the answer opens in the Web Terminal",
     "q1": "Why did Tesla move today?",
     "q2": "Compare Apple and Microsoft",
     "q3": "What does a P/E ratio tell me?",
@@ -485,7 +485,7 @@
   "dotcard": {
     "rose": "Went up {p} on the last trading day",
     "fell": "Went down {p} on the last trading day",
-    "compare": "Compare in Terminal",
+    "compare": "Compare in the Web Terminal",
     "ask": "Ask Finrival AI",
     "askQ": "Give me a short overview of {name} ({s}) and what moved it recently",
     "close": "Close",
@@ -503,5 +503,12 @@
     "legend": "Giants · Under $10 · Future themes (AI, chips, EV, biotech)",
     "groupsLabel": "Show me:",
     "groupDesc": "giant=The world’s best-known companies, like Apple, Microsoft and Nvidia|under10=Shares that cost less than $10 each|future=Companies in AI, computer chips, electric cars and biotech"
+  },
+  "phone": {
+    "title": "The Web Terminal is for laptops and PCs",
+    "body": "On your phone, get the free Finrival app: markets, comparisons and AI answers on the go",
+    "ios": "Download on the App Store",
+    "play": "Google Play · coming soon",
+    "close": "Close"
   }
 }

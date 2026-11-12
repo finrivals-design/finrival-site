@@ -523,3 +523,36 @@
     el.textContent = String(new Date().getFullYear());
   });
 })();
+
+/* ---------- Web Terminal is for laptops and PCs: phones get the app ----------
+   Same rule as the Terminal itself (layout.web.js): desktop from 820 px with a mouse, 1024 px on touch. */
+(() => {
+  const gate = document.querySelector("[data-phonegate]");
+  if (!gate) return;
+  const isPhone = () => {
+    const mouse = window.matchMedia("(hover: hover) and (pointer: fine)").matches && !(navigator.maxTouchPoints > 0 && window.matchMedia("(pointer: coarse)").matches);
+    return window.innerWidth < (mouse ? 820 : 1024);
+  };
+  const isTerminal = (url) => {
+    try {
+      const u = new URL(url, location.href);
+      const ours = u.origin === location.origin || u.hostname === "finrival.com" || u.hostname === "www.finrival.com";
+      return ours && (u.pathname === "/terminal" || u.pathname.startsWith("/terminal/"));
+    } catch (e) { return false; }
+  };
+  let last = null;
+  const open = () => { last = document.activeElement; gate.hidden = false; document.documentElement.classList.add("phonegate-open"); gate.querySelector(".phonegate__ios")?.focus(); };
+  const close = () => { gate.hidden = true; document.documentElement.classList.remove("phonegate-open"); last?.focus?.(); };
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a[href]");
+    if (!a || !isPhone() || !isTerminal(a.getAttribute("href"))) return;
+    e.preventDefault(); open();
+  }, true);
+  document.addEventListener("submit", (e) => {
+    const f = e.target;
+    if (!(f instanceof HTMLFormElement) || !isPhone() || !isTerminal(f.getAttribute("action") || "")) return;
+    e.preventDefault(); open();
+  }, true);
+  gate.querySelectorAll("[data-phonegate-close]").forEach((x) => x.addEventListener("click", close));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !gate.hidden) close(); });
+})();

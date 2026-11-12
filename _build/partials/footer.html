@@ -46,6 +46,19 @@
 
   <!-- Phones: the two ways to start, pinned to the bottom once the visitor scrolls past the hero (site.js) -->
   <div class="getbar" data-getbar aria-label="{{getapp.barLabel}}">
-    <a class="getbar__btn getbar__btn--gold" href="/terminal/" data-terminal-link><span class="getapp__live" aria-hidden="true"></span>{{getapp.terminalShort}}</a>
-    <a class="getbar__btn" href="{{@download}}" data-getbar-app>{{nav.getApp}}</a>
+    <a class="getbar__btn getbar__btn--gold" href="{{@download}}" data-getbar-app>{{nav.getApp}}</a>
+    <a class="getbar__btn" href="/terminal/" data-terminal-link>{{getapp.terminalShort}}</a>
+  </div>
+
+  <!-- Phones: the Web Terminal is for laptops and PCs, so its links open this instead (site.js) -->
+  <div class="phonegate" data-phonegate hidden>
+    <div class="phonegate__backdrop" data-phonegate-close></div>
+    <div class="phonegate__sheet" role="dialog" aria-modal="true" aria-labelledby="phonegate-title">
+      <button class="phonegate__x" type="button" data-phonegate-close aria-label="{{phone.close}}"><span></span></button>
+      <p class="phonegate__eyebrow">Web Terminal</p>
+      <h2 class="phonegate__title" id="phonegate-title">{{phone.title}}</h2>
+      <p class="phonegate__body">{{phone.body}}</p>
+      <a class="phonegate__ios" href="{{@appStore}}"><svg><use href="#i-apple"/></svg>{{phone.ios}}</a>
+      <span class="phonegate__play"><svg><use href="#i-play"/></svg>{{phone.play}}</span>
+    </div>
   </div>

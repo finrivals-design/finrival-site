@@ -98,7 +98,7 @@
         <img src="/logo.png" alt="Finrival" width="91" height="27">
       </a>
       <nav class="nav__links" aria-label="Ana menü">
-        <a class="nav__terminal" href="/terminal/">Terminal</a>
+        <a class="nav__terminal" href="/terminal/">Web Terminal</a>
         <a href="/tr/product/">Ürün</a>
         <a href="/tr/ai/">Finrival AI</a>
         <a href="/tr/pro/" aria-current="page">PRO</a>
@@ -123,7 +123,7 @@
 
   <div class="mobile-menu" id="mobile-menu">
     <nav aria-label="Mobil menü">
-      <a class="nav__terminal" href="/terminal/">Terminal</a>
+      <a class="nav__terminal" href="/terminal/">Web Terminal</a>
       <a href="/tr/product/">Ürün</a>
       <a href="/tr/ai/">Finrival AI</a>
       <a href="/tr/pro/" aria-current="page">PRO</a>
@@ -155,7 +155,7 @@
         <p class="lead rise" style="--d:.26s">PRO Finrival'ın çalışma şeklini değiştirmez, ona alan açar: günlük AI soruların 10 katına çıkar, takip listen büyür, Öğren'e konu turları ve Servet Simülatörü'ne makro senaryolar gelir, hepsi reklamsız</p>
         <div class="hero__ctas page-hero__ctas rise" style="--d:.36s">
           <div class="getapp getapp--hero">
-            <a class="getapp__terminal" href="/terminal/" data-terminal-link><span class="getapp__live" aria-hidden="true"></span><span class="store__big">Terminal’i aç</span><svg class="ic getapp__arrow"><use href="#i-arrow"/></svg></a>
+            <a class="getapp__terminal" href="/terminal/" data-terminal-link><span class="getapp__live" aria-hidden="true"></span><span class="store__big">Web Terminal’i aç</span><svg class="ic getapp__arrow"><use href="#i-arrow"/></svg></a>
             <a class="getapp__app" href="#download" data-app-link><svg class="getapp__os"><use href="#i-apple"/></svg><span>Uygulamayı edin</span></a>
           </div>
 
@@ -288,11 +288,11 @@
           <svg viewBox="0 0 64 64"><path d="M10 47L26 31l8 8 17-18" fill="none" stroke="#1fb5c6" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M41 15h14v14z" fill="#1fb5c6"/></svg>
         </div>
         <h2 class="h2" id="cta-title">Piyasalar artık odağında</h2>
-        <p class="lead">Ücretsiz web Terminal’i hemen aç ya da uygulamayı App Store’dan indir. Android yakında geliyor</p>
+        <p class="lead">Ücretsiz Web Terminal’i dizüstü ya da masaüstü bilgisayarında aç veya uygulamayı App Store’dan indir. Google Play çok yakında</p>
           <div class="getapp">
             <a class="getapp__terminal" href="/terminal/" data-terminal-link>
               <span class="getapp__live" aria-hidden="true"></span>
-              <span class="store__text"><span class="store__small">Tarayıcında ücretsiz</span><span class="store__big">Terminal’i aç</span></span>
+              <span class="store__text"><span class="store__small">Bilgisayarda ücretsiz</span><span class="store__big">Web Terminal’i aç</span></span>
               <svg class="ic getapp__arrow"><use href="#i-arrow"/></svg>
             </a>
             <a class="store" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg><span class="store__text"><span class="store__small">App Store'dan</span><span class="store__big">İndirin</span></span></a>
@@ -314,7 +314,7 @@
         <div class="footer__col">
           <h4>Ürün</h4>
           <ul>
-            <li><a href="/terminal/">Terminal</a></li>
+            <li><a href="/terminal/">Web Terminal</a></li>
             <li><a href="/tr/product/">Genel bakış</a></li>
             <li><a href="/tr/ai/">Finrival AI</a></li>
             <li><a href="/tr/pro/">PRO</a></li>
@@ -351,8 +351,21 @@
 
   <!-- Phones: the two ways to start, pinned to the bottom once the visitor scrolls past the hero (site.js) -->
   <div class="getbar" data-getbar aria-label="Finrival ile başla">
-    <a class="getbar__btn getbar__btn--gold" href="/terminal/" data-terminal-link><span class="getapp__live" aria-hidden="true"></span>Terminal’i aç</a>
-    <a class="getbar__btn" href="#download" data-getbar-app>Uygulamayı edin</a>
+    <a class="getbar__btn getbar__btn--gold" href="#download" data-getbar-app>Uygulamayı edin</a>
+    <a class="getbar__btn" href="/terminal/" data-terminal-link>Web Terminal</a>
+  </div>
+
+  <!-- Phones: the Web Terminal is for laptops and PCs, so its links open this instead (site.js) -->
+  <div class="phonegate" data-phonegate hidden>
+    <div class="phonegate__backdrop" data-phonegate-close></div>
+    <div class="phonegate__sheet" role="dialog" aria-modal="true" aria-labelledby="phonegate-title">
+      <button class="phonegate__x" type="button" data-phonegate-close aria-label="Kapat"><span></span></button>
+      <p class="phonegate__eyebrow">Web Terminal</p>
+      <h2 class="phonegate__title" id="phonegate-title">Web Terminal dizüstü ve masaüstü bilgisayarlar için</h2>
+      <p class="phonegate__body">Telefonunda ücretsiz Finrival uygulamasını indir: piyasalar, karşılaştırmalar ve AI yanıtları her yerde</p>
+      <a class="phonegate__ios" href="https://apps.apple.com/app/apple-store/id6802657842?pt=129327647&ct=website&mt=8"><svg><use href="#i-apple"/></svg>App Store’dan indir</a>
+      <span class="phonegate__play"><svg><use href="#i-play"/></svg>Google Play · çok yakında</span>
+    </div>
   </div>
 
   <!-- ========== Cookie consent ========== -->
