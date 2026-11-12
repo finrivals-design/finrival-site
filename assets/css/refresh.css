@@ -1081,3 +1081,61 @@ a.anywhere__card:hover .anywhere__go .ic {
     border-radius: 28px;
   }
 }
+
+/* ===== Phones (v10): dots stay as the hero background; companies become big swipeable cards ===== */
+@media (max-width: 640px) {
+  .pulse .pulse__row .groups { display: flex !important; width: 100%; justify-content: center; padding: 0; border: 0; margin-top: 14px; }
+  .pulse .pulse__row .groups__chip { min-height: 40px; padding: 8px 15px; font-size: 14px; }
+  .pulse .pulse__row { flex-direction: column; }
+  .pulse > .groups__desc { display: block !important; min-height: 2.8em; margin: 10px 0 0; padding-inline: 8px; font-size: 13.5px; color: var(--text-2); }
+
+  .pulse .tiles:not([hidden]) {
+    display: flex !important;
+    gap: 10px;
+    width: calc(100% + 32px);
+    max-width: none;
+    margin: 6px -16px 0;
+    padding: 4px 16px 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    pointer-events: auto;
+    /* soft fade at the right edge says "there is more" */
+    -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent);
+    mask-image: linear-gradient(90deg, #000 85%, transparent);
+  }
+  .pulse .tiles::-webkit-scrollbar { display: none; }
+
+  .pulse .tile {
+    flex: 0 0 118px;
+    scroll-snap-align: start;
+    display: grid;
+    justify-items: start;
+    gap: 1px;
+    min-height: 0;
+    padding: 12px;
+    border-radius: 18px;
+    pointer-events: auto;
+  }
+  .tile__logo {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 8px;
+    border-radius: 12px;
+    background: #f4f6f8;
+    overflow: hidden;
+  }
+  .tile__logo em { font-style: normal; font-size: 11px; font-weight: 800; color: #0d131a; letter-spacing: 0.02em; }
+  .tile__logo img { position: absolute; inset: 3px; width: calc(100% - 6px); height: calc(100% - 6px); object-fit: contain; background: #f4f6f8; }
+  .pulse .tile b { font-size: 15px; }
+  .pulse .tile small { display: block; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 11.5px; color: var(--text-3); }
+  .pulse .tile .tile__chg { margin-top: 6px; font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+
+  /* The company card is a sheet above the bottom bar, with room to breathe */
+  .dotcard { border-radius: 22px; box-shadow: 0 -10px 60px rgba(0, 0, 0, 0.6); }
+}

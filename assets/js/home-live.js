@@ -40,6 +40,7 @@
     let labels = [], focus = null;
     let w = 0, h = 0, dpr = 1, step = 20, cx = -9999, cy = -9999, hover = null, t0 = performance.now(), raf = 0;
     const small = () => w < 700;
+    const phone = () => window.matchMedia("(max-width: 640px)").matches;
 
     // Text and buttons the dots must never sit behind (measured relative to the field)
     const blockers = () => {
@@ -249,6 +250,8 @@
       card.querySelector("[data-f=compare]").href = "/terminal/?compare=" + encodeURIComponent(d.s);
       card.querySelector("[data-f=ask]").href = "/terminal/?ask=" + encodeURIComponent(card.dataset.askQ.replace("{name}", d.n).replace("{s}", d.s));
       card.hidden = false;
+      // Phones: the card is a sheet at the bottom of the screen (CSS); light up the company's dot
+      if (phone()) { hover = d; restart(); return; }
       const left = Math.min(Math.max(d.x - 170, 16), w - 356);
       const fb = field.getBoundingClientRect();
       card.style.left = (fb.left + window.scrollX + left) + "px";
@@ -284,12 +287,19 @@
       const tiles = document.querySelector("[data-tiles]");
       const renderTiles = () => {
         if (!tiles) return;
-        const on = false; // phones use the dot field itself now
+        // Phones: the dots are too small to tap, so the chosen group becomes a swipeable row of
+        // big company cards (logo, ticker, move); a tap opens the company card and lights its dot
+        const on = phone();
         tiles.hidden = !on;
         if (!on) return;
-        const list = dots.filter((d) => d.g === (focus || "giant")).sort((a, b) => Math.abs(b.p) - Math.abs(a.p)).slice(0, 12);
-        tiles.innerHTML = list.map((d, i) => `<button type="button" class="tile ${d.p > 0 ? "up" : "down"}" data-i="${i}"><b>${d.s}</b><small>${d.n.replace(/,? (Inc|Corp|Corporation|Co|Ltd|plc|Holdings|Group)\.?$/i, "")}</small><span>${pctOf(d.p)}</span></button>`).join("");
+        if (!focus) focus = "giant";
+        const list = dots.filter((d) => d.g === focus).sort((a, b) => Math.abs(b.p) - Math.abs(a.p)).slice(0, 14);
+        const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+        tiles.innerHTML = list.map((d, i) => `<button type="button" class="tile ${d.p > 0 ? "up" : "down"}" data-i="${i}"><span class="tile__logo"><em>${esc(d.s.slice(0, 4))}</em><img src="${LOGO + encodeURIComponent(d.s)}" alt="" loading="lazy" width="34" height="34" onerror="this.remove()"></span><b>${esc(d.s)}</b><small>${esc(d.n.replace(/,? (Inc|Corp|Corporation|Co|Ltd|plc|Holdings|Group)\.?$/i, ""))}</small><span class="tile__chg">${pctOf(d.p)}</span></button>`).join("");
+        tiles.scrollLeft = 0;
         tiles.onclick = (e) => { const t = e.target.closest("[data-i]"); if (t) openCard(list[Number(t.dataset.i)]); };
+        legend.querySelectorAll("[data-g]").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.g === focus)));
+        if (descEl) descEl.textContent = desc[focus] || "";
       };
       if (false) {
         focus = "giant";
@@ -297,10 +307,13 @@
         if (descEl) descEl.textContent = desc.giant || "";
       }
       renderTiles();
-      window.addEventListener("resize", renderTiles);
+      // Re-draw only when crossing the phone line (phone address bars fire resize while scrolling)
+      let wasPhone = phone();
+      window.addEventListener("resize", () => { if (phone() !== wasPhone) { wasPhone = phone(); renderTiles(); } });
       legend.addEventListener("click", (e) => {
         const b = e.target.closest("[data-g]"); if (!b) return;
-        focus = small() ? b.dataset.g : focus === b.dataset.g ? null : b.dataset.g;
+        focus = phone() ? b.dataset.g : focus === b.dataset.g ? null : b.dataset.g;
+        if (phone() && card) { card.hidden = true; hover = null; }
         renderTiles();
         legend.querySelectorAll("[data-g]").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.g === focus)));
         if (descEl) descEl.textContent = focus ? desc[focus] || "" : descEl.dataset.hint || "";
@@ -317,7 +330,7 @@
       let date = dataDate || "";
       try { date = new Intl.DateTimeFormat(lang, { day: "numeric", month: "short", timeZone: "UTC" }).format(new Date(dataDate + "T12:00:00Z")); } catch (e) {}
       const down = dots.filter((d) => d.p < 0).length;
-      caption.innerHTML = `<span class="lg lg--up"><i></i>${caption.dataset.up.replace("{n}", up)}</span><span class="lg lg--down"><i></i>${caption.dataset.down.replace("{n}", down)}</span><span class="lg lg--tap">${caption.dataset.tpl}</span>`;
+      caption.innerHTML = `<span class="lg lg--up"><i></i>${caption.dataset.up.replace("{n}", up)}</span><span class="lg lg--down"><i></i>${caption.dataset.down.replace("{n}", down)}</span>`;
       const hintEl = document.querySelector("[data-groups-desc]");
       if (hintEl) { hintEl.dataset.hint = caption.dataset.tpl; if (!focus) hintEl.textContent = caption.dataset.tpl; }
       caption.hidden = false;
