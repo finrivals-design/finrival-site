@@ -20,7 +20,8 @@
     "product": "Product",
     "support": "Support",
     "terminal": "Web Terminal",
-    "getApp": "Get the app"
+    "getApp": "Get the app",
+    "learn": "Learn"
   },
   "store": {
     "appleSmall": "Download on the",
@@ -145,7 +146,9 @@
     "nature": "Informational, educational and simulation-focused",
     "disclaimer": "Not investment advice · Finrival does not execute trades · Market data may be delayed · AI answers can be inaccurate and should be verified independently · Rival uses fictional credits only",
     "trademarks": "App Store is a trademark of Apple Inc · Google Play and the Google Play logo are trademarks of Google LLC · Company names and logos in app screens belong to their respective owners",
-    "help": "Help"
+    "help": "Help",
+    "about": "About Finrival",
+    "learn": "Finrival Learn"
   },
   "productPage": {
     "metaTitle": "Finrival Product | One app, one research loop",
@@ -433,6 +436,54 @@
       "title": "Delete your account",
       "lead": "Delete your account in the app, or ask us from this page if you no longer have the app or can't sign in",
       "meta": "Questions: support@finrival.com"
+    },
+    "about": {
+      "metaTitle": "About Finrival",
+      "metaDescription": "Who builds Finrival, why it exists, where its market data comes from and what it will never do",
+      "kicker": "About",
+      "title": "About Finrival",
+      "lead": "An independent product from Kraków that helps curious people understand markets, compare companies and practise with fictional money",
+      "meta": "Updated 14 November 2026"
+    },
+    "learn": {
+      "metaTitle": "Finrival Learn | Free guides to how markets work",
+      "metaDescription": "Plain-language guides to stocks, market cap, candlestick charts and the daily movers, with real examples",
+      "kicker": "Finrival Learn",
+      "title": "Learn how markets work",
+      "lead": "Short, plain-language guides to the ideas behind every Finrival screen, with real examples and no jargon",
+      "meta": "Free · No sign-up · Updated 14 November 2026"
+    },
+    "learn-stock": {
+      "metaTitle": "What is a stock? | Finrival Learn",
+      "metaDescription": "What you own when you own a share, why companies sell them and why the price changes every day",
+      "kicker": "Finrival Learn · Basics",
+      "title": "What is a stock?",
+      "lead": "What you actually own when you own a share, and why its price moves every day",
+      "meta": "5 min read · Updated 14 November 2026"
+    },
+    "learn-marketcap": {
+      "metaTitle": "Market cap, explained | Finrival Learn",
+      "metaDescription": "How market capitalisation is calculated, why share price alone misleads and how companies are sized",
+      "kicker": "Finrival Learn · Basics",
+      "title": "Market cap, explained",
+      "lead": "Why a $10 stock can belong to a bigger company than a $300 one, and how companies are sized",
+      "meta": "5 min read · Updated 14 November 2026"
+    },
+    "learn-candles": {
+      "metaTitle": "How to read a candlestick chart | Finrival Learn",
+      "metaDescription": "Open, high, low and close in one shape: how to read single candles and a run of them, step by step",
+      "kicker": "Finrival Learn · Charts",
+      "title": "How to read a candlestick chart",
+      "lead": "Four prices in one shape, and what a run of candles can and cannot tell you",
+      "meta": "6 min read · Updated 14 November 2026"
+    },
+    "learn-movers": {
+      "metaTitle": "Top Gainers and Top Decliners, explained | Finrival Learn",
+      "metaDescription": "How the daily lists of biggest movers are made, why some stocks move so much and what the lists never tell you",
+      "kicker": "Finrival Learn · Market",
+      "title": "Top Gainers and Top Decliners",
+      "lead": "What the daily lists of biggest movers show, and what they never tell you",
+      "meta": "5 min read · Updated 14 November 2026"
     }
   },
   "consent": {

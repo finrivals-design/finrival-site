@@ -1,0 +1,60 @@
+          <div class="glance">
+            <div class="glance__item"><b>One candle = one period</b><span>A day, an hour or a minute, depending on the chart.</span></div>
+            <div class="glance__item"><b>Four prices in one shape</b><span>Open, high, low and close.</span></div>
+            <div class="glance__item"><b>Colour shows direction</b><span>Up candles closed above their open; down candles below.</span></div>
+          </div>
+
+          <section>
+            <h2 id="anatomy">The anatomy of a candle</h2>
+            <p>A line chart joins one price per period, usually the close. A <strong>candlestick</strong> shows four prices for each period in a single shape:</p>
+            <figure>
+              <svg viewBox="0 0 420 220" role="img" aria-label="Two candles: an up candle and a down candle, with open, close, high and low labelled" style="max-width:420px;width:100%;height:auto">
+                <line x1="110" y1="20" x2="110" y2="200" stroke="currentColor" stroke-width="2"/>
+                <rect x="85" y="60" width="50" height="100" fill="#2BC48A"/>
+                <text x="150" y="25" fill="currentColor" font-size="13">High</text>
+                <text x="150" y="65" fill="currentColor" font-size="13">Close</text>
+                <text x="150" y="160" fill="currentColor" font-size="13">Open</text>
+                <text x="150" y="200" fill="currentColor" font-size="13">Low</text>
+                <text x="80" y="216" fill="currentColor" font-size="12">Up candle</text>
+                <line x1="300" y1="30" x2="300" y2="190" stroke="currentColor" stroke-width="2"/>
+                <rect x="275" y="70" width="50" height="80" fill="#F2565C"/>
+                <text x="340" y="75" fill="currentColor" font-size="13">Open</text>
+                <text x="340" y="150" fill="currentColor" font-size="13">Close</text>
+                <text x="262" y="216" fill="currentColor" font-size="12">Down candle</text>
+              </svg>
+            </figure>
+            <ul>
+              <li>The thick part, the <strong>body</strong>, runs from the opening price to the closing price.</li>
+              <li>The thin lines above and below, the <strong>wicks</strong> or shadows, reach the highest and lowest prices of the period.</li>
+              <li>If the close is above the open, the candle is an <strong>up candle</strong>, usually green. If the close is below the open, it is a <strong>down candle</strong>, usually red.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 id="reading">Reading a single candle</h2>
+            <p>The shape tells a short story about the period:</p>
+            <ul>
+              <li><strong>A long body, short wicks</strong>: the price moved firmly in one direction and stayed there.</li>
+              <li><strong>A small body, long wicks</strong>: the price swung a lot but finished near where it started. Buyers and sellers were undecided.</li>
+              <li><strong>A long lower wick</strong>: the price fell during the period but recovered before the close.</li>
+              <li><strong>A long upper wick</strong>: the price rose during the period but gave back most of the gain.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 id="series">Reading a run of candles</h2>
+            <p>One candle shows one period; a chart of many shows how the price has behaved over time. A series of higher closes suggests an upward trend; a series of lower closes, a downward one. Large candles mean big daily swings, which is a sign of higher volatility.</p>
+            <p>Traders give names to many candle patterns. They can be a useful vocabulary, but no pattern predicts the next move reliably. A chart describes what already happened; it does not know what news comes tomorrow.</p>
+          </section>
+
+          <section>
+            <h2 id="timeframes">Daily, hourly and one-minute candles</h2>
+            <p>The same company looks different at different timeframes. A daily chart, where each candle is one trading day, shows the bigger picture over weeks and months. A one-minute chart shows the noise inside a single day. Most beginners learn more from daily candles first.</p>
+            <p>Note that some longer ranges are drawn as a line instead of candles. When a chart covers many years, showing every daily candle would be unreadable, so the line follows the closing prices.</p>
+          </section>
+
+          <section>
+            <h2 id="try">Try it in Finrival</h2>
+            <p>In the <a href="/terminal/">Web Terminal</a>, open any company's chart and switch between the line and candle views on a one-month range. Find the day with the longest body and check the news for that date. Live one-minute candles are available with PRO, or for 15 minutes after a short video in the Finrival app.</p>
+            <p>Next: <a href="{{@link:/learn/gainers-and-decliners/}}">Top Gainers and Top Decliners</a>.</p>
+          </section>

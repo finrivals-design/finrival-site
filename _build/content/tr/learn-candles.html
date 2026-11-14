@@ -1,0 +1,59 @@
+          <div class="glance">
+            <div class="glance__item"><b>Bir mum = bir dönem</b><span>Grafiğe göre bir gün, bir saat ya da bir dakika.</span></div>
+            <div class="glance__item"><b>Tek şekilde dört fiyat</b><span>Açılış, en yüksek, en düşük ve kapanış.</span></div>
+            <div class="glance__item"><b>Renk yönü gösterir</b><span>Yükselen mumlar açılışın üzerinde, düşen mumlar altında kapanmıştır.</span></div>
+          </div>
+
+          <section>
+            <h2 id="anatomy">Bir mumun yapısı</h2>
+            <p>Çizgi grafik her dönem için bir fiyatı, genellikle kapanışı birleştirir. <strong>Mum grafiği</strong> ise her dönem için dört fiyatı tek bir şekilde gösterir:</p>
+            <figure>
+              <svg viewBox="0 0 420 220" role="img" aria-label="İki mum: yükselen ve düşen mum; açılış, kapanış, en yüksek ve en düşük etiketli" style="max-width:420px;width:100%;height:auto">
+                <line x1="110" y1="20" x2="110" y2="200" stroke="currentColor" stroke-width="2"/>
+                <rect x="85" y="60" width="50" height="100" fill="#2BC48A"/>
+                <text x="150" y="25" fill="currentColor" font-size="13">En yüksek</text>
+                <text x="150" y="65" fill="currentColor" font-size="13">Kapanış</text>
+                <text x="150" y="160" fill="currentColor" font-size="13">Açılış</text>
+                <text x="150" y="200" fill="currentColor" font-size="13">En düşük</text>
+                <text x="70" y="216" fill="currentColor" font-size="12">Yükselen mum</text>
+                <line x1="300" y1="30" x2="300" y2="190" stroke="currentColor" stroke-width="2"/>
+                <rect x="275" y="70" width="50" height="80" fill="#F2565C"/>
+                <text x="340" y="75" fill="currentColor" font-size="13">Açılış</text>
+                <text x="340" y="150" fill="currentColor" font-size="13">Kapanış</text>
+                <text x="262" y="216" fill="currentColor" font-size="12">Düşen mum</text>
+              </svg>
+            </figure>
+            <ul>
+              <li>Kalın kısım, yani <strong>gövde</strong>, açılış fiyatından kapanış fiyatına uzanır.</li>
+              <li>Üstteki ve alttaki ince çizgiler, yani <strong>fitiller</strong>, dönemin en yüksek ve en düşük fiyatlarına ulaşır.</li>
+              <li>Kapanış açılışın üzerindeyse mum <strong>yükselen mumdur</strong>, genellikle yeşildir. Kapanış açılışın altındaysa <strong>düşen mumdur</strong>, genellikle kırmızıdır.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 id="reading">Tek bir mumu okumak</h2>
+            <ul>
+              <li><strong>Uzun gövde, kısa fitiller</strong>: fiyat bir yönde kararlı şekilde hareket etti ve orada kaldı.</li>
+              <li><strong>Küçük gövde, uzun fitiller</strong>: fiyat çok dalgalandı ama başladığı yere yakın bitti. Alıcılar ve satıcılar kararsızdı.</li>
+              <li><strong>Uzun alt fitil</strong>: fiyat dönem içinde düştü ama kapanıştan önce toparlandı.</li>
+              <li><strong>Uzun üst fitil</strong>: fiyat dönem içinde yükseldi ama kazancın çoğunu geri verdi.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 id="series">Bir mum dizisini okumak</h2>
+            <p>Tek bir mum bir dönemi gösterir; birçok mumdan oluşan grafik ise fiyatın zaman içinde nasıl davrandığını. Art arda yükselen kapanışlar yükseliş eğilimine, art arda düşen kapanışlar düşüş eğilimine işaret eder. Büyük mumlar büyük günlük dalgalanmalar, yani daha yüksek oynaklık demektir.</p>
+            <p>İşlemciler birçok mum formasyonuna isim verir. Bunlar faydalı bir kelime dağarcığı olabilir ama hiçbir formasyon bir sonraki hareketi güvenilir şekilde tahmin etmez. Grafik olanı anlatır; yarın gelecek haberi bilmez.</p>
+          </section>
+
+          <section>
+            <h2 id="timeframes">Günlük, saatlik ve bir dakikalık mumlar</h2>
+            <p>Aynı şirket farklı zaman dilimlerinde farklı görünür. Her mumun bir işlem günü olduğu günlük grafik, haftalar ve aylar boyunca büyük resmi gösterir. Bir dakikalık grafik ise tek bir günün içindeki gürültüyü gösterir. Yeni başlayanlar önce günlük mumlardan daha çok şey öğrenir.</p>
+            <p>Bazı uzun aralıklar mum yerine çizgi olarak çizilir. Grafik birçok yılı kapsadığında her günlük mumu göstermek okunamaz olurdu, bu yüzden çizgi kapanış fiyatlarını izler.</p>
+          </section>
+
+          <section>
+            <h2 id="try">Finrival'de dene</h2>
+            <p><a href="/terminal/">Web Terminal</a>'de herhangi bir şirketin grafiğini aç ve bir aylık aralıkta çizgi ile mum görünümü arasında geçiş yap. Gövdesi en uzun günü bul ve o tarihin haberlerine bak. Canlı bir dakikalık mumlar PRO ile ya da Finrival uygulamasında kısa bir video izledikten sonra 15 dakika boyunca açıktır.</p>
+            <p>Sıradaki: <a href="{{@link:/learn/gainers-and-decliners/}}">En Çok Yükselenler ve En Çok Düşenler</a></p>
+          </section>

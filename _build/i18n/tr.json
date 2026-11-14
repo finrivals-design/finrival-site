@@ -20,7 +20,8 @@
     "product": "Ürün",
     "support": "Destek",
     "terminal": "Web Terminal",
-    "getApp": "Uygulamayı edin"
+    "getApp": "Uygulamayı edin",
+    "learn": "Öğren"
   },
   "store": {
     "appleSmall": "App Store'dan",
@@ -145,7 +146,9 @@
     "nature": "Bilgilendirme, eğitim ve simülasyon amaçlıdır",
     "disclaimer": "Yatırım tavsiyesi değildir · Finrival işlem gerçekleştirmez · Piyasa verileri gecikmeli olabilir · AI yanıtları hatalı olabilir ve bağımsız olarak doğrulanmalıdır · Rival yalnızca kurgusal kredi kullanır",
     "trademarks": "App Store, Apple Inc'in ticari markasıdır · Google Play ve Google Play logosu Google LLC'nin ticari markalarıdır · Uygulama ekranlarındaki şirket adları ve logolar sahiplerine aittir",
-    "help": "Yardım"
+    "help": "Yardım",
+    "about": "Finrival hakkında",
+    "learn": "Finrival Learn"
   },
   "productPage": {
     "metaTitle": "Finrival Ürün | Tek uygulama, tek araştırma döngüsü",
@@ -433,6 +436,54 @@
       "title": "Hesabını sil",
       "lead": "Hesabını uygulamadan sil ya da uygulaman yoksa veya giriş yapamıyorsan bu sayfadan bize yaz",
       "meta": "Sorular: support@finrival.com"
+    },
+    "about": {
+      "metaTitle": "Finrival hakkında",
+      "metaDescription": "Finrival’i kim geliştiriyor, neden var, piyasa verileri nereden geliyor ve asla neyi yapmaz",
+      "kicker": "Hakkında",
+      "title": "Finrival hakkında",
+      "lead": "Meraklı insanların piyasaları anlamasına, şirketleri kıyaslamasına ve hayali parayla pratik yapmasına yardım eden, Krakow’dan bağımsız bir ürün",
+      "meta": "Güncelleme: 14 Kasım 2026"
+    },
+    "learn": {
+      "metaTitle": "Finrival Learn | Piyasalar nasıl işler, ücretsiz rehberler",
+      "metaDescription": "Hisseler, piyasa değeri, mum grafikleri ve günün en büyük hareketleri hakkında gerçek örneklerle sade rehberler",
+      "kicker": "Finrival Learn",
+      "title": "Piyasalar nasıl işler, öğren",
+      "lead": "Her Finrival ekranının ardındaki fikirlere dair kısa, sade rehberler; gerçek örneklerle ve jargonsuz",
+      "meta": "Ücretsiz · Kayıt gerekmez · Güncelleme: 14 Kasım 2026"
+    },
+    "learn-stock": {
+      "metaTitle": "Hisse senedi nedir? | Finrival Learn",
+      "metaDescription": "Bir hisseye sahip olduğunda neye sahip olursun, şirketler neden hisse satar ve fiyat neden her gün değişir",
+      "kicker": "Finrival Learn · Temeller",
+      "title": "Hisse senedi nedir?",
+      "lead": "Bir hisseye sahip olduğunda gerçekte neye sahip olursun ve fiyatı neden her gün değişir",
+      "meta": "5 dk okuma · Güncelleme: 14 Kasım 2026"
+    },
+    "learn-marketcap": {
+      "metaTitle": "Piyasa değeri nedir? | Finrival Learn",
+      "metaDescription": "Piyasa değeri nasıl hesaplanır, hisse fiyatı tek başına neden yanıltır ve şirketler nasıl büyüklüğe göre gruplanır",
+      "kicker": "Finrival Learn · Temeller",
+      "title": "Piyasa değeri nedir?",
+      "lead": "10 dolarlık bir hisse neden 300 dolarlık bir hisseden daha büyük bir şirkete ait olabilir",
+      "meta": "5 dk okuma · Güncelleme: 14 Kasım 2026"
+    },
+    "learn-candles": {
+      "metaTitle": "Mum grafiği nasıl okunur? | Finrival Learn",
+      "metaDescription": "Açılış, en yüksek, en düşük ve kapanış tek şekilde: tek mumları ve mum dizilerini adım adım okumak",
+      "kicker": "Finrival Learn · Grafikler",
+      "title": "Mum grafiği nasıl okunur?",
+      "lead": "Tek bir şekilde dört fiyat ve bir mum dizisinin anlatabildikleri ile anlatamadıkları",
+      "meta": "6 dk okuma · Güncelleme: 14 Kasım 2026"
+    },
+    "learn-movers": {
+      "metaTitle": "En Çok Yükselenler ve En Çok Düşenler | Finrival Learn",
+      "metaDescription": "Günün en büyük hareketlerini gösteren listeler nasıl oluşur, bazı hisseler neden bu kadar oynar ve listeler neyi asla söylemez",
+      "kicker": "Finrival Learn · Piyasa",
+      "title": "En Çok Yükselenler ve En Çok Düşenler",
+      "lead": "Günün en büyük hareketlerini gösteren listeler neyi anlatır ve neyi asla anlatmaz",
+      "meta": "5 dk okuma · Güncelleme: 14 Kasım 2026"
     }
   },
   "consent": {

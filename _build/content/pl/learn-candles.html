@@ -1,0 +1,59 @@
+          <div class="glance">
+            <div class="glance__item"><b>Jedna świeca = jeden okres</b><span>Dzień, godzina lub minuta, zależnie od wykresu.</span></div>
+            <div class="glance__item"><b>Cztery ceny w jednym kształcie</b><span>Otwarcie, maksimum, minimum i zamknięcie.</span></div>
+            <div class="glance__item"><b>Kolor pokazuje kierunek</b><span>Świece wzrostowe zamknęły się powyżej otwarcia, spadkowe poniżej.</span></div>
+          </div>
+
+          <section>
+            <h2 id="anatomy">Budowa świecy</h2>
+            <p>Wykres liniowy łączy jedną cenę na okres, zwykle zamknięcie. <strong>Świeca</strong> pokazuje cztery ceny dla każdego okresu w jednym kształcie:</p>
+            <figure>
+              <svg viewBox="0 0 420 220" role="img" aria-label="Dwie świece: wzrostowa i spadkowa, z opisanym otwarciem, zamknięciem, maksimum i minimum" style="max-width:420px;width:100%;height:auto">
+                <line x1="110" y1="20" x2="110" y2="200" stroke="currentColor" stroke-width="2"/>
+                <rect x="85" y="60" width="50" height="100" fill="#2BC48A"/>
+                <text x="150" y="25" fill="currentColor" font-size="13">Maksimum</text>
+                <text x="150" y="65" fill="currentColor" font-size="13">Zamknięcie</text>
+                <text x="150" y="160" fill="currentColor" font-size="13">Otwarcie</text>
+                <text x="150" y="200" fill="currentColor" font-size="13">Minimum</text>
+                <text x="66" y="216" fill="currentColor" font-size="12">Świeca wzrostowa</text>
+                <line x1="300" y1="30" x2="300" y2="190" stroke="currentColor" stroke-width="2"/>
+                <rect x="275" y="70" width="50" height="80" fill="#F2565C"/>
+                <text x="340" y="75" fill="currentColor" font-size="13">Otwarcie</text>
+                <text x="340" y="150" fill="currentColor" font-size="13">Zamknięcie</text>
+                <text x="252" y="216" fill="currentColor" font-size="12">Świeca spadkowa</text>
+              </svg>
+            </figure>
+            <ul>
+              <li>Gruba część, czyli <strong>korpus</strong>, biegnie od ceny otwarcia do ceny zamknięcia.</li>
+              <li>Cienkie linie nad i pod nim, czyli <strong>knoty</strong> (cienie), sięgają najwyższej i najniższej ceny okresu.</li>
+              <li>Jeśli zamknięcie jest powyżej otwarcia, to <strong>świeca wzrostowa</strong>, zwykle zielona. Jeśli poniżej, to <strong>świeca spadkowa</strong>, zwykle czerwona.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 id="reading">Czytanie pojedynczej świecy</h2>
+            <ul>
+              <li><strong>Długi korpus, krótkie knoty</strong>: cena wyraźnie ruszyła w jedną stronę i tam pozostała.</li>
+              <li><strong>Mały korpus, długie knoty</strong>: cena mocno się wahała, ale skończyła blisko punktu startu. Kupujący i sprzedający byli niezdecydowani.</li>
+              <li><strong>Długi dolny knot</strong>: cena spadła w trakcie okresu, ale odrobiła straty przed zamknięciem.</li>
+              <li><strong>Długi górny knot</strong>: cena wzrosła w trakcie okresu, ale oddała większość zysku.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 id="series">Czytanie serii świec</h2>
+            <p>Jedna świeca pokazuje jeden okres; wykres wielu świec pokazuje, jak cena zachowywała się w czasie. Seria coraz wyższych zamknięć sugeruje trend wzrostowy, seria coraz niższych – spadkowy. Duże świece oznaczają duże dzienne wahania, czyli wyższą zmienność.</p>
+            <p>Inwestorzy nadają nazwy wielu formacjom świecowym. To przydatne słownictwo, ale żadna formacja nie przewiduje wiarygodnie następnego ruchu. Wykres opisuje to, co już się stało; nie zna jutrzejszych wiadomości.</p>
+          </section>
+
+          <section>
+            <h2 id="timeframes">Świece dzienne, godzinowe i minutowe</h2>
+            <p>Ta sama spółka wygląda inaczej w różnych interwałach. Wykres dzienny, w którym każda świeca to jeden dzień sesyjny, pokazuje szerszy obraz w skali tygodni i miesięcy. Wykres minutowy pokazuje szum wewnątrz jednego dnia. Początkujący zwykle więcej uczą się najpierw ze świec dziennych.</p>
+            <p>Niektóre długie zakresy są rysowane jako linia zamiast świec. Przy wykresie obejmującym wiele lat pokazanie każdej świecy dziennej byłoby nieczytelne, więc linia podąża za cenami zamknięcia.</p>
+          </section>
+
+          <section>
+            <h2 id="try">Wypróbuj w Finrival</h2>
+            <p>W <a href="/terminal/">Web Terminal</a> otwórz wykres dowolnej spółki i przełączaj się między widokiem liniowym a świecowym w zakresie jednego miesiąca. Znajdź dzień z najdłuższym korpusem i sprawdź wiadomości z tej daty. Świece minutowe na żywo są dostępne z PRO albo przez 15 minut po krótkim filmie w aplikacji Finrival.</p>
+            <p>Dalej: <a href="{{@link:/learn/gainers-and-decliners/}}">Największe wzrosty i spadki</a></p>
+          </section>

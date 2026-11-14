@@ -169,6 +169,132 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/delete-account/"/>
   </url>
   <url>
+    <loc>https://finrival.com/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finrival.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://finrival.com/tr/about/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/about/"/>
+  </url>
+  <url>
+    <loc>https://finrival.com/tr/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finrival.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://finrival.com/tr/about/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/about/"/>
+  </url>
+  <url>
+    <loc>https://finrival.com/pl/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finrival.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://finrival.com/tr/about/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/about/"/>
+  </url>
+  <url>
+    <loc>https://finrival.com/learn/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finrival.com/learn/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://finrival.com/tr/learn/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/learn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/learn/"/>
+  </url>
+  <url>
+    <loc>https://finrival.com/tr/learn/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finrival.com/learn/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://finrival.com/tr/learn/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/learn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/learn/"/>
+  </url>
+  <url>
+    <loc>https://finrival.com/pl/learn/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finrival.com/learn/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://finrival.com/tr/learn/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/learn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/learn/"/>
+  </url>
+  <url>
+    <loc>https://finrival.com/learn/what-is-a-stock/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finrival.com/learn/what-is-a-stock/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://finrival.com/tr/learn/what-is-a-stock/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/learn/what-is-a-stock/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/learn/what-is-a-stock/"/>
+  </url>
+  <url>
+    <loc>https://finrival.com/tr/learn/what-is-a-stock/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finrival.com/learn/what-is-a-stock/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://finrival.com/tr/learn/what-is-a-stock/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/learn/what-is-a-stock/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/learn/what-is-a-stock/"/>
+  </url>
+  <url>
+    <loc>https://finrival.com/pl/learn/what-is-a-stock/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finrival.com/learn/what-is-a-stock/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://finrival.com/tr/learn/what-is-a-stock/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/learn/what-is-a-stock/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/learn/what-is-a-stock/"/>
+  </url>
+  <url>
+    <loc>https://finrival.com/learn/market-cap/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finrival.com/learn/market-cap/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://finrival.com/tr/learn/market-cap/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/learn/market-cap/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/learn/market-cap/"/>
+  </url>
+  <url>
+    <loc>https://finrival.com/tr/learn/market-cap/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finrival.com/learn/market-cap/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://finrival.com/tr/learn/market-cap/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/learn/market-cap/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/learn/market-cap/"/>
+  </url>
+  <url>
+    <loc>https://finrival.com/pl/learn/market-cap/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finrival.com/learn/market-cap/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://finrival.com/tr/learn/market-cap/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/learn/market-cap/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/learn/market-cap/"/>
+  </url>
+  <url>
+    <loc>https://finrival.com/learn/candlestick-charts/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finrival.com/learn/candlestick-charts/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://finrival.com/tr/learn/candlestick-charts/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/learn/candlestick-charts/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/learn/candlestick-charts/"/>
+  </url>
+  <url>
+    <loc>https://finrival.com/tr/learn/candlestick-charts/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finrival.com/learn/candlestick-charts/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://finrival.com/tr/learn/candlestick-charts/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/learn/candlestick-charts/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/learn/candlestick-charts/"/>
+  </url>
+  <url>
+    <loc>https://finrival.com/pl/learn/candlestick-charts/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finrival.com/learn/candlestick-charts/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://finrival.com/tr/learn/candlestick-charts/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/learn/candlestick-charts/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/learn/candlestick-charts/"/>
+  </url>
+  <url>
+    <loc>https://finrival.com/learn/gainers-and-decliners/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finrival.com/learn/gainers-and-decliners/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://finrival.com/tr/learn/gainers-and-decliners/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/learn/gainers-and-decliners/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/learn/gainers-and-decliners/"/>
+  </url>
+  <url>
+    <loc>https://finrival.com/tr/learn/gainers-and-decliners/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finrival.com/learn/gainers-and-decliners/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://finrival.com/tr/learn/gainers-and-decliners/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/learn/gainers-and-decliners/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/learn/gainers-and-decliners/"/>
+  </url>
+  <url>
+    <loc>https://finrival.com/pl/learn/gainers-and-decliners/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://finrival.com/learn/gainers-and-decliners/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://finrival.com/tr/learn/gainers-and-decliners/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://finrival.com/pl/learn/gainers-and-decliners/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://finrival.com/learn/gainers-and-decliners/"/>
+  </url>
+  <url>
     <loc>https://finrival.com/terminal/</loc>
   </url>
 </urlset>

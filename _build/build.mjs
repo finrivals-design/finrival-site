@@ -42,6 +42,13 @@ const PAGES = [
   { path: "/privacy/", template: "legal.html", doc: "privacy" },
   { path: "/terms/", template: "legal.html", doc: "terms" },
   { path: "/delete-account/", template: "legal.html", doc: "delete" },
+  // About and Finrival Learn guides: same document layout, text in _build/content/<lang>/<doc>.html
+  { path: "/about/", template: "legal.html", doc: "about" },
+  { path: "/learn/", template: "legal.html", doc: "learn" },
+  { path: "/learn/what-is-a-stock/", template: "legal.html", doc: "learn-stock" },
+  { path: "/learn/market-cap/", template: "legal.html", doc: "learn-marketcap" },
+  { path: "/learn/candlestick-charts/", template: "legal.html", doc: "learn-candles" },
+  { path: "/learn/gainers-and-decliners/", template: "legal.html", doc: "learn-movers" },
   // GitHub Pages serves the root /404.html for missing URLs; it loads /tr/ or /pl/404.html itself
   { path: "/404.html", template: "404.html", noindex: true },
 ];

@@ -20,7 +20,8 @@
     "product": "Produkt",
     "support": "Wsparcie",
     "terminal": "Web Terminal",
-    "getApp": "Pobierz aplikację"
+    "getApp": "Pobierz aplikację",
+    "learn": "Nauka"
   },
   "store": {
     "appleSmall": "Pobierz z",
@@ -145,7 +146,9 @@
     "nature": "Charakter informacyjny, edukacyjny i symulacyjny",
     "disclaimer": "To nie jest porada inwestycyjna · Finrival nie wykonuje transakcji · Dane rynkowe mogą być opóźnione · Odpowiedzi AI mogą być nieprecyzyjne i warto je weryfikować · Rival korzysta wyłącznie z fikcyjnych kredytów",
     "trademarks": "App Store jest znakiem towarowym Apple Inc · Google Play i logo Google Play są znakami towarowymi Google LLC · Nazwy firm i logotypy widoczne na ekranach aplikacji należą do ich właścicieli",
-    "help": "Pomoc"
+    "help": "Pomoc",
+    "about": "O Finrival",
+    "learn": "Finrival Learn"
   },
   "productPage": {
     "metaTitle": "Finrival Produkt | Jedna aplikacja, jeden cykl analizy",
@@ -433,6 +436,54 @@
       "title": "Usuń swoje konto",
       "lead": "Usuń konto w aplikacji lub napisz do nas z tej strony, jeśli nie masz już aplikacji lub nie możesz się zalogować",
       "meta": "Pytania: support@finrival.com"
+    },
+    "about": {
+      "metaTitle": "O Finrival",
+      "metaDescription": "Kto tworzy Finrival, dlaczego powstał, skąd pochodzą dane rynkowe i czego nigdy nie robi",
+      "kicker": "O nas",
+      "title": "O Finrival",
+      "lead": "Niezależny produkt z Krakowa, który pomaga ciekawym ludziom rozumieć rynki, porównywać spółki i ćwiczyć na fikcyjnych pieniądzach",
+      "meta": "Aktualizacja: 14 listopada 2026"
+    },
+    "learn": {
+      "metaTitle": "Finrival Learn | Darmowe przewodniki po rynkach",
+      "metaDescription": "Przystępne przewodniki o akcjach, kapitalizacji, wykresach świecowych i największych dziennych zmianach, na prawdziwych przykładach",
+      "kicker": "Finrival Learn",
+      "title": "Poznaj, jak działają rynki",
+      "lead": "Krótkie, przystępne przewodniki o ideach stojących za każdym ekranem Finrival, na prawdziwych przykładach i bez żargonu",
+      "meta": "Za darmo · Bez rejestracji · Aktualizacja: 14 listopada 2026"
+    },
+    "learn-stock": {
+      "metaTitle": "Czym jest akcja? | Finrival Learn",
+      "metaDescription": "Co posiadasz, gdy masz akcję, dlaczego spółki je sprzedają i dlaczego cena zmienia się każdego dnia",
+      "kicker": "Finrival Learn · Podstawy",
+      "title": "Czym jest akcja?",
+      "lead": "Co naprawdę posiadasz, gdy masz akcję, i dlaczego jej cena zmienia się każdego dnia",
+      "meta": "5 min czytania · Aktualizacja: 14 listopada 2026"
+    },
+    "learn-marketcap": {
+      "metaTitle": "Kapitalizacja rynkowa w prostych słowach | Finrival Learn",
+      "metaDescription": "Jak liczy się kapitalizację, dlaczego sama cena akcji wprowadza w błąd i jak dzieli się spółki według wielkości",
+      "kicker": "Finrival Learn · Podstawy",
+      "title": "Kapitalizacja rynkowa w prostych słowach",
+      "lead": "Dlaczego akcja za 10 USD może należeć do większej spółki niż akcja za 300 USD",
+      "meta": "5 min czytania · Aktualizacja: 14 listopada 2026"
+    },
+    "learn-candles": {
+      "metaTitle": "Jak czytać wykres świecowy | Finrival Learn",
+      "metaDescription": "Otwarcie, maksimum, minimum i zamknięcie w jednym kształcie: jak krok po kroku czytać pojedyncze świece i ich serie",
+      "kicker": "Finrival Learn · Wykresy",
+      "title": "Jak czytać wykres świecowy",
+      "lead": "Cztery ceny w jednym kształcie oraz to, co seria świec może, a czego nie może powiedzieć",
+      "meta": "6 min czytania · Aktualizacja: 14 listopada 2026"
+    },
+    "learn-movers": {
+      "metaTitle": "Największe wzrosty i spadki | Finrival Learn",
+      "metaDescription": "Jak powstają dzienne listy największych zmian, dlaczego niektóre akcje ruszają się tak mocno i czego listy nigdy nie mówią",
+      "kicker": "Finrival Learn · Rynek",
+      "title": "Największe wzrosty i spadki",
+      "lead": "Co pokazują dzienne listy największych zmian, a czego nigdy nie mówią",
+      "meta": "5 min czytania · Aktualizacja: 14 listopada 2026"
     }
   },
   "consent": {
