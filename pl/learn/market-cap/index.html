@@ -9,6 +9,15 @@
   <!-- Google tag (Tag Manager container GTM-T2BCLWW9). Consent Mode v2: everything stays denied
        until the visitor accepts in the cookie banner (partials/consent.html) -->
   <script>
+    // Polar adds customer_session_token (a short-lived customer portal key) when buyers return to
+    // the Web Terminal. Drop it from the address before any Google tag can read the URL
+    try {
+      var u = new URL(location.href);
+      if (u.searchParams.has('customer_session_token')) {
+        u.searchParams.delete('customer_session_token');
+        history.replaceState(history.state, '', u.pathname + u.search + u.hash);
+      }
+    } catch (e) {}
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' });
@@ -292,6 +301,7 @@
   </div>
 
   <!-- ========== Cookie consent ========== -->
+  <!-- Banner, conversions and click tracking live in /assets/js/track.js (shared with the Web Terminal) -->
   <div class="consent" id="consent" role="dialog" aria-live="polite" aria-labelledby="consent-text" hidden>
     <p id="consent-text">Używamy plików cookie do mierzenia skuteczności naszych reklam, tylko jeśli się zgodzisz · <a href="/pl/privacy/">Polityka prywatności</a></p>
     <div class="consent__actions">
@@ -299,42 +309,7 @@
       <button type="button" class="consent__btn" data-consent="granted">Akceptuję</button>
     </div>
   </div>
-  <script>
-    (function () {
-      var KEY = 'finrival-consent';
-      var box = document.getElementById('consent');
-      var stored = null;
-      try { stored = localStorage.getItem(KEY); } catch (e) {}
-      if (stored !== 'granted' && stored !== 'denied') box.hidden = false;
-
-      function choose(value) {
-        try { localStorage.setItem(KEY, value); } catch (e) {}
-        gtag('consent', 'update', { ad_storage: value, ad_user_data: value, ad_personalization: value, analytics_storage: value });
-        dataLayer.push({ event: 'consent_update', consent: value });
-        box.hidden = true;
-      }
-      box.querySelectorAll('[data-consent]').forEach(function (b) {
-        b.addEventListener('click', function () { choose(b.getAttribute('data-consent')); });
-      });
-      document.querySelectorAll('[data-consent-open]').forEach(function (b) {
-        b.addEventListener('click', function () { box.hidden = false; box.querySelector('button').focus(); });
-      });
-
-      // Google Ads conversion "App Store click" (Outbound click, primary): any App Store link.
-      // Without consent, Consent Mode sends only a cookieless ping
-      document.addEventListener('click', function (e) {
-        var a = e.target.closest && e.target.closest('a[href*="apps.apple.com"]');
-        if (!a) return;
-        dataLayer.push({ event: 'app_store_click', link_url: a.href, page_language: document.documentElement.lang });
-        gtag('event', 'conversion', { send_to: 'AW-18535453558/sUOxCMmKwrMdEPamsoZF', transport_type: 'beacon' });
-      });
-
-      // Google Ads page view conversions for the PRO and Finrival AI pages, in every language
-      var page = location.pathname.replace(/index\.html$/, '').replace(/^\/(pl|tr)\//, '/');
-      var pageViews = { '/pro/': 'AW-18535453558/6WWMCMyKwrMdEPamsoZF', '/ai/': 'AW-18535453558/M6_5CM-KwrMdEPamsoZF' };
-      if (pageViews[page]) gtag('event', 'conversion', { send_to: pageViews[page] });
-    })();
-  </script>
+  <script src="/assets/js/track.js?v=20261115"></script>
 
 </body>
 </html>

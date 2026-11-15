@@ -3,6 +3,15 @@
   <!-- Google tag (Tag Manager container GTM-T2BCLWW9). Consent Mode v2: everything stays denied
        until the visitor accepts in the cookie banner (partials/consent.html) -->
   <script>
+    // Polar adds customer_session_token (a short-lived customer portal key) when buyers return to
+    // the Web Terminal. Drop it from the address before any Google tag can read the URL
+    try {
+      var u = new URL(location.href);
+      if (u.searchParams.has('customer_session_token')) {
+        u.searchParams.delete('customer_session_token');
+        history.replaceState(history.state, '', u.pathname + u.search + u.hash);
+      }
+    } catch (e) {}
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' });

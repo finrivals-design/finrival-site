@@ -23,7 +23,40 @@
         flex: 1;
       }
     </style>
-  <link rel="icon" href="/terminal/favicon.ico" /></head>
+  <link rel="icon" href="/terminal/favicon.ico" />
+<!-- finrival:tracking -->
+  <!-- AdSense site ownership (finrival.com incl. /terminal/). Verification only: no ad script, no Auto ads -->
+  <meta name="google-adsense-account" content="ca-pub-2039449303585410">
+  <!-- Google tag (Tag Manager container GTM-T2BCLWW9). Consent Mode v2: everything stays denied
+       until the visitor accepts in the cookie banner (partials/consent.html) -->
+  <script>
+    // Polar adds customer_session_token (a short-lived customer portal key) when buyers return to
+    // the Web Terminal. Drop it from the address before any Google tag can read the URL
+    try {
+      var u = new URL(location.href);
+      if (u.searchParams.has('customer_session_token')) {
+        u.searchParams.delete('customer_session_token');
+        history.replaceState(history.state, '', u.pathname + u.search + u.hash);
+      }
+    } catch (e) {}
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('set', 'url_passthrough', true);
+    try {
+      if (localStorage.getItem('finrival-consent') === 'granted') {
+        gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' });
+      }
+    } catch (e) {}
+    gtag('js', new Date());
+    gtag('config', 'AW-18535453558'); // Google Ads tag (conversions in partials/consent.html)
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18535453558"></script>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-T2BCLWW9"></script>
+  <script src="/assets/js/track.js?v=20261115"></script>
+<!-- /finrival:tracking -->
+</head>
 
   <body>
     <!-- Use static rendering with Expo Router to support running without JavaScript. -->
@@ -33,5 +66,35 @@
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
   <script src="/terminal/_expo/static/js/web/index-963ddadf4d66607b8ced3a6dd43d63c1.js" defer></script>
+
+<!-- finrival:tracking -->
+  <!-- Cookie banner for the Web Terminal (one page for every language: /assets/js/track.js picks
+       the copy from data-copy by browser language). Styles are inline: the Terminal does not load site.css -->
+  <style>
+    #consent { position: fixed; left: 50%; bottom: 20px; z-index: 2147483000; display: flex; align-items: center; gap: 20px;
+      width: min(760px, calc(100% - 32px)); padding: 16px 16px 16px 22px; box-sizing: border-box;
+      border: 1px solid rgba(255,255,255,.12); border-radius: 20px; background: rgba(13,19,26,.96);
+      box-shadow: 0 24px 60px rgba(0,0,0,.5); transform: translateX(-50%);
+      color: #a7b1bd; font: 14.5px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Arial, sans-serif; }
+    #consent[hidden] { display: none; }
+    #consent p { flex: 1; margin: 0; }
+    #consent a { color: #f2f5f8; text-decoration: underline; text-underline-offset: 3px; }
+    #consent .consent__actions { display: flex; gap: 8px; flex-shrink: 0; }
+    #consent button { height: 40px; padding: 0 18px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px;
+      background: transparent; color: #f2f5f8; font: inherit; font-weight: 600; cursor: pointer; }
+    #consent button:hover { border-color: #a7b1bd; background: rgba(255,255,255,.06); }
+    @media (max-width: 640px) {
+      #consent { flex-direction: column; align-items: stretch; gap: 14px; bottom: 12px; padding: 16px; }
+      #consent button { flex: 1; }
+    }
+  </style>
+  <div id="consent" role="dialog" aria-live="polite" aria-labelledby="consent-text" data-copy="{&quot;en&quot;:{&quot;text&quot;:&quot;We use cookies to measure how our ads perform, and only if you accept&quot;,&quot;accept&quot;:&quot;Accept&quot;,&quot;reject&quot;:&quot;Reject&quot;,&quot;policy&quot;:&quot;Privacy Policy&quot;,&quot;settings&quot;:&quot;Cookie settings&quot;,&quot;privacy&quot;:&quot;/privacy/&quot;},&quot;tr&quot;:{&quot;text&quot;:&quot;Reklamlarımızın performansını ölçmek için çerez kullanıyoruz, yalnızca kabul edersen&quot;,&quot;accept&quot;:&quot;Kabul et&quot;,&quot;reject&quot;:&quot;Reddet&quot;,&quot;policy&quot;:&quot;Gizlilik Politikası&quot;,&quot;settings&quot;:&quot;Çerez ayarları&quot;,&quot;privacy&quot;:&quot;/tr/privacy/&quot;},&quot;pl&quot;:{&quot;text&quot;:&quot;Używamy plików cookie do mierzenia skuteczności naszych reklam, tylko jeśli się zgodzisz&quot;,&quot;accept&quot;:&quot;Akceptuję&quot;,&quot;reject&quot;:&quot;Odrzucam&quot;,&quot;policy&quot;:&quot;Polityka prywatności&quot;,&quot;settings&quot;:&quot;Ustawienia cookies&quot;,&quot;privacy&quot;:&quot;/pl/privacy/&quot;}}" hidden>
+    <p id="consent-text"><span data-text></span><a href="/privacy/"></a></p>
+    <div class="consent__actions">
+      <button type="button" data-consent="denied"></button>
+      <button type="button" data-consent="granted"></button>
+    </div>
+  </div>
+<!-- /finrival:tracking -->
 </body>
 </html>

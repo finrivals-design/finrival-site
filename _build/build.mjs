@@ -15,6 +15,7 @@
 // The build fails on a missing translation key, so all three languages stay complete.
 // Folders starting with "_" are not published by GitHub Pages (Jekyll), so this stays private.
 
+import { existsSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -161,6 +162,31 @@ for (const page of PAGES) {
     await writeFile(out, html);
     console.log(`built ${file}`);
   }
+}
+
+// Web Terminal (/terminal/): Google tag, conversion tracking and cookie banner. Its index.html is
+// copied in from the app repository by scripts/build-terminal.cjs, which overwrites it, so every
+// build adds them again between finrival:tracking markers (replacing any earlier copy)
+const terminalFile = join(root, "terminal", "index.html");
+if (existsSync(terminalFile)) {
+  const MARK = /\n?<!-- finrival:tracking -->[\s\S]*?<!-- \/finrival:tracking -->\n?/g;
+  const wrap = (s) => `\n<!-- finrival:tracking -->\n${s}<!-- /finrival:tracking -->\n`;
+  const copy = Object.fromEntries(
+    Object.entries(dicts).map(([lang, d]) => [
+      lang,
+      { ...d.consent, privacy: urlFor(lang, "/privacy/") },
+    ])
+  );
+  const attr = JSON.stringify(copy).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+  const head = await readFile(join(here, "partials", "gtag.html"), "utf8");
+  const banner = (await readFile(join(here, "partials", "consent-terminal.html"), "utf8")).replace("{{@consentCopy}}", attr);
+  let shell = (await readFile(terminalFile, "utf8")).replace(MARK, "");
+  if (!shell.includes("</head>") || !shell.includes("</body>")) throw new Error("terminal/index.html has no </head> or </body>");
+  shell = shell
+    .replace("</head>", wrap(`${head}  <script src="/assets/js/track.js?v=20261115"></script>\n`) + "</head>")
+    .replace("</body>", wrap(banner) + "</body>");
+  await writeFile(terminalFile, shell);
+  console.log("added tracking to /terminal/index.html");
 }
 
 // Sitemap with every language version of each page, and robots.txt pointing to it
