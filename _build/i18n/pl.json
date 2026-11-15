@@ -561,5 +561,17 @@
     "ios": "Pobierz z App Store",
     "play": "Google Play · wkrótce",
     "close": "Zamknij"
+  },
+  "terminalLoading": {
+    "title": "Otwieramy Web Terminal",
+    "sub": "Rynki, wykresy i Finrival AI w przeglądarce"
+  },
+  "termNav": {
+    "title": "Web Terminal",
+    "today": "Dziś",
+    "compare": "Porównaj",
+    "news": "Wiadomości",
+    "rival": "Rival – ćwiczenia",
+    "watchlist": "Lista obserwowanych"
   }
 }

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+    <style id="expo-reset">
+      /* These styles make the body full-height */
+      html,
+      body {
+        height: 100%;
+      }
+      /* These styles disable body scrolling if you are using <ScrollView> */
+      body {
+        overflow: hidden;
+      }
+      /* These styles make the root element full-height */
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+    </style>
+  <link rel="icon" href="/terminal/favicon.ico" />
+<!-- finrival:tracking -->
+  <!-- AdSense site ownership (finrival.com incl. /terminal/). Verification only: no ad script, no Auto ads -->
+  <meta name="google-adsense-account" content="ca-pub-2039449303585410">
+  <!-- Google tag (Tag Manager container GTM-T2BCLWW9). Consent Mode v2: everything stays denied
+       until the visitor accepts in the cookie banner. The consent key ends in -v2 because the banner
+       now also covers Google Analytics, so earlier answers are asked again -->
+  <script>
+    // Polar adds customer_session_token (a short-lived customer portal key) when buyers return to
+    // the Web Terminal. Drop it from the address before any Google tag can read the URL
+    try {
+      var u = new URL(location.href);
+      if (u.searchParams.has('customer_session_token')) {
+        u.searchParams.delete('customer_session_token');
+        history.replaceState(history.state, '', u.pathname + u.search + u.hash);
+      }
+    } catch (e) {}
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('set', 'url_passthrough', true);
+    try {
+      if (localStorage.getItem('finrival-consent-v2') === 'granted') {
+        gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' });
+      }
+    } catch (e) {}
+    gtag('js', new Date());
+    gtag('config', 'AW-18535453558'); // Google Ads (conversions in /assets/js/track.js)
+    gtag('config', 'G-H7WZNQXEYJ'); // Google Analytics, web stream "Finrival Client" of property finrival-dc2a7
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18535453558"></script>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-T2BCLWW9"></script>
+  <script src="/assets/js/track.js?v=20261115c"></script>
+<!-- /finrival:tracking -->
+
+<!-- finrival:page -->
+  <title>Compare stocks side by side · Finrival Web Terminal</title>
+  <meta name="description" content="Put companies side by side: percentage change or real prices on one chart, $1,000 then and now, and Finrival AI to explain the difference">
+  <link rel="canonical" href="https://finrival.com/terminal/compare/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Finrival">
+  <meta property="og:url" content="https://finrival.com/terminal/compare/">
+  <meta property="og:title" content="Compare stocks side by side · Finrival Web Terminal">
+  <meta property="og:description" content="Put companies side by side: percentage change or real prices on one chart, $1,000 then and now, and Finrival AI to explain the difference">
+  <meta property="og:image" content="https://finrival.com/assets/img/og-terminal.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Finrival Web Terminal showing today's market movers">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://finrival.com/assets/img/og-terminal.png">
+  <meta name="theme-color" content="#0E1013">
+<!-- /finrival:page -->
+</head>
+
+  <body>
+    <!-- Use static rendering with Expo Router to support running without JavaScript. -->
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <!-- The root element for your Expo app. -->
+    <div id="root"><!-- finrival:splash --><!-- Web Terminal loading screen (inside #root: React replaces it when the app starts). Plain HTML and
+     inline styles so it shows before any script; copy in the visitor's language, theme as last chosen -->
+<div class="fr-boot" data-copy="{&quot;en&quot;:{&quot;title&quot;:&quot;Opening the Web Terminal&quot;,&quot;sub&quot;:&quot;Markets, charts and Finrival AI in your browser&quot;},&quot;tr&quot;:{&quot;title&quot;:&quot;Web Terminal açılıyor&quot;,&quot;sub&quot;:&quot;Piyasalar, grafikler ve Finrival AI tarayıcında&quot;},&quot;pl&quot;:{&quot;title&quot;:&quot;Otwieramy Web Terminal&quot;,&quot;sub&quot;:&quot;Rynki, wykresy i Finrival AI w przeglądarce&quot;}}" role="status" aria-live="polite">
+  <style>
+    .fr-boot { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 14px; background: #0E1013; color: #B4B4BD; font: 14px/1.5 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+    .fr-boot.is-light { background: #F6F5F1; color: #54514B; }
+    .fr-boot__mark { font: 600 28px/1 "Inter Tight", Inter, -apple-system, "Segoe UI", sans-serif; letter-spacing: -0.6px; color: #FFFFFF; }
+    .fr-boot.is-light .fr-boot__mark { color: #111111; }
+    .fr-boot__bar { width: 160px; height: 3px; border-radius: 3px; overflow: hidden; background: rgba(255,255,255,.1); }
+    .fr-boot.is-light .fr-boot__bar { background: rgba(17,17,17,.1); }
+    .fr-boot__bar i { display: block; width: 40%; height: 100%; border-radius: 3px; background: #2CC6D4; animation: fr-boot 1.1s ease-in-out infinite; }
+    .fr-boot.is-light .fr-boot__bar i { background: #0E4F3A; }
+    .fr-boot__title { color: inherit; margin: 6px 0 0; font-size: 15px; }
+    .fr-boot__sub { margin: 0; font-size: 13px; opacity: .75; }
+    @keyframes fr-boot { 0% { transform: translateX(-110%); } 100% { transform: translateX(260%); } }
+    @media (prefers-reduced-motion: reduce) { .fr-boot__bar i { animation: none; width: 100%; opacity: .5; } }
+  </style>
+  <div class="fr-boot__mark">Finrival</div>
+  <div class="fr-boot__bar" aria-hidden="true"><i></i></div>
+  <p class="fr-boot__title" data-t="title"></p>
+  <p class="fr-boot__sub" data-t="sub"></p>
+  <script>
+    (function () {
+      var box = document.currentScript.parentNode, ls = {};
+      try { ls = window.localStorage; } catch (e) {}
+      var get = function (k) { try { return ls.getItem(k); } catch (e) { return null; } };
+      var lang = get("@finrival_language") || get("fr-lang") || (navigator.language || "en").slice(0, 2);
+      var copy = {}; try { copy = JSON.parse(box.getAttribute("data-copy")); } catch (e) {}
+      var c = copy[lang] || copy.en || {};
+      box.querySelector('[data-t="title"]').textContent = c.title || "";
+      box.querySelector('[data-t="sub"]').textContent = c.sub || "";
+      var theme = get("finrival-terminal-theme");
+      var light = theme ? theme === "light" : (window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches);
+      if (light) box.classList.add("is-light");
+    })();
+  </script>
+</div><!-- /finrival:splash --></div>
+  <script src="/terminal/_expo/static/js/web/index-3b7552fd23c4ddd9e804a4a09920868d.js" defer></script>
+
+<!-- finrival:tracking -->
+  <!-- Cookie banner for the Web Terminal (one page for every language: /assets/js/track.js picks
+       the copy from data-copy by browser language). Styles are inline: the Terminal does not load site.css -->
+  <style>
+    #consent { position: fixed; left: 50%; bottom: 20px; z-index: 2147483000; display: flex; align-items: center; gap: 20px;
+      width: min(760px, calc(100% - 32px)); padding: 16px 16px 16px 22px; box-sizing: border-box;
+      border: 1px solid rgba(255,255,255,.12); border-radius: 20px; background: rgba(13,19,26,.96);
+      box-shadow: 0 24px 60px rgba(0,0,0,.5); transform: translateX(-50%);
+      color: #a7b1bd; font: 14.5px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Arial, sans-serif; }
+    #consent[hidden] { display: none; }
+    #consent p { flex: 1; margin: 0; }
+    #consent a { color: #f2f5f8; text-decoration: underline; text-underline-offset: 3px; }
+    #consent .consent__actions { display: flex; gap: 8px; flex-shrink: 0; }
+    #consent button { height: 40px; padding: 0 18px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px;
+      background: transparent; color: #f2f5f8; font: inherit; font-weight: 600; cursor: pointer; }
+    #consent button:hover { border-color: #a7b1bd; background: rgba(255,255,255,.06); }
+    @media (max-width: 640px) {
+      #consent { flex-direction: column; align-items: stretch; gap: 14px; bottom: 12px; padding: 16px; }
+      #consent button { flex: 1; }
+    }
+  </style>
+  <div id="consent" role="dialog" aria-live="polite" aria-labelledby="consent-text" data-copy="{&quot;en&quot;:{&quot;text&quot;:&quot;We use cookies to understand how the site is used and how our ads perform, and only if you accept&quot;,&quot;accept&quot;:&quot;Accept&quot;,&quot;reject&quot;:&quot;Reject&quot;,&quot;policy&quot;:&quot;Privacy Policy&quot;,&quot;settings&quot;:&quot;Cookie settings&quot;,&quot;privacy&quot;:&quot;/privacy/&quot;},&quot;tr&quot;:{&quot;text&quot;:&quot;Sitenin nasıl kullanıldığını ve reklamlarımızın performansını ölçmek için çerez kullanıyoruz, yalnızca kabul edersen&quot;,&quot;accept&quot;:&quot;Kabul et&quot;,&quot;reject&quot;:&quot;Reddet&quot;,&quot;policy&quot;:&quot;Gizlilik Politikası&quot;,&quot;settings&quot;:&quot;Çerez ayarları&quot;,&quot;privacy&quot;:&quot;/tr/privacy/&quot;},&quot;pl&quot;:{&quot;text&quot;:&quot;Używamy plików cookie, aby rozumieć korzystanie ze strony i skuteczność reklam, tylko jeśli się zgodzisz&quot;,&quot;accept&quot;:&quot;Akceptuję&quot;,&quot;reject&quot;:&quot;Odrzucam&quot;,&quot;policy&quot;:&quot;Polityka prywatności&quot;,&quot;settings&quot;:&quot;Ustawienia cookies&quot;,&quot;privacy&quot;:&quot;/pl/privacy/&quot;}}" hidden>
+    <p id="consent-text"><span data-text></span><a href="/privacy/"></a></p>
+    <div class="consent__actions">
+      <button type="button" data-consent="denied"></button>
+      <button type="button" data-consent="granted"></button>
+    </div>
+  </div>
+<!-- /finrival:tracking -->
+</body>
+</html>

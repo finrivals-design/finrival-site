@@ -24,21 +24,6 @@
     </style>
   <link rel="icon" href="/terminal/favicon.ico" />
 <!-- finrival:tracking -->
-  <title>Finrival Web Terminal · Markets, charts and AI in your browser</title>
-  <meta name="description" content="Free in your browser: today's biggest movers, side-by-side comparisons, live charts, market news, practice trading with Rival and answers from Finrival AI">
-  <link rel="canonical" href="https://finrival.com/terminal/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Finrival">
-  <meta property="og:url" content="https://finrival.com/terminal/">
-  <meta property="og:title" content="Finrival Web Terminal · Markets, charts and AI in your browser">
-  <meta property="og:description" content="Free in your browser: today's biggest movers, side-by-side comparisons, live charts, market news, practice trading with Rival and answers from Finrival AI">
-  <meta property="og:image" content="https://finrival.com/assets/img/og-terminal.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="The Finrival Web Terminal showing today's market movers">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://finrival.com/assets/img/og-terminal.png">
-  <meta name="theme-color" content="#0E1013">
   <!-- AdSense site ownership (finrival.com incl. /terminal/). Verification only: no ad script, no Auto ads -->
   <meta name="google-adsense-account" content="ca-pub-2039449303585410">
   <!-- Google tag (Tag Manager container GTM-T2BCLWW9). Consent Mode v2: everything stays denied
@@ -70,8 +55,26 @@
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18535453558"></script>
   <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-T2BCLWW9"></script>
-  <script src="/assets/js/track.js?v=20261115b"></script>
+  <script src="/assets/js/track.js?v=20261115c"></script>
 <!-- /finrival:tracking -->
+
+<!-- finrival:page -->
+  <title>Finrival Web Terminal · Markets, charts and AI in your browser</title>
+  <meta name="description" content="Free in your browser: today's biggest movers, side-by-side comparisons, live charts, market news, practice trading with Rival and answers from Finrival AI">
+  <link rel="canonical" href="https://finrival.com/terminal/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Finrival">
+  <meta property="og:url" content="https://finrival.com/terminal/">
+  <meta property="og:title" content="Finrival Web Terminal · Markets, charts and AI in your browser">
+  <meta property="og:description" content="Free in your browser: today's biggest movers, side-by-side comparisons, live charts, market news, practice trading with Rival and answers from Finrival AI">
+  <meta property="og:image" content="https://finrival.com/assets/img/og-terminal.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Finrival Web Terminal showing today's market movers">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://finrival.com/assets/img/og-terminal.png">
+  <meta name="theme-color" content="#0E1013">
+<!-- /finrival:page -->
 </head>
 
   <body>
@@ -80,8 +83,45 @@
       You need to enable JavaScript to run this app.
     </noscript>
     <!-- The root element for your Expo app. -->
-    <div id="root"></div>
-  <script src="/terminal/_expo/static/js/web/index-ba15e8d2a4d8f79874a149a93a9ef907.js" defer></script>
+    <div id="root"><!-- finrival:splash --><!-- Web Terminal loading screen (inside #root: React replaces it when the app starts). Plain HTML and
+     inline styles so it shows before any script; copy in the visitor's language, theme as last chosen -->
+<div class="fr-boot" data-copy="{&quot;en&quot;:{&quot;title&quot;:&quot;Opening the Web Terminal&quot;,&quot;sub&quot;:&quot;Markets, charts and Finrival AI in your browser&quot;},&quot;tr&quot;:{&quot;title&quot;:&quot;Web Terminal açılıyor&quot;,&quot;sub&quot;:&quot;Piyasalar, grafikler ve Finrival AI tarayıcında&quot;},&quot;pl&quot;:{&quot;title&quot;:&quot;Otwieramy Web Terminal&quot;,&quot;sub&quot;:&quot;Rynki, wykresy i Finrival AI w przeglądarce&quot;}}" role="status" aria-live="polite">
+  <style>
+    .fr-boot { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 14px; background: #0E1013; color: #B4B4BD; font: 14px/1.5 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+    .fr-boot.is-light { background: #F6F5F1; color: #54514B; }
+    .fr-boot__mark { font: 600 28px/1 "Inter Tight", Inter, -apple-system, "Segoe UI", sans-serif; letter-spacing: -0.6px; color: #FFFFFF; }
+    .fr-boot.is-light .fr-boot__mark { color: #111111; }
+    .fr-boot__bar { width: 160px; height: 3px; border-radius: 3px; overflow: hidden; background: rgba(255,255,255,.1); }
+    .fr-boot.is-light .fr-boot__bar { background: rgba(17,17,17,.1); }
+    .fr-boot__bar i { display: block; width: 40%; height: 100%; border-radius: 3px; background: #2CC6D4; animation: fr-boot 1.1s ease-in-out infinite; }
+    .fr-boot.is-light .fr-boot__bar i { background: #0E4F3A; }
+    .fr-boot__title { color: inherit; margin: 6px 0 0; font-size: 15px; }
+    .fr-boot__sub { margin: 0; font-size: 13px; opacity: .75; }
+    @keyframes fr-boot { 0% { transform: translateX(-110%); } 100% { transform: translateX(260%); } }
+    @media (prefers-reduced-motion: reduce) { .fr-boot__bar i { animation: none; width: 100%; opacity: .5; } }
+  </style>
+  <div class="fr-boot__mark">Finrival</div>
+  <div class="fr-boot__bar" aria-hidden="true"><i></i></div>
+  <p class="fr-boot__title" data-t="title"></p>
+  <p class="fr-boot__sub" data-t="sub"></p>
+  <script>
+    (function () {
+      var box = document.currentScript.parentNode, ls = {};
+      try { ls = window.localStorage; } catch (e) {}
+      var get = function (k) { try { return ls.getItem(k); } catch (e) { return null; } };
+      var lang = get("@finrival_language") || get("fr-lang") || (navigator.language || "en").slice(0, 2);
+      var copy = {}; try { copy = JSON.parse(box.getAttribute("data-copy")); } catch (e) {}
+      var c = copy[lang] || copy.en || {};
+      box.querySelector('[data-t="title"]').textContent = c.title || "";
+      box.querySelector('[data-t="sub"]').textContent = c.sub || "";
+      var theme = get("finrival-terminal-theme");
+      var light = theme ? theme === "light" : (window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches);
+      if (light) box.classList.add("is-light");
+    })();
+  </script>
+</div><!-- /finrival:splash --></div>
+  <script src="/terminal/_expo/static/js/web/index-3b7552fd23c4ddd9e804a4a09920868d.js" defer></script>
 
 <!-- finrival:tracking -->
   <!-- Cookie banner for the Web Terminal (one page for every language: /assets/js/track.js picks

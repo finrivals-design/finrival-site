@@ -164,50 +164,79 @@ for (const page of PAGES) {
   }
 }
 
-// Web Terminal (/terminal/): Google tag, conversion tracking and cookie banner. Its index.html is
-// copied in from the app repository by scripts/build-terminal.cjs, which overwrites it, so every
-// build adds them again between finrival:tracking markers (replacing any earlier copy)
+// Web Terminal (/terminal/): Google tag, conversion tracking, cookie banner, loading screen and
+// one page per Terminal section. terminal/index.html is copied in from the app repository by
+// scripts/build-terminal.cjs, which overwrites it, so every build adds these again between
+// finrival:* markers (replacing any earlier copy). The section pages (/terminal/compare/ …) are the
+// same app with their own title, description and link preview; the app opens the right section
+// from the address (terminalRoute.web.js in the app repository).
+const TERMINAL_PAGES = [
+  { path: "", title: "Finrival Web Terminal · Markets, charts and AI in your browser",
+    desc: "Free in your browser: today's biggest movers, side-by-side comparisons, live charts, market news, practice trading with Rival and answers from Finrival AI" },
+  { path: "compare", title: "Compare stocks side by side · Finrival Web Terminal",
+    desc: "Put companies side by side: percentage change or real prices on one chart, $1,000 then and now, and Finrival AI to explain the difference" },
+  { path: "news", title: "Market news with AI explanations · Finrival Web Terminal",
+    desc: "The latest market headlines by topic, newest first, with the companies they mention and Finrival AI one click away" },
+  { path: "learn", title: "Daily Five: learn the market in short rounds · Finrival Web Terminal",
+    desc: "Five quick rounds every market day built from real closing prices: which closed higher, logos, myth or fact and more" },
+  { path: "rival", title: "Rival: practice investing with 100,000 credits · Finrival Web Terminal",
+    desc: "Build a practice portfolio with fictional credits, level up, track diversification and complete missions. No real money" },
+  { path: "watchlist", title: "Your watchlist · Finrival Web Terminal",
+    desc: "Follow the companies and crypto you care about, with charts and prices at the last close, synced with the Finrival app" },
+];
 const terminalFile = join(root, "terminal", "index.html");
 if (existsSync(terminalFile)) {
-  const MARK = /\n?<!-- finrival:tracking -->[\s\S]*?<!-- \/finrival:tracking -->\n?/g;
-  const wrap = (s) => `\n<!-- finrival:tracking -->\n${s}<!-- /finrival:tracking -->\n`;
+  const MARK = /\n?<!-- finrival:(tracking|page) -->[\s\S]*?<!-- \/finrival:\1 -->\n?/g;
+  const SPLASH = /<!-- finrival:splash -->[\s\S]*?<!-- \/finrival:splash -->/g;
+  const wrap = (name, s) => `\n<!-- finrival:${name} -->\n${s}<!-- /finrival:${name} -->\n`;
+  const esc = (v) => String(v).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
   const copy = Object.fromEntries(
     Object.entries(dicts).map(([lang, d]) => [
       lang,
       { ...d.consent, privacy: urlFor(lang, "/privacy/") },
     ])
   );
-  const attr = JSON.stringify(copy).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+  const attr = esc(JSON.stringify(copy));
   const head = await readFile(join(here, "partials", "gtag.html"), "utf8");
   const banner = (await readFile(join(here, "partials", "consent-terminal.html"), "utf8")).replace("{{@consentCopy}}", attr);
-  // Title, description and link-preview tags (Expo's shell only has <title>Finrival</title>)
-  const T = "Finrival Web Terminal · Markets, charts and AI in your browser";
-  const D = "Free in your browser: today's biggest movers, side-by-side comparisons, live charts, market news, practice trading with Rival and answers from Finrival AI";
-  const meta = [
-    `  <title>${T}</title>`,
-    `  <meta name="description" content="${D}">`,
-    `  <link rel="canonical" href="${SITE}/terminal/">`,
-    `  <meta property="og:type" content="website">`,
-    `  <meta property="og:site_name" content="Finrival">`,
-    `  <meta property="og:url" content="${SITE}/terminal/">`,
-    `  <meta property="og:title" content="${T}">`,
-    `  <meta property="og:description" content="${D}">`,
-    `  <meta property="og:image" content="${SITE}/assets/img/og-terminal.png">`,
-    `  <meta property="og:image:width" content="1200">`,
-    `  <meta property="og:image:height" content="630">`,
-    `  <meta property="og:image:alt" content="The Finrival Web Terminal showing today's market movers">`,
-    `  <meta name="twitter:card" content="summary_large_image">`,
-    `  <meta name="twitter:image" content="${SITE}/assets/img/og-terminal.png">`,
-    `  <meta name="theme-color" content="#0E1013">`,
-    "",
-  ].join("\n");
-  let shell = (await readFile(terminalFile, "utf8")).replace(MARK, "").replace(/\s*<title>[^<]*<\/title>/g, "");
-  if (!shell.includes("</head>") || !shell.includes("</body>")) throw new Error("terminal/index.html has no </head> or </body>");
+  // Loading screen inside #root: shown while the app downloads, replaced by the app when it starts
+  const loading = Object.fromEntries(Object.entries(dicts).map(([lang, d]) => [lang, d.terminalLoading]));
+  const splash = (await readFile(join(here, "partials", "terminal-splash.html"), "utf8")).replace("{{@loadingCopy}}", esc(JSON.stringify(loading)));
+  const pageMeta = (p) => {
+    const url = `${SITE}/terminal/${p.path ? p.path + "/" : ""}`;
+    return [
+      `  <title>${p.title}</title>`,
+      `  <meta name="description" content="${esc(p.desc)}">`,
+      `  <link rel="canonical" href="${url}">`,
+      `  <meta property="og:type" content="website">`,
+      `  <meta property="og:site_name" content="Finrival">`,
+      `  <meta property="og:url" content="${url}">`,
+      `  <meta property="og:title" content="${esc(p.title)}">`,
+      `  <meta property="og:description" content="${esc(p.desc)}">`,
+      `  <meta property="og:image" content="${SITE}/assets/img/og-terminal.png">`,
+      `  <meta property="og:image:width" content="1200">`,
+      `  <meta property="og:image:height" content="630">`,
+      `  <meta property="og:image:alt" content="The Finrival Web Terminal showing today's market movers">`,
+      `  <meta name="twitter:card" content="summary_large_image">`,
+      `  <meta name="twitter:image" content="${SITE}/assets/img/og-terminal.png">`,
+      `  <meta name="theme-color" content="#0E1013">`,
+      "",
+    ].join("\n");
+  };
+  let shell = (await readFile(terminalFile, "utf8")).replace(MARK, "").replace(SPLASH, "").replace(/\s*<title>[^<]*<\/title>/g, "");
+  if (!shell.includes("</head>") || !shell.includes("</body>") || !shell.includes('<div id="root"></div>')) {
+    throw new Error("terminal/index.html has no </head>, </body> or empty #root");
+  }
   shell = shell
-    .replace("</head>", wrap(`${meta}${head}  <script src="/assets/js/track.js?v=20261115b"></script>\n`) + "</head>")
-    .replace("</body>", wrap(banner) + "</body>");
-  await writeFile(terminalFile, shell);
-  console.log("added tracking to /terminal/index.html");
+    .replace("</head>", wrap("tracking", `${head}  <script src="/assets/js/track.js?v=20261115c"></script>\n`) + "</head>")
+    .replace('<div id="root"></div>', `<div id="root"><!-- finrival:splash -->${splash.trim()}<!-- /finrival:splash --></div>`)
+    .replace("</body>", wrap("tracking", banner) + "</body>");
+  for (const p of TERMINAL_PAGES) {
+    const out = join(root, "terminal", p.path, "index.html");
+    await mkdir(dirname(out), { recursive: true });
+    await writeFile(out, shell.replace("</head>", wrap("page", pageMeta(p)) + "</head>"));
+  }
+  console.log(`built /terminal/ and ${TERMINAL_PAGES.length - 1} section pages`);
 }
 
 // Sitemap with every language version of each page, and robots.txt pointing to it
@@ -225,9 +254,9 @@ const sitemap = [
       ].join("\n")
     )
   ),
-  // The Terminal (Finrival web app) is one page for every language; it is built
+  // The Terminal (Finrival web app) is one page per section for every language; it is built
   // from the app repository with `node scripts/build-terminal.cjs` and copied into /terminal/.
-  `  <url>\n    <loc>${SITE}/terminal/</loc>\n  </url>`,
+  ...TERMINAL_PAGES.map((p) => `  <url>\n    <loc>${SITE}/terminal/${p.path ? p.path + "/" : ""}</loc>\n  </url>`),
   "</urlset>",
   "",
 ].join("\n");

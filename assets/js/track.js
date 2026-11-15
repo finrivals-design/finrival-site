@@ -90,7 +90,10 @@
     if (copy) {
       try {
         var all = JSON.parse(copy);
-        var lang = (navigator.language || 'en').slice(0, 2).toLowerCase();
+        // The site and Terminal language first (same choice on both), then the browser's
+        var saved = null;
+        try { saved = localStorage.getItem('@finrival_language') || localStorage.getItem('fr-lang'); } catch (e) {}
+        var lang = (saved || navigator.language || 'en').slice(0, 2).toLowerCase();
         var c = all[lang] || all.en;
         box.querySelector('[data-text]').textContent = c.text + ' · ';
         var link = box.querySelector('a');

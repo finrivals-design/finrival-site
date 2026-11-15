@@ -561,5 +561,17 @@
     "ios": "Download on the App Store",
     "play": "Google Play · coming soon",
     "close": "Close"
+  },
+  "terminalLoading": {
+    "title": "Opening the Web Terminal",
+    "sub": "Markets, charts and Finrival AI in your browser"
+  },
+  "termNav": {
+    "title": "Web Terminal",
+    "today": "Today",
+    "compare": "Compare",
+    "news": "News",
+    "rival": "Rival practice",
+    "watchlist": "Watchlist"
   }
 }

@@ -561,5 +561,17 @@
     "ios": "App Store’dan indir",
     "play": "Google Play · çok yakında",
     "close": "Kapat"
+  },
+  "terminalLoading": {
+    "title": "Web Terminal açılıyor",
+    "sub": "Piyasalar, grafikler ve Finrival AI tarayıcında"
+  },
+  "termNav": {
+    "title": "Web Terminal",
+    "today": "Bugün",
+    "compare": "Karşılaştır",
+    "news": "Haberler",
+    "rival": "Rival pratik",
+    "watchlist": "İzleme listesi"
   }
 }

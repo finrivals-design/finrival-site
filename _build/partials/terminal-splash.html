@@ -1,0 +1,38 @@
+<!-- Web Terminal loading screen (inside #root: React replaces it when the app starts). Plain HTML and
+     inline styles so it shows before any script; copy in the visitor's language, theme as last chosen -->
+<div class="fr-boot" data-copy="{{@loadingCopy}}" role="status" aria-live="polite">
+  <style>
+    .fr-boot { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 14px; background: #0E1013; color: #B4B4BD; font: 14px/1.5 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+    .fr-boot.is-light { background: #F6F5F1; color: #54514B; }
+    .fr-boot__mark { font: 600 28px/1 "Inter Tight", Inter, -apple-system, "Segoe UI", sans-serif; letter-spacing: -0.6px; color: #FFFFFF; }
+    .fr-boot.is-light .fr-boot__mark { color: #111111; }
+    .fr-boot__bar { width: 160px; height: 3px; border-radius: 3px; overflow: hidden; background: rgba(255,255,255,.1); }
+    .fr-boot.is-light .fr-boot__bar { background: rgba(17,17,17,.1); }
+    .fr-boot__bar i { display: block; width: 40%; height: 100%; border-radius: 3px; background: #2CC6D4; animation: fr-boot 1.1s ease-in-out infinite; }
+    .fr-boot.is-light .fr-boot__bar i { background: #0E4F3A; }
+    .fr-boot__title { color: inherit; margin: 6px 0 0; font-size: 15px; }
+    .fr-boot__sub { margin: 0; font-size: 13px; opacity: .75; }
+    @keyframes fr-boot { 0% { transform: translateX(-110%); } 100% { transform: translateX(260%); } }
+    @media (prefers-reduced-motion: reduce) { .fr-boot__bar i { animation: none; width: 100%; opacity: .5; } }
+  </style>
+  <div class="fr-boot__mark">Finrival</div>
+  <div class="fr-boot__bar" aria-hidden="true"><i></i></div>
+  <p class="fr-boot__title" data-t="title"></p>
+  <p class="fr-boot__sub" data-t="sub"></p>
+  <script>
+    (function () {
+      var box = document.currentScript.parentNode, ls = {};
+      try { ls = window.localStorage; } catch (e) {}
+      var get = function (k) { try { return ls.getItem(k); } catch (e) { return null; } };
+      var lang = get("@finrival_language") || get("fr-lang") || (navigator.language || "en").slice(0, 2);
+      var copy = {}; try { copy = JSON.parse(box.getAttribute("data-copy")); } catch (e) {}
+      var c = copy[lang] || copy.en || {};
+      box.querySelector('[data-t="title"]').textContent = c.title || "";
+      box.querySelector('[data-t="sub"]').textContent = c.sub || "";
+      var theme = get("finrival-terminal-theme");
+      var light = theme ? theme === "light" : (window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches);
+      if (light) box.classList.add("is-light");
+    })();
+  </script>
+</div>

@@ -75,12 +75,34 @@
       }
     });
   }
+  // One language for the whole site: "fr-lang" is the website's choice and "@finrival_language"
+  // the Web Terminal's (same browser storage, so the Terminal also writes "fr-lang" when changed there)
   document.querySelectorAll("[data-lang-pick]").forEach((link) => {
     link.addEventListener("click", () => {
       try {
         localStorage.setItem("fr-lang", link.dataset.langPick);
+        localStorage.setItem("@finrival_language", link.dataset.langPick);
       } catch (e) {}
     });
+  });
+  // Opening the Terminal from a page opens it in that page's language
+  const pageLang = (document.documentElement.lang || "en").slice(0, 2);
+  const toTerminal = (url) => {
+    try {
+      const u = new URL(url, location.href);
+      return u.origin === location.origin && (u.pathname === "/terminal" || u.pathname.startsWith("/terminal/"));
+    } catch (e) { return false; }
+  };
+  const handOver = () => {
+    if (!/^(en|tr|pl)$/.test(pageLang)) return;
+    try { localStorage.setItem("@finrival_language", pageLang); } catch (e) {}
+  };
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest && e.target.closest("a[href]");
+    if (a && toTerminal(a.getAttribute("href"))) handOver();
+  });
+  document.addEventListener("submit", (e) => {
+    if (e.target instanceof HTMLFormElement && toTerminal(e.target.getAttribute("action") || "")) handOver();
   });
 
   // Hero: side phones drift apart as the page scrolls

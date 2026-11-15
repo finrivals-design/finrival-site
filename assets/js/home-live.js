@@ -247,7 +247,7 @@
         sbox.className = "dotcard__spark " + (sp[sp.length - 1] >= sp[0] ? "up" : "down");
         card.querySelector("[data-f=sparklabel]").textContent = card.dataset.l5d;
       }
-      card.querySelector("[data-f=compare]").href = "/terminal/?compare=" + encodeURIComponent(d.s);
+      card.querySelector("[data-f=compare]").href = "/terminal/compare/?symbol=" + encodeURIComponent(d.s);
       card.querySelector("[data-f=ask]").href = "/terminal/?ask=" + encodeURIComponent(card.dataset.askQ.replace("{name}", d.n).replace("{s}", d.s));
       card.hidden = false;
       // Phones: the card is a sheet at the bottom of the screen (CSS); light up the company's dot
