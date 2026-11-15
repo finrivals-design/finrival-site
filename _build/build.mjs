@@ -180,10 +180,31 @@ if (existsSync(terminalFile)) {
   const attr = JSON.stringify(copy).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
   const head = await readFile(join(here, "partials", "gtag.html"), "utf8");
   const banner = (await readFile(join(here, "partials", "consent-terminal.html"), "utf8")).replace("{{@consentCopy}}", attr);
-  let shell = (await readFile(terminalFile, "utf8")).replace(MARK, "");
+  // Title, description and link-preview tags (Expo's shell only has <title>Finrival</title>)
+  const T = "Finrival Web Terminal · Markets, charts and AI in your browser";
+  const D = "Free in your browser: today's biggest movers, side-by-side comparisons, live charts, market news, practice trading with Rival and answers from Finrival AI";
+  const meta = [
+    `  <title>${T}</title>`,
+    `  <meta name="description" content="${D}">`,
+    `  <link rel="canonical" href="${SITE}/terminal/">`,
+    `  <meta property="og:type" content="website">`,
+    `  <meta property="og:site_name" content="Finrival">`,
+    `  <meta property="og:url" content="${SITE}/terminal/">`,
+    `  <meta property="og:title" content="${T}">`,
+    `  <meta property="og:description" content="${D}">`,
+    `  <meta property="og:image" content="${SITE}/assets/img/og-terminal.png">`,
+    `  <meta property="og:image:width" content="1200">`,
+    `  <meta property="og:image:height" content="630">`,
+    `  <meta property="og:image:alt" content="The Finrival Web Terminal showing today's market movers">`,
+    `  <meta name="twitter:card" content="summary_large_image">`,
+    `  <meta name="twitter:image" content="${SITE}/assets/img/og-terminal.png">`,
+    `  <meta name="theme-color" content="#0E1013">`,
+    "",
+  ].join("\n");
+  let shell = (await readFile(terminalFile, "utf8")).replace(MARK, "").replace(/\s*<title>[^<]*<\/title>/g, "");
   if (!shell.includes("</head>") || !shell.includes("</body>")) throw new Error("terminal/index.html has no </head> or </body>");
   shell = shell
-    .replace("</head>", wrap(`${head}  <script src="/assets/js/track.js?v=20261115b"></script>\n`) + "</head>")
+    .replace("</head>", wrap(`${meta}${head}  <script src="/assets/js/track.js?v=20261115b"></script>\n`) + "</head>")
     .replace("</body>", wrap(banner) + "</body>");
   await writeFile(terminalFile, shell);
   console.log("added tracking to /terminal/index.html");
