@@ -183,7 +183,7 @@ if (existsSync(terminalFile)) {
   let shell = (await readFile(terminalFile, "utf8")).replace(MARK, "");
   if (!shell.includes("</head>") || !shell.includes("</body>")) throw new Error("terminal/index.html has no </head> or </body>");
   shell = shell
-    .replace("</head>", wrap(`${head}  <script src="/assets/js/track.js?v=20261115"></script>\n`) + "</head>")
+    .replace("</head>", wrap(`${head}  <script src="/assets/js/track.js?v=20261115b"></script>\n`) + "</head>")
     .replace("</body>", wrap(banner) + "</body>");
   await writeFile(terminalFile, shell);
   console.log("added tracking to /terminal/index.html");

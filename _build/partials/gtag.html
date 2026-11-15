@@ -1,7 +1,8 @@
   <!-- AdSense site ownership (finrival.com incl. /terminal/). Verification only: no ad script, no Auto ads -->
   <meta name="google-adsense-account" content="ca-pub-2039449303585410">
   <!-- Google tag (Tag Manager container GTM-T2BCLWW9). Consent Mode v2: everything stays denied
-       until the visitor accepts in the cookie banner (partials/consent.html) -->
+       until the visitor accepts in the cookie banner. The consent key ends in -v2 because the banner
+       now also covers Google Analytics, so earlier answers are asked again -->
   <script>
     // Polar adds customer_session_token (a short-lived customer portal key) when buyers return to
     // the Web Terminal. Drop it from the address before any Google tag can read the URL
@@ -18,12 +19,13 @@
     gtag('set', 'ads_data_redaction', true);
     gtag('set', 'url_passthrough', true);
     try {
-      if (localStorage.getItem('finrival-consent') === 'granted') {
+      if (localStorage.getItem('finrival-consent-v2') === 'granted') {
         gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' });
       }
     } catch (e) {}
     gtag('js', new Date());
-    gtag('config', 'AW-18535453558'); // Google Ads tag (conversions in partials/consent.html)
+    gtag('config', 'AW-18535453558'); // Google Ads (conversions in /assets/js/track.js)
+    gtag('config', 'G-H7WZNQXEYJ'); // Google Analytics, web stream "Finrival Client" of property finrival-dc2a7
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18535453558"></script>
   <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-T2BCLWW9"></script>

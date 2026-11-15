@@ -13,9 +13,11 @@
     proPageView: '6WWMCMyKwrMdEPamsoZF',        // Page view, secondary
     aiPageView: 'M6_5CM-KwrMdEPamsoZF',         // Page view, secondary
   };
-  var KEY = 'finrival-consent';
+  var KEY = 'finrival-consent-v2'; // must match _build/partials/gtag.html
   var path = location.pathname;
   var onTerminal = /^\/terminal(\/|$)/.test(path);
+
+  var GA = 'G-H7WZNQXEYJ'; // Google Analytics, web stream "Finrival Client" (Realtime and reports)
 
   function convert(name, extra) {
     var params = { send_to: AW + LABELS[name] };
@@ -23,9 +25,17 @@
     gtag('event', 'conversion', params);
   }
 
+  // The same moments as Google Analytics events, so they show up live in Realtime
+  function analytics(event, params) {
+    var p = { send_to: GA, transport_type: 'beacon' };
+    for (var k in params || {}) p[k] = params[k];
+    gtag('event', event, p);
+  }
+
   function appStoreClick(url, via) {
     dataLayer.push({ event: 'app_store_click', link_url: String(url), via: via, page_language: document.documentElement.lang });
     convert('appStoreClick', { transport_type: 'beacon' });
+    analytics('app_store_click', { link_url: String(url).split('?')[0], via: via });
   }
 
   // Links: App Store anywhere, and links from the site into the Web Terminal. Capture phase,
@@ -37,6 +47,7 @@
     if (!onTerminal && a.host === location.host && /^\/terminal(\/|$)/.test(a.pathname)) {
       dataLayer.push({ event: 'web_terminal_click', from_page: path });
       convert('terminalClick', { transport_type: 'beacon' });
+      analytics('web_terminal_click', { from_page: path });
     }
   }, true);
 
@@ -64,6 +75,9 @@
       if (!/^[A-Za-z0-9_-]{6,80}$/.test(checkout)) checkout = '';
       dataLayer.push({ event: 'web_terminal_purchase', checkout_id: checkout });
       convert('terminalPurchase', checkout ? { transaction_id: checkout } : {});
+      // Google Analytics "purchase" (Monetisation reports). The amount is only known to Polar,
+      // so the Polar dashboard stays the source for who bought what and for how much
+      analytics('purchase', { transaction_id: checkout || undefined, affiliation: 'Web Terminal (Polar)', items: [{ item_name: 'Finrival PRO', item_category: 'Web Terminal' }] });
     }
   }
 

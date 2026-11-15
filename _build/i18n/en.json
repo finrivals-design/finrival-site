@@ -487,7 +487,7 @@
     }
   },
   "consent": {
-    "text": "We use cookies to measure how our ads perform, and only if you accept",
+    "text": "We use cookies to understand how the site is used and how our ads perform, and only if you accept",
     "accept": "Accept",
     "reject": "Reject",
     "policy": "Privacy Policy",

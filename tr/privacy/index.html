@@ -7,7 +7,8 @@
   <!-- AdSense site ownership (finrival.com incl. /terminal/). Verification only: no ad script, no Auto ads -->
   <meta name="google-adsense-account" content="ca-pub-2039449303585410">
   <!-- Google tag (Tag Manager container GTM-T2BCLWW9). Consent Mode v2: everything stays denied
-       until the visitor accepts in the cookie banner (partials/consent.html) -->
+       until the visitor accepts in the cookie banner. The consent key ends in -v2 because the banner
+       now also covers Google Analytics, so earlier answers are asked again -->
   <script>
     // Polar adds customer_session_token (a short-lived customer portal key) when buyers return to
     // the Web Terminal. Drop it from the address before any Google tag can read the URL
@@ -24,12 +25,13 @@
     gtag('set', 'ads_data_redaction', true);
     gtag('set', 'url_passthrough', true);
     try {
-      if (localStorage.getItem('finrival-consent') === 'granted') {
+      if (localStorage.getItem('finrival-consent-v2') === 'granted') {
         gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' });
       }
     } catch (e) {}
     gtag('js', new Date());
-    gtag('config', 'AW-18535453558'); // Google Ads tag (conversions in partials/consent.html)
+    gtag('config', 'AW-18535453558'); // Google Ads (conversions in /assets/js/track.js)
+    gtag('config', 'G-H7WZNQXEYJ'); // Google Analytics, web stream "Finrival Client" of property finrival-dc2a7
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18535453558"></script>
   <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-T2BCLWW9"></script>
@@ -373,7 +375,7 @@
             <p>Apple'ın App Tracking Transparency kuralının uygulandığı durumlarda Finrival, bu izni gerektiren bir izleme yapmadan önce sistem iznini ister.</p>
             <p>Kişiselleştirilmiş reklam onayını reddetmen hiç reklam gösterilmeyeceği anlamına gelmez. Kişiselleştirilmemiş veya sınırlı reklamlar, izin verilen durumlarda dolandırıcılığın önlenmesi, gösterim sıklığının sınırlanması ve toplu ölçüm gibi amaçlarla sınırlı teknik bilgi kullanmaya devam edebilir.</p>
             <h3>finrival.com üzerindeki çerezler</h3>
-            <p>Web sitemiz, reklamlarımızın performansını ölçmek için Google Tag Manager ve Google Ads etiketlerini kullanır; örneğin bir reklamdan gelen ziyaretin App Store düğmesine dokunmayla sonuçlanıp sonuçlanmadığını ölçer. Bu etiketler çerezleri yalnızca çerez bildiriminde "Kabul et" seçeneğini seçtiğinizde kaydeder. "Reddet" seçeneğini seçerseniz veya bir seçim yapmazsanız reklam çerezleri kaydedilmez ve Google, Google İzin Modu kapsamında yalnızca sınırlı, çerezsiz sinyaller alır.</p>
+            <p>Web Terminal dahil web sitemiz, sitenin nasıl kullanıldığını anlamak ve reklamlarımızın performansını ölçmek için Google Tag Manager, Google Analytics ve Google Ads etiketlerini kullanır; örneğin bir reklamdan gelen ziyaretin App Store düğmesine dokunmayla sonuçlanıp sonuçlanmadığını ölçer. Bu etiketler çerezleri yalnızca çerez bildiriminde "Kabul et" seçeneğini seçtiğinizde kaydeder. "Reddet" seçeneğini seçerseniz veya bir seçim yapmazsanız reklam çerezleri kaydedilmez ve Google, Google İzin Modu kapsamında yalnızca sınırlı, çerezsiz sinyaller alır.</p>
             <p>Seçiminizi istediğiniz zaman her sayfanın altındaki "Çerez ayarları" bağlantısıyla değiştirebilirsiniz. Google bu verileri kendi gizlilik politikasına göre işler.</p>
             <h3>Finrival web uygulamasındaki reklamlar (finrival.com/terminal)</h3>
             <p>Misafirler ve Free hesaplar Finrival web uygulamasında Google AdSense banner'ları görebilir. PRO hesaplar bu reklamları hiçbir zaman görmez. Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'de Google'ın onay mesajı, kişiselleştirilmiş reklamlar için çerezler veya benzer teknolojiler kullanılmadan önce tercihini sorar. Onay vermezsen Google sınırlı, kişiselleştirilmemiş reklamlar gösterebilir. Tercihini istediğin zaman reklamlarla birlikte veya sayfa altında gösterilen onay bağlantısından değiştirebilirsin.</p>
@@ -540,13 +542,13 @@
   <!-- ========== Cookie consent ========== -->
   <!-- Banner, conversions and click tracking live in /assets/js/track.js (shared with the Web Terminal) -->
   <div class="consent" id="consent" role="dialog" aria-live="polite" aria-labelledby="consent-text" hidden>
-    <p id="consent-text">Reklamlarımızın performansını ölçmek için çerez kullanıyoruz, yalnızca kabul edersen · <a href="/tr/privacy/">Gizlilik Politikası</a></p>
+    <p id="consent-text">Sitenin nasıl kullanıldığını ve reklamlarımızın performansını ölçmek için çerez kullanıyoruz, yalnızca kabul edersen · <a href="/tr/privacy/">Gizlilik Politikası</a></p>
     <div class="consent__actions">
       <button type="button" class="consent__btn" data-consent="denied">Reddet</button>
       <button type="button" class="consent__btn" data-consent="granted">Kabul et</button>
     </div>
   </div>
-  <script src="/assets/js/track.js?v=20261115"></script>
+  <script src="/assets/js/track.js?v=20261115b"></script>
 
 </body>
 </html>
