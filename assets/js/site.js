@@ -369,18 +369,7 @@
       });
     }
 
-    // Cards light up where the pointer is
-    document.querySelectorAll(".feature, .topic").forEach((card) => {
-      const glow = document.createElement("span");
-      glow.className = "card-glow";
-      glow.setAttribute("aria-hidden", "true");
-      card.prepend(glow);
-      card.addEventListener("pointermove", (e) => {
-        const r = card.getBoundingClientRect();
-        card.style.setProperty("--mx", `${e.clientX - r.left}px`);
-        card.style.setProperty("--my", `${e.clientY - r.top}px`);
-      });
-    });
+    // Cards no longer light up under the pointer (plain look, Nov 2026)
   }
 
   // Swipe rails on phones: page dots that follow the card in view

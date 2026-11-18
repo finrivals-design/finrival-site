@@ -4977,3 +4977,36 @@ p {
   gap: 12px;
   color: var(--gold);
 }
+
+/* ===== Plain look (Nov 2026) =====
+   No decorative glows, halos, aurora, pointer spotlights, metallic text or film grain:
+   flat surfaces and solid colours, so the site reads as designed, not generated. */
+body::after,
+.intro__glow,
+.hero::before,
+.hero::after,
+.hero__stage::before,
+.tour__sticky::before,
+.spotlight__visual::before,
+.page-hero::before,
+.demo__visual::before,
+.cta::before,
+.card-glow {
+  display: none !important;
+}
+.pro,
+.help-contact {
+  background: var(--surface-2);
+}
+.tier--pro,
+.path--web,
+.duel {
+  background: var(--surface);
+}
+.display .gold,
+.h2 .gold {
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  color: var(--gold);
+}
