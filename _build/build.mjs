@@ -228,7 +228,7 @@ if (existsSync(terminalFile)) {
     throw new Error("terminal/index.html has no </head>, </body> or empty #root");
   }
   shell = shell
-    .replace("</head>", wrap("tracking", `${head}  <script src="/assets/js/track.js?v=20261115c"></script>\n`) + "</head>")
+    .replace("</head>", wrap("tracking", `${head}  <script src="/assets/js/track.js?v=20261118a"></script>\n`) + "</head>")
     .replace('<div id="root"></div>', `<div id="root"><!-- finrival:splash -->${splash.trim()}<!-- /finrival:splash --></div>`)
     .replace("</body>", wrap("tracking", banner) + "</body>");
   for (const p of TERMINAL_PAGES) {

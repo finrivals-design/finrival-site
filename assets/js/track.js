@@ -68,16 +68,51 @@
   // Web Terminal purchase: Polar sends buyers back to /terminal/?pro=success&checkout_id=…
   // This runs before the Terminal removes those parameters. The checkout id is the
   // transaction id, so Google Ads counts each purchase once even if the page reloads
+  //
+  // Value: the Terminal stores the chosen plan (sessionStorage 'finrival-checkout-plan') before
+  // it opens Polar, and the conversion carries that plan's USD list price (the App Store price,
+  // ProContext.js PRO_PLANS). Polar's local price and tax may differ a little; Google Ads
+  // converts USD to the account currency. The Polar dashboard stays the source for revenue.
+  //
+  // Enhanced conversions: the Terminal sends the signed-in buyer's email with the
+  // 'finrival:checkout-user' event (WebProPlans.web.js). The conversion waits for it for up to
+  // 4 seconds, then goes without it. gtag hashes the email and sends it only with ad_user_data
+  // consent.
   if (onTerminal) {
     var query = new URLSearchParams(location.search);
     if (query.get('pro') === 'success') {
       var checkout = query.get('checkout_id') || '';
       if (!/^[A-Za-z0-9_-]{6,80}$/.test(checkout)) checkout = '';
-      dataLayer.push({ event: 'web_terminal_purchase', checkout_id: checkout });
-      convert('terminalPurchase', checkout ? { transaction_id: checkout } : {});
-      // Google Analytics "purchase" (Monetisation reports). The amount is only known to Polar,
-      // so the Polar dashboard stays the source for who bought what and for how much
-      analytics('purchase', { transaction_id: checkout || undefined, affiliation: 'Web Terminal (Polar)', items: [{ item_name: 'Finrival PRO', item_category: 'Web Terminal' }] });
+      var PLAN_VALUES_USD = { monthly: 6.99, yearly: 54.99 };
+      var plan = '';
+      try {
+        plan = sessionStorage.getItem('finrival-checkout-plan') || '';
+        sessionStorage.removeItem('finrival-checkout-plan');
+      } catch (e) {}
+      var value = PLAN_VALUES_USD[plan];
+      var sent = false;
+
+      var sendPurchase = function (email) {
+        if (sent) return;
+        sent = true;
+        email = String(email || '').trim().toLowerCase();
+        if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) gtag('set', 'user_data', { email: email });
+        var params = {};
+        if (checkout) params.transaction_id = checkout;
+        if (value) { params.value = value; params.currency = 'USD'; }
+        dataLayer.push({ event: 'web_terminal_purchase', checkout_id: checkout, plan: plan || undefined, value: value });
+        convert('terminalPurchase', params);
+        // Google Analytics "purchase" (Monetisation reports)
+        analytics('purchase', {
+          transaction_id: checkout || undefined,
+          value: value,
+          currency: value ? 'USD' : undefined,
+          affiliation: 'Web Terminal (Polar)',
+          items: [{ item_name: 'Finrival PRO', item_category: 'Web Terminal', item_variant: plan || undefined, price: value }],
+        });
+      };
+      window.addEventListener('finrival:checkout-user', function (e) { sendPurchase(e && e.detail && e.detail.email); });
+      setTimeout(function () { sendPurchase(''); }, 4000);
     }
   }
 
