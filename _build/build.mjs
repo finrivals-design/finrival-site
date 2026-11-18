@@ -16,7 +16,7 @@
 // Folders starting with "_" are not published by GitHub Pages (Jekyll), so this stays private.
 
 import { existsSync } from "node:fs";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -227,7 +227,17 @@ if (existsSync(terminalFile)) {
   if (!shell.includes("</head>") || !shell.includes("</body>") || !shell.includes('<div id="root"></div>')) {
     throw new Error("terminal/index.html has no </head>, </body> or empty #root");
   }
+  // The Expo export ships Expo's default favicon: use the Finrival icons of the rest of the site
+  const icons = [
+    `<link rel="icon" href="/favicon.ico" sizes="48x48">`,
+    `<link rel="icon" href="/assets/img/favicon-96.png" type="image/png" sizes="96x96">`,
+    `<link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">`,
+    `<link rel="apple-touch-icon" href="/apple-touch-icon.png">`,
+  ].join("\n");
+  shell = shell.replace(/<link rel="(?:icon|shortcut icon|apple-touch-icon)"[^>]*>\s*/g, "");
+  await copyFile(join(root, "favicon.ico"), join(root, "terminal", "favicon.ico"));
   shell = shell
+    .replace("</head>", `${icons}\n</head>`)
     .replace("</head>", wrap("tracking", `${head}  <script src="/assets/js/track.js?v=20261118a"></script>\n`) + "</head>")
     .replace('<div id="root"></div>', `<div id="root"><!-- finrival:splash -->${splash.trim()}<!-- /finrival:splash --></div>`)
     .replace("</body>", wrap("tracking", banner) + "</body>");
